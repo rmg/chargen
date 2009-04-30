@@ -1,17 +1,3 @@
-// add description of epic destnies
-// add languages
-// weights of orbs
-// small do not use twohanders
-// damage for huntersquarry
-// sometime add ability increase history
-// add farshot and farthrow to printout
-// add runspeeck that incorporates fastrun
-// add hellfire blood as an afterthought along with raging storm and wintertouched
-// longbow owner brings arrows
-// starting with angel of the eleven winds, eternal seekers can take any so just return early
-
-
-
 var test_mode=false;
 var race_human=false;
 var race_dragonborn=false; 
@@ -2938,11 +2924,11 @@ function NotFromForgottenRealms(){
 function BestFighterWeapons(){
  if (!class_fighter){return; }
  if ((constitution>=dexterity)&(constitution>=wisdom))
-  {document.form1.sixth_comment_box.value+="  With your high constitution, think about loading up on axes, maces, picks, and/or staves."}
+  {document.form1.sixth_comment_box.value+="  With your high constitution, think about loading up on axes, maces, picks, and/or staves.";}
  if ((dexterity>=constitution)&(dexterity>=wisdom))
-  {document.form1.sixth_comment_box.value+="  With your high dexterity, think about loading up on flails, blades, and/or spears."}
+  {document.form1.sixth_comment_box.value+="  With your high dexterity, think about loading up on flails, blades, and/or spears.";}
  if ((wisdom>=constitution)&(wisdom>=dexterity))
-  {document.form1.sixth_comment_box.value+="  With your high wisdom, think about loading up on polearms."}
+  {document.form1.sixth_comment_box.value+="  With your high wisdom, think about loading up on polearms.";}
 
  }
 
@@ -2956,7 +2942,7 @@ function StandardAdventuringKit(){
  document.form1.rations.selectedIndex=10; 
  document.form1.ropehempen.selectedIndex=1; 
  document.form1.waterskin.selectedIndex=1; 
- if (class_swordmage){ document.form1.sixth_comment_box.value+="  Swordmages almost always carry a blade they can use one-handed, without a shield."}
+ if (class_swordmage){ document.form1.sixth_comment_box.value+="  Swordmages almost always carry a blade they can use one-handed, without a shield.";}
  document.form1.sixth_comment_box.value+="  You have been given a standard adventuring kit."
  }
 
@@ -12325,8 +12311,8 @@ function Arms(){
  }
 
 function lock_skills(){
- if (SkillsAreAssigned==true){document.form1.fifth_comment_box.value="Sorry... no going back."}
- else if (!FighterFeatsEtcFrozen){document.form1.fifth_comment_box.value="Not ready yet."}
+ if (SkillsAreAssigned==true){document.form1.fifth_comment_box.value="Sorry... no going back.";}
+ else if (!FighterFeatsEtcFrozen){document.form1.fifth_comment_box.value="Not ready yet.";}
  else if (!SkillSetOkay())
   {
    document.form1.fifth_comment_box.value="Keep working on your skills.  "
@@ -13617,103 +13603,100 @@ function WardenMightChosen(){
 
 function FreezeFighterFeatsEtc(){
 // alert("Entering FreezeFighterFeatsEtc()"); 
- if (FighterFeatsEtcFrozen==true){document.form1.fourth_comment_box.value="We are done here."}
- else if (ClassesHaveBeenEstablished==false){document.form1.fourth_comment_box.value="Not ready for this yet."}
+ if (FighterFeatsEtcFrozen==true){document.form1.fourth_comment_box.value="We are done here.";}
+ else if (ClassesHaveBeenEstablished==false){document.form1.fourth_comment_box.value="Not ready for this yet.";}
 
 
  else if (AbilitiesWellIncreased()==false)
-  {document.form1.fourth_comment_box.value="Need to raise abilities."}
+  {document.form1.fourth_comment_box.value="Need to raise abilities.";}
 
  else if (BreathTypeChosen()==false)
-  {document.form1.fourth_comment_box.value="Dragonborn breath type?"}
+  {document.form1.fourth_comment_box.value="Dragonborn breath type?";}
 
  else if (BreathStatChosen()==false)
-  {document.form1.fourth_comment_box.value="Which ability for your breath weapon?"}
+  {document.form1.fourth_comment_box.value="Which ability for your breath weapon?";}
 
  else if (EladrinEducationChosen()==false)
-  {document.form1.fourth_comment_box.value="Which bonus skill will your eladrin train?"}
+  {document.form1.fourth_comment_box.value="Which bonus skill will your eladrin train?";}
 
  else if (DilettanteChoiceMade()==false)
-  {document.form1.fourth_comment_box.value="Choose your free at-will from another class."}
-
-// else if (ClericStartingRitualChosen()==false)
-//  {document.form1.fourth_comment_box.value="Choose your clerical starting ritual."}
+  {document.form1.fourth_comment_box.value="Choose your free at-will from another class.";}
 
  else if (GenasiSoulTypeChosen()==false)
-  {document.form1.fourth_comment_box.value="Genasi soul type?"}
+  {document.form1.fourth_comment_box.value="Genasi soul type?";}
 
  else if (FighterStyleChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your fighter style."}
+  {document.form1.fourth_comment_box.value="Choose your fighter style.";}
 
  else if (RangerStyleChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your ranger style."}
+  {document.form1.fourth_comment_box.value="Choose your ranger style.";}
 
  else if (RogueStyleChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your rogue style."}
+  {document.form1.fourth_comment_box.value="Choose your rogue style.";}
 
  else if (WarlockPactChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your pact."}
+  {document.form1.fourth_comment_box.value="Choose your pact.";}
 
  else if (WarlordPresenceChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your presence."}
+  {document.form1.fourth_comment_box.value="Choose your presence.";}
 
  else if (WizardImplementChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your favorite implement."}
+  {document.form1.fourth_comment_box.value="Choose your favorite implement.";}
 
  else if (SwordmageAegisChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your aegis."}
+  {document.form1.fourth_comment_box.value="Choose your aegis.";}
 
  else if (AvengerCensureChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your avenger censure."}
+  {document.form1.fourth_comment_box.value="Choose your avenger censure.";}
 
  else if (BarbarianFeralChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your barbarian feral."}
+  {document.form1.fourth_comment_box.value="Choose your barbarian feral.";}
 
  else if (BardVirtueChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your bard virtue."}
+  {document.form1.fourth_comment_box.value="Choose your bard virtue.";}
 
  else if (DruidPrimalChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your druid primal."}
+  {document.form1.fourth_comment_box.value="Choose your druid primal.";}
 
  else if (InvokerCovenantChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your invoker covenant."}
+  {document.form1.fourth_comment_box.value="Choose your invoker covenant.";}
 
  else if (ShamanSpiritChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your shaman spirit."}
+  {document.form1.fourth_comment_box.value="Choose your shaman spirit.";}
 
  else if (SorcererMagicChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your sorcerer magic."}
+  {document.form1.fourth_comment_box.value="Choose your sorcerer magic.";}
 
  else if (WardenMightChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your warden might."}
+  {document.form1.fourth_comment_box.value="Choose your warden might.";}
 
  else if (!RaiseOtherRaceStatsOkay())
-  {document.form1.fourth_comment_box.value="Raise 1-2 ability statistics for your new race."}
+  {document.form1.fourth_comment_box.value="Raise 1-2 ability statistics for your new race.";}
 
  else if (!RaiseOtherRaceSkillsOkay())
-  {document.form1.fourth_comment_box.value="Choose a bonus for 1-2 skills for your new race."}
+  {document.form1.fourth_comment_box.value="Choose a bonus for 1-2 skills for your new race.";}
 
 
  else if (OtherRaceSightChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose the form of vision for your new race."}
+  {document.form1.fourth_comment_box.value="Choose the form of vision for your new race.";}
 
  else if (OtherRaceSizeChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose the size for your new race."}
+  {document.form1.fourth_comment_box.value="Choose the size for your new race.";}
 
  else if (OtherClassDefenseChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose the defense bonuses for your new class."}
+  {document.form1.fourth_comment_box.value="Choose the defense bonuses for your new class.";}
 
  else if (OtherClassHitPointsChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose the hit point formula for your new class."}
+  {document.form1.fourth_comment_box.value="Choose the hit point formula for your new class.";}
 
  else if (OtherClassSurgesChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose the number of daily healing surges for your new class."}
+  {document.form1.fourth_comment_box.value="Choose the number of daily healing surges for your new class.";}
 
  else if (BeastChosen()==false)
-  {document.form1.fourth_comment_box.value="Choose your beast companion!"}
+  {document.form1.fourth_comment_box.value="Choose your beast companion!";}
 
  else if (b_AbilitiesWellIncreased()==false)
-  {document.form1.fourth_comment_box.value="Need to raise your beast companion's abilities."}
+  {document.form1.fourth_comment_box.value="Need to raise your beast companion's abilities.";}
 
  else
   {
@@ -13735,8 +13718,8 @@ function FreezeFighterFeatsEtc(){
    document.form1.fourth_comment_box.value="Now train in "+z+" main-class skills.  "
    if (class_other)
     {
-     if (race_human) {document.form1.fourth_comment_box.value="Now train in 4-7 main-class skills.  "}
-     else {document.form1.fourth_comment_box.value="Now train in 3-6 main-class skills.  "}
+     if (race_human) {document.form1.fourth_comment_box.value="Now train in 4-7 main-class skills.  ";}
+     else {document.form1.fourth_comment_box.value="Now train in 3-6 main-class skills.  ";}
     }
    if (paragon_feybeguiler){document.form1.fourth_comment_box.value=document.form1.fourth_comment_box.value+"This includes your Fey Beguiler bonus skill.  " }
    MandatoryClassSkills(); 
@@ -14648,7 +14631,7 @@ function lock_identity(){
  else if (DiceHaveBeenRolled==false){document.form1.second_comment_box.value="You haven't even rolled your dice."} 
  else if (AbilitiesAreProperlyAssigned==false){document.form1.second_comment_box.value="Please finish assigning your abilities."} 
  else if (AbilitiesHaveBeenEstablished==false){document.form1.second_comment_box.value="Please accept your ability assignments first."} 
- else if (RaceAssigned()==false){document.form1.second_comment_box.value="Please choose your race."}
+ else if (RaceAssigned()==false){document.form1.second_comment_box.value="Please choose your race.";}
  else if ((gender==0)&(!race_warforged)){document.form1.second_comment_box.value="Please choose your gender."} 
  else if (alignment==0){document.form1.second_comment_box.value="Please choose your alignment."} 
  else if (total_levels==0){document.form1.second_comment_box.value="Please choose your total levels."} 
@@ -14997,7 +14980,7 @@ function LanguageEntitlements(){
  }
 
 function lock_abilities(){
- if (DiceHaveBeenRolled==false){document.form1.first_comment_box.value="Roll dice / assign all numbers first."}
+ if (DiceHaveBeenRolled==false){document.form1.first_comment_box.value="Roll dice / assign all numbers first.";}
  else if (AbilitiesAreProperlyAssigned==false)
   {
    document.form1.first_comment_box.value="Finish assigning your statistics."
@@ -15256,11 +15239,11 @@ function modifier_number(skillo){
  }
 
 function modifier_string(skillo){
- if (skillo<2){return "-5"}
- else if (skillo<4){return "-4"}
- else if (skillo<6){return "-3"}
- else if (skillo<8){return "-2"}
- else if (skillo<10){return "-1"}
+ if (skillo<2){return "-5";}
+ else if (skillo<4){return "-4";}
+ else if (skillo<6){return "-3";}
+ else if (skillo<8){return "-2";}
+ else if (skillo<10){return "-1";}
  else {return "+"+(Math.floor(skillo/2)-5); }
  }
 
@@ -15478,7 +15461,7 @@ function GenerateClassString(){
   }
 
  function lock_classes(){
-  if (AllClassStuffAssigned()==false){document.form1.third_comment_box.value="Not yet"}
+  if (AllClassStuffAssigned()==false){document.form1.third_comment_box.value="Not yet";}
    else
     {
      GenerateClassString();
@@ -15488,23 +15471,23 @@ function GenerateClassString(){
      document.form1.third_comment_box.value="You chose a " + class_string + ".\r"
      SuggestFRLocale();
 //     document.form1.third_comment_box.value +=stringy + "\r"
-     if (stringy!=""){document.form1.third_comment_box.value+=stringy+"\r"}
+     if (stringy!=""){document.form1.third_comment_box.value+=stringy+"\r";}
 
      document.form1.third_comment_box.value +="Now complete the following as applicable.\r"
      if (class_ranger)
       {
-       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to be an archer.\r"}
-       if (dexterity<strength){document.form1.third_comment_box.value +="You probably want to be a two-blade ranger.\r"}
+       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to be an archer.\r";}
+       if (dexterity<strength){document.form1.third_comment_box.value +="You probably want to be a two-blade ranger.\r";}
       }
       if (class_rogue)
       {
-       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to be an artful dodger.\r"}
-       if (dexterity<strength){document.form1.third_comment_box.value +="You probably want to be a brutal scoundrel.\r"}
+       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to be an artful dodger.\r";}
+       if (dexterity<strength){document.form1.third_comment_box.value +="You probably want to be a brutal scoundrel.\r";}
       }
       if (class_warlord)
       {
-       if (intelligence>charisma){document.form1.third_comment_box.value +="You probably want to be a tactical warlord.\r"}
-       if (intelligence<charisma){document.form1.third_comment_box.value +="You probably want to be an inspiring warlord.\r"}
+       if (intelligence>charisma){document.form1.third_comment_box.value +="You probably want to be a tactical warlord.\r";}
+       if (intelligence<charisma){document.form1.third_comment_box.value +="You probably want to be an inspiring warlord.\r";}
       }
 
       if (class_wizard)
@@ -15518,44 +15501,44 @@ function GenerateClassString(){
       }
      if (class_avenger)
       {
-       if (dexterity>intelligence){document.form1.third_comment_box.value +="You probably want to choose censure of Pursuit.\r"}
-       if (intelligence>dexterity){document.form1.third_comment_box.value +="You probably want to choose censure of Retribution.\r"}
+       if (dexterity>intelligence){document.form1.third_comment_box.value +="You probably want to choose censure of Pursuit.\r";}
+       if (intelligence>dexterity){document.form1.third_comment_box.value +="You probably want to choose censure of Retribution.\r";}
       }
      if (class_barbarian)
       {
-       if (constitution>charisma){document.form1.third_comment_box.value +="You probably want to choose Rageblood Vigor.\r"}
-       if (charisma>constitution){document.form1.third_comment_box.value +="You probably want to choose Thaneborn Triumph.\r"}
+       if (constitution>charisma){document.form1.third_comment_box.value +="You probably want to choose Rageblood Vigor.\r";}
+       if (charisma>constitution){document.form1.third_comment_box.value +="You probably want to choose Thaneborn Triumph.\r";}
       }
      if (class_bard)
       {
-       if ((intelligence>constitution)&(intelligence>wisdom)){document.form1.third_comment_box.value +="You probably want to choose virtue of Cunning.\r"}
-       if ((constitution>intelligence)&(constitution>wisdom)){document.form1.third_comment_box.value +="You probably want to choose virtue of Valor.\r"}
-       if ((wisdom>intelligence)&(wisdom>constitution)){document.form1.third_comment_box.value +="You probably want to choose virtue of Prescience.\r"}
+       if ((intelligence>constitution)&(intelligence>wisdom)){document.form1.third_comment_box.value +="You probably want to choose virtue of Cunning.\r";}
+       if ((constitution>intelligence)&(constitution>wisdom)){document.form1.third_comment_box.value +="You probably want to choose virtue of Valor.\r";}
+       if ((wisdom>intelligence)&(wisdom>constitution)){document.form1.third_comment_box.value +="You probably want to choose virtue of Prescience.\r";}
       }
      if (class_druid)
       {
-       if (constitution>dexterity){document.form1.third_comment_box.value +="You probably want to choose Guardian primal.\r"}
-       if (dexterity>constitution){document.form1.third_comment_box.value +="You probably want to choose Predator primal.\r"}
+       if (constitution>dexterity){document.form1.third_comment_box.value +="You probably want to choose Guardian primal.\r";}
+       if (dexterity>constitution){document.form1.third_comment_box.value +="You probably want to choose Predator primal.\r";}
       }
      if (class_invoker)
       {
-       if (intelligence>constitution){document.form1.third_comment_box.value +="You probably want to choose the covenant of Preservation.\r"}
-       if (constitution>intelligence){document.form1.third_comment_box.value +="You probably want to choose the covenant of Wrath.\r"}
+       if (intelligence>constitution){document.form1.third_comment_box.value +="You probably want to choose the covenant of Preservation.\r";}
+       if (constitution>intelligence){document.form1.third_comment_box.value +="You probably want to choose the covenant of Wrath.\r";}
       }
      if (class_shaman)
       {
-       if (constitution>intelligence){document.form1.third_comment_box.value +="You probably want to choose Protector Spirit.\r"}
-       if (intelligence>constitution){document.form1.third_comment_box.value +="You probably want to choose Stalker Spirit.\r"}
+       if (constitution>intelligence){document.form1.third_comment_box.value +="You probably want to choose Protector Spirit.\r";}
+       if (intelligence>constitution){document.form1.third_comment_box.value +="You probably want to choose Stalker Spirit.\r";}
       }
      if (class_sorcerer)
       {
-       if (strength>dexterity){document.form1.third_comment_box.value +="You probably want to choose Dragon or Cosmic Magic.\r"}
-       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to choose Wild or Storm Magic.\r"}
+       if (strength>dexterity){document.form1.third_comment_box.value +="You probably want to choose Dragon or Cosmic Magic.\r";}
+       if (dexterity>strength){document.form1.third_comment_box.value +="You probably want to choose Wild or Storm Magic.\r";}
       }
      if (class_warden)
       {
-       if (constitution>wisdom){document.form1.third_comment_box.value +="You probably want to choose Earthstrength.\r"}
-       if (wisdom>constitution){document.form1.third_comment_box.value +="You probably want to choose Wildblood.\r"}
+       if (constitution>wisdom){document.form1.third_comment_box.value +="You probably want to choose Earthstrength.\r";}
+       if (wisdom>constitution){document.form1.third_comment_box.value +="You probably want to choose Wildblood.\r";}
       }
      if ((race_human)|(total_levels>=4))
      {
@@ -17712,37 +17695,37 @@ function WriteTextForCharacterSheet(){
    explain_sup_bf=false;
    explain_sup_v=false;
   genderandrace_string=""; 
-   if (gender==1){genderandrace_string +="Male "}
-   if (gender==2){genderandrace_string +="Female "}
-   if (race_human){genderandrace_string +="Human "}
-   if (race_dragonborn){genderandrace_string +="Dragonborn "}
-   if (race_dwarf){genderandrace_string +="Dwarf "}
-   if (race_halfelf){genderandrace_string +="Half-Elf "}
-   if (race_halfling){genderandrace_string +="Halfling "}
-   if (race_elf){genderandrace_string +="Elf "}
-   if (race_tiefling){genderandrace_string +="Tiefling "}
-   if (race_eladrin){genderandrace_string +="Eladrin "}
-    if (race_bugbear){genderandrace_string+="Bugbear "}
-    if (race_doppelganger){genderandrace_string+="Doppelganger "}
-    if (race_drow){genderandrace_string+="Drow "}
-    if (race_genasi){genderandrace_string+="Genasi "}
-    if (race_bladeling){genderandrace_string+="Bladeling "}
-    if (race_deva){genderandrace_string+="Deva "}
-    if (race_halforc){genderandrace_string+="Half-Orc "}
-    if (race_goliath){genderandrace_string+="Goliath "}
-    if (race_githyanki){genderandrace_string+="Githyanki "}
-    if (race_githzerai){genderandrace_string+="Githzerai "}
-    if (race_gnoll){genderandrace_string+="Gnoll "}
-    if (race_gnome){genderandrace_string+="Gnome "}
-    if (race_goblin){genderandrace_string+="Goblin "}
-    if (race_hobgoblin){genderandrace_string+="Hobgoblin "}
-    if (race_kobold){genderandrace_string+="Kobold "}
-    if (race_minotaur){genderandrace_string+="Minotaur "}
-    if (race_orc){genderandrace_string+="Orc "}
-    if (race_shadarkai){genderandrace_string+="Shadar-kai "}
-    if (race_shifterlongtooth){genderandrace_string+="Longtooth Shifter "}
-    if (race_shifterrazorclaw){genderandrace_string+="Razorclaw Shifter "}
-    if (race_warforged){genderandrace_string+="Warforged "}
+   if (gender==1){genderandrace_string +="Male ";}
+   if (gender==2){genderandrace_string +="Female ";}
+   if (race_human){genderandrace_string +="Human ";}
+   if (race_dragonborn){genderandrace_string +="Dragonborn ";}
+   if (race_dwarf){genderandrace_string +="Dwarf ";}
+   if (race_halfelf){genderandrace_string +="Half-Elf ";}
+   if (race_halfling){genderandrace_string +="Halfling ";}
+   if (race_elf){genderandrace_string +="Elf ";}
+   if (race_tiefling){genderandrace_string +="Tiefling ";}
+   if (race_eladrin){genderandrace_string +="Eladrin ";}
+    if (race_bugbear){genderandrace_string+="Bugbear ";}
+    if (race_doppelganger){genderandrace_string+="Doppelganger ";}
+    if (race_drow){genderandrace_string+="Drow ";}
+    if (race_genasi){genderandrace_string+="Genasi ";}
+    if (race_bladeling){genderandrace_string+="Bladeling ";}
+    if (race_deva){genderandrace_string+="Deva ";}
+    if (race_halforc){genderandrace_string+="Half-Orc ";}
+    if (race_goliath){genderandrace_string+="Goliath ";}
+    if (race_githyanki){genderandrace_string+="Githyanki ";}
+    if (race_githzerai){genderandrace_string+="Githzerai ";}
+    if (race_gnoll){genderandrace_string+="Gnoll ";}
+    if (race_gnome){genderandrace_string+="Gnome ";}
+    if (race_goblin){genderandrace_string+="Goblin ";}
+    if (race_hobgoblin){genderandrace_string+="Hobgoblin ";}
+    if (race_kobold){genderandrace_string+="Kobold ";}
+    if (race_minotaur){genderandrace_string+="Minotaur ";}
+    if (race_orc){genderandrace_string+="Orc ";}
+    if (race_shadarkai){genderandrace_string+="Shadar-kai ";}
+    if (race_shifterlongtooth){genderandrace_string+="Longtooth Shifter ";}
+    if (race_shifterrazorclaw){genderandrace_string+="Razorclaw Shifter ";}
+    if (race_warforged){genderandrace_string+="Warforged ";}
     if (race_other){genderandrace_string+=document.form1.other_race_name.value+" "; }
 
    stringy=document.form1.moniker.value; 
@@ -17763,15 +17746,15 @@ function WriteTextForCharacterSheet(){
    SWD +="</font size></b></center><p>\r"
    SWD +=genderandrace_string+class_string + "<br>\r"
    SWD +="Level "+total_levels+"<br>\r"
-   if (alignment==1){SWD +="Lawful Good"}
-   if (alignment==2){SWD +="Good"}
-   if (alignment==3){SWD +="Good (Chaotic)"}
-   if (alignment==4){SWD +="Unaligned (Lawful)"}
-   if (alignment==5){SWD +="Unaligned"}
-   if (alignment==6){SWD +="Unaligned (Chaotic)"}
-   if (alignment==7){SWD +="Evil (Lawful)"}
-   if (alignment==8){SWD +="Evil"}
-   if (alignment==9){SWD +="Chaotic Evil"}
+   if (alignment==1){SWD +="Lawful Good";}
+   if (alignment==2){SWD +="Good";}
+   if (alignment==3){SWD +="Good (Chaotic)";}
+   if (alignment==4){SWD +="Unaligned (Lawful)";}
+   if (alignment==5){SWD +="Unaligned";}
+   if (alignment==6){SWD +="Unaligned (Chaotic)";}
+   if (alignment==7){SWD +="Evil (Lawful)";}
+   if (alignment==8){SWD +="Evil";}
+   if (alignment==9){SWD +="Chaotic Evil";}
    SWD +="<br>\r"
 
    if (frb_aglarond){SWD+="From Aglarond<br>\r";}
@@ -17825,8 +17808,6 @@ function WriteTextForCharacterSheet(){
 
    SWD +="<table>"
 
-//   if (small==false){stringy="Medium"} else {stringy="Small"}
-//   SWD +="<tr> <td><font face=\"Arial\">Size:</td> <td><font face=\"Arial\">" + stringy + "</td></tr>\r"
    stringy=""
    switch(document.form1.how_tall.selectedIndex){
     case 0:{stringy="---"; break; }
@@ -17993,8 +17974,8 @@ function WriteTextForCharacterSheet(){
    if (document.form1.skin_color[12].checked==true){stringy="Rust"; }
    if (document.form1.skin_color[13].checked==true){stringy="Ochre"; }
    if (document.form1.skin_color[14].checked==true){stringy="Bronze"; }
-if ((race_dragonborn) | (race_kobold)){   SWD+="<tr> <td><font face=\"Arial\">Scales:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r"}
-if (!race_dragonborn){   SWD+="<tr> <td><font face=\"Arial\">Skin:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r"}
+if ((race_dragonborn) | (race_kobold)){   SWD+="<tr> <td><font face=\"Arial\">Scales:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r";}
+if (!race_dragonborn){   SWD+="<tr> <td><font face=\"Arial\">Skin:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r";}
 
    stringy=""
 //racialstuff
@@ -18040,8 +18021,7 @@ if (!race_dragonborn){   SWD+="<tr> <td><font face=\"Arial\">Skin:</td> <td><fon
    if (document.form1.beard_type[2].checked==true){stringy+="; Average Beard"; }
    if (document.form1.beard_type[3].checked==true){stringy+="; Thick Beard / Hirsute"; }
 
-//   if (rayce==179){SWD+="<tr> <td valign=\"top\"><font face=\"Arial\">Head Feathers:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r"} else
-   {SWD+="<tr> <td valign=\"top\"><font face=\"Arial\">Hair:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r"}
+   {SWD+="<tr> <td valign=\"top\"><font face=\"Arial\">Hair:</td> <td><font face=\"Arial\">" + stringy+"</td></tr>\r";}
 
 
 
@@ -18052,11 +18032,11 @@ if (!race_dragonborn){   SWD+="<tr> <td><font face=\"Arial\">Skin:</td> <td><fon
 SWD +="<p>\r"
 
 SWD +="\r<p>Maximum Hit Points: " + total_hit_points; 
-if ((feat_toughness) | (ranger_twoblade)){SWD +=" [includes toughness] "}
+if ((feat_toughness) | (ranger_twoblade)){SWD +=" [includes toughness] ";}
 SWD +="<p>\r<ul>"
 SWD +="\r<p>Bloodied: " + bloodied_hit_points; 
 SWD +="\r<br>Surge Value: " + surge_hit_points; 
-if ((race_dragonborn)&(constitution>11)){SWD +=" [includes draconic heritage] "}
+if ((race_dragonborn)&(constitution>11)){SWD +=" [includes draconic heritage] ";}
 SWD +="\r<br>Surges / Day: " + surges_per_day; 
 if (modifier_number(constitution)!=0){SWD+=" [includes constitution modifier] "; }
 if (feat_durable){SWD+=" [includes durable] "; }
@@ -18121,13 +18101,13 @@ if (document.form1.club_box.checked)
   SWD +="Club: "; 
  if (fighter_onehand)
   {
-  if ((already_knows_club) | (feat_weaponproficiencyclub)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+"[+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+"[not proficient][+1 one-hand talent]; "}
+  if ((already_knows_club) | (feat_weaponproficiencyclub)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+"[+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+"[not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_club) | (feat_weaponproficiencyclub)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+"[+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+"[not proficient]; "}
+  if ((already_knows_club) | (feat_weaponproficiencyclub)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+"[+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+"[not proficient]; ";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 3 lb (Mace)<br>\r"; wt+=3; 
   if (feat_weaponfocusmace){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- mace<br>\r"; }
@@ -18151,10 +18131,10 @@ if (document.form1.dagger_list.selectedIndex>0)
   }
   else
   {
-  if ((already_knows_dagger) | (feat_weaponproficiencydagger)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; "}
+  if ((already_knows_dagger) | (feat_weaponproficiencydagger)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; ";}
   SWD +="damage 1[W]=1d4"+StrengthDamage()+" 1 lb (Light blade); usable off-hand; light throwable <br>"; wt+=1*document.form1.dagger_list.selectedIndex; 
-  if ((already_knows_dagger) | (feat_weaponproficiencydagger)){SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: "+PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficient, damage 1d4"+DexterityDamage()+"<br>\r"}
+  if ((already_knows_dagger) | (feat_weaponproficiencydagger)){SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: "+PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficient, damage 1d4"+DexterityDamage()+"<br>\r";}
     else {SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: range 5/10 "+dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient, damage 1d4"+DexterityDamage()+"<br>\r"}}
   }
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18167,14 +18147,14 @@ if (document.form1.javelin_list.selectedIndex>0)
  if (fighter_onehand)
   {
 //  SWD +="Javelin: "//damage 1[W]=1d6"+StrengthDamage()+" range 10/20 2 lb (Spear) Heavy throwable <br>"; wt+=2; 
-  if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
 //  SWD +="Javelin: "//damage 1[W]=1d6"+StrengthDamage()+" range 10/20 2 lb (Spear) Heavy throwable <br>"; wt+=2; 
-  if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" range 10/20 2 lb (Spear) Heavy throwable <br>"; wt+=2*document.form1.javelin_list.selectedIndex; 
   SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: Same as melee<br>"; 
@@ -18187,13 +18167,13 @@ if (document.form1.mace_box.checked)
   SWD +="Mace"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_mace) | (feat_weaponproficiencymace)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_mace) | (feat_weaponproficiencymace)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_mace) | (feat_weaponproficiencymace)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_mace) | (feat_weaponproficiencymace)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 6 lb (Mace) "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocusmace){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Mace<br>\r"; }
@@ -18203,13 +18183,13 @@ if (document.form1.sickle_box.checked)
   SWD +="Sickle: "
  if (fighter_onehand)
   {
-  if ((already_knows_sickle) | (feat_weaponproficiencysickle)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_sickle) | (feat_weaponproficiencysickle)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_sickle) | (feat_weaponproficiencysickle)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_sickle) | (feat_weaponproficiencysickle)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 2 lb (Light blade) Usable Off-hand <br>"; wt+=2; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18219,13 +18199,13 @@ if (document.form1.spear_box.checked)
   SWD +="Spear"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_spear) | (feat_weaponproficiencyspear)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_spear) | (feat_weaponproficiencyspear)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_spear) | (feat_weaponproficiencyspear)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_spear) | (feat_weaponproficiencyspear)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 6 lb (Spear) "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocusspear){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Spear<br>\r"; }
@@ -18236,13 +18216,13 @@ if (document.form1.spikedgauntlet_box.checked)
   SWD +="Spiked Gauntlet: " 
  if (fighter_onehand)
   {
-  if ((already_knows_othersimplemeleeweapons)|(feat_weaponproficiencyothersimplemeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othersimplemeleeweapons)|(feat_weaponproficiencyothersimplemeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othersimplemeleeweapons)|(feat_weaponproficiencyothersimplemeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othersimplemeleeweapons)|(feat_weaponproficiencyothersimplemeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 1 lb (Unarmed) [off-hand] <br>"; wt+=1; 
   if (feat_weaponfocusunarmed){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Unarmed<br>\r"; }
@@ -18252,13 +18232,13 @@ if (document.form1.greatclub_box.checked)
   SWD +="Greatclub: "
  if (fighter_twohand)
   {
-  if ((already_knows_greatclub) | (feat_weaponproficiencygreatclub)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_greatclub) | (feat_weaponproficiencygreatclub)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_greatclub) | (feat_weaponproficiencygreatclub)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_greatclub) | (feat_weaponproficiencygreatclub)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d4"+StrengthDamage()+GoliathGreatweapon()+" 10 lb (Mace)  <br>"; wt+=10; 
   if (feat_weaponfocusmace){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Mace<br>\r"; }
@@ -18268,13 +18248,13 @@ if (document.form1.morningstar_box.checked)
   SWD +="Morningstar: "
  if (fighter_twohand)
   {
-  if ((already_knows_morningstar) | (feat_weaponproficiencymorningstar)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_morningstar) | (feat_weaponproficiencymorningstar)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_morningstar) | (feat_weaponproficiencymorningstar)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_morningstar) | (feat_weaponproficiencymorningstar)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+GoliathGreatweapon()+" 8 lb (Mace)  <br>"; wt+=8; 
   if (feat_weaponfocusmace){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Mace<br>\r"; }
@@ -18285,13 +18265,13 @@ if ((document.form1.quarterstaff_box.checked)&(!small))
   SWD +="Quarterstaff: "
  if (fighter_twohand)
   {
-  if ((already_knows_quarterstaff) | (feat_weaponproficiencyquarterstaff)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_quarterstaff) | (feat_weaponproficiencyquarterstaff)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_quarterstaff) | (feat_weaponproficiencyquarterstaff)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_quarterstaff) | (feat_weaponproficiencyquarterstaff)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+GoliathGreatweapon()+" 4 lb (Staff)  <br>"; wt+=4; 
   if (feat_weaponfocusstaff){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Staff<br>\r"; }
@@ -18301,13 +18281,13 @@ if (document.form1.scythe_box.checked)
   SWD +="Scythe: "
  if (fighter_twohand)
   {
-  if ((already_knows_scythe) | (feat_weaponproficiencyscythe)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_scythe) | (feat_weaponproficiencyscythe)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_scythe) | (feat_weaponproficiencyscythe)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_scythe) | (feat_weaponproficiencyscythe)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d4"+StrengthDamage()+GoliathGreatweapon()+" 10 lb (Heavy blade)  <br>"; wt+=10; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18317,13 +18297,13 @@ if (document.form1.battleaxe_box.checked)
   SWD +="Battleaxe"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_battleaxe) | (feat_weaponproficiencybattleaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_battleaxe) | (feat_weaponproficiencybattleaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_battleaxe) | (feat_weaponproficiencybattleaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_battleaxe) | (feat_weaponproficiencybattleaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 6 lb (Axe) "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
@@ -18334,13 +18314,13 @@ if (document.form1.flail_box.checked)
   SWD +="Flail"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_flail) | (feat_weaponproficiencyflail)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_flail) | (feat_weaponproficiencyflail)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_flail) | (feat_weaponproficiencyflail)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_flail) | (feat_weaponproficiencyflail)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 5 lb (Flail) "+Versatile()+" <br>"; wt+=5; 
   if (feat_weaponfocusflail){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Flail<br>\r"; }
@@ -18352,13 +18332,13 @@ if (document.form1.handaxe_list.selectedIndex>0)
  SWD+=stringy; 
  if (fighter_onehand)
   {
-  if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 3 lb (Axe); usable off-hand; heavy throwable <br>"; wt+=3*document.form1.handaxe_list.selectedIndex; 
   SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown range 5/10 : Same as melee<br>"; 
@@ -18370,13 +18350,13 @@ if (document.form1.longsword_box.checked)
   SWD +="Longsword"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_longsword) | (feat_weaponproficiencylongsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_longsword) | (feat_weaponproficiencylongsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_longsword) | (feat_weaponproficiencylongsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_longsword) | (feat_weaponproficiencylongsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 4 lb (Heavy blade) "+Versatile()+" <br>"; wt+=4; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18387,13 +18367,13 @@ if (document.form1.scimitar_box.checked)
   SWD +="Scimitar: "
  if (fighter_onehand)
   {
-  if ((already_knows_scimitar) | (feat_weaponproficiencyscimitar)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_scimitar) | (feat_weaponproficiencyscimitar)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_scimitar) | (feat_weaponproficiencyscimitar)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_scimitar) | (feat_weaponproficiencyscimitar)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 4 lb (Heavy blade) High crit <br>"; wt+=4; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18403,13 +18383,13 @@ if (document.form1.shortsword_box.checked)
   SWD +="Short sword: "
  if (fighter_onehand)
   {
-  if ((already_knows_shortsword) | (feat_weaponproficiencyshortsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_shortsword) | (feat_weaponproficiencyshortsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_shortsword) | (feat_weaponproficiencyshortsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_shortsword) | (feat_weaponproficiencyshortsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 2 lb (Light blade) Usable Off-hand <br>"; wt+=2; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18421,13 +18401,13 @@ if (document.form1.throwinghammer_list.selectedIndex>0)
  SWD+=stringy; 
  if (fighter_onehand)
   {
-  if ((already_knows_throwinghammer) | (feat_weaponproficiencythrowinghammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_throwinghammer) | (feat_weaponproficiencythrowinghammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_throwinghammer) | (feat_weaponproficiencythrowinghammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_throwinghammer) | (feat_weaponproficiencythrowinghammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 2 lb (Hammer); usable off-hand; heavy throwable <br>"; wt+=2*document.form1.throwinghammer_list.selectedIndex; 
   SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: range 5/10 Same as melee<br>"; 
@@ -18439,13 +18419,13 @@ if (document.form1.warhammer_box.checked)
   SWD +="Warhammer"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_warhammer) | (feat_weaponproficiencywarhammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_warhammer) | (feat_weaponproficiencywarhammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_warhammer) | (feat_weaponproficiencywarhammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_warhammer) | (feat_weaponproficiencywarhammer)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 5 lb (Hammer) "+Versatile()+" <br>"; wt+=5; 
   if (feat_weaponfocushammer){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Hammer<br>\r"; }
@@ -18456,13 +18436,13 @@ if (document.form1.warpick_box.checked)
   SWD +="War pick"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_warpick) | (feat_weaponproficiencywarpick)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_warpick) | (feat_weaponproficiencywarpick)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_warpick) | (feat_weaponproficiencywarpick)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_warpick) | (feat_weaponproficiencywarpick)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 6 lb (Pick) High crit, "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocuspick){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Pick<br>\r"; }
@@ -18473,13 +18453,13 @@ if (document.form1.broadsword_box.checked)
   SWD +="Broadsword [AV]"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 5 lb (Heavy blade) "+Versatile()+" <br>"; wt+=5; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy blade<br>\r"; }
@@ -18489,13 +18469,13 @@ if (document.form1.khopesh_box.checked)
   SWD +="Khopesh [AV]"+sup_v()+": "//damage 1[W]=1d10"+StrengthDamage()+" 5 lb (Axe) "+Versatile()+" <br>"; wt+=6; 
  if (fighter_onehand)
   {
-  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)|(class_swordmage)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 8 lb (Axe, Heavy blade) "+Versatile()+" brutal&nbsp;1<br>"; wt+=8; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; } else
@@ -18507,13 +18487,13 @@ if (document.form1.lightwarpick_box.checked)
   SWD +="Light War Pick [AV]: "
  if (fighter_onehand)
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 4 lb (Pick) high crit, off-hand<br>"; wt+=4; 
   if (feat_weaponfocuspick){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Pick<br>\r"; } 
@@ -18523,13 +18503,13 @@ if (document.form1.scourge_box.checked)
   SWD +="Scourge [AV]: "//damage 1[W]=1d8"+StrengthDamage()+" 5 lb (Flail) off-hand<br>"; wt+=6; 
  if (fighter_onehand)
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 2 lb (Pick) off-hand<br>"; wt+=2; 
   if (feat_weaponfocusflail){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Flail<br>\r"; } 
@@ -18539,13 +18519,13 @@ if (document.form1.trident_box.checked)
   SWD +="Trident [AV]"+sup_v()+": " 
  if (fighter_onehand)
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" range 3/6 4 lb (Spear) "+Versatile()+" <br>"; wt+=4; 
   SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: Same as melee<br>"; 
@@ -18556,13 +18536,13 @@ if (document.form1.falchion_box.checked)
   SWD +="Falchion: "//damage 1[W]=2d4"+StrengthDamage()+" 7 lb (Heavy blade) High crit <br>"; wt+=7; 
  if (fighter_twohand)
   {
-  if ((already_knows_falchion) | (feat_weaponproficiencyfalchion)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_falchion) | (feat_weaponproficiencyfalchion)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_falchion) | (feat_weaponproficiencyfalchion)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_falchion) | (feat_weaponproficiencyfalchion)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d4"+StrengthDamage()+GoliathGreatweapon()+" 7 lb (Heavy blade) High crit <br>"; wt+=7; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18572,13 +18552,13 @@ if (document.form1.glaive_box.checked)
   SWD +="Glaive: "
  if (fighter_twohand)
   {
-  if ((already_knows_glaive) | (feat_weaponproficiencyglaive)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_glaive) | (feat_weaponproficiencyglaive)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_glaive) | (feat_weaponproficiencyglaive)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_glaive) | (feat_weaponproficiencyglaive)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d4"+StrengthDamage()+GoliathGreatweapon()+" 10 lb (Heavy blade / polearm) Reach <br>"; wt+=10; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18589,13 +18569,13 @@ if (document.form1.greataxe_box.checked)
   SWD +="Greataxe: "
  if (fighter_twohand)
   {
-  if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+StrengthDamage()+GoliathGreatweapon()+" 12 lb (Axe) High crit <br>"; wt+=12; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
@@ -18606,13 +18586,13 @@ if (document.form1.greatsword_box.checked)
   SWD +="Greatsword: "
  if (fighter_twohand)
   {
-  if ((already_knows_greatsword) | (feat_weaponproficiencygreatsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_greatsword) | (feat_weaponproficiencygreatsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_greatsword) | (feat_weaponproficiencygreatsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_greatsword) | (feat_weaponproficiencygreatsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+GoliathGreatweapon()+" 8 lb (Heavy blade)  <br>"; wt+=8; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18622,13 +18602,13 @@ if (document.form1.halberd_box.checked)
   SWD +="Halberd: "//damage 1[W]=1d10"+StrengthDamage()+GoliathGreatweapon()+" 12 lb (Axe, polearm) Reach <br>"; wt+=12; 
  if (fighter_twohand)
   {
-  if ((already_knows_halberd) | (feat_weaponproficiencyhalberd)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_halberd) | (feat_weaponproficiencyhalberd)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_halberd) | (feat_weaponproficiencyhalberd)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_halberd) | (feat_weaponproficiencyhalberd)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+GoliathGreatweapon()+" 12 lb (Axe, polearm) Reach <br>"; wt+=12; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
@@ -18640,13 +18620,13 @@ if (document.form1.heavyflail_box.checked)
   SWD +="Heavy flail: "
  if (fighter_twohand)
   {
-  if ((already_knows_heavyflail) | (feat_weaponproficiencyheavyflail)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_heavyflail) | (feat_weaponproficiencyheavyflail)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_heavyflail) | (feat_weaponproficiencyheavyflail)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_heavyflail) | (feat_weaponproficiencyheavyflail)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d6"+StrengthDamage()+GoliathGreatweapon()+" 10 lb (Flail)  <br>"; wt+=10; 
   if (feat_weaponfocusflail){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Flail<br>\r"; }
@@ -18656,13 +18636,13 @@ if (document.form1.longspear_box.checked)
   SWD +="Longspear: "
  if (fighter_twohand)
   {
-  if ((already_knows_longspear) | (feat_weaponproficiencylongspear)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_longspear) | (feat_weaponproficiencylongspear)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_longspear) | (feat_weaponproficiencylongspear)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_longspear) | (feat_weaponproficiencylongspear)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+GoliathGreatweapon()+" 9 lb (Polearm / spear) Reach <br>"; wt+=9; 
   if (feat_weaponfocuspolearm){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Polearm<br>\r"; }
@@ -18674,13 +18654,13 @@ if (document.form1.maul_box.checked)
   SWD +="Maul: "//damage 1[W]=2d6"+StrengthDamage()+GoliathGreatweapon()+" 12 lb (Hammer)  <br>"; wt+=12; 
  if (fighter_twohand)
   {
-  if ((already_knows_maul) | (feat_weaponproficiencymaul)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_maul) | (feat_weaponproficiencymaul)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_maul) | (feat_weaponproficiencymaul)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_maul) | (feat_weaponproficiencymaul)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d6"+StrengthDamage()+GoliathGreatweapon()+" 12 lb (Hammer)  <br>"; wt+=12; 
   if (feat_weaponfocushammer){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Hammer<br>\r"; }
@@ -18691,13 +18671,13 @@ if (document.form1.heavywarpick_box.checked)
   SWD +="Heavy War Pick [AV]: "
  if (fighter_twohand)
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_othermilitarymeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+StrengthDamage()+GoliathGreatweapon()+" 8 lb (Pick) high&nbsp;crit <br>"; wt+=8; 
   if (feat_weaponfocuspick){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Pick<br>\r"; }
@@ -18707,13 +18687,13 @@ if (document.form1.bastardsword_box.checked)
   SWD +="Bastard sword"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((already_knows_bastardsword) | (feat_weaponproficiencybastardsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_bastardsword) | (feat_weaponproficiencybastardsword)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_bastardsword) | (feat_weaponproficiencybastardsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_bastardsword) | (feat_weaponproficiencybastardsword)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 6 lb (Heavy blade) "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18723,13 +18703,13 @@ if (document.form1.katar_box.checked)
   SWD +="Katar: "
  if (fighter_onehand)
   {
-  if ((already_knows_katar) | (feat_weaponproficiencykatar)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_katar) | (feat_weaponproficiencykatar)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_katar) | (feat_weaponproficiencykatar)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_katar) | (feat_weaponproficiencykatar)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 1 lb (Light blade); usable off-hand; high crit <br>"; wt+=1; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18739,13 +18719,13 @@ if (document.form1.rapier_box.checked)
   SWD +="Rapier: "
  if (fighter_onehand)
   {
-  if ((already_knows_rapier) | (feat_weaponproficiencyrapier)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_rapier) | (feat_weaponproficiencyrapier)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_rapier) | (feat_weaponproficiencyrapier)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_rapier) | (feat_weaponproficiencyrapier)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 2 lb (Light blade)  <br>"; wt+=2; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18755,13 +18735,13 @@ if (document.form1.craghammer_box.checked)
   SWD +="Craghammer [AV]"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 6 lb (Hammer) brutal&nbsp;2 "+Versatile()+"<br>"; wt+=6;     
   if (feat_weaponfocushammer){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- hammer<br>\r"; }
@@ -18772,18 +18752,18 @@ if (document.form1.kukri_box.checked)
   SWD +="Kukri [AV]: "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
  else if (class_rogue)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 rogue]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 rogue]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 rogue]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 rogue]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 2 lb (Light blade) brutal&nbsp;1, off-hand <br>"; wt+=2; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18793,18 +18773,18 @@ if (document.form1.parryingdagger_box.checked)
   SWD +="Parrying Dagger [AV]: "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
  else if (class_rogue)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 rogue]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 rogue]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d4"+StrengthDamage()+" 1 lb (Light blade)  defensive off-hand <br>"; wt+=1; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18814,13 +18794,13 @@ if (document.form1.spikedshield_box.checked)
   SWD +="Spiked Shield [AV]: "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+StrengthDamage()+" 7 lb (Light blade) defensive, off-hand <br>"; wt+=7; 
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -18830,13 +18810,13 @@ if (document.form1.tratnyr_box.checked)
   SWD +="Tratnyr [AV]"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+StrengthDamage()+" 5 lb (Spear) throw range 10/20, heavy-thrown "+Versatile()+" <br>"; wt+=5; 
   SWD +="&nbsp; &nbsp; &nbsp; &nbsp; Thrown: Same as melee<br>"; 
@@ -18847,13 +18827,13 @@ if (document.form1.tripleheadedflail_box.checked)
   SWD +="Triple-headed Flail [AV]"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 6 lb (Flail) "+Versatile()+" <br>"; wt+=6; 
   if (feat_weaponfocusspear){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Spear<br>\r"; }
@@ -18863,13 +18843,13 @@ if (document.form1.waraxe_box.checked)
   SWD +="Waraxe [AV]"+sup_v()+": "
  if (fighter_onehand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+StrengthDamage()+" 10 lb (Axe) "+Versatile()+" <br>"; wt+=10; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
@@ -18880,13 +18860,13 @@ if (document.form1.spikedchain_box.checked)
   SWD +="Spiked chain: "
  if (fighter_twohand)
   {
-  if ((already_knows_spikedchain) | (feat_weaponproficiencyspikedchain)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_spikedchain) | (feat_weaponproficiencyspikedchain)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_spikedchain) | (feat_weaponproficiencyspikedchain)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((already_knows_spikedchain) | (feat_weaponproficiencyspikedchain)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d4"+StrengthDamage()+" 10 lb (Flail) Reach <br>"; wt+=10; 
   if (feat_weaponfocusflail){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Flail<br>\r"; }
@@ -18897,13 +18877,13 @@ if (document.form1.executionaxe_box.checked)
   SWD +="Execution Axe [AV]: "
  if (fighter_twohand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+StrengthDamage()+" 14 lb (Axe) brutal&nbsp;2, high crit <br>"; wt+=14; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
@@ -18914,13 +18894,13 @@ if (document.form1.fullblade_box.checked)
   SWD +="Fullblade [AV]: "
  if (fighter_twohand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+StrengthDamage()+" 10 lb (Heavy blade) high crit <br>"; wt+=10; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy Blade<br>\r"; }
@@ -18930,13 +18910,13 @@ if (document.form1.greatspear_box.checked)
   SWD +="Greatspear [AV]: "
  if (fighter_twohand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3+1)+" vs AC "+StrengthNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+StrengthDamage()+" 8 lb (Polearm,  Spear) reach <br>"; wt+=8; 
   if (feat_weaponfocusspear){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Spear<br>\r"; }  else
@@ -18947,13 +18927,13 @@ if (document.form1.mordenkrad_box.checked)
   SWD +="Mordenkrad [AV]: "
  if (fighter_twohand)
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2+1)+" vs AC "+StrengthNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(strength_attack_base+1)+" vs AC "+StrengthNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=2d6"+StrengthDamage()+" 12 lb (Hammer) brutal&nbsp;2 <br>"; wt+=12; 
   if (feat_weaponfocushammer){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Hammer<br>\r"; }
@@ -18962,8 +18942,8 @@ if (document.form1.mordenkrad_box.checked)
 if (document.form1.doubleaxe_box.checked) // double
  {
   SWD +="Double Axe [AV]: "
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   SWD +="damage 1[W]=d10/d10"+StrengthDamage()+" 15 lb (Axe) defensive, off-hand <br>"; wt+=15; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; }
   if (feat_dwarvenweapontraining){SWD +="&nbsp; &nbsp; Add +2 damage for Dwarven Weapon Training<br>\r"; }
@@ -18971,16 +18951,16 @@ if (document.form1.doubleaxe_box.checked) // double
 if (document.form1.doubleflail_box.checked) // double
  {
   SWD +="Double Flail [AV]: "
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   SWD +="damage 1[W]=d10/d10"+StrengthDamage()+" 11 lb (Flail)  defensive, off-hand  <br>"; wt+=11; 
   if (feat_weaponfocusflail){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Flail<br>\r"; }
  }
 if (document.form1.doublesword_box.checked) // double
  {
   SWD +="Double Sword [AV]: "
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)){SWD +=PlusOrMinus(strength_attack_base+3)+" vs AC "+StrengthNote()+" [+3 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   SWD +="damage 1[W]=d8/d8"+StrengthDamage()+" 9 lb (Heavy blade / Light blade) defensive, off-hand   <br>"; wt+=9; 
   if (feat_weaponfocusheavyblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Heavy blade<br>\r"; } else
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light blade<br>\r"; }
@@ -18988,8 +18968,8 @@ if (document.form1.doublesword_box.checked) // double
 if (document.form1.urgrosh_box.checked) // double
  {
   SWD +="Urgrosh [AV]: "
-  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; "}
-    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r"}
+  if ((feat_weaponproficiencyothersuperiormeleeweapons)|(feat_dwarvenweapontraining)){SWD +=PlusOrMinus(strength_attack_base+2)+" vs AC "+StrengthNote()+" [+2 proficiency]; ";}
+    else {SWD +=strength_attack_base+" vs AC "+StrengthNote()+" [not proficient]; \r";}
   SWD +="damage 1[W]=d12/d8"+StrengthDamage()+" 12 lb (Axe, Spear) defensive, off-hand   <br>"; wt+=12; 
   if (feat_weaponfocusaxe){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Axe<br>\r"; } else
   if (feat_weaponfocusspear){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Spear<br>\r"; }
@@ -19002,13 +18982,13 @@ if (document.form1.handcrossbow_box.checked)
   SWD +="Hand crossbow: "
  if (fighter_onehand)
   {
-  if ((already_knows_handcrossbow) | (feat_weaponproficiencyhandcrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_handcrossbow) | (feat_weaponproficiencyhandcrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_handcrossbow) | (feat_weaponproficiencyhandcrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_handcrossbow) | (feat_weaponproficiencyhandcrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+DexterityDamage()+" range 10/20 2 lb (Crossbow) Load free <br>"; wt+=2; 
   if (feat_weaponfocuscrossbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Crossbow<br>\r"; }
@@ -19019,13 +18999,13 @@ if (document.form1.sling_box.checked)
   SWD +="Sling: "
  if (fighter_onehand)
   {
-  if ((already_knows_sling) | (feat_weaponproficiencysling)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_sling) | (feat_weaponproficiencysling)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_sling) | (feat_weaponproficiencysling)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_sling) | (feat_weaponproficiencysling)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d6"+DexterityDamage()+" range 10/20 0 lb (Sling) Load free <br>"; wt+=0; 
   if (feat_weaponfocussling){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Sling<br>\r"; }
@@ -19036,13 +19016,13 @@ if (document.form1.crossbow_box.checked)
   SWD +="Crossbow: "
  if (fighter_twohand)
   {
-  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+DexterityDamage()+" range 15/30 4 lb (Crossbow) Load minor <br>"; wt+=4; 
   if (feat_weaponfocuscrossbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Crossbow<br>\r"; }
@@ -19053,13 +19033,13 @@ if (document.form1.repeatingcrossbow_box.checked)
   SWD +="Repeating Crossbow [with magazine]: "
  if (fighter_twohand)
   {
-  if ((already_knows_crossbow) | (feat_weaponproficiencyothersimplerangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_crossbow) | (feat_weaponproficiencyothersimplerangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+DexterityDamage()+" range 10/20 6 lb + 1 lb magazine (Crossbow) Load free <br>"; wt+=7; 
   if (feat_weaponfocuscrossbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Crossbow<br>\r"; }
@@ -19070,13 +19050,13 @@ if (document.form1.longbow_box.checked)
   SWD +="Longbow: "
  if (fighter_twohand)
   {
-  if ((already_knows_longbow) | (feat_weaponproficiencylongbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_longbow) | (feat_weaponproficiencylongbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_longbow) | (feat_weaponproficiencylongbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_longbow) | (feat_weaponproficiencylongbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+DexterityDamage()+" range 20/40 3 lb (Bow) Load free <br>"; wt+=3; 
   if (feat_weaponfocusbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Bow<br>\r"; }
@@ -19087,13 +19067,13 @@ if (document.form1.shortbow_box.checked)
   SWD +="Shortbow: "
  if (fighter_twohand)
   {
-  if ((already_knows_shortbow) | (feat_weaponproficiencyshortbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((already_knows_shortbow) | (feat_weaponproficiencyshortbow)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ((already_knows_shortbow) | (feat_weaponproficiencyshortbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ((already_knows_shortbow) | (feat_weaponproficiencyshortbow)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d8"+DexterityDamage()+" range 15/20 2 lb (Bow) Load free, small <br>"; wt+=2; 
   if (feat_weaponfocusbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Bow<br>\r"; }
@@ -19106,8 +19086,8 @@ if (document.form1.shuriken_list.selectedIndex>0)
  if (fighter_onehand)
   {
 //  SWD +="Shuriken: "//damage 1[W]=1d4"+DexterityDamage()+" range 6/12 1/2 lb (Light blade) Light throwable <br>"; wt+=1; 
-  if ((already_knows_shuriken) | (feat_weaponproficiencyshuriken)){SWD +=PlusOrMinus(dexterity_attack_base+3+1)+" vs AC "+DexterityNote()+" [+3 proficiency][+1 one-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; "}
+  if ((already_knows_shuriken) | (feat_weaponproficiencyshuriken)){SWD +=PlusOrMinus(dexterity_attack_base+3+1)+" vs AC "+DexterityNote()+" [+3 proficiency][+1 one-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 one-hand talent]; ";}
   SWD +="damage 1[W]=1d4"+DexterityDamage()+" range 6/12 1/2 lb (Light blade) Light throwable <br>"; wt+=1*document.form1.shuriken_list.selectedIndex; 
   }
   else
@@ -19120,8 +19100,8 @@ if (document.form1.shuriken_list.selectedIndex>0)
   else
   {
 //  SWD +="Shuriken: "//damage 1[W]=1d4"+DexterityDamage()+" range 6/12 1/2 lb (Light blade) Light throwable <br>"; wt+=1; 
-  if ((already_knows_shuriken) | (feat_weaponproficiencyshuriken)){SWD +=PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; "}
+  if ((already_knows_shuriken) | (feat_weaponproficiencyshuriken)){SWD +=PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; ";}
   SWD +="damage 1[W]=1d4"+DexterityDamage()+" range 6/12 1/2 lb (Light blade) Light throwable <br>\r"; wt+=1*document.form1.shuriken_list.selectedIndex; 
   }
   if (feat_weaponfocuslightblade){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Light Blade<br>\r"; }
@@ -19133,13 +19113,13 @@ if (document.form1.greatbow_box.checked)
   SWD +="Greatbow: "
  if (fighter_twohand)
   {
-  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2+1)+" vs AC "+DexterityNote()+" [+2 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+2)+" vs AC "+DexterityNote()+" [+2 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d12"+DexterityDamage()+" range 25/50 5 lb (Bow) Load free <br>"; wt+=5; 
   if (feat_weaponfocusbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Crossbow<br>\r"; }
@@ -19150,13 +19130,13 @@ if (document.form1.superiorcrossbow_box.checked)
   SWD +="Superior Crossbow: "
  if (fighter_twohand)
   {
-  if ((feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+3+1)+" vs AC "+DexterityNote()+" [+3 proficiency][+1 two-hand talent]; "}
-    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; "}
+  if ((feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+3+1)+" vs AC "+DexterityNote()+" [+3 proficiency][+1 two-hand talent]; ";}
+    else {SWD +=PlusOrMinus(dexterity_attack_base+1)+" vs AC "+DexterityNote()+" [not proficient][+1 two-hand talent]; ";}
   }
   else
   {
-  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficiency]; "}
-    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r"}
+  if ( (feat_weaponproficiencyothersuperiorrangedweapons)){SWD +=PlusOrMinus(dexterity_attack_base+3)+" vs AC "+DexterityNote()+" [+3 proficiency]; ";}
+    else {SWD +=dexterity_attack_base+" vs AC "+DexterityNote()+" [not proficient]; \r";}
   }
   SWD +="damage 1[W]=1d10"+DexterityDamage()+" range 20/40 6 lb (Crossbow) Load minor <br>"; wt+=6; 
   if (feat_weaponfocuscrossbow){SWD +="&nbsp; &nbsp; Add +"+weaponfocus()+" damage for Weapon Focus -- Crossbow<br>\r"; }
@@ -22864,12 +22844,12 @@ SWD+="<br>\r";}
 
 
 
-if (explain_sup_v){SWD+="<font size=\"-1\"><sup>v</sup> Versatile weapon. Add +1 to damage if using two-handed.</font size><br>"}
-if (explain_sup_w){SWD+="<font size=\"-1\"><sup>w</sup> Weapon-based power. Apply adjustments for proficiency, situation, feats, magic, etc.</font size><br>"}
+if (explain_sup_v){SWD+="<font size=\"-1\"><sup>v</sup> Versatile weapon. Add +1 to damage if using two-handed.</font size><br>";}
+if (explain_sup_w){SWD+="<font size=\"-1\"><sup>w</sup> Weapon-based power. Apply adjustments for proficiency, situation, feats, magic, etc.</font size><br>";}
 if (explain_sup_i)
  {
   SWD+="<font size=\"-1\"><sup>i</sup> Implement-usable power. Apply a bonus as appropriate for magic, any implement expertises, etc."
-  if (class_swordmage){SWD+="  Swordmages do not apply their weapon proficiencies to implement-usable spells.<br>\r"}
+  if (class_swordmage){SWD+="  Swordmages do not apply their weapon proficiencies to implement-usable spells.<br>\r";}
   SWD+="</font size><br>\r"
  }
 if (explain_sup_bf)
@@ -22878,21 +22858,21 @@ if (explain_sup_bf)
   SWD+="</font size><br>\r"
  }
 x=1;if (total_levels>10){x=2;} if (total_levels>20){x=3;}
-if (feat_intelligentblademaster){SWD+="<font size=\"-1\">Intelligent blademaster: Use intelligence instead of strength on basic attacks only.</font size><br>"}
-if (feat_weaponexpertiseaxe){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using an axe.</font size><br>"}
-if (feat_weaponexpertisebow){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a bow.</font size><br>"}
-if (feat_weaponexpertisecrossbow){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a crossbow.</font size><br>"}
-if (feat_weaponexpertiseflail){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a flail.</font size><br>"}
-if (feat_weaponexpertisehammer){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a hammer.</font size><br>"}
-if (feat_weaponexpertiseheavyblade){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a heavy blade.</font size><br>"}
-if (feat_weaponexpertiselightblade){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a light blade.</font size><br>"}
-if (feat_weaponexpertisemace){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a mace.</font size><br>"}
-if (feat_weaponexpertisepick){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a pick.</font size><br>"}
-if (feat_weaponexpertisepolearm){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a polearm.</font size><br>"}
-if (feat_weaponexpertisesling){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a sling.</font size><br>"}
-if (feat_weaponexpertisespear){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a spear.</font size><br>"}
-if (feat_weaponexpertisestaff){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a staff.</font size><br>"}
-if (feat_weaponexpertiseunarmed){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using bare hands.</font size><br>"}
+if (feat_intelligentblademaster){SWD+="<font size=\"-1\">Intelligent blademaster: Use intelligence instead of strength on basic attacks only.</font size><br>";}
+if (feat_weaponexpertiseaxe){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using an axe.</font size><br>";}
+if (feat_weaponexpertisebow){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a bow.</font size><br>";}
+if (feat_weaponexpertisecrossbow){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a crossbow.</font size><br>";}
+if (feat_weaponexpertiseflail){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a flail.</font size><br>";}
+if (feat_weaponexpertisehammer){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a hammer.</font size><br>";}
+if (feat_weaponexpertiseheavyblade){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a heavy blade.</font size><br>";}
+if (feat_weaponexpertiselightblade){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a light blade.</font size><br>";}
+if (feat_weaponexpertisemace){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a mace.</font size><br>";}
+if (feat_weaponexpertisepick){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a pick.</font size><br>";}
+if (feat_weaponexpertisepolearm){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a polearm.</font size><br>";}
+if (feat_weaponexpertisesling){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a sling.</font size><br>";}
+if (feat_weaponexpertisespear){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a spear.</font size><br>";}
+if (feat_weaponexpertisestaff){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using a staff.</font size><br>";}
+if (feat_weaponexpertiseunarmed){SWD+="<font size=\"-1\">Remember to add +"+x+" on all attack powers (but not basic attacks) using bare hands.</font size><br>";}
 
 
 SWD +="<p></ul>\r"; 
@@ -22991,32 +22971,32 @@ SWD +="</td></tr></table><p>"
 SWD +="</td></tr></table><p>"
 
 SWD +="<p><table><tr><td valign=\"top\"><font face=\"Arial\">Languages:</td><td><font face=\"Arial\">"
-if (document.form1.common_box.checked==true){SWD +="Common;  "}
-if (document.form1.deepspeech_box.checked==true){SWD +="Deep Speech;  "}
-if (document.form1.draconic_box.checked==true){SWD +="Draconic;  "}
-if (document.form1.dwarven_box.checked==true){SWD +="Dwarven;  "}
-if (document.form1.elven_box.checked==true){SWD +="Elven;  "}
-if (document.form1.giant_box.checked==true){SWD +="Giant;  "}
-if (document.form1.goblin_box.checked==true){SWD +="Goblin;  "}
-if (document.form1.primordial_box.checked==true){SWD +="Primordial;  "}
-if (document.form1.supernal_box.checked==true){SWD +="Supernal;  "}
-if (document.form1.abyssal_box.checked==true){SWD +="Abyssal;  "}
-if (document.form1.chondathan_box.checked==true){SWD +="Chondathan [FRPG];  "}
-if (document.form1.damaran_box.checked==true){SWD +="Damaran [FRPG];  "}
-if (document.form1.netherese_box.checked==true){SWD +="Netherese [FRPG];  "}
-if (document.form1.shou_box.checked==true){SWD +="Shou [FRPG];  "}
-if (document.form1.thayan_box.checked==true){SWD +="Thayan [FRPG];  "}
-if (document.form1.tuigan_box.checked==true){SWD +="Tuigan [FRPG];  "}
-if (document.form1.untheric_box.checked==true){SWD +="Untheric [FRPG];  "}
-if (document.form1.other01_box.checked==true){SWD +=document.form1.other01.value+";  "}
-if (document.form1.other02_box.checked==true){SWD +=document.form1.other02.value+";  "}
-if (document.form1.other03_box.checked==true){SWD +=document.form1.other03.value+";  "}
+if (document.form1.common_box.checked==true){SWD +="Common;  ";}
+if (document.form1.deepspeech_box.checked==true){SWD +="Deep Speech;  ";}
+if (document.form1.draconic_box.checked==true){SWD +="Draconic;  ";}
+if (document.form1.dwarven_box.checked==true){SWD +="Dwarven;  ";}
+if (document.form1.elven_box.checked==true){SWD +="Elven;  ";}
+if (document.form1.giant_box.checked==true){SWD +="Giant;  ";}
+if (document.form1.goblin_box.checked==true){SWD +="Goblin;  ";}
+if (document.form1.primordial_box.checked==true){SWD +="Primordial;  ";}
+if (document.form1.supernal_box.checked==true){SWD +="Supernal;  ";}
+if (document.form1.abyssal_box.checked==true){SWD +="Abyssal;  ";}
+if (document.form1.chondathan_box.checked==true){SWD +="Chondathan [FRPG];  ";}
+if (document.form1.damaran_box.checked==true){SWD +="Damaran [FRPG];  ";}
+if (document.form1.netherese_box.checked==true){SWD +="Netherese [FRPG];  ";}
+if (document.form1.shou_box.checked==true){SWD +="Shou [FRPG];  ";}
+if (document.form1.thayan_box.checked==true){SWD +="Thayan [FRPG];  ";}
+if (document.form1.tuigan_box.checked==true){SWD +="Tuigan [FRPG];  ";}
+if (document.form1.untheric_box.checked==true){SWD +="Untheric [FRPG];  ";}
+if (document.form1.other01_box.checked==true){SWD +=document.form1.other01.value+";  ";}
+if (document.form1.other02_box.checked==true){SWD +=document.form1.other02.value+";  ";}
+if (document.form1.other03_box.checked==true){SWD +=document.form1.other03.value+";  ";}
 
 
 Languages(); 
 if (z<extra_language_entitlement)
 
- {SWD +=" (? " + (extra_language_entitlement-z) + " more)"}
+ {SWD +=" (? " + (extra_language_entitlement-z) + " more)";}
 
 
 SWD +="</td></tr></table><p>"
@@ -23133,72 +23113,72 @@ SWD +="Rituals Known:<p><ul>";
   if (document.form1.shiftmote26_box.checked){SWD+="Shift Mote [FRPG][Level 26]<br>\r"; }
   if (document.form1.raiseland30_box.checked){SWD+="Raise Land [FRPG][Level 30]<br>\r"; }
 
- if (document.form1.feypassage06_box.checked){SWD+="Fey Passage [MotP][Level 6]<br>\r"}
- if (document.form1.shadowpassage08_box.checked){SWD+="Shadow Passage [MotP][Level 8]<br>\r"}
- if (document.form1.demicache12_box.checked){SWD+="Demicache [MotP][Level 12]<br>\r"}
- if (document.form1.elementaltransference12_box.checked){SWD+="Elemental Transference [MotP][Level 12]<br>\r"}
- if (document.form1.ropetrick12_box.checked){SWD+="Rope Trick [MotP][Level 12]<br>\r"}
- if (document.form1.astralguide14_box.checked){SWD+="Astral Guide [MotP][Level 14]<br>\r"}
- if (document.form1.scrambleportal14_box.checked){SWD+="Scramble Portal [MotP][Level 14]<br>\r"}
- if (document.form1.astralsojourn15_box.checked){SWD+="Astral Sojourn [MotP][Level 15]<br>\r"}
- if (document.form1.createteleportationcircle15_box.checked){SWD+="Create Teleportation Circle [MotP][Level 15]<br>\r"}
- if (document.form1.farsending16_box.checked){SWD+="Far Sending [MotP][Level 16]<br>\r"}
- if (document.form1.planeshift18_box.checked){SWD+="Plane Shift [MotP][Level 18]<br>\r"}
+ if (document.form1.feypassage06_box.checked){SWD+="Fey Passage [MotP][Level 6]<br>\r";}
+ if (document.form1.shadowpassage08_box.checked){SWD+="Shadow Passage [MotP][Level 8]<br>\r";}
+ if (document.form1.demicache12_box.checked){SWD+="Demicache [MotP][Level 12]<br>\r";}
+ if (document.form1.elementaltransference12_box.checked){SWD+="Elemental Transference [MotP][Level 12]<br>\r";}
+ if (document.form1.ropetrick12_box.checked){SWD+="Rope Trick [MotP][Level 12]<br>\r";}
+ if (document.form1.astralguide14_box.checked){SWD+="Astral Guide [MotP][Level 14]<br>\r";}
+ if (document.form1.scrambleportal14_box.checked){SWD+="Scramble Portal [MotP][Level 14]<br>\r";}
+ if (document.form1.astralsojourn15_box.checked){SWD+="Astral Sojourn [MotP][Level 15]<br>\r";}
+ if (document.form1.createteleportationcircle15_box.checked){SWD+="Create Teleportation Circle [MotP][Level 15]<br>\r";}
+ if (document.form1.farsending16_box.checked){SWD+="Far Sending [MotP][Level 16]<br>\r";}
+ if (document.form1.planeshift18_box.checked){SWD+="Plane Shift [MotP][Level 18]<br>\r";}
 
 
-  if (document.form1.corpselight02_box.checked){SWD+="Corpse Light [OG][Level 2]<br>\r"}
-  if (document.form1.lastsightvision02_box.checked){SWD+="Last Sight Vision [OG][Level 2]<br>\r"}
-  if (document.form1.undeadward03_box.checked){SWD+="Undead Ward [OG][Level 3]<br>\r"}
-  if (document.form1.skullwatch04_box.checked){SWD+="Skull Watch [OG][Level 4]<br>\r"}
-  if (document.form1.undeadservitor06_box.checked){SWD+="Undead Servitor [OG][Level 6]<br>\r"}
-  if (document.form1.gravesight08_box.checked){SWD+="Gravesight [OG][Level 8]<br>\r"}
-  if (document.form1.corpsegate14_box.checked){SWD+="Corpse Gate [OG][Level 14]<br>\r"}
+  if (document.form1.corpselight02_box.checked){SWD+="Corpse Light [OG][Level 2]<br>\r";}
+  if (document.form1.lastsightvision02_box.checked){SWD+="Last Sight Vision [OG][Level 2]<br>\r";}
+  if (document.form1.undeadward03_box.checked){SWD+="Undead Ward [OG][Level 3]<br>\r";}
+  if (document.form1.skullwatch04_box.checked){SWD+="Skull Watch [OG][Level 4]<br>\r";}
+  if (document.form1.undeadservitor06_box.checked){SWD+="Undead Servitor [OG][Level 6]<br>\r";}
+  if (document.form1.gravesight08_box.checked){SWD+="Gravesight [OG][Level 8]<br>\r";}
+  if (document.form1.corpsegate14_box.checked){SWD+="Corpse Gate [OG][Level 14]<br>\r";}
 
 
-if (document.form1.createcampsite01_box.checked){SWD+="Create Campsite [PH2][Level 1]<br>\r"}
-if (document.form1.gliblimerick01_box.checked){SWD+="Glib Limerick [PH2][Level 1]<br>\r"}
-if (document.form1.travelerschant01_box.checked){SWD+="Traveler's Chant [PH2][Level 1]<br>\r"}
-if (document.form1.bloom02_box.checked){SWD+="Bloom [PH2][Level 2]<br>\r"}
-if (document.form1.pyrotechnics02_box.checked){SWD+="Pyrotechnics [PH2][Level 2]<br>\r"}
-if (document.form1.treeshape02_box.checked){SWD+="Tree Shape [PH2][Level 2]<br>\r"}
-if (document.form1.affectnormalfire03_box.checked){SWD+="Affect Normal Fire [PH2][Level 3]<br>\r"}
-if (document.form1.lullaby03_box.checked){SWD+="Lullaby [PH2][Level 3]<br>\r"}
-if (document.form1.snare03_box.checked){SWD+="Snare [PH2][Level 3]<br>\r"}
-if (document.form1.animalfriendship05_box.checked){SWD+="Animal Friendship [PH2][Level 5]<br>\r"}
-if (document.form1.speakwithnature05_box.checked){SWD+="Speak with Nature [PH2][Level 5]<br>\r"}
-if (document.form1.callwildernessguide06_box.checked){SWD+="Call Wilderness Guide [PH2][Level 6]<br>\r"}
-if (document.form1.foolsspeech06_box.checked){SWD+="Fool's Speech [PH2][Level 6]<br>\r"}
-if (document.form1.ironwood06_box.checked){SWD+="Ironwood [PH2][Level 6]<br>\r"}
-if (document.form1.treestride06_box.checked){SWD+="Tree Stride [PH2][Level 6]<br>\r"}
-if (document.form1.wyvernwatch06_box.checked){SWD+="Wyvern Watch [PH2][Level 6]<br>\r"}
-if (document.form1.songofsustenance08_box.checked){SWD+="Song of Sustenance [PH2][Level 8]<br>\r"}
-if (document.form1.tuneofmerriment09_box.checked){SWD+="Tune of Merriment [PH2][Level 9]<br>\r"}
-if (document.form1.ariaofrevelation10_box.checked){SWD+="Aria of Revelation [PH2][Level 10]<br>\r"}
-if (document.form1.chorusoftruth10_box.checked){SWD+="Chorus of Truth [PH2][Level 10]<br>\r"}
-if (document.form1.songofrestfulness10_box.checked){SWD+="Song of Restfulness [PH2][Level 10]<br>\r"}
-if (document.form1.reverseportal12_box.checked){SWD+="Reverse Portal [PH2][Level 12]<br>\r"}
-if (document.form1.controlweather14_box.checked){SWD+="Control Weather [PH2][Level 14]<br>\r"}
+if (document.form1.createcampsite01_box.checked){SWD+="Create Campsite [PH2][Level 1]<br>\r";}
+if (document.form1.gliblimerick01_box.checked){SWD+="Glib Limerick [PH2][Level 1]<br>\r";}
+if (document.form1.travelerschant01_box.checked){SWD+="Traveler's Chant [PH2][Level 1]<br>\r";}
+if (document.form1.bloom02_box.checked){SWD+="Bloom [PH2][Level 2]<br>\r";}
+if (document.form1.pyrotechnics02_box.checked){SWD+="Pyrotechnics [PH2][Level 2]<br>\r";}
+if (document.form1.treeshape02_box.checked){SWD+="Tree Shape [PH2][Level 2]<br>\r";}
+if (document.form1.affectnormalfire03_box.checked){SWD+="Affect Normal Fire [PH2][Level 3]<br>\r";}
+if (document.form1.lullaby03_box.checked){SWD+="Lullaby [PH2][Level 3]<br>\r";}
+if (document.form1.snare03_box.checked){SWD+="Snare [PH2][Level 3]<br>\r";}
+if (document.form1.animalfriendship05_box.checked){SWD+="Animal Friendship [PH2][Level 5]<br>\r";}
+if (document.form1.speakwithnature05_box.checked){SWD+="Speak with Nature [PH2][Level 5]<br>\r";}
+if (document.form1.callwildernessguide06_box.checked){SWD+="Call Wilderness Guide [PH2][Level 6]<br>\r";}
+if (document.form1.foolsspeech06_box.checked){SWD+="Fool's Speech [PH2][Level 6]<br>\r";}
+if (document.form1.ironwood06_box.checked){SWD+="Ironwood [PH2][Level 6]<br>\r";}
+if (document.form1.treestride06_box.checked){SWD+="Tree Stride [PH2][Level 6]<br>\r";}
+if (document.form1.wyvernwatch06_box.checked){SWD+="Wyvern Watch [PH2][Level 6]<br>\r";}
+if (document.form1.songofsustenance08_box.checked){SWD+="Song of Sustenance [PH2][Level 8]<br>\r";}
+if (document.form1.tuneofmerriment09_box.checked){SWD+="Tune of Merriment [PH2][Level 9]<br>\r";}
+if (document.form1.ariaofrevelation10_box.checked){SWD+="Aria of Revelation [PH2][Level 10]<br>\r";}
+if (document.form1.chorusoftruth10_box.checked){SWD+="Chorus of Truth [PH2][Level 10]<br>\r";}
+if (document.form1.songofrestfulness10_box.checked){SWD+="Song of Restfulness [PH2][Level 10]<br>\r";}
+if (document.form1.reverseportal12_box.checked){SWD+="Reverse Portal [PH2][Level 12]<br>\r";}
+if (document.form1.controlweather14_box.checked){SWD+="Control Weather [PH2][Level 14]<br>\r";}
 
 
-if (document.form1.purifywater01_box.checked){SWD+="Purify Water [AP][Level 1]<br>\r"}
-if (document.form1.unseenservant01_box.checked){SWD+="Unseen Servant [AP][Level 1]<br>\r"}
-if (document.form1.lowerwater02_box.checked){SWD+="Lower Water [AP][Level 2]<br>\r"}
-if (document.form1.foolsgold03_box.checked){SWD+="Fool's Gold [AP][Level 3]<br>\r"}
-if (document.form1.beastgrowth04_box.checked){SWD+="Beast Growth [AP][Level 4]<br>\r"}
-if (document.form1.calloffriendship04_box.checked){SWD+="Call of Friendship [AP][Level 4]<br>\r"}
-if (document.form1.objectreading05_box.checked){SWD+="Object Reading [AP][Level 5]<br>\r"}
-if (document.form1.preserveflame06_box.checked){SWD+="Preserve Flame [AP][Level 6]<br>\r"}
-if (document.form1.shrink06_box.checked){SWD+="Shrink [AP][Level 6]<br>\r"}
-if (document.form1.anthemofunity08_box.checked){SWD+="Anthem of Unity [AP][Level 8]<br>\r"}
-if (document.form1.detecttreasure09_box.checked){SWD+="Detect Treasure [AP][Level 9]<br>\r"}
-if (document.form1.magicmap09_box.checked){SWD+="Magic Map [AP][Level 9]<br>\r"}
-if (document.form1.historyrevealed11_box.checked){SWD+="History Revealed [AP][Level 11]<br>\r"}
-if (document.form1.arcanebarrier12_box.checked){SWD+="Arcane Barrier [AP][Level 12]<br>\r"}
-if (document.form1.telepathicbond14_box.checked){SWD+="Telepathic Bond [AP][Level 14]<br>\r"}
-if (document.form1.whispersoftheedifice14_box.checked){SWD+="Whispers of the Edifice [AP][Level 14]<br>\r"}
-if (document.form1.farsight16_box.checked){SWD+="Farsight [AP][Level 16]<br>\r"}
-if (document.form1.guardsandwards18_box.checked){SWD+="Guards and Wards [AP][Level 18]<br>\r"}
-if (document.form1.imprisonment28_box.checked){SWD+="Imprisonment [AP][Level 28]<br>\r"}
+if (document.form1.purifywater01_box.checked){SWD+="Purify Water [AP][Level 1]<br>\r";}
+if (document.form1.unseenservant01_box.checked){SWD+="Unseen Servant [AP][Level 1]<br>\r";}
+if (document.form1.lowerwater02_box.checked){SWD+="Lower Water [AP][Level 2]<br>\r";}
+if (document.form1.foolsgold03_box.checked){SWD+="Fool's Gold [AP][Level 3]<br>\r";}
+if (document.form1.beastgrowth04_box.checked){SWD+="Beast Growth [AP][Level 4]<br>\r";}
+if (document.form1.calloffriendship04_box.checked){SWD+="Call of Friendship [AP][Level 4]<br>\r";}
+if (document.form1.objectreading05_box.checked){SWD+="Object Reading [AP][Level 5]<br>\r";}
+if (document.form1.preserveflame06_box.checked){SWD+="Preserve Flame [AP][Level 6]<br>\r";}
+if (document.form1.shrink06_box.checked){SWD+="Shrink [AP][Level 6]<br>\r";}
+if (document.form1.anthemofunity08_box.checked){SWD+="Anthem of Unity [AP][Level 8]<br>\r";}
+if (document.form1.detecttreasure09_box.checked){SWD+="Detect Treasure [AP][Level 9]<br>\r";}
+if (document.form1.magicmap09_box.checked){SWD+="Magic Map [AP][Level 9]<br>\r";}
+if (document.form1.historyrevealed11_box.checked){SWD+="History Revealed [AP][Level 11]<br>\r";}
+if (document.form1.arcanebarrier12_box.checked){SWD+="Arcane Barrier [AP][Level 12]<br>\r";}
+if (document.form1.telepathicbond14_box.checked){SWD+="Telepathic Bond [AP][Level 14]<br>\r";}
+if (document.form1.whispersoftheedifice14_box.checked){SWD+="Whispers of the Edifice [AP][Level 14]<br>\r";}
+if (document.form1.farsight16_box.checked){SWD+="Farsight [AP][Level 16]<br>\r";}
+if (document.form1.guardsandwards18_box.checked){SWD+="Guards and Wards [AP][Level 18]<br>\r";}
+if (document.form1.imprisonment28_box.checked){SWD+="Imprisonment [AP][Level 28]<br>\r";}
 
 
 SWD +="</ul>";
@@ -23258,32 +23238,32 @@ SWD+="<tr><td><font face=\"Arial\">Thievery:</td><td><font face=\"Arial\">"+thie
 SWD +="</table></ul><p>Feats:<ul><table>"
 
 
-if (multi_cleric_initiateofthefaith){SWD+="<tr><td><font face=\"Arial\">Initiate of the Faith [multiclass cleric]</td><td><font face=\"Arial\"></td></tr>\r"}
+if (multi_cleric_initiateofthefaith){SWD+="<tr><td><font face=\"Arial\">Initiate of the Faith [multiclass cleric]</td><td><font face=\"Arial\"></td></tr>\r";}
 if (multi_fighter_studentofthesword){SWD+="<tr><td><font face=\"Arial\">Student of the Sword [multiclass fighter]</td><td><font face=\"Arial\"></td></tr>\r"} 
-if (multi_paladin_soldierofthefaith){SWD+="<tr><td><font face=\"Arial\">Soldier of the Faith [multiclass paladin]</td><td><font face=\"Arial\"></td></tr>\r"}
+if (multi_paladin_soldierofthefaith){SWD+="<tr><td><font face=\"Arial\">Soldier of the Faith [multiclass paladin]</td><td><font face=\"Arial\"></td></tr>\r";}
 if (multi_ranger_warriorofthewild){SWD+="<tr><td><font face=\"Arial\">Warrior of the Wild [multiclass ranger]</td><td><font face=\"Arial\"></td></tr>\r"} 
 if (multi_rogue_sneakofshadows){SWD+="<tr><td><font face=\"Arial\">Sneak of Shadows [multiclass rogue]</td><td><font face=\"Arial\"></td></tr>\r"} 
 if (multi_warlock_pactinitiate){SWD+="<tr><td><font face=\"Arial\">Pact Initiate [multiclass warlock]</td><td><font face=\"Arial\"></td></tr>\r"} 
 if (multi_warlord_studentofbattle){SWD+="<tr><td><font face=\"Arial\">Student of Battle [multiclass warlord]</td><td><font face=\"Arial\"></td></tr>\r"} 
-if (multi_wizard_arcaneinitiate){SWD+="<tr><td><font face=\"Arial\">Arcane Initiate [multiclass wizard]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_swordmage_bladeinitiate){SWD+="<tr><td><font face=\"Arial\">Blade Initiate [multiclass swordmage][FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_fighter_battleawareness){SWD+="<tr><td><font face=\"Arial\">Battle Awareness [multiclass fighter][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_warlord_inspiringleader){SWD+="<tr><td><font face=\"Arial\">Inspiring Leader [multiclass warlord][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_rogue_ruthlessefficiency){SWD+="<tr><td><font face=\"Arial\">Ruthless Efficiency [multiclass rogue][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_rogue_slydodge){SWD+="<tr><td><font face=\"Arial\">Sly Dodge [multiclass rogue][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_warlord_tacticalleader){SWD+="<tr><td><font face=\"Arial\">Tactical Leader [multiclass warlord][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_ranger_twobladewarrior){SWD+="<tr><td><font face=\"Arial\">Two-Blade Warrior [multiclass ranger][MP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_invoker_acolyteofdivinesecrets){SWD+="<tr><td><font face=\"Arial\">Acolyte of Divine Secrets [multiclass invoker][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_sorcerer_arcaneprodigy){SWD+="<tr><td><font face=\"Arial\">Arcane Prodigy [multiclass sorcerer][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_bard_bardicdilettante){SWD+="<tr><td><font face=\"Arial\">Bardic Dilettante [multiclass bard][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_barbarian_berserkersfury){SWD+="<tr><td><font face=\"Arial\">Berserker's Fury [multiclass barbarian][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_warden_defenderofthewild){SWD+="<tr><td><font face=\"Arial\">Defender of the Wild [multiclass warden][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_avenger_discipleofdivinewrath){SWD+="<tr><td><font face=\"Arial\">Disciple of Divine Wrath [multiclass avenger][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_druid_initiateoftheoldfaith){SWD+="<tr><td><font face=\"Arial\">Initiate of the Old Faith [multiclass druid][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_shaman_spirittalker){SWD+="<tr><td><font face=\"Arial\">Spirit Talker [multiclass shaman][PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_bard_bardicritualist){SWD+="<tr><td><font face=\"Arial\">Bardic Ritualist [multiclass bard][allows Ritual Casting][AP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_swordmage_heartoftheblade){SWD+="<tr><td><font face=\"Arial\">Heart of the Blade [multiclass swordmage][AP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (multi_wizard_learnedspellcaster){SWD+="<tr><td><font face=\"Arial\">Learned Spellcaster [multiclass wizard][allows Ritual Casting][AP]</td><td><font face=\"Arial\"></td></tr>\r"}
+if (multi_wizard_arcaneinitiate){SWD+="<tr><td><font face=\"Arial\">Arcane Initiate [multiclass wizard]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_swordmage_bladeinitiate){SWD+="<tr><td><font face=\"Arial\">Blade Initiate [multiclass swordmage][FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_fighter_battleawareness){SWD+="<tr><td><font face=\"Arial\">Battle Awareness [multiclass fighter][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_warlord_inspiringleader){SWD+="<tr><td><font face=\"Arial\">Inspiring Leader [multiclass warlord][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_rogue_ruthlessefficiency){SWD+="<tr><td><font face=\"Arial\">Ruthless Efficiency [multiclass rogue][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_rogue_slydodge){SWD+="<tr><td><font face=\"Arial\">Sly Dodge [multiclass rogue][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_warlord_tacticalleader){SWD+="<tr><td><font face=\"Arial\">Tactical Leader [multiclass warlord][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_ranger_twobladewarrior){SWD+="<tr><td><font face=\"Arial\">Two-Blade Warrior [multiclass ranger][MP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_invoker_acolyteofdivinesecrets){SWD+="<tr><td><font face=\"Arial\">Acolyte of Divine Secrets [multiclass invoker][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_sorcerer_arcaneprodigy){SWD+="<tr><td><font face=\"Arial\">Arcane Prodigy [multiclass sorcerer][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_bard_bardicdilettante){SWD+="<tr><td><font face=\"Arial\">Bardic Dilettante [multiclass bard][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_barbarian_berserkersfury){SWD+="<tr><td><font face=\"Arial\">Berserker's Fury [multiclass barbarian][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_warden_defenderofthewild){SWD+="<tr><td><font face=\"Arial\">Defender of the Wild [multiclass warden][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_avenger_discipleofdivinewrath){SWD+="<tr><td><font face=\"Arial\">Disciple of Divine Wrath [multiclass avenger][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_druid_initiateoftheoldfaith){SWD+="<tr><td><font face=\"Arial\">Initiate of the Old Faith [multiclass druid][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_shaman_spirittalker){SWD+="<tr><td><font face=\"Arial\">Spirit Talker [multiclass shaman][PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_bard_bardicritualist){SWD+="<tr><td><font face=\"Arial\">Bardic Ritualist [multiclass bard][allows Ritual Casting][AP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_swordmage_heartoftheblade){SWD+="<tr><td><font face=\"Arial\">Heart of the Blade [multiclass swordmage][AP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (multi_wizard_learnedspellcaster){SWD+="<tr><td><font face=\"Arial\">Learned Spellcaster [multiclass wizard][allows Ritual Casting][AP]</td><td><font face=\"Arial\"></td></tr>\r";}
 if (multi_sorcerer_soulofsorcery)
  {
   stringy="Resist 5 ";
@@ -23301,19 +23281,19 @@ if (multi_sorcerer_soulofsorcery)
  }
 if (multi_warlock_studentofmalediction){SWD+="<tr><td><font face=\"Arial\">Student of Malediction [multiclass warlock]</td><td><font face=\"Arial\"></td></tr>\r"} 
 
-if (multi_spellscarred){SWD+="<tr><td><font face=\"Arial\">Spellscarred [multiclass effect]</td><td><font face=\"Arial\"></td></tr>\r"}
+if (multi_spellscarred){SWD+="<tr><td><font face=\"Arial\">Spellscarred [multiclass effect]</td><td><font face=\"Arial\"></td></tr>\r";}
 
-if (feat_actionsurge){SWD+="<tr><td><font face=\"Arial\">Action Surge</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_agilehunter){SWD+="<tr><td><font face=\"Arial\">Agile Hunter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_alertness){SWD+="<tr><td><font face=\"Arial\">Alertness</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorofbahamut){SWD+="<tr><td><font face=\"Arial\">Armor of Bahamut</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorproficiencychainmail){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Chainmail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorproficiencyleather){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Leather</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorproficiencyhide){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Hide</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorproficiencyplate){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Plate</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorproficiencyscale){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Scale</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_astralfire){SWD+="<tr><td><font face=\"Arial\">Astral Fire</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_avandrasrescue){SWD+="<tr><td><font face=\"Arial\">Avandra's Rescue</td><td><font face=\"Arial\"></td></tr>\r"}
+if (feat_actionsurge){SWD+="<tr><td><font face=\"Arial\">Action Surge</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_agilehunter){SWD+="<tr><td><font face=\"Arial\">Agile Hunter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_alertness){SWD+="<tr><td><font face=\"Arial\">Alertness</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorofbahamut){SWD+="<tr><td><font face=\"Arial\">Armor of Bahamut</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorproficiencychainmail){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Chainmail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorproficiencyleather){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Leather</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorproficiencyhide){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Hide</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorproficiencyplate){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Plate</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorproficiencyscale){SWD+="<tr><td><font face=\"Arial\">Armor Proficiency -- Scale</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_astralfire){SWD+="<tr><td><font face=\"Arial\">Astral Fire</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_avandrasrescue){SWD+="<tr><td><font face=\"Arial\">Avandra's Rescue</td><td><font face=\"Arial\"></td></tr>\r";}
 if (feat_backstabber)
  {
   stringy=""; 
@@ -23325,617 +23305,617 @@ if (feat_backstabber)
    }
   SWD+="<tr><td><font face=\"Arial\">Backstabber"+stringy+"</td><td><font face=\"Arial\"></td></tr>\r"
  }
-if (feat_bladeopportunist){SWD+="<tr><td><font face=\"Arial\">Blade Opportunist</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_burningblizzard){SWD+="<tr><td><font face=\"Arial\">Burning Blizzard</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_combatreflexes){SWD+="<tr><td><font face=\"Arial\">Combat Reflexes</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_corellonsgrace){SWD+="<tr><td><font face=\"Arial\">Corellon's Grace</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_darkfury){SWD+="<tr><td><font face=\"Arial\">Dark Fury</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_defensivemobility){SWD+="<tr><td><font face=\"Arial\">Defensive Mobility</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_distractingshield){SWD+="<tr><td><font face=\"Arial\">Distracting Shield</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dodgegiants){SWD+="<tr><td><font face=\"Arial\">Dodge Giants</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dragonbornfrenzy){SWD+="<tr><td><font face=\"Arial\">Dragonborn Frenzy</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dragonbornsenses){SWD+="<tr><td><font face=\"Arial\">Dragonborn Senses</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_durable){SWD+="<tr><td><font face=\"Arial\">Durable</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dwarvenweapontraining){SWD+="<tr><td><font face=\"Arial\">Dwarven Weapon Training</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_eladrinsoldier){SWD+="<tr><td><font face=\"Arial\">Eladrin Soldier</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_elvenprecision){SWD+="<tr><td><font face=\"Arial\">Elven Precision</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_enlargeddragonbreath){SWD+="<tr><td><font face=\"Arial\">Enlarged Dragonbreath</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_escapeartist){SWD+="<tr><td><font face=\"Arial\">Escape Artist</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_expandedspellbook){SWD+="<tr><td><font face=\"Arial\">Expanded Spellbook</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_farshot){SWD+="<tr><td><font face=\"Arial\">Farshot</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_farthrow){SWD+="<tr><td><font face=\"Arial\">Far Throw</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_fastrunner){SWD+="<tr><td><font face=\"Arial\">Fast Runner</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ferociousrebuke){SWD+="<tr><td><font face=\"Arial\">Ferocious Rebuke</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_groupinsight){SWD+="<tr><td><font face=\"Arial\">Group Insight</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_halflingagility){SWD+="<tr><td><font face=\"Arial\">Halfling Agility</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_harmonyoferathis){SWD+="<tr><td><font face=\"Arial\">Harmony of Erathis</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_healinghands){SWD+="<tr><td><font face=\"Arial\">Healing Hands</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_hellfireblood){SWD+="<tr><td><font face=\"Arial\">Hellfire Blood</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_humanperseverance){SWD+="<tr><td><font face=\"Arial\">Human Perseverance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improveddarkonesblessing){SWD+="<tr><td><font face=\"Arial\">Improved Dark One's Blessing</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedfateofthevoid){SWD+="<tr><td><font face=\"Arial\">Improved Fate of the Void</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedinitiative){SWD+="<tr><td><font face=\"Arial\">Improved Initiative</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedmistystep){SWD+="<tr><td><font face=\"Arial\">Improved Misty Step</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_inspiredrecovery){SWD+="<tr><td><font face=\"Arial\">Inspired Recovery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_iounspoise){SWD+="<tr><td><font face=\"Arial\">Ioun's Poise</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_jackofalltrades){SWD+="<tr><td><font face=\"Arial\">Jack of all Trades</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_kordsfavor){SWD+="<tr><td><font face=\"Arial\">Kord's Favor</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lethalhunter){SWD+="<tr><td><font face=\"Arial\">Lethal Hunter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lightstep){SWD+="<tr><td><font face=\"Arial\">Light Step</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_linguist>0){SWD+="<tr><td><font face=\"Arial\">Linguist x"+feat_linguist+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_longjumper){SWD+="<tr><td><font face=\"Arial\">Long Jumper</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_longinthecrowd){SWD+="<tr><td><font face=\"Arial\">Lost in the Crowd</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_melorastide){SWD+="<tr><td><font face=\"Arial\">Melora's Tide</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_moradinsresolve){SWD+="<tr><td><font face=\"Arial\">Moradin's Resolve</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_mountedcombat){SWD+="<tr><td><font face=\"Arial\">Mounted Combat</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_nimbleblade){SWD+="<tr><td><font face=\"Arial\">Nimble Blade</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_pelorsradiance){SWD+="<tr><td><font face=\"Arial\">Pelor's Radiance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_potentchallenge){SWD+="<tr><td><font face=\"Arial\">Potent Challenge</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_powerattack){SWD+="<tr><td><font face=\"Arial\">Power Attack</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_powerfulcharge){SWD+="<tr><td><font face=\"Arial\">Powerful Charge</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_precisehunter){SWD+="<tr><td><font face=\"Arial\">Precise Hunter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_presstheadvantage){SWD+="<tr><td><font face=\"Arial\">Press the Advantage</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_quickdraw){SWD+="<tr><td><font face=\"Arial\">Quickdraw</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ragingstorm){SWD+="<tr><td><font face=\"Arial\">Raging Storm</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ravenqueensblessing){SWD+="<tr><td><font face=\"Arial\">Raven Queen's Blessing</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ritualcaster){SWD+="<tr><td><font face=\"Arial\">Ritual Caster</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sehaninesreversal){SWD+="<tr><td><font face=\"Arial\">Sehanine's Reversal</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_angharradhsfavor){SWD+="<tr><td><font face=\"Arial\">Angharradh's Favor [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_avoweddragonfoe){SWD+="<tr><td><font face=\"Arial\">Avowed Dragon Foe [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_berronarssalve){SWD+="<tr><td><font face=\"Arial\">Berronar's Salve [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_blessingofsilvanus){SWD+="<tr><td><font face=\"Arial\">Blessing of Silvanus [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_brokenshackles){SWD+="<tr><td><font face=\"Arial\">Broken Shackles [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_chaunteasblessing){SWD+="<tr><td><font face=\"Arial\">Chauntea's Blessing [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_clutchofdarkness){SWD+="<tr><td><font face=\"Arial\">Clutch of Darkness [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_elementalassault){SWD+="<tr><td><font face=\"Arial\">Elemental Assault [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_escalatingassault){SWD+="<tr><td><font face=\"Arial\">Escalating Assault [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_extramanifestationearthsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Earthsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_extramanifestationfiresoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Firesoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_extramanifestationstormsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Stormsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_extramanifestationwatersoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Watersoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_extramanifestationwindsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Windsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_eyesofselune){SWD+="<tr><td><font face=\"Arial\">Eyes of Selune [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_fleetnessofmielikki){SWD+="<tr><td><font face=\"Arial\">Fleetness of Mielikki [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ghostwiseheritage){SWD+="<tr><td><font face=\"Arial\">Ghostwise Heritage [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_glittergoldsgambit){SWD+="<tr><td><font face=\"Arial\">Glittergold's Gambit [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_golddwarfpride){SWD+="<tr><td><font face=\"Arial\">Gold Dwarf Pride [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_gondscraft){SWD+="<tr><td><font face=\"Arial\">Gond's Craft [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ilmatersmartyrdom){SWD+="<tr><td><font face=\"Arial\">Ilmater's Martyrdom [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedswordbond){SWD+="<tr><td><font face=\"Arial\">Improved Swordbond [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_intelligentblademaster){SWD+="<tr><td><font face=\"Arial\">Intelligent Blademaster [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_kelemvorsjudgment){SWD+="<tr><td><font face=\"Arial\">Kelemvor's Judgment [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_manifestresistance){SWD+="<tr><td><font face=\"Arial\">Manifest Resistance [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedrazorswarm){SWD+="<tr><td><font face=\"Arial\">Improved Razor Swarm [MotP]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_moonelfresilience){SWD+="<tr><td><font face=\"Arial\">Moon Elf Resilience [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_oghmasrecall){SWD+="<tr><td><font face=\"Arial\">Oghma's Recall [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_powerofamaunator){SWD+="<tr><td><font face=\"Arial\">Power of Amaunator [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_retributiveshield){SWD+="<tr><td><font face=\"Arial\">Retributive Shield [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_righteousrageoftempus){SWD+="<tr><td><font face=\"Arial\">Righteous Rage of Tempus [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ruthlesshunter){SWD+="<tr><td><font face=\"Arial\">Ruthless Hunter [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_scionofthegods){SWD+="<tr><td><font face=\"Arial\">Scion of the Gods [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sheelaperyroylsgift){SWD+="<tr><td><font face=\"Arial\">Sheela Peryroyl's Gift [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldofshadows){SWD+="<tr><td><font face=\"Arial\">Shield of Shadows [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldthefallen){SWD+="<tr><td><font face=\"Arial\">Shield the Fallen [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_stubbornsurvivor){SWD+="<tr><td><font face=\"Arial\">Stubborn Survivor [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_studentofswordmagic){SWD+="<tr><td><font face=\"Arial\">Student of Swordmagic [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sunelfgrace){SWD+="<tr><td><font face=\"Arial\">Sun Elf Grace [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sunestouch){SWD+="<tr><td><font face=\"Arial\">Sune's Touch [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_tormsjustice){SWD+="<tr><td><font face=\"Arial\">Torm's Justice [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_tymorascoin){SWD+="<tr><td><font face=\"Arial\">Tymora's Coin [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_versatileresistance){SWD+="<tr><td><font face=\"Arial\">Versatile Resistance [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_waukeenssilvertongue){SWD+="<tr><td><font face=\"Arial\">Waukeen's Silver Tongue [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_alchemist){SWD+="<tr><td><font face=\"Arial\">Alchemist [AV]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_alchemistswap){SWD+="<tr><td><font face=\"Arial\">Alchemist [AV][traded away Ritual Caster]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_wildelfluck){SWD+="<tr><td><font face=\"Arial\">Wild Elf Luck [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_woodelfagility){SWD+="<tr><td><font face=\"Arial\">Wood Elf Agility [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_demonwebspiral){SWD+="<tr><td><font face=\"Arial\">Demonweb Spiral [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_distantswordbond){SWD+="<tr><td><font face=\"Arial\">Distant Swordbond [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_doubleaegis){SWD+="<tr><td><font face=\"Arial\">Double Aegis [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improveddarkspiralaura){SWD+="<tr><td><font face=\"Arial\">Improved Dark Spiral Aura [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_masteroffireanddarkness){SWD+="<tr><td><font face=\"Arial\">Master of Fire and Darkness [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_mercilesskiller){SWD+="<tr><td><font face=\"Arial\">Merciless Killer [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_moongleamoath){SWD+="<tr><td><font face=\"Arial\">Moongleam Oath [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shockingflame){SWD+="<tr><td><font face=\"Arial\">Shocking Flame [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_stoneguard){SWD+="<tr><td><font face=\"Arial\">Stoneguard [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_stormrider){SWD+="<tr><td><font face=\"Arial\">Storm Rider [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_venemousheritage){SWD+="<tr><td><font face=\"Arial\">Venemous Heritage [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_warwizardry){SWD+="<tr><td><font face=\"Arial\">War Wizardry [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_agileopportunist){SWD+="<tr><td><font face=\"Arial\">Agile Opportunist [PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_paragondefenses){SWD+="<tr><td><font face=\"Arial\">Paragon Defenses [PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_quickrecovery){SWD+="<tr><td><font face=\"Arial\">Quick Recovery [PH2]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_reservemaneuver){SWD+="<tr><td><font face=\"Arial\">Reserve Maneuver [PH2]</td><td><font face=\"Arial\">Choice:</td></tr>\r"}
-if (feat_doublemanifestation){SWD+="<tr><td><font face=\"Arial\">Double Manifestation [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_totalaegis){SWD+="<tr><td><font face=\"Arial\">Total Aegis [FRPG]</td><td><font face=\"Arial\"></td></tr>\r"}
+if (feat_bladeopportunist){SWD+="<tr><td><font face=\"Arial\">Blade Opportunist</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_burningblizzard){SWD+="<tr><td><font face=\"Arial\">Burning Blizzard</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_combatreflexes){SWD+="<tr><td><font face=\"Arial\">Combat Reflexes</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_corellonsgrace){SWD+="<tr><td><font face=\"Arial\">Corellon's Grace</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_darkfury){SWD+="<tr><td><font face=\"Arial\">Dark Fury</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_defensivemobility){SWD+="<tr><td><font face=\"Arial\">Defensive Mobility</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_distractingshield){SWD+="<tr><td><font face=\"Arial\">Distracting Shield</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dodgegiants){SWD+="<tr><td><font face=\"Arial\">Dodge Giants</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dragonbornfrenzy){SWD+="<tr><td><font face=\"Arial\">Dragonborn Frenzy</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dragonbornsenses){SWD+="<tr><td><font face=\"Arial\">Dragonborn Senses</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_durable){SWD+="<tr><td><font face=\"Arial\">Durable</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dwarvenweapontraining){SWD+="<tr><td><font face=\"Arial\">Dwarven Weapon Training</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_eladrinsoldier){SWD+="<tr><td><font face=\"Arial\">Eladrin Soldier</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_elvenprecision){SWD+="<tr><td><font face=\"Arial\">Elven Precision</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_enlargeddragonbreath){SWD+="<tr><td><font face=\"Arial\">Enlarged Dragonbreath</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_escapeartist){SWD+="<tr><td><font face=\"Arial\">Escape Artist</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_expandedspellbook){SWD+="<tr><td><font face=\"Arial\">Expanded Spellbook</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_farshot){SWD+="<tr><td><font face=\"Arial\">Farshot</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_farthrow){SWD+="<tr><td><font face=\"Arial\">Far Throw</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_fastrunner){SWD+="<tr><td><font face=\"Arial\">Fast Runner</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ferociousrebuke){SWD+="<tr><td><font face=\"Arial\">Ferocious Rebuke</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_groupinsight){SWD+="<tr><td><font face=\"Arial\">Group Insight</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_halflingagility){SWD+="<tr><td><font face=\"Arial\">Halfling Agility</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_harmonyoferathis){SWD+="<tr><td><font face=\"Arial\">Harmony of Erathis</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_healinghands){SWD+="<tr><td><font face=\"Arial\">Healing Hands</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_hellfireblood){SWD+="<tr><td><font face=\"Arial\">Hellfire Blood</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_humanperseverance){SWD+="<tr><td><font face=\"Arial\">Human Perseverance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improveddarkonesblessing){SWD+="<tr><td><font face=\"Arial\">Improved Dark One's Blessing</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedfateofthevoid){SWD+="<tr><td><font face=\"Arial\">Improved Fate of the Void</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedinitiative){SWD+="<tr><td><font face=\"Arial\">Improved Initiative</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedmistystep){SWD+="<tr><td><font face=\"Arial\">Improved Misty Step</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_inspiredrecovery){SWD+="<tr><td><font face=\"Arial\">Inspired Recovery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_iounspoise){SWD+="<tr><td><font face=\"Arial\">Ioun's Poise</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_jackofalltrades){SWD+="<tr><td><font face=\"Arial\">Jack of all Trades</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_kordsfavor){SWD+="<tr><td><font face=\"Arial\">Kord's Favor</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lethalhunter){SWD+="<tr><td><font face=\"Arial\">Lethal Hunter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lightstep){SWD+="<tr><td><font face=\"Arial\">Light Step</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_linguist>0){SWD+="<tr><td><font face=\"Arial\">Linguist x"+feat_linguist+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_longjumper){SWD+="<tr><td><font face=\"Arial\">Long Jumper</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_longinthecrowd){SWD+="<tr><td><font face=\"Arial\">Lost in the Crowd</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_melorastide){SWD+="<tr><td><font face=\"Arial\">Melora's Tide</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_moradinsresolve){SWD+="<tr><td><font face=\"Arial\">Moradin's Resolve</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_mountedcombat){SWD+="<tr><td><font face=\"Arial\">Mounted Combat</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_nimbleblade){SWD+="<tr><td><font face=\"Arial\">Nimble Blade</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_pelorsradiance){SWD+="<tr><td><font face=\"Arial\">Pelor's Radiance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_potentchallenge){SWD+="<tr><td><font face=\"Arial\">Potent Challenge</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_powerattack){SWD+="<tr><td><font face=\"Arial\">Power Attack</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_powerfulcharge){SWD+="<tr><td><font face=\"Arial\">Powerful Charge</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_precisehunter){SWD+="<tr><td><font face=\"Arial\">Precise Hunter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_presstheadvantage){SWD+="<tr><td><font face=\"Arial\">Press the Advantage</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_quickdraw){SWD+="<tr><td><font face=\"Arial\">Quickdraw</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ragingstorm){SWD+="<tr><td><font face=\"Arial\">Raging Storm</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ravenqueensblessing){SWD+="<tr><td><font face=\"Arial\">Raven Queen's Blessing</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ritualcaster){SWD+="<tr><td><font face=\"Arial\">Ritual Caster</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sehaninesreversal){SWD+="<tr><td><font face=\"Arial\">Sehanine's Reversal</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_angharradhsfavor){SWD+="<tr><td><font face=\"Arial\">Angharradh's Favor [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_avoweddragonfoe){SWD+="<tr><td><font face=\"Arial\">Avowed Dragon Foe [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_berronarssalve){SWD+="<tr><td><font face=\"Arial\">Berronar's Salve [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_blessingofsilvanus){SWD+="<tr><td><font face=\"Arial\">Blessing of Silvanus [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_brokenshackles){SWD+="<tr><td><font face=\"Arial\">Broken Shackles [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_chaunteasblessing){SWD+="<tr><td><font face=\"Arial\">Chauntea's Blessing [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_clutchofdarkness){SWD+="<tr><td><font face=\"Arial\">Clutch of Darkness [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_elementalassault){SWD+="<tr><td><font face=\"Arial\">Elemental Assault [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_escalatingassault){SWD+="<tr><td><font face=\"Arial\">Escalating Assault [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_extramanifestationearthsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Earthsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_extramanifestationfiresoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Firesoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_extramanifestationstormsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Stormsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_extramanifestationwatersoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Watersoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_extramanifestationwindsoul){SWD+="<tr><td><font face=\"Arial\">Extra Manifestation: Windsoul [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_eyesofselune){SWD+="<tr><td><font face=\"Arial\">Eyes of Selune [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_fleetnessofmielikki){SWD+="<tr><td><font face=\"Arial\">Fleetness of Mielikki [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ghostwiseheritage){SWD+="<tr><td><font face=\"Arial\">Ghostwise Heritage [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_glittergoldsgambit){SWD+="<tr><td><font face=\"Arial\">Glittergold's Gambit [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_golddwarfpride){SWD+="<tr><td><font face=\"Arial\">Gold Dwarf Pride [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_gondscraft){SWD+="<tr><td><font face=\"Arial\">Gond's Craft [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ilmatersmartyrdom){SWD+="<tr><td><font face=\"Arial\">Ilmater's Martyrdom [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedswordbond){SWD+="<tr><td><font face=\"Arial\">Improved Swordbond [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_intelligentblademaster){SWD+="<tr><td><font face=\"Arial\">Intelligent Blademaster [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_kelemvorsjudgment){SWD+="<tr><td><font face=\"Arial\">Kelemvor's Judgment [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_manifestresistance){SWD+="<tr><td><font face=\"Arial\">Manifest Resistance [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedrazorswarm){SWD+="<tr><td><font face=\"Arial\">Improved Razor Swarm [MotP]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_moonelfresilience){SWD+="<tr><td><font face=\"Arial\">Moon Elf Resilience [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_oghmasrecall){SWD+="<tr><td><font face=\"Arial\">Oghma's Recall [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_powerofamaunator){SWD+="<tr><td><font face=\"Arial\">Power of Amaunator [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_retributiveshield){SWD+="<tr><td><font face=\"Arial\">Retributive Shield [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_righteousrageoftempus){SWD+="<tr><td><font face=\"Arial\">Righteous Rage of Tempus [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ruthlesshunter){SWD+="<tr><td><font face=\"Arial\">Ruthless Hunter [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_scionofthegods){SWD+="<tr><td><font face=\"Arial\">Scion of the Gods [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sheelaperyroylsgift){SWD+="<tr><td><font face=\"Arial\">Sheela Peryroyl's Gift [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldofshadows){SWD+="<tr><td><font face=\"Arial\">Shield of Shadows [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldthefallen){SWD+="<tr><td><font face=\"Arial\">Shield the Fallen [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_stubbornsurvivor){SWD+="<tr><td><font face=\"Arial\">Stubborn Survivor [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_studentofswordmagic){SWD+="<tr><td><font face=\"Arial\">Student of Swordmagic [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sunelfgrace){SWD+="<tr><td><font face=\"Arial\">Sun Elf Grace [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sunestouch){SWD+="<tr><td><font face=\"Arial\">Sune's Touch [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_tormsjustice){SWD+="<tr><td><font face=\"Arial\">Torm's Justice [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_tymorascoin){SWD+="<tr><td><font face=\"Arial\">Tymora's Coin [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_versatileresistance){SWD+="<tr><td><font face=\"Arial\">Versatile Resistance [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_waukeenssilvertongue){SWD+="<tr><td><font face=\"Arial\">Waukeen's Silver Tongue [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_alchemist){SWD+="<tr><td><font face=\"Arial\">Alchemist [AV]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_alchemistswap){SWD+="<tr><td><font face=\"Arial\">Alchemist [AV][traded away Ritual Caster]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_wildelfluck){SWD+="<tr><td><font face=\"Arial\">Wild Elf Luck [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_woodelfagility){SWD+="<tr><td><font face=\"Arial\">Wood Elf Agility [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_demonwebspiral){SWD+="<tr><td><font face=\"Arial\">Demonweb Spiral [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_distantswordbond){SWD+="<tr><td><font face=\"Arial\">Distant Swordbond [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_doubleaegis){SWD+="<tr><td><font face=\"Arial\">Double Aegis [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improveddarkspiralaura){SWD+="<tr><td><font face=\"Arial\">Improved Dark Spiral Aura [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_masteroffireanddarkness){SWD+="<tr><td><font face=\"Arial\">Master of Fire and Darkness [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_mercilesskiller){SWD+="<tr><td><font face=\"Arial\">Merciless Killer [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_moongleamoath){SWD+="<tr><td><font face=\"Arial\">Moongleam Oath [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shockingflame){SWD+="<tr><td><font face=\"Arial\">Shocking Flame [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_stoneguard){SWD+="<tr><td><font face=\"Arial\">Stoneguard [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_stormrider){SWD+="<tr><td><font face=\"Arial\">Storm Rider [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_venemousheritage){SWD+="<tr><td><font face=\"Arial\">Venemous Heritage [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_warwizardry){SWD+="<tr><td><font face=\"Arial\">War Wizardry [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_agileopportunist){SWD+="<tr><td><font face=\"Arial\">Agile Opportunist [PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_paragondefenses){SWD+="<tr><td><font face=\"Arial\">Paragon Defenses [PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_quickrecovery){SWD+="<tr><td><font face=\"Arial\">Quick Recovery [PH2]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_reservemaneuver){SWD+="<tr><td><font face=\"Arial\">Reserve Maneuver [PH2]</td><td><font face=\"Arial\">Choice:</td></tr>\r";}
+if (feat_doublemanifestation){SWD+="<tr><td><font face=\"Arial\">Double Manifestation [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_totalaegis){SWD+="<tr><td><font face=\"Arial\">Total Aegis [FRPG]</td><td><font face=\"Arial\"></td></tr>\r";}
 
 
 
-if (feat_aggressiveassault){SWD+="<tr><td><font face=\"Arial\">Aggressive Assault [MP]</td><td></td></tr>\r"}
-if (feat_anklecutter){SWD+="<tr><td><font face=\"Arial\">Ankle Cutter [MP]</td><td></td></tr>\r"}
-if (feat_beastguidance){SWD+="<tr><td><font face=\"Arial\">Beast Guidance [MP]</td><td></td></tr>\r"}
-if (feat_beastprotector){SWD+="<tr><td><font face=\"Arial\">Beast Protector [MP]</td><td></td></tr>\r"}
-if (feat_beasttrainingathletics){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Athletics [MP]</td><td></td></tr>\r"}
-if (feat_beasttrainingendurance){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Endurance [MP]</td><td></td></tr>\r"}
-if (feat_beasttrainingperception){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Perception [MP]</td><td></td></tr>\r"}
-if (feat_beasttrainingstealth){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Stealth [MP]</td><td></td></tr>\r"}
-if (feat_bloodiedinvigoration){SWD+="<tr><td><font face=\"Arial\">Bloodied Invigoration [MP]</td><td></td></tr>\r"}
-if (feat_bolsteringinspiration){SWD+="<tr><td><font face=\"Arial\">Bolstering Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_bracingbreath){SWD+="<tr><td><font face=\"Arial\">Bracing Breath [MP]</td><td></td></tr>\r"}
-if (feat_bravuraspirit){SWD+="<tr><td><font face=\"Arial\">Bravura Spirit [MP]</td><td></td></tr>\r"}
-if (feat_breathresistantbeast){SWD+="<tr><td><font face=\"Arial\">Breath Resistant Beast [MP]</td><td></td></tr>\r"}
-if (feat_brutalaccuracy){SWD+="<tr><td><font face=\"Arial\">Brutal Accuracy [MP]</td><td></td></tr>\r"}
-if (feat_brutalteamwork){SWD+="<tr><td><font face=\"Arial\">Brutal Teamwork [MP]</td><td></td></tr>\r"}
-if (feat_brutalwound){SWD+="<tr><td><font face=\"Arial\">Brutal Wound [MP]</td><td></td></tr>\r"}
-if (feat_camouflage){SWD+="<tr><td><font face=\"Arial\">Camouflage [MP]</td><td></td></tr>\r"}
-if (feat_commandthedarkness){SWD+="<tr><td><font face=\"Arial\">Command the Darkness [MP]</td><td></td></tr>\r"}
-if (feat_coordinatedopportunity){SWD+="<tr><td><font face=\"Arial\">Coordinated Opportunity [MP]</td><td></td></tr>\r"}
-if (feat_cunningambusher){SWD+="<tr><td><font face=\"Arial\">Cunning Ambusher [MP]</td><td></td></tr>\r"}
-if (feat_darkfiretargeting){SWD+="<tr><td><font face=\"Arial\">Darkfire Targeting [MP]</td><td></td></tr>\r"}
-if (feat_deepgash){SWD+="<tr><td><font face=\"Arial\">Deep Gash [MP]</td><td></td></tr>\r"}
-if (feat_defensiveresilience){SWD+="<tr><td><font face=\"Arial\">Defensive Resilience [MP]</td><td></td></tr>\r"}
-if (feat_devotedchallenge){SWD+="<tr><td><font face=\"Arial\">Devoted Challenge [MP]</td><td></td></tr>\r"}
-if (feat_dirtyfighting){SWD+="<tr><td><font face=\"Arial\">Dirty Fighting [MP]</td><td></td></tr>\r"}
-if (feat_draggingflail){SWD+="<tr><td><font face=\"Arial\">Dragging Flail [MP]</td><td></td></tr>\r"}
-if (feat_drowbeastmastery){SWD+="<tr><td><font face=\"Arial\">Drow Beast Mastery [MP]</td><td></td></tr>\r"}
-if (feat_dwarfstoneblood){SWD+="<tr><td><font face=\"Arial\">Dwarf Stoneblood [MP]</td><td></td></tr>\r"}
-if (feat_dwarftrapsmith){SWD+="<tr><td><font face=\"Arial\">Dwarf trapsmith [MP]</td><td></td></tr>\r"}
-if (feat_elvenbeastmastery){SWD+="<tr><td><font face=\"Arial\">Elven Beastmastery [MP]</td><td></td></tr>\r"}
-if (feat_experttracker){SWD+="<tr><td><font face=\"Arial\">Expert Tracker [MP]</td><td></td></tr>\r"}
-if (feat_feyblades){SWD+="<tr><td><font face=\"Arial\">Fey Blades [MP]</td><td></td></tr>\r"}
-if (feat_feycommand){SWD+="<tr><td><font face=\"Arial\">Fey Command [MP]</td><td></td></tr>\r"}
-if (feat_feyborncompanion){SWD+="<tr><td><font face=\"Arial\">Feyborn Companion [MP]</td><td></td></tr>\r"}
-if (feat_fiendishcompanion){SWD+="<tr><td><font face=\"Arial\">Fiendish Companion [MP]</td><td></td></tr>\r"}
-if (feat_groupassault){SWD+="<tr><td><font face=\"Arial\">Group Assault [MP]</td><td></td></tr>\r"}
-if (feat_groupquarry){SWD+="<tr><td><font face=\"Arial\">Group Quarry [MP]</td><td></td></tr>\r"}
-if (feat_grouprattling){SWD+="<tr><td><font face=\"Arial\">Group Rattling [MP]</td><td></td></tr>\r"}
-if (feat_halflingstalwart){SWD+="<tr><td><font face=\"Arial\">Halfling Stalwart [MP]</td><td></td></tr>\r"}
-if (feat_humanbeastmastery){SWD+="<tr><td><font face=\"Arial\">Human Beastmastery [MP]</td><td></td></tr>\r"}
-if (feat_hunterofwindandwave){SWD+="<tr><td><font face=\"Arial\">Hunter of Wind and Wave [MP]</td><td></td></tr>\r"}
-if (feat_huntersaim){SWD+="<tr><td><font face=\"Arial\">Hunter's Aim [MP]</td><td></td></tr>\r"}
-if (feat_improvedbravura){SWD+="<tr><td><font face=\"Arial\">Improved Bravura [MP]</td><td></td></tr>\r"}
-if (feat_improvedinspiration){SWD+="<tr><td><font face=\"Arial\">Improved Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_improvedinspiringword){SWD+="<tr><td><font face=\"Arial\">Improved Inspiring Word [MP]</td><td></td></tr>\r"}
-if (feat_improvedresources){SWD+="<tr><td><font face=\"Arial\">Improved Resources [MP]</td><td></td></tr>\r"}
-if (feat_improvedtactics){SWD+="<tr><td><font face=\"Arial\">Improved Tactics [MP]</td><td></td></tr>\r"}
-if (feat_improvedvigor){SWD+="<tr><td><font face=\"Arial\">Improved Vigor [MP]</td><td></td></tr>\r"}
-if (feat_inspireddefense){SWD+="<tr><td><font face=\"Arial\">Inspired Defense [MP]</td><td></td></tr>\r"}
-if (feat_inspiredtactics){SWD+="<tr><td><font face=\"Arial\">Inspired Tactics [MP]</td><td></td></tr>\r"}
-if (feat_intothefraymp){SWD+="<tr><td><font face=\"Arial\">Into the Fray [MP]</td><td></td></tr>\r"}
-if (feat_keeperofstorm){SWD+="<tr><td><font face=\"Arial\">Keeper of Storm [MP]</td><td></td></tr>\r"}
-if (feat_leadingfire){SWD+="<tr><td><font face=\"Arial\">Leading Fire [MP]</td><td></td></tr>\r"}
-if (feat_lendmight){SWD+="<tr><td><font face=\"Arial\">Lend Might [MP]</td><td></td></tr>\r"}
-if (feat_lingeringwrath){SWD+="<tr><td><font face=\"Arial\">Lingering Wrath [MP]</td><td></td></tr>\r"}
-if (feat_longswordfinesse){SWD+="<tr><td><font face=\"Arial\">Longsword Finesse [MP]</td><td></td></tr>\r"}
-if (feat_luckyskirmisher){SWD+="<tr><td><font face=\"Arial\">Lucky Skirmisher [MP]</td><td></td></tr>\r"}
-if (feat_martialalacrity){SWD+="<tr><td><font face=\"Arial\">Martial Alacrity [MP]</td><td></td></tr>\r"}
-if (feat_martialfreedom){SWD+="<tr><td><font face=\"Arial\">Martial Freedom [MP]</td><td></td></tr>\r"}
-if (feat_masterofrumblingearth){SWD+="<tr><td><font face=\"Arial\">Master of Rumbling Earth [MP]</td><td></td></tr>\r"}
-if (feat_nimblecompanion){SWD+="<tr><td><font face=\"Arial\">Nimble Companion [MP]</td><td></td></tr>\r"}
-if (feat_offensiveresilience){SWD+="<tr><td><font face=\"Arial\">Offensive Resilience [MP]</td><td></td></tr>\r"}
-if (feat_opportunisticaccuracy){SWD+="<tr><td><font face=\"Arial\">Opportunistic Accuracy [MP]</td><td></td></tr>\r"}
-if (feat_polearmmomentum){SWD+="<tr><td><font face=\"Arial\">Polearm Momentum [MP]</td><td></td></tr>\r"}
-if (feat_predatoryaction){SWD+="<tr><td><font face=\"Arial\">Predatory Action [MP]</td><td></td></tr>\r"}
-if (feat_primestrike){SWD+="<tr><td><font face=\"Arial\">Prime Strike [MP]</td><td></td></tr>\r"}
-if (feat_rashsneakattack){SWD+="<tr><td><font face=\"Arial\">Rash Sneak Attack [MP]</td><td></td></tr>\r"}
-if (feat_rattlingwrath){SWD+="<tr><td><font face=\"Arial\">Rattling Wrath [MP]</td><td></td></tr>\r"}
-if (feat_reapingblade){SWD+="<tr><td><font face=\"Arial\">Reaping Blade [MP]</td><td></td></tr>\r"}
-if (feat_recklessscramble){SWD+="<tr><td><font face=\"Arial\">Reckless Scramble [MP]</td><td></td></tr>\r"}
-if (feat_ruthlessinjury){SWD+="<tr><td><font face=\"Arial\">Ruthless Injury [MP]</td><td></td></tr>\r"}
-if (feat_savinginspiration){SWD+="<tr><td><font face=\"Arial\">Saving Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_secureencampment){SWD+="<tr><td><font face=\"Arial\">Secure Encampment [MP]</td><td></td></tr>\r"}
-if (feat_shielddefense){SWD+="<tr><td><font face=\"Arial\">Shield Defense [MP]</td><td></td></tr>\r"}
-if (feat_sidewaysdefense){SWD+="<tr><td><font face=\"Arial\">Sideways Defense [MP]</td><td></td></tr>\r"}
-if (feat_slayingaction){SWD+="<tr><td><font face=\"Arial\">Slaying Action [MP]</td><td></td></tr>\r"}
-if (feat_sneakyaccuracy){SWD+="<tr><td><font face=\"Arial\">Sneaky Acuracy [MP]</td><td></td></tr>\r"}
-if (feat_speedyresponse){SWD+="<tr><td><font face=\"Arial\">Speedy Response [MP]</td><td></td></tr>\r"}
-if (feat_streetthug){SWD+="<tr><td><font face=\"Arial\">Street Thug [MP]</td><td></td></tr>\r"}
-if (feat_surprisingcharge){SWD+="<tr><td><font face=\"Arial\">Surprising Charge [MP]</td><td></td></tr>\r"}
-if (feat_tacticalinspiration){SWD+="<tr><td><font face=\"Arial\">Tactical Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_takemeasure){SWD+="<tr><td><font face=\"Arial\">Take Measure [MP]</td><td></td></tr>\r"}
-if (feat_thunderhammer){SWD+="<tr><td><font face=\"Arial\">Thunder Hammer [MP]</td><td></td></tr>\r"}
-if (feat_thundertuskcompanion){SWD+="<tr><td><font face=\"Arial\">Thundertusk Companion [MP]</td><td></td></tr>\r"}
-if (feat_trapsense){SWD+="<tr><td><font face=\"Arial\">Trap Sense [MP]</td><td></td></tr>\r"}
-if (feat_tunnelstalker){SWD+="<tr><td><font face=\"Arial\">Tunnel Stalker [MP]</td><td></td></tr>\r"}
-if (feat_twofistedshooter){SWD+="<tr><td><font face=\"Arial\">Two Fisted Shooter [MP]</td><td></td></tr>\r"}
-if (feat_unbalancingwrath){SWD+="<tr><td><font face=\"Arial\">Unbalancing Wrath [MP]</td><td></td></tr>\r"}
-if (feat_vengefulbeast){SWD+="<tr><td><font face=\"Arial\">Vengeful Beast [MP]</td><td></td></tr>\r"}
-if (feat_victorsconfidence){SWD+="<tr><td><font face=\"Arial\">Victor's Confidence [MP]</td><td></td></tr>\r"}
-if (feat_wielderofpiercingflame){SWD+="<tr><td><font face=\"Arial\">Wielder of Piercing Flame [MP]</td><td></td></tr>\r"}
+if (feat_aggressiveassault){SWD+="<tr><td><font face=\"Arial\">Aggressive Assault [MP]</td><td></td></tr>\r";}
+if (feat_anklecutter){SWD+="<tr><td><font face=\"Arial\">Ankle Cutter [MP]</td><td></td></tr>\r";}
+if (feat_beastguidance){SWD+="<tr><td><font face=\"Arial\">Beast Guidance [MP]</td><td></td></tr>\r";}
+if (feat_beastprotector){SWD+="<tr><td><font face=\"Arial\">Beast Protector [MP]</td><td></td></tr>\r";}
+if (feat_beasttrainingathletics){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Athletics [MP]</td><td></td></tr>\r";}
+if (feat_beasttrainingendurance){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Endurance [MP]</td><td></td></tr>\r";}
+if (feat_beasttrainingperception){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Perception [MP]</td><td></td></tr>\r";}
+if (feat_beasttrainingstealth){SWD+="<tr><td><font face=\"Arial\">Beast Training -- Stealth [MP]</td><td></td></tr>\r";}
+if (feat_bloodiedinvigoration){SWD+="<tr><td><font face=\"Arial\">Bloodied Invigoration [MP]</td><td></td></tr>\r";}
+if (feat_bolsteringinspiration){SWD+="<tr><td><font face=\"Arial\">Bolstering Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_bracingbreath){SWD+="<tr><td><font face=\"Arial\">Bracing Breath [MP]</td><td></td></tr>\r";}
+if (feat_bravuraspirit){SWD+="<tr><td><font face=\"Arial\">Bravura Spirit [MP]</td><td></td></tr>\r";}
+if (feat_breathresistantbeast){SWD+="<tr><td><font face=\"Arial\">Breath Resistant Beast [MP]</td><td></td></tr>\r";}
+if (feat_brutalaccuracy){SWD+="<tr><td><font face=\"Arial\">Brutal Accuracy [MP]</td><td></td></tr>\r";}
+if (feat_brutalteamwork){SWD+="<tr><td><font face=\"Arial\">Brutal Teamwork [MP]</td><td></td></tr>\r";}
+if (feat_brutalwound){SWD+="<tr><td><font face=\"Arial\">Brutal Wound [MP]</td><td></td></tr>\r";}
+if (feat_camouflage){SWD+="<tr><td><font face=\"Arial\">Camouflage [MP]</td><td></td></tr>\r";}
+if (feat_commandthedarkness){SWD+="<tr><td><font face=\"Arial\">Command the Darkness [MP]</td><td></td></tr>\r";}
+if (feat_coordinatedopportunity){SWD+="<tr><td><font face=\"Arial\">Coordinated Opportunity [MP]</td><td></td></tr>\r";}
+if (feat_cunningambusher){SWD+="<tr><td><font face=\"Arial\">Cunning Ambusher [MP]</td><td></td></tr>\r";}
+if (feat_darkfiretargeting){SWD+="<tr><td><font face=\"Arial\">Darkfire Targeting [MP]</td><td></td></tr>\r";}
+if (feat_deepgash){SWD+="<tr><td><font face=\"Arial\">Deep Gash [MP]</td><td></td></tr>\r";}
+if (feat_defensiveresilience){SWD+="<tr><td><font face=\"Arial\">Defensive Resilience [MP]</td><td></td></tr>\r";}
+if (feat_devotedchallenge){SWD+="<tr><td><font face=\"Arial\">Devoted Challenge [MP]</td><td></td></tr>\r";}
+if (feat_dirtyfighting){SWD+="<tr><td><font face=\"Arial\">Dirty Fighting [MP]</td><td></td></tr>\r";}
+if (feat_draggingflail){SWD+="<tr><td><font face=\"Arial\">Dragging Flail [MP]</td><td></td></tr>\r";}
+if (feat_drowbeastmastery){SWD+="<tr><td><font face=\"Arial\">Drow Beast Mastery [MP]</td><td></td></tr>\r";}
+if (feat_dwarfstoneblood){SWD+="<tr><td><font face=\"Arial\">Dwarf Stoneblood [MP]</td><td></td></tr>\r";}
+if (feat_dwarftrapsmith){SWD+="<tr><td><font face=\"Arial\">Dwarf trapsmith [MP]</td><td></td></tr>\r";}
+if (feat_elvenbeastmastery){SWD+="<tr><td><font face=\"Arial\">Elven Beastmastery [MP]</td><td></td></tr>\r";}
+if (feat_experttracker){SWD+="<tr><td><font face=\"Arial\">Expert Tracker [MP]</td><td></td></tr>\r";}
+if (feat_feyblades){SWD+="<tr><td><font face=\"Arial\">Fey Blades [MP]</td><td></td></tr>\r";}
+if (feat_feycommand){SWD+="<tr><td><font face=\"Arial\">Fey Command [MP]</td><td></td></tr>\r";}
+if (feat_feyborncompanion){SWD+="<tr><td><font face=\"Arial\">Feyborn Companion [MP]</td><td></td></tr>\r";}
+if (feat_fiendishcompanion){SWD+="<tr><td><font face=\"Arial\">Fiendish Companion [MP]</td><td></td></tr>\r";}
+if (feat_groupassault){SWD+="<tr><td><font face=\"Arial\">Group Assault [MP]</td><td></td></tr>\r";}
+if (feat_groupquarry){SWD+="<tr><td><font face=\"Arial\">Group Quarry [MP]</td><td></td></tr>\r";}
+if (feat_grouprattling){SWD+="<tr><td><font face=\"Arial\">Group Rattling [MP]</td><td></td></tr>\r";}
+if (feat_halflingstalwart){SWD+="<tr><td><font face=\"Arial\">Halfling Stalwart [MP]</td><td></td></tr>\r";}
+if (feat_humanbeastmastery){SWD+="<tr><td><font face=\"Arial\">Human Beastmastery [MP]</td><td></td></tr>\r";}
+if (feat_hunterofwindandwave){SWD+="<tr><td><font face=\"Arial\">Hunter of Wind and Wave [MP]</td><td></td></tr>\r";}
+if (feat_huntersaim){SWD+="<tr><td><font face=\"Arial\">Hunter's Aim [MP]</td><td></td></tr>\r";}
+if (feat_improvedbravura){SWD+="<tr><td><font face=\"Arial\">Improved Bravura [MP]</td><td></td></tr>\r";}
+if (feat_improvedinspiration){SWD+="<tr><td><font face=\"Arial\">Improved Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_improvedinspiringword){SWD+="<tr><td><font face=\"Arial\">Improved Inspiring Word [MP]</td><td></td></tr>\r";}
+if (feat_improvedresources){SWD+="<tr><td><font face=\"Arial\">Improved Resources [MP]</td><td></td></tr>\r";}
+if (feat_improvedtactics){SWD+="<tr><td><font face=\"Arial\">Improved Tactics [MP]</td><td></td></tr>\r";}
+if (feat_improvedvigor){SWD+="<tr><td><font face=\"Arial\">Improved Vigor [MP]</td><td></td></tr>\r";}
+if (feat_inspireddefense){SWD+="<tr><td><font face=\"Arial\">Inspired Defense [MP]</td><td></td></tr>\r";}
+if (feat_inspiredtactics){SWD+="<tr><td><font face=\"Arial\">Inspired Tactics [MP]</td><td></td></tr>\r";}
+if (feat_intothefraymp){SWD+="<tr><td><font face=\"Arial\">Into the Fray [MP]</td><td></td></tr>\r";}
+if (feat_keeperofstorm){SWD+="<tr><td><font face=\"Arial\">Keeper of Storm [MP]</td><td></td></tr>\r";}
+if (feat_leadingfire){SWD+="<tr><td><font face=\"Arial\">Leading Fire [MP]</td><td></td></tr>\r";}
+if (feat_lendmight){SWD+="<tr><td><font face=\"Arial\">Lend Might [MP]</td><td></td></tr>\r";}
+if (feat_lingeringwrath){SWD+="<tr><td><font face=\"Arial\">Lingering Wrath [MP]</td><td></td></tr>\r";}
+if (feat_longswordfinesse){SWD+="<tr><td><font face=\"Arial\">Longsword Finesse [MP]</td><td></td></tr>\r";}
+if (feat_luckyskirmisher){SWD+="<tr><td><font face=\"Arial\">Lucky Skirmisher [MP]</td><td></td></tr>\r";}
+if (feat_martialalacrity){SWD+="<tr><td><font face=\"Arial\">Martial Alacrity [MP]</td><td></td></tr>\r";}
+if (feat_martialfreedom){SWD+="<tr><td><font face=\"Arial\">Martial Freedom [MP]</td><td></td></tr>\r";}
+if (feat_masterofrumblingearth){SWD+="<tr><td><font face=\"Arial\">Master of Rumbling Earth [MP]</td><td></td></tr>\r";}
+if (feat_nimblecompanion){SWD+="<tr><td><font face=\"Arial\">Nimble Companion [MP]</td><td></td></tr>\r";}
+if (feat_offensiveresilience){SWD+="<tr><td><font face=\"Arial\">Offensive Resilience [MP]</td><td></td></tr>\r";}
+if (feat_opportunisticaccuracy){SWD+="<tr><td><font face=\"Arial\">Opportunistic Accuracy [MP]</td><td></td></tr>\r";}
+if (feat_polearmmomentum){SWD+="<tr><td><font face=\"Arial\">Polearm Momentum [MP]</td><td></td></tr>\r";}
+if (feat_predatoryaction){SWD+="<tr><td><font face=\"Arial\">Predatory Action [MP]</td><td></td></tr>\r";}
+if (feat_primestrike){SWD+="<tr><td><font face=\"Arial\">Prime Strike [MP]</td><td></td></tr>\r";}
+if (feat_rashsneakattack){SWD+="<tr><td><font face=\"Arial\">Rash Sneak Attack [MP]</td><td></td></tr>\r";}
+if (feat_rattlingwrath){SWD+="<tr><td><font face=\"Arial\">Rattling Wrath [MP]</td><td></td></tr>\r";}
+if (feat_reapingblade){SWD+="<tr><td><font face=\"Arial\">Reaping Blade [MP]</td><td></td></tr>\r";}
+if (feat_recklessscramble){SWD+="<tr><td><font face=\"Arial\">Reckless Scramble [MP]</td><td></td></tr>\r";}
+if (feat_ruthlessinjury){SWD+="<tr><td><font face=\"Arial\">Ruthless Injury [MP]</td><td></td></tr>\r";}
+if (feat_savinginspiration){SWD+="<tr><td><font face=\"Arial\">Saving Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_secureencampment){SWD+="<tr><td><font face=\"Arial\">Secure Encampment [MP]</td><td></td></tr>\r";}
+if (feat_shielddefense){SWD+="<tr><td><font face=\"Arial\">Shield Defense [MP]</td><td></td></tr>\r";}
+if (feat_sidewaysdefense){SWD+="<tr><td><font face=\"Arial\">Sideways Defense [MP]</td><td></td></tr>\r";}
+if (feat_slayingaction){SWD+="<tr><td><font face=\"Arial\">Slaying Action [MP]</td><td></td></tr>\r";}
+if (feat_sneakyaccuracy){SWD+="<tr><td><font face=\"Arial\">Sneaky Acuracy [MP]</td><td></td></tr>\r";}
+if (feat_speedyresponse){SWD+="<tr><td><font face=\"Arial\">Speedy Response [MP]</td><td></td></tr>\r";}
+if (feat_streetthug){SWD+="<tr><td><font face=\"Arial\">Street Thug [MP]</td><td></td></tr>\r";}
+if (feat_surprisingcharge){SWD+="<tr><td><font face=\"Arial\">Surprising Charge [MP]</td><td></td></tr>\r";}
+if (feat_tacticalinspiration){SWD+="<tr><td><font face=\"Arial\">Tactical Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_takemeasure){SWD+="<tr><td><font face=\"Arial\">Take Measure [MP]</td><td></td></tr>\r";}
+if (feat_thunderhammer){SWD+="<tr><td><font face=\"Arial\">Thunder Hammer [MP]</td><td></td></tr>\r";}
+if (feat_thundertuskcompanion){SWD+="<tr><td><font face=\"Arial\">Thundertusk Companion [MP]</td><td></td></tr>\r";}
+if (feat_trapsense){SWD+="<tr><td><font face=\"Arial\">Trap Sense [MP]</td><td></td></tr>\r";}
+if (feat_tunnelstalker){SWD+="<tr><td><font face=\"Arial\">Tunnel Stalker [MP]</td><td></td></tr>\r";}
+if (feat_twofistedshooter){SWD+="<tr><td><font face=\"Arial\">Two Fisted Shooter [MP]</td><td></td></tr>\r";}
+if (feat_unbalancingwrath){SWD+="<tr><td><font face=\"Arial\">Unbalancing Wrath [MP]</td><td></td></tr>\r";}
+if (feat_vengefulbeast){SWD+="<tr><td><font face=\"Arial\">Vengeful Beast [MP]</td><td></td></tr>\r";}
+if (feat_victorsconfidence){SWD+="<tr><td><font face=\"Arial\">Victor's Confidence [MP]</td><td></td></tr>\r";}
+if (feat_wielderofpiercingflame){SWD+="<tr><td><font face=\"Arial\">Wielder of Piercing Flame [MP]</td><td></td></tr>\r";}
 
 
-if (feat_advantageofcunning){SWD+="<tr><td><font face=\"Arial\">Advantage of Cunning [PH2]</td><td></td></tr>\r"}
-if (feat_angerunleashed){SWD+="<tr><td><font face=\"Arial\">Anger Unleashed [PH2]</td><td></td></tr>\r"}
-if (feat_arcanespellfury){SWD+="<tr><td><font face=\"Arial\">Arcane Spell Fury [PH2]</td><td></td></tr>\r"}
-if (feat_auspiciouslineage){SWD+="<tr><td><font face=\"Arial\">Auspicious Lineage [PH2]</td><td></td></tr>\r"}
-if (feat_bardicknowledge){SWD+="<tr><td><font face=\"Arial\">Bardic Knowledge [PH2]</td><td></td></tr>\r"}
-if (feat_blurringclaws){SWD+="<tr><td><font face=\"Arial\">Blurring Claws [PH2]</td><td></td></tr>\r"}
-if (feat_combatmedic){SWD+="<tr><td><font face=\"Arial\">Combat Medic [PH2]</td><td></td></tr>\r"}
-if (feat_coordinatedexplosion){SWD+="<tr><td><font face=\"Arial\">Coordinated Explosion [PH2]</td><td></td></tr>\r"}
-if (feat_crushingearthstrength){SWD+="<tr><td><font face=\"Arial\">Crushing Earthstrength [PH2]</td><td></td></tr>\r"}
-if (feat_deadlyrage){SWD+="<tr><td><font face=\"Arial\">Deadly Rage [PH2]</td><td></td></tr>\r"}
-if (feat_disciplinedwildsoul){SWD+="<tr><td><font face=\"Arial\">Disciplined Wild Soul [PH2]</td><td></td></tr>\r"}
-if (feat_distantadvantage){SWD+="<tr><td><font face=\"Arial\">Distant Advantage [PH2]</td><td></td></tr>\r"}
-if (feat_echoesofthunder){SWD+="<tr><td><font face=\"Arial\">Echoes of Thunder [PH2]</td><td></td></tr>\r"}
-if (feat_enragedboarform){SWD+="<tr><td><font face=\"Arial\">Enraged Boar Form [PH2]</td><td></td></tr>\r"}
-if (feat_expertritualist){SWD+="<tr><td><font face=\"Arial\">Expert Ritualist [PH2]</td><td></td></tr>\r"}
-if (feat_ferocioustigerform){SWD+="<tr><td><font face=\"Arial\">Ferocious Tiger Form [PH2]</td><td></td></tr>\r"}
-if (feat_feytrickster){SWD+="<tr><td><font face=\"Arial\">Fey Trickster [PH2]</td><td></td></tr>\r"}
-if (feat_goliathgreatweaponprowess){SWD+="<tr><td><font face=\"Arial\">Goliath Great Weaponprowess [PH2]</td><td></td></tr>\r"}
-if (feat_gorebrutecharge){SWD+="<tr><td><font face=\"Arial\">Gorebrute Charge [PH2]</td><td></td></tr>\r"}
-if (feat_groupstealth){SWD+="<tr><td><font face=\"Arial\">Group Stealth [PH2]</td><td></td></tr>\r"}
-if (feat_guaranteedretribution){SWD+="<tr><td><font face=\"Arial\">Guaranteed Retribution [PH2]</td><td></td></tr>\r"}
+if (feat_advantageofcunning){SWD+="<tr><td><font face=\"Arial\">Advantage of Cunning [PH2]</td><td></td></tr>\r";}
+if (feat_angerunleashed){SWD+="<tr><td><font face=\"Arial\">Anger Unleashed [PH2]</td><td></td></tr>\r";}
+if (feat_arcanespellfury){SWD+="<tr><td><font face=\"Arial\">Arcane Spell Fury [PH2]</td><td></td></tr>\r";}
+if (feat_auspiciouslineage){SWD+="<tr><td><font face=\"Arial\">Auspicious Lineage [PH2]</td><td></td></tr>\r";}
+if (feat_bardicknowledge){SWD+="<tr><td><font face=\"Arial\">Bardic Knowledge [PH2]</td><td></td></tr>\r";}
+if (feat_blurringclaws){SWD+="<tr><td><font face=\"Arial\">Blurring Claws [PH2]</td><td></td></tr>\r";}
+if (feat_combatmedic){SWD+="<tr><td><font face=\"Arial\">Combat Medic [PH2]</td><td></td></tr>\r";}
+if (feat_coordinatedexplosion){SWD+="<tr><td><font face=\"Arial\">Coordinated Explosion [PH2]</td><td></td></tr>\r";}
+if (feat_crushingearthstrength){SWD+="<tr><td><font face=\"Arial\">Crushing Earthstrength [PH2]</td><td></td></tr>\r";}
+if (feat_deadlyrage){SWD+="<tr><td><font face=\"Arial\">Deadly Rage [PH2]</td><td></td></tr>\r";}
+if (feat_disciplinedwildsoul){SWD+="<tr><td><font face=\"Arial\">Disciplined Wild Soul [PH2]</td><td></td></tr>\r";}
+if (feat_distantadvantage){SWD+="<tr><td><font face=\"Arial\">Distant Advantage [PH2]</td><td></td></tr>\r";}
+if (feat_echoesofthunder){SWD+="<tr><td><font face=\"Arial\">Echoes of Thunder [PH2]</td><td></td></tr>\r";}
+if (feat_enragedboarform){SWD+="<tr><td><font face=\"Arial\">Enraged Boar Form [PH2]</td><td></td></tr>\r";}
+if (feat_expertritualist){SWD+="<tr><td><font face=\"Arial\">Expert Ritualist [PH2]</td><td></td></tr>\r";}
+if (feat_ferocioustigerform){SWD+="<tr><td><font face=\"Arial\">Ferocious Tiger Form [PH2]</td><td></td></tr>\r";}
+if (feat_feytrickster){SWD+="<tr><td><font face=\"Arial\">Fey Trickster [PH2]</td><td></td></tr>\r";}
+if (feat_goliathgreatweaponprowess){SWD+="<tr><td><font face=\"Arial\">Goliath Great Weaponprowess [PH2]</td><td></td></tr>\r";}
+if (feat_gorebrutecharge){SWD+="<tr><td><font face=\"Arial\">Gorebrute Charge [PH2]</td><td></td></tr>\r";}
+if (feat_groupstealth){SWD+="<tr><td><font face=\"Arial\">Group Stealth [PH2]</td><td></td></tr>\r";}
+if (feat_guaranteedretribution){SWD+="<tr><td><font face=\"Arial\">Guaranteed Retribution [PH2]</td><td></td></tr>\r";}
 x=1;if (total_levels>=15){x=2;}; if (total_levels>=25){x=3;}
-if (feat_implementexpertisedagger){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Dagger [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a dagger as implement</td></tr>\r"}
-if (feat_implementexpertiseholysymbol){SWD+="<tr><td><font face=\"Arial\">Implement Expertise --Holy Symbol [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a holy symbol</td></tr>\r"}
-if (feat_implementexpertisemusic){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Music [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a musical implement</td></tr>\r"}
-if (feat_implementexpertiseorb){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Orb [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using an orb</td></tr>\r"}
-if (feat_implementexpertiserod){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Rod [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a rod</td></tr>\r"}
-if (feat_implementexpertisestaff){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Staff [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a staff</td></tr>\r"}
-if (feat_implementexpertisetome){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Tome [PH2 / AP];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a tome</td></tr>\r"}
-if (feat_implementexpertisetotem){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Totem [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a totem</td></tr>\r"}
-if (feat_implementexpertisewand){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Wand [PH2];</td><td><font face=\"Arial\"><font size=\"-1\"> Remember your +"+x+" attack bonus using a wand</td></tr>\r"}
-if (feat_improvedarmoroffaith){SWD+="<tr><td><font face=\"Arial\">Improved Armor of Faith [PH2]</td><td></td></tr>\r"}
-if (feat_improvedbullrush){SWD+="<tr><td><font face=\"Arial\">Improved Bull Rush [PH2]</td><td></td></tr>\r"}
-if (feat_improveddragonsoul){SWD+="<tr><td><font face=\"Arial\">Improved Dragon Soul [PH2]</td><td></td></tr>\r"}
-if (feat_improvedgrab){SWD+="<tr><td><font face=\"Arial\">Improved Grab [PH2]</td><td></td></tr>\r"}
-if (feat_improvedmajesticword){SWD+="<tr><td><font face=\"Arial\">Improved Majestic Word [PH2]</td><td></td></tr>\r"}
-if (feat_improvedragebloodvigor){SWD+="<tr><td><font face=\"Arial\">Improved Rageblood Vigor [PH2]</td><td></td></tr>\r"}
-if (feat_improvedroaroftriumph){SWD+="<tr><td><font face=\"Arial\">Improved Roar of Triumph [PH2]</td><td></td></tr>\r"}
-if (feat_insightfulpreservation){SWD+="<tr><td><font face=\"Arial\">Insightful Preservation [PH2]</td><td></td></tr>\r"}
-if (feat_invigoratingpursuit){SWD+="<tr><td><font face=\"Arial\">Invigorating Pursuit [PH2]</td><td></td></tr>\r"}
-if (feat_invokerdefense){SWD+="<tr><td><font face=\"Arial\">Invoker Defense [PH2]</td><td></td></tr>\r"}
-if (feat_markingsoftheblessed){SWD+="<tr><td><font face=\"Arial\">Markings of the Blessed [PH2]</td><td></td></tr>\r"}
-if (feat_markingsofthevictor){SWD+="<tr><td><font face=\"Arial\">Markings of the Victor [PH2]</td><td></td></tr>\r"}
-if (feat_meleetraining){SWD+="<tr><td><font face=\"Arial\">Melee Training [PH2]</td><td></td></tr>\r"}
-if (feat_oncomingstorm){SWD+="<tr><td><font face=\"Arial\">Oncoming Storm [PH2]</td><td></td></tr>\r"}
-if (feat_potentrebirth){SWD+="<tr><td><font face=\"Arial\">Potent Rebirth [PH2]</td><td></td></tr>\r"}
-if (feat_primalfury){SWD+="<tr><td><font face=\"Arial\">Primal Fury [PH2]</td><td></td></tr>\r"}
-if (feat_primalinstinct){SWD+="<tr><td><font face=\"Arial\">Primal Instinct [PH2]</td><td></td></tr>\r"}
-if (feat_protectorspiritadept){SWD+="<tr><td><font face=\"Arial\">Protector Spirit Adept [PH2]</td><td></td></tr>\r"}
-if (feat_radiantpower){SWD+="<tr><td><font face=\"Arial\">Radiant Power [PH2]</td><td></td></tr>\r"}
-if (feat_resonatingcovenant){SWD+="<tr><td><font face=\"Arial\">Resonating Covenant [PH2]</td><td></td></tr>\r"}
-if (feat_restfulhealing){SWD+="<tr><td><font face=\"Arial\">Restful Healing [PH2]</td><td></td></tr>\r"}
-if (feat_revitalizingfontoflife){SWD+="<tr><td><font face=\"Arial\">Revitalizing Font of Life [PH2]</td><td></td></tr>\r"}
-if (feat_risingfury){SWD+="<tr><td><font face=\"Arial\">Rising Fury [PH2]</td><td></td></tr>\r"}
-if (feat_savageassault){SWD+="<tr><td><font face=\"Arial\">Savage Assault [PH2]</td><td></td></tr>\r"}
-if (feat_scouringwrath){SWD+="<tr><td><font face=\"Arial\">Scouring Wrath [PH2]</td><td></td></tr>\r"}
-if (feat_shadowskulk){SWD+="<tr><td><font face=\"Arial\">Shadow Skulk [PH2]</td><td></td></tr>\r"}
-if (feat_sharedhealingspirit){SWD+="<tr><td><font face=\"Arial\">Shared Healing Spirit [PH2]</td><td></td></tr>\r"}
-if (feat_sorcerousbladechanneling){SWD+="<tr><td><font face=\"Arial\">Sorcerous Blade Channeling [PH2]</td><td></td></tr>\r"}
-if (feat_speedloader){SWD+="<tr><td><font face=\"Arial\">Speed Loader [PH2]</td><td></td></tr>\r"}
-if (feat_spritspeaker){SWD+="<tr><td><font face=\"Arial\">Sprit Speaker [PH2]</td><td></td></tr>\r"}
-if (feat_stalkerspiritadept){SWD+="<tr><td><font face=\"Arial\">Stalker Spirit Adept [PH2]</td><td></td></tr>\r"}
-if (feat_strengthofvalor){SWD+="<tr><td><font face=\"Arial\">Strength of Valor [PH2]</td><td></td></tr>\r"}
-if (feat_suddenroots){SWD+="<tr><td><font face=\"Arial\">Sudden Roots [PH2]</td><td></td></tr>\r"}
-if (feat_surgingflame){SWD+="<tr><td><font face=\"Arial\">Surging Flame [PH2]</td><td></td></tr>\r"}
-if (feat_thirstforbattle){SWD+="<tr><td><font face=\"Arial\">Thirst for Battle [PH2]</td><td></td></tr>\r"}
-if (feat_timelyrespite){SWD+="<tr><td><font face=\"Arial\">Timely Respite [PH2]</td><td></td></tr>\r"}
-if (feat_twoweaponthreat){SWD+="<tr><td><font face=\"Arial\">Two Weapon Threat [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertiseaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Axe [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisebow){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Bow [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisecrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Crossbow [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertiseflail){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Flail [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisehammer){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Hammer [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertiseheavyblade){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Heavy Blade [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertiselightblade){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Light Blade [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisemace){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Mace [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisepick){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Pick [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisepolearm){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Polearm [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisesling){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Sling [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisespear){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Spear [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertisestaff){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Staff [PH2]</td><td></td></tr>\r"}
-if (feat_weaponexpertiseunarmed){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Unarmed [PH2]</td><td></td></tr>\r"}
-if (feat_wildbloodcunning){SWD+="<tr><td><font face=\"Arial\">Wildblood Cunning [PH2]</td><td></td></tr>\r"}
-if (feat_wildsenses){SWD+="<tr><td><font face=\"Arial\">Wild Senses [PH2]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencydagger){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Dagger [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencymusic){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Music [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencyorb){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Orb [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencyrod){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Rod [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencystaff){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Staff [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencytome){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Tome [AP]</td><td></td></tr>\r"}
-if (feat_arcaneimplementproficiencywand){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Wand [AP]</td><td></td></tr>\r"}
-if (feat_dualimplementspellcaster){SWD+="<tr><td><font face=\"Arial\">Dual Implement Spellcaster [AP]</td><td></td></tr>\r"}
+if (feat_implementexpertisedagger){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Dagger [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a dagger as implement</td></tr>\r";}
+if (feat_implementexpertiseholysymbol){SWD+="<tr><td><font face=\"Arial\">Implement Expertise --Holy Symbol [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a holy symbol</td></tr>\r";}
+if (feat_implementexpertisemusic){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Music [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a musical implement</td></tr>\r";}
+if (feat_implementexpertiseorb){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Orb [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using an orb</td></tr>\r";}
+if (feat_implementexpertiserod){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Rod [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a rod</td></tr>\r";}
+if (feat_implementexpertisestaff){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Staff [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a staff</td></tr>\r";}
+if (feat_implementexpertisetome){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Tome [PH2 / AP];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a tome</td></tr>\r";}
+if (feat_implementexpertisetotem){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Totem [PH2];</td><td><font face=\"Arial\"><font size=\"-1\">  Remember your +"+x+" attack bonus using a totem</td></tr>\r";}
+if (feat_implementexpertisewand){SWD+="<tr><td><font face=\"Arial\">Implement Expertise -- Wand [PH2];</td><td><font face=\"Arial\"><font size=\"-1\"> Remember your +"+x+" attack bonus using a wand</td></tr>\r";}
+if (feat_improvedarmoroffaith){SWD+="<tr><td><font face=\"Arial\">Improved Armor of Faith [PH2]</td><td></td></tr>\r";}
+if (feat_improvedbullrush){SWD+="<tr><td><font face=\"Arial\">Improved Bull Rush [PH2]</td><td></td></tr>\r";}
+if (feat_improveddragonsoul){SWD+="<tr><td><font face=\"Arial\">Improved Dragon Soul [PH2]</td><td></td></tr>\r";}
+if (feat_improvedgrab){SWD+="<tr><td><font face=\"Arial\">Improved Grab [PH2]</td><td></td></tr>\r";}
+if (feat_improvedmajesticword){SWD+="<tr><td><font face=\"Arial\">Improved Majestic Word [PH2]</td><td></td></tr>\r";}
+if (feat_improvedragebloodvigor){SWD+="<tr><td><font face=\"Arial\">Improved Rageblood Vigor [PH2]</td><td></td></tr>\r";}
+if (feat_improvedroaroftriumph){SWD+="<tr><td><font face=\"Arial\">Improved Roar of Triumph [PH2]</td><td></td></tr>\r";}
+if (feat_insightfulpreservation){SWD+="<tr><td><font face=\"Arial\">Insightful Preservation [PH2]</td><td></td></tr>\r";}
+if (feat_invigoratingpursuit){SWD+="<tr><td><font face=\"Arial\">Invigorating Pursuit [PH2]</td><td></td></tr>\r";}
+if (feat_invokerdefense){SWD+="<tr><td><font face=\"Arial\">Invoker Defense [PH2]</td><td></td></tr>\r";}
+if (feat_markingsoftheblessed){SWD+="<tr><td><font face=\"Arial\">Markings of the Blessed [PH2]</td><td></td></tr>\r";}
+if (feat_markingsofthevictor){SWD+="<tr><td><font face=\"Arial\">Markings of the Victor [PH2]</td><td></td></tr>\r";}
+if (feat_meleetraining){SWD+="<tr><td><font face=\"Arial\">Melee Training [PH2]</td><td></td></tr>\r";}
+if (feat_oncomingstorm){SWD+="<tr><td><font face=\"Arial\">Oncoming Storm [PH2]</td><td></td></tr>\r";}
+if (feat_potentrebirth){SWD+="<tr><td><font face=\"Arial\">Potent Rebirth [PH2]</td><td></td></tr>\r";}
+if (feat_primalfury){SWD+="<tr><td><font face=\"Arial\">Primal Fury [PH2]</td><td></td></tr>\r";}
+if (feat_primalinstinct){SWD+="<tr><td><font face=\"Arial\">Primal Instinct [PH2]</td><td></td></tr>\r";}
+if (feat_protectorspiritadept){SWD+="<tr><td><font face=\"Arial\">Protector Spirit Adept [PH2]</td><td></td></tr>\r";}
+if (feat_radiantpower){SWD+="<tr><td><font face=\"Arial\">Radiant Power [PH2]</td><td></td></tr>\r";}
+if (feat_resonatingcovenant){SWD+="<tr><td><font face=\"Arial\">Resonating Covenant [PH2]</td><td></td></tr>\r";}
+if (feat_restfulhealing){SWD+="<tr><td><font face=\"Arial\">Restful Healing [PH2]</td><td></td></tr>\r";}
+if (feat_revitalizingfontoflife){SWD+="<tr><td><font face=\"Arial\">Revitalizing Font of Life [PH2]</td><td></td></tr>\r";}
+if (feat_risingfury){SWD+="<tr><td><font face=\"Arial\">Rising Fury [PH2]</td><td></td></tr>\r";}
+if (feat_savageassault){SWD+="<tr><td><font face=\"Arial\">Savage Assault [PH2]</td><td></td></tr>\r";}
+if (feat_scouringwrath){SWD+="<tr><td><font face=\"Arial\">Scouring Wrath [PH2]</td><td></td></tr>\r";}
+if (feat_shadowskulk){SWD+="<tr><td><font face=\"Arial\">Shadow Skulk [PH2]</td><td></td></tr>\r";}
+if (feat_sharedhealingspirit){SWD+="<tr><td><font face=\"Arial\">Shared Healing Spirit [PH2]</td><td></td></tr>\r";}
+if (feat_sorcerousbladechanneling){SWD+="<tr><td><font face=\"Arial\">Sorcerous Blade Channeling [PH2]</td><td></td></tr>\r";}
+if (feat_speedloader){SWD+="<tr><td><font face=\"Arial\">Speed Loader [PH2]</td><td></td></tr>\r";}
+if (feat_spritspeaker){SWD+="<tr><td><font face=\"Arial\">Sprit Speaker [PH2]</td><td></td></tr>\r";}
+if (feat_stalkerspiritadept){SWD+="<tr><td><font face=\"Arial\">Stalker Spirit Adept [PH2]</td><td></td></tr>\r";}
+if (feat_strengthofvalor){SWD+="<tr><td><font face=\"Arial\">Strength of Valor [PH2]</td><td></td></tr>\r";}
+if (feat_suddenroots){SWD+="<tr><td><font face=\"Arial\">Sudden Roots [PH2]</td><td></td></tr>\r";}
+if (feat_surgingflame){SWD+="<tr><td><font face=\"Arial\">Surging Flame [PH2]</td><td></td></tr>\r";}
+if (feat_thirstforbattle){SWD+="<tr><td><font face=\"Arial\">Thirst for Battle [PH2]</td><td></td></tr>\r";}
+if (feat_timelyrespite){SWD+="<tr><td><font face=\"Arial\">Timely Respite [PH2]</td><td></td></tr>\r";}
+if (feat_twoweaponthreat){SWD+="<tr><td><font face=\"Arial\">Two Weapon Threat [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertiseaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Axe [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisebow){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Bow [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisecrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Crossbow [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertiseflail){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Flail [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisehammer){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Hammer [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertiseheavyblade){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Heavy Blade [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertiselightblade){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Light Blade [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisemace){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Mace [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisepick){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Pick [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisepolearm){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Polearm [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisesling){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Sling [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisespear){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Spear [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertisestaff){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Staff [PH2]</td><td></td></tr>\r";}
+if (feat_weaponexpertiseunarmed){SWD+="<tr><td><font face=\"Arial\">Weapon Expertise -- Unarmed [PH2]</td><td></td></tr>\r";}
+if (feat_wildbloodcunning){SWD+="<tr><td><font face=\"Arial\">Wildblood Cunning [PH2]</td><td></td></tr>\r";}
+if (feat_wildsenses){SWD+="<tr><td><font face=\"Arial\">Wild Senses [PH2]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencydagger){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Dagger [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencymusic){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Music [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencyorb){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Orb [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencyrod){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Rod [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencystaff){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Staff [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencytome){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Tome [AP]</td><td></td></tr>\r";}
+if (feat_arcaneimplementproficiencywand){SWD+="<tr><td><font face=\"Arial\">Arcane Implement Proficiency -- Wand [AP]</td><td></td></tr>\r";}
+if (feat_dualimplementspellcaster){SWD+="<tr><td><font face=\"Arial\">Dual Implement Spellcaster [AP]</td><td></td></tr>\r";}
 
 
 
-if (feat_agiletempest){SWD+="<tr><td><font face=\"Arial\">Agile Tempest [MP]</td><td></td></tr>\r"}
-if (feat_avandrasgift){SWD+="<tr><td><font face=\"Arial\">Avandra's Gift [MP]</td><td></td></tr>\r"}
-if (feat_avengingspirit){SWD+="<tr><td><font face=\"Arial\">Avenging Spirit [MP]</td><td></td></tr>\r"}
-if (feat_bleedingbackstab){SWD+="<tr><td><font face=\"Arial\">Bleeding Backstab [MP]</td><td></td></tr>\r"}
-if (feat_bleedingprecision){SWD+="<tr><td><font face=\"Arial\">Bleeding Precision [MP]</td><td></td></tr>\r"}
-if (feat_bloodyinspiration){SWD+="<tr><td><font face=\"Arial\">Bloody Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_bloodytenacity){SWD+="<tr><td><font face=\"Arial\">Bloody Tenacity [MP]</td><td></td></tr>\r"}
-if (feat_chainmailagility){SWD+="<tr><td><font face=\"Arial\">Chainmail Agility [MP]</td><td></td></tr>\r"}
-if (feat_combatopening){SWD+="<tr><td><font face=\"Arial\">Combat Opening [MP]</td><td></td></tr>\r"}
-if (feat_culltheweak){SWD+="<tr><td><font face=\"Arial\">Cull the Weak [MP]</td><td></td></tr>\r"}
-if (feat_darkhunter){SWD+="<tr><td><font face=\"Arial\">Dark Hunter [MP]</td><td></td></tr>\r"}
-if (feat_darkjumper){SWD+="<tr><td><font face=\"Arial\">Dark Jumper [MP]</td><td></td></tr>\r"}
-if (feat_dauntingchallenge){SWD+="<tr><td><font face=\"Arial\">Daunting Challenge [MP]</td><td></td></tr>\r"}
-if (feat_defensivesurge){SWD+="<tr><td><font face=\"Arial\">Defensive Surge [MP]</td><td></td></tr>\r"}
-if (feat_distractingcompanion){SWD+="<tr><td><font face=\"Arial\">Distracting Companion [MP]</td><td></td></tr>\r"}
-if (feat_draconicarrogance){SWD+="<tr><td><font face=\"Arial\">Draconic Arrogance [MP]</td><td></td></tr>\r"}
-if (feat_dragonbreathwarrior){SWD+="<tr><td><font face=\"Arial\">Dragonbreath Warrior [MP]</td><td></td></tr>\r"}
-if (feat_elementalcompanions){SWD+="<tr><td><font face=\"Arial\">Elemental Companions [MP]</td><td></td></tr>\r"}
-if (feat_elementalguardian){SWD+="<tr><td><font face=\"Arial\">Elemental Guardian [MP]</td><td></td></tr>\r"}
-if (feat_enduringwallop){SWD+="<tr><td><font face=\"Arial\">Enduring Wallop [MP]</td><td></td></tr>\r"}
-if (feat_evasivefootwork){SWD+="<tr><td><font face=\"Arial\">Evasive Footwork [MP]</td><td></td></tr>\r"}
-if (feat_feycharge){SWD+="<tr><td><font face=\"Arial\">Fey Charge [MP]</td><td></td></tr>\r"}
-if (feat_feygambit){SWD+="<tr><td><font face=\"Arial\">Fey Gambit [MP]</td><td></td></tr>\r"}
-if (feat_feytactics){SWD+="<tr><td><font face=\"Arial\">Fey Tactics [MP]</td><td></td></tr>\r"}
-if (feat_fiendishdefender){SWD+="<tr><td><font face=\"Arial\">Fiendish Defender [MP]</td><td></td></tr>\r"}
-if (feat_grit){SWD+="<tr><td><font face=\"Arial\">Grit [MP]</td><td></td></tr>\r"}
-if (feat_groupflanking){SWD+="<tr><td><font face=\"Arial\">Group Flanking [MP]</td><td></td></tr>\r"}
-if (feat_halflingbeastmastery){SWD+="<tr><td><font face=\"Arial\">Halfling Beast Mastery [MP]</td><td></td></tr>\r"}
-if (feat_huntersadvantage){SWD+="<tr><td><font face=\"Arial\">Hunter's Advantage [MP]</td><td></td></tr>\r"}
-if (feat_huntersresurgence){SWD+="<tr><td><font face=\"Arial\">Hunter's Resurgence [MP]</td><td></td></tr>\r"}
-if (feat_impetuouscharger){SWD+="<tr><td><font face=\"Arial\">Impetuous Charger [MP]</td><td></td></tr>\r"}
-if (feat_infernalsneakattack){SWD+="<tr><td><font face=\"Arial\">Infernal Sneak Attack [MP]</td><td></td></tr>\r"}
-if (feat_markedscourge){SWD+="<tr><td><font face=\"Arial\">Marked Scourge [MP]</td><td></td></tr>\r"}
-if (feat_mightybattlerage){SWD+="<tr><td><font face=\"Arial\">Mighty Battlerage [MP]</td><td></td></tr>\r"}
-if (feat_opportunisticarcher){SWD+="<tr><td><font face=\"Arial\">Opportunistic Archer [MP]</td><td></td></tr>\r"}
-if (feat_opportunisticsneakattack){SWD+="<tr><td><font face=\"Arial\">Opportunistic Sneak Attack [MP]</td><td></td></tr>\r"}
-if (feat_phalanxwarrior){SWD+="<tr><td><font face=\"Arial\">Phalanx Warrior [MP]</td><td></td></tr>\r"}
-if (feat_preternaturalsenses){SWD+="<tr><td><font face=\"Arial\">Preternatural Senses [MP]</td><td></td></tr>\r"}
-if (feat_primequarry){SWD+="<tr><td><font face=\"Arial\">Prime Quarry [MP]</td><td></td></tr>\r"}
-if (feat_primeslayer){SWD+="<tr><td><font face=\"Arial\">Prime Slayer [MP]</td><td></td></tr>\r"}
-if (feat_protectivebeast){SWD+="<tr><td><font face=\"Arial\">Protective Beast [MP]</td><td></td></tr>\r"}
-if (feat_recklessattacker){SWD+="<tr><td><font face=\"Arial\">Reckless Attacker [MP]</td><td></td></tr>\r"}
-if (feat_reliableresources){SWD+="<tr><td><font face=\"Arial\">Reliable Resources [MP]</td><td></td></tr>\r"}
-if (feat_rogueweaponmastery){SWD+="<tr><td><font face=\"Arial\">Rogue Weaponmastery [MP]</td><td></td></tr>\r"}
-if (feat_roundaboutcharge){SWD+="<tr><td><font face=\"Arial\">Roundabout Charge [MP]</td><td></td></tr>\r"}
-if (feat_steadfasttacatics){SWD+="<tr><td><font face=\"Arial\">Steadfast Tacatics [MP]</td><td></td></tr>\r"}
-if (feat_stonefootreprisal){SWD+="<tr><td><font face=\"Arial\">Stonefoot Reprisal [MP]</td><td></td></tr>\r"}
-if (feat_sturdybeast){SWD+="<tr><td><font face=\"Arial\">Sturdy Beast [MP]</td><td></td></tr>\r"}
-if (feat_vitalinspiration){SWD+="<tr><td><font face=\"Arial\">Vital Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_warlordsformation){SWD+="<tr><td><font face=\"Arial\">Warlord's Formation [MP]</td><td></td></tr>\r"}
-if (feat_wrathfulhunter){SWD+="<tr><td><font face=\"Arial\">Wrathful Hunter [MP]</td><td></td></tr>\r"}
-if (feat_twoweaponopening){SWD+="<tr><td><font face=\"Arial\">Two Weapon Opening [PH2]</td><td></td></tr>\r"}
-if (feat_versatilemaster){SWD+="<tr><td><font face=\"Arial\">Versatile Master [PH2]</td><td></td></tr>\r"}
-if (feat_actiongrant){SWD+="<tr><td><font face=\"Arial\">Action Grant [MP]</td><td></td></tr>\r"}
-if (feat_aggressiveleadership){SWD+="<tr><td><font face=\"Arial\">Aggressive Leadership [MP]</td><td></td></tr>\r"}
-if (feat_artfulprovocation){SWD+="<tr><td><font face=\"Arial\">Artful Provocation [MP]</td><td></td></tr>\r"}
-if (feat_boldspirit){SWD+="<tr><td><font face=\"Arial\">Bold Spirit [MP]</td><td></td></tr>\r"}
-if (feat_brutaladvantage){SWD+="<tr><td><font face=\"Arial\">Brutal Advantage [MP]</td><td></td></tr>\r"}
-if (feat_calltoglory){SWD+="<tr><td><font face=\"Arial\">Call to Glory [MP]</td><td></td></tr>\r"}
-if (feat_channeledbattlerage){SWD+="<tr><td><font face=\"Arial\">Channeled Battlerage [MP]</td><td></td></tr>\r"}
-if (feat_correctingaim){SWD+="<tr><td><font face=\"Arial\">Correcting Aim [MP]</td><td></td></tr>\r"}
-if (feat_darkfirewarrior){SWD+="<tr><td><font face=\"Arial\">Darkfire Warrior [MP]</td><td></td></tr>\r"}
-if (feat_dragonwarrior){SWD+="<tr><td><font face=\"Arial\">Dragon Warrior [MP]</td><td></td></tr>\r"}
-if (feat_elementalwarrior){SWD+="<tr><td><font face=\"Arial\">Elemental Warrior [MP]</td><td></td></tr>\r"}
-if (feat_epicrecovery){SWD+="<tr><td><font face=\"Arial\">Epic Recovery [MP]</td><td></td></tr>\r"}
-if (feat_feywildwarrior){SWD+="<tr><td><font face=\"Arial\">Feywild Warrior [MP]</td><td></td></tr>\r"}
-if (feat_fortuneswarrior){SWD+="<tr><td><font face=\"Arial\">Fortune's Warrior [MP]</td><td></td></tr>\r"}
-if (feat_hawkeyewarrior){SWD+="<tr><td><font face=\"Arial\">Hawkeye Warrior [MP]</td><td></td></tr>\r"}
-if (feat_improvedprimeshot){SWD+="<tr><td><font face=\"Arial\">Improved Prime Shot [MP]</td><td></td></tr>\r"}
-if (feat_infernalwarrior){SWD+="<tr><td><font face=\"Arial\">Infernal Warrior [MP]</td><td></td></tr>\r"}
-if (feat_invigoratingexploit){SWD+="<tr><td><font face=\"Arial\">Invigorating Exploit [MP]</td><td></td></tr>\r"}
-if (feat_knockbackswing){SWD+="<tr><td><font face=\"Arial\">Knockback Swing [MP]</td><td></td></tr>\r"}
-if (feat_lastingadvantage){SWD+="<tr><td><font face=\"Arial\">Lasting Advantage [MP]</td><td></td></tr>\r"}
-if (feat_martialmastery){SWD+="<tr><td><font face=\"Arial\">Martial Mastery [MP]</td><td></td></tr>\r"}
-if (feat_martialresolve){SWD+="<tr><td><font face=\"Arial\">Martial Resolve [MP]</td><td></td></tr>\r"}
-if (feat_mobilewarrior){SWD+="<tr><td><font face=\"Arial\">Mobile Warrior [MP]</td><td></td></tr>\r"}
-if (feat_onewithshadow){SWD+="<tr><td><font face=\"Arial\">One with Shadow [MP]</td><td></td></tr>\r"}
-if (feat_peerlesshunter){SWD+="<tr><td><font face=\"Arial\">Peerless Hunter [MP]</td><td></td></tr>\r"}
-if (feat_practicedreliability){SWD+="<tr><td><font face=\"Arial\">Practiced Reliability [MP]</td><td></td></tr>\r"}
-if (feat_primehunter){SWD+="<tr><td><font face=\"Arial\">Prime Hunter [MP]</td><td></td></tr>\r"}
-if (feat_protectiveleadership){SWD+="<tr><td><font face=\"Arial\">Protective Leadership [MP]</td><td></td></tr>\r"}
-if (feat_quickbeastcommand){SWD+="<tr><td><font face=\"Arial\">Quick Beast Command [MP]</td><td></td></tr>\r"}
-if (feat_rattlingexploit){SWD+="<tr><td><font face=\"Arial\">Rattling Exploit [MP]</td><td></td></tr>\r"}
-if (feat_reachingwhirlwind){SWD+="<tr><td><font face=\"Arial\">Reaching Whirlwind [MP]</td><td></td></tr>\r"}
-if (feat_rendingtempest){SWD+="<tr><td><font face=\"Arial\">Rending Tempest [MP]</td><td></td></tr>\r"}
-if (feat_ruthlessterror){SWD+="<tr><td><font face=\"Arial\">Ruthless Terror [MP]</td><td></td></tr>\r"}
-if (feat_staggeringshot){SWD+="<tr><td><font face=\"Arial\">Staggering Shot [MP]</td><td></td></tr>\r"}
-if (feat_stoneheartwarrior){SWD+="<tr><td><font face=\"Arial\">Stoneheart Warrior [MP]</td><td></td></tr>\r"}
-if (feat_supremeinspiration){SWD+="<tr><td><font face=\"Arial\">Supreme Inspiration [MP]</td><td></td></tr>\r"}
-if (feat_surpriseaction){SWD+="<tr><td><font face=\"Arial\">Surprise Action [MP]</td><td></td></tr>\r"}
-if (feat_tacticalcunning){SWD+="<tr><td><font face=\"Arial\">Tactical Cunning [MP]</td><td></td></tr>\r"}
-if (feat_tacticalinsight){SWD+="<tr><td><font face=\"Arial\">Tactical Insight [MP]</td><td></td></tr>\r"}
-if (feat_timelyrevival){SWD+="<tr><td><font face=\"Arial\">Timely Revival [MP]</td><td></td></tr>\r"}
-if (feat_unstoppablecharge){SWD+="<tr><td><font face=\"Arial\">Unstoppable Charge [MP]</td><td></td></tr>\r"}
-if (feat_whirlwindsneakattack){SWD+="<tr><td><font face=\"Arial\">Whirlwind Sneak Attack [MP]</td><td></td></tr>\r"}
-if (feat_bowmastery){SWD+="<tr><td><font face=\"Arial\">Bow Mastery [PH2]</td><td></td></tr>\r"}
-if (feat_epicfortitude){SWD+="<tr><td><font face=\"Arial\">Epic Fortitude [PH2]</td><td></td></tr>\r"}
-if (feat_epicreflexes){SWD+="<tr><td><font face=\"Arial\">Epic Reflexes [PH2]</td><td></td></tr>\r"}
-if (feat_epicwill){SWD+="<tr><td><font face=\"Arial\">Epic Will [PH2]</td><td></td></tr>\r"}
-if (feat_indomitablewill){SWD+="<tr><td><font face=\"Arial\">Indomitable Will [PH2]</td><td></td></tr>\r"}
-if (feat_opportunereflexes){SWD+="<tr><td><font face=\"Arial\">Opportune Reflexes [PH2]</td><td></td></tr>\r"}
-if (feat_robustdefenses){SWD+="<tr><td><font face=\"Arial\">Robust Defenses [PH2]</td><td></td></tr>\r"}
-if (feat_unyieldingfortitude){SWD+="<tr><td><font face=\"Arial\">Unyielding Fortitude [PH2]</td><td></td></tr>\r"}
-if (feat_battleacumen){SWD+="<tr><td><font face=\"Arial\">Battle Acumen [MP]</td><td></td></tr>\r"}
-if (feat_battleinstructor){SWD+="<tr><td><font face=\"Arial\">Battle Instructor [MP]</td><td></td></tr>\r"}
-if (feat_courageousshooter){SWD+="<tr><td><font face=\"Arial\"Ccourageous Shooter [MP]</td><td></td></tr>\r"}
-if (feat_firstin){SWD+="<tr><td><font face=\"Arial\">First In [MP]</td><td></td></tr>\r"}
-if (feat_arcanefamiliar){SWD+="<tr><td><font face=\"Arial\">Arcane Familiar [AP]</td><td></td></tr>\r"}
-if (feat_alertfamiliar){SWD+="<tr><td><font face=\"Arial\">Alert Familiar [Dragon 374]</td><td></td></tr>\r"}
-if (feat_aggressivefamiliar){SWD+="<tr><td><font face=\"Arial\">Aggressive Familiar [Dragon 374]</td><td></td></tr>\r"}
-if (feat_bondedfamiliar){SWD+="<tr><td><font face=\"Arial\">Bonded Familiar [AP]</td><td></td></tr>\r"}
-if (feat_quickfamiliar){SWD+="<tr><td><font face=\"Arial\">Quick Familiar [Dragon 374]</td><td></td></tr>\r"}
-if (feat_sharedspeed){SWD+="<tr><td><font face=\"Arial\">Shared Speed [Dragon 374]</td><td></td></tr>\r"}
-if (feat_shieldingfamiliar){SWD+="<tr><td><font face=\"Arial\">Shielding Familiar [AP]</td><td></td></tr>\r"}
-if (feat_spellseerfamiliar){SWD+="<tr><td><font face=\"Arial\">Spellseer Familiar [AP]</td><td></td></tr>\r"}
+if (feat_agiletempest){SWD+="<tr><td><font face=\"Arial\">Agile Tempest [MP]</td><td></td></tr>\r";}
+if (feat_avandrasgift){SWD+="<tr><td><font face=\"Arial\">Avandra's Gift [MP]</td><td></td></tr>\r";}
+if (feat_avengingspirit){SWD+="<tr><td><font face=\"Arial\">Avenging Spirit [MP]</td><td></td></tr>\r";}
+if (feat_bleedingbackstab){SWD+="<tr><td><font face=\"Arial\">Bleeding Backstab [MP]</td><td></td></tr>\r";}
+if (feat_bleedingprecision){SWD+="<tr><td><font face=\"Arial\">Bleeding Precision [MP]</td><td></td></tr>\r";}
+if (feat_bloodyinspiration){SWD+="<tr><td><font face=\"Arial\">Bloody Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_bloodytenacity){SWD+="<tr><td><font face=\"Arial\">Bloody Tenacity [MP]</td><td></td></tr>\r";}
+if (feat_chainmailagility){SWD+="<tr><td><font face=\"Arial\">Chainmail Agility [MP]</td><td></td></tr>\r";}
+if (feat_combatopening){SWD+="<tr><td><font face=\"Arial\">Combat Opening [MP]</td><td></td></tr>\r";}
+if (feat_culltheweak){SWD+="<tr><td><font face=\"Arial\">Cull the Weak [MP]</td><td></td></tr>\r";}
+if (feat_darkhunter){SWD+="<tr><td><font face=\"Arial\">Dark Hunter [MP]</td><td></td></tr>\r";}
+if (feat_darkjumper){SWD+="<tr><td><font face=\"Arial\">Dark Jumper [MP]</td><td></td></tr>\r";}
+if (feat_dauntingchallenge){SWD+="<tr><td><font face=\"Arial\">Daunting Challenge [MP]</td><td></td></tr>\r";}
+if (feat_defensivesurge){SWD+="<tr><td><font face=\"Arial\">Defensive Surge [MP]</td><td></td></tr>\r";}
+if (feat_distractingcompanion){SWD+="<tr><td><font face=\"Arial\">Distracting Companion [MP]</td><td></td></tr>\r";}
+if (feat_draconicarrogance){SWD+="<tr><td><font face=\"Arial\">Draconic Arrogance [MP]</td><td></td></tr>\r";}
+if (feat_dragonbreathwarrior){SWD+="<tr><td><font face=\"Arial\">Dragonbreath Warrior [MP]</td><td></td></tr>\r";}
+if (feat_elementalcompanions){SWD+="<tr><td><font face=\"Arial\">Elemental Companions [MP]</td><td></td></tr>\r";}
+if (feat_elementalguardian){SWD+="<tr><td><font face=\"Arial\">Elemental Guardian [MP]</td><td></td></tr>\r";}
+if (feat_enduringwallop){SWD+="<tr><td><font face=\"Arial\">Enduring Wallop [MP]</td><td></td></tr>\r";}
+if (feat_evasivefootwork){SWD+="<tr><td><font face=\"Arial\">Evasive Footwork [MP]</td><td></td></tr>\r";}
+if (feat_feycharge){SWD+="<tr><td><font face=\"Arial\">Fey Charge [MP]</td><td></td></tr>\r";}
+if (feat_feygambit){SWD+="<tr><td><font face=\"Arial\">Fey Gambit [MP]</td><td></td></tr>\r";}
+if (feat_feytactics){SWD+="<tr><td><font face=\"Arial\">Fey Tactics [MP]</td><td></td></tr>\r";}
+if (feat_fiendishdefender){SWD+="<tr><td><font face=\"Arial\">Fiendish Defender [MP]</td><td></td></tr>\r";}
+if (feat_grit){SWD+="<tr><td><font face=\"Arial\">Grit [MP]</td><td></td></tr>\r";}
+if (feat_groupflanking){SWD+="<tr><td><font face=\"Arial\">Group Flanking [MP]</td><td></td></tr>\r";}
+if (feat_halflingbeastmastery){SWD+="<tr><td><font face=\"Arial\">Halfling Beast Mastery [MP]</td><td></td></tr>\r";}
+if (feat_huntersadvantage){SWD+="<tr><td><font face=\"Arial\">Hunter's Advantage [MP]</td><td></td></tr>\r";}
+if (feat_huntersresurgence){SWD+="<tr><td><font face=\"Arial\">Hunter's Resurgence [MP]</td><td></td></tr>\r";}
+if (feat_impetuouscharger){SWD+="<tr><td><font face=\"Arial\">Impetuous Charger [MP]</td><td></td></tr>\r";}
+if (feat_infernalsneakattack){SWD+="<tr><td><font face=\"Arial\">Infernal Sneak Attack [MP]</td><td></td></tr>\r";}
+if (feat_markedscourge){SWD+="<tr><td><font face=\"Arial\">Marked Scourge [MP]</td><td></td></tr>\r";}
+if (feat_mightybattlerage){SWD+="<tr><td><font face=\"Arial\">Mighty Battlerage [MP]</td><td></td></tr>\r";}
+if (feat_opportunisticarcher){SWD+="<tr><td><font face=\"Arial\">Opportunistic Archer [MP]</td><td></td></tr>\r";}
+if (feat_opportunisticsneakattack){SWD+="<tr><td><font face=\"Arial\">Opportunistic Sneak Attack [MP]</td><td></td></tr>\r";}
+if (feat_phalanxwarrior){SWD+="<tr><td><font face=\"Arial\">Phalanx Warrior [MP]</td><td></td></tr>\r";}
+if (feat_preternaturalsenses){SWD+="<tr><td><font face=\"Arial\">Preternatural Senses [MP]</td><td></td></tr>\r";}
+if (feat_primequarry){SWD+="<tr><td><font face=\"Arial\">Prime Quarry [MP]</td><td></td></tr>\r";}
+if (feat_primeslayer){SWD+="<tr><td><font face=\"Arial\">Prime Slayer [MP]</td><td></td></tr>\r";}
+if (feat_protectivebeast){SWD+="<tr><td><font face=\"Arial\">Protective Beast [MP]</td><td></td></tr>\r";}
+if (feat_recklessattacker){SWD+="<tr><td><font face=\"Arial\">Reckless Attacker [MP]</td><td></td></tr>\r";}
+if (feat_reliableresources){SWD+="<tr><td><font face=\"Arial\">Reliable Resources [MP]</td><td></td></tr>\r";}
+if (feat_rogueweaponmastery){SWD+="<tr><td><font face=\"Arial\">Rogue Weaponmastery [MP]</td><td></td></tr>\r";}
+if (feat_roundaboutcharge){SWD+="<tr><td><font face=\"Arial\">Roundabout Charge [MP]</td><td></td></tr>\r";}
+if (feat_steadfasttacatics){SWD+="<tr><td><font face=\"Arial\">Steadfast Tacatics [MP]</td><td></td></tr>\r";}
+if (feat_stonefootreprisal){SWD+="<tr><td><font face=\"Arial\">Stonefoot Reprisal [MP]</td><td></td></tr>\r";}
+if (feat_sturdybeast){SWD+="<tr><td><font face=\"Arial\">Sturdy Beast [MP]</td><td></td></tr>\r";}
+if (feat_vitalinspiration){SWD+="<tr><td><font face=\"Arial\">Vital Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_warlordsformation){SWD+="<tr><td><font face=\"Arial\">Warlord's Formation [MP]</td><td></td></tr>\r";}
+if (feat_wrathfulhunter){SWD+="<tr><td><font face=\"Arial\">Wrathful Hunter [MP]</td><td></td></tr>\r";}
+if (feat_twoweaponopening){SWD+="<tr><td><font face=\"Arial\">Two Weapon Opening [PH2]</td><td></td></tr>\r";}
+if (feat_versatilemaster){SWD+="<tr><td><font face=\"Arial\">Versatile Master [PH2]</td><td></td></tr>\r";}
+if (feat_actiongrant){SWD+="<tr><td><font face=\"Arial\">Action Grant [MP]</td><td></td></tr>\r";}
+if (feat_aggressiveleadership){SWD+="<tr><td><font face=\"Arial\">Aggressive Leadership [MP]</td><td></td></tr>\r";}
+if (feat_artfulprovocation){SWD+="<tr><td><font face=\"Arial\">Artful Provocation [MP]</td><td></td></tr>\r";}
+if (feat_boldspirit){SWD+="<tr><td><font face=\"Arial\">Bold Spirit [MP]</td><td></td></tr>\r";}
+if (feat_brutaladvantage){SWD+="<tr><td><font face=\"Arial\">Brutal Advantage [MP]</td><td></td></tr>\r";}
+if (feat_calltoglory){SWD+="<tr><td><font face=\"Arial\">Call to Glory [MP]</td><td></td></tr>\r";}
+if (feat_channeledbattlerage){SWD+="<tr><td><font face=\"Arial\">Channeled Battlerage [MP]</td><td></td></tr>\r";}
+if (feat_correctingaim){SWD+="<tr><td><font face=\"Arial\">Correcting Aim [MP]</td><td></td></tr>\r";}
+if (feat_darkfirewarrior){SWD+="<tr><td><font face=\"Arial\">Darkfire Warrior [MP]</td><td></td></tr>\r";}
+if (feat_dragonwarrior){SWD+="<tr><td><font face=\"Arial\">Dragon Warrior [MP]</td><td></td></tr>\r";}
+if (feat_elementalwarrior){SWD+="<tr><td><font face=\"Arial\">Elemental Warrior [MP]</td><td></td></tr>\r";}
+if (feat_epicrecovery){SWD+="<tr><td><font face=\"Arial\">Epic Recovery [MP]</td><td></td></tr>\r";}
+if (feat_feywildwarrior){SWD+="<tr><td><font face=\"Arial\">Feywild Warrior [MP]</td><td></td></tr>\r";}
+if (feat_fortuneswarrior){SWD+="<tr><td><font face=\"Arial\">Fortune's Warrior [MP]</td><td></td></tr>\r";}
+if (feat_hawkeyewarrior){SWD+="<tr><td><font face=\"Arial\">Hawkeye Warrior [MP]</td><td></td></tr>\r";}
+if (feat_improvedprimeshot){SWD+="<tr><td><font face=\"Arial\">Improved Prime Shot [MP]</td><td></td></tr>\r";}
+if (feat_infernalwarrior){SWD+="<tr><td><font face=\"Arial\">Infernal Warrior [MP]</td><td></td></tr>\r";}
+if (feat_invigoratingexploit){SWD+="<tr><td><font face=\"Arial\">Invigorating Exploit [MP]</td><td></td></tr>\r";}
+if (feat_knockbackswing){SWD+="<tr><td><font face=\"Arial\">Knockback Swing [MP]</td><td></td></tr>\r";}
+if (feat_lastingadvantage){SWD+="<tr><td><font face=\"Arial\">Lasting Advantage [MP]</td><td></td></tr>\r";}
+if (feat_martialmastery){SWD+="<tr><td><font face=\"Arial\">Martial Mastery [MP]</td><td></td></tr>\r";}
+if (feat_martialresolve){SWD+="<tr><td><font face=\"Arial\">Martial Resolve [MP]</td><td></td></tr>\r";}
+if (feat_mobilewarrior){SWD+="<tr><td><font face=\"Arial\">Mobile Warrior [MP]</td><td></td></tr>\r";}
+if (feat_onewithshadow){SWD+="<tr><td><font face=\"Arial\">One with Shadow [MP]</td><td></td></tr>\r";}
+if (feat_peerlesshunter){SWD+="<tr><td><font face=\"Arial\">Peerless Hunter [MP]</td><td></td></tr>\r";}
+if (feat_practicedreliability){SWD+="<tr><td><font face=\"Arial\">Practiced Reliability [MP]</td><td></td></tr>\r";}
+if (feat_primehunter){SWD+="<tr><td><font face=\"Arial\">Prime Hunter [MP]</td><td></td></tr>\r";}
+if (feat_protectiveleadership){SWD+="<tr><td><font face=\"Arial\">Protective Leadership [MP]</td><td></td></tr>\r";}
+if (feat_quickbeastcommand){SWD+="<tr><td><font face=\"Arial\">Quick Beast Command [MP]</td><td></td></tr>\r";}
+if (feat_rattlingexploit){SWD+="<tr><td><font face=\"Arial\">Rattling Exploit [MP]</td><td></td></tr>\r";}
+if (feat_reachingwhirlwind){SWD+="<tr><td><font face=\"Arial\">Reaching Whirlwind [MP]</td><td></td></tr>\r";}
+if (feat_rendingtempest){SWD+="<tr><td><font face=\"Arial\">Rending Tempest [MP]</td><td></td></tr>\r";}
+if (feat_ruthlessterror){SWD+="<tr><td><font face=\"Arial\">Ruthless Terror [MP]</td><td></td></tr>\r";}
+if (feat_staggeringshot){SWD+="<tr><td><font face=\"Arial\">Staggering Shot [MP]</td><td></td></tr>\r";}
+if (feat_stoneheartwarrior){SWD+="<tr><td><font face=\"Arial\">Stoneheart Warrior [MP]</td><td></td></tr>\r";}
+if (feat_supremeinspiration){SWD+="<tr><td><font face=\"Arial\">Supreme Inspiration [MP]</td><td></td></tr>\r";}
+if (feat_surpriseaction){SWD+="<tr><td><font face=\"Arial\">Surprise Action [MP]</td><td></td></tr>\r";}
+if (feat_tacticalcunning){SWD+="<tr><td><font face=\"Arial\">Tactical Cunning [MP]</td><td></td></tr>\r";}
+if (feat_tacticalinsight){SWD+="<tr><td><font face=\"Arial\">Tactical Insight [MP]</td><td></td></tr>\r";}
+if (feat_timelyrevival){SWD+="<tr><td><font face=\"Arial\">Timely Revival [MP]</td><td></td></tr>\r";}
+if (feat_unstoppablecharge){SWD+="<tr><td><font face=\"Arial\">Unstoppable Charge [MP]</td><td></td></tr>\r";}
+if (feat_whirlwindsneakattack){SWD+="<tr><td><font face=\"Arial\">Whirlwind Sneak Attack [MP]</td><td></td></tr>\r";}
+if (feat_bowmastery){SWD+="<tr><td><font face=\"Arial\">Bow Mastery [PH2]</td><td></td></tr>\r";}
+if (feat_epicfortitude){SWD+="<tr><td><font face=\"Arial\">Epic Fortitude [PH2]</td><td></td></tr>\r";}
+if (feat_epicreflexes){SWD+="<tr><td><font face=\"Arial\">Epic Reflexes [PH2]</td><td></td></tr>\r";}
+if (feat_epicwill){SWD+="<tr><td><font face=\"Arial\">Epic Will [PH2]</td><td></td></tr>\r";}
+if (feat_indomitablewill){SWD+="<tr><td><font face=\"Arial\">Indomitable Will [PH2]</td><td></td></tr>\r";}
+if (feat_opportunereflexes){SWD+="<tr><td><font face=\"Arial\">Opportune Reflexes [PH2]</td><td></td></tr>\r";}
+if (feat_robustdefenses){SWD+="<tr><td><font face=\"Arial\">Robust Defenses [PH2]</td><td></td></tr>\r";}
+if (feat_unyieldingfortitude){SWD+="<tr><td><font face=\"Arial\">Unyielding Fortitude [PH2]</td><td></td></tr>\r";}
+if (feat_battleacumen){SWD+="<tr><td><font face=\"Arial\">Battle Acumen [MP]</td><td></td></tr>\r";}
+if (feat_battleinstructor){SWD+="<tr><td><font face=\"Arial\">Battle Instructor [MP]</td><td></td></tr>\r";}
+if (feat_courageousshooter){SWD+="<tr><td><font face=\"Arial\"Ccourageous Shooter [MP]</td><td></td></tr>\r";}
+if (feat_firstin){SWD+="<tr><td><font face=\"Arial\">First In [MP]</td><td></td></tr>\r";}
+if (feat_arcanefamiliar){SWD+="<tr><td><font face=\"Arial\">Arcane Familiar [AP]</td><td></td></tr>\r";}
+if (feat_alertfamiliar){SWD+="<tr><td><font face=\"Arial\">Alert Familiar [Dragon 374]</td><td></td></tr>\r";}
+if (feat_aggressivefamiliar){SWD+="<tr><td><font face=\"Arial\">Aggressive Familiar [Dragon 374]</td><td></td></tr>\r";}
+if (feat_bondedfamiliar){SWD+="<tr><td><font face=\"Arial\">Bonded Familiar [AP]</td><td></td></tr>\r";}
+if (feat_quickfamiliar){SWD+="<tr><td><font face=\"Arial\">Quick Familiar [Dragon 374]</td><td></td></tr>\r";}
+if (feat_sharedspeed){SWD+="<tr><td><font face=\"Arial\">Shared Speed [Dragon 374]</td><td></td></tr>\r";}
+if (feat_shieldingfamiliar){SWD+="<tr><td><font face=\"Arial\">Shielding Familiar [AP]</td><td></td></tr>\r";}
+if (feat_spellseerfamiliar){SWD+="<tr><td><font face=\"Arial\">Spellseer Familiar [AP]</td><td></td></tr>\r";}
 
 
 
-if (feat_other01){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat01.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other02){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat02.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other03){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat03.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other04){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat04.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other05){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat05.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other06){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat06.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_other07){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat07.value+"</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldproficiencyheavy){SWD+="<tr><td><font face=\"Arial\">Shield Proficiency -- Heavy</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldproficiencylight){SWD+="<tr><td><font face=\"Arial\">Shield Proficiency -- Light</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldpush){SWD+="<tr><td><font face=\"Arial\">Shield Push</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusacrobatics){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Acrobatics</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusarcana){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Arcana</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusathletics){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Athletics</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusbluff){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Bluff</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusdiplomacy){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Diplomacy</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusdungeoneering){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Dungeoneering</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusendurance){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Endurance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusheal){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Heal</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocushistory){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- History</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusinsight){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Insight</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusintimidate){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Intimidate</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusnature){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Nature</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusperception){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Perception</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusreligion){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Religion</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusstealth){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Stealth</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusstreetwise){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Streetwise</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skillfocusthievery){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Thievery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingacrobatics){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Acrobatics</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingarcana){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Arcana</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingathletics){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Athletics</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingbluff){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Bluff</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingdiplomacy){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Diplomacy</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingdungeoneering){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Dungeoneering</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingendurance){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Endurance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingheal){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Heal</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltraininghistory){SWD+="<tr><td><font face=\"Arial\">Skill Training -- History</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltraininginsight){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Insight</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingintimidate){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Intimidate</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingnature){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Nature</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingperception){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Perception</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingreligion){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Religion</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingstealth){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Stealth</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingstreetwise){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Streetwise</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_skilltrainingthievery){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Thievery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sureclimber){SWD+="<tr><td><font face=\"Arial\">Sure Climber</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_surpriseknockdown){SWD+="<tr><td><font face=\"Arial\">Surprise Knockdown</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_tacticalassault){SWD+="<tr><td><font face=\"Arial\">Tactical Assault</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_toughness){SWD+="<tr><td><font face=\"Arial\">Toughness</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_twoweapondefense){SWD+="<tr><td><font face=\"Arial\">Two Weapon Defense</td><td><font face=\"Arial\">[add bonus as applicable]</td></tr>\r"}
-if (feat_twoweaponfighting){SWD+="<tr><td><font face=\"Arial\">Two Weapon Fighting</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Axe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusbow){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Bow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocuscrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Crossbow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusflail){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Flail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocushammer){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Hammer</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusheavyblade){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Heavy Blade</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocuslightblade){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Light Blade</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusmace){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Mace</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocuspick){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Pick</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocuspolearm){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Polearm</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocussling){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Sling</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusspear){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Spear</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusstaff){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Staff</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponfocusunarmed){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Unarmed</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyclub){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Club</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencydagger){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Dagger</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyjavelin){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Javelin</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencymace){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Mace</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencysickle){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Sickle</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyspear){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Spear</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencygreatclub){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greatclub</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencymorningstar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Morningstar</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyquarterstaff){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Quarterstaff</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyscythe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Scythe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencybattleaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Battleaxe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyflail){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Flail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyhandaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Handaxe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencylongsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longsword</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyscimitar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Scimitar</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyshortsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shortsword</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencythrowinghammer){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Throwing Hammer</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencywarhammer){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Warhammer</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencywarpick){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- War Pick</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyfalchion){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Falchion</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyglaive){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Glaive</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencygreataxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greataxe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencygreatsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greatsword</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyhalberd){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Halberd</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyheavyflail){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Heavyflail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencylongspear){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longspear</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencymaul){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Maul</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencybastardsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Bastard Sword</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencykatar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Katar</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyrapier){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Rapier</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyspikedchain){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Spiked Chain</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyhandcrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Hand Crossbow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencysling){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Sling</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencycrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Crossbow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencylongbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longbow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyshortbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shortbow</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyshuriken){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shuriken</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyothersimplemeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Simple Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyothermilitarymeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Military Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyothersuperiormeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Superior Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyothersimplerangedweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Simple Ranged Weapons</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_weaponproficiencyothersuperiorrangedweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Superior Ranged Weapons</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_wintertouched){SWD+="<tr><td><font face=\"Arial\">Wintertouched</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_actionrecovery){SWD+="<tr><td><font face=\"Arial\">Action Recovery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_agileathlete){SWD+="<tr><td><font face=\"Arial\">Agile Athlete</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_arcanereach){SWD+="<tr><td><font face=\"Arial\">Arcane Reach</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorspecializationchainmail){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Chainmail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorspecializationhide){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Hide</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorspecializationplate){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Plate</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_armorspecializationscale){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Scale</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_backtothewall){SWD+="<tr><td><font face=\"Arial\">Back to the Wall</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_bloodthirst){SWD+="<tr><td><font face=\"Arial\">Bloodthirst</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_combatanticipation){SWD+="<tr><td><font face=\"Arial\">Combat Anticipation</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_combatcommander){SWD+="<tr><td><font face=\"Arial\">Combat Commander</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dangersense){SWD+="<tr><td><font face=\"Arial\">Danger Sense</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_deadlyaxe){SWD+="<tr><td><font face=\"Arial\">Deadly Axe</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_defensiveadvantage){SWD+="<tr><td><font face=\"Arial\">Defensive Advantage</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_devastatingcritical){SWD+="<tr><td><font face=\"Arial\">Devastating Critical</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_distantshot){SWD+="<tr><td><font face=\"Arial\">Distant Shot</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_dwarvendurability){SWD+="<tr><td><font face=\"Arial\">Dwarven Durability</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_empowereddragonbreath){SWD+="<tr><td><font face=\"Arial\">Empowered Dragonbreath</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_evasion){SWD+="<tr><td><font face=\"Arial\">Evasion</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_feywildprotection){SWD+="<tr><td><font face=\"Arial\">Feywild Protection</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_fieryrebuke){SWD+="<tr><td><font face=\"Arial\">Fiery Rebuke</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_fleetfooted){SWD+="<tr><td><font face=\"Arial\">Fleet Footed</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_greatfortitude){SWD+="<tr><td><font face=\"Arial\">Great Fortitude</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_hammerrhythm){SWD+="<tr><td><font face=\"Arial\">Hammer Rhythm</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_heavybladeopportunity){SWD+="<tr><td><font face=\"Arial\">Heavy Blade Opportunity</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_improvedsecondwind){SWD+="<tr><td><font face=\"Arial\">Improved Second Wind</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_inescapableforce){SWD+="<tr><td><font face=\"Arial\">Inescapable Force</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_ironwill){SWD+="<tr><td><font face=\"Arial\">Iron Will</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lastingfrost){SWD+="<tr><td><font face=\"Arial\">Lasting Frost</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lightbladeprecision){SWD+="<tr><td><font face=\"Arial\">Light Blade Precision</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lightningarc){SWD+="<tr><td><font face=\"Arial\">Lightning Arc</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lightningreflexes){SWD+="<tr><td><font face=\"Arial\">Lightning Reflexes</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_mettle){SWD+="<tr><td><font face=\"Arial\">Mettle</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_pointblankshot){SWD+="<tr><td><font face=\"Arial\">Point Blank Shot</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_polearmgamble){SWD+="<tr><td><font face=\"Arial\">Polearm Gamble</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_psychiclock){SWD+="<tr><td><font face=\"Arial\">Psychic Lock</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_resoundingthunder){SWD+="<tr><td><font face=\"Arial\">Resounding Thunder</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_runningshot){SWD+="<tr><td><font face=\"Arial\">Running Shot</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_scimitardance){SWD+="<tr><td><font face=\"Arial\">Scimitar Dance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_secondimplementorb){SWD+="<tr><td><font face=\"Arial\">Second Implement (Orb)</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_secondimplementstaff){SWD+="<tr><td><font face=\"Arial\">Second Implement (Staff)</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_secondimplementwand){SWD+="<tr><td><font face=\"Arial\">Second Implement (Wand)</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_secretstride){SWD+="<tr><td><font face=\"Arial\">Secret Stride</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_seizethemoment){SWD+="<tr><td><font face=\"Arial\">Seize the Moment</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_shieldspecialization){SWD+="<tr><td><font face=\"Arial\">Shield Specialization</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_slyhunter){SWD+="<tr><td><font face=\"Arial\">Sly Hunter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_solidsound){SWD+="<tr><td><font face=\"Arial\">Solid Sound</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_spearpush){SWD+="<tr><td><font face=\"Arial\">Spear Push</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_spellfocus){SWD+="<tr><td><font face=\"Arial\">Spell Focus</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_steadyshooter){SWD+="<tr><td><font face=\"Arial\">Steady Shooter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_sweepingflail){SWD+="<tr><td><font face=\"Arial\">Sweeping Flail</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_twofoldcurse){SWD+="<tr><td><font face=\"Arial\">Twofold Curse</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_uncannydodge){SWD+="<tr><td><font face=\"Arial\">Uncannydodge</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_underfoot){SWD+="<tr><td><font face=\"Arial\">Underfoot</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_arcanemastery){SWD+="<tr><td><font face=\"Arial\">Aarcane Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_axemastery){SWD+="<tr><td><font face=\"Arial\">Axe Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_blindfight){SWD+="<tr><td><font face=\"Arial\">Blindfight</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_bludgeonmastery){SWD+="<tr><td><font face=\"Arial\">Bludgeon Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_epicresurgence){SWD+="<tr><td><font face=\"Arial\">Epic Resurgence</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_flailmastery){SWD+="<tr><td><font face=\"Arial\">Flail Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_flankingmaneuver){SWD+="<tr><td><font face=\"Arial\">Flanking Maneuver</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_fontofradiance){SWD+="<tr><td><font face=\"Arial\">Font of Radiance</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_heavyblademastery){SWD+="<tr><td><font face=\"Arial\">Heavy Blade Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_irresistableflame){SWD+="<tr><td><font face=\"Arial\">Irresistable Flame</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_lightblademastery){SWD+="<tr><td><font face=\"Arial\">Light Blade Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_pickmastery){SWD+="<tr><td><font face=\"Arial\">Pick Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_spearmastery){SWD+="<tr><td><font face=\"Arial\">Spear Mastery</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_spellaccuracy){SWD+="<tr><td><font face=\"Arial\">Spell Accuracy</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_triumphantattack){SWD+="<tr><td><font face=\"Arial\">Triumphant Attack</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_twoweaponflurry){SWD+="<tr><td><font face=\"Arial\">Two Weapon Flurry</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_unfetteredstride){SWD+="<tr><td><font face=\"Arial\">Unfettered Stride</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_multiclasspowerswapencounter){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Encounter</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_multiclasspowerswaputility){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Utility</td><td><font face=\"Arial\"></td></tr>\r"}
-if (feat_multiclasspowerswapdaily){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Daily</td><td><font face=\"Arial\"></td></tr>\r"}
+if (feat_other01){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat01.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other02){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat02.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other03){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat03.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other04){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat04.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other05){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat05.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other06){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat06.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_other07){SWD+="<tr><td><font face=\"Arial\">"+document.form1.otherfeat07.value+"</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldproficiencyheavy){SWD+="<tr><td><font face=\"Arial\">Shield Proficiency -- Heavy</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldproficiencylight){SWD+="<tr><td><font face=\"Arial\">Shield Proficiency -- Light</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldpush){SWD+="<tr><td><font face=\"Arial\">Shield Push</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusacrobatics){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Acrobatics</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusarcana){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Arcana</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusathletics){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Athletics</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusbluff){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Bluff</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusdiplomacy){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Diplomacy</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusdungeoneering){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Dungeoneering</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusendurance){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Endurance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusheal){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Heal</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocushistory){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- History</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusinsight){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Insight</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusintimidate){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Intimidate</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusnature){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Nature</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusperception){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Perception</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusreligion){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Religion</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusstealth){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Stealth</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusstreetwise){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Streetwise</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skillfocusthievery){SWD+="<tr><td><font face=\"Arial\">Skill Focus -- Thievery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingacrobatics){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Acrobatics</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingarcana){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Arcana</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingathletics){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Athletics</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingbluff){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Bluff</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingdiplomacy){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Diplomacy</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingdungeoneering){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Dungeoneering</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingendurance){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Endurance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingheal){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Heal</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltraininghistory){SWD+="<tr><td><font face=\"Arial\">Skill Training -- History</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltraininginsight){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Insight</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingintimidate){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Intimidate</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingnature){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Nature</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingperception){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Perception</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingreligion){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Religion</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingstealth){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Stealth</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingstreetwise){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Streetwise</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_skilltrainingthievery){SWD+="<tr><td><font face=\"Arial\">Skill Training -- Thievery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sureclimber){SWD+="<tr><td><font face=\"Arial\">Sure Climber</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_surpriseknockdown){SWD+="<tr><td><font face=\"Arial\">Surprise Knockdown</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_tacticalassault){SWD+="<tr><td><font face=\"Arial\">Tactical Assault</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_toughness){SWD+="<tr><td><font face=\"Arial\">Toughness</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_twoweapondefense){SWD+="<tr><td><font face=\"Arial\">Two Weapon Defense</td><td><font face=\"Arial\">[add bonus as applicable]</td></tr>\r";}
+if (feat_twoweaponfighting){SWD+="<tr><td><font face=\"Arial\">Two Weapon Fighting</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Axe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusbow){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Bow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocuscrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Crossbow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusflail){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Flail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocushammer){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Hammer</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusheavyblade){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Heavy Blade</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocuslightblade){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Light Blade</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusmace){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Mace</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocuspick){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Pick</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocuspolearm){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Polearm</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocussling){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Sling</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusspear){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Spear</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusstaff){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Staff</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponfocusunarmed){SWD+="<tr><td><font face=\"Arial\">Weapon Focus -- Unarmed</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyclub){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Club</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencydagger){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Dagger</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyjavelin){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Javelin</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencymace){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Mace</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencysickle){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Sickle</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyspear){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Spear</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencygreatclub){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greatclub</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencymorningstar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Morningstar</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyquarterstaff){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Quarterstaff</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyscythe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Scythe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencybattleaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Battleaxe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyflail){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Flail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyhandaxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Handaxe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencylongsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longsword</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyscimitar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Scimitar</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyshortsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shortsword</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencythrowinghammer){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Throwing Hammer</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencywarhammer){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Warhammer</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencywarpick){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- War Pick</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyfalchion){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Falchion</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyglaive){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Glaive</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencygreataxe){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greataxe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencygreatsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Greatsword</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyhalberd){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Halberd</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyheavyflail){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Heavyflail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencylongspear){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longspear</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencymaul){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Maul</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencybastardsword){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Bastard Sword</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencykatar){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Katar</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyrapier){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Rapier</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyspikedchain){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Spiked Chain</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyhandcrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Hand Crossbow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencysling){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Sling</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencycrossbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Crossbow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencylongbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Longbow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyshortbow){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shortbow</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyshuriken){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Shuriken</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyothersimplemeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Simple Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyothermilitarymeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Military Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyothersuperiormeleeweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Superior Melee Weapons</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyothersimplerangedweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Simple Ranged Weapons</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_weaponproficiencyothersuperiorrangedweapons){SWD+="<tr><td><font face=\"Arial\">Weapon Proficiency -- Other Superior Ranged Weapons</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_wintertouched){SWD+="<tr><td><font face=\"Arial\">Wintertouched</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_actionrecovery){SWD+="<tr><td><font face=\"Arial\">Action Recovery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_agileathlete){SWD+="<tr><td><font face=\"Arial\">Agile Athlete</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_arcanereach){SWD+="<tr><td><font face=\"Arial\">Arcane Reach</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorspecializationchainmail){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Chainmail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorspecializationhide){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Hide</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorspecializationplate){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Plate</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_armorspecializationscale){SWD+="<tr><td><font face=\"Arial\">Armor Specialization -- Scale</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_backtothewall){SWD+="<tr><td><font face=\"Arial\">Back to the Wall</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_bloodthirst){SWD+="<tr><td><font face=\"Arial\">Bloodthirst</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_combatanticipation){SWD+="<tr><td><font face=\"Arial\">Combat Anticipation</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_combatcommander){SWD+="<tr><td><font face=\"Arial\">Combat Commander</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dangersense){SWD+="<tr><td><font face=\"Arial\">Danger Sense</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_deadlyaxe){SWD+="<tr><td><font face=\"Arial\">Deadly Axe</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_defensiveadvantage){SWD+="<tr><td><font face=\"Arial\">Defensive Advantage</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_devastatingcritical){SWD+="<tr><td><font face=\"Arial\">Devastating Critical</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_distantshot){SWD+="<tr><td><font face=\"Arial\">Distant Shot</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_dwarvendurability){SWD+="<tr><td><font face=\"Arial\">Dwarven Durability</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_empowereddragonbreath){SWD+="<tr><td><font face=\"Arial\">Empowered Dragonbreath</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_evasion){SWD+="<tr><td><font face=\"Arial\">Evasion</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_feywildprotection){SWD+="<tr><td><font face=\"Arial\">Feywild Protection</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_fieryrebuke){SWD+="<tr><td><font face=\"Arial\">Fiery Rebuke</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_fleetfooted){SWD+="<tr><td><font face=\"Arial\">Fleet Footed</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_greatfortitude){SWD+="<tr><td><font face=\"Arial\">Great Fortitude</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_hammerrhythm){SWD+="<tr><td><font face=\"Arial\">Hammer Rhythm</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_heavybladeopportunity){SWD+="<tr><td><font face=\"Arial\">Heavy Blade Opportunity</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_improvedsecondwind){SWD+="<tr><td><font face=\"Arial\">Improved Second Wind</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_inescapableforce){SWD+="<tr><td><font face=\"Arial\">Inescapable Force</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_ironwill){SWD+="<tr><td><font face=\"Arial\">Iron Will</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lastingfrost){SWD+="<tr><td><font face=\"Arial\">Lasting Frost</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lightbladeprecision){SWD+="<tr><td><font face=\"Arial\">Light Blade Precision</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lightningarc){SWD+="<tr><td><font face=\"Arial\">Lightning Arc</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lightningreflexes){SWD+="<tr><td><font face=\"Arial\">Lightning Reflexes</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_mettle){SWD+="<tr><td><font face=\"Arial\">Mettle</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_pointblankshot){SWD+="<tr><td><font face=\"Arial\">Point Blank Shot</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_polearmgamble){SWD+="<tr><td><font face=\"Arial\">Polearm Gamble</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_psychiclock){SWD+="<tr><td><font face=\"Arial\">Psychic Lock</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_resoundingthunder){SWD+="<tr><td><font face=\"Arial\">Resounding Thunder</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_runningshot){SWD+="<tr><td><font face=\"Arial\">Running Shot</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_scimitardance){SWD+="<tr><td><font face=\"Arial\">Scimitar Dance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_secondimplementorb){SWD+="<tr><td><font face=\"Arial\">Second Implement (Orb)</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_secondimplementstaff){SWD+="<tr><td><font face=\"Arial\">Second Implement (Staff)</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_secondimplementwand){SWD+="<tr><td><font face=\"Arial\">Second Implement (Wand)</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_secretstride){SWD+="<tr><td><font face=\"Arial\">Secret Stride</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_seizethemoment){SWD+="<tr><td><font face=\"Arial\">Seize the Moment</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_shieldspecialization){SWD+="<tr><td><font face=\"Arial\">Shield Specialization</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_slyhunter){SWD+="<tr><td><font face=\"Arial\">Sly Hunter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_solidsound){SWD+="<tr><td><font face=\"Arial\">Solid Sound</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_spearpush){SWD+="<tr><td><font face=\"Arial\">Spear Push</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_spellfocus){SWD+="<tr><td><font face=\"Arial\">Spell Focus</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_steadyshooter){SWD+="<tr><td><font face=\"Arial\">Steady Shooter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_sweepingflail){SWD+="<tr><td><font face=\"Arial\">Sweeping Flail</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_twofoldcurse){SWD+="<tr><td><font face=\"Arial\">Twofold Curse</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_uncannydodge){SWD+="<tr><td><font face=\"Arial\">Uncannydodge</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_underfoot){SWD+="<tr><td><font face=\"Arial\">Underfoot</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_arcanemastery){SWD+="<tr><td><font face=\"Arial\">Aarcane Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_axemastery){SWD+="<tr><td><font face=\"Arial\">Axe Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_blindfight){SWD+="<tr><td><font face=\"Arial\">Blindfight</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_bludgeonmastery){SWD+="<tr><td><font face=\"Arial\">Bludgeon Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_epicresurgence){SWD+="<tr><td><font face=\"Arial\">Epic Resurgence</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_flailmastery){SWD+="<tr><td><font face=\"Arial\">Flail Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_flankingmaneuver){SWD+="<tr><td><font face=\"Arial\">Flanking Maneuver</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_fontofradiance){SWD+="<tr><td><font face=\"Arial\">Font of Radiance</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_heavyblademastery){SWD+="<tr><td><font face=\"Arial\">Heavy Blade Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_irresistableflame){SWD+="<tr><td><font face=\"Arial\">Irresistable Flame</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_lightblademastery){SWD+="<tr><td><font face=\"Arial\">Light Blade Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_pickmastery){SWD+="<tr><td><font face=\"Arial\">Pick Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_spearmastery){SWD+="<tr><td><font face=\"Arial\">Spear Mastery</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_spellaccuracy){SWD+="<tr><td><font face=\"Arial\">Spell Accuracy</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_triumphantattack){SWD+="<tr><td><font face=\"Arial\">Triumphant Attack</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_twoweaponflurry){SWD+="<tr><td><font face=\"Arial\">Two Weapon Flurry</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_unfetteredstride){SWD+="<tr><td><font face=\"Arial\">Unfettered Stride</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_multiclasspowerswapencounter){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Encounter</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_multiclasspowerswaputility){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Utility</td><td><font face=\"Arial\"></td></tr>\r";}
+if (feat_multiclasspowerswapdaily){SWD+="<tr><td><font face=\"Arial\">Multiclass Power Swap -- Daily</td><td><font face=\"Arial\"></td></tr>\r";}
 
 
 SWD +="</table>\r</ul><p>\r"
@@ -24112,7 +24092,7 @@ SWD+=" <p></td></tr>\r";
 x=speed_squares+2; if (feat_fastrunner){x+=2; }
 SWD+="<tr><td valign=\"top\"><font face=\"Arial\"><font size=\"-1\">Other Move Actions:</td><td valign=\"top\"><font face=\"Arial\"><font size=\"-1\">Crawl; Run [speed "+x+"]; Stand up; Shift; Squeeze; Walk; may include some skills during combat (i.e., Acrobatics, Athletics)<p></td></tr>\r"; 
 SWD+="<tr><td valign=\"top\"><font face=\"Arial\"><font size=\"-1\">Other Minor Actions:</td><td valign=\"top\"><font face=\"Arial\"><font size=\"-1\">Draw / sheathe weapon; Drink a potion; Drop prone; Load a crossbow; Open / close a door; Pick up an item; Retrieve / stow an item; Perception -- active (as per revision),Sustain minor action; Some skills during combat (i.e., Insight)";
-if (has_arcane_familiar()){SWD+="; switch familiar active/passive;"}
+if (has_arcane_familiar()){SWD+="; switch familiar active/passive;";}
 
 
 SWD+="<p></td></tr>\r";
@@ -24559,38 +24539,38 @@ if (document.form1.lightningbolt_box.checked){SWD+="<img src=box.gif>Lightning B
 if (document.form1.spectralram_box.checked){SWD+="<img src=box.gif>Spectral Ram [Level 7]<br>\r"; }
 if (document.form1.winterswrath_box.checked){SWD+="<img src=box.gif>Winter's Wrath [Level 7]<br>\r"; }
 
-if (document.form1.avengingwinds_box.checked){SWD+="<img src=box.gif>Avenging Winds [Level 7]<br>\r"}
-if (document.form1.bladestep_box.checked){SWD+="<img src=box.gif>Blade Step [Level 7]<br>\r"}
-if (document.form1.inexorablepursuit_box.checked){SWD+="<img src=box.gif>Inexorable Pursuit [Level 7]<br>\r"}
-if (document.form1.slintertheformation_box.checked){SWD+="<img src=box.gif>Splinter the Formation [Level 7]<br>\r"}
-if (document.form1.curtainofsteel_box.checked){SWD+="<img src=box.gif>Curtain of Steel [Level 7]<br>\r"}
-if (document.form1.greatshout_box.checked){SWD+="<img src=box.gif>Great Shout [Level 7]<br>\r"}
-if (document.form1.feastofviolence_box.checked){SWD+="<img src=box.gif>Feast of Violence [Level 7]<br>\r"}
-if (document.form1.tideofblood_box.checked){SWD+="<img src=box.gif>Tide of Blood [Level 7]<br>\r"}
-if (document.form1.deflectattention_box.checked){SWD+="<img src=box.gif>Deflect Attention [Level 7]<br>\r"}
-if (document.form1.distractingshout_box.checked){SWD+="<img src=box.gif>Distracting Shout [Level 7]<br>\r"}
-if (document.form1.scorpionsclawstrike_box.checked){SWD+="<img src=box.gif>Scorpion's Claw Strike [Level 7]<br>\r"}
-if (document.form1.unluck_box.checked){SWD+="<img src=box.gif>Unluck [Level 7]<br>\r"}
-if (document.form1.feastoffury_box.checked){SWD+="<img src=box.gif>Feast of Fury [Level 7]<br>\r"}
-if (document.form1.latchon_box.checked){SWD+="<img src=box.gif>Latch On [Level 7]<br>\r"}
-if (document.form1.swlrlingwinds_box.checked){SWD+="<img src=box.gif>Swirling Winds [Level 7]<br>\r"}
-if (document.form1.tremor_box.checked){SWD+="<img src=box.gif>Tremor [Level 7]<br>\r"}
-if (document.form1.balefuleyeofjudgment_box.checked){SWD+="<img src=box.gif>Baleful Eye of Judgment [Level 7]<br>\r"}
-if (document.form1.boltoftherisingsun_box.checked){SWD+="<img src=box.gif>Bolt of the Rising Sun [Level 7]<br>\r"}
-if (document.form1.invokeobedience_box.checked){SWD+="<img src=box.gif>Invoke Obedience [Level 7]<br>\r"}
-if (document.form1.thunderboldoftheheavens_box.checked){SWD+="<img src=box.gif>Thunderbolt of the Heavens [Level 7]<br>\r"}
-if (document.form1.calltotheblooddancer_box.checked){SWD+="<img src=box.gif>Call to the Blood Dancer [Level 7]<br>\r"}
-if (document.form1.calltothehowlingstorm_box.checked){SWD+="<img src=box.gif>Call to the Howling Storm [Level 7]<br>\r"}
-if (document.form1.thunderstormspirit_box.checked){SWD+="<img src=box.gif>Thunderstorm Spirit [Level 7]<br>\r"}
-if (document.form1.winterwindspirit_box.checked){SWD+="<img src=box.gif>Winter Wind Spirit [Level 7]<br>\r"}
-if (document.form1.chaosstorm_box.checked){SWD+="<img src=box.gif>Chaos Storm [Level 7]<br>\r"}
-if (document.form1.crushingsphere_box.checked){SWD+="<img src=box.gif>Crushing Sphere [Level 7]<br>\r"}
-if (document.form1.rimestorm_box.checked){SWD+="<img src=box.gif>Rimestorm [Level 7]<br>\r"}
-if (document.form1.shout_box.checked){SWD+="<img src=box.gif>Shout [Level 7]<br>\r"}
-if (document.form1.earthgift_box.checked){SWD+="<img src=box.gif>Earth Gift [Level 7]<br>\r"}
-if (document.form1.mountainhammer_box.checked){SWD+="<img src=box.gif>Mountain Hammer [Level 7]<br>\r"}
-if (document.form1.stalkerspositioning_box.checked){SWD+="<img src=box.gif>Stalker's Positioning [Level 7]<br>\r"}
-if (document.form1.thornburst_box.checked){SWD+="<img src=box.gif>Thorn Burst [Level 7]<br>\r"}
+if (document.form1.avengingwinds_box.checked){SWD+="<img src=box.gif>Avenging Winds [Level 7]<br>\r";}
+if (document.form1.bladestep_box.checked){SWD+="<img src=box.gif>Blade Step [Level 7]<br>\r";}
+if (document.form1.inexorablepursuit_box.checked){SWD+="<img src=box.gif>Inexorable Pursuit [Level 7]<br>\r";}
+if (document.form1.slintertheformation_box.checked){SWD+="<img src=box.gif>Splinter the Formation [Level 7]<br>\r";}
+if (document.form1.curtainofsteel_box.checked){SWD+="<img src=box.gif>Curtain of Steel [Level 7]<br>\r";}
+if (document.form1.greatshout_box.checked){SWD+="<img src=box.gif>Great Shout [Level 7]<br>\r";}
+if (document.form1.feastofviolence_box.checked){SWD+="<img src=box.gif>Feast of Violence [Level 7]<br>\r";}
+if (document.form1.tideofblood_box.checked){SWD+="<img src=box.gif>Tide of Blood [Level 7]<br>\r";}
+if (document.form1.deflectattention_box.checked){SWD+="<img src=box.gif>Deflect Attention [Level 7]<br>\r";}
+if (document.form1.distractingshout_box.checked){SWD+="<img src=box.gif>Distracting Shout [Level 7]<br>\r";}
+if (document.form1.scorpionsclawstrike_box.checked){SWD+="<img src=box.gif>Scorpion's Claw Strike [Level 7]<br>\r";}
+if (document.form1.unluck_box.checked){SWD+="<img src=box.gif>Unluck [Level 7]<br>\r";}
+if (document.form1.feastoffury_box.checked){SWD+="<img src=box.gif>Feast of Fury [Level 7]<br>\r";}
+if (document.form1.latchon_box.checked){SWD+="<img src=box.gif>Latch On [Level 7]<br>\r";}
+if (document.form1.swlrlingwinds_box.checked){SWD+="<img src=box.gif>Swirling Winds [Level 7]<br>\r";}
+if (document.form1.tremor_box.checked){SWD+="<img src=box.gif>Tremor [Level 7]<br>\r";}
+if (document.form1.balefuleyeofjudgment_box.checked){SWD+="<img src=box.gif>Baleful Eye of Judgment [Level 7]<br>\r";}
+if (document.form1.boltoftherisingsun_box.checked){SWD+="<img src=box.gif>Bolt of the Rising Sun [Level 7]<br>\r";}
+if (document.form1.invokeobedience_box.checked){SWD+="<img src=box.gif>Invoke Obedience [Level 7]<br>\r";}
+if (document.form1.thunderboldoftheheavens_box.checked){SWD+="<img src=box.gif>Thunderbolt of the Heavens [Level 7]<br>\r";}
+if (document.form1.calltotheblooddancer_box.checked){SWD+="<img src=box.gif>Call to the Blood Dancer [Level 7]<br>\r";}
+if (document.form1.calltothehowlingstorm_box.checked){SWD+="<img src=box.gif>Call to the Howling Storm [Level 7]<br>\r";}
+if (document.form1.thunderstormspirit_box.checked){SWD+="<img src=box.gif>Thunderstorm Spirit [Level 7]<br>\r";}
+if (document.form1.winterwindspirit_box.checked){SWD+="<img src=box.gif>Winter Wind Spirit [Level 7]<br>\r";}
+if (document.form1.chaosstorm_box.checked){SWD+="<img src=box.gif>Chaos Storm [Level 7]<br>\r";}
+if (document.form1.crushingsphere_box.checked){SWD+="<img src=box.gif>Crushing Sphere [Level 7]<br>\r";}
+if (document.form1.rimestorm_box.checked){SWD+="<img src=box.gif>Rimestorm [Level 7]<br>\r";}
+if (document.form1.shout_box.checked){SWD+="<img src=box.gif>Shout [Level 7]<br>\r";}
+if (document.form1.earthgift_box.checked){SWD+="<img src=box.gif>Earth Gift [Level 7]<br>\r";}
+if (document.form1.mountainhammer_box.checked){SWD+="<img src=box.gif>Mountain Hammer [Level 7]<br>\r";}
+if (document.form1.stalkerspositioning_box.checked){SWD+="<img src=box.gif>Stalker's Positioning [Level 7]<br>\r";}
+if (document.form1.thornburst_box.checked){SWD+="<img src=box.gif>Thorn Burst [Level 7]<br>\r";}
 
 
 
@@ -26860,8 +26840,8 @@ if (race_bladeling)
    SWD+="Bladeling<p><ul>"
    SWD+="<li>+2 Dexterity, +2 Wisdom (already included)</li>\r"
    SWD+="<li>+2 Intimidate</li>\r"
-   if (feat_improvedrazorswarm){SWD+="<li>Improved Razor Swarm (damage 1d8, close burst 2) once per encounter (see Manual of the Planes)</li>\r"}
-   else {SWD+="<li>Razor Swarm once per encounter (see Manual of the Planes)</li>\r"}
+   if (feat_improvedrazorswarm){SWD+="<li>Improved Razor Swarm (damage 1d8, close burst 2) once per encounter (see Manual of the Planes)</li>\r";}
+   else {SWD+="<li>Razor Swarm once per encounter (see Manual of the Planes)</li>\r";}
    SWD+="</ul>"
  }
 
@@ -27117,7 +27097,7 @@ if (class_cleric)
   if (total_levels>=26){stringy="6d6";}
   stringy="(target spends healing surge and gains an additional"+stringy+" at level "+total_levels+")";
   SWD +="<li>Healing Word "+stringy+"</li>\r"
-  if (!feat_alchemistswap){SWD +="<li>Ritual Casting [bonus feat, not listed above]</li>\r"}
+  if (!feat_alchemistswap){SWD +="<li>Ritual Casting [bonus feat, not listed above]</li>\r";}
   SWD +="</ul>"
  }
 if (class_fighter)
@@ -27125,10 +27105,10 @@ if (class_fighter)
   SWD +="Fighter<p><ul>"
   SWD +="<li>Combat Challenge (mark enemy)</li>\r"
   SWD +="<li>Combat Superiority (bonus on opportunity attacks equal to your wisdom modifier, and an enemy struck by opportunity attack stops moving)</li>\r"
-  if (fighter_onehand){SWD +="<li>This fighter chose the one-handed style [already included].</li>\r"}
-  if (fighter_twohand){SWD +="<li>This fighter chose the two-handed style [already included].</li>\r"}
-  if (fighter_battlerager){SWD +="<li>This fighter chose the battlerager style [remember the free temporary hit points and accompanying combat bonuses].</li>\r"}
-  if (fighter_tempesttechnique){SWD +="<li>This fighter chose the tempest technique [free Two Weapon Defense feat, NOT listed above; remember the +1 AC and reflex bonuses when holding a weapon in each hand.]</li>\r"}
+  if (fighter_onehand){SWD +="<li>This fighter chose the one-handed style [already included].</li>\r";}
+  if (fighter_twohand){SWD +="<li>This fighter chose the two-handed style [already included].</li>\r";}
+  if (fighter_battlerager){SWD +="<li>This fighter chose the battlerager style [remember the free temporary hit points and accompanying combat bonuses].</li>\r";}
+  if (fighter_tempesttechnique){SWD +="<li>This fighter chose the tempest technique [free Two Weapon Defense feat, NOT listed above; remember the +1 AC and reflex bonuses when holding a weapon in each hand.]</li>\r";}
   SWD +="</ul>"
  }
 
@@ -27146,11 +27126,11 @@ if (class_paladin)
 if (class_ranger)
  {
   SWD +="Ranger<p><ul>"
-  if (ranger_archer){SWD +="<li>This ranger chose the archer style.  This gives the equivalent of the defensive mobility feat [not listed above].</li>\r"}
-  if (ranger_twoblade){SWD +="<li>This ranger chose the two-blade style.  This gives the equivalent of the toughness feat [not listed above].</li>\r"}
-  if (ranger_beastmaster){SWD +="<li>This ranger chose the beastmaster class feature.  Beastmasters give up Prime Shot.</li>\r"}
+  if (ranger_archer){SWD +="<li>This ranger chose the archer style.  This gives the equivalent of the defensive mobility feat [not listed above].</li>\r";}
+  if (ranger_twoblade){SWD +="<li>This ranger chose the two-blade style.  This gives the equivalent of the toughness feat [not listed above].</li>\r";}
+  if (ranger_beastmaster){SWD +="<li>This ranger chose the beastmaster class feature.  Beastmasters give up Prime Shot.</li>\r";}
   SWD +="<li>Hunter's Quarry "+HuntersQuarryDamage()+" [minor action]</li>\r"
-  if (!ranger_beastmaster){SWD +="<li>Prime Shot</li>\r"}
+  if (!ranger_beastmaster){SWD +="<li>Prime Shot</li>\r";}
   SWD +="</ul>"
  }
 
@@ -27159,9 +27139,9 @@ if (class_rogue)
   SWD +="Rogue<p><ul>"
   SWD +="<li>First Strike</li>\r"
   SWD +="<li>Rogue Weapon Talent</li>\r"
-  if (rogue_artfuldodger){SWD +="<li>This rogue chose the artful dodger style. Remember to add your charisma modifier to AC against opportunity attacks.</li>\r"}
-  if (rogue_brutalscoundrel){SWD +="<li>This rogue chose the brutal scoundrel style.  Remember to add your strength modifier to sneak attack damage.</li>\r"}
-  if (rogue_ruthlessruffian){SWD +="<li>This rogue chose the ruthless ruffian style.  Remember to add your strength modifier to damage using clubs or maces to attacks that rattle.</li>\r"}
+  if (rogue_artfuldodger){SWD +="<li>This rogue chose the artful dodger style. Remember to add your charisma modifier to AC against opportunity attacks.</li>\r";}
+  if (rogue_brutalscoundrel){SWD +="<li>This rogue chose the brutal scoundrel style.  Remember to add your strength modifier to sneak attack damage.</li>\r";}
+  if (rogue_ruthlessruffian){SWD +="<li>This rogue chose the ruthless ruffian style.  Remember to add your strength modifier to damage using clubs or maces to attacks that rattle.</li>\r";}
   if (total_levels<=10)
    {
     if (feat_backstabber){stringy="[+2d8 at level "+total_levels+"]"; }
@@ -27185,12 +27165,12 @@ if (class_warlock)
  {
   SWD +="Warlock<p><ul>"
   SWD +="<li>Eldritch Blast</li>\r"
-  if (warlock_fey){SWD +="<li>This warlock's pact is fey, with the Misty Step pact boon.</li>\r"}
-  if (warlock_infernal){SWD +="<li>This warlock's pact is infernal, with the Dark One's Blessing pact boon.</li>\r"}
-  if (warlock_star){SWD +="<li>This warlock's pact is to the far realm / stars, with the Fate of the Void pact boon.</li>\r"}
-  if (warlock_dark){SWD +="<li>This warlock's pact is dark, with the Darkspiral Aura pact boon.</li>\r"}
-  if (warlock_vestige){SWD +="<li>This warlock's pact is vestige, with variable pact boons.</li>\r"}
-  if (warlock_other){SWD +="<li>This warlock's pact is to the "+document.form1.otherwarlockpact.value+" with some pact boon.</li>\r"}
+  if (warlock_fey){SWD +="<li>This warlock's pact is fey, with the Misty Step pact boon.</li>\r";}
+  if (warlock_infernal){SWD +="<li>This warlock's pact is infernal, with the Dark One's Blessing pact boon.</li>\r";}
+  if (warlock_star){SWD +="<li>This warlock's pact is to the far realm / stars, with the Fate of the Void pact boon.</li>\r";}
+  if (warlock_dark){SWD +="<li>This warlock's pact is dark, with the Darkspiral Aura pact boon.</li>\r";}
+  if (warlock_vestige){SWD +="<li>This warlock's pact is vestige, with variable pact boons.</li>\r";}
+  if (warlock_other){SWD +="<li>This warlock's pact is to the "+document.form1.otherwarlockpact.value+" with some pact boon.</li>\r";}
   SWD +="<li>Prime Shot (+1 on ranged attacks if no ally is nearer)</li>\r"
   SWD +="<li>Shadow Walk (if you move at least 3 squares, gain concealment until the end of your next turn)</li>\r"
   SWD +="<li>Warlock's Curse (extra damage to any creature you have cursed during this encounter)</li>\r"
@@ -27201,10 +27181,10 @@ if (class_warlord)
  {
   SWD +="Warlord<p><ul>"
   SWD +="<li>Combat Leader (+2 initiative for self and all allies within ten squares)</li>\r"
-  if (warlord_inspiring){SWD +="<li>This warlord chose the inspiring presence.  Any ally in sight who spends an action point to attack regains hit points equal to half your level plus your charisma modifier.</li>\r"}
-  if (warlord_tactical){SWD +="<li>This warlord chose the tactical presence.  Any ally in sight who spends an action point to attack gets a bonus on attack roll equal to half your intelligence modifier.</li>\r"}
-  if (warlord_bravura){SWD +="<li>This warlord chose the bravura presence.  Any ally in sight who spends an action point to attack andhits can make a basic attack or move as a free action</li>\r"}
-  if (warlord_resourceful){SWD +="<li>This warlord chose the resourceful presence.  Any ally in sight who spends an action point to attack and hits does extra damage equal to half your level plus your charisma modifier.</li>\r"}
+  if (warlord_inspiring){SWD +="<li>This warlord chose the inspiring presence.  Any ally in sight who spends an action point to attack regains hit points equal to half your level plus your charisma modifier.</li>\r";}
+  if (warlord_tactical){SWD +="<li>This warlord chose the tactical presence.  Any ally in sight who spends an action point to attack gets a bonus on attack roll equal to half your intelligence modifier.</li>\r";}
+  if (warlord_bravura){SWD +="<li>This warlord chose the bravura presence.  Any ally in sight who spends an action point to attack andhits can make a basic attack or move as a free action</li>\r";}
+  if (warlord_resourceful){SWD +="<li>This warlord chose the resourceful presence.  Any ally in sight who spends an action point to attack and hits does extra damage equal to half your level plus your charisma modifier.</li>\r";}
   stringy="1d6";
   if (total_levels>=6){stringy="2d6";}
   if (total_levels>=11){stringy="3d6";}
@@ -27219,14 +27199,14 @@ if (class_warlord)
 if (class_wizard)
  {
   SWD +="Wizard<p><ul>"
-  if (orbofimposition){SWD +="<li>This wizard chose the Orb of Imposition mastery.  Remember the option to give a penalty on saving throws equal to your wisdom modifier, or maintain an at-will power for an extra turn.</li>\r"}
-  if (staffofdefense){SWD +="<li>This wizard chose the Staff of Defense mastery.  In addition to a +1 AC bonus, you can choose a bonus to your AC equal to your constitution modifier as an immediate interrupt, even after damage has been announced.</li>\r"}
-  if (wandofaccuracy){SWD +="<li>This wizard chose the Wand of Accuracy mastery.  Remember your once-per-encounter dexterity modifier bonus on an attack roll.</li>\r"}
-  if (orbofdeception){SWD +="<li>This wizard chose the Orb of Deception mastery.  Remember your once-per-encounter opportunity to target another enemy with an illusion power, with an attack bonus equal to your charisma modifier.</li>\r"}
-  if (tomeofbinding){SWD +="<li>This wizard chose the Tome of Binding mastery.  Remember your once-per-encounter opportunity to give your summoned creatures a bonus on damage rolls equal to your constitution modifier.</li>\r"}
-  if (tomeofreadiness){SWD +="<li>This wizard chose the Tome of Readiness mastery.  You can store a spare wizard encounter power in your tome for emergency use.</li>\r"}
+  if (orbofimposition){SWD +="<li>This wizard chose the Orb of Imposition mastery.  Remember the option to give a penalty on saving throws equal to your wisdom modifier, or maintain an at-will power for an extra turn.</li>\r";}
+  if (staffofdefense){SWD +="<li>This wizard chose the Staff of Defense mastery.  In addition to a +1 AC bonus, you can choose a bonus to your AC equal to your constitution modifier as an immediate interrupt, even after damage has been announced.</li>\r";}
+  if (wandofaccuracy){SWD +="<li>This wizard chose the Wand of Accuracy mastery.  Remember your once-per-encounter dexterity modifier bonus on an attack roll.</li>\r";}
+  if (orbofdeception){SWD +="<li>This wizard chose the Orb of Deception mastery.  Remember your once-per-encounter opportunity to target another enemy with an illusion power, with an attack bonus equal to your charisma modifier.</li>\r";}
+  if (tomeofbinding){SWD +="<li>This wizard chose the Tome of Binding mastery.  Remember your once-per-encounter opportunity to give your summoned creatures a bonus on damage rolls equal to your constitution modifier.</li>\r";}
+  if (tomeofreadiness){SWD +="<li>This wizard chose the Tome of Readiness mastery.  You can store a spare wizard encounter power in your tome for emergency use.</li>\r";}
   SWD +="<li>Cantrips</li>\r"
-  if (!feat_alchemistswap){SWD +="<li>Ritual Casting [bonus feat, not listed above]</li>\r"}
+  if (!feat_alchemistswap){SWD +="<li>Ritual Casting [bonus feat, not listed above]</li>\r";}
   SWD +="<li>Spellbook</li>\r"
   SWD +="</ul>"
  }
@@ -27234,9 +27214,9 @@ if (class_wizard)
 if (class_swordmage)
  {
   SWD +="Swordmage<p><ul>"
-  if (swordmage_assault){SWD +="<li>This swordmage chose the Aegis of Assault.</li>\r"}
-  if (swordmage_shielding){SWD +="<li>This swordmage chose the Aegis of Shielding.</li>\r"}
-  if (swordmage_ensnarement){SWD +="<li>This swordmage chose the Aegis of Ensnarement.</li>\r"}
+  if (swordmage_assault){SWD +="<li>This swordmage chose the Aegis of Assault.</li>\r";}
+  if (swordmage_shielding){SWD +="<li>This swordmage chose the Aegis of Shielding.</li>\r";}
+  if (swordmage_ensnarement){SWD +="<li>This swordmage chose the Aegis of Ensnarement.</li>\r";}
   SWD +="<li>Swordbond</li>\r"
   SWD +="<li>Swordmage Warding [+3 on AC assumes blade in one hand, other hand free; wielding a blade without the other hand free gives +1 on AC]</li>\r"
   SWD +="</ul>"
@@ -27245,8 +27225,8 @@ if (class_swordmage)
 if (class_avenger)
  {
   SWD +="Avenger<p><ul>"    
-  if (avenger_pursuit){SWD +="<li>This avenger chose the Censure of Pursuit option.</li>\r"}
-  if (avenger_retribution){SWD +="<li>This avenger chose the Censure of Retribution option.</li>\r"}
+  if (avenger_pursuit){SWD +="<li>This avenger chose the Censure of Pursuit option.</li>\r";}
+  if (avenger_retribution){SWD +="<li>This avenger chose the Censure of Retribution option.</li>\r";}
   SWD +="<li>Channel Divinity</li>\r"
   SWD +="<li>Oath of Enmity</li>\r"
   ph2class();
@@ -27256,8 +27236,8 @@ if (class_avenger)
 if (class_barbarian)
  {
   SWD +="Barbarian<p><ul>"
-  if (barbarian_rageblood){SWD +="<li>This barbarian chose the Rageblood Vigor feral might option.</li>\r"}
-  if (barbarian_thaneborn){SWD +="<li>This barbarian chose the Thaneborn Triumph feral might option.</li>\r"}
+  if (barbarian_rageblood){SWD +="<li>This barbarian chose the Rageblood Vigor feral might option.</li>\r";}
+  if (barbarian_thaneborn){SWD +="<li>This barbarian chose the Thaneborn Triumph feral might option.</li>\r";}
   SWD +="<li>Barbarian Agility</li>\r"
   SWD +="<li>Rage</li>\r"
   SWD +="<li>Rampage</li>\r"
@@ -27268,9 +27248,9 @@ if (class_barbarian)
 if (class_bard)
  {
   SWD +="Bard<p><ul>"
-  if (bard_cunning){SWD +="<li>This bard chose the Virtue of Cunning option; usable once/round.</li>\r"}
-  if (bard_valor){SWD +="<li>This bard chose the Virtue of Valor option; usable once/round.</li>\r"}
-  if (bard_prescience){SWD +="<li>This bard chose the Virtue of Prescience option (Arcane Power); usable once/encounter.</li>\r"}
+  if (bard_cunning){SWD +="<li>This bard chose the Virtue of Cunning option; usable once/round.</li>\r";}
+  if (bard_valor){SWD +="<li>This bard chose the Virtue of Valor option; usable once/round.</li>\r";}
+  if (bard_prescience){SWD +="<li>This bard chose the Virtue of Prescience option (Arcane Power); usable once/encounter.</li>\r";}
   SWD +="<li>Bardic Training</li>\r"
   SWD +="<li>Majestic Word</li>\r"
   SWD +="<li>Sorry -- I could not program multiclass versatility!</li>\r"
@@ -27285,8 +27265,8 @@ if (class_bard)
 if (class_druid)
  {
   SWD +="Druid<p><ul>"
-  if (druid_guardian){SWD +="<li>This druid chose the Guardian primal aspect.</li>\r"}
-  if (druid_predator){SWD +="<li>This druid chose the Predator primal aspect.</li>\r"}
+  if (druid_guardian){SWD +="<li>This druid chose the Guardian primal aspect.</li>\r";}
+  if (druid_predator){SWD +="<li>This druid chose the Predator primal aspect.</li>\r";}
   SWD +="<li>Balance of Nature</li>\r"
   SWD +="<li>Ritual Casting --  [bonus feat, not listed above; the ritual book can take most any form]</li>\r"
   SWD +="<li>Wild Shape</li>\r"
@@ -27297,8 +27277,8 @@ if (class_druid)
 if (class_invoker)
  {
   SWD +="Invoker<p><ul>"
-  if (invoker_preservation){SWD +="<li>This invoker chose the Covenant of Preservation.</li>\r"}
-  if (invoker_wrath){SWD +="<li>This invoker chose the Covernant of Wrath.</li>\r"}
+  if (invoker_preservation){SWD +="<li>This invoker chose the Covenant of Preservation.</li>\r";}
+  if (invoker_wrath){SWD +="<li>This invoker chose the Covernant of Wrath.</li>\r";}
   SWD +="<li>Channel Divinity</li>\r"
   SWD +="<li>Ritual Caster [bonus feat, not listed above]</li>\r"
   ph2class();
@@ -27308,8 +27288,8 @@ if (class_invoker)
 if (class_shaman)
  {
   SWD +="Shaman<p><ul>"
-  if (shaman_protector){SWD +="<li>This shaman chose the Protector Spirit option.</li>\r"}
-  if (shaman_stalker){SWD +="<li>This shaman chose the Stalker Spirit option.</li>\r"}
+  if (shaman_protector){SWD +="<li>This shaman chose the Protector Spirit option.</li>\r";}
+  if (shaman_stalker){SWD +="<li>This shaman chose the Stalker Spirit option.</li>\r";}
   SWD +="<li>Healing Spirt</li>\r"
   SWD +="<li>Speak with Spirt</li>\r"
   ph2class();
@@ -27319,10 +27299,10 @@ if (class_shaman)
 if (class_sorcerer)
  {
   SWD +="Sorcerer<p><ul>"
-  if (sorcerer_dragonsoul){SWD +="<li>This sorcerer chose the Dragon Magic option -- draconic power, draconic resilience, dragon soul, scales of the dragon.</li>\r"}
-  if (sorcerer_wildmagic){SWD +="<li>This sorcerer chose the Wild Magic option -- chaos burst, chaos power, unfettered power, wild soul.</li>\r"}
-  if (sorcerer_stormmagic){SWD +="<li>This sorcerer chose the Storm Magic option -- storm power, storm soul, storm's embrace.</li>\r"}
-  if (sorcerer_cosmicmagic){SWD +="<li>This sorcerer chose the Cosmic Magic option -- cosmic persistence, cosmic power, soul of the cosmic cycle.</li>\r"}
+  if (sorcerer_dragonsoul){SWD +="<li>This sorcerer chose the Dragon Magic option -- draconic power, draconic resilience, dragon soul, scales of the dragon.</li>\r";}
+  if (sorcerer_wildmagic){SWD +="<li>This sorcerer chose the Wild Magic option -- chaos burst, chaos power, unfettered power, wild soul.</li>\r";}
+  if (sorcerer_stormmagic){SWD +="<li>This sorcerer chose the Storm Magic option -- storm power, storm soul, storm's embrace.</li>\r";}
+  if (sorcerer_cosmicmagic){SWD +="<li>This sorcerer chose the Cosmic Magic option -- cosmic persistence, cosmic power, soul of the cosmic cycle.</li>\r";}
 //  SWD+="Ritual caster [bonus feat, not listed above]</li>\r";
   ph2class();
   SWD +="</ul>"
@@ -27331,8 +27311,8 @@ if (class_sorcerer)
 if (class_warden)
  {
   SWD +="Warden<p><ul>"
-  if (warden_earthstrength){SWD +="<li>This warden chose the Earthstrength might option.</li>\r"}
-  if (warden_wildblood){SWD +="<li>This warden chose the Wildblood might option.</li>\r"}
+  if (warden_earthstrength){SWD +="<li>This warden chose the Earthstrength might option.</li>\r";}
+  if (warden_wildblood){SWD +="<li>This warden chose the Wildblood might option.</li>\r";}
   SWD +="<li>Font of Life</li>\r"
   SWD +="<li>Nature's Wrath</li>\r"
   ph2class();
@@ -28536,7 +28516,7 @@ if (paragon_adroitexplorer)
   SWD+="<li>Champion of Humanity [Level 16]</li>\r";
   SWD+="<li>Destined for Greatness [paragon utility 12]</li>\r";
   SWD+="<li>Bloodied Greatness [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_ancestralincarnate)
  {
@@ -28547,7 +28527,7 @@ if (paragon_ancestralincarnate)
   SWD+="<li>Past-Life Guardian [paragon attack 11]</li>\r";
   SWD+="<li>Past-Life Servant [paragon utility 12]</li>\r";
   SWD+="<li>Past-Life Vanguage [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_bloodfurysavage)
  {
@@ -28558,7 +28538,7 @@ if (paragon_bloodfurysavage)
   SWD+="<li>Unbound Assault [paragon attack 11]</li>\r";
   SWD+="<li>Frothing Madness [paragon utility 12]</li>\r";
   SWD+="<li>MurderousRage [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_feybeguiler)
  {
@@ -28569,7 +28549,7 @@ if (paragon_feybeguiler)
   SWD+="<li>Sneaky Gnome [Level 16]</li>\r";
   SWD+="<li>Bedazzling Orb [paragon attack 11]</li>\r";
   SWD+="<li>Beguiling Bolt [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_firstbornofmoradin)
  {
@@ -28580,7 +28560,7 @@ if (paragon_firstbornofmoradin)
   SWD+="<li>Receive the Charge [paragon attack 11]</li>\r";
   SWD+="<li>Earthsense [paragon utility 12]</li>\r";
   SWD+="<li>Mountain Stance Strike [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_halflingscoundrel)
  {
@@ -28591,7 +28571,7 @@ if (paragon_halflingscoundrel)
   SWD+="<li>Sly Offensive [paragon attack 11]</li>\r";
   SWD+="<li>Problem Solver [paragon utility 12]</li>\r";
   SWD+="<li>Halfling's Taunt [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_moonstalker)
  {
@@ -28602,7 +28582,7 @@ if (paragon_moonstalker)
   SWD+="<li>Call to the Moon [paragon attack 11]</li>\r";
   SWD+="<li>Unleash the SIlent Predator [paragon utility 12]</li>\r";
   SWD+="<li>Circle the Prey [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_scionofarkhosia)
  {
@@ -28613,7 +28593,7 @@ if (paragon_scionofarkhosia)
   SWD+="<li>Dragon's Wrath [paragon attack 11]</li>\r";
   SWD+="<li>Dragon Wings [paragon utility 12]</li>\r";
   SWD+="<li>Clinging Breath [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_shiereknight)
  {
@@ -28624,7 +28604,7 @@ if (paragon_shiereknight)
   SWD+="<li>Ensorcelled Mind [paragon attack 11]</li>\r";
   SWD+="<li>Fey Escape [paragon utility 12]</li>\r";
   SWD+="<li>Imperious Presence [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_stoneblessed)
  {
@@ -28635,7 +28615,7 @@ if (paragon_stoneblessed)
   SWD+="<li>Mountain Sweep [paragon attack 11]</li>\r";
   SWD+="<li>Summit Advantage [paragon utility 12]</li>\r";
   SWD+="<li>Avalanche Assault [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_turathihighborn)
  {
@@ -28646,7 +28626,7 @@ if (paragon_turathihighborn)
   SWD+="<li>Bolts of Bedevilment [paragon attack 11]</li>\r";
   SWD+="<li>Infernal Nova [paragon utility 12]</li>\r";
   SWD+="<li>Thrall of Turath [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_twilightguardian)
  {
@@ -28657,7 +28637,7 @@ if (paragon_twilightguardian)
   SWD+="<li>Bonds of Life [paragon attack 11]</li>\r";
   SWD+="<li>Twilight Stealth [paragon utility 12]</li>\r";
   SWD+="<li>Nature's Rage [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_hammerofjudgment)
  {
@@ -28668,7 +28648,7 @@ if (paragon_hammerofjudgment)
   SWD+="<li>Thunder Hammer [paragon attack 11]</li>\r";
   SWD+="<li>Resolve of Steel [paragon utility 12]</li>\r";
   SWD+="<li>Hammer of the Final Pronouncement [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_oathsworn)
  {
@@ -28679,7 +28659,7 @@ if (paragon_oathsworn)
   SWD+="<li>Oath of Weakness [paragon attack 11]</li>\r";
   SWD+="<li>Sworn Crusade [paragon utility 12]</li>\r";
   SWD+="<li>Oath Bond [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_unveiledvisage)
  {
@@ -28690,7 +28670,7 @@ if (paragon_unveiledvisage)
   SWD+="<li>Radiant Visage [paragon attack 11]</li>\r";
   SWD+="<li>Divine Vigilance [paragon utility 12]</li>\r";
   SWD+="<li>Divine Aspect [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_zealousassassin)
  {
@@ -28701,7 +28681,7 @@ if (paragon_zealousassassin)
   SWD+="<li>Strike from Empty Air [paragon attack 11]</li>\r";
   SWD+="<li>Avenging Shadow [paragon utility 12]</li>\r";
   SWD+="<li>Blade of the Zealot [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_bearwarrior)
  {
@@ -28712,7 +28692,7 @@ if (paragon_bearwarrior)
   SWD+="<li>Mauling Bear [paragon attack 11]</li>\r";
   SWD+="<li>Bestial Vigor [paragon utility 12]</li>\r";
   SWD+="<li>Rampaging Bear [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_fearbringerthane)
  {
@@ -28723,7 +28703,7 @@ if (paragon_fearbringerthane)
   SWD+="<li>Screaming Hawk Strike [paragon attack 11]</li>\r";
   SWD+="<li>Fearsome PResence [paragon utility 12]</li>\r";
   SWD+="<li>Tide of Battle [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_frenziedberserker)
  {
@@ -28734,7 +28714,7 @@ if (paragon_frenziedberserker)
   SWD+="<li>Persistent Frenzy [paragon attack 11]</li>\r";
   SWD+="<li>Deathless Frenzy [paragon utility 12]</li>\r";
   SWD+="<li>Final COnfrontation [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_wildrunner)
  {
@@ -28745,7 +28725,7 @@ if (paragon_wildrunner)
   SWD+="<li>Shifting WIlds Strike [paragon attack 11]</li>\r";
   SWD+="<li>Press the Kill [paragon utility 12]</li>\r";
   SWD+="<li>Wildrunner's Rage [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_studentoftheseven)
  {
@@ -28756,7 +28736,7 @@ if (paragon_studentoftheseven)
   SWD+="<li>Anyspell [paragon attack 11]</li>\r";
   SWD+="<li>Versatile Glamor [paragon utility 12]</li>\r";
   SWD+="<li>Voice of the Seven [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_summerrhymer)
  {
@@ -28767,7 +28747,7 @@ if (paragon_summerrhymer)
   SWD+="<li>Song of the Queen's Protection [paragon attack 11]</li>\r";
   SWD+="<li>Song of Spiral Paths [paragon utility 12]</li>\r";
   SWD+="<li>Song of the High Court [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_voiceofthunder)
  {
@@ -28778,7 +28758,7 @@ if (paragon_voiceofthunder)
   SWD+="<li>Rolling Echo [paragon attack 11]</li>\r";
   SWD+="<li>Doom Echo [paragon utility 12]</li>\r";
   SWD+="<li>Song of Thunder [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_warchanter)
  {
@@ -28789,7 +28769,7 @@ if (paragon_warchanter)
   SWD+="<li>Victorious Smite [paragon attack 11]</li>\r";
   SWD+="<li>Battle Chant [paragon utility 12]</li>\r";
   SWD+="<li>Visoins of Victory [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_bloodmoonstalker)
  {
@@ -28800,7 +28780,7 @@ if (paragon_bloodmoonstalker)
   SWD+="<li>Blood Moon Frenzy [paragon attack 11]</li>\r";
   SWD+="<li>Feral Accuracy [paragon utility 12]</li>\r";
   SWD+="<li>Nature's Grave [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_guardianofthelivinggate)
  {
@@ -28811,7 +28791,7 @@ if (paragon_guardianofthelivinggate)
   SWD+="<li>First Ward of the Living Gate [paragon attack 11]</li>\r";
   SWD+="<li>Second Ward of the Living Gate [paragon utility 12]</li>\r";
   SWD+="<li>Third Ward of the Living Gate [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_keeperofthehiddenflame)
  {
@@ -28822,7 +28802,7 @@ if (paragon_keeperofthehiddenflame)
   SWD+="<li>Summon the Beast [paragon attack 11]</li>\r";
   SWD+="<li>Spark of Fury [paragon utility 12]</li>\r";
   SWD+="<li>Sprit of the Beast [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_skyhunter)
  {
@@ -28833,7 +28813,7 @@ if (paragon_skyhunter)
   SWD+="<li>Blinding Talons [paragon attack 11]</li>\r";
   SWD+="<li>Soaring Falcon [paragon utility 12]</li>\r";
   SWD+="<li>Primal Eagle [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_angelicaspect)
  {
@@ -28844,7 +28824,7 @@ if (paragon_angelicaspect)
   SWD+="<li>Angelic Blades [paragon attack 11]</li>\r";
   SWD+="<li>Shielding Nimbus [paragon utility 12]</li>\r";
   SWD+="<li>Coldfire Pillar [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_blightspeaker)
  {
@@ -28855,7 +28835,7 @@ if (paragon_blightspeaker)
   SWD+="<li>Chains of Death [paragon attack 11]</li>\r";
   SWD+="<li>False Life [paragon utility 12]</li>\r";
   SWD+="<li>Endbringer [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_flameofhope)
  {
@@ -28866,7 +28846,7 @@ if (paragon_flameofhope)
   SWD+="<li>Numinous Cascade [paragon attack 11]</li>\r";
   SWD+="<li>Blinding Ward [paragon utility 12]</li>\r";
   SWD+="<li>Sunburst Bulwark [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_hammerofvengeance)
  {
@@ -28877,7 +28857,7 @@ if (paragon_hammerofvengeance)
   SWD+="<li>Mark of Castigation [paragon attack 11]</li>\r";
   SWD+="<li>THundering Summons [paragon utility 12]</li>\r";
   SWD+="<li>Warding Thunder [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_discipleoftheworldserpent)
  {
@@ -28888,7 +28868,7 @@ if (paragon_discipleoftheworldserpent)
   SWD+="<li>Serpent's Rebuke [paragon attack 11]</li>\r";
   SWD+="<li>Seal of the SErpent [paragon utility 12]</li>\r";
   SWD+="<li>Crush of the Serpent [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_ghostpanther)
  {
@@ -28899,7 +28879,7 @@ if (paragon_ghostpanther)
   SWD+="<li>Predator Spirit [paragon attack 11]</li>\r";
   SWD+="<li>Great Cat's Dodge [paragon utility 12]</li>\r";
   SWD+="<li>Ghost Panther Spiral [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_greatbearshaman)
  {
@@ -28910,7 +28890,7 @@ if (paragon_greatbearshaman)
   SWD+="<li>Bear Fang Defense [paragon attack 11]</li>\r";
   SWD+="<li>Galvanizing Bellow [paragon utility 12]</li>\r";
   SWD+="<li>Call to the Great Bear [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_spirittempest)
  {
@@ -28921,7 +28901,7 @@ if (paragon_spirittempest)
   SWD+="<li>Spirit Tide [paragon attack 11]</li>\r";
   SWD+="<li>Spirit Flow [paragon utility 12]</li>\r";
   SWD+="<li>Spirit Storm [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_arcanewellspring)
  {
@@ -28932,7 +28912,7 @@ if (paragon_arcanewellspring)
   SWD+="<li>Twin Bolt [paragon attack 11]</li>\r";
   SWD+="<li>Sorcerous Wings [paragon utility 12]</li>\r";
   SWD+="<li>Sorcerous Metamorphosis [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_demonskinadept)
  {
@@ -28943,7 +28923,7 @@ if (paragon_demonskinadept)
   SWD+="<li>Demon-Soul Bolts [paragon attack 11]</li>\r";
   SWD+="<li>Demonic Wrath [paragon utility 12]</li>\r";
   SWD+="<li>Swords of the Marilith [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_dragonsoulheir)
  {
@@ -28954,7 +28934,7 @@ if (paragon_dragonsoulheir)
   SWD+="<li>Breath of the Dragon Soul [paragon attack 11]</li>\r";
   SWD+="<li>Dragon's Revenge [paragon utility 12]</li>\r";
   SWD+="<li>Veil of the Dragon [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_wildmage)
  {
@@ -28965,7 +28945,7 @@ if (paragon_wildmage)
   SWD+="<li>Tempest Surge [paragon attack 11]</li>\r";
   SWD+="<li>Torrent of Power [paragon utility 12]</li>\r";
   SWD+="<li>Prismatic Bolt [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_bloodwrathguardian)
  {
@@ -28976,7 +28956,7 @@ if (paragon_bloodwrathguardian)
   SWD+="<li>Bloodwrath Strike [paragon attack 11]</li>\r";
   SWD+="<li>Warding Frenzy [paragon utility 12]</li>\r";
   SWD+="<li>Form of the Primal Beast [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_hornedchampion)
  {
@@ -28987,7 +28967,7 @@ if (paragon_hornedchampion)
   SWD+="<li>Zealous Strike [paragon attack 11]</li>\r";
   SWD+="<li>IMpetuous Stride [paragon utility 12]</li>\r";
   SWD+="<li>Form of the Leaping Stag [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_stormsentinel)
  {
@@ -28998,7 +28978,7 @@ if (paragon_stormsentinel)
   SWD+="<li>Thunder Smash [paragon attack 11]</li>\r";
   SWD+="<li>Storm Step [paragon utility 12]</li>\r";
   SWD+="<li>Form of Storm's Wrath [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 if (paragon_verdantlord)
  {
@@ -29009,7 +28989,7 @@ if (paragon_verdantlord)
   SWD+="<li>Falling Tre Strike [paragon attack 11]</li>\r";
   SWD+="<li>Awaken the Forest [paragon utility 12]</li>\r";
   SWD+="<li>Form of the Verdant Lord [paragon attack 20]</li>\r";
-  SWD+="</ul><p>"}
+  SWD+="</ul><p>";}
 
 
 
@@ -29036,7 +29016,7 @@ if (paragon_multiclass)
  {
   SWD+="<p>Multiclass Paragon<p><ul>";
   stringy="a sideclass";
-  if (feat_versatilemaster){stringy="any class's"}
+  if (feat_versatilemaster){stringy="any class's";}
   SWD+="<li>Swap out a class for a sideclass at-will power [Level 11]</li>\r"; 
   SWD+="<li>Choose "+stringy+" encounter power of level 7 or less [Level 11]</li>\r"; 
   SWD+="<li>Choose "+stringy+" utility power of level 10 or less [Level 12]</li>\r"; 
@@ -29301,8 +29281,8 @@ if (epic_other)
 
 
 
-   if (document.form1.moniker.value==""){SWD +="Equipment:<p><ul><p>"}
-   else {SWD +=document.form1.moniker.value + "'s Equipment:<p><ul><p>"}
+   if (document.form1.moniker.value==""){SWD +="Equipment:<p><ul><p>";}
+   else {SWD +=document.form1.moniker.value + "'s Equipment:<p><ul><p>";}
 
 
 SWD +="<table><tr><td align=\"right\"><font face=\"Arial\">"
@@ -29320,79 +29300,79 @@ if (document.form1.slingbullets.selectedIndex>0)
 
 
 if (document.form1.backpack.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.barrel.checked==true)
- {x=30; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=30; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.basket.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.bedroll.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.bell.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.blanketwinter_list.selectedIndex>0)
  {
   x=Math.ceil(3*document.form1.blanketwinter_list.selectedIndex)
 //  if (small==true){x=Math.ceil(0.75*document.form1.blanketwinter_list.selectedIndex)}
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.blockandtackle.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.bottle.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.bucket.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.caltrops.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.candle.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.canvas.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.casemaporscroll.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.chain.selectedIndex>0)
  {x=Math.ceil(2*document.form1.chain.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.chalk.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.chest.checked==true)
- {x=25; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=25; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.crowbar.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.everburningtorch.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.firewood.selectedIndex>0)
  {x=Math.ceil(20*document.form1.firewood.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.fishhook.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.fishingnet.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.flask.selectedIndex>0)
  {x=Math.ceil(1.5*document.form1.flask.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.flintandsteel.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.grapplinghook.checked==true)
- {x=4; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=4; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.hammer.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.inkvial.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.inkpen.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.journeybread.selectedIndex>0)
  {x=document.form1.journeybread.selectedIndex; 
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.jugclay.checked==true)
- {x=9; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=9; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.ladder.checked==true)
- {x=20; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=20; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.lampcommon.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 
 if (document.form1.lanternbullseye.checked==true)
- {x=3; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=3; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.lanternhooded.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.lanternoil.selectedIndex>0)
  {x=Math.ceil(1*document.form1.lanternoil.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
@@ -29403,9 +29383,9 @@ if (document.form1.manacles.selectedIndex>0)
  {x=Math.ceil(2*document.form1.manacles.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.mirror.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.mug.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.oilflask.selectedIndex>0)
  {x=Math.ceil(1*document.form1.oilflask.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
@@ -29416,23 +29396,23 @@ if (document.form1.parchment.selectedIndex>0)
  {x=Math.ceil(0*document.form1.parchment.selectedIndex)
   SWD +="<br>\r"; wt +=0; }
 if (document.form1.pick.checked==true)
- {x=10; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=10; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.pitcher.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.pitons.selectedIndex>0)
  {x=5*document.form1.pitons.selectedIndex; 
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.pole.checked==true)
- {x=8; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=8; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.pot.checked==true)
- {x=10; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=10; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.beltpouch.selectedIndex>0)
  {
   x=Math.ceil(0.5*document.form1.beltpouch.selectedIndex)
 //  if (small==true){x=Math.ceil(0.125*document.form1.beltpouch.selectedIndex)}
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.ram.checked==true)
- {x=20; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=20; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.rations.selectedIndex>0)
  {
   x=Math.ceil(1*document.form1.rations.selectedIndex)
@@ -29449,21 +29429,21 @@ if (document.form1.sack.selectedIndex>0)
   SWD +=x + " lb<br>\r"; wt +=x; }
 
 if (document.form1.sealingwax.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.sewingneedle.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.signalwhistle.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.signetring.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.sledge.checked==true)
- {x=10; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=10; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.soap.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.spadeorshovel.checked==true)
- {x=8; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=8; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.spyglass.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.sunrods.selectedIndex>0)
  {x=Math.ceil(document.form1.sunrods.selectedIndex); 
   SWD +=x + " lb<br>\r"; wt +=x; }
@@ -29471,7 +29451,7 @@ if (document.form1.tent.checked==true)
  {
   x=20; 
 //  if (small==true){x=5; }
-  wt +=x; SWD +=x + " lb<br>\r"}
+  wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.torch.selectedIndex>0)
  {x=Math.ceil(1*document.form1.torch.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
@@ -29484,54 +29464,54 @@ if (document.form1.waterskin.selectedIndex>0)
 //  if (small==true){x=Math.ceil(1*document.form1.waterskin.selectedIndex)}
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.whetstone.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.alchemistlab.checked==true)
- {x=40; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=40; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.artisantools.checked==true)
- {x=5; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=5; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.disguisekit.checked==true)
  {
   x=8; 
    //if (small==true){x=2; }
-   wt +=x; SWD +=x + " lb<br>\r"}
+   wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.healerkit.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.hollyandmistletoe.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.holysymbolwooden.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.holysymbolsilver.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.hourglass.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.magnifyingglass.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.musicalinstrument.checked==true)
  {
   x=3; 
   // if (small==true){x=1; }
-   wt +=x; SWD +=x + " lb<br>\r"}
+   wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.orb_box.checked==true)
- { x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ { x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.ritualbook.selectedIndex>0)
  {x=Math.ceil(3*document.form1.ritualbook.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.spellcomponentpouch.checked==true)
- {SWD +="<br>\r"}
+ {SWD +="<br>\r";}
 if (document.form1.rod_box.checked==true)
- {x=2; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=2; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.scale.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.spellbook.selectedIndex>0)
  {x=Math.ceil(3*document.form1.spellbook.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.thievestools.checked==true)
- {x=1; wt +=x; SWD +=x + " lb<br>\r"}
+ {x=1; wt +=x; SWD +=x + " lb<br>\r";}
 if (document.form1.tool.selectedIndex>0)
  {x=Math.ceil(2*document.form1.tool.selectedIndex)
   SWD +=x + " lb<br>\r"; wt +=x; }
 if (document.form1.wand_box.checked==true)
- {SWD+="<br>\r"}
+ {SWD+="<br>\r";}
 x=Math.ceil(wt);  
 SWD +="_____<br>\r" + x + " lb"; 
 
@@ -29547,71 +29527,71 @@ if (document.form1.slingbullets.selectedIndex>0)
 
 
 if (document.form1.backpack.checked==true)
- {SWD +="Backpack<br>\r"}
+ {SWD +="Backpack<br>\r";}
 if (document.form1.barrel.checked==true)
- {SWD +="Barrel<br>\r"}
+ {SWD +="Barrel<br>\r";}
 if (document.form1.basket.checked==true)
- {SWD +="Basket<br>\r"}
+ {SWD +="Basket<br>\r";}
 if (document.form1.bedroll.checked==true)
- {SWD +="Bedroll<br>\r"}
+ {SWD +="Bedroll<br>\r";}
 if (document.form1.bell.checked==true)
- {SWD +="Bell<br>\r"}
+ {SWD +="Bell<br>\r";}
 if (document.form1.blanketwinter_list.selectedIndex>0)
  {SWD +="Blanket, winter x" + document.form1.blanketwinter_list.selectedIndex + "<br>\r"; }
 if (document.form1.blockandtackle.checked==true)
- {SWD +="Block and tackle<br>\r"}
+ {SWD +="Block and tackle<br>\r";}
 if (document.form1.bottle.checked==true)
- {SWD +="Bottle<br>\r"}
+ {SWD +="Bottle<br>\r";}
 if (document.form1.bucket.checked==true)
- {SWD +="Bucket<br>\r"}
+ {SWD +="Bucket<br>\r";}
 if (document.form1.caltrops.checked==true)
- {SWD +="Caltrops<br>\r"}
+ {SWD +="Caltrops<br>\r";}
 if (document.form1.candle.checked==true)
- {SWD +="Candle<br>\r"}
+ {SWD +="Candle<br>\r";}
 if (document.form1.canvas.checked==true)
- {SWD +="Canvas (10 x 10)<br>\r"}
+ {SWD +="Canvas (10 x 10)<br>\r";}
 if (document.form1.casemaporscroll.checked==true)
- {SWD +="Case (for map or scroll)<br>\r"}
+ {SWD +="Case (for map or scroll)<br>\r";}
 if (document.form1.chain.selectedIndex>0)
  {SWD +="Chain (10 feet) x" + document.form1.chain.selectedIndex + "<br>\r"; }
 if (document.form1.chalk.checked==true)
- {SWD +="Chalk<br>\r"}
+ {SWD +="Chalk<br>\r";}
 if (document.form1.chest.checked==true)
- {SWD +="Chest<br>\r"}
+ {SWD +="Chest<br>\r";}
 if (document.form1.crowbar.checked==true)
- {SWD +="Crowbar<br>\r"}
+ {SWD +="Crowbar<br>\r";}
 if (document.form1.everburningtorch.checked==true)
- {SWD +="Everburning torch<br>\r"}
+ {SWD +="Everburning torch<br>\r";}
 if (document.form1.firewood.selectedIndex>0)
  {SWD +="Firewood (1 day) x" + document.form1.firewood.selectedIndex + "<br>\r"; }
 if (document.form1.fishhook.checked==true)
- {SWD +="Fishhook<br>\r"}
+ {SWD +="Fishhook<br>\r";}
 if (document.form1.fishingnet.checked==true)
- {SWD +="Fishing net<br>\r"}
+ {SWD +="Fishing net<br>\r";}
 if (document.form1.flask.selectedIndex>0)
  {SWD +="Flasks x" + document.form1.flask.selectedIndex + "<br>\r"; }
 if (document.form1.flintandsteel.checked==true)
- {SWD +="Flint and steel<br>\r"}
+ {SWD +="Flint and steel<br>\r";}
 if (document.form1.grapplinghook.checked==true)
- {SWD +="Grappling hook<br>\r"}
+ {SWD +="Grappling hook<br>\r";}
 if (document.form1.hammer.checked==true)
- {SWD +="Hammer<br>\r"}
+ {SWD +="Hammer<br>\r";}
 if (document.form1.inkvial.checked==true)
- {SWD +="Ink vial<br>\r"}
+ {SWD +="Ink vial<br>\r";}
 if (document.form1.inkpen.checked==true)
- {SWD +="Ink pen<br>\r"}
+ {SWD +="Ink pen<br>\r";}
 if (document.form1.journeybread.selectedIndex>0)
  {SWD +="Journeybread x" + (10*document.form1.journeybread.selectedIndex) + "<br>\r"; }
 if (document.form1.jugclay.checked==true)
- {SWD +="Jug (clay)<br>\r"}
+ {SWD +="Jug (clay)<br>\r";}
 if (document.form1.ladder.checked==true)
- {SWD +="Ladder<br>\r"}
+ {SWD +="Ladder<br>\r";}
 if (document.form1.lampcommon.checked==true)
- {SWD +="Lamp (common)<br>\r"}
+ {SWD +="Lamp (common)<br>\r";}
 if (document.form1.lanternbullseye.checked==true)
- {SWD +="Lantern (bullseye)<br>\r"}
+ {SWD +="Lantern (bullseye)<br>\r";}
 if (document.form1.lanternhooded.checked==true)
- {SWD +="Lantern (hooded)<br>\r"}
+ {SWD +="Lantern (hooded)<br>\r";}
 if (document.form1.lanternoil.selectedIndex>0)
  {SWD +="Lantern oil (pints) x" + document.form1.lanternoil.selectedIndex + "<br>\r"; }
 if (document.form1.lock.selectedIndex>0)
@@ -29619,9 +29599,9 @@ if (document.form1.lock.selectedIndex>0)
 if (document.form1.manacles.selectedIndex>0)
  {SWD +="Manacles x" + document.form1.manacles.selectedIndex + "<br>\r"; }
 if (document.form1.mirror.checked==true)
- {SWD +="Mirror<br>\r"}
+ {SWD +="Mirror<br>\r";}
 if (document.form1.mug.checked==true)
- {SWD +="Mug<br>\r"}
+ {SWD +="Mug<br>\r";}
 if (document.form1.oilflask.selectedIndex>0)
  {SWD +="Oil flasks x" + document.form1.oilflask.selectedIndex + "<br>\r"; }
 if (document.form1.paper.selectedIndex>0)
@@ -29629,19 +29609,19 @@ if (document.form1.paper.selectedIndex>0)
 if (document.form1.parchment.selectedIndex>0)
  {SWD +="Parchment sheets x" + document.form1.parchment.selectedIndex + "<br>\r"; }
 if (document.form1.pick.checked==true)
- {SWD +="Pick<br>\r"}
+ {SWD +="Pick<br>\r";}
 if (document.form1.pitcher.checked==true)
- {SWD +="Pitcher<br>\r"}
+ {SWD +="Pitcher<br>\r";}
 if (document.form1.pitons.selectedIndex>0)
  {SWD +="Pitons x" + (10*document.form1.pitons.selectedIndex) + "<br>\r"; }
 if (document.form1.pole.checked==true)
- {SWD +="Pole<br>\r"}
+ {SWD +="Pole<br>\r";}
 if (document.form1.pot.checked==true)
- {SWD +="Pot<br>\r"}
+ {SWD +="Pot<br>\r";}
 if (document.form1.beltpouch.selectedIndex>0)
  {SWD +="Pouch (belt) x" + document.form1.beltpouch.selectedIndex + "<br>\r"; }
 if (document.form1.ram.checked==true)
- {SWD +="Ram<br>\r"}
+ {SWD +="Ram<br>\r";}
 if (document.form1.rations.selectedIndex>0)
  {SWD +="Rations (1 day) x" + document.form1.rations.selectedIndex + "<br>\r"; }
 if (document.form1.ropehempen.selectedIndex>0)
@@ -29652,25 +29632,25 @@ if (document.form1.sack.selectedIndex>0)
  {SWD +="Sacks x" + document.form1.sack.selectedIndex + "<br>\r"; }
 
 if (document.form1.sealingwax.checked==true)
- {SWD +="Sealing wax<br>\r"}
+ {SWD +="Sealing wax<br>\r";}
 if (document.form1.sewingneedle.checked==true)
- {SWD +="Sewing needle<br>\r"}
+ {SWD +="Sewing needle<br>\r";}
 if (document.form1.signalwhistle.checked==true)
- {SWD +="Signal whistle<br>\r"}
+ {SWD +="Signal whistle<br>\r";}
 if (document.form1.signetring.checked==true)
- {SWD +="Signet ring<br>\r"}
+ {SWD +="Signet ring<br>\r";}
 if (document.form1.sledge.checked==true)
- {SWD +="Sledge<br>\r"}
+ {SWD +="Sledge<br>\r";}
 if (document.form1.soap.checked==true)
- {SWD +="Soap<br>\r"}
+ {SWD +="Soap<br>\r";}
 if (document.form1.spadeorshovel.checked==true)
- {SWD +="Spade / shovel<br>\r"}
+ {SWD +="Spade / shovel<br>\r";}
 if (document.form1.spyglass.checked==true)
- {SWD +="Spyglass<br>\r"}
+ {SWD +="Spyglass<br>\r";}
 if (document.form1.sunrods.selectedIndex>0)
  {SWD +="Sunrods x" + document.form1.sunrods.selectedIndex + "<br>\r"; }
 if (document.form1.tent.checked==true)
- {SWD +="Tent<br>\r"}
+ {SWD +="Tent<br>\r";}
 if (document.form1.torch.selectedIndex>0)
  {SWD +="Torches x" + document.form1.torch.selectedIndex + "<br>\r"; }
 if (document.form1.vialinkorpotion.selectedIndex>0)
@@ -29678,45 +29658,45 @@ if (document.form1.vialinkorpotion.selectedIndex>0)
 if (document.form1.waterskin.selectedIndex>0)
  {SWD +="Waterskins x" + document.form1.waterskin.selectedIndex + "<br>\r"; }
 if (document.form1.whetstone.checked==true)
- {SWD +="Whetstone<br>\r"}
+ {SWD +="Whetstone<br>\r";}
 if (document.form1.alchemistlab.checked==true)
- {SWD +="Alchemist lab<br>\r"}
+ {SWD +="Alchemist lab<br>\r";}
 if (document.form1.artisantools.checked==true)
- {SWD +="Artisan tools<br>\r"}
+ {SWD +="Artisan tools<br>\r";}
 if (document.form1.disguisekit.checked==true)
- {SWD +="Disguise kit<br>\r"}
+ {SWD +="Disguise kit<br>\r";}
 if (document.form1.healerkit.checked==true)
- {SWD +="Healer kit<br>\r"}
+ {SWD +="Healer kit<br>\r";}
 if (document.form1.hollyandmistletoe.checked==true)
- {SWD +="Holly and mistletoe<br>\r"}
+ {SWD +="Holly and mistletoe<br>\r";}
 if (document.form1.holysymbolwooden.checked==true)
- {SWD +="Holy symbol (wooden)<br>\r"}
+ {SWD +="Holy symbol (wooden)<br>\r";}
 if (document.form1.holysymbolsilver.checked==true)
- {SWD +="Holy symbol (silver)<br>\r"}
+ {SWD +="Holy symbol (silver)<br>\r";}
 if (document.form1.hourglass.checked==true)
- {SWD +="Hourglass<br>\r"}
+ {SWD +="Hourglass<br>\r";}
 if (document.form1.magnifyingglass.checked==true)
- {SWD +="Magnifying glass<br>\r"}
+ {SWD +="Magnifying glass<br>\r";}
 if (document.form1.musicalinstrument.checked==true)
- {SWD +="Musical instrument<br>\r"}
+ {SWD +="Musical instrument<br>\r";}
 if (document.form1.orb_box.checked==true)
- {SWD +="Orb<br>\r"}
+ {SWD +="Orb<br>\r";}
 if (document.form1.ritualbook.selectedIndex>0)
  {SWD +="Ritual book x" + document.form1.ritualbook.selectedIndex + "<br>\r"; }
 if (document.form1.rod_box.checked==true)
- {SWD +="Rod<br>\r"}
+ {SWD +="Rod<br>\r";}
 if (document.form1.scale.checked==true)
- {SWD +="Scale, merchant's<br>\r"}
+ {SWD +="Scale, merchant's<br>\r";}
 if (document.form1.spellcomponentpouch.checked==true)
- {SWD +="Ritual components<br>\r"}
+ {SWD +="Ritual components<br>\r";}
 if (document.form1.spellbook.selectedIndex>0)
  {SWD +="Spellbook x" + document.form1.spellbook.selectedIndex + "<br>\r"; }
 if (document.form1.thievestools.checked==true)
- {SWD +="Thieves' tools<br>\r"}
+ {SWD +="Thieves' tools<br>\r";}
 if (document.form1.tool.selectedIndex>0)
  {SWD +="Tools (miscellaneous) x" + document.form1.tool.selectedIndex + "<br>\r"; }
 if (document.form1.wand_box.checked==true)
- {SWD +="Wand<br>\r"}
+ {SWD +="Wand<br>\r";}
 
 
 SWD +="<br>Total<br></td></tr></table><p>"
@@ -29993,8 +29973,8 @@ SWD +="<p></ul><img src=\"spellbar.gif\">"
    }
  }
 
-   if (document.form1.moniker.value==""){SWD+="More about this character:<ul><p>"}
-   else {SWD+="More about "+document.form1.moniker.value+":<p><ul>"}
+   if (document.form1.moniker.value==""){SWD+="More about this character:<ul><p>";}
+   else {SWD+="More about "+document.form1.moniker.value+":<p><ul>";}
    SWD+=document.form1.moreAbout.value; 
    SWD+="</ul></body></html>"; 
 
@@ -32544,7 +32524,7 @@ function lock_feats(){
   document.form1.sixth_comment_box.value+="  Asterisks mark weapon, armor, and shield proficiencies."
   BestFighterWeapons(); 
   document.form1.sixth_comment_box.value+="  For fourth edition, you're on your honor filling in your powers."
-  if (race_goliath){document.form1.sixth_comment_box.value+="  Almost all goliaths learn either dwarven or giantish."}
+  if (race_goliath){document.form1.sixth_comment_box.value+="  Almost all goliaths learn either dwarven or giantish.";}
   MilitaryStars(); 
   FeatsAreLocked=true; 
   LightPowerStars(); 
@@ -32912,7 +32892,7 @@ function lock_feats(){
   SuggestEyesHairSkin(); 
 
   }
-  else {document.form1.sixth_comment_box.value="Work on your feats"}
+  else {document.form1.sixth_comment_box.value="Work on your feats";}
    ArrowShow(); 
  }
 
@@ -32952,18 +32932,18 @@ function SuggestEyesHairSkin(){
  if (race_dwarf)
   {
    document.form1.eyeshairskin_textarea.value="Dwarves have the same range of coloring as humans.  They may also have gray or sandstone red (choose rust-colored) skin.  Red hair is common.  Males tend to be hirsute.";
-   if (feat_golddwarfpride){document.form1.eyeshairskin_textarea.value+="  With gold-dwarf heritage, the skin and hair are usually dark, and the eyes hazel, brown, or green.  Green eyes are considered lucky."}
+   if (feat_golddwarfpride){document.form1.eyeshairskin_textarea.value+="  With gold-dwarf heritage, the skin and hair are usually dark, and the eyes hazel, brown, or green.  Green eyes are considered lucky.";}
   }
  if (race_eladrin)
   {
    document.form1.eyeshairskin_textarea.value="Eladrin have the same range of coloring as humans.  Most have light complexions.  Hair is often white, silver, or gold.  They have little body hair and the men cannot grow beards.  ";
-   if (feat_moonelfresilience){document.form1.eyeshairskin_textarea.value+="  With moon-elf heritage, the skin is usually pale or bluish, with silver or black hair, and green or blue eyes flecked with gold."}
-   if (feat_sunelfgrace){document.form1.eyeshairskin_textarea.value+="  With sun-elf heritage, the skin is usually golden or bronze, with blond, coppery, or black hair.  Eyes tend to be green or gold."}
+   if (feat_moonelfresilience){document.form1.eyeshairskin_textarea.value+="  With moon-elf heritage, the skin is usually pale or bluish, with silver or black hair, and green or blue eyes flecked with gold.";}
+   if (feat_sunelfgrace){document.form1.eyeshairskin_textarea.value+="  With sun-elf heritage, the skin is usually golden or bronze, with blond, coppery, or black hair.  Eyes tend to be green or gold.";}
   }
  if (race_elf){document.form1.eyeshairskin_textarea.value="Elves have the same range of coloring as humans.  Most have tan or brown skin.  Hair is often red, orange, green, or gold.  They have little body hair and the men cannot grow beards.";}
  if (race_halfelf){document.form1.eyeshairskin_textarea.value="Half-Elves have the same range of coloring as humans.  Many have eye or hair colors that would be unknown among humans in our world."; }
-  if (feat_woodelfagility){document.form1.eyeshairskin_textarea.value+="  With wood-elf (copper elf) heritage, the skin is usually tinged with green.  Hair tends to be brown or black, though red and blond may also be seen.  Eyes range from hazel or green through brown."}
-  if (feat_wildelfluck){document.form1.eyeshairskin_textarea.value+="  With wild-elf heritage, the skin and hair tend to be dark."}
+  if (feat_woodelfagility){document.form1.eyeshairskin_textarea.value+="  With wood-elf (copper elf) heritage, the skin is usually tinged with green.  Hair tends to be brown or black, though red and blond may also be seen.  Eyes range from hazel or green through brown.";}
+  if (feat_wildelfluck){document.form1.eyeshairskin_textarea.value+="  With wild-elf heritage, the skin and hair tend to be dark.";}
  if (race_halfling){document.form1.eyeshairskin_textarea.value="Halflings have the same range of coloring as humans.  Most have dark hair and eyes.  Male halflings cannot grow beard, but many sport sideburns."; }
  if (race_human){document.form1.eyeshairskin_textarea.value="Feel free to choose as you like for your human."; }
  if (race_tiefling){document.form1.eyeshairskin_textarea.value="Tieflings have the same range of coloring as humans.  The skin can also be scarlet, rust, or ochre.  Hair tends to be dark blue, red, or purple."; }
@@ -33054,8 +33034,8 @@ function TellAboutPointBuy(){
      if (document.form1.methods_list.selectedIndex==1)
       {
        x=pointbuy8(stat6) + pointbuy10(stat2) + pointbuy10(stat3) + pointbuy10(stat4) + pointbuy10(stat5) + pointbuy10(stat1); 
-       if (x!=22){document.form1.first_comment_box.value +=x + " points spent.\r The standard is 22."}
-       if (x==22){document.form1.first_comment_box.value += "  These meet the 4th edition standard."}
+       if (x!=22){document.form1.first_comment_box.value +=x + " points spent.\r The standard is 22.";}
+       if (x==22){document.form1.first_comment_box.value += "  These meet the 4th edition standard.";}
       }
      if (document.form1.methods_list.selectedIndex==3+2)
       {
@@ -39598,7 +39578,7 @@ function consider_arcanefamiliar(){
  }
 
 function light_arcanefamiliar_star(){
- if (has_arcane_familiar()){document.form1.arcanefamiliar_star.src="asterisk.gif"}
+ if (has_arcane_familiar()){document.form1.arcanefamiliar_star.src="asterisk.gif";}
   else {document.form1.arcanefamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39609,7 +39589,7 @@ function consider_alertfamiliar(){
  }
 
 function light_alertfamiliar_star(){
- if ((has_arcane_familiar())&(total_levels>=11)){document.form1.alertfamiliar_star.src="asterisk.gif"}
+ if ((has_arcane_familiar())&(total_levels>=11)){document.form1.alertfamiliar_star.src="asterisk.gif";}
   else {document.form1.alertfamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39620,7 +39600,7 @@ function consider_aggressivefamiliar(){
  }
 
 function light_aggressivefamiliar_star(){
- if ((has_arcane_familiar())&(total_levels>=16)){document.form1.aggressivefamiliar_star.src="asterisk.gif"}
+ if ((has_arcane_familiar())&(total_levels>=16)){document.form1.aggressivefamiliar_star.src="asterisk.gif";}
   else {document.form1.aggressivefamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39631,7 +39611,7 @@ function consider_shieldingfamiliar(){
  }
 
 function light_shieldingfamiliar_star(){
- if ((has_arcane_familiar())&(total_levels>=6)){document.form1.shieldingfamiliar_star.src="asterisk.gif"}
+ if ((has_arcane_familiar())&(total_levels>=6)){document.form1.shieldingfamiliar_star.src="asterisk.gif";}
   else {document.form1.shieldingfamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39642,7 +39622,7 @@ function consider_spellseerfamiliar(){
  }
 
 function light_spellseerfamiliar_star(){
- if ((has_arcane_familiar())&(total_levels>=6)){document.form1.spellseerfamiliar_star.src="asterisk.gif"}
+ if ((has_arcane_familiar())&(total_levels>=6)){document.form1.spellseerfamiliar_star.src="asterisk.gif";}
   else {document.form1.spellseerfamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39653,7 +39633,7 @@ function consider_bondedfamiliar(){
  }
 
 function light_bondedfamiliar_star(){
- if (has_arcane_familiar()){document.form1.bondedfamiliar_star.src="asterisk.gif"}
+ if (has_arcane_familiar()){document.form1.bondedfamiliar_star.src="asterisk.gif";}
   else {document.form1.bondedfamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39664,7 +39644,7 @@ function consider_quickfamiliar(){
  }
 
 function light_quickfamiliar_star(){
- if (has_arcane_familiar()){document.form1.quickfamiliar_star.src="asterisk.gif"}
+ if (has_arcane_familiar()){document.form1.quickfamiliar_star.src="asterisk.gif";}
   else {document.form1.quickfamiliar_star.src="no_asterisk.gif"};
  }
 
@@ -39675,7 +39655,7 @@ function consider_sharedspeed(){
  }
 
 function light_sharedspeed_star(){
- if ((has_arcane_familiar())&(dexterity>=15)){document.form1.sharedspeed_star.src="asterisk.gif"}
+ if ((has_arcane_familiar())&(dexterity>=15)){document.form1.sharedspeed_star.src="asterisk.gif";}
   else {document.form1.sharedspeed_star.src="no_asterisk.gif"};
  }
 
