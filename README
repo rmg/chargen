@@ -1,0 +1,6 @@
+CharGen
+=======
+
+CharGen is a generic character generator for table-top RPGs written in JavaScript and is aimed at running entirely in the browser.
+
+CharGen is based, originally, on http://www.pathguy.com/cg4.htm
