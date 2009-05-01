@@ -15657,21 +15657,6 @@ function SkillSetOkay()
     return false;
 }
 
-function initial_startup()
-{
-    alert("Loading Javascript...");
-    document.form1.methods_list.selectedIndex = 0;
-    test_mode = false;
-    if (test_mode) {
-	alert("Test Mode");
-    }
-    startup();
-    document.form1.other_race_name.value = "Other Race";
-    document.form1.other_class_name.value = "Other Class";
-    alert
-	("Thanks, fellow-gamers for all your kind words! Keep those error reports coming! scalpel_blade@yahoo.com");
-}
-
 function startup()
 {
     npcother_class_name = "NPC-Other Class";
