@@ -1761,8 +1761,7 @@ function raise_otherepic()
     if ((!epic_other) | (ClassesHaveBeenEstablished == false)) {
 	document.form1.epic21[0].checked = true;
 	document.form1.epic21[0].checked = false;
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -2971,8 +2970,7 @@ function am_i_beastmaster()
 	b_ClearAbilityBoxes28();
 	ClearBeastChoice();
 	return;
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
 	return;
     }
@@ -3568,7 +3566,7 @@ function WrongParagon()
 
 function assignparagon(i)
 {
-    if (ClassesHaveBeenEstablished == true) {
+    if (ClassesHaveBeenEstablished) {
 	ShowHowWeChoseClasses();
 	ArrowShow();
 	return;
@@ -3805,9 +3803,9 @@ function assignparagon(i)
 	paragon_wizardofthespiraltower = true;
     }
     if (i == 32) {
-	if ((document.form1.choose_multi[0].checked) | (document.form1.
-							choose_multi[10].
-							checked)) {
+	if ((document.form1.choose_multi[0].checked) | (document.
+							form1.choose_multi
+							[10].checked)) {
 	    WrongParagon();
 	    return;
 	}
@@ -4391,7 +4389,7 @@ function MakeArcaneInitiateList()
 	document.form1.arcane_initiate_list.options[0] = new Option("No");
 	return;
     }
-    if (multi_wizard_arcaneinitiate == true) {
+    if (multi_wizard_arcaneinitiate) {
 	document.form1.arcane_initiate_list.length = 8;
 	document.form1.arcane_initiate_list.options[0] =
 	    new Option("Cloud of Daggers");
@@ -4420,7 +4418,7 @@ function MakeSoulOfSorceryList()
 	document.form1.soul_of_sorcery_list.options[0] = new Option("No");
 	return;
     }
-    if (multi_sorcerer_soulofsorcery == true) {
+    if (multi_sorcerer_soulofsorcery) {
 	document.form1.soul_of_sorcery_list.length = 10;
 	document.form1.soul_of_sorcery_list.options[0] =
 	    new Option("Resist acid");
@@ -4710,8 +4708,9 @@ function RecallPastOtherClass()
     if (past_otherclass_surges > 0) {
 	document.form1.otherclasssurges[past_otherclass_surges -
 					6].checked = true;
-	document.form1.otherclassdefense[past_otherclass_bonus_to_defense].
-	    checked = true;
+	document.form1.
+	    otherclassdefense[past_otherclass_bonus_to_defense].checked =
+	    true;
     }
 }
 
@@ -10146,8 +10145,8 @@ function LightSkillStars()
 	(paragon_feybeguiler) | (class_wizard) | (class_swordmage) |
 	(class_other)) {
 	if ((!eladrin_arcana) &
-	    (!document.form1.train_multiclass[1].
-	     checked) & (!multi_wizard_arcaneinitiate)
+	    (!document.form1.
+	     train_multiclass[1].checked) & (!multi_wizard_arcaneinitiate)
 	    & (!multi_bard_bardicritualist)) {
 	    document.form1.main_arcana_star.src = "asterisk.gif";
 	}
@@ -10266,16 +10265,18 @@ function LightSkillStars()
 	(class_warlock) | (paragon_feybeguiler) | (class_wizard) |
 	(class_other)) {
 	if ((!eladrin_religion) &
-	    (!document.form1.train_multiclass[13].
-	     checked) & (!multi_cleric_initiateofthefaith)) {
+	    (!document.form1.
+	     train_multiclass[13].checked) &
+	    (!multi_cleric_initiateofthefaith)) {
 	    document.form1.main_religion_star.src = "asterisk.gif";
 	}
     }
     if ((class_avenger) | (frb_luskan) | (paragon_feybeguiler) |
 	(class_ranger) | (class_rogue) | (class_other)) {
 	if ((!eladrin_stealth) &
-	    (!document.form1.train_multiclass[14].
-	     checked) & (!multi_rogue_ruthlessefficiency)) {
+	    (!document.form1.
+	     train_multiclass[14].checked) &
+	    (!multi_rogue_ruthlessefficiency)) {
 	    document.form1.main_stealth_star.src = "asterisk.gif";
 	}
     }
@@ -12049,28 +12050,29 @@ function MilitaryStars()
 
 function ArmorProficient()
 {
-    if ((document.form1.armor_radio[1].
-	 checked) & (!already_knows_leather) &
+    if ((document.form1.
+	 armor_radio[1].checked) & (!already_knows_leather) &
 	(!feat_armorproficiencyleather)) {
 	return false;
     }
-    if ((document.form1.armor_radio[2].
-	 checked) & (!already_knows_hide) & (!feat_armorproficiencyhide)) {
+    if ((document.form1.
+	 armor_radio[2].checked) & (!already_knows_hide) &
+	(!feat_armorproficiencyhide)) {
 	return false;
     }
-    if ((document.form1.armor_radio[3].
-	 checked) & (!already_knows_chainmail) &
+    if ((document.form1.
+	 armor_radio[3].checked) & (!already_knows_chainmail) &
 	(!feat_armorproficiencychainmail)) {
 	return false;
     }
-    if ((document.form1.armor_radio[4].
-	 checked) & (!already_knows_scale) & (!feat_armorproficiencyscale))
-    {
+    if ((document.form1.
+	 armor_radio[4].checked) & (!already_knows_scale) &
+	(!feat_armorproficiencyscale)) {
 	return false;
     }
-    if ((document.form1.armor_radio[5].
-	 checked) & (!already_knows_plate) & (!feat_armorproficiencyplate))
-    {
+    if ((document.form1.
+	 armor_radio[5].checked) & (!already_knows_plate) &
+	(!feat_armorproficiencyplate)) {
 	return false;
     }
     return true;
@@ -12252,7 +12254,7 @@ function uncheck_powers_boxes()
 function ArrowShow()
 {
 
-    if ((stat1 == 0) || (my_character_is_done == true)) {
+    if ((stat1 == 0) || (my_character_is_done)) {
 	document.form1.rollthedicearrow.src = "dragonarrowleft.gif";
     } else if ((AbilitiesHaveBeenEstablished == false)) {
 	document.form1.rollthedicearrow.src = "dragongrayleft.gif";
@@ -12261,9 +12263,9 @@ function ArrowShow()
     }
 
     if ((stat1 == 0) || (stat2 == 0) || (stat3 == 0) || (stat4 == 0)
-	|| (stat5 == 0) || (stat6 == 0) || (my_character_is_done == true)) {
+	|| (stat5 == 0) || (stat6 == 0) || (my_character_is_done)) {
 	if (strength == 0) {
-	    if (AbilitiesAreProperlyAssigned == true) {
+	    if (AbilitiesAreProperlyAssigned) {
 		document.form1.changemhere.src =
 		    "adjustyourscoresgray.gif";
 	    } else {
@@ -12363,7 +12365,7 @@ function ArrowShow()
 	document.form1.stat6arrow.src = "dragonblank.gif";
     }
 
-    if ((AbilitiesAreProperlyAssigned == true)
+    if ((AbilitiesAreProperlyAssigned)
 	&& (AbilitiesHaveBeenEstablished == false)) {
 	document.form1.acceptscoresarrow.src = "dragonarrowleft.gif";
     } else {
@@ -12371,7 +12373,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (AbilitiesHaveBeenEstablished == true)) {
+	&& (AbilitiesHaveBeenEstablished)) {
 	if (RaceAssigned() == false) {
 	    document.form1.racearrow.src = "dragonarrowright.gif";
 	} else {
@@ -12382,7 +12384,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (AbilitiesHaveBeenEstablished == true)) {
+	&& (AbilitiesHaveBeenEstablished)) {
 	if (gender == 0) {
 	    document.form1.genderarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12393,7 +12395,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (AbilitiesHaveBeenEstablished == true)) {
+	&& (AbilitiesHaveBeenEstablished)) {
 	if (alignment == 0) {
 	    document.form1.alignmentarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12404,7 +12406,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (AbilitiesHaveBeenEstablished == true)) {
+	&& (AbilitiesHaveBeenEstablished)) {
 	if (total_levels == 0) {
 	    document.form1.totallevelsarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12415,7 +12417,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (RaceAssigned() == true) && ((gender > 0) | (race_warforged))
+	&& (RaceAssigned()) && ((gender > 0) | (race_warforged))
 	&& (alignment > 0) && (total_levels > 0)) {
 	document.form1.acceptthispersonarrow.src = "dragonarrowleft.gif";
     } else {
@@ -12423,7 +12425,7 @@ function ArrowShow()
     }
 
     if ((ClassesHaveBeenEstablished == false)
-	&& (CharacterTypeHasBeenEstablished == true)) {
+	&& (CharacterTypeHasBeenEstablished)) {
 	if (BasicClassAssigned() == false) {
 	    document.form1.classesarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12434,15 +12436,15 @@ function ArrowShow()
     }
 
     if ((ClassesHaveBeenEstablished == false)
-	&& (CharacterTypeHasBeenEstablished == true)) {
+	&& (CharacterTypeHasBeenEstablished)) {
 	document.form1.multiclassarrow.src = "dragongrayright.gif";
     } else {
 	document.form1.classesarrow.src = "dragonblank.gif";
     }
 
     if ((ClassesHaveBeenEstablished == false)
-	&& (CharacterTypeHasBeenEstablished == true) && (total_levels > 10)
-	&& (BasicClassAssigned() == true)) {
+	&& (CharacterTypeHasBeenEstablished) && (total_levels > 10)
+	&& (BasicClassAssigned())) {
 	if (ParagonPathAssigned() == false) {
 	    document.form1.paragonsarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12453,8 +12455,8 @@ function ArrowShow()
     }
 
     if ((ClassesHaveBeenEstablished == false)
-	&& (CharacterTypeHasBeenEstablished == true) && (total_levels > 20)
-	&& (BasicClassAssigned() == true)) {
+	&& (CharacterTypeHasBeenEstablished) && (total_levels > 20)
+	&& (BasicClassAssigned())) {
 	if (EpicDestinyAssigned() == false) {
 	    document.form1.epicdestinyarrow.src = "dragonarrowright.gif";
 	} else {
@@ -12465,13 +12467,13 @@ function ArrowShow()
     }
 
     if ((ClassesHaveBeenEstablished == false)
-	&& (AllClassStuffAssigned() == true)) {
+	&& (AllClassStuffAssigned())) {
 	document.form1.acceptclassesarrow.src = "dragonarrowleft.gif";
     } else {
 	document.form1.acceptclassesarrow.src = "dragonblank.gif";
     }
 
-    if ((race_human) && (ClassesHaveBeenEstablished == true)
+    if ((race_human) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise01Okay()) {
 	    document.form1.up01arrow.src = "dragonarrowright.gif";
@@ -12482,7 +12484,7 @@ function ArrowShow()
 	document.form1.up01arrow.src = "dragonblank.gif";
     }
 
-    if ((race_dragonborn) && (ClassesHaveBeenEstablished == true)
+    if ((race_dragonborn) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!BreathTypeChosen()) {
 	    document.form1.breathtypearrow.src = "dragonarrowright.gif";
@@ -12493,7 +12495,7 @@ function ArrowShow()
 	document.form1.breathtypearrow.src = "dragonblank.gif";
     }
 
-    if ((race_dragonborn) && (ClassesHaveBeenEstablished == true)
+    if ((race_dragonborn) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!BreathStatChosen()) {
 	    document.form1.breathstatarrow.src = "dragonarrowright.gif";
@@ -12504,7 +12506,7 @@ function ArrowShow()
 	document.form1.breathstatarrow.src = "dragonblank.gif";
     }
 
-    if ((race_eladrin) && (ClassesHaveBeenEstablished == true)
+    if ((race_eladrin) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!EladrinEducationChosen()) {
 	    document.form1.eladrineducationarrow.src =
@@ -12517,7 +12519,7 @@ function ArrowShow()
 	document.form1.eladrineducationarrow.src = "dragonblank.gif";
     }
 
-    if ((race_halfelf) && (ClassesHaveBeenEstablished == true)
+    if ((race_halfelf) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!DilettanteChoiceMade()) {
 	    document.form1.dilettantearrow.src = "dragonarrowright.gif";
@@ -12528,7 +12530,7 @@ function ArrowShow()
 	document.form1.dilettantearrow.src = "dragonblank.gif";
     }
 
-    if ((race_genasi) && (ClassesHaveBeenEstablished == true)
+    if ((race_genasi) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryGensaiExpression()) {
 	    document.form1.genasisoultypearrow.src =
@@ -12551,7 +12553,7 @@ function ArrowShow()
 
 
     if (((class_fighter) | (multi_fighter_studentofthesword))
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!FighterStyleChosen()) {
 	    document.form1.fighterstylearrow.src = "dragonarrowright.gif";
@@ -12562,7 +12564,7 @@ function ArrowShow()
 	document.form1.fighterstylearrow.src = "dragonblank.gif";
     }
 
-    if ((class_ranger) && (ClassesHaveBeenEstablished == true)
+    if ((class_ranger) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryRangerStyle()) {
 	    document.form1.rangerstylearrow.src = "dragonblank.gif";
@@ -12575,7 +12577,7 @@ function ArrowShow()
 	document.form1.rangerstylearrow.src = "dragonblank.gif";
     }
 
-    if ((class_rogue) && (ClassesHaveBeenEstablished == true)
+    if ((class_rogue) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!RogueStyleChosen()) {
 	    document.form1.roguestylearrow.src = "dragonarrowright.gif";
@@ -12587,7 +12589,7 @@ function ArrowShow()
     }
 
     if (((class_warlock) | (multi_warlock_with_pact()))
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryWarlockPact()) {
 	    document.form1.warlockpactarrow.src = "dragonblank.gif";
@@ -12600,7 +12602,7 @@ function ArrowShow()
 	document.form1.warlockpactarrow.src = "dragonblank.gif";
     }
 
-    if ((race_other) && (ClassesHaveBeenEstablished == true)
+    if ((race_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!OtherRaceSightChosen()) {
 	    document.form1.otherracesightarrow.src =
@@ -12612,7 +12614,7 @@ function ArrowShow()
 	document.form1.otherracesightarrow.src = "dragonblank.gif";
     }
 
-    if ((race_other) && (ClassesHaveBeenEstablished == true)
+    if ((race_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!OtherRaceSizeChosen()) {
 	    document.form1.otherracesizearrow.src = "dragonarrowright.gif";
@@ -12623,7 +12625,7 @@ function ArrowShow()
 	document.form1.otherracesizearrow.src = "dragonblank.gif";
     }
 
-    if ((class_other) && (ClassesHaveBeenEstablished == true)
+    if ((class_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!OtherClassDefenseChosen()) {
 	    document.form1.otherclassdefensearrow.src =
@@ -12636,7 +12638,7 @@ function ArrowShow()
 	document.form1.otherclassdefensearrow.src = "dragonblank.gif";
     }
 
-    if ((class_other) && (ClassesHaveBeenEstablished == true)
+    if ((class_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!OtherClassHitPointsChosen()) {
 	    document.form1.otherclasshitpointsarrow.src =
@@ -12649,7 +12651,7 @@ function ArrowShow()
 	document.form1.otherclasshitpointsarrow.src = "dragonblank.gif";
     }
 
-    if ((class_other) && (ClassesHaveBeenEstablished == true)
+    if ((class_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!OtherClassSurgesChosen()) {
 	    document.form1.otherclasssurgesarrow.src =
@@ -12662,7 +12664,7 @@ function ArrowShow()
 	document.form1.otherclasssurgesarrow.src = "dragonblank.gif";
     }
 
-    if ((class_warlord) && (ClassesHaveBeenEstablished == true)
+    if ((class_warlord) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!WarlordPresenceChosen()) {
 	    document.form1.warlordpresencearrow.src =
@@ -12675,7 +12677,7 @@ function ArrowShow()
 	document.form1.warlordpresencearrow.src = "dragonblank.gif";
     }
 
-    if ((class_wizard) && (ClassesHaveBeenEstablished == true)
+    if ((class_wizard) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!WizardImplementChosen()) {
 	    document.form1.wizardimplementarrow.src =
@@ -12689,7 +12691,7 @@ function ArrowShow()
     }
 
     if ((multi_wizard_arcaneinitiate)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	document.form1.arcaneinitiatearrow.src = "dragongrayright.gif";
     } else {
@@ -12697,14 +12699,14 @@ function ArrowShow()
     }
 
     if ((multi_sorcerer_soulofsorcery)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	document.form1.soulofsorceryarrow.src = "dragongrayright.gif";
     } else {
 	document.form1.soulofsorceryarrow.src = "dragonblank.gif";
     }
 
-    if ((class_swordmage) && (ClassesHaveBeenEstablished == true)
+    if ((class_swordmage) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatorySwordmageAegis()) {
 	    document.form1.swordmageaegisarrow.src = "dragonblank.gif";
@@ -12718,7 +12720,7 @@ function ArrowShow()
 	document.form1.swordmageaegisarrow.src = "dragonblank.gif";
     }
 
-    if ((class_avenger) && (ClassesHaveBeenEstablished == true)
+    if ((class_avenger) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryAvengerCensure()) {
 	    document.form1.avengercensurearrow.src = "dragonblank.gif";
@@ -12732,7 +12734,7 @@ function ArrowShow()
 	document.form1.avengercensurearrow.src = "dragonblank.gif";
     }
 
-    if ((class_barbarian) && (ClassesHaveBeenEstablished == true)
+    if ((class_barbarian) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryBarbarianFeral()) {
 	    document.form1.barbarianferalarrow.src = "dragonblank.gif";
@@ -12746,7 +12748,7 @@ function ArrowShow()
 	document.form1.barbarianferalarrow.src = "dragonblank.gif";
     }
 
-    if ((class_bard) && (ClassesHaveBeenEstablished == true)
+    if ((class_bard) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryBardVirtue()) {
 	    document.form1.bardvirtuearrow.src = "dragonblank.gif";
@@ -12759,7 +12761,7 @@ function ArrowShow()
 	document.form1.bardvirtuearrow.src = "dragonblank.gif";
     }
 
-    if ((class_druid) && (ClassesHaveBeenEstablished == true)
+    if ((class_druid) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryDruidPrimal()) {
 	    document.form1.druidprimalarrow.src = "dragonblank.gif";
@@ -12772,7 +12774,7 @@ function ArrowShow()
 	document.form1.druidprimalarrow.src = "dragonblank.gif";
     }
 
-    if ((class_invoker) && (ClassesHaveBeenEstablished == true)
+    if ((class_invoker) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryInvokerCovenant()) {
 	    document.form1.invokercovenantarrow.src = "dragonblank.gif";
@@ -12787,7 +12789,7 @@ function ArrowShow()
 	document.form1.invokercovenantarrow.src = "dragonblank.gif";
     }
 
-    if ((class_shaman) && (ClassesHaveBeenEstablished == true)
+    if ((class_shaman) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryShamanSpirit()) {
 	    document.form1.shamanspiritarrow.src = "dragonblank.gif";
@@ -12800,7 +12802,7 @@ function ArrowShow()
 	document.form1.shamanspiritarrow.src = "dragonblank.gif";
     }
 
-    if ((class_sorcerer) && (ClassesHaveBeenEstablished == true)
+    if ((class_sorcerer) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatorySorcererMagic()) {
 	    document.form1.sorcerermagicarrow.src = "dragonblank.gif";
@@ -12813,7 +12815,7 @@ function ArrowShow()
 	document.form1.sorcerermagicarrow.src = "dragonblank.gif";
     }
 
-    if ((class_warden) && (ClassesHaveBeenEstablished == true)
+    if ((class_warden) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryWardenMight()) {
 	    document.form1.wardenmightarrow.src = "dragonblank.gif";
@@ -12826,7 +12828,7 @@ function ArrowShow()
 	document.form1.wardenmightarrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 4) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 4) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise04Okay()) {
 	    document.form1.up04arrow.src = "dragonarrowleft.gif";
@@ -12837,7 +12839,7 @@ function ArrowShow()
 	document.form1.up04arrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 8) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 8) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise08Okay()) {
 	    document.form1.up08arrow.src = "dragonarrowleft.gif";
@@ -12848,7 +12850,7 @@ function ArrowShow()
 	document.form1.up08arrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 14) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 14) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise14Okay()) {
 	    document.form1.up14arrow.src = "dragonarrowleft.gif";
@@ -12859,7 +12861,7 @@ function ArrowShow()
 	document.form1.up14arrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 18) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 18) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise18Okay()) {
 	    document.form1.up18arrow.src = "dragonarrowleft.gif";
@@ -12870,7 +12872,7 @@ function ArrowShow()
 	document.form1.up18arrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 24) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 24) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise24Okay()) {
 	    document.form1.up24arrow.src = "dragonarrowleft.gif";
@@ -12881,7 +12883,7 @@ function ArrowShow()
 	document.form1.up24arrow.src = "dragonblank.gif";
     }
 
-    if ((total_levels >= 28) && (ClassesHaveBeenEstablished == true)
+    if ((total_levels >= 28) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise28Okay()) {
 	    document.form1.up28arrow.src = "dragonarrowleft.gif";
@@ -12893,7 +12895,7 @@ function ArrowShow()
     }
 
     if (((epic_demigod) | (epic_chosen))
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise21Okay()) {
 	    document.form1.up21arrow.src = "dragonarrowleft.gif";
@@ -12904,7 +12906,7 @@ function ArrowShow()
 	document.form1.up21arrow.src = "dragonblank.gif";
     }
 
-    if ((epic_other) && (ClassesHaveBeenEstablished == true)
+    if ((epic_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	document.form1.upepicarrow.src = "dragongrayleft.gif";
     } else {
@@ -12912,7 +12914,7 @@ function ArrowShow()
     }
 
     if ((document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryRangerBeast()) {
 	    document.form1.beastmasterarrow.src = "dragonblank.gif";
@@ -12925,14 +12927,14 @@ function ArrowShow()
 	document.form1.beastmasterarrow.src = "dragonblank.gif";
     }
 
-    if ((arcane_caster()) && (ClassesHaveBeenEstablished == true)
+    if ((arcane_caster()) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	document.form1.familiararrow.src = "dragongrayright.gif";
     } else {
 	document.form1.familiararrow.src = "dragonblank.gif";
     }
 
-    if ((race_other) && (ClassesHaveBeenEstablished == true)
+    if ((race_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!RaiseOtherRaceStatsOkay()) {
 	    document.form1.upother_race_statsarrow.src =
@@ -12945,7 +12947,7 @@ function ArrowShow()
 	document.form1.upother_race_statsarrow.src = "dragonblank.gif";
     }
 
-    if ((race_other) && (ClassesHaveBeenEstablished == true)
+    if ((race_other) && (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!RaiseOtherRaceSkillsOkay()) {
 	    document.form1.upother_race_skillsarrow.src =
@@ -12959,7 +12961,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 4) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise04Okay()) {
 	    document.form1.b_up04arrow.src = "dragonarrowleft.gif";
@@ -12971,7 +12973,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 8) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise08Okay()) {
 	    document.form1.b_up08arrow.src = "dragonarrowleft.gif";
@@ -12983,7 +12985,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 14) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise14Okay()) {
 	    document.form1.b_up14arrow.src = "dragonarrowleft.gif";
@@ -12995,7 +12997,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 18) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise18Okay()) {
 	    document.form1.b_up18arrow.src = "dragonarrowleft.gif";
@@ -13007,7 +13009,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 24) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise24Okay()) {
 	    document.form1.b_up24arrow.src = "dragonarrowleft.gif";
@@ -13019,7 +13021,7 @@ function ArrowShow()
     }
 
     if ((total_levels >= 28) & (document.form1.rangerstyle[2].checked)
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!b_Raise28Okay()) {
 	    document.form1.b_up28arrow.src = "dragonarrowleft.gif";
@@ -13052,7 +13054,7 @@ function ArrowShow()
 	&& (ShamanSpiritChosen())
 	&& (SorcererMagicChosen())
 	&& (WardenMightChosen())
-	&& (ClassesHaveBeenEstablished == true)
+	&& (ClassesHaveBeenEstablished)
 	&& (RaiseOtherRaceStatsOkay())
 	&& (RaiseOtherRaceSkillsOkay())
 	&& (OtherRaceSightChosen())
@@ -13066,7 +13068,7 @@ function ArrowShow()
 	document.form1.moveonarrow.src = "dragonblank.gif";
     }
 
-    if ((FighterFeatsEtcFrozen == true) && (SkillsAreAssigned == false)) {
+    if ((FighterFeatsEtcFrozen) && (SkillsAreAssigned == false)) {
 	if (!SkillSetOkay()) {
 	    document.form1.skillsarrow.src = "dragonarrowright.gif";
 	} else {
@@ -13076,7 +13078,7 @@ function ArrowShow()
 	document.form1.skillsarrow.src = "dragonblank.gif";
     }
 
-    if ((FighterFeatsEtcFrozen == true) && (SkillsAreAssigned == false)) {
+    if ((FighterFeatsEtcFrozen) && (SkillsAreAssigned == false)) {
 	if (!MultiSkillChoiceAvailable()) {
 	    document.form1.multiskillsarrow.src = "dragonblank.gif";
 	} else if (!MultiSkillOkay()) {
@@ -13088,14 +13090,14 @@ function ArrowShow()
 	document.form1.multiskillsarrow.src = "dragonblank.gif";
     }
 
-    if ((FighterFeatsEtcFrozen == true) && (SkillsAreAssigned == false)
+    if ((FighterFeatsEtcFrozen) && (SkillsAreAssigned == false)
 	&& (SkillSetOkay()) & (MultiSkillOkay())) {
 	document.form1.acceptskillsarrow.src = "dragonarrowleft.gif";
     } else {
 	document.form1.acceptskillsarrow.src = "dragonblank.gif";
     }
 
-    if ((SkillsAreAssigned == false) || (FeatsAreLocked == true)) {
+    if ((SkillsAreAssigned == false) || (FeatsAreLocked)) {
 	document.form1.featsarrow.src = "dragonblank.gif";
 	document.form1.acceptfeatsarrow.src = "dragonblank.gif";
     } else if (CountFeats()) {
@@ -13106,7 +13108,7 @@ function ArrowShow()
 	document.form1.acceptfeatsarrow.src = "dragonblank.gif";
     }
 
-    if ((FeatsAreLocked == true)) {
+    if ((FeatsAreLocked)) {
 	document.form1.doitarrow.src = "dragonarrowright.gif";
     } else {
 	document.form1.doitarrow.src = "dragonblank.gif";
@@ -13251,22 +13253,22 @@ function Raise04Okay()
     if (total_levels < 4) {
 	return true;
     }
-    if (document.form1.str_04_box.checked == true) {
+    if (document.form1.str_04_box.checked) {
 	z++;
     }
-    if (document.form1.dex_04_box.checked == true) {
+    if (document.form1.dex_04_box.checked) {
 	z++;
     }
-    if (document.form1.con_04_box.checked == true) {
+    if (document.form1.con_04_box.checked) {
 	z++;
     }
-    if (document.form1.int_04_box.checked == true) {
+    if (document.form1.int_04_box.checked) {
 	z++;
     }
-    if (document.form1.wis_04_box.checked == true) {
+    if (document.form1.wis_04_box.checked) {
 	z++;
     }
-    if (document.form1.chr_04_box.checked == true) {
+    if (document.form1.chr_04_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13281,22 +13283,22 @@ function Raise08Okay()
     if (total_levels < 8) {
 	return true;
     }
-    if (document.form1.str_08_box.checked == true) {
+    if (document.form1.str_08_box.checked) {
 	z++;
     }
-    if (document.form1.dex_08_box.checked == true) {
+    if (document.form1.dex_08_box.checked) {
 	z++;
     }
-    if (document.form1.con_08_box.checked == true) {
+    if (document.form1.con_08_box.checked) {
 	z++;
     }
-    if (document.form1.int_08_box.checked == true) {
+    if (document.form1.int_08_box.checked) {
 	z++;
     }
-    if (document.form1.wis_08_box.checked == true) {
+    if (document.form1.wis_08_box.checked) {
 	z++;
     }
-    if (document.form1.chr_08_box.checked == true) {
+    if (document.form1.chr_08_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13311,22 +13313,22 @@ function Raise14Okay()
     if (total_levels < 14) {
 	return true;
     }
-    if (document.form1.str_14_box.checked == true) {
+    if (document.form1.str_14_box.checked) {
 	z++;
     }
-    if (document.form1.dex_14_box.checked == true) {
+    if (document.form1.dex_14_box.checked) {
 	z++;
     }
-    if (document.form1.con_14_box.checked == true) {
+    if (document.form1.con_14_box.checked) {
 	z++;
     }
-    if (document.form1.int_14_box.checked == true) {
+    if (document.form1.int_14_box.checked) {
 	z++;
     }
-    if (document.form1.wis_14_box.checked == true) {
+    if (document.form1.wis_14_box.checked) {
 	z++;
     }
-    if (document.form1.chr_14_box.checked == true) {
+    if (document.form1.chr_14_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13341,22 +13343,22 @@ function Raise18Okay()
     if (total_levels < 18) {
 	return true;
     }
-    if (document.form1.str_18_box.checked == true) {
+    if (document.form1.str_18_box.checked) {
 	z++;
     }
-    if (document.form1.dex_18_box.checked == true) {
+    if (document.form1.dex_18_box.checked) {
 	z++;
     }
-    if (document.form1.con_18_box.checked == true) {
+    if (document.form1.con_18_box.checked) {
 	z++;
     }
-    if (document.form1.int_18_box.checked == true) {
+    if (document.form1.int_18_box.checked) {
 	z++;
     }
-    if (document.form1.wis_18_box.checked == true) {
+    if (document.form1.wis_18_box.checked) {
 	z++;
     }
-    if (document.form1.chr_18_box.checked == true) {
+    if (document.form1.chr_18_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13371,22 +13373,22 @@ function Raise24Okay()
     if (total_levels < 24) {
 	return true;
     }
-    if (document.form1.str_24_box.checked == true) {
+    if (document.form1.str_24_box.checked) {
 	z++;
     }
-    if (document.form1.dex_24_box.checked == true) {
+    if (document.form1.dex_24_box.checked) {
 	z++;
     }
-    if (document.form1.con_24_box.checked == true) {
+    if (document.form1.con_24_box.checked) {
 	z++;
     }
-    if (document.form1.int_24_box.checked == true) {
+    if (document.form1.int_24_box.checked) {
 	z++;
     }
-    if (document.form1.wis_24_box.checked == true) {
+    if (document.form1.wis_24_box.checked) {
 	z++;
     }
-    if (document.form1.chr_24_box.checked == true) {
+    if (document.form1.chr_24_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13401,22 +13403,22 @@ function Raise28Okay()
     if (total_levels < 28) {
 	return true;
     }
-    if (document.form1.str_28_box.checked == true) {
+    if (document.form1.str_28_box.checked) {
 	z++;
     }
-    if (document.form1.dex_28_box.checked == true) {
+    if (document.form1.dex_28_box.checked) {
 	z++;
     }
-    if (document.form1.con_28_box.checked == true) {
+    if (document.form1.con_28_box.checked) {
 	z++;
     }
-    if (document.form1.int_28_box.checked == true) {
+    if (document.form1.int_28_box.checked) {
 	z++;
     }
-    if (document.form1.wis_28_box.checked == true) {
+    if (document.form1.wis_28_box.checked) {
 	z++;
     }
-    if (document.form1.chr_28_box.checked == true) {
+    if (document.form1.chr_28_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13466,22 +13468,22 @@ function b_Raise04Okay()
     if (total_levels < 4) {
 	return true;
     }
-    if (document.form1.b_str_04_box.checked == true) {
+    if (document.form1.b_str_04_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_04_box.checked == true) {
+    if (document.form1.b_dex_04_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_04_box.checked == true) {
+    if (document.form1.b_con_04_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_04_box.checked == true) {
+    if (document.form1.b_int_04_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_04_box.checked == true) {
+    if (document.form1.b_wis_04_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_04_box.checked == true) {
+    if (document.form1.b_chr_04_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13499,22 +13501,22 @@ function b_Raise08Okay()
     if (total_levels < 8) {
 	return true;
     }
-    if (document.form1.b_str_08_box.checked == true) {
+    if (document.form1.b_str_08_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_08_box.checked == true) {
+    if (document.form1.b_dex_08_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_08_box.checked == true) {
+    if (document.form1.b_con_08_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_08_box.checked == true) {
+    if (document.form1.b_int_08_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_08_box.checked == true) {
+    if (document.form1.b_wis_08_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_08_box.checked == true) {
+    if (document.form1.b_chr_08_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13532,22 +13534,22 @@ function b_Raise14Okay()
     if (total_levels < 14) {
 	return true;
     }
-    if (document.form1.b_str_14_box.checked == true) {
+    if (document.form1.b_str_14_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_14_box.checked == true) {
+    if (document.form1.b_dex_14_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_14_box.checked == true) {
+    if (document.form1.b_con_14_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_14_box.checked == true) {
+    if (document.form1.b_int_14_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_14_box.checked == true) {
+    if (document.form1.b_wis_14_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_14_box.checked == true) {
+    if (document.form1.b_chr_14_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13565,22 +13567,22 @@ function b_Raise18Okay()
     if (total_levels < 18) {
 	return true;
     }
-    if (document.form1.b_str_18_box.checked == true) {
+    if (document.form1.b_str_18_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_18_box.checked == true) {
+    if (document.form1.b_dex_18_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_18_box.checked == true) {
+    if (document.form1.b_con_18_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_18_box.checked == true) {
+    if (document.form1.b_int_18_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_18_box.checked == true) {
+    if (document.form1.b_wis_18_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_18_box.checked == true) {
+    if (document.form1.b_chr_18_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13598,22 +13600,22 @@ function b_Raise24Okay()
     if (total_levels < 24) {
 	return true;
     }
-    if (document.form1.b_str_24_box.checked == true) {
+    if (document.form1.b_str_24_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_24_box.checked == true) {
+    if (document.form1.b_dex_24_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_24_box.checked == true) {
+    if (document.form1.b_con_24_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_24_box.checked == true) {
+    if (document.form1.b_int_24_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_24_box.checked == true) {
+    if (document.form1.b_wis_24_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_24_box.checked == true) {
+    if (document.form1.b_chr_24_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13631,22 +13633,22 @@ function b_Raise28Okay()
     if (total_levels < 28) {
 	return true;
     }
-    if (document.form1.b_str_28_box.checked == true) {
+    if (document.form1.b_str_28_box.checked) {
 	z++;
     }
-    if (document.form1.b_dex_28_box.checked == true) {
+    if (document.form1.b_dex_28_box.checked) {
 	z++;
     }
-    if (document.form1.b_con_28_box.checked == true) {
+    if (document.form1.b_con_28_box.checked) {
 	z++;
     }
-    if (document.form1.b_int_28_box.checked == true) {
+    if (document.form1.b_int_28_box.checked) {
 	z++;
     }
-    if (document.form1.b_wis_28_box.checked == true) {
+    if (document.form1.b_wis_28_box.checked) {
 	z++;
     }
-    if (document.form1.b_chr_28_box.checked == true) {
+    if (document.form1.b_chr_28_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13661,22 +13663,22 @@ function Raise21Okay()
     if ((!epic_demigod) & (!epic_chosen)) {
 	return true;
     }
-    if (document.form1.str_21_box.checked == true) {
+    if (document.form1.str_21_box.checked) {
 	z++;
     }
-    if (document.form1.dex_21_box.checked == true) {
+    if (document.form1.dex_21_box.checked) {
 	z++;
     }
-    if (document.form1.con_21_box.checked == true) {
+    if (document.form1.con_21_box.checked) {
 	z++;
     }
-    if (document.form1.int_21_box.checked == true) {
+    if (document.form1.int_21_box.checked) {
 	z++;
     }
-    if (document.form1.wis_21_box.checked == true) {
+    if (document.form1.wis_21_box.checked) {
 	z++;
     }
-    if (document.form1.chr_21_box.checked == true) {
+    if (document.form1.chr_21_box.checked) {
 	z++;
     }
     if (z == 2) {
@@ -13691,22 +13693,22 @@ function RaiseOtherRaceStatsOkay()
     if (!race_other) {
 	return true;
     }
-    if (document.form1.str_other_race_stat_box.checked == true) {
+    if (document.form1.str_other_race_stat_box.checked) {
 	z++;
     }
-    if (document.form1.dex_other_race_stat_box.checked == true) {
+    if (document.form1.dex_other_race_stat_box.checked) {
 	z++;
     }
-    if (document.form1.con_other_race_stat_box.checked == true) {
+    if (document.form1.con_other_race_stat_box.checked) {
 	z++;
     }
-    if (document.form1.int_other_race_stat_box.checked == true) {
+    if (document.form1.int_other_race_stat_box.checked) {
 	z++;
     }
-    if (document.form1.wis_other_race_stat_box.checked == true) {
+    if (document.form1.wis_other_race_stat_box.checked) {
 	z++;
     }
-    if (document.form1.chr_other_race_stat_box.checked == true) {
+    if (document.form1.chr_other_race_stat_box.checked) {
 	z++;
     }
     if ((z == 1) | (z == 2)) {
@@ -13721,55 +13723,55 @@ function RaiseOtherRaceSkillsOkay()
     if (!race_other) {
 	return true;
     }
-    if (document.form1.acrobatics_other_race_box.checked == true) {
+    if (document.form1.acrobatics_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.arcana_other_race_box.checked == true) {
+    if (document.form1.arcana_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.athletics_other_race_box.checked == true) {
+    if (document.form1.athletics_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.bluff_other_race_box.checked == true) {
+    if (document.form1.bluff_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.diplomacy_other_race_box.checked == true) {
+    if (document.form1.diplomacy_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.dungeoneering_other_race_box.checked == true) {
+    if (document.form1.dungeoneering_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.endurance_other_race_box.checked == true) {
+    if (document.form1.endurance_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.heal_other_race_box.checked == true) {
+    if (document.form1.heal_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.history_other_race_box.checked == true) {
+    if (document.form1.history_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.insight_other_race_box.checked == true) {
+    if (document.form1.insight_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.intimidate_other_race_box.checked == true) {
+    if (document.form1.intimidate_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.nature_other_race_box.checked == true) {
+    if (document.form1.nature_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.perception_other_race_box.checked == true) {
+    if (document.form1.perception_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.religion_other_race_box.checked == true) {
+    if (document.form1.religion_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.stealth_other_race_box.checked == true) {
+    if (document.form1.stealth_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.streetwise_other_race_box.checked == true) {
+    if (document.form1.streetwise_other_race_box.checked) {
 	z++;
     }
-    if (document.form1.thievery_other_race_box.checked == true) {
+    if (document.form1.thievery_other_race_box.checked) {
 	z++;
     }
     if ((z == 1) | (z == 2)) {
@@ -13788,7 +13790,7 @@ function slottage(i)
 
 function ThisTakesAMoment()
 {
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
 	return;
     }
     if (AbilitiesHaveBeenEstablished == false) {
@@ -14159,7 +14161,7 @@ function x_and_heft()
 	x = 466;
     }
     heft = x;
-    if (small == true) {
+    if (small) {
 	heft = Math.round(x * 3 / 4);
     }
 }
@@ -14589,7 +14591,7 @@ function RollSomeDice()
 						      0) | (stat5 !=
 							    0) | (stat6 !=
 								  0)) {
-	if (RaceAssigned() == true) {
+	if (RaceAssigned()) {
 	    startup();
 	}
     }
@@ -15390,8 +15392,8 @@ function ConsiderSkill()
     if ((document.form1.train_diplomacy.checked) | (eladrin_diplomacy)) {
 	document.form1.train_multiclass[4].checked = false;
     }
-    if ((document.form1.train_dungeoneering.
-	 checked) | (eladrin_dungeoneering)) {
+    if ((document.form1.
+	 train_dungeoneering.checked) | (eladrin_dungeoneering)) {
 	document.form1.train_multiclass[5].checked = false;
     }
     if ((document.form1.train_endurance.checked) | (eladrin_endurance)) {
@@ -15497,23 +15499,23 @@ function MultiSkillOkay()
 	(!multi_wizard_learnedspellcaster)) {
 	return true;
     }
-    if ((document.form1.train_multiclass[0].checked == true)
-	| (document.form1.train_multiclass[1].checked == true)
-	| (document.form1.train_multiclass[2].checked == true)
-	| (document.form1.train_multiclass[3].checked == true)
-	| (document.form1.train_multiclass[4].checked == true)
-	| (document.form1.train_multiclass[5].checked == true)
-	| (document.form1.train_multiclass[6].checked == true)
-	| (document.form1.train_multiclass[7].checked == true)
-	| (document.form1.train_multiclass[8].checked == true)
-	| (document.form1.train_multiclass[9].checked == true)
-	| (document.form1.train_multiclass[10].checked == true)
-	| (document.form1.train_multiclass[11].checked == true)
-	| (document.form1.train_multiclass[12].checked == true)
-	| (document.form1.train_multiclass[13].checked == true)
-	| (document.form1.train_multiclass[14].checked == true)
-	| (document.form1.train_multiclass[15].checked == true)
-	| (document.form1.train_multiclass[16].checked == true)) {
+    if ((document.form1.train_multiclass[0].checked)
+	| (document.form1.train_multiclass[1].checked)
+	| (document.form1.train_multiclass[2].checked)
+	| (document.form1.train_multiclass[3].checked)
+	| (document.form1.train_multiclass[4].checked)
+	| (document.form1.train_multiclass[5].checked)
+	| (document.form1.train_multiclass[6].checked)
+	| (document.form1.train_multiclass[7].checked)
+	| (document.form1.train_multiclass[8].checked)
+	| (document.form1.train_multiclass[9].checked)
+	| (document.form1.train_multiclass[10].checked)
+	| (document.form1.train_multiclass[11].checked)
+	| (document.form1.train_multiclass[12].checked)
+	| (document.form1.train_multiclass[13].checked)
+	| (document.form1.train_multiclass[14].checked)
+	| (document.form1.train_multiclass[15].checked)
+	| (document.form1.train_multiclass[16].checked)) {
 	return true;
     }
     return false;
@@ -15522,55 +15524,55 @@ function MultiSkillOkay()
 function SkillSetOkay()
 {
     z = 0;
-    if (document.form1.train_acrobatics.checked == true) {
+    if (document.form1.train_acrobatics.checked) {
 	z++;
     }
-    if (document.form1.train_arcana.checked == true) {
+    if (document.form1.train_arcana.checked) {
 	z++;
     }
-    if (document.form1.train_athletics.checked == true) {
+    if (document.form1.train_athletics.checked) {
 	z++;
     }
-    if (document.form1.train_bluff.checked == true) {
+    if (document.form1.train_bluff.checked) {
 	z++;
     }
-    if (document.form1.train_diplomacy.checked == true) {
+    if (document.form1.train_diplomacy.checked) {
 	z++;
     }
-    if (document.form1.train_dungeoneering.checked == true) {
+    if (document.form1.train_dungeoneering.checked) {
 	z++;
     }
-    if (document.form1.train_endurance.checked == true) {
+    if (document.form1.train_endurance.checked) {
 	z++;
     }
-    if (document.form1.train_heal.checked == true) {
+    if (document.form1.train_heal.checked) {
 	z++;
     }
-    if (document.form1.train_history.checked == true) {
+    if (document.form1.train_history.checked) {
 	z++;
     }
-    if (document.form1.train_insight.checked == true) {
+    if (document.form1.train_insight.checked) {
 	z++;
     }
-    if (document.form1.train_intimidate.checked == true) {
+    if (document.form1.train_intimidate.checked) {
 	z++;
     }
-    if (document.form1.train_nature.checked == true) {
+    if (document.form1.train_nature.checked) {
 	z++;
     }
-    if (document.form1.train_perception.checked == true) {
+    if (document.form1.train_perception.checked) {
 	z++;
     }
-    if (document.form1.train_religion.checked == true) {
+    if (document.form1.train_religion.checked) {
 	z++;
     }
-    if (document.form1.train_stealth.checked == true) {
+    if (document.form1.train_stealth.checked) {
 	z++;
     }
-    if (document.form1.train_streetwise.checked == true) {
+    if (document.form1.train_streetwise.checked) {
 	z++;
     }
-    if (document.form1.train_thievery.checked == true) {
+    if (document.form1.train_thievery.checked) {
 	z++;
     }
     if (race_human) {
@@ -15587,7 +15589,7 @@ function SkillSetOkay()
     }
     if ((class_ranger) & (z == 5) &
 	((document.form1.train_dungeoneering.checked ==
-	  true) | (document.form1.train_nature.checked == true))) {
+	  true) | (document.form1.train_nature.checked))) {
 	return true;
     }
     if ((class_rogue) & (z == 6)) {
@@ -16553,7 +16555,7 @@ function Arms()
 
 function lock_skills()
 {
-    if (SkillsAreAssigned == true) {
+    if (SkillsAreAssigned) {
 	document.form1.fifth_comment_box.value = "Sorry... no going back.";
     } else if (!FighterFeatsEtcFrozen) {
 	document.form1.fifth_comment_box.value = "Not ready yet.";
@@ -16601,7 +16603,7 @@ function lock_skills()
 		   | (multi_invoker()) | (multi_shaman()) |
 		   (multi_sorcerer()) | (multi_invoker()) |
 		   (multi_warden())) {
-	    if (paragon_multiclass == true) {
+	    if (paragon_multiclass) {
 		document.form1.feat.value =
 		    "Your multiclass paragon is your first four feats. ";
 		if (total_feat_entitlement == 5) {
@@ -16857,8 +16859,7 @@ function raise_01()
 {
     if ((!race_human) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes01();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16868,8 +16869,7 @@ function choose_breathtype()
 {
     if ((!race_dragonborn) | (ClassesHaveBeenEstablished == false)) {
 	ClearBreathTypes();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16879,8 +16879,7 @@ function choose_genasisoultype()
 {
     if ((!race_genasi) | (ClassesHaveBeenEstablished == false)) {
 	ClearGenasiSoulTypes();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16890,8 +16889,7 @@ function choose_breathstat()
 {
     if ((!race_dragonborn) | (ClassesHaveBeenEstablished == false)) {
 	ClearBreathStats();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16930,8 +16928,7 @@ function choose_eladrin_education()
 
     if ((!race_eladrin) | (ClassesHaveBeenEstablished == false)) {
 	ClearEladrinEducation();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
 
@@ -16988,8 +16985,7 @@ function choose_dilettante()
 {
     if ((!race_halfelf) | (ClassesHaveBeenEstablished == false)) {
 	ClearDilettanteChoices();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     if (class_cleric) {
@@ -17057,14 +17053,13 @@ function choose_fighterstyle()
 	(ClassesHaveBeenEstablished == false)) {
 	ClearFighterStyles();
     } else if ((multi_fighter_studentofthesword) &
-	       ((document.form1.fighterstyle[2].checked) | (document.form1.
-							    fighterstyle
-							    [3].
-							    checked))) {
+	       ((document.form1.fighterstyle[2].checked) | (document.
+							    form1.fighterstyle
+							    [3].checked)))
+    {
 	alert("Please choose either One-Handed or Two-Handed.");
 	ClearFighterStyles();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17074,8 +17069,7 @@ function choose_rangerstyle()
 {
     if ((!class_ranger) | (ClassesHaveBeenEstablished == false)) {
 	ClearRangerStyles();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryRangerStyle();
@@ -17086,8 +17080,7 @@ function choose_roguestyle()
 {
     if ((!class_rogue) | (ClassesHaveBeenEstablished == false)) {
 	ClearRogueStyles();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17189,8 +17182,7 @@ function choose_warlockpact()
     if (((!class_warlock) & (!multi_warlock_pactinitiate)) |
 	(ClassesHaveBeenEstablished == false)) {
 	ClearWarlockPacts();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryWarlockPact();
@@ -17201,8 +17193,7 @@ function choose_warlordpresence()
 {
     if ((!class_warlord) | (ClassesHaveBeenEstablished == false)) {
 	ClearWarlordPresences();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17212,8 +17203,7 @@ function choose_otherracesight()
 {
     if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearOtherRaceSight();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17223,8 +17213,7 @@ function choose_otherracesize()
 {
     if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearOtherRaceSize();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17234,8 +17223,7 @@ function choose_otherclassdefense()
 {
     if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassDefense();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17245,8 +17233,7 @@ function choose_otherclasshitpoints()
 {
     if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassHitPoints();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17256,8 +17243,7 @@ function choose_otherclasssurges()
 {
     if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassSurges();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17267,8 +17253,7 @@ function choose_wizardimplement()
 {
     if ((!class_wizard) | (ClassesHaveBeenEstablished == false)) {
 	ClearWizardImplements();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17278,8 +17263,7 @@ function choose_swordmageaegis()
 {
     if ((!class_swordmage) | (ClassesHaveBeenEstablished == false)) {
 	ClearSwordmageAegis();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatorySwordmageAegis();
@@ -17290,8 +17274,7 @@ function choose_avengercensure()
 {
     if ((!class_avenger) | (ClassesHaveBeenEstablished == false)) {
 	ClearAvengerCensure();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryAvengerCensure();
@@ -17302,8 +17285,7 @@ function choose_barbarianferal()
 {
     if ((!class_barbarian) | (ClassesHaveBeenEstablished == false)) {
 	ClearBarbarianFeral();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryBarbarianFeral();
@@ -17314,8 +17296,7 @@ function choose_bardvirtue()
 {
     if ((!class_bard) | (ClassesHaveBeenEstablished == false)) {
 	ClearBardVirtue();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryBardVirtue();
@@ -17326,8 +17307,7 @@ function choose_druidprimal()
 {
     if ((!class_druid) | (ClassesHaveBeenEstablished == false)) {
 	ClearDruidPrimal();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryDruidPrimal();
@@ -17338,8 +17318,7 @@ function choose_invokercovenant()
 {
     if ((!class_invoker) | (ClassesHaveBeenEstablished == false)) {
 	ClearInvokerCovenant();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryInvokerCovenant();
@@ -17350,8 +17329,7 @@ function choose_shamanspirit()
 {
     if ((!class_shaman) | (ClassesHaveBeenEstablished == false)) {
 	ClearShamanSpirit();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryShamanSpirit();
@@ -17362,8 +17340,7 @@ function choose_sorcerermagic()
 {
     if ((!class_sorcerer) | (ClassesHaveBeenEstablished == false)) {
 	ClearSorcererMagic();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatorySorcererMagic();
@@ -17374,8 +17351,7 @@ function choose_wardenmight()
 {
     if ((!class_warden) | (ClassesHaveBeenEstablished == false)) {
 	ClearWardenMight();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryWardenMight();
@@ -17451,8 +17427,7 @@ function raise_04()
 {
     if ((total_levels < 4) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes04();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17462,8 +17437,7 @@ function raise_08()
 {
     if ((total_levels < 8) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes08();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17473,8 +17447,7 @@ function raise_14()
 {
     if ((total_levels < 14) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes14();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17484,8 +17457,7 @@ function raise_18()
 {
     if ((total_levels < 18) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes18();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17495,8 +17467,7 @@ function raise_24()
 {
     if ((total_levels < 24) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes24();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17506,8 +17477,7 @@ function raise_28()
 {
     if ((total_levels < 28) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes28();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17518,8 +17488,7 @@ function raise_21()
     if (((!epic_demigod) & (!epic_chosen)) |
 	(ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes21();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17530,8 +17499,7 @@ function raise_other_race_stat()
     if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxesOtherRace();
 	ClearSkillBoxesOtherRace();
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17542,8 +17510,7 @@ function fr_background()
     if ((ClassesHaveBeenEstablished == false)) {
 	NotFromForgottenRealms();
 	return;
-    } else if ((AbilityIncreasesAreLocked == true) |
-	       (FighterFeatsEtcFrozen == true)) {
+    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
 
@@ -18168,19 +18135,19 @@ function BreathTypeChosen()
     if (!race_dragonborn) {
 	return true;
     }
-    if (document.form1.breathtype[0].checked == true) {
+    if (document.form1.breathtype[0].checked) {
 	return true;
     }
-    if (document.form1.breathtype[1].checked == true) {
+    if (document.form1.breathtype[1].checked) {
 	return true;
     }
-    if (document.form1.breathtype[2].checked == true) {
+    if (document.form1.breathtype[2].checked) {
 	return true;
     }
-    if (document.form1.breathtype[3].checked == true) {
+    if (document.form1.breathtype[3].checked) {
 	return true;
     }
-    if (document.form1.breathtype[4].checked == true) {
+    if (document.form1.breathtype[4].checked) {
 	return true;
     }
     return false;
@@ -18191,19 +18158,19 @@ function GenasiSoulTypeChosen()
     if (!race_genasi) {
 	return true;
     }
-    if (document.form1.genasisoultype[0].checked == true) {
+    if (document.form1.genasisoultype[0].checked) {
 	return true;
     }
-    if (document.form1.genasisoultype[1].checked == true) {
+    if (document.form1.genasisoultype[1].checked) {
 	return true;
     }
-    if (document.form1.genasisoultype[2].checked == true) {
+    if (document.form1.genasisoultype[2].checked) {
 	return true;
     }
-    if (document.form1.genasisoultype[3].checked == true) {
+    if (document.form1.genasisoultype[3].checked) {
 	return true;
     }
-    if (document.form1.genasisoultype[4].checked == true) {
+    if (document.form1.genasisoultype[4].checked) {
 	return true;
     }
     return false;
@@ -18214,13 +18181,13 @@ function BreathStatChosen()
     if (!race_dragonborn) {
 	return true;
     }
-    if (document.form1.breathstat[0].checked == true) {
+    if (document.form1.breathstat[0].checked) {
 	return true;
     }
-    if (document.form1.breathstat[1].checked == true) {
+    if (document.form1.breathstat[1].checked) {
 	return true;
     }
-    if (document.form1.breathstat[2].checked == true) {
+    if (document.form1.breathstat[2].checked) {
 	return true;
     }
     return false;
@@ -18231,55 +18198,55 @@ function EladrinEducationChosen()
     if (!race_eladrin) {
 	return true;
     }
-    if (document.form1.eladrin_education[0].checked == true) {
+    if (document.form1.eladrin_education[0].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[1].checked == true) {
+    if (document.form1.eladrin_education[1].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[2].checked == true) {
+    if (document.form1.eladrin_education[2].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[3].checked == true) {
+    if (document.form1.eladrin_education[3].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[4].checked == true) {
+    if (document.form1.eladrin_education[4].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[5].checked == true) {
+    if (document.form1.eladrin_education[5].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[6].checked == true) {
+    if (document.form1.eladrin_education[6].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[7].checked == true) {
+    if (document.form1.eladrin_education[7].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[8].checked == true) {
+    if (document.form1.eladrin_education[8].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[9].checked == true) {
+    if (document.form1.eladrin_education[9].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[10].checked == true) {
+    if (document.form1.eladrin_education[10].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[11].checked == true) {
+    if (document.form1.eladrin_education[11].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[12].checked == true) {
+    if (document.form1.eladrin_education[12].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[13].checked == true) {
+    if (document.form1.eladrin_education[13].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[14].checked == true) {
+    if (document.form1.eladrin_education[14].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[15].checked == true) {
+    if (document.form1.eladrin_education[15].checked) {
 	return true;
     }
-    if (document.form1.eladrin_education[16].checked == true) {
+    if (document.form1.eladrin_education[16].checked) {
 	return true;
     }
     return false;
@@ -18290,106 +18257,106 @@ function DilettanteChoiceMade()
     if (!race_halfelf) {
 	return true;
     }
-    if (document.form1.dilettantechoice[0].checked == true) {
+    if (document.form1.dilettantechoice[0].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[1].checked == true) {
+    if (document.form1.dilettantechoice[1].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[2].checked == true) {
+    if (document.form1.dilettantechoice[2].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[3].checked == true) {
+    if (document.form1.dilettantechoice[3].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[4].checked == true) {
+    if (document.form1.dilettantechoice[4].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[5].checked == true) {
+    if (document.form1.dilettantechoice[5].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[6].checked == true) {
+    if (document.form1.dilettantechoice[6].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[7].checked == true) {
+    if (document.form1.dilettantechoice[7].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[8].checked == true) {
+    if (document.form1.dilettantechoice[8].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[9].checked == true) {
+    if (document.form1.dilettantechoice[9].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[10].checked == true) {
+    if (document.form1.dilettantechoice[10].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[11].checked == true) {
+    if (document.form1.dilettantechoice[11].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[12].checked == true) {
+    if (document.form1.dilettantechoice[12].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[13].checked == true) {
+    if (document.form1.dilettantechoice[13].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[14].checked == true) {
+    if (document.form1.dilettantechoice[14].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[15].checked == true) {
+    if (document.form1.dilettantechoice[15].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[16].checked == true) {
+    if (document.form1.dilettantechoice[16].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[17].checked == true) {
+    if (document.form1.dilettantechoice[17].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[18].checked == true) {
+    if (document.form1.dilettantechoice[18].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[19].checked == true) {
+    if (document.form1.dilettantechoice[19].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[20].checked == true) {
+    if (document.form1.dilettantechoice[20].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[21].checked == true) {
+    if (document.form1.dilettantechoice[21].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[22].checked == true) {
+    if (document.form1.dilettantechoice[22].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[23].checked == true) {
+    if (document.form1.dilettantechoice[23].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[24].checked == true) {
+    if (document.form1.dilettantechoice[24].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[25].checked == true) {
+    if (document.form1.dilettantechoice[25].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[26].checked == true) {
+    if (document.form1.dilettantechoice[26].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[27].checked == true) {
+    if (document.form1.dilettantechoice[27].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[28].checked == true) {
+    if (document.form1.dilettantechoice[28].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[29].checked == true) {
+    if (document.form1.dilettantechoice[29].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[30].checked == true) {
+    if (document.form1.dilettantechoice[30].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[31].checked == true) {
+    if (document.form1.dilettantechoice[31].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[32].checked == true) {
+    if (document.form1.dilettantechoice[32].checked) {
 	return true;
     }
-    if (document.form1.dilettantechoice[33].checked == true) {
+    if (document.form1.dilettantechoice[33].checked) {
 	return true;
     }
     return false;
@@ -18412,16 +18379,16 @@ function FighterStyleChosen()
     if ((!class_fighter) & (!multi_fighter_studentofthesword)) {
 	return true;
     }
-    if (document.form1.fighterstyle[0].checked == true) {
+    if (document.form1.fighterstyle[0].checked) {
 	return true;
     }
-    if (document.form1.fighterstyle[1].checked == true) {
+    if (document.form1.fighterstyle[1].checked) {
 	return true;
     }
-    if (document.form1.fighterstyle[2].checked == true) {
+    if (document.form1.fighterstyle[2].checked) {
 	return true;
     }
-    if (document.form1.fighterstyle[3].checked == true) {
+    if (document.form1.fighterstyle[3].checked) {
 	return true;
     }
     return false;
@@ -18432,13 +18399,13 @@ function RangerStyleChosen()
     if (!class_ranger) {
 	return true;
     }
-    if (document.form1.rangerstyle[0].checked == true) {
+    if (document.form1.rangerstyle[0].checked) {
 	return true;
     }
-    if (document.form1.rangerstyle[1].checked == true) {
+    if (document.form1.rangerstyle[1].checked) {
 	return true;
     }
-    if (document.form1.rangerstyle[2].checked == true) {
+    if (document.form1.rangerstyle[2].checked) {
 	return true;
     }
     return false;
@@ -18449,13 +18416,13 @@ function RogueStyleChosen()
     if (!class_rogue) {
 	return true;
     }
-    if (document.form1.roguestyle[0].checked == true) {
+    if (document.form1.roguestyle[0].checked) {
 	return true;
     }
-    if (document.form1.roguestyle[1].checked == true) {
+    if (document.form1.roguestyle[1].checked) {
 	return true;
     }
-    if (document.form1.roguestyle[2].checked == true) {
+    if (document.form1.roguestyle[2].checked) {
 	return true;
     }
     return false;
@@ -18466,22 +18433,22 @@ function WarlockPactChosen()
     if (!warlockclass_with_pact()) {
 	return true;
     }
-    if (document.form1.warlockpact[0].checked == true) {
+    if (document.form1.warlockpact[0].checked) {
 	return true;
     }
-    if (document.form1.warlockpact[1].checked == true) {
+    if (document.form1.warlockpact[1].checked) {
 	return true;
     }
-    if (document.form1.warlockpact[2].checked == true) {
+    if (document.form1.warlockpact[2].checked) {
 	return true;
     }
-    if (document.form1.warlockpact[3].checked == true) {
+    if (document.form1.warlockpact[3].checked) {
 	return true;
     }
-    if (document.form1.warlockpact[4].checked == true) {
+    if (document.form1.warlockpact[4].checked) {
 	return true;
     }
-    if (document.form1.warlockpact[5].checked == true) {
+    if (document.form1.warlockpact[5].checked) {
 	return true;
     }
     return false;
@@ -18492,16 +18459,16 @@ function WarlordPresenceChosen()
     if (!class_warlord) {
 	return true;
     }
-    if (document.form1.warlordpresence[0].checked == true) {
+    if (document.form1.warlordpresence[0].checked) {
 	return true;
     }
-    if (document.form1.warlordpresence[1].checked == true) {
+    if (document.form1.warlordpresence[1].checked) {
 	return true;
     }
-    if (document.form1.warlordpresence[2].checked == true) {
+    if (document.form1.warlordpresence[2].checked) {
 	return true;
     }
-    if (document.form1.warlordpresence[3].checked == true) {
+    if (document.form1.warlordpresence[3].checked) {
 	return true;
     }
     return false;
@@ -18512,22 +18479,22 @@ function WizardImplementChosen()
     if (!class_wizard) {
 	return true;
     }
-    if (document.form1.wizardimplement[0].checked == true) {
+    if (document.form1.wizardimplement[0].checked) {
 	return true;
     }
-    if (document.form1.wizardimplement[1].checked == true) {
+    if (document.form1.wizardimplement[1].checked) {
 	return true;
     }
-    if (document.form1.wizardimplement[2].checked == true) {
+    if (document.form1.wizardimplement[2].checked) {
 	return true;
     }
-    if (document.form1.wizardimplement[3].checked == true) {
+    if (document.form1.wizardimplement[3].checked) {
 	return true;
     }
-    if (document.form1.wizardimplement[4].checked == true) {
+    if (document.form1.wizardimplement[4].checked) {
 	return true;
     }
-    if (document.form1.wizardimplement[5].checked == true) {
+    if (document.form1.wizardimplement[5].checked) {
 	return true;
     }
     return false;
@@ -18538,13 +18505,13 @@ function SwordmageAegisChosen()
     if (!class_swordmage) {
 	return true;
     }
-    if (document.form1.swordmageaegis[0].checked == true) {
+    if (document.form1.swordmageaegis[0].checked) {
 	return true;
     }
-    if (document.form1.swordmageaegis[1].checked == true) {
+    if (document.form1.swordmageaegis[1].checked) {
 	return true;
     }
-    if (document.form1.swordmageaegis[2].checked == true) {
+    if (document.form1.swordmageaegis[2].checked) {
 	return true;
     }
     return false;
@@ -18555,10 +18522,10 @@ function AvengerCensureChosen()
     if (!class_avenger) {
 	return true;
     }
-    if (document.form1.avengercensure[0].checked == true) {
+    if (document.form1.avengercensure[0].checked) {
 	return true;
     }
-    if (document.form1.avengercensure[1].checked == true) {
+    if (document.form1.avengercensure[1].checked) {
 	return true;
     }
     return false;
@@ -18569,10 +18536,10 @@ function BarbarianFeralChosen()
     if (!class_barbarian) {
 	return true;
     }
-    if (document.form1.barbarianferal[0].checked == true) {
+    if (document.form1.barbarianferal[0].checked) {
 	return true;
     }
-    if (document.form1.barbarianferal[1].checked == true) {
+    if (document.form1.barbarianferal[1].checked) {
 	return true;
     }
     return false;
@@ -18583,13 +18550,13 @@ function BardVirtueChosen()
     if (!class_bard) {
 	return true;
     }
-    if (document.form1.bardvirtue[0].checked == true) {
+    if (document.form1.bardvirtue[0].checked) {
 	return true;
     }
-    if (document.form1.bardvirtue[1].checked == true) {
+    if (document.form1.bardvirtue[1].checked) {
 	return true;
     }
-    if (document.form1.bardvirtue[2].checked == true) {
+    if (document.form1.bardvirtue[2].checked) {
 	return true;
     }
     return false;
@@ -18600,10 +18567,10 @@ function DruidPrimalChosen()
     if (!class_druid) {
 	return true;
     }
-    if (document.form1.druidprimal[0].checked == true) {
+    if (document.form1.druidprimal[0].checked) {
 	return true;
     }
-    if (document.form1.druidprimal[1].checked == true) {
+    if (document.form1.druidprimal[1].checked) {
 	return true;
     }
     return false;
@@ -18614,10 +18581,10 @@ function InvokerCovenantChosen()
     if (!class_invoker) {
 	return true;
     }
-    if (document.form1.invokercovenant[0].checked == true) {
+    if (document.form1.invokercovenant[0].checked) {
 	return true;
     }
-    if (document.form1.invokercovenant[1].checked == true) {
+    if (document.form1.invokercovenant[1].checked) {
 	return true;
     }
     return false;
@@ -18628,10 +18595,10 @@ function ShamanSpiritChosen()
     if (!class_shaman) {
 	return true;
     }
-    if (document.form1.shamanspirit[0].checked == true) {
+    if (document.form1.shamanspirit[0].checked) {
 	return true;
     }
-    if (document.form1.shamanspirit[1].checked == true) {
+    if (document.form1.shamanspirit[1].checked) {
 	return true;
     }
     return false;
@@ -18642,16 +18609,16 @@ function SorcererMagicChosen()
     if (!class_sorcerer) {
 	return true;
     }
-    if (document.form1.sorcerermagic[0].checked == true) {
+    if (document.form1.sorcerermagic[0].checked) {
 	return true;
     }
-    if (document.form1.sorcerermagic[1].checked == true) {
+    if (document.form1.sorcerermagic[1].checked) {
 	return true;
     }
-    if (document.form1.sorcerermagic[2].checked == true) {
+    if (document.form1.sorcerermagic[2].checked) {
 	return true;
     }
-    if (document.form1.sorcerermagic[3].checked == true) {
+    if (document.form1.sorcerermagic[3].checked) {
 	return true;
     }
     return false;
@@ -18662,10 +18629,10 @@ function WardenMightChosen()
     if (!class_warden) {
 	return true;
     }
-    if (document.form1.wardenmight[0].checked == true) {
+    if (document.form1.wardenmight[0].checked) {
 	return true;
     }
-    if (document.form1.wardenmight[1].checked == true) {
+    if (document.form1.wardenmight[1].checked) {
 	return true;
     }
     return false;
@@ -18674,7 +18641,7 @@ function WardenMightChosen()
 function FreezeFighterFeatsEtc()
 {
 
-    if (FighterFeatsEtcFrozen == true) {
+    if (FighterFeatsEtcFrozen) {
 	document.form1.fourth_comment_box.value = "We are done here.";
     } else if (ClassesHaveBeenEstablished == false) {
 	document.form1.fourth_comment_box.value =
@@ -19069,8 +19036,7 @@ function FreezeFighterFeatsEtc()
 function DoAbilityIncreasesEtcEtc()
 {
 
-    if ((AbilityIncreasesAreLocked == true) | (FighterFeatsEtcFrozen ==
-					       true)) {
+    if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen == true)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     } else {
 
@@ -20067,8 +20033,8 @@ function RememberWhichAbilitiesYouRaisedEtcEtc()
 	document.form1.otherracesize[1].checked = otherrace_medium;
     }
     if (class_other) {
-	document.form1.otherclassdefense[otherclass_bonus_to_defense].
-	    checked = true;
+	document.form1.
+	    otherclassdefense[otherclass_bonus_to_defense].checked = true;
 	if (otherclass_hitpoints == 10) {
 	    document.form1.otherclasshitpoints[0].checked = true;
 	}
@@ -20175,7 +20141,7 @@ function RememberWhichAbilitiesYouRaisedEtcEtc()
 function lock_identity()
 {
 
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
     } else if (DiceHaveBeenRolled == false) {
 	document.form1.second_comment_box.value =
 	    "You haven't even rolled your dice.";
@@ -20337,47 +20303,47 @@ function lock_identity()
 	}
 	LanguageEntitlements();
 
-	if (race_human == true) {
+	if (race_human) {
 	    document.form1.second_comment_box.value +=
 		"  As a human, you will add +2 to one of your ability scores in a moment.";
 	}
-	if (race_dragonborn == true) {
+	if (race_dragonborn) {
 	    strength += 2;
 	    charisma += 2;
 	    document.form1.second_comment_box.value +=
 		"  Dragonborn receive +2 on strength and charisma.";
 	}
-	if (race_dwarf == true) {
+	if (race_dwarf) {
 	    constitution += 2;
 	    wisdom += 2;
 	    document.form1.second_comment_box.value +=
 		"  Dwarves receive +2 on constitution and wisdom.";
 	}
-	if (race_eladrin == true) {
+	if (race_eladrin) {
 	    dexterity += 2;
 	    intelligence += 2;
 	    document.form1.second_comment_box.value +=
 		"  Eladrin receive +2 on dexterity and intelligence.";
 	}
-	if (race_elf == true) {
+	if (race_elf) {
 	    dexterity += 2;
 	    wisdom += 2;
 	    document.form1.second_comment_box.value +=
 		"  Elves receive +2 on dexterity and wisdom.";
 	}
-	if (race_halfelf == true) {
+	if (race_halfelf) {
 	    constitution += 2;
 	    charisma += 2;
 	    document.form1.second_comment_box.value +=
 		"  Half-Elves receive +2 on constitution and charisma.";
 	}
-	if (race_halfling == true) {
+	if (race_halfling) {
 	    dexterity += 2;
 	    charisma += 2;
 	    document.form1.second_comment_box.value +=
 		"  Halflings receive +2 on dexterity and charisma.";
 	}
-	if (race_tiefling == true) {
+	if (race_tiefling) {
 	    intelligence += 2;
 	    charisma += 2;
 	    document.form1.second_comment_box.value +=
@@ -20837,22 +20803,22 @@ function lock_abilities()
 	AbilitiesHaveBeenEstablished = true;
 	z = 0;
 	while (z < 6) {
-	    if (document.form1.firststat[z].checked == true) {
+	    if (document.form1.firststat[z].checked) {
 		firststatwentto = z;
 	    }
-	    if (document.form1.secondstat[z].checked == true) {
+	    if (document.form1.secondstat[z].checked) {
 		secondstatwentto = z;
 	    }
-	    if (document.form1.thirdstat[z].checked == true) {
+	    if (document.form1.thirdstat[z].checked) {
 		thirdstatwentto = z;
 	    }
-	    if (document.form1.fourthstat[z].checked == true) {
+	    if (document.form1.fourthstat[z].checked) {
 		fourthstatwentto = z;
 	    }
-	    if (document.form1.fifthstat[z].checked == true) {
+	    if (document.form1.fifthstat[z].checked) {
 		fifthstatwentto = z;
 	    }
-	    if (document.form1.sixthstat[z].checked == true) {
+	    if (document.form1.sixthstat[z].checked) {
 		sixthstatwentto = z;
 	    }
 	    z++;
@@ -20982,155 +20948,67 @@ function HaveISixStats()
 	  true) | (document.form1.firststat[1].checked ==
 		   true) | (document.form1.firststat[2].checked ==
 			    true) | (document.form1.firststat[3].checked ==
-				     true) | (document.form1.firststat[4].
-					      checked ==
-					      true) | (document.form1.
-						       firststat[5].
-						       checked ==
-						       true)) & ((document.
+				     true) | (document.form1.
+					      firststat[4].checked ==
+					      true) | (document.
+						       form1.firststat
+						       [5].checked ==
+						       true)) &
+	((document.form1.secondstat[0].checked ==
+	  true) | (document.form1.secondstat[1].checked ==
+		   true) | (document.form1.secondstat[2].checked ==
+			    true) | (document.form1.secondstat[3].checked
+				     ==
+				     true) |
+	 (document.form1.secondstat[4].checked ==
+	  true) | (document.form1.secondstat[5].checked ==
+		   true)) & ((document.form1.thirdstat[0].checked ==
+			      true) | (document.form1.thirdstat[1].
+				       checked ==
+				       true) | (document.form1.
+						thirdstat[2].checked ==
+						true) | (document.form1.
+							 thirdstat[3].
+							 checked ==
+							 true) | (document.
 								  form1.
-								  secondstat
-								  [0].
-								  checked
+								  thirdstat
+								  [4].checked
 								  ==
 								  true) |
-								 (document.
+			     (document.form1.thirdstat[5].checked ==
+			      true)) &
+	((document.form1.fourthstat[0].checked ==
+	  true) | (document.form1.fourthstat[1].checked ==
+		   true) | (document.form1.fourthstat[2].checked ==
+			    true) | (document.form1.fourthstat[3].checked
+				     ==
+				     true) |
+	 (document.form1.fourthstat[4].checked ==
+	  true) | (document.form1.fourthstat[5].checked ==
+		   true)) & ((document.form1.fifthstat[0].checked ==
+			      true) | (document.form1.fifthstat[1].
+				       checked ==
+				       true) | (document.form1.
+						fifthstat[2].checked ==
+						true) | (document.form1.
+							 fifthstat[3].
+							 checked ==
+							 true) | (document.
 								  form1.
-								  secondstat
-								  [1].
-								  checked
+								  fifthstat
+								  [4].checked
 								  ==
 								  true) |
-								 (document.
-								  form1.
-								  secondstat
-								  [2].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  secondstat
-								  [3].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  secondstat
-								  [4].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  secondstat
-								  [5].
-								  checked
-								  ==
-								  true)) &
-	((document.form1.thirdstat[0].checked ==
-	  true) | (document.form1.thirdstat[1].checked ==
-		   true) | (document.form1.thirdstat[2].checked ==
-			    true) | (document.form1.thirdstat[3].checked ==
-				     true) | (document.form1.thirdstat[4].
-					      checked ==
-					      true) | (document.form1.
-						       thirdstat[5].
-						       checked ==
-						       true)) & ((document.
-								  form1.
-								  fourthstat
-								  [0].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  fourthstat
-								  [1].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  fourthstat
-								  [2].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  fourthstat
-								  [3].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  fourthstat
-								  [4].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  fourthstat
-								  [5].
-								  checked
-								  ==
-								  true)) &
-	((document.form1.fifthstat[0].checked ==
-	  true) | (document.form1.fifthstat[1].checked ==
-		   true) | (document.form1.fifthstat[2].checked ==
-			    true) | (document.form1.fifthstat[3].checked ==
-				     true) | (document.form1.fifthstat[4].
-					      checked ==
-					      true) | (document.form1.
-						       fifthstat[5].
-						       checked ==
-						       true)) & ((document.
-								  form1.
-								  sixthstat
-								  [0].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  sixthstat
-								  [1].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  sixthstat
-								  [2].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  sixthstat
-								  [3].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  sixthstat
-								  [4].
-								  checked
-								  ==
-								  true) |
-								 (document.
-								  form1.
-								  sixthstat
-								  [5].
-								  checked
-								  ==
-								  true))) {
+			     (document.form1.fifthstat[5].checked ==
+			      true)) &
+	((document.form1.sixthstat[0].checked ==
+	  true) | (document.form1.sixthstat[1].checked ==
+		   true) | (document.form1.sixthstat[2].checked ==
+			    true) | (document.form1.sixthstat[3].checked ==
+				     true) |
+	 (document.form1.sixthstat[4].checked ==
+	  true) | (document.form1.sixthstat[5].checked == true))) {
 	AbilitiesAreProperlyAssigned = true;
     }
 
@@ -21153,7 +21031,7 @@ function HaveISixStats()
 	    TellAboutPointBuy();
 	}
     }
-    if (AbilitiesAreProperlyAssigned == true) {
+    if (AbilitiesAreProperlyAssigned) {
 	document.form1.first_comment_box.value = "You can accept these.";
 	TellAboutPointBuy();
     }
@@ -21286,7 +21164,7 @@ function assignstat(whichstat, whichability)
 {
     my_character_is_done = false;
 
-    if (AbilitiesHaveBeenEstablished == true) {
+    if (AbilitiesHaveBeenEstablished) {
 	RewriteLockedAbilityAssignments();
     } else if (DiceHaveBeenRolled == false) {
 	document.form1.first_comment_box.value =
@@ -21297,38 +21175,38 @@ function assignstat(whichstat, whichability)
 	while (z < 7) {
 	    if ((whichstat != 1) & (whichability ==
 				    z) & (document.form1.firststat[z -
-								   1].
-					  checked == true)) {
+								   1].checked))
+	    {
 		document.form1.firststat[z - 1].checked = false;
 	    }
 	    if ((whichstat != 2) & (whichability ==
 				    z) & (document.form1.secondstat[z -
-								    1].
-					  checked == true)) {
+								    1].checked))
+	    {
 		document.form1.secondstat[z - 1].checked = false;
 	    }
 	    if ((whichstat != 3) & (whichability ==
 				    z) & (document.form1.thirdstat[z -
-								   1].
-					  checked == true)) {
+								   1].checked))
+	    {
 		document.form1.thirdstat[z - 1].checked = false;
 	    }
 	    if ((whichstat != 4) & (whichability ==
 				    z) & (document.form1.fourthstat[z -
-								    1].
-					  checked == true)) {
+								    1].checked))
+	    {
 		document.form1.fourthstat[z - 1].checked = false;
 	    }
 	    if ((whichstat != 5) & (whichability ==
 				    z) & (document.form1.fifthstat[z -
-								   1].
-					  checked == true)) {
+								   1].checked))
+	    {
 		document.form1.fifthstat[z - 1].checked = false;
 	    }
 	    if ((whichstat != 6) & (whichability ==
 				    z) & (document.form1.sixthstat[z -
-								   1].
-					  checked == true)) {
+								   1].checked))
+	    {
 		document.form1.sixthstat[z - 1].checked = false;
 	    }
 	    z++;
@@ -22573,7 +22451,7 @@ function lock_classes()
 
 function assignclass(whatclass)
 {
-    if (ClassesHaveBeenEstablished == true) {
+    if (ClassesHaveBeenEstablished) {
 	ShowHowWeChoseClasses();
 	ArrowShow();
 	return;
@@ -22824,7 +22702,7 @@ function maybegain()
 
 function assignmulti(whatmulti)
 {
-    if (ClassesHaveBeenEstablished == true) {
+    if (ClassesHaveBeenEstablished) {
 	ShowHowWeChoseClasses();
 	ArrowShow();
 	return;
@@ -23918,7 +23796,7 @@ function RollTheDice()
 
 function assignlevel(i)
 {
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
 	ClearLevelButtons();
 	document.form1.totallevels[total_levels - 1].checked = true;
     } else if (AbilitiesHaveBeenEstablished == false) {
@@ -23932,7 +23810,7 @@ function assignlevel(i)
 
 function assigngender(i)
 {
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
 	ClearGenderButtons();
 	document.form1.sexchoice[2 - gender].checked = true;
     }
@@ -23948,7 +23826,7 @@ function assigngender(i)
 
 function assignrace(i)
 {
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
 	if (race_human) {
 	    document.form1.racechoice[0].checked = true;
 	}
@@ -24158,7 +24036,7 @@ function ClearParagonButtons()
 function assignepicdestiny(i)
 {
 
-    if (ClassesHaveBeenEstablished == true) {
+    if (ClassesHaveBeenEstablished) {
 	ShowHowWeChoseClasses();
 	ArrowShow();
 	return;
@@ -24849,22 +24727,22 @@ function EpicDestinyAssigned()
     if (!BasicClassAssigned()) {
 	return false;
     }
-    if (epic_archmage == true) {
+    if (epic_archmage) {
 	return true;
     }
-    if (epic_deadlytrickster == true) {
+    if (epic_deadlytrickster) {
 	return true;
     }
-    if (epic_demigod == true) {
+    if (epic_demigod) {
 	return true;
     }
-    if (epic_chosen == true) {
+    if (epic_chosen) {
 	return true;
     }
-    if (epic_eternalseeker == true) {
+    if (epic_eternalseeker) {
 	return true;
     }
-    if (epic_other == true) {
+    if (epic_other) {
 	return true;
     }
     if (epic_adamantinesoldier) {
@@ -24921,344 +24799,344 @@ function EpicDestinyAssigned()
 function ParagonPathAssigned()
 {
 
-    if (paragon_angelicavenger == true) {
+    if (paragon_angelicavenger) {
 	return true;
     }
-    if (paragon_divineoracle == true) {
+    if (paragon_divineoracle) {
 	return true;
     }
-    if (paragon_radiantservant == true) {
+    if (paragon_radiantservant) {
 	return true;
     }
-    if (paragon_warpriest == true) {
+    if (paragon_warpriest) {
 	return true;
     }
-    if (paragon_ironvanguard == true) {
+    if (paragon_ironvanguard) {
 	return true;
     }
-    if (paragon_kensei == true) {
+    if (paragon_kensei) {
 	return true;
     }
-    if (paragon_pitfighter == true) {
+    if (paragon_pitfighter) {
 	return true;
     }
-    if (paragon_swordmaster == true) {
+    if (paragon_swordmaster) {
 	return true;
     }
-    if (paragon_astralweapon == true) {
+    if (paragon_astralweapon) {
 	return true;
     }
-    if (paragon_championoforder == true) {
+    if (paragon_championoforder) {
 	return true;
     }
-    if (paragon_hospitaler == true) {
+    if (paragon_hospitaler) {
 	return true;
     }
-    if (paragon_justiciar == true) {
+    if (paragon_justiciar) {
 	return true;
     }
-    if (paragon_battlefieldarcher == true) {
+    if (paragon_battlefieldarcher) {
 	return true;
     }
-    if (paragon_beaststalker == true) {
+    if (paragon_beaststalker) {
 	return true;
     }
-    if (paragon_pathfinder == true) {
+    if (paragon_pathfinder) {
 	return true;
     }
-    if (paragon_stormwarden == true) {
+    if (paragon_stormwarden) {
 	return true;
     }
-    if (paragon_catburglar == true) {
+    if (paragon_catburglar) {
 	return true;
     }
-    if (paragon_daggermaster == true) {
+    if (paragon_daggermaster) {
 	return true;
     }
-    if (paragon_masterinfiltrator == true) {
+    if (paragon_masterinfiltrator) {
 	return true;
     }
-    if (paragon_shadowassassin == true) {
+    if (paragon_shadowassassin) {
 	return true;
     }
-    if (paragon_doomsayer == true) {
+    if (paragon_doomsayer) {
 	return true;
     }
-    if (paragon_feytouched == true) {
+    if (paragon_feytouched) {
 	return true;
     }
-    if (paragon_lifestealer == true) {
+    if (paragon_lifestealer) {
 	return true;
     }
-    if (paragon_battlecaptain == true) {
+    if (paragon_battlecaptain) {
 	return true;
     }
-    if (paragon_combatveteran == true) {
+    if (paragon_combatveteran) {
 	return true;
     }
-    if (paragon_knightcommander == true) {
+    if (paragon_knightcommander) {
 	return true;
     }
-    if (paragon_swordmarshal == true) {
+    if (paragon_swordmarshal) {
 	return true;
     }
-    if (paragon_battlemage == true) {
+    if (paragon_battlemage) {
 	return true;
     }
-    if (paragon_bloodmage == true) {
+    if (paragon_bloodmage) {
 	return true;
     }
-    if (paragon_spellstormmage == true) {
+    if (paragon_spellstormmage) {
 	return true;
     }
-    if (paragon_wizardofthespiraltower == true) {
+    if (paragon_wizardofthespiraltower) {
 	return true;
     }
-    if (paragon_other == true) {
+    if (paragon_other) {
 	return true;
     }
-    if (paragon_multiclass == true) {
+    if (paragon_multiclass) {
 	return true;
     }
-    if (paragon_anarchofshyr == true) {
+    if (paragon_anarchofshyr) {
 	return true;
     }
-    if (paragon_coronalguard == true) {
+    if (paragon_coronalguard) {
 	return true;
     }
-    if (paragon_darkwalker == true) {
+    if (paragon_darkwalker) {
 	return true;
     }
-    if (paragon_doomguide == true) {
+    if (paragon_doomguide) {
 	return true;
     }
-    if (paragon_drowwanderer == true) {
+    if (paragon_drowwanderer) {
 	return true;
     }
-    if (paragon_eartheartdefender == true) {
+    if (paragon_eartheartdefender) {
 	return true;
     }
-    if (paragon_elementaltempest == true) {
+    if (paragon_elementaltempest) {
 	return true;
     }
-    if (paragon_evermeetwarlock == true) {
+    if (paragon_evermeetwarlock) {
 	return true;
     }
-    if (paragon_ghostofeventide == true) {
+    if (paragon_ghostofeventide) {
 	return true;
     };
-    if (paragon_heartwarder == true) {
+    if (paragon_heartwarder) {
 	return true;
     };
-    if (paragon_highforestscout == true) {
+    if (paragon_highforestscout) {
 	return true;
     };
-    if (paragon_impilturandemonslayer == true) {
+    if (paragon_impilturandemonslayer) {
 	return true;
     };
-    if (paragon_morninglord == true) {
+    if (paragon_morninglord) {
 	return true;
     };
-    if (paragon_purpledragonknight == true) {
+    if (paragon_purpledragonknight) {
 	return true;
     };
-    if (paragon_silverstar == true) {
+    if (paragon_silverstar) {
 	return true;
     };
-    if (paragon_simbarchofaglarond == true) {
+    if (paragon_simbarchofaglarond) {
 	return true;
     };
-    if (paragon_spellguardwizard == true) {
+    if (paragon_spellguardwizard) {
 	return true;
     };
-    if (paragon_spellscarredsavant == true) {
+    if (paragon_spellscarredsavant) {
 	return true;
     };
-    if (paragon_steelskyliberator == true) {
+    if (paragon_steelskyliberator) {
 	return true;
     };
-    if (paragon_swordcoastcorsair == true) {
+    if (paragon_swordcoastcorsair) {
 	return true;
     };
-    if (paragon_umbriri == true) {
+    if (paragon_umbriri) {
 	return true;
     };
-    if (paragon_wanderingswordmage == true) {
+    if (paragon_wanderingswordmage) {
 	return true;
     };
-    if (paragon_warwizardofcormyr == true) {
+    if (paragon_warwizardofcormyr) {
 	return true;
     };
-    if (paragon_whirlwindgenasi == true) {
+    if (paragon_whirlwindgenasi) {
 	return true;
     };
-    if (paragon_wildfiregenasi == true) {
+    if (paragon_wildfiregenasi) {
 	return true;
     };
-    if (paragon_feralspirit == true) {
+    if (paragon_feralspirit) {
 	return true;
     };
-    if (paragon_packrunner == true) {
+    if (paragon_packrunner) {
 	return true;
     };
-    if (paragon_wildcatstalker == true) {
+    if (paragon_wildcatstalker) {
 	return true;
     };
-    if (paragon_bladeofcendriane == true) {
+    if (paragon_bladeofcendriane) {
 	return true;
     };
-    if (paragon_doomguardmarauder == true) {
+    if (paragon_doomguardmarauder) {
 	return true;
     };
-    if (paragon_gatecrasher == true) {
+    if (paragon_gatecrasher) {
 	return true;
     };
-    if (paragon_knightofcelestia == true) {
+    if (paragon_knightofcelestia) {
 	return true;
     };
-    if (paragon_maleckethjanissary == true) {
+    if (paragon_maleckethjanissary) {
 	return true;
     };
-    if (paragon_planeshifter == true) {
+    if (paragon_planeshifter) {
 	return true;
     };
-    if (paragon_shadowcaptain == true) {
+    if (paragon_shadowcaptain) {
 	return true;
     };
-    if (paragon_soulguide == true) {
+    if (paragon_soulguide) {
 	return true;
     };
 
-    if (paragon_adroitexplorer == true) {
+    if (paragon_adroitexplorer) {
 	return true;
     }
-    if (paragon_ancestralincarnate == true) {
+    if (paragon_ancestralincarnate) {
 	return true;
     }
-    if (paragon_bloodfurysavage == true) {
+    if (paragon_bloodfurysavage) {
 	return true;
     }
-    if (paragon_feybeguiler == true) {
+    if (paragon_feybeguiler) {
 	return true;
     }
-    if (paragon_firstbornofmoradin == true) {
+    if (paragon_firstbornofmoradin) {
 	return true;
     }
-    if (paragon_halflingscoundrel == true) {
+    if (paragon_halflingscoundrel) {
 	return true;
     }
-    if (paragon_moonstalker == true) {
+    if (paragon_moonstalker) {
 	return true;
     }
-    if (paragon_scionofarkhosia == true) {
+    if (paragon_scionofarkhosia) {
 	return true;
     }
-    if (paragon_shiereknight == true) {
+    if (paragon_shiereknight) {
 	return true;
     }
-    if (paragon_stoneblessed == true) {
+    if (paragon_stoneblessed) {
 	return true;
     }
-    if (paragon_turathihighborn == true) {
+    if (paragon_turathihighborn) {
 	return true;
     }
-    if (paragon_twilightguardian == true) {
+    if (paragon_twilightguardian) {
 	return true;
     }
-    if (paragon_hammerofjudgment == true) {
+    if (paragon_hammerofjudgment) {
 	return true;
     }
-    if (paragon_oathsworn == true) {
+    if (paragon_oathsworn) {
 	return true;
     }
-    if (paragon_unveiledvisage == true) {
+    if (paragon_unveiledvisage) {
 	return true;
     }
-    if (paragon_zealousassassin == true) {
+    if (paragon_zealousassassin) {
 	return true;
     }
-    if (paragon_bearwarrior == true) {
+    if (paragon_bearwarrior) {
 	return true;
     }
-    if (paragon_fearbringerthane == true) {
+    if (paragon_fearbringerthane) {
 	return true;
     }
-    if (paragon_frenziedberserker == true) {
+    if (paragon_frenziedberserker) {
 	return true;
     }
-    if (paragon_wildrunner == true) {
+    if (paragon_wildrunner) {
 	return true;
     }
-    if (paragon_studentoftheseven == true) {
+    if (paragon_studentoftheseven) {
 	return true;
     }
-    if (paragon_summerrhymer == true) {
+    if (paragon_summerrhymer) {
 	return true;
     }
-    if (paragon_voiceofthunder == true) {
+    if (paragon_voiceofthunder) {
 	return true;
     }
-    if (paragon_warchanter == true) {
+    if (paragon_warchanter) {
 	return true;
     }
-    if (paragon_bloodmoonstalker == true) {
+    if (paragon_bloodmoonstalker) {
 	return true;
     }
-    if (paragon_guardianofthelivinggate == true) {
+    if (paragon_guardianofthelivinggate) {
 	return true;
     }
-    if (paragon_keeperofthehiddenflame == true) {
+    if (paragon_keeperofthehiddenflame) {
 	return true;
     }
-    if (paragon_skyhunter == true) {
+    if (paragon_skyhunter) {
 	return true;
     }
-    if (paragon_angelicaspect == true) {
+    if (paragon_angelicaspect) {
 	return true;
     }
-    if (paragon_blightspeaker == true) {
+    if (paragon_blightspeaker) {
 	return true;
     }
-    if (paragon_flameofhope == true) {
+    if (paragon_flameofhope) {
 	return true;
     }
-    if (paragon_hammerofvengeance == true) {
+    if (paragon_hammerofvengeance) {
 	return true;
     }
-    if (paragon_discipleoftheworldserpent == true) {
+    if (paragon_discipleoftheworldserpent) {
 	return true;
     }
-    if (paragon_ghostpanther == true) {
+    if (paragon_ghostpanther) {
 	return true;
     }
-    if (paragon_greatbearshaman == true) {
+    if (paragon_greatbearshaman) {
 	return true;
     }
-    if (paragon_spirittempest == true) {
+    if (paragon_spirittempest) {
 	return true;
     }
-    if (paragon_arcanewellspring == true) {
+    if (paragon_arcanewellspring) {
 	return true;
     }
-    if (paragon_demonskinadept == true) {
+    if (paragon_demonskinadept) {
 	return true;
     }
-    if (paragon_dragonsoulheir == true) {
+    if (paragon_dragonsoulheir) {
 	return true;
     }
-    if (paragon_wildmage == true) {
+    if (paragon_wildmage) {
 	return true;
     }
-    if (paragon_bloodwrathguardian == true) {
+    if (paragon_bloodwrathguardian) {
 	return true;
     }
-    if (paragon_hornedchampion == true) {
+    if (paragon_hornedchampion) {
 	return true;
     }
-    if (paragon_stormsentinel == true) {
+    if (paragon_stormsentinel) {
 	return true;
     }
-    if (paragon_verdantlord == true) {
+    if (paragon_verdantlord) {
 	return true;
     }
 
@@ -25364,7 +25242,7 @@ function RaceAssigned()
 
 function assignalignment(i)
 {
-    if (CharacterTypeHasBeenEstablished == true) {
+    if (CharacterTypeHasBeenEstablished) {
 	ClearAlignmentButtons();
 	document.form1.alignments[alignment - 1].checked = true;
     } else if (AbilitiesHaveBeenEstablished == false) {
@@ -26575,49 +26453,49 @@ function WriteTextForCharacterSheet()
 	"<tr> <td><font face=\"Arial\">Weight:</td> <td><font face=\"Arial\">"
 	+ stringy + "</td></tr>\r";
     stringy = "";
-    if (document.form1.skin_color[0].checked == true) {
+    if (document.form1.skin_color[0].checked) {
 	stringy = "Pale";
     }
-    if (document.form1.skin_color[1].checked == true) {
+    if (document.form1.skin_color[1].checked) {
 	stringy = "Light";
     }
-    if (document.form1.skin_color[2].checked == true) {
+    if (document.form1.skin_color[2].checked) {
 	stringy = "Yellow";
     }
-    if (document.form1.skin_color[3].checked == true) {
+    if (document.form1.skin_color[3].checked) {
 	stringy = "Tan";
     }
-    if (document.form1.skin_color[4].checked == true) {
+    if (document.form1.skin_color[4].checked) {
 	stringy = "Brown";
     }
-    if (document.form1.skin_color[5].checked == true) {
+    if (document.form1.skin_color[5].checked) {
 	stringy = "Black";
     }
-    if (document.form1.skin_color[6].checked == true) {
+    if (document.form1.skin_color[6].checked) {
 	stringy = "Silvery";
     }
-    if (document.form1.skin_color[7].checked == true) {
+    if (document.form1.skin_color[7].checked) {
 	stringy = "Gray";
     }
-    if (document.form1.skin_color[8].checked == true) {
+    if (document.form1.skin_color[8].checked) {
 	stringy = "Green";
     }
-    if (document.form1.skin_color[9].checked == true) {
+    if (document.form1.skin_color[9].checked) {
 	stringy = "Blue";
     }
-    if (document.form1.skin_color[10].checked == true) {
+    if (document.form1.skin_color[10].checked) {
 	stringy = "Scarlet";
     }
-    if (document.form1.skin_color[11].checked == true) {
+    if (document.form1.skin_color[11].checked) {
 	stringy = "Gold";
     }
-    if (document.form1.skin_color[12].checked == true) {
+    if (document.form1.skin_color[12].checked) {
 	stringy = "Rust";
     }
-    if (document.form1.skin_color[13].checked == true) {
+    if (document.form1.skin_color[13].checked) {
 	stringy = "Ochre";
     }
-    if (document.form1.skin_color[14].checked == true) {
+    if (document.form1.skin_color[14].checked) {
 	stringy = "Bronze";
     }
     if ((race_dragonborn) | (race_kobold)) {
@@ -26632,47 +26510,47 @@ function WriteTextForCharacterSheet()
     }
 
     stringy = "";
-    if (document.form1.eye_color[0].checked == true) {
+    if (document.form1.eye_color[0].checked) {
 	stringy = "Red";
     }
-    if (document.form1.eye_color[1].checked == true) {
+    if (document.form1.eye_color[1].checked) {
 	stringy = "Green";
     }
-    if (document.form1.eye_color[2].checked == true) {
+    if (document.form1.eye_color[2].checked) {
 	stringy = "Blue";
     }
-    if (document.form1.eye_color[3].checked == true) {
+    if (document.form1.eye_color[3].checked) {
 	stringy = "Hazel";
     }
-    if (document.form1.eye_color[4].checked == true) {
+    if (document.form1.eye_color[4].checked) {
 	stringy = "Light Brown";
     }
-    if (document.form1.eye_color[5].checked == true) {
+    if (document.form1.eye_color[5].checked) {
 	stringy = "Dark Brown";
     }
-    if (document.form1.eye_color[6].checked == true) {
+    if (document.form1.eye_color[6].checked) {
 	stringy = "Black";
     }
-    if (document.form1.eye_color[7].checked == true) {
+    if (document.form1.eye_color[7].checked) {
 	stringy = "Gray";
     }
-    if (document.form1.eye_color[8].checked == true) {
+    if (document.form1.eye_color[8].checked) {
 	stringy = "Amber";
     }
-    if (document.form1.eye_color[9].checked == true) {
+    if (document.form1.eye_color[9].checked) {
 	stringy = "Violet";
     }
-    if (document.form1.eye_color[10].checked == true) {
+    if (document.form1.eye_color[10].checked) {
 	stringy = "Silver";
     }
     SWD +=
 	"<tr> <td><font face=\"Arial\">Eyes:</td> <td><font face=\"Arial\">"
 	+ stringy + "</td></tr>\r";
     stringy = "";
-    if (document.form1.hair_color[0].checked == true) {
+    if (document.form1.hair_color[0].checked) {
 	stringy = "White";
     }
-    if (document.form1.hair_color[1].checked == true) {
+    if (document.form1.hair_color[1].checked) {
 	if (gender == 1) {
 	    stringy = "Blond";
 	}
@@ -26680,62 +26558,62 @@ function WriteTextForCharacterSheet()
 	    stringy = "Blonde";
 	}
     }
-    if (document.form1.hair_color[2].checked == true) {
+    if (document.form1.hair_color[2].checked) {
 	stringy = "Red";
     }
-    if (document.form1.hair_color[3].checked == true) {
+    if (document.form1.hair_color[3].checked) {
 	stringy = "Light Brown";
     }
-    if (document.form1.hair_color[4].checked == true) {
+    if (document.form1.hair_color[4].checked) {
 	stringy = "Dark Brown";
     }
-    if (document.form1.hair_color[5].checked == true) {
+    if (document.form1.hair_color[5].checked) {
 	stringy = "Black";
     }
-    if (document.form1.hair_color[6].checked == true) {
+    if (document.form1.hair_color[6].checked) {
 	stringy = "Gray";
     }
-    if (document.form1.hair_color[7].checked == true) {
+    if (document.form1.hair_color[7].checked) {
 	stringy = "Silver";
     }
-    if (document.form1.hair_color[8].checked == true) {
+    if (document.form1.hair_color[8].checked) {
 	stringy = "Gold";
     }
-    if (document.form1.hair_color[9].checked == true) {
+    if (document.form1.hair_color[9].checked) {
 	stringy = "Green";
     }
-    if (document.form1.hair_color[10].checked == true) {
+    if (document.form1.hair_color[10].checked) {
 	stringy = "Blue";
     }
-    if (document.form1.hair_color[11].checked == true) {
+    if (document.form1.hair_color[11].checked) {
 	stringy = "Purple";
     }
-    if (document.form1.hair_color[12].checked == true) {
+    if (document.form1.hair_color[12].checked) {
 	stringy = "None";
 	NoCurlsNoBeard();
     }
-    if (document.form1.hair_type[0].checked == true) {
+    if (document.form1.hair_type[0].checked) {
 	stringy += "; Straight";
     }
-    if (document.form1.hair_type[1].checked == true) {
+    if (document.form1.hair_type[1].checked) {
 	stringy += "; Wavy";
     }
-    if (document.form1.hair_type[2].checked == true) {
+    if (document.form1.hair_type[2].checked) {
 	stringy += "; Curly";
     }
-    if (document.form1.beard_type[0].checked == true) {
+    if (document.form1.beard_type[0].checked) {
 	stringy += "; Beardless";
 	if ((gender == 1) & (race_halfling)) {
 	    stringy += " [may grow sideburns]";
 	}
     }
-    if (document.form1.beard_type[1].checked == true) {
+    if (document.form1.beard_type[1].checked) {
 	stringy += "; Light Beard";
     }
-    if (document.form1.beard_type[2].checked == true) {
+    if (document.form1.beard_type[2].checked) {
 	stringy += "; Average Beard";
     }
-    if (document.form1.beard_type[3].checked == true) {
+    if (document.form1.beard_type[3].checked) {
 	stringy += "; Thick Beard / Hirsute";
     }
 
@@ -29612,32 +29490,32 @@ function WriteTextForCharacterSheet()
     }
 
     x = wisdom_attack_base;
-    if ((document.form1.lanceoffaith_box.
-	 checked) | (dilettante_lanceoffaith)) {
+    if ((document.form1.
+	 lanceoffaith_box.checked) | (dilettante_lanceoffaith)) {
 	SWD +=
 	    "Lance of Faith " + PlusOrMinus(x) + sup_i() +
 	    " [base wisdom attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.priestsshield_box.
-	 checked) | (dilettante_priestsshield)) {
+    if ((document.form1.
+	 priestsshield_box.checked) | (dilettante_priestsshield)) {
 	SWD +=
 	    "Priest's Shield " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC ";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.righteousbrand_box.
-	 checked) | (dilettante_righteousbrand)) {
+    if ((document.form1.
+	 righteousbrand_box.checked) | (dilettante_righteousbrand)) {
 	SWD +=
 	    "Righteous Brand " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = wisdom_attack_base;
-    if ((document.form1.sacredflame_box.
-	 checked) | (dilettante_sacredflame)) {
+    if ((document.form1.
+	 sacredflame_box.checked) | (dilettante_sacredflame)) {
 	SWD +=
 	    "Sacred Flame " + PlusOrMinus(x) + sup_i() +
 	    " [base wisdom attack] vs reflex";
@@ -29651,8 +29529,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.reapingstrike_box.
-	 checked) | (dilettante_reapingstrike)) {
+    if ((document.form1.
+	 reapingstrike_box.checked) | (dilettante_reapingstrike)) {
 	SWD +=
 	    "Reaping Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
@@ -29701,16 +29579,16 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if ((document.form1.bolsteringstrike_box.
-	 checked) | (dilettante_bolsteringstrike)) {
+    if ((document.form1.
+	 bolsteringstrike_box.checked) | (dilettante_bolsteringstrike)) {
 	SWD +=
 	    "Bolstering Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base charisma attack] vs AC";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if ((document.form1.enfeeblingstrike_box.
-	 checked) | (dilettante_enfeeblingstrike)) {
+    if ((document.form1.
+	 enfeeblingstrike_box.checked) | (dilettante_enfeeblingstrike)) {
 	SWD +=
 	    "Enfeebling Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base charisma attack] vs AC";
@@ -29724,24 +29602,24 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.valiantstrike_box.
-	 checked) | (dilettante_valiantstrike)) {
+    if ((document.form1.
+	 valiantstrike_box.checked) | (dilettante_valiantstrike)) {
 	SWD +=
 	    "Valiant Strike + " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack; add # of adjacent foes] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.carefulattack_box.
-	 checked) | (dilettante_carefulattack)) {
+    if ((document.form1.
+	 carefulattack_box.checked) | (dilettante_carefulattack)) {
 	SWD +=
 	    "Careful Attack " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.carefulattack_box.
-	 checked) | (dilettante_carefulattack)) {
+    if ((document.form1.
+	 carefulattack_box.checked) | (dilettante_carefulattack)) {
 	SWD +=
 	    "Careful Attack " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
@@ -29755,8 +29633,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.nimblestrike_box.
-	 checked) | (dilettante_nimblestrike)) {
+    if ((document.form1.
+	 nimblestrike_box.checked) | (dilettante_nimblestrike)) {
 	SWD +=
 	    "Nimble Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
@@ -29785,24 +29663,24 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.piercingstrike_box.
-	 checked) | (dilettante_piercingstrike)) {
+    if ((document.form1.
+	 piercingstrike_box.checked) | (dilettante_piercingstrike)) {
 	SWD +=
 	    "Piercing Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.ripostestrike_box.
-	 checked) | (dilettante_ripostestrike)) {
+    if ((document.form1.
+	 ripostestrike_box.checked) | (dilettante_ripostestrike)) {
 	SWD +=
 	    "Riposte Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.slyflourish_box.
-	 checked) | (dilettante_slyflourish)) {
+    if ((document.form1.
+	 slyflourish_box.checked) | (dilettante_slyflourish)) {
 	SWD +=
 	    "Sly Flourish " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
@@ -29816,8 +29694,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if ((document.form1.direradiance_box.
-	 checked) | (dilettante_direradiance)) {
+    if ((document.form1.
+	 direradiance_box.checked) | (dilettante_direradiance)) {
 	SWD +=
 	    "Dire Radiance " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
@@ -29827,8 +29705,8 @@ function WriteTextForCharacterSheet()
     if (constitution_attack_base > x) {
 	x = constitution_attack_base;
     }
-    if ((document.form1.eldritchblast_box.
-	 checked) | (dilettante_eldritchblast)) {
+    if ((document.form1.
+	 eldritchblast_box.checked) | (dilettante_eldritchblast)) {
 	SWD +=
 	    "Eldritch Blast " + PlusOrMinus(x) + sup_i() +
 	    " (constitution / charisma) vs reflex";
@@ -29849,8 +29727,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if ((document.form1.hellishrebuke_box.
-	 checked) | (dilettante_hellishrebuke)) {
+    if ((document.form1.
+	 hellishrebuke_box.checked) | (dilettante_hellishrebuke)) {
 	SWD +=
 	    "Hellish Rebuke " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
@@ -29865,31 +29743,31 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
 
-    if ((document.form1.commandersstrike_box.
-	 checked) | (dilettante_commandersstrike)) {
+    if ((document.form1.
+	 commandersstrike_box.checked) | (dilettante_commandersstrike)) {
 	SWD +=
 	    "Commander's Strike (ally adds your intelligence bonus to damage)";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.furioussmash_box.
-	 checked) | (dilettante_furioussmash)) {
+    if ((document.form1.
+	 furioussmash_box.checked) | (dilettante_furioussmash)) {
 	SWD +=
 	    "Furious Smash " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.vipersstrike_box.
-	 checked) | (dilettante_vipersstrike)) {
+    if ((document.form1.
+	 vipersstrike_box.checked) | (dilettante_vipersstrike)) {
 	SWD +=
 	    "Viper's Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.wolfpacktactics_box.
-	 checked) | (dilettante_wolfpacktactics)) {
+    if ((document.form1.
+	 wolfpacktactics_box.checked) | (dilettante_wolfpacktactics)) {
 	SWD +=
 	    "Wolfpack Tactics " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
@@ -29910,69 +29788,72 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.cloudofdaggers_box.
-	 checked) | (dilettante_cloudofdaggers) | (arcane_initiate_choice()
-						   == 1)) {
+    if ((document.form1.
+	 cloudofdaggers_box.checked) | (dilettante_cloudofdaggers) |
+	(arcane_initiate_choice()
+	 == 1)) {
 	SWD +=
 	    "Cloud of Daggers " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.magicmissile_box.
-	 checked) | (dilettante_magicmissile) | (arcane_initiate_choice()
-						 == 2)) {
+    if ((document.form1.
+	 magicmissile_box.checked) | (dilettante_magicmissile) |
+	(arcane_initiate_choice()
+	 == 2)) {
 	SWD +=
 	    "Magic Missile " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.rayoffrost_box.
-	 checked) | (dilettante_rayoffrost) | (arcane_initiate_choice() ==
-					       3)) {
+    if ((document.form1.
+	 rayoffrost_box.checked) | (dilettante_rayoffrost) |
+	(arcane_initiate_choice() == 3)) {
 	SWD +=
 	    "Ray of Frost " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.scorchingburst_box.
-	 checked) | (dilettante_scorchingburst) | (arcane_initiate_choice()
-						   == 4)) {
+    if ((document.form1.
+	 scorchingburst_box.checked) | (dilettante_scorchingburst) |
+	(arcane_initiate_choice()
+	 == 4)) {
 	SWD +=
 	    "Scorching Burst " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.thunderwave_box.
-	 checked) | (dilettante_thunderwave) | (arcane_initiate_choice() ==
-						5)) {
+    if ((document.form1.
+	 thunderwave_box.checked) | (dilettante_thunderwave) |
+	(arcane_initiate_choice() == 5)) {
 	SWD +=
 	    "Thunderwave " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.illusoryambush_box.
-	 checked) | (arcane_initiate_choice() == 6)) {
+    if ((document.form1.
+	 illusoryambush_box.checked) | (arcane_initiate_choice() == 6)) {
 	SWD +=
 	    "Illusory Ambush [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs will";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.phantombolt_box.
-	 checked) | (arcane_initiate_choice() == 7)) {
+    if ((document.form1.
+	 phantombolt_box.checked) | (arcane_initiate_choice() == 7)) {
 	SWD +=
 	    "Phantom Bolt [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs will";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.stormpillar_box.
-	 checked) | (arcane_initiate_choice() == 8)) {
+    if ((document.form1.
+	 stormpillar_box.checked) | (arcane_initiate_choice() == 8)) {
 	SWD += "Storm Pillar [AP] " + sup_i() + " [special]";
 	SWD += "<br>\r";
     }
@@ -37451,567 +37332,567 @@ function WriteTextForCharacterSheet()
     }
 
     x = intelligence_attack_base;
-    if (document.form1.foesnare_box.checked == true) {
+    if (document.form1.foesnare_box.checked) {
 	SWD +=
 	    "Foesnare [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.lightningclash_box.checked == true) {
+    if (document.form1.lightningclash_box.checked) {
 	SWD +=
 	    "Lightning Clash [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.whirlingblade_box.checked == true) {
+    if (document.form1.whirlingblade_box.checked) {
 	SWD +=
 	    "Whirling Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.blastbackswipe_box.checked == true) {
+    if (document.form1.blastbackswipe_box.checked) {
 	SWD +=
 	    "Blast Backswipe [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.corrosiveruin_box.checked == true) {
+    if (document.form1.corrosiveruin_box.checked) {
 	SWD +=
 	    "Corrosive Ruin [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.slothstrike_box.checked == true) {
+    if (document.form1.slothstrike_box.checked) {
 	SWD +=
 	    "Sloth Strike [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [AC] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.transposinglunge_box.checked == true) {
+    if (document.form1.transposinglunge_box.checked) {
 	SWD +=
 	    "Transposing Lunge [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.deepfreeze_box.checked == true) {
+    if (document.form1.deepfreeze_box.checked) {
 	SWD +=
 	    "Deep Freeze [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.elementalfoible_box.checked == true) {
+    if (document.form1.elementalfoible_box.checked) {
 	SWD +=
 	    "Elemental Foible [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.lingeringlightning_box.checked == true) {
+    if (document.form1.lingeringlightning_box.checked) {
 	SWD +=
 	    "Lingering Lightning [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.electrifiedlash_box.checked == true) {
+    if (document.form1.electrifiedlash_box.checked) {
 	SWD +=
 	    "Electrified Lash [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.flamewallstrike_box.checked == true) {
+    if (document.form1.flamewallstrike_box.checked) {
 	SWD +=
 	    "Flamewall Strike [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [special]";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.isolatingslam_box.checked == true) {
+    if (document.form1.isolatingslam_box.checked) {
 	SWD +=
 	    "Isolating Slam [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.spikesofagony_box.checked == true) {
+    if (document.form1.spikesofagony_box.checked) {
 	SWD +=
 	    "Spikes of Agony [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.beaconblade_box.checked == true) {
+    if (document.form1.beaconblade_box.checked) {
 	SWD +=
 	    "Beacon Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.begone_box.checked == true) {
+    if (document.form1.begone_box.checked) {
 	SWD +=
 	    "Be Gone [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.glamorblade_box.checked == true) {
+    if (document.form1.glamorblade_box.checked) {
 	SWD +=
 	    "Glamor Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.acidburstblade_box.checked == true) {
+    if (document.form1.acidburstblade_box.checked) {
 	SWD +=
 	    "Acid Burst Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.dimensionalslash_box.checked == true) {
+    if (document.form1.dimensionalslash_box.checked) {
 	SWD +=
 	    "Dimensional Slash [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.seedoffire_box.checked == true) {
+    if (document.form1.seedoffire_box.checked) {
 	SWD +=
 	    "Seed of Fire [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.acidforblood_box.checked == true) {
+    if (document.form1.acidforblood_box.checked) {
 	SWD +=
 	    "Acid for Blood [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.infernossword_box.checked == true) {
+    if (document.form1.infernossword_box.checked) {
 	SWD +=
 	    "Inferno's Sword [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.freethestormwithin_box.checked == true) {
+    if (document.form1.freethestormwithin_box.checked) {
 	SWD +=
 	    "Free the Storm Within [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [special]";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.icecage_box.checked == true) {
+    if (document.form1.icecage_box.checked) {
 	SWD +=
 	    "Ice Cage [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.spidersilkslash_box.checked == true) {
+    if (document.form1.spidersilkslash_box.checked) {
 	SWD +=
 	    "Spider Silk Slash [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.swordshock_box.checked == true) {
+    if (document.form1.swordshock_box.checked) {
 	SWD +=
 	    "Sword Shock [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.baneblade_box.checked == true) {
+    if (document.form1.baneblade_box.checked) {
 	SWD +=
 	    "Bane Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.hellsownblade_box.checked == true) {
+    if (document.form1.hellsownblade_box.checked) {
 	SWD +=
 	    "Hell's Own Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.lightningrod_box.checked == true) {
+    if (document.form1.lightningrod_box.checked) {
 	SWD +=
 	    "Lightning Rod [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.acidfountain_box.checked == true) {
+    if (document.form1.acidfountain_box.checked) {
 	SWD +=
 	    "Acid Fountain [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.meteorstrike_box.checked == true) {
+    if (document.form1.meteorstrike_box.checked) {
 	SWD +=
 	    "Meteor Strike [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.thunderreposte_box.checked == true) {
+    if (document.form1.thunderreposte_box.checked) {
 	SWD +=
 	    "Thunder Reposte [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.boundinglightning_box.checked == true) {
+    if (document.form1.boundinglightning_box.checked) {
 	SWD +=
 	    "Bounding Lightning [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.icyshackles_box.checked == true) {
+    if (document.form1.icyshackles_box.checked) {
 	SWD +=
 	    "Icy Shackles [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.quicksilverblade_box.checked == true) {
+    if (document.form1.quicksilverblade_box.checked) {
 	SWD +=
 	    "Quicksilver Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [special]";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.thunderingheart_box.checked == true) {
+    if (document.form1.thunderingheart_box.checked) {
 	SWD +=
 	    "Thundering Heart [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.maelstromblade_box.checked == true) {
+    if (document.form1.maelstromblade_box.checked) {
 	SWD +=
 	    "Maelstrom Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.circleofdevastation_box.checked == true) {
+    if (document.form1.circleofdevastation_box.checked) {
 	SWD +=
 	    "Circle of Devastation [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.dimensionalcharge_box.checked == true) {
+    if (document.form1.dimensionalcharge_box.checked) {
 	SWD +=
 	    "Dimensional Charge [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.astralthunderblade_box.checked == true) {
+    if (document.form1.astralthunderblade_box.checked) {
 	SWD +=
 	    "Astral Thunderblade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC / fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.obliteratingblaze_box.checked == true) {
+    if (document.form1.obliteratingblaze_box.checked) {
 	SWD +=
 	    "Obliterating Blaze [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC / fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if (document.form1.vorpaldoom_box.checked == true) {
+    if (document.form1.vorpaldoom_box.checked) {
 	SWD +=
 	    "Vorpal Doom [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [base intelligence attack] vs AC";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.cursebite_box.checked == true) {
+    if (document.form1.cursebite_box.checked) {
 	SWD +=
 	    "Cursebite [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.flickeringvenom_box.checked == true) {
+    if (document.form1.flickeringvenom_box.checked) {
 	SWD +=
 	    "Flickering Venom [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.contagion_box.checked == true) {
+    if (document.form1.contagion_box.checked) {
 	SWD +=
 	    "Contagion [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.yourglorioussacrifice_box.checked == true) {
+    if (document.form1.yourglorioussacrifice_box.checked) {
 	SWD +=
 	    "Your Glorious Sacrifice [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofkhaeleth_box.checked == true) {
+    if (document.form1.vestigeofkhaeleth_box.checked) {
 	SWD +=
 	    "Vestige of Khaeleth [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofmountvaelis_box.checked == true) {
+    if (document.form1.vestigeofmountvaelis_box.checked) {
 	SWD +=
 	    "Vestige of Mount Vaelis [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.upsettingonslaught_box.checked == true) {
+    if (document.form1.upsettingonslaught_box.checked) {
 	SWD +=
 	    "Upsetting Onslaught [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.yourdeliciousweakness_box.checked == true) {
+    if (document.form1.yourdeliciousweakness_box.checked) {
 	SWD +=
 	    "Your Delicious Weakness [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.forcefulassault_box.checked == true) {
+    if (document.form1.forcefulassault_box.checked) {
 	SWD +=
 	    "Forceful Assault [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.twilightofthesoul_box.checked == true) {
+    if (document.form1.twilightofthesoul_box.checked) {
 	SWD +=
 	    "Twilight of the Soul [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofugar_box.checked == true) {
+    if (document.form1.vestigeofugar_box.checked) {
 	SWD +=
 	    "Vestige of Ugar [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofxandor_box.checked == true) {
+    if (document.form1.vestigeofxandor_box.checked) {
 	SWD +=
 	    "Vestige of Xandor [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base + 2;
-    if (document.form1.deathboon_box.checked == true) {
+    if (document.form1.deathboon_box.checked) {
 	SWD +=
 	    "Death Boon [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack + 2] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.deathscommands_box.checked == true) {
+    if (document.form1.deathscommands_box.checked) {
 	SWD +=
 	    "Death's Commands [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.deathsfondcaress_box.checked == true) {
+    if (document.form1.deathsfondcaress_box.checked) {
 	SWD +=
 	    "Death's Fond Caress [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs relfex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.ringofpain_box.checked == true) {
+    if (document.form1.ringofpain_box.checked) {
 	SWD +=
 	    "Ring of Pain [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofilmeth_box.checked == true) {
+    if (document.form1.vestigeofilmeth_box.checked) {
 	SWD +=
 	    "Vestige of Ilmeth [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofshax_box.checked == true) {
+    if (document.form1.vestigeofshax_box.checked) {
 	SWD +=
 	    "Vestige of Shax [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.cursegrind_box.checked == true) {
+    if (document.form1.cursegrind_box.checked) {
 	SWD +=
 	    "Curse Grind [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.allmustsacrifice_box.checked == true) {
+    if (document.form1.allmustsacrifice_box.checked) {
 	SWD +=
 	    "All Must Sacrifice [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.kimmerielssmile_box.checked == true) {
+    if (document.form1.kimmerielssmile_box.checked) {
 	SWD +=
 	    "Kimmeriel's Smile [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.darkladysgift_box.checked == true) {
+    if (document.form1.darkladysgift_box.checked) {
 	SWD +=
 	    "Dark Lady's Gift [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofleraje_box.checked == true) {
+    if (document.form1.vestigeofleraje_box.checked) {
 	SWD +=
 	    "Vestige of Leraje [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofsolis_box.checked == true) {
+    if (document.form1.vestigeofsolis_box.checked) {
 	SWD +=
 	    "Vestige of Solis [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.unholyglee_box.checked == true) {
+    if (document.form1.unholyglee_box.checked) {
 	SWD +=
 	    "Unholy Glee [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.yourdelectablepain_box.checked == true) {
+    if (document.form1.yourdelectablepain_box.checked) {
 	SWD +=
 	    "Your Delectable Pain [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.explosivecontagion_box.checked == true) {
+    if (document.form1.explosivecontagion_box.checked) {
 	SWD +=
 	    "Explosive Contagion [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.passionatebetrayal_box.checked == true) {
+    if (document.form1.passionatebetrayal_box.checked) {
 	SWD +=
 	    "Passionate Betrayal [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofamaan_box.checked == true) {
+    if (document.form1.vestigeofamaan_box.checked) {
 	SWD +=
 	    "Vestige of Amaan [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeoftheburnedemperors_box.checked == true) {
+    if (document.form1.vestigeoftheburnedemperors_box.checked) {
 	SWD +=
 	    "Vestige of the Burned Emperors " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base + 2;
-    if (document.form1.dreadtheft_box.checked == true) {
+    if (document.form1.dreadtheft_box.checked) {
 	SWD +=
 	    "Dread Theft [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [charisima] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.bladesofvanquishedarmies_box.checked == true) {
+    if (document.form1.bladesofvanquishedarmies_box.checked) {
 	SWD +=
 	    "Blades of Vanquished Armies [FRPG] " + PlusOrMinus(x) +
 	    sup_i() + " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.invisibledeath_box.checked == true) {
+    if (document.form1.invisibledeath_box.checked) {
 	SWD +=
 	    "Invisible Death [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.ringoftorment_box.checked == true) {
+    if (document.form1.ringoftorment_box.checked) {
 	SWD +=
 	    "Ring of Torment [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeoflandssoul_box.checked == true) {
+    if (document.form1.vestigeoflandssoul_box.checked) {
 	SWD +=
 	    "Vestige of Land's Soul " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.ringoftorment_box.checked == true) {
+    if (document.form1.ringoftorment_box.checked) {
 	SWD +=
 	    "Vestige of the Queen of Namhar " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs will";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.inevitableundercut_box.checked == true) {
+    if (document.form1.inevitableundercut_box.checked) {
 	SWD +=
 	    "Inevitable Undercut [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.onefinalsacrifice_box.checked == true) {
+    if (document.form1.onefinalsacrifice_box.checked) {
 	SWD +=
 	    "One Final Sacrifice [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if (document.form1.spreadthecorrosion_box.checked == true) {
+    if (document.form1.spreadthecorrosion_box.checked) {
 	SWD +=
 	    "Spread the Corrosion [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs reflex";
@@ -38027,14 +37908,14 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofzuriel_box.checked == true) {
+    if (document.form1.vestigeofzuriel_box.checked) {
 	SWD +=
 	    "Vestige of Zuriel [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.horrificmawbite_box.checked == true) {
+    if (document.form1.horrificmawbite_box.checked) {
 
 	if (total_levels <= 10) {
 	    x = physical_attack_base + 2;
@@ -38055,49 +37936,49 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.plaguelash_box.checked == true) {
+    if (document.form1.plaguelash_box.checked) {
 	SWD +=
 	    "Plague Lash [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs fortitude";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.burningfocus_box.checked == true) {
+    if (document.form1.burningfocus_box.checked) {
 	SWD +=
 	    "Burning Focus [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.spellmirror_box.checked == true) {
+    if (document.form1.spellmirror_box.checked) {
 	SWD +=
 	    "Spell Mirror [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs reflex";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.scarcarvingblade_box.checked == true) {
+    if (document.form1.scarcarvingblade_box.checked) {
 	SWD +=
 	    "Scar Carving Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.calloftheplague_box.checked == true) {
+    if (document.form1.calloftheplague_box.checked) {
 	SWD +=
 	    "Call of the Plague [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [" + best_mental_attack + "] vs fortitude";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.blurringblade_box.checked == true) {
+    if (document.form1.blurringblade_box.checked) {
 	SWD +=
 	    "Blurring Blade [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [special]";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.terribleimposition_box.checked == true) {
+    if (document.form1.terribleimposition_box.checked) {
 	if (total_levels <= 10) {
 	    x = mental_attack_base + 2;
 	    SWD +=
@@ -38118,49 +37999,49 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.reachofthedoomed_box.checked == true) {
+    if (document.form1.reachofthedoomed_box.checked) {
 	SWD +=
 	    "Reach of the Doomed [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.cursedgraspingair_box.checked == true) {
+    if (document.form1.cursedgraspingair_box.checked) {
 	SWD +=
 	    "Cursed Grasping Air [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [" + best_mental_attack + "] vs reflex";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.venomousbloodfang_box.checked == true) {
+    if (document.form1.venomousbloodfang_box.checked) {
 	SWD +=
 	    "Venomous Bloodfang [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.burningtheplaguedbellows_box.checked == true) {
+    if (document.form1.burningtheplaguedbellows_box.checked) {
 	SWD +=
 	    "Burning the Plagued Bellows [FRPG] " + PlusOrMinus(x) +
 	    sup_i() + " [" + best_mental_attack + "] vs reflex";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.submissionoftheearth_box.checked == true) {
+    if (document.form1.submissionoftheearth_box.checked) {
 	SWD +=
 	    "Submission of the Earth [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.linesinburningsand_box.checked == true) {
+    if (document.form1.linesinburningsand_box.checked) {
 	SWD +=
 	    "Lines in Burning Sand [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [" + best_mental_attack + "] vs AC";
 	SWD += "<br>\r";
     }
 
-    if (document.form1.spellmothersembrace_box.checked == true) {
+    if (document.form1.spellmothersembrace_box.checked) {
 	if (total_levels <= 10) {
 	    x = physical_attack_base + 2;
 	    SWD +=
@@ -38180,98 +38061,98 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.inflictionoftheflamemist_box.checked == true) {
+    if (document.form1.inflictionoftheflamemist_box.checked) {
 	SWD +=
 	    "Infliction of the Flame Mist [FRPG] " + PlusOrMinus(x) +
 	    sup_i() + " [" + best_mental_attack + "] vs fortitude";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.rabidchainofsteel_box.checked == true) {
+    if (document.form1.rabidchainofsteel_box.checked) {
 	SWD +=
 	    "Rabid Chain of Steel [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.irontoothofbloodlust_box.checked == true) {
+    if (document.form1.irontoothofbloodlust_box.checked) {
 	SWD +=
 	    "Iron Tooth of Bloodlust [FRPG] " + PlusOrMinus(x) + sup_w() +
 	    " [" + best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.maskofmidnight_box.checked == true) {
+    if (document.form1.maskofmidnight_box.checked) {
 	SWD +=
 	    "Mask of Midnight [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs will";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.spellcurse_box.checked == true) {
+    if (document.form1.spellcurse_box.checked) {
 	SWD +=
 	    "Spell Curse [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.gravityofmoment_box.checked == true) {
+    if (document.form1.gravityofmoment_box.checked) {
 	SWD +=
 	    "Gravity of Moment [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs will";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.hideoustether_box.checked == true) {
+    if (document.form1.hideoustether_box.checked) {
 	SWD +=
 	    "Hideous Tether [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.tonguesoftheearth_box.checked == true) {
+    if (document.form1.tonguesoftheearth_box.checked) {
 	SWD +=
 	    "Tongues of the Earth [FRPG] " + PlusOrMinus(x) + sup_i() +
 	    " [" + best_mental_attack + "] vs reflex";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.malignantgrowth_box.checked == true) {
+    if (document.form1.malignantgrowth_box.checked) {
 	SWD +=
 	    "Malignant Growth [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs fortitude";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.contagionflame_box.checked == true) {
+    if (document.form1.contagionflame_box.checked) {
 	SWD +=
 	    "Contagion Flame [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.shiftingwave_box.checked == true) {
+    if (document.form1.shiftingwave_box.checked) {
 	SWD +=
 	    "Shifting Wave [FRPG] " + PlusOrMinus(x) + sup_i() + " [" +
 	    best_mental_attack + "] vs will";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.impossibleflurry_box.checked == true) {
+    if (document.form1.impossibleflurry_box.checked) {
 	SWD +=
 	    "Impossible Flurry [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = physical_attack_base;
-    if (document.form1.echoesofvalor_box.checked == true) {
+    if (document.form1.echoesofvalor_box.checked) {
 	SWD +=
 	    "Echoes of Valor [FRPG] " + PlusOrMinus(x) + sup_w() + " [" +
 	    best_physical_attack + "] vs AC";
 	SWD += "<br>\r";
     }
     x = mental_attack_base;
-    if (document.form1.metamorphosisofspellflame_box.checked == true) {
+    if (document.form1.metamorphosisofspellflame_box.checked) {
 	SWD +=
 	    "Metamorphosis of Spellflame [FRPG] " + PlusOrMinus(x) +
 	    sup_i() + " [" + best_mental_attack +
@@ -38409,7 +38290,7 @@ function WriteTextForCharacterSheet()
     if (small == false) {
 	SWD += x + " lb. or less<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD += Math.round(x * 3 / 4) + " or less<br>\r";
     }
     x++;
@@ -38504,7 +38385,7 @@ function WriteTextForCharacterSheet()
     if (small == false) {
 	SWD += x + "-" + z + " lb.<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD +=
 	    Math.round(x * 3 / 4) + "-" + Math.round(z * 3 / 4) +
 	    " lb.<br>\r";
@@ -38600,7 +38481,7 @@ function WriteTextForCharacterSheet()
     if (small == false) {
 	SWD += x + "-" + z + " lb.<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD +=
 	    Math.round(x * 3 / 4) + "-" + Math.round(z * 3 / 4) +
 	    " lb.<br>\r";
@@ -38609,21 +38490,21 @@ function WriteTextForCharacterSheet()
     if (small == false) {
 	SWD += z + " lb.<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD += Math.round(z * 3 / 4) + " lb.<br>\r";
     }
 
     if (small == false) {
 	SWD += (2 * z) + " lb.<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD += Math.round(z * 3 / 2) + " lb.<br>\r";
     }
 
     if (small == false) {
 	SWD += (5 * z) + " lb.<br>\r";
     }
-    if (small == true) {
+    if (small) {
 	SWD += Math.round(z * 15 / 4) + " lb.<br>\r";
     }
 
@@ -38631,64 +38512,64 @@ function WriteTextForCharacterSheet()
     SWD += "</td></tr></table><p>";
     SWD +=
 	"<p><table><tr><td valign=\"top\"><font face=\"Arial\">Languages:</td><td><font face=\"Arial\">";
-    if (document.form1.common_box.checked == true) {
+    if (document.form1.common_box.checked) {
 	SWD += "Common;  ";
     }
-    if (document.form1.deepspeech_box.checked == true) {
+    if (document.form1.deepspeech_box.checked) {
 	SWD += "Deep Speech;  ";
     }
-    if (document.form1.draconic_box.checked == true) {
+    if (document.form1.draconic_box.checked) {
 	SWD += "Draconic;  ";
     }
-    if (document.form1.dwarven_box.checked == true) {
+    if (document.form1.dwarven_box.checked) {
 	SWD += "Dwarven;  ";
     }
-    if (document.form1.elven_box.checked == true) {
+    if (document.form1.elven_box.checked) {
 	SWD += "Elven;  ";
     }
-    if (document.form1.giant_box.checked == true) {
+    if (document.form1.giant_box.checked) {
 	SWD += "Giant;  ";
     }
-    if (document.form1.goblin_box.checked == true) {
+    if (document.form1.goblin_box.checked) {
 	SWD += "Goblin;  ";
     }
-    if (document.form1.primordial_box.checked == true) {
+    if (document.form1.primordial_box.checked) {
 	SWD += "Primordial;  ";
     }
-    if (document.form1.supernal_box.checked == true) {
+    if (document.form1.supernal_box.checked) {
 	SWD += "Supernal;  ";
     }
-    if (document.form1.abyssal_box.checked == true) {
+    if (document.form1.abyssal_box.checked) {
 	SWD += "Abyssal;  ";
     }
-    if (document.form1.chondathan_box.checked == true) {
+    if (document.form1.chondathan_box.checked) {
 	SWD += "Chondathan [FRPG];  ";
     }
-    if (document.form1.damaran_box.checked == true) {
+    if (document.form1.damaran_box.checked) {
 	SWD += "Damaran [FRPG];  ";
     }
-    if (document.form1.netherese_box.checked == true) {
+    if (document.form1.netherese_box.checked) {
 	SWD += "Netherese [FRPG];  ";
     }
-    if (document.form1.shou_box.checked == true) {
+    if (document.form1.shou_box.checked) {
 	SWD += "Shou [FRPG];  ";
     }
-    if (document.form1.thayan_box.checked == true) {
+    if (document.form1.thayan_box.checked) {
 	SWD += "Thayan [FRPG];  ";
     }
-    if (document.form1.tuigan_box.checked == true) {
+    if (document.form1.tuigan_box.checked) {
 	SWD += "Tuigan [FRPG];  ";
     }
-    if (document.form1.untheric_box.checked == true) {
+    if (document.form1.untheric_box.checked) {
 	SWD += "Untheric [FRPG];  ";
     }
-    if (document.form1.other01_box.checked == true) {
+    if (document.form1.other01_box.checked) {
 	SWD += document.form1.other01.value + ";  ";
     }
-    if (document.form1.other02_box.checked == true) {
+    if (document.form1.other02_box.checked) {
 	SWD += document.form1.other02.value + ";  ";
     }
-    if (document.form1.other03_box.checked == true) {
+    if (document.form1.other03_box.checked) {
 	SWD += document.form1.other03.value + ";  ";
     }
 
@@ -52173,27 +52054,27 @@ function WriteTextForCharacterSheet()
 	wt += x;
     }
 
-    if (document.form1.backpack.checked == true) {
+    if (document.form1.backpack.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.barrel.checked == true) {
+    if (document.form1.barrel.checked) {
 	x = 30;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.basket.checked == true) {
+    if (document.form1.basket.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.bedroll.checked == true) {
+    if (document.form1.bedroll.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.bell.checked == true) {
+    if (document.form1.bell.checked) {
 	SWD += "<br>\r";
     }
     if (document.form1.blanketwinter_list.selectedIndex > 0) {
@@ -52202,33 +52083,33 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.blockandtackle.checked == true) {
+    if (document.form1.blockandtackle.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.bottle.checked == true) {
+    if (document.form1.bottle.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.bucket.checked == true) {
+    if (document.form1.bucket.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.caltrops.checked == true) {
+    if (document.form1.caltrops.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.candle.checked == true) {
+    if (document.form1.candle.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.canvas.checked == true) {
+    if (document.form1.canvas.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.casemaporscroll.checked == true) {
+    if (document.form1.casemaporscroll.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52238,20 +52119,20 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.chalk.checked == true) {
+    if (document.form1.chalk.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.chest.checked == true) {
+    if (document.form1.chest.checked) {
 	x = 25;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.crowbar.checked == true) {
+    if (document.form1.crowbar.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.everburningtorch.checked == true) {
+    if (document.form1.everburningtorch.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52261,10 +52142,10 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.fishhook.checked == true) {
+    if (document.form1.fishhook.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.fishingnet.checked == true) {
+    if (document.form1.fishingnet.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52274,23 +52155,23 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.flintandsteel.checked == true) {
+    if (document.form1.flintandsteel.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.grapplinghook.checked == true) {
+    if (document.form1.grapplinghook.checked) {
 	x = 4;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.hammer.checked == true) {
+    if (document.form1.hammer.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.inkvial.checked == true) {
+    if (document.form1.inkvial.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.inkpen.checked == true) {
+    if (document.form1.inkpen.checked) {
 	SWD += "<br>\r";
     }
     if (document.form1.journeybread.selectedIndex > 0) {
@@ -52298,28 +52179,28 @@ function WriteTextForCharacterSheet()
 	SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.jugclay.checked == true) {
+    if (document.form1.jugclay.checked) {
 	x = 9;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.ladder.checked == true) {
+    if (document.form1.ladder.checked) {
 	x = 20;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.lampcommon.checked == true) {
+    if (document.form1.lampcommon.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
 
-    if (document.form1.lanternbullseye.checked == true) {
+    if (document.form1.lanternbullseye.checked) {
 	x = 3;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.lanternhooded.checked == true) {
+    if (document.form1.lanternhooded.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52339,12 +52220,12 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.mirror.checked == true) {
+    if (document.form1.mirror.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.mug.checked == true) {
+    if (document.form1.mug.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52364,12 +52245,12 @@ function WriteTextForCharacterSheet()
 	    SWD += "<br>\r";
 	wt += 0;
     }
-    if (document.form1.pick.checked == true) {
+    if (document.form1.pick.checked) {
 	x = 10;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.pitcher.checked == true) {
+    if (document.form1.pitcher.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52379,12 +52260,12 @@ function WriteTextForCharacterSheet()
 	SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.pole.checked == true) {
+    if (document.form1.pole.checked) {
 	x = 8;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.pot.checked == true) {
+    if (document.form1.pot.checked) {
 	x = 10;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52395,7 +52276,7 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.ram.checked == true) {
+    if (document.form1.ram.checked) {
 	x = 20;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52422,36 +52303,36 @@ function WriteTextForCharacterSheet()
 	wt += x;
     }
 
-    if (document.form1.sealingwax.checked == true) {
+    if (document.form1.sealingwax.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.sewingneedle.checked == true) {
+    if (document.form1.sewingneedle.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.signalwhistle.checked == true) {
+    if (document.form1.signalwhistle.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.signetring.checked == true) {
+    if (document.form1.signetring.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.sledge.checked == true) {
+    if (document.form1.sledge.checked) {
 	x = 10;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.soap.checked == true) {
+    if (document.form1.soap.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.spadeorshovel.checked == true) {
+    if (document.form1.spadeorshovel.checked) {
 	x = 8;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.spyglass.checked == true) {
+    if (document.form1.spyglass.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52461,7 +52342,7 @@ function WriteTextForCharacterSheet()
 	SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.tent.checked == true) {
+    if (document.form1.tent.checked) {
 	x = 20;
 
 	wt += x;
@@ -52483,58 +52364,58 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.whetstone.checked == true) {
+    if (document.form1.whetstone.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.alchemistlab.checked == true) {
+    if (document.form1.alchemistlab.checked) {
 	x = 40;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.artisantools.checked == true) {
+    if (document.form1.artisantools.checked) {
 	x = 5;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.disguisekit.checked == true) {
+    if (document.form1.disguisekit.checked) {
 	x = 8;
 
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.healerkit.checked == true) {
+    if (document.form1.healerkit.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.hollyandmistletoe.checked == true) {
+    if (document.form1.hollyandmistletoe.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.holysymbolwooden.checked == true) {
+    if (document.form1.holysymbolwooden.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.holysymbolsilver.checked == true) {
+    if (document.form1.holysymbolsilver.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.hourglass.checked == true) {
+    if (document.form1.hourglass.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.magnifyingglass.checked == true) {
+    if (document.form1.magnifyingglass.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.musicalinstrument.checked == true) {
+    if (document.form1.musicalinstrument.checked) {
 	x = 3;
 
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.orb_box.checked == true) {
+    if (document.form1.orb_box.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52544,15 +52425,15 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.spellcomponentpouch.checked == true) {
+    if (document.form1.spellcomponentpouch.checked) {
 	SWD += "<br>\r";
     }
-    if (document.form1.rod_box.checked == true) {
+    if (document.form1.rod_box.checked) {
 	x = 2;
 	wt += x;
 	SWD += x + " lb<br>\r";
     }
-    if (document.form1.scale.checked == true) {
+    if (document.form1.scale.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52562,7 +52443,7 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.thievestools.checked == true) {
+    if (document.form1.thievestools.checked) {
 	x = 1;
 	wt += x;
 	SWD += x + " lb<br>\r";
@@ -52572,7 +52453,7 @@ function WriteTextForCharacterSheet()
 	    SWD += x + " lb<br>\r";
 	wt += x;
     }
-    if (document.form1.wand_box.checked == true) {
+    if (document.form1.wand_box.checked) {
 	SWD += "<br>\r";
     }
     x = Math.ceil(wt);
@@ -52596,19 +52477,19 @@ function WriteTextForCharacterSheet()
 	    document.form1.slingbullets.selectedIndex + "<br>\r";
     }
 
-    if (document.form1.backpack.checked == true) {
+    if (document.form1.backpack.checked) {
 	SWD += "Backpack<br>\r";
     }
-    if (document.form1.barrel.checked == true) {
+    if (document.form1.barrel.checked) {
 	SWD += "Barrel<br>\r";
     }
-    if (document.form1.basket.checked == true) {
+    if (document.form1.basket.checked) {
 	SWD += "Basket<br>\r";
     }
-    if (document.form1.bedroll.checked == true) {
+    if (document.form1.bedroll.checked) {
 	SWD += "Bedroll<br>\r";
     }
-    if (document.form1.bell.checked == true) {
+    if (document.form1.bell.checked) {
 	SWD += "Bell<br>\r";
     }
     if (document.form1.blanketwinter_list.selectedIndex > 0) {
@@ -52616,25 +52497,25 @@ function WriteTextForCharacterSheet()
 	    "Blanket, winter x" +
 	    document.form1.blanketwinter_list.selectedIndex + "<br>\r";
     }
-    if (document.form1.blockandtackle.checked == true) {
+    if (document.form1.blockandtackle.checked) {
 	SWD += "Block and tackle<br>\r";
     }
-    if (document.form1.bottle.checked == true) {
+    if (document.form1.bottle.checked) {
 	SWD += "Bottle<br>\r";
     }
-    if (document.form1.bucket.checked == true) {
+    if (document.form1.bucket.checked) {
 	SWD += "Bucket<br>\r";
     }
-    if (document.form1.caltrops.checked == true) {
+    if (document.form1.caltrops.checked) {
 	SWD += "Caltrops<br>\r";
     }
-    if (document.form1.candle.checked == true) {
+    if (document.form1.candle.checked) {
 	SWD += "Candle<br>\r";
     }
-    if (document.form1.canvas.checked == true) {
+    if (document.form1.canvas.checked) {
 	SWD += "Canvas (10 x 10)<br>\r";
     }
-    if (document.form1.casemaporscroll.checked == true) {
+    if (document.form1.casemaporscroll.checked) {
 	SWD += "Case (for map or scroll)<br>\r";
     }
     if (document.form1.chain.selectedIndex > 0) {
@@ -52642,16 +52523,16 @@ function WriteTextForCharacterSheet()
 	    "Chain (10 feet) x" + document.form1.chain.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.chalk.checked == true) {
+    if (document.form1.chalk.checked) {
 	SWD += "Chalk<br>\r";
     }
-    if (document.form1.chest.checked == true) {
+    if (document.form1.chest.checked) {
 	SWD += "Chest<br>\r";
     }
-    if (document.form1.crowbar.checked == true) {
+    if (document.form1.crowbar.checked) {
 	SWD += "Crowbar<br>\r";
     }
-    if (document.form1.everburningtorch.checked == true) {
+    if (document.form1.everburningtorch.checked) {
 	SWD += "Everburning torch<br>\r";
     }
     if (document.form1.firewood.selectedIndex > 0) {
@@ -52659,28 +52540,28 @@ function WriteTextForCharacterSheet()
 	    "Firewood (1 day) x" + document.form1.firewood.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.fishhook.checked == true) {
+    if (document.form1.fishhook.checked) {
 	SWD += "Fishhook<br>\r";
     }
-    if (document.form1.fishingnet.checked == true) {
+    if (document.form1.fishingnet.checked) {
 	SWD += "Fishing net<br>\r";
     }
     if (document.form1.flask.selectedIndex > 0) {
 	SWD += "Flasks x" + document.form1.flask.selectedIndex + "<br>\r";
     }
-    if (document.form1.flintandsteel.checked == true) {
+    if (document.form1.flintandsteel.checked) {
 	SWD += "Flint and steel<br>\r";
     }
-    if (document.form1.grapplinghook.checked == true) {
+    if (document.form1.grapplinghook.checked) {
 	SWD += "Grappling hook<br>\r";
     }
-    if (document.form1.hammer.checked == true) {
+    if (document.form1.hammer.checked) {
 	SWD += "Hammer<br>\r";
     }
-    if (document.form1.inkvial.checked == true) {
+    if (document.form1.inkvial.checked) {
 	SWD += "Ink vial<br>\r";
     }
-    if (document.form1.inkpen.checked == true) {
+    if (document.form1.inkpen.checked) {
 	SWD += "Ink pen<br>\r";
     }
     if (document.form1.journeybread.selectedIndex > 0) {
@@ -52688,19 +52569,19 @@ function WriteTextForCharacterSheet()
 	    "Journeybread x" +
 	    (10 * document.form1.journeybread.selectedIndex) + "<br>\r";
     }
-    if (document.form1.jugclay.checked == true) {
+    if (document.form1.jugclay.checked) {
 	SWD += "Jug (clay)<br>\r";
     }
-    if (document.form1.ladder.checked == true) {
+    if (document.form1.ladder.checked) {
 	SWD += "Ladder<br>\r";
     }
-    if (document.form1.lampcommon.checked == true) {
+    if (document.form1.lampcommon.checked) {
 	SWD += "Lamp (common)<br>\r";
     }
-    if (document.form1.lanternbullseye.checked == true) {
+    if (document.form1.lanternbullseye.checked) {
 	SWD += "Lantern (bullseye)<br>\r";
     }
-    if (document.form1.lanternhooded.checked == true) {
+    if (document.form1.lanternhooded.checked) {
 	SWD += "Lantern (hooded)<br>\r";
     }
     if (document.form1.lanternoil.selectedIndex > 0) {
@@ -52716,10 +52597,10 @@ function WriteTextForCharacterSheet()
 	    "Manacles x" + document.form1.manacles.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.mirror.checked == true) {
+    if (document.form1.mirror.checked) {
 	SWD += "Mirror<br>\r";
     }
-    if (document.form1.mug.checked == true) {
+    if (document.form1.mug.checked) {
 	SWD += "Mug<br>\r";
     }
     if (document.form1.oilflask.selectedIndex > 0) {
@@ -52737,10 +52618,10 @@ function WriteTextForCharacterSheet()
 	    "Parchment sheets x" + document.form1.parchment.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.pick.checked == true) {
+    if (document.form1.pick.checked) {
 	SWD += "Pick<br>\r";
     }
-    if (document.form1.pitcher.checked == true) {
+    if (document.form1.pitcher.checked) {
 	SWD += "Pitcher<br>\r";
     }
     if (document.form1.pitons.selectedIndex > 0) {
@@ -52748,10 +52629,10 @@ function WriteTextForCharacterSheet()
 	    "Pitons x" + (10 * document.form1.pitons.selectedIndex) +
 	    "<br>\r";
     }
-    if (document.form1.pole.checked == true) {
+    if (document.form1.pole.checked) {
 	SWD += "Pole<br>\r";
     }
-    if (document.form1.pot.checked == true) {
+    if (document.form1.pot.checked) {
 	SWD += "Pot<br>\r";
     }
     if (document.form1.beltpouch.selectedIndex > 0) {
@@ -52759,7 +52640,7 @@ function WriteTextForCharacterSheet()
 	    "Pouch (belt) x" + document.form1.beltpouch.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.ram.checked == true) {
+    if (document.form1.ram.checked) {
 	SWD += "Ram<br>\r";
     }
     if (document.form1.rations.selectedIndex > 0) {
@@ -52781,35 +52662,35 @@ function WriteTextForCharacterSheet()
 	SWD += "Sacks x" + document.form1.sack.selectedIndex + "<br>\r";
     }
 
-    if (document.form1.sealingwax.checked == true) {
+    if (document.form1.sealingwax.checked) {
 	SWD += "Sealing wax<br>\r";
     }
-    if (document.form1.sewingneedle.checked == true) {
+    if (document.form1.sewingneedle.checked) {
 	SWD += "Sewing needle<br>\r";
     }
-    if (document.form1.signalwhistle.checked == true) {
+    if (document.form1.signalwhistle.checked) {
 	SWD += "Signal whistle<br>\r";
     }
-    if (document.form1.signetring.checked == true) {
+    if (document.form1.signetring.checked) {
 	SWD += "Signet ring<br>\r";
     }
-    if (document.form1.sledge.checked == true) {
+    if (document.form1.sledge.checked) {
 	SWD += "Sledge<br>\r";
     }
-    if (document.form1.soap.checked == true) {
+    if (document.form1.soap.checked) {
 	SWD += "Soap<br>\r";
     }
-    if (document.form1.spadeorshovel.checked == true) {
+    if (document.form1.spadeorshovel.checked) {
 	SWD += "Spade / shovel<br>\r";
     }
-    if (document.form1.spyglass.checked == true) {
+    if (document.form1.spyglass.checked) {
 	SWD += "Spyglass<br>\r";
     }
     if (document.form1.sunrods.selectedIndex > 0) {
 	SWD +=
 	    "Sunrods x" + document.form1.sunrods.selectedIndex + "<br>\r";
     }
-    if (document.form1.tent.checked == true) {
+    if (document.form1.tent.checked) {
 	SWD += "Tent<br>\r";
     }
     if (document.form1.torch.selectedIndex > 0) {
@@ -52825,40 +52706,40 @@ function WriteTextForCharacterSheet()
 	    "Waterskins x" + document.form1.waterskin.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.whetstone.checked == true) {
+    if (document.form1.whetstone.checked) {
 	SWD += "Whetstone<br>\r";
     }
-    if (document.form1.alchemistlab.checked == true) {
+    if (document.form1.alchemistlab.checked) {
 	SWD += "Alchemist lab<br>\r";
     }
-    if (document.form1.artisantools.checked == true) {
+    if (document.form1.artisantools.checked) {
 	SWD += "Artisan tools<br>\r";
     }
-    if (document.form1.disguisekit.checked == true) {
+    if (document.form1.disguisekit.checked) {
 	SWD += "Disguise kit<br>\r";
     }
-    if (document.form1.healerkit.checked == true) {
+    if (document.form1.healerkit.checked) {
 	SWD += "Healer kit<br>\r";
     }
-    if (document.form1.hollyandmistletoe.checked == true) {
+    if (document.form1.hollyandmistletoe.checked) {
 	SWD += "Holly and mistletoe<br>\r";
     }
-    if (document.form1.holysymbolwooden.checked == true) {
+    if (document.form1.holysymbolwooden.checked) {
 	SWD += "Holy symbol (wooden)<br>\r";
     }
-    if (document.form1.holysymbolsilver.checked == true) {
+    if (document.form1.holysymbolsilver.checked) {
 	SWD += "Holy symbol (silver)<br>\r";
     }
-    if (document.form1.hourglass.checked == true) {
+    if (document.form1.hourglass.checked) {
 	SWD += "Hourglass<br>\r";
     }
-    if (document.form1.magnifyingglass.checked == true) {
+    if (document.form1.magnifyingglass.checked) {
 	SWD += "Magnifying glass<br>\r";
     }
-    if (document.form1.musicalinstrument.checked == true) {
+    if (document.form1.musicalinstrument.checked) {
 	SWD += "Musical instrument<br>\r";
     }
-    if (document.form1.orb_box.checked == true) {
+    if (document.form1.orb_box.checked) {
 	SWD += "Orb<br>\r";
     }
     if (document.form1.ritualbook.selectedIndex > 0) {
@@ -52866,13 +52747,13 @@ function WriteTextForCharacterSheet()
 	    "Ritual book x" + document.form1.ritualbook.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.rod_box.checked == true) {
+    if (document.form1.rod_box.checked) {
 	SWD += "Rod<br>\r";
     }
-    if (document.form1.scale.checked == true) {
+    if (document.form1.scale.checked) {
 	SWD += "Scale, merchant's<br>\r";
     }
-    if (document.form1.spellcomponentpouch.checked == true) {
+    if (document.form1.spellcomponentpouch.checked) {
 	SWD += "Ritual components<br>\r";
     }
     if (document.form1.spellbook.selectedIndex > 0) {
@@ -52880,7 +52761,7 @@ function WriteTextForCharacterSheet()
 	    "Spellbook x" + document.form1.spellbook.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.thievestools.checked == true) {
+    if (document.form1.thievestools.checked) {
 	SWD += "Thieves' tools<br>\r";
     }
     if (document.form1.tool.selectedIndex > 0) {
@@ -52888,7 +52769,7 @@ function WriteTextForCharacterSheet()
 	    "Tools (miscellaneous) x" + document.form1.tool.selectedIndex +
 	    "<br>\r";
     }
-    if (document.form1.wand_box.checked == true) {
+    if (document.form1.wand_box.checked) {
 	SWD += "Wand<br>\r";
     }
 
@@ -54352,9 +54233,9 @@ function CalculateArmorClass()
 	    armor_class_string += " + 8 [plate] ";
 	}
     }
-    if ((document.form1.shield_radio[1].checked) | (document.form1.
-						    spikedshield_box.
-						    checked)) {
+    if ((document.form1.shield_radio[1].checked) | (document.
+						    form1.spikedshield_box.checked))
+    {
 	total_armor_class += 1;
 	armor_class_string += " + 1 [if carrying light shield] ";
 	if ((feat_shieldspecialization) &
@@ -54410,12 +54291,8 @@ function CalculateArmorClass()
     }
     if ((document.form1.armor_radio[3].checked ==
 	 true) | ((document.form1.armor_radio[4].checked ==
-		   true) & (!feat_armorspecializationscale)) | (document.
-								form1.
-								armor_radio
-								[5].
-								checked ==
-								true)) {
+		   true) & (!feat_armorspecializationscale)) |
+	(document.form1.armor_radio[5].checked == true)) {
 	if ((!race_dwarf) & (!epic_adamantinesoldier)) {
 	    speed_squares--;
 	    speed_string = " [includes armor penalty]";
@@ -54471,19 +54348,19 @@ function CalculateArmorClass()
     if (modifier_number(dexterity) < 0) {
 	initiative_string_2 += modifier_number(dexterity) + " [dexterity]";
     }
-    if (feat_improvedinitiative == true) {
+    if (feat_improvedinitiative) {
 	initiative_modifier += 4;
 	initiative_string_2 += "  + 4 [improved initiative] ";
     }
-    if (feat_thirstforbattle == true) {
+    if (feat_thirstforbattle) {
 	initiative_modifier += 3;
 	initiative_string_2 += "  + 3 [thirst for battle] ";
     }
-    if (feat_wildsenses == true) {
+    if (feat_wildsenses) {
 	initiative_modifier += 3;
 	initiative_string_2 += "  + 3 [wild senses] ";
     }
-    if (feat_quickdraw == true) {
+    if (feat_quickdraw) {
 	initiative_modifier += 2;
 	initiative_string_2 += "  + 2 [quick draw] ";
     }
@@ -54491,23 +54368,23 @@ function CalculateArmorClass()
 	initiative_modifier += 1;
 	initiative_string_2 += "  + 1 [Vilhon WILds] ";
     }
-    if (race_githyanki == true) {
+    if (race_githyanki) {
 	initiative_modifier += 2;
 	initiative_string_2 += "  + 2 [Githyanki] ";
     }
-    if (frb_dalelands == true) {
+    if (frb_dalelands) {
 	initiative_modifier += 1;
 	initiative_string_2 += "  + 1 [Dalelands] ";
     }
-    if (race_githzerai == true) {
+    if (race_githzerai) {
 	initiative_modifier += 2;
 	initiative_string_2 += "  + 2 [Githzerai] ";
     }
-    if (race_hobgoblin == true) {
+    if (race_hobgoblin) {
 	initiative_modifier += 2;
 	initiative_string_2 += "  + 2 [Hobgoblin] ";
     }
-    if (class_warlord == true) {
+    if (class_warlord) {
 	initiative_modifier += 2;
 	initiative_string_2 += "  + 2 [combat leader] ";
     }
@@ -56854,9 +56731,9 @@ function CalculateArmorClass()
 	}
     }
 
-    if ((document.form1.shield_radio[1].checked) | (document.form1.
-						    spikedshield_box.
-						    checked)) {
+    if ((document.form1.shield_radio[1].checked) | (document.
+						    form1.spikedshield_box.checked))
+    {
 	reflex_save += 1;
 	reflex_string_2 += " + 1 [if carrying light shield] ";
 	if ((feat_shieldspecialization) &
@@ -57055,17 +56932,17 @@ function CalculateArmorClass()
 
 function ArmorCheckPenalty()
 {
-    if ((document.form1.armor_radio[2].
-	 checked) & (!feat_armorspecializationhide)) {
+    if ((document.form1.
+	 armor_radio[2].checked) & (!feat_armorspecializationhide)) {
 	return -1;
     }
-    if ((document.form1.armor_radio[3].
-	 checked) & (!epic_adamantinesoldier) &
+    if ((document.form1.
+	 armor_radio[3].checked) & (!epic_adamantinesoldier) &
 	(!feat_armorspecializationchainmail)) {
 	return -1;
     }
-    if ((document.form1.armor_radio[5].
-	 checked) & (!epic_adamantinesoldier)) {
+    if ((document.form1.
+	 armor_radio[5].checked) & (!epic_adamantinesoldier)) {
 	return -2;
     }
     return 0;
@@ -57621,7 +57498,7 @@ function InitialHeightAndWeight()
 
 function lock_feats()
 {
-    if (CountFeats() == true) {
+    if (CountFeats()) {
 
 	record_feats();
 	if (feat_dwarvenweapontraining) {
@@ -58680,7 +58557,7 @@ function TellAboutPointBuy()
 	return;
     }
 
-    if (AbilitiesAreProperlyAssigned == true) {
+    if (AbilitiesAreProperlyAssigned) {
 	document.form1.first_comment_box.value = "You can accept these.  ";
     } else {
 	document.form1.first_comment_box.value = "Adjust and assign.  ";
@@ -59446,24 +59323,24 @@ function CountFeats()
     if (document.form1.weaponproficiencysickle_box.checked) {
 	x++;
     }
-    if (document.form1.weaponproficiencyothersimplemeleeweapons_box.
-	checked) {
+    if (document.form1.
+	weaponproficiencyothersimplemeleeweapons_box.checked) {
 	x++;
     }
-    if (document.form1.weaponproficiencyothermilitarymeleeweapons_box.
-	checked) {
+    if (document.form1.
+	weaponproficiencyothermilitarymeleeweapons_box.checked) {
 	x++;
     }
-    if (document.form1.weaponproficiencyothersuperiormeleeweapons_box.
-	checked) {
+    if (document.form1.
+	weaponproficiencyothersuperiormeleeweapons_box.checked) {
 	x++;
     }
-    if (document.form1.weaponproficiencyothersimplerangedweapons_box.
-	checked) {
+    if (document.form1.
+	weaponproficiencyothersimplerangedweapons_box.checked) {
 	x++;
     }
-    if (document.form1.weaponproficiencyothersuperiorrangedweapons_box.
-	checked) {
+    if (document.form1.
+	weaponproficiencyothersuperiorrangedweapons_box.checked) {
 	x++;
     }
     if (document.form1.weaponproficiencyspear_box.checked) {
@@ -61634,20 +61511,20 @@ function record_feats()
     feat_weaponproficiencysickle =
 	document.form1.weaponproficiencysickle_box.checked;
     feat_weaponproficiencyothersimplemeleeweapons =
-	document.form1.weaponproficiencyothersimplemeleeweapons_box.
-	checked;
+	document.form1.
+	weaponproficiencyothersimplemeleeweapons_box.checked;
     feat_weaponproficiencyothermilitarymeleeweapons =
-	document.form1.weaponproficiencyothermilitarymeleeweapons_box.
-	checked;
+	document.form1.
+	weaponproficiencyothermilitarymeleeweapons_box.checked;
     feat_weaponproficiencyothersuperiormeleeweapons =
-	document.form1.weaponproficiencyothersuperiormeleeweapons_box.
-	checked;
+	document.form1.
+	weaponproficiencyothersuperiormeleeweapons_box.checked;
     feat_weaponproficiencyothersimplerangedweapons =
-	document.form1.weaponproficiencyothersimplerangedweapons_box.
-	checked;
+	document.form1.
+	weaponproficiencyothersimplerangedweapons_box.checked;
     feat_weaponproficiencyothersuperiorrangedweapons =
-	document.form1.weaponproficiencyothersuperiorrangedweapons_box.
-	checked;
+	document.form1.
+	weaponproficiencyothersuperiorrangedweapons_box.checked;
     feat_weaponproficiencyspear =
 	document.form1.weaponproficiencyspear_box.checked;
     feat_weaponproficiencygreatclub =
@@ -62480,8 +62357,9 @@ function remember_feats()
 	feat_weaponproficiencyothersuperiormeleeweapons;
     document.form1.weaponproficiencyothersimplerangedweapons_box.checked =
 	feat_weaponproficiencyothersimplerangedweapons;
-    document.form1.weaponproficiencyothersuperiorrangedweapons_box.
-	checked = feat_weaponproficiencyothersuperiorrangedweapons;
+    document.form1.
+	weaponproficiencyothersuperiorrangedweapons_box.checked =
+	feat_weaponproficiencyothersuperiorrangedweapons;
     document.form1.weaponproficiencyspear_box.checked =
 	feat_weaponproficiencyspear;
     document.form1.weaponproficiencygreatclub_box.checked =
@@ -62741,22 +62619,26 @@ function consider_armorproficiency()
     }
 
     if (((!already_knows_leather) &
-	 (!document.form1.armorproficiencyleather_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+	 (!document.form1.
+	  armorproficiencyleather_box.checked)) | (strength <
+						   13) | (constitution <
+							  13)) {
 	document.form1.armorproficiencyhide_box.checked = false;
     }
     if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked) & (!already_knows_leather) & (!document.form1.
-						 armorproficiencyleather_box.
-						 checked)) | (strength <
-							      13) |
+	 (!document.form1.
+	  armorproficiencyhide_box.checked) & (!already_knows_leather) &
+	 (!document.
+	  form1.armorproficiencyleather_box.checked)) | (strength <
+							 13) |
 	(constitution < 13)) {
 	document.form1.armorproficiencychainmail_box.checked = false;
     }
     if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+	 (!document.form1.
+	  armorproficiencychainmail_box.checked)) | (strength <
+						     13) | (constitution <
+							    13)) {
 	document.form1.armorproficiencyscale_box.checked = false;
     }
     if (((!already_knows_scale) &
@@ -62774,23 +62656,23 @@ function consider_armorproficiency()
     }
 
     if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (dexterity < 15)) {
+	 (!document.form1.
+	  armorproficiencychainmail_box.checked)) | (dexterity < 15)) {
 	document.form1.armorspecializationchainmail_box.checked = false;
     }
     if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked)) | (constitution < 15)) {
+	 (!document.form1.
+	  armorproficiencyhide_box.checked)) | (constitution < 15)) {
 	document.form1.armorspecializationhide_box.checked = false;
     }
     if (((!already_knows_plate) &
-	 (!document.form1.armorproficiencyplate_box.
-	  checked)) | (constitution < 15)) {
+	 (!document.form1.
+	  armorproficiencyplate_box.checked)) | (constitution < 15)) {
 	document.form1.armorspecializationplate_box.checked = false;
     }
     if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.
-	  checked)) | (dexterity < 15)) {
+	 (!document.form1.
+	  armorproficiencyscale_box.checked)) | (dexterity < 15)) {
 	document.form1.armorspecializationscale_box.checked = false;
     }
 
@@ -62829,23 +62711,27 @@ function light_armorproficiency_star()
     }
 
     if (((!already_knows_leather) &
-	 (!document.form1.armorproficiencyleather_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+	 (!document.form1.
+	  armorproficiencyleather_box.checked)) | (strength <
+						   13) | (constitution <
+							  13)) {
 	document.form1.armorproficiencyhide_star.src = "no_asterisk.gif";
     }
     if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked) & (!already_knows_leather) & (!document.form1.
-						 armorproficiencyleather_box.
-						 checked)) | (strength <
-							      13) |
+	 (!document.form1.
+	  armorproficiencyhide_box.checked) & (!already_knows_leather) &
+	 (!document.
+	  form1.armorproficiencyleather_box.checked)) | (strength <
+							 13) |
 	(constitution < 13)) {
 	document.form1.armorproficiencychainmail_star.src =
 	    "no_asterisk.gif";
     }
     if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+	 (!document.form1.
+	  armorproficiencychainmail_box.checked)) | (strength <
+						     13) | (constitution <
+							    13)) {
 	document.form1.armorproficiencyscale_star.src = "no_asterisk.gif";
     }
     if (((!already_knows_scale) &
@@ -62867,26 +62753,26 @@ function light_armorproficiency_star()
     }
 
     if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (dexterity < 15)) {
+	 (!document.form1.
+	  armorproficiencychainmail_box.checked)) | (dexterity < 15)) {
 	document.form1.armorspecializationchainmail_star.src =
 	    "no_asterisk.gif";
     }
     if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked)) | (constitution < 15)) {
+	 (!document.form1.
+	  armorproficiencyhide_box.checked)) | (constitution < 15)) {
 	document.form1.armorspecializationhide_star.src =
 	    "no_asterisk.gif";
     }
     if (((!already_knows_plate) &
-	 (!document.form1.armorproficiencyplate_box.
-	  checked)) | (constitution < 15)) {
+	 (!document.form1.
+	  armorproficiencyplate_box.checked)) | (constitution < 15)) {
 	document.form1.armorspecializationplate_star.src =
 	    "no_asterisk.gif";
     }
     if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.
-	  checked)) | (dexterity < 15)) {
+	 (!document.form1.
+	  armorproficiencyscale_box.checked)) | (dexterity < 15)) {
 	document.form1.armorspecializationscale_star.src =
 	    "no_asterisk.gif";
     }
@@ -64052,12 +63938,15 @@ function consider_ritualcaster()
     }
 
     if (((!eladrin_arcana) & ((!trained_arcana) & (!multi_trained_arcana))
-	 & (!document.form1.skilltrainingarcana_box.
-	    checked) & (!eladrin_religion) & ((!trained_religion) &
-					      (!multi_trained_religion)) &
-	 (!document.form1.skilltrainingreligion_box.checked))
-	| (class_wizard) | (class_other) | (document.form1.
-					    alchemistswap_box.checked)
+	 & (!document.form1.
+	    skilltrainingarcana_box.checked) & (!eladrin_religion) &
+	 ((!trained_religion) & (!multi_trained_religion)) & (!document.
+							      form1.
+							      skilltrainingreligion_box.
+							      checked))
+	| (class_wizard) | (class_other) | (document.
+					    form1.alchemistswap_box.
+					    checked)
 	| (multi_bard_bardicritualist) | (class_cleric) | (class_bard) |
 	(class_druid) | (class_invoker)) {
 	document.form1.ritualcaster_box.checked = false;
@@ -64068,10 +63957,12 @@ function consider_ritualcaster()
 function light_ritualcaster_star()
 {
     if (((!eladrin_arcana) & ((!trained_arcana) & (!multi_trained_arcana))
-	 & (!document.form1.skilltrainingarcana_box.
-	    checked) & (!eladrin_religion) & ((!trained_religion) &
-					      (!multi_trained_religion)) &
-	 (!document.form1.skilltrainingreligion_box.checked))
+	 & (!document.form1.
+	    skilltrainingarcana_box.checked) & (!eladrin_religion) &
+	 ((!trained_religion) & (!multi_trained_religion)) & (!document.
+							      form1.
+							      skilltrainingreligion_box.
+							      checked))
 	| (class_wizard) | (class_other) | (multi_bard_bardicritualist) |
 	(class_cleric)) {
 	document.form1.ritualcaster_star.src = "no_asterisk.gif";
@@ -64322,10 +64213,9 @@ function ConsiderDoubleGenies()
     }
 
     if ((!genasi_firesoul) &
-	(!document.form1.extramanifestationfiresoul_box.
-	 checked) & (!genasi_stormsoul) & (!document.form1.
-					   extramanifestationstormsoul_box.
-					   checked)) {
+	(!document.form1.
+	 extramanifestationfiresoul_box.checked) & (!genasi_stormsoul) &
+	(!document.form1.extramanifestationstormsoul_box.checked)) {
 	document.form1.shockingflame_box.checked = false;
     }
     if ((!genasi_earthsoul) &
@@ -64333,10 +64223,9 @@ function ConsiderDoubleGenies()
 	document.form1.stoneguard_box.checked = false;
     }
     if ((!genasi_windsoul) &
-	(!document.form1.extramanifestationwindsoul_box.
-	 checked) & (!genasi_watersoul) & (!document.form1.
-					   extramanifestationwatersoul_box.
-					   checked)) {
+	(!document.form1.
+	 extramanifestationwindsoul_box.checked) & (!genasi_watersoul) &
+	(!document.form1.extramanifestationwatersoul_box.checked)) {
 	document.form1.stormrider_box.checked = false;
     }
 
@@ -64344,8 +64233,9 @@ function ConsiderDoubleGenies()
 	 & (!document.form1.extramanifestationfiresoul_box.checked)
 	 & (!document.form1.extramanifestationstormsoul_box.checked)
 	 & (!document.form1.extramanifestationwatersoul_box.checked)
-	 & (!document.form1.extramanifestationwindsoul_box.
-	    checked)) | (total_levels < 21)) {
+	 & (!document.form1.
+	    extramanifestationwindsoul_box.checked)) | (total_levels <
+							21)) {
 	document.form1.doublemanifestation_box.checked = false;
     }
     DoubleGenieStars();
@@ -64408,10 +64298,9 @@ function DoubleGenieStars()
     }
 
     if ((genasi_firesoul) |
-	(document.form1.extramanifestationfiresoul_box.
-	 checked) | (genasi_stormsoul) | (document.form1.
-					  extramanifestationstormsoul_box.
-					  checked)) {
+	(document.form1.
+	 extramanifestationfiresoul_box.checked) | (genasi_stormsoul) |
+	(document.form1.extramanifestationstormsoul_box.checked)) {
 	document.form1.shockingflame_star.src = "asterisk.gif";
     } else {
 	document.form1.shockingflame_star.src = "no_asterisk.gif";
@@ -64423,10 +64312,9 @@ function DoubleGenieStars()
 	document.form1.stoneguard_star.src = "no_asterisk.gif";
     }
     if ((genasi_windsoul) |
-	(document.form1.extramanifestationwindsoul_box.
-	 checked) | (genasi_watersoul) | (document.form1.
-					  extramanifestationwatersoul_box.
-					  checked)) {
+	(document.form1.
+	 extramanifestationwindsoul_box.checked) | (genasi_watersoul) |
+	(document.form1.extramanifestationwatersoul_box.checked)) {
 	document.form1.stormrider_star.src = "asterisk.gif";
     } else {
 	document.form1.stormrider_star.src = "no_asterisk.gif";
@@ -64436,8 +64324,9 @@ function DoubleGenieStars()
 	 | (document.form1.extramanifestationfiresoul_box.checked)
 	 | (document.form1.extramanifestationstormsoul_box.checked)
 	 | (document.form1.extramanifestationwatersoul_box.checked)
-	 | (document.form1.extramanifestationwindsoul_box.
-	    checked)) & (total_levels > 20)) {
+	 | (document.form1.
+	    extramanifestationwindsoul_box.checked)) & (total_levels >
+							20)) {
 	document.form1.doublemanifestation_star.src = "asterisk.gif";
     } else {
 	document.form1.doublemanifestation_star.src = "no_asterisk.gif";
@@ -65103,9 +64992,10 @@ function consider_alchemistswap()
 	remember_feats();
 	return;
     }
-    if ((document.form1.alchemist_box.
-	 checked) | ((!class_cleric) & (!class_wizard) & (!class_bard) &
-		     (!class_druid) & (!class_invoker))) {
+    if ((document.form1.
+	 alchemist_box.checked) | ((!class_cleric) & (!class_wizard) &
+				   (!class_bard) & (!class_druid) &
+				   (!class_invoker))) {
 	document.form1.alchemistswap_box.checked = false;
     }
     consider_ritualcaster();
@@ -65114,9 +65004,10 @@ function consider_alchemistswap()
 
 function light_alchemistswap_star()
 {
-    if ((document.form1.alchemist_box.
-	 checked) | ((!class_cleric) & (!class_wizard) & (!class_bard) &
-		     (!class_druid) & (!class_invoker))) {
+    if ((document.form1.
+	 alchemist_box.checked) | ((!class_cleric) & (!class_wizard) &
+				   (!class_bard) & (!class_druid) &
+				   (!class_invoker))) {
 	document.form1.alchemistswap_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71611,10 +71502,8 @@ function consider_shieldproficiency()
 	document.form1.shieldspecialization_box.checked = false;
     }
     if ((!already_knows_lightshield) & (!already_knows_heavyshield) &
-	(!document.form1.shieldproficiencylight_box.checked) & (!document.
-								form1.
-								shieldproficiencylight_box.
-								checked)) {
+	(!document.form1.shieldproficiencylight_box.
+	 checked) & (!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldspecialization_box.checked = false;
     }
     ArrowShow();
@@ -71640,10 +71529,8 @@ function light_shieldproficiency_star()
 	document.form1.shieldspecialization_star.src = "no_asterisk.gif";
     }
     if ((!already_knows_lightshield) & (!already_knows_heavyshield) &
-	(!document.form1.shieldproficiencylight_box.checked) & (!document.
-								form1.
-								shieldproficiencylight_box.
-								checked)) {
+	(!document.form1.shieldproficiencylight_box.
+	 checked) & (!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldspecialization_star.src = "no_asterisk.gif";
     }
 }
@@ -71676,11 +71563,8 @@ function consider_skillfocusacrobatics()
 	return;
     }
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.skillfocusacrobatics_box.checked = false;
     }
     ArrowShow();
@@ -71689,11 +71573,8 @@ function consider_skillfocusacrobatics()
 function light_skillfocusacrobatics_star()
 {
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.skillfocusacrobatics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71730,10 +71611,8 @@ function consider_skillfocusathletics()
 	return;
     }
     if ((!eladrin_athletics) &
-	((!trained_athletics) & (!multi_trained_athletics)) & (!document.
-							       form1.
-							       skilltrainingathletics_box.
-							       checked)) {
+	((!trained_athletics) & (!multi_trained_athletics)) &
+	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.skillfocusathletics_box.checked = false;
     }
     ArrowShow();
@@ -71742,10 +71621,8 @@ function consider_skillfocusathletics()
 function light_skillfocusathletics_star()
 {
     if ((!eladrin_athletics) &
-	((!trained_athletics) & (!multi_trained_athletics)) & (!document.
-							       form1.
-							       skilltrainingathletics_box.
-							       checked)) {
+	((!trained_athletics) & (!multi_trained_athletics)) &
+	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.skillfocusathletics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71782,10 +71659,8 @@ function consider_skillfocusdiplomacy()
 	return;
     }
     if ((!eladrin_diplomacy) &
-	((!trained_diplomacy) & (!multi_trained_diplomacy)) & (!document.
-							       form1.
-							       skilltrainingdiplomacy_box.
-							       checked)) {
+	((!trained_diplomacy) & (!multi_trained_diplomacy)) &
+	(!document.form1.skilltrainingdiplomacy_box.checked)) {
 	document.form1.skillfocusdiplomacy_box.checked = false;
     }
     ArrowShow();
@@ -71794,10 +71669,8 @@ function consider_skillfocusdiplomacy()
 function light_skillfocusdiplomacy_star()
 {
     if ((!eladrin_diplomacy) &
-	((!trained_diplomacy) & (!multi_trained_diplomacy)) & (!document.
-							       form1.
-							       skilltrainingdiplomacy_box.
-							       checked)) {
+	((!trained_diplomacy) & (!multi_trained_diplomacy)) &
+	(!document.form1.skilltrainingdiplomacy_box.checked)) {
 	document.form1.skillfocusdiplomacy_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71835,10 +71708,8 @@ function consider_skillfocusendurance()
 	return;
     }
     if ((!eladrin_endurance) &
-	((!trained_endurance) & (!multi_trained_endurance)) & (!document.
-							       form1.
-							       skilltrainingendurance_box.
-							       checked)) {
+	((!trained_endurance) & (!multi_trained_endurance)) &
+	(!document.form1.skilltrainingendurance_box.checked)) {
 	document.form1.skillfocusendurance_box.checked = false;
     }
     ArrowShow();
@@ -71847,10 +71718,8 @@ function consider_skillfocusendurance()
 function light_skillfocusendurance_star()
 {
     if ((!eladrin_endurance) &
-	((!trained_endurance) & (!multi_trained_endurance)) & (!document.
-							       form1.
-							       skilltrainingendurance_box.
-							       checked)) {
+	((!trained_endurance) & (!multi_trained_endurance)) &
+	(!document.form1.skilltrainingendurance_box.checked)) {
 	document.form1.skillfocusendurance_star.src = "no_asterisk.gif";
 	return;;
     }
@@ -71937,11 +71806,8 @@ function consider_skillfocusintimidate()
 	return;
     }
     if ((!eladrin_intimidate) &
-	((!trained_intimidate) & (!multi_trained_intimidate)) & (!document.
-								 form1.
-								 skilltrainingintimidate_box.
-								 checked))
-    {
+	((!trained_intimidate) & (!multi_trained_intimidate)) &
+	(!document.form1.skilltrainingintimidate_box.checked)) {
 	document.form1.skillfocusintimidate_box.checked = false;
     }
     ArrowShow();
@@ -71950,11 +71816,8 @@ function consider_skillfocusintimidate()
 function light_skillfocusintimidate_star()
 {
     if ((!eladrin_intimidate) &
-	((!trained_intimidate) & (!multi_trained_intimidate)) & (!document.
-								 form1.
-								 skilltrainingintimidate_box.
-								 checked))
-    {
+	((!trained_intimidate) & (!multi_trained_intimidate)) &
+	(!document.form1.skilltrainingintimidate_box.checked)) {
 	document.form1.skillfocusintimidate_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71991,11 +71854,8 @@ function consider_skillfocusperception()
 	return;
     }
     if ((!eladrin_perception) &
-	((!trained_perception) & (!multi_trained_perception)) & (!document.
-								 form1.
-								 skilltrainingperception_box.
-								 checked))
-    {
+	((!trained_perception) & (!multi_trained_perception)) &
+	(!document.form1.skilltrainingperception_box.checked)) {
 	document.form1.skillfocusperception_box.checked = false;
     }
     ArrowShow();
@@ -72004,11 +71864,8 @@ function consider_skillfocusperception()
 function light_skillfocusperception_star()
 {
     if ((!eladrin_perception) &
-	((!trained_perception) & (!multi_trained_perception)) & (!document.
-								 form1.
-								 skilltrainingperception_box.
-								 checked))
-    {
+	((!trained_perception) & (!multi_trained_perception)) &
+	(!document.form1.skilltrainingperception_box.checked)) {
 	document.form1.skillfocusperception_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72022,10 +71879,8 @@ function consider_skillfocusreligion()
 	return;
     }
     if ((!eladrin_religion) &
-	((!trained_religion) & (!multi_trained_religion)) & (!document.
-							     form1.
-							     skilltrainingreligion_box.
-							     checked)) {
+	((!trained_religion) & (!multi_trained_religion)) &
+	(!document.form1.skilltrainingreligion_box.checked)) {
 	document.form1.skillfocusreligion_box.checked = false;
     }
     ArrowShow();
@@ -72034,10 +71889,8 @@ function consider_skillfocusreligion()
 function light_skillfocusreligion_star()
 {
     if ((!eladrin_religion) &
-	((!trained_religion) & (!multi_trained_religion)) & (!document.
-							     form1.
-							     skilltrainingreligion_box.
-							     checked)) {
+	((!trained_religion) & (!multi_trained_religion)) &
+	(!document.form1.skilltrainingreligion_box.checked)) {
 	document.form1.skillfocusreligion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72076,11 +71929,8 @@ function consider_skillfocusstreetwise()
 	return;
     }
     if ((!eladrin_streetwise) &
-	((!trained_streetwise) & (!multi_trained_streetwise)) & (!document.
-								 form1.
-								 skilltrainingstreetwise_box.
-								 checked))
-    {
+	((!trained_streetwise) & (!multi_trained_streetwise)) &
+	(!document.form1.skilltrainingstreetwise_box.checked)) {
 	document.form1.skillfocusstreetwise_box.checked = false;
     }
     ArrowShow();
@@ -72089,11 +71939,8 @@ function consider_skillfocusstreetwise()
 function light_skillfocusstreetwise_star()
 {
     if ((!eladrin_streetwise) &
-	((!trained_streetwise) & (!multi_trained_streetwise)) & (!document.
-								 form1.
-								 skilltrainingstreetwise_box.
-								 checked))
-    {
+	((!trained_streetwise) & (!multi_trained_streetwise)) &
+	(!document.form1.skilltrainingstreetwise_box.checked)) {
 	document.form1.skillfocusstreetwise_star.src = "no_asterisk.gif";
 	return;;
     }
@@ -72107,10 +71954,8 @@ function consider_skillfocusthievery()
 	return;
     }
     if ((!eladrin_thievery) &
-	((!trained_thievery) & (!multi_trained_thievery)) & (!document.
-							     form1.
-							     skilltrainingthievery_box.
-							     checked)) {
+	((!trained_thievery) & (!multi_trained_thievery)) &
+	(!document.form1.skilltrainingthievery_box.checked)) {
 	document.form1.skillfocusthievery_box.checked = false;
     }
     ArrowShow();
@@ -72119,10 +71964,8 @@ function consider_skillfocusthievery()
 function light_skillfocusthievery_star()
 {
     if ((!eladrin_thievery) &
-	((!trained_thievery) & (!multi_trained_thievery)) & (!document.
-							     form1.
-							     skilltrainingthievery_box.
-							     checked)) {
+	((!trained_thievery) & (!multi_trained_thievery)) &
+	(!document.form1.skilltrainingthievery_box.checked)) {
 	document.form1.skillfocusthievery_star.src = "no_asterisk.gif";
 	return;;
     }
@@ -72533,10 +72376,8 @@ function consider_sureclimber()
 	return;
     }
     if ((!eladrin_athletics) &
-	((!trained_athletics) & (!multi_trained_athletics)) & (!document.
-							       form1.
-							       skilltrainingathletics_box.
-							       checked)) {
+	((!trained_athletics) & (!multi_trained_athletics)) &
+	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.sureclimber_box.checked = false;
     }
     ArrowShow();
@@ -72545,10 +72386,8 @@ function consider_sureclimber()
 function light_sureclimber_star()
 {
     if ((!eladrin_athletics) &
-	((!trained_athletics) & (!multi_trained_athletics)) & (!document.
-							       form1.
-							       skilltrainingathletics_box.
-							       checked)) {
+	((!trained_athletics) & (!multi_trained_athletics)) &
+	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.sureclimber_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72982,8 +72821,8 @@ function consider_weaponproficiencyothersimplemeleeweapons()
 	return;
     }
     if (already_knows_othersimplemeleeweapons) {
-	document.form1.weaponproficiencyothersimplemeleeweapons_box.
-	    checked = false;
+	document.form1.
+	    weaponproficiencyothersimplemeleeweapons_box.checked = false;
     }
     ArrowShow();
 }
@@ -72995,8 +72834,8 @@ function consider_weaponproficiencyothermilitarymeleeweapons()
 	return;
     }
     if (already_knows_othermilitarymeleeweapons) {
-	document.form1.weaponproficiencyothermilitarymeleeweapons_box.
-	    checked = false;
+	document.form1.
+	    weaponproficiencyothermilitarymeleeweapons_box.checked = false;
     }
     ArrowShow();
 }
@@ -73018,8 +72857,8 @@ function consider_weaponproficiencyothersimplerangedweapons()
 	return;
     }
     if (already_knows_othersimplerangedweapons) {
-	document.form1.weaponproficiencyothersimplerangedweapons_box.
-	    checked = false;
+	document.form1.
+	    weaponproficiencyothersimplerangedweapons_box.checked = false;
     }
     ArrowShow();
 }
@@ -73048,8 +72887,9 @@ function light_weaponproficiencyothersimplemeleeweapons_star()
 function light_weaponproficiencyothermilitarymeleeweapons_star()
 {
     if (already_knows_othermilitarymeleeweapons) {
-	document.form1.weaponproficiencyothermilitarymeleeweapons_star.
-	    src = "no_asterisk.gif";
+	document.form1.
+	    weaponproficiencyothermilitarymeleeweapons_star.src =
+	    "no_asterisk.gif";
 	return;
     }
     document.form1.weaponproficiencyothermilitarymeleeweapons_star.src =
@@ -74940,11 +74780,8 @@ function consider_underfoot()
 	document.form1.underfoot_box.checked = false;
     }
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.underfoot_box.checked = false;
     }
 
@@ -74959,11 +74796,8 @@ function light_underfoot_star()
 	return;
     }
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.underfoot_box.checked = false;
     }
 
@@ -75027,11 +74861,8 @@ function consider_blindfight()
 	document.form1.blindfight_box.checked = false;
     }
     if ((!eladrin_perception) &
-	((!trained_perception) & (!multi_trained_perception)) & (!document.
-								 form1.
-								 skilltrainingperception_box.
-								 checked))
-    {
+	((!trained_perception) & (!multi_trained_perception)) &
+	(!document.form1.skilltrainingperception_box.checked)) {
 	if (wisdom < 13) {
 	    document.form1.blindfight_box.checked = false;
 	}
@@ -75046,11 +74877,8 @@ function light_blindfight_star()
 	return;
     }
     if ((!eladrin_perception) &
-	((!trained_perception) & (!multi_trained_perception)) & (!document.
-								 form1.
-								 skilltrainingperception_box.
-								 checked))
-    {
+	((!trained_perception) & (!multi_trained_perception)) &
+	(!document.form1.skilltrainingperception_box.checked)) {
 	if (wisdom < 13) {
 	    document.form1.blindfight_star.src = "no_asterisk.gif";
 	    return;
@@ -75139,11 +74967,8 @@ function consider_flankingmaneuver()
 	document.form1.flankingmaneuver_box.checked = false;
     }
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.flankingmaneuver_box.checked = false;
     }
     ArrowShow();
@@ -75156,11 +74981,8 @@ function light_flankingmaneuver_star()
 	return;
     }
     if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) & (!multi_trained_acrobatics)) & (!document.
-								 form1.
-								 skilltrainingacrobatics_box.
-								 checked))
-    {
+	((!trained_acrobatics) & (!multi_trained_acrobatics)) &
+	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.flankingmaneuver_star.src = "no_asterisk.gif";
 	return;
     }
