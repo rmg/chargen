@@ -1423,175 +1423,63 @@ var fam_shadowincarnate = false;
 
 function arcaneclass()
 {
-    if (class_wizard) {
-	return true;
-    }
-    if (class_bard) {
-	return true;
-    }
-    if (class_warlock) {
-	return true;
-    }
-    if (class_swordmage) {
-	return true;
-    }
-    if (class_sorcerer) {
-	return true;
-    }
-    return false;
+    return (class_wizard ||
+	    class_bard ||
+	    class_warlock || class_swordmage || class_sorcerer);
 }
 
 function daggeruser()
 {
-    if (class_sorcerer) {
-	return true;
-    }
-    if (multi_sorcerer_arcaneprodigy) {
-	return true;
-    }
-    return false;
+    return (class_sorcerer || multi_sorcerer_arcaneprodigy);
 }
 
 function musicuser()
 {
-    if (class_bard) {
-	return true;
-    }
-    if (multi_bard_bardicdilettante) {
-	return true;
-    }
-    return false;
+    return (class_bard || multi_bard_bardicdilettante);
 }
 
 function orbuser()
 {
-    if (class_wizard) {
-	return true;
-    }
-    if (multi_wizard_arcaneinitiate) {
-	return true;
-    }
-    return false;
+    return (class_wizard || multi_wizard_arcaneinitiate);
 }
 
 function roduser()
 {
-    if (class_warlock) {
-	return true;
-    }
-    if (multi_warlock_pactinitiate) {
-	return true;
-    }
-    if (class_invoker) {
-	return true;
-    }
-    if (multi_invoker_acolyteofdivinesecrets) {
-	return true;
-    }
-    return false;
+    return (class_warlock || multi_warlock_pactinitiate || class_invoker
+	    || multi_invoker_acolyteofdivinesecrets);
 }
 
 function staffuser()
 {
-    if (class_wizard) {
-	return true;
-    }
-    if (multi_wizard_arcaneinitiate) {
-	return true;
-    }
-    if (class_druid) {
-	return true;
-    }
-    if (multi_druid_initiateoftheoldfaith) {
-	return true;
-    }
-    if (class_invoker) {
-	return true;
-    }
-    if (multi_invoker_acolyteofdivinesecrets) {
-	return true;
-    }
-    if (class_sorcerer) {
-	return true;
-    }
-    if (multi_sorcerer_arcaneprodigy) {
-	return true;
-    }
-    return false;
+    return (class_wizard || multi_wizard_arcaneinitiate || class_druid
+	    || multi_druid_initiateoftheoldfaith || class_invoker
+	    || multi_invoker_acolyteofdivinesecrets || class_sorcerer
+	    || multi_sorcerer_arcaneprodigy);
 }
 
 function tomeuser()
 {
-    if (class_wizard) {
-	return true;
-    }
-    if (multi_wizard_arcaneinitiate) {
-	return true;
-    }
-    return false;
+    return (class_wizard || multi_wizard_arcaneinitiate);
 }
 
 function wanduser()
 {
-    if (class_wizard) {
-	return true;
-    }
-    if (multi_wizard_arcaneinitiate) {
-	return true;
-    }
-    if (class_warlock) {
-	return true;
-    }
-    if (multi_warlock_pactinitiate) {
-	return true;
-    }
-    if (class_bard) {
-	return true;
-    }
-    if (multi_bard_bardicdilettante) {
-	return true;
-    }
-    return false;
+    return (class_wizard || multi_wizard_arcaneinitiate || class_warlock
+	    || multi_warlock_pactinitiate || class_bard
+	    || multi_bard_bardicdilettante);
 }
 
 function holysymboluser()
 {
-    if (class_cleric) {
-	return true;
-    }
-    if (multi_cleric_initiateofthefaith) {
-	return true;
-    }
-    if (class_paladin) {
-	return true;
-    }
-    if (multi_paladin_soldierofthefaith) {
-	return true;
-    }
-    if (class_avenger) {
-	return true;
-    }
-    if (multi_avenger_discipleofdivinewrath) {
-	return true;
-    }
-    return false;
+    return (class_cleric || multi_cleric_initiateofthefaith
+	    || class_paladin || multi_paladin_soldierofthefaith
+	    || class_avenger || multi_avenger_discipleofdivinewrath);
 }
 
 function totemuser()
 {
-    if (class_druid) {
-	return true;
-    }
-    if (multi_druid_initiateoftheoldfaith) {
-	return true;
-    }
-    if (class_shaman) {
-	return true;
-    }
-    if (multi_shaman_spirittalker) {
-	return true;
-    }
-    return false;
+    return (class_druid || multi_druid_initiateoftheoldfaith
+	    || class_shaman || multi_shaman_spirittalker);
 }
 
 function invigorating()
