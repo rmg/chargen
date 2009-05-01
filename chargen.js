@@ -1596,7 +1596,7 @@ function totemuser()
 
 function invigorating()
 {
-    if ((!trained_endurance) && (!feat_skillfocusendurance) &
+    if ((!trained_endurance) && (!feat_skillfocusendurance) &&
 	(!eladrin_endurance) && (!multi_trained_endurance)) {
 	alert
 	    ("Invigorating power.  You are not trained in endurance, so you will not benefit.  Please choose another.  Thanks.");
@@ -1606,7 +1606,7 @@ function invigorating()
 
 function rattling()
 {
-    if ((!trained_intimidate) && (!feat_skillfocusintimidate) &
+    if ((!trained_intimidate) && (!feat_skillfocusintimidate) &&
 	(!eladrin_intimidate) && (!multi_trained_intimidate)) {
 	alert
 	    ("Rattling power.  You are not trained in intimidate, so you will not benefit.  Please choose another.");
@@ -1758,10 +1758,10 @@ function arcane_initiate_choice()
 
 function raise_otherepic()
 {
-    if ((!epic_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!epic_other) || (ClassesHaveBeenEstablished == false)) {
 	document.form1.epic21[0].checked = true;
 	document.form1.epic21[0].checked = false;
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -1845,7 +1845,7 @@ function get_fam(i)
 	return;
     }
     if ((i >
-	 0) && (!bardclass()) && (!warlockclass()) && (!wizardclass()) &
+	 0) && (!bardclass()) && (!warlockclass()) && (!wizardclass()) &&
 	(!swordmageclass()) && (!sorcererclass())) {
 	alert("Sorry, you can't have a familiar");
 	ClearFamiliarChoice();
@@ -2970,7 +2970,7 @@ function am_i_beastmaster()
 	b_ClearAbilityBoxes28();
 	ClearBeastChoice();
 	return;
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
 	return;
     }
@@ -2978,8 +2978,8 @@ function am_i_beastmaster()
     if (document.form1.rangerstyle[2].checked == false) {
 	ClearBeastChoice();
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    4)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     4)) {
 	document.form1.b_str_04_box.checked = false;
 	document.form1.b_con_04_box.checked = false;
 	document.form1.b_dex_04_box.checked = false;
@@ -2987,8 +2987,8 @@ function am_i_beastmaster()
 	document.form1.b_wis_04_box.checked = false;
 	document.form1.b_chr_04_box.checked = false;
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    8)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     8)) {
 	document.form1.b_str_08_box.checked = false;
 	document.form1.b_con_08_box.checked = false;
 	document.form1.b_dex_08_box.checked = false;
@@ -2996,8 +2996,8 @@ function am_i_beastmaster()
 	document.form1.b_wis_08_box.checked = false;
 	document.form1.b_chr_08_box.checked = false;
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    14)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     14)) {
 	document.form1.b_str_14_box.checked = false;
 	document.form1.b_con_14_box.checked = false;
 	document.form1.b_dex_14_box.checked = false;
@@ -3005,8 +3005,8 @@ function am_i_beastmaster()
 	document.form1.b_wis_14_box.checked = false;
 	document.form1.b_chr_14_box.checked = false;
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    18)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     18)) {
 	document.form1.b_str_18_box.checked = false;
 	document.form1.b_con_18_box.checked = false;
 	document.form1.b_dex_18_box.checked = false;
@@ -3014,8 +3014,8 @@ function am_i_beastmaster()
 	document.form1.b_wis_18_box.checked = false;
 	document.form1.b_chr_18_box.checked = false;
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    24)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     24)) {
 	document.form1.b_str_24_box.checked = false;
 	document.form1.b_con_24_box.checked = false;
 	document.form1.b_dex_24_box.checked = false;
@@ -3023,8 +3023,8 @@ function am_i_beastmaster()
 	document.form1.b_wis_24_box.checked = false;
 	document.form1.b_chr_24_box.checked = false;
     }
-    if ((document.form1.rangerstyle[2].checked == false) | (total_levels <
-							    28)) {
+    if ((document.form1.rangerstyle[2].checked == false) || (total_levels <
+							     28)) {
 	document.form1.b_str_28_box.checked = false;
 	document.form1.b_con_28_box.checked = false;
 	document.form1.b_dex_28_box.checked = false;
@@ -3302,12 +3302,12 @@ function TurnOnParagonStars()
     if ((wizardclass())) {
 	document.form1.wizardofthespiraltower_star.src = "asterisk.gif";
     }
-    if ((multi_cleric()) | (multi_fighter()) | (multi_paladin()) |
-	(multi_ranger()) | (multi_rogue()) | (multi_warlock()) |
-	(multi_warlord()) | (multi_wizard()) | (multi_swordmage()) |
-	(multi_barbarian()) | (multi_avenger()) | (multi_bard()) |
-	(multi_druid()) | (multi_invoker()) | (multi_shaman()) |
-	(multi_sorcerer()) | (multi_barbarian())) {
+    if ((multi_cleric()) || (multi_fighter()) || (multi_paladin()) ||
+	(multi_ranger()) || (multi_rogue()) || (multi_warlock()) ||
+	(multi_warlord()) || (multi_wizard()) || (multi_swordmage()) ||
+	(multi_barbarian()) || (multi_avenger()) || (multi_bard()) ||
+	(multi_druid()) || (multi_invoker()) || (multi_shaman()) ||
+	(multi_sorcerer()) || (multi_barbarian())) {
 	document.form1.multiclass_star.src = "asterisk.gif";
     }
     document.form1.other_star.src = "asterisk.gif";
@@ -3320,13 +3320,13 @@ function TurnOnParagonStars()
     if ((warlockclass_with_pact())) {
 	document.form1.darkwalker_star.src = "asterisk.gif";
     }
-    if ((clericclass()) | (paladinclass())) {
+    if ((clericclass()) || (paladinclass())) {
 	document.form1.doomguide_star.src = "asterisk.gif";
     }
     if (race_drow) {
 	document.form1.drowwanderer_star.src = "asterisk.gif";
     }
-    if ((race_dwarf) && ((fighterclass()) | (paladinclass()))) {
+    if ((race_dwarf) && ((fighterclass()) || (paladinclass()))) {
 	document.form1.eartheartdefender_star.src = "asterisk.gif";
     }
     if (race_genasi) {
@@ -3338,7 +3338,7 @@ function TurnOnParagonStars()
     if ((rogueclass())) {
 	document.form1.ghostofeventide_star.src = "asterisk.gif";
     };
-    if ((clericclass()) | (paladinclass())) {
+    if ((clericclass()) || (paladinclass())) {
 	document.form1.heartwarder_star.src = "asterisk.gif";
     };
     if (class_ranger) {
@@ -3347,14 +3347,14 @@ function TurnOnParagonStars()
     if (class_ranger) {
 	document.form1.impilturandemonslayer_star.src = "asterisk.gif";
     };
-    if ((clericclass()) | (paladinclass())) {
+    if ((clericclass()) || (paladinclass())) {
 	document.form1.morninglord_star.src = "asterisk.gif";
     };
-    if ((fighterclass()) | (paladinclass()) | (warlordclass())) {
+    if ((fighterclass()) || (paladinclass()) || (warlordclass())) {
 	document.form1.purpledragonknight_star.src = "asterisk.gif";
     };
-    if ((swordmageclass()) | (warlockclass()) | (clericclass()) |
-	(wizardclass()) | (paladinclass())) {
+    if ((swordmageclass()) || (warlockclass()) || (clericclass()) ||
+	(wizardclass()) || (paladinclass())) {
 	document.form1.silverstar_star.src = "asterisk.gif";
     };
     if ((wizardclass())) {
@@ -3366,10 +3366,10 @@ function TurnOnParagonStars()
     if (multi_spellscarred) {
 	document.form1.spellscarredsavant_star.src = "asterisk.gif";
     };
-    if ((race_human) | (race_orc) | (race_genasi) | (race_dragonborn)) {
+    if ((race_human) || (race_orc) || (race_genasi) || (race_dragonborn)) {
 	document.form1.steelskyliberator_star.src = "asterisk.gif";
     };
-    if ((fighterclass()) | (rogueclass()) | (warlordclass()) |
+    if ((fighterclass()) || (rogueclass()) || (warlordclass()) ||
 	(rangerclass())) {
 	document.form1.swordcoastcorsair_star.src = "asterisk.gif";
     };
@@ -3413,7 +3413,7 @@ function TurnOnParagonStars()
     if (swordmageclass()) {
 	document.form1.maleckethjanissary_star.src = "asterisk.gif";
     };
-    if ((warlockclass()) | (wizardclass())) {
+    if ((warlockclass()) || (wizardclass())) {
 	document.form1.planeshifter_star.src = "asterisk.gif";
     };
     if (warlordclass()) {
@@ -3441,7 +3441,7 @@ function TurnOnParagonStars()
     if (race_halfling) {
 	document.form1.halflingscoundrel_star.src = "asterisk.gif";
     }
-    if ((race_shifterlongtooth) | (race_shifterrazorclaw)) {
+    if ((race_shifterlongtooth) || (race_shifterrazorclaw)) {
 	document.form1.moonstalker_star.src = "asterisk.gif";
     }
     if (race_dragonborn) {
@@ -3803,9 +3803,8 @@ function assignparagon(i)
 	paragon_wizardofthespiraltower = true;
     }
     if (i == 32) {
-	if ((document.form1.choose_multi[0].checked) | (document.form1.
-							choose_multi[10].
-							checked)) {
+	if ((document.form1.choose_multi[0].checked)
+	    || (document.form1.choose_multi[10].checked)) {
 	    WrongParagon();
 	    return;
 	}
@@ -3850,7 +3849,7 @@ function assignparagon(i)
 	paragon_drowwanderer = true;
     }
     if (i == 39) {
-	if ((!race_dwarf) | ((!fighterclass()) && (!paladinclass()))) {
+	if ((!race_dwarf) || ((!fighterclass()) && (!paladinclass()))) {
 	    WrongParagon();
 	    return;
 	}
@@ -3913,7 +3912,7 @@ function assignparagon(i)
 	paragon_purpledragonknight = true;
     }
     if (i == 48) {
-	if ((!swordmageclass()) && (!wizardclass()) && (!warlockclass()) &
+	if ((!swordmageclass()) && (!wizardclass()) && (!warlockclass()) &&
 	    (!clericclass()) && (!paladinclass())) {
 	    WrongParagon();
 	    return;
@@ -3942,7 +3941,7 @@ function assignparagon(i)
 	paragon_spellscarredsavant = true;
     }
     if (i == 52) {
-	if ((!race_dragonborn) && (!race_human) && (!race_orc) &
+	if ((!race_dragonborn) && (!race_human) && (!race_orc) &&
 	    (!race_genasi)) {
 	    WrongParagon();
 	    return;
@@ -3950,7 +3949,7 @@ function assignparagon(i)
 	paragon_steelskyliberator = true;
     }
     if (i == 53) {
-	if ((!fighterclass()) && (!rangerclass()) && (!warlordclass()) &
+	if ((!fighterclass()) && (!rangerclass()) && (!warlordclass()) &&
 	    (!rogueclass())) {
 	    WrongParagon();
 	    return;
@@ -4015,7 +4014,7 @@ function assignparagon(i)
     }
 
     if (i == 62) {
-	if ((!rangerclass()) | (!race_eladrin)) {
+	if ((!rangerclass()) || (!race_eladrin)) {
 	    WrongParagon();
 	    return;
 	}
@@ -4036,7 +4035,7 @@ function assignparagon(i)
 	paragon_gatecrasher = true;
     }
     if (i == 65) {
-	if ((!paladinclass()) | (alignment > 3)) {
+	if ((!paladinclass()) || (alignment > 3)) {
 	    WrongParagon();
 	    return;
 	}
@@ -4212,7 +4211,7 @@ function assignparagon(i)
 	paragon_wildrunner = true;
     }
     if (i == 90) {
-	if ((!bardclass()) | (!multi_any())) {
+	if ((!bardclass()) || (!multi_any())) {
 	    WrongParagon();
 	    return;
 	}
@@ -4527,7 +4526,7 @@ function StandardAdventuringKit()
 
 function SpecialtyNeeds()
 {
-    if (((class_wizard) | (feat_studentofswordmagic)) &
+    if (((class_wizard) || (feat_studentofswordmagic)) &&
 	(document.form1.spellbook.selectedIndex == 0)) {
 	document.form1.spellbook.selectedIndex = 1;
     }
@@ -4539,29 +4538,29 @@ function SpecialtyNeeds()
 	    document.form1.shortsword_box.checked = true;
 	}
     }
-    if ((((class_cleric) | (class_bard) | (class_druid) | (class_invoker) |
-	  (feat_ritualcaster)) && (!class_wizard))
+    if ((((class_cleric) || (class_bard) || (class_druid)
+	  || (class_invoker) || (feat_ritualcaster)) && (!class_wizard))
 	&& (!feat_alchemistswap)) {
 	if (document.form1.ritualbook.selectedIndex == 0) {
 	    document.form1.ritualbook.selectedIndex = 1;
 	}
 	document.form1.spellcomponentpouch.checked = true;
     }
-    if ((orbofimposition) | (orbofdeception) | (feat_secondimplementorb)) {
+    if ((orbofimposition) || (orbofdeception) || (feat_secondimplementorb)) {
 	document.form1.orb_box.checked = true;
     }
-    if ((wandofaccuracy) | (feat_secondimplementwand)) {
+    if ((wandofaccuracy) || (feat_secondimplementwand)) {
 	document.form1.wand_box.checked = true;
     }
-    if ((class_rogue) | (trained_thievery) | (multi_trained_thievery) |
-	(eladrin_thievery) | (feat_skillfocusthievery) |
+    if ((class_rogue) || (trained_thievery) || (multi_trained_thievery) ||
+	(eladrin_thievery) || (feat_skillfocusthievery) ||
 	(feat_skilltrainingthievery)) {
 	document.form1.thievestools.checked = true;
 	document.form1.sixth_comment_box.value +=
 	    "  You'll want your thieving tools for locks and traps.";
     }
-    if ((trained_athletics) | (multi_trained_athletics) |
-	(eladrin_athletics) | (feat_skillfocusathletics) |
+    if ((trained_athletics) || (multi_trained_athletics) ||
+	(eladrin_athletics) || (feat_skillfocusathletics) ||
 	(feat_skilltrainingathletics)) {
 	if (document.form1.pitons.selectedIndex == 0) {
 	    document.form1.pitons.selectedIndex = 1;
@@ -4790,7 +4789,7 @@ function sup_bf()
 
 function PreFeatsAcrobatics()
 {
-    if ((trained_acrobatics) | (multi_trained_acrobatics) |
+    if ((trained_acrobatics) || (multi_trained_acrobatics) ||
 	(eladrin_acrobatics)) {
 	return true;
     }
@@ -4799,7 +4798,7 @@ function PreFeatsAcrobatics()
 
 function PreFeatsArcana()
 {
-    if ((trained_arcana) | (multi_trained_arcana) | (eladrin_arcana)) {
+    if ((trained_arcana) || (multi_trained_arcana) || (eladrin_arcana)) {
 	return true;
     }
     return false;
@@ -4807,7 +4806,7 @@ function PreFeatsArcana()
 
 function PreFeatsAthletics()
 {
-    if ((trained_athletics) | (multi_trained_athletics) |
+    if ((trained_athletics) || (multi_trained_athletics) ||
 	(eladrin_athletics)) {
 	return true;
     }
@@ -4816,7 +4815,7 @@ function PreFeatsAthletics()
 
 function PreFeatsBluff()
 {
-    if ((trained_bluff) | (multi_trained_bluff) | (eladrin_bluff)) {
+    if ((trained_bluff) || (multi_trained_bluff) || (eladrin_bluff)) {
 	return true;
     }
     return false;
@@ -4824,7 +4823,7 @@ function PreFeatsBluff()
 
 function PreFeatsDiplomacy()
 {
-    if ((trained_diplomacy) | (multi_trained_diplomacy) |
+    if ((trained_diplomacy) || (multi_trained_diplomacy) ||
 	(eladrin_diplomacy)) {
 	return true;
     }
@@ -4833,7 +4832,7 @@ function PreFeatsDiplomacy()
 
 function PreFeatsDungeoneering()
 {
-    if ((trained_dungeoneering) | (multi_trained_dungeoneering) |
+    if ((trained_dungeoneering) || (multi_trained_dungeoneering) ||
 	(eladrin_dungeoneering)) {
 	return true;
     }
@@ -4842,7 +4841,7 @@ function PreFeatsDungeoneering()
 
 function PreFeatsEndurance()
 {
-    if ((trained_endurance) | (multi_trained_endurance) |
+    if ((trained_endurance) || (multi_trained_endurance) ||
 	(eladrin_endurance)) {
 	return true;
     }
@@ -4851,7 +4850,7 @@ function PreFeatsEndurance()
 
 function PreFeatsHeal()
 {
-    if ((trained_heal) | (multi_trained_heal) | (eladrin_heal)) {
+    if ((trained_heal) || (multi_trained_heal) || (eladrin_heal)) {
 	return true;
     }
     return false;
@@ -4859,7 +4858,7 @@ function PreFeatsHeal()
 
 function PreFeatsHistory()
 {
-    if ((trained_history) | (multi_trained_history) | (eladrin_history)) {
+    if ((trained_history) || (multi_trained_history) || (eladrin_history)) {
 	return true;
     }
     return false;
@@ -4867,7 +4866,7 @@ function PreFeatsHistory()
 
 function PreFeatsInsight()
 {
-    if ((trained_insight) | (multi_trained_insight) | (eladrin_insight)) {
+    if ((trained_insight) || (multi_trained_insight) || (eladrin_insight)) {
 	return true;
     }
     return false;
@@ -4875,7 +4874,7 @@ function PreFeatsInsight()
 
 function PreFeatsIntimidate()
 {
-    if ((trained_intimidate) | (multi_trained_intimidate) |
+    if ((trained_intimidate) || (multi_trained_intimidate) ||
 	(eladrin_intimidate)) {
 	return true;
     }
@@ -4884,7 +4883,7 @@ function PreFeatsIntimidate()
 
 function PreFeatsNature()
 {
-    if ((trained_nature) | (multi_trained_nature) | (eladrin_nature)) {
+    if ((trained_nature) || (multi_trained_nature) || (eladrin_nature)) {
 	return true;
     }
     return false;
@@ -4892,7 +4891,7 @@ function PreFeatsNature()
 
 function PreFeatsPerception()
 {
-    if ((trained_perception) | (multi_trained_perception) |
+    if ((trained_perception) || (multi_trained_perception) ||
 	(eladrin_perception)) {
 	return true;
     }
@@ -4901,7 +4900,8 @@ function PreFeatsPerception()
 
 function PreFeatsReligion()
 {
-    if ((trained_religion) | (multi_trained_religion) | (eladrin_religion)) {
+    if ((trained_religion) || (multi_trained_religion)
+	|| (eladrin_religion)) {
 	return true;
     }
     return false;
@@ -4909,7 +4909,7 @@ function PreFeatsReligion()
 
 function PreFeatsStealth()
 {
-    if ((trained_stealth) | (multi_trained_stealth) | (eladrin_stealth)) {
+    if ((trained_stealth) || (multi_trained_stealth) || (eladrin_stealth)) {
 	return true;
     }
     return false;
@@ -4917,7 +4917,7 @@ function PreFeatsStealth()
 
 function PreFeatsStreetwise()
 {
-    if ((trained_streetwise) | (multi_trained_streetwise) |
+    if ((trained_streetwise) || (multi_trained_streetwise) ||
 	(eladrin_streetwise)) {
 	return true;
     }
@@ -4926,7 +4926,8 @@ function PreFeatsStreetwise()
 
 function PreFeatsThievery()
 {
-    if ((trained_thievery) | (multi_trained_thievery) | (eladrin_thievery)) {
+    if ((trained_thievery) || (multi_trained_thievery)
+	|| (eladrin_thievery)) {
 	return true;
     }
     return false;
@@ -8783,7 +8784,6 @@ function LightPowerStars()
 	document.form1.sunburststrike_star.src = wildblood();
     }
 
-
     if ((SwordmageEncounter()) && (total_levels >= 13)) {
 	document.form1.acidburstblade_star.src = "strint.gif";
 	document.form1.dimensionalslash_star.src = "conint.gif";
@@ -9018,7 +9018,7 @@ function LightPowerStars()
 	document.form1.sentinelstrike_star.src = "str.gif";
 	document.form1.thundrousword_star.src = "wis.gif";
     }
-    if (((FighterEncounter()) && (total_levels >= 17)) |
+    if (((FighterEncounter()) && (total_levels >= 17)) ||
 	(epic_martialarchetype)) {
 	document.form1.exactingstrike_star.src = "str.gif";
 	document.form1.exorcismofsteel_star.src = "str.gif";
@@ -9033,7 +9033,7 @@ function LightPowerStars()
 	document.form1.handofthegods_star.src = "wischr.gif";
 	document.form1.terrifyingsmite_star.src = "strchr.gif";
     }
-    if (((RangerEncounter()) && (total_levels >= 17)) |
+    if (((RangerEncounter()) && (total_levels >= 17)) ||
 	(epic_martialarchetype)) {
 	document.form1.arrowofvengeance_star.src = "dexwis.gif";
 	document.form1.cheetahsrake_star.src = "str.gif";
@@ -9042,7 +9042,7 @@ function LightPowerStars()
 	document.form1.bladeandfang_star.src = "str.gif";
 	document.form1.houndingbeast_star.src = "str.gif";
     }
-    if (((RogueEncounter()) && (total_levels >= 17)) |
+    if (((RogueEncounter()) && (total_levels >= 17)) ||
 	(epic_martialarchetype)) {
 	document.form1.dragontailstrike_star.src = brutalscoundrel();
 	document.form1.houndingstrike_star.src = artfuldodger();
@@ -9071,7 +9071,7 @@ function LightPowerStars()
 	    document.form1.yourdelectablepain_star.src = "chr.gif";
 	}
     }
-    if (((WarlordEncounter()) && (total_levels >= 17)) |
+    if (((WarlordEncounter()) && (total_levels >= 17)) ||
 	(epic_martialarchetype)) {
 	if (warlord_inspiring) {
 	    document.form1.battleon_star.src = "strchr.gif";
@@ -9270,7 +9270,7 @@ function LightPowerStars()
 	document.form1.purify_star.src = "none.gif";
 	document.form1.spiritofhealth_star.src = "none.gif";
     }
-    if ((((FighterUtility())) && (total_levels >= 22)) |
+    if ((((FighterUtility())) && (total_levels >= 22)) ||
 	((epic_martialarchetype) && (total_levels >= 26))) {
 	document.form1.actofdesperation_star.src = "none.gif";
 	document.form1.nosurrender_star.src = "none.gif";
@@ -9290,7 +9290,7 @@ function LightPowerStars()
 	document.form1.selflesssacrifice_star.src = "none.gif";
 	document.form1.wilddash_star.src = "none.gif";
     }
-    if ((((RogueUtility())) && (total_levels >= 22)) |
+    if ((((RogueUtility())) && (total_levels >= 22)) ||
 	((epic_martialarchetype) && (total_levels >= 26))) {
 	if (TrainedInAthletics()) {
 	    document.form1.cloudjump_star.src = "none.gif";
@@ -9308,7 +9308,7 @@ function LightPowerStars()
 	document.form1.wingsofthefiend_star.src = "none.gif";
 	document.form1.expedientsacrifice_star.src = "none.gif";
     }
-    if ((((WarlordUtility())) && (total_levels >= 22)) |
+    if ((((WarlordUtility())) && (total_levels >= 22)) ||
 	((epic_martialarchetype) && (total_levels >= 26))) {
 	document.form1.heartofthetitan_star.src = "chr.gif";
 	document.form1.heroicsurge_star.src = "chr.gif";
@@ -9375,16 +9375,16 @@ function LightPowerStars()
 	document.form1.giantsmight_star.src = "none.gif";
 	document.form1.shackledwarding_star.src = "none.gif";
     }
-    if (((ClericEncounter()) | (epic_eternalseeker)) &
+    if (((ClericEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.astralbladesofdeath_star.src = "wis.gif";
 	document.form1.divinecensure_star.src = "str.gif";
 	document.form1.hauntingstrike_star.src = "str.gif";
 	document.form1.healingtorch_star.src = "wis.gif";
     }
-    if ((((FighterEncounter()) | (epic_eternalseeker)) &
+    if ((((FighterEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  23)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  23)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.cageofchains_star.src = "str.gif";
 	document.form1.fangsofsteel_star.src = "strdex.gif";
 	document.form1.hacknslash_star.src = "strcon.gif";
@@ -9392,16 +9392,16 @@ function LightPowerStars()
 	document.form1.skullcrusher_star.src = "strcon.gif";
 	document.form1.warriorsurging_star.src = "str.gif";
     }
-    if (((PaladinEncounter()) | (epic_eternalseeker)) &
+    if (((PaladinEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.herewaitsthydoom_star.src = "wischr.gif";
 	document.form1.martyrssmite_star.src = "str.gif";
 	document.form1.resoundingsmite_star.src = "str.gif";
 	document.form1.sublimetranspostion_star.src = "wischr.gif";
     }
-    if ((((RangerEncounter()) | (epic_eternalseeker)) &
+    if ((((RangerEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  23)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  23)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.bladeward_star.src = "strwis.gif";
 	document.form1.cloakofthorns_star.src = "str.gif";
 	document.form1.hammershot_star.src = "dexwis.gif";
@@ -9409,14 +9409,14 @@ function LightPowerStars()
 	document.form1.chasedown_star.src = "str.gif";
 	document.form1.overwhelmingfury_star.src = "str.gif";
     }
-    if ((((RogueEncounter()) | (epic_eternalseeker)) &
+    if ((((RogueEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >= 23))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.knavesgambit_star.src = artfuldodger();
 	document.form1.scorpionstrike_star.src = brutalscoundrel();
 	document.form1.steelentrapment_star.src = "dex.gif";
     }
-    if (((WarlockEncounter()) | (epic_eternalseeker)) &
+    if (((WarlockEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	if (warlock_star) {
 	    document.form1.darktransport_star.src = "intchr.gif";
@@ -9442,9 +9442,9 @@ function LightPowerStars()
 	}
 
     }
-    if ((((WarlordEncounter()) | (epic_eternalseeker)) &
+    if ((((WarlordEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  23)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  23)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	if (warlord_inspiring) {
 	    document.form1.greatdragonwarcry_star.src = "strchr.gif";
 	} else {
@@ -9458,20 +9458,20 @@ function LightPowerStars()
 	    document.form1.suddenassault_star.src = "str.gif";
 	}
     }
-    if (((WizardEncounter()) | (epic_eternalseeker)) &
+    if (((WizardEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.acidstorm_star.src = "int.gif";
 	document.form1.chainlightning_star.src = "int.gif";
 	document.form1.thunderclap_star.src = "int.gif";
     }
 
-    if (((AvengerEncounter()) | (epic_eternalseeker)) &
+    if (((AvengerEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.avengersshield_star.src = "wis.gif";
 	document.form1.bondofjustice_star.src = censureofpursuit();
 	document.form1.phaseduel_star.src = censureofretribution();
     }
-    if (((BarbarianEncounter()) | (epic_eternalseeker)) &
+    if (((BarbarianEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.arcingthrow_star.src = "str.gif";
 	document.form1.berserkersshout_star.src = thaneborn();
@@ -9480,20 +9480,21 @@ function LightPowerStars()
 	document.form1.feralscythe_star.src = "str.gif";
 	document.form1.staggeringstrike_star.src = "str.gif";
     }
-    if (((BardEncounter()) | (epic_eternalseeker)) && (total_levels >= 23)) {
+    if (((BardEncounter()) || (epic_eternalseeker))
+	&& (total_levels >= 23)) {
 	document.form1.echoesintime_star.src = virtueofcunning();
 	document.form1.rhythmofdisorientation_star.src = "chr.gif";
 	document.form1.songofliberation_star.src = "chr.gif";
 	document.form1.wealandwoe_star.src = virtueofvalor();
     }
-    if (((DruidEncounter()) | (epic_eternalseeker))
+    if (((DruidEncounter()) || (epic_eternalseeker))
 	&& (total_levels >= 23)) {
 	document.form1.graspingearth_star.src = primalpredator();
 	document.form1.primalroar_star.src = "wis.gif";
 	document.form1.stormburst_star.src = "wis.gif";
 	document.form1.strengthofthehunt_star.src = primalguardian();
     }
-    if (((InvokerEncounter()) | (epic_eternalseeker)) &
+    if (((InvokerEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.cascadeoffivesuns_star.src = "wis.gif";
 	document.form1.stormofcelestia_star.src = "wis.gif";
@@ -9501,7 +9502,7 @@ function LightPowerStars()
 	document.form1.wordofrebuke_star.src = covenantofpreservation();
     }
 
-    if (((ShamanEncounter()) | (epic_eternalseeker)) &
+    if (((ShamanEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.calltotheprimalprotector_star.src =
 	    protectorspirit();
@@ -9510,14 +9511,14 @@ function LightPowerStars()
 	document.form1.spiritofthedeathraven_star.src = "wis.gif";
 	document.form1.twintempestspirits_star.src = "wis.gif";
     }
-    if (((SorcererEncounter()) | (epic_eternalseeker)) &
+    if (((SorcererEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.blackbreath_star.src = dragonsoul();
 	document.form1.chaosorbs_star.src = "chr.gif";
 	document.form1.ironchains_star.src = "chr.gif";
 	document.form1.platesofice_star.src = wildmagic();
     }
-    if (((WardenEncounter()) | (epic_eternalseeker)) &
+    if (((WardenEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.guardianswrath_star.src = "str.gif";
 	document.form1.naturesally_star.src = earthstrength();
@@ -9525,44 +9526,46 @@ function LightPowerStars()
 	document.form1.whirlwindassault_star.src = "str.gif";
     }
 
-    if (((SwordmageEncounter()) | (epic_eternalseeker)) &
+    if (((SwordmageEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 23)) {
 	document.form1.acidfountain_star.src = "int.gif";
 	document.form1.meteorstrike_star.src = "strint.gif";
 	document.form1.thunderreposte_star.src = "int.gif";
     }
-    if (((ClericDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((ClericDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.nimbusofdoom_star.src = "str.gif";
 	document.form1.sacredword_star.src = "wis.gif";
 	document.form1.sealofbinding_star.src = "wis.gif";
 	document.form1.sealofprotection_star.src = "str.gif";
     }
-    if ((((FighterDaily()) | (epic_eternalseeker)) && (total_levels >= 25))
+    if ((((FighterDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 25))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.reapersstance_star.src = "dex.gif";
 	document.form1.reignofterror_star.src = "str.gif";
 	document.form1.supremacyofsteel_star.src = "str.gif";
     }
-    if (((PaladinDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((PaladinDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.exaltedretribution_star.src = "str.gif";
 	document.form1.totheninehellswithyou_star.src = "chr.gif";
     }
-    if ((((RangerDaily()) | (epic_eternalseeker))
-	 && (total_levels >= 25)) | ((epic_martialarchetype)
-				     && (total_levels == 30))) {
+    if ((((RangerDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 25)) || ((epic_martialarchetype)
+				      && (total_levels == 30))) {
 	document.form1.bloodstorm_star.src = "strdexwis.gif";
 	document.form1.tigersreflex_star.src = "none.gif";
 	document.form1.unstoppablearrows_star.src = "dex.gif";
 	document.form1.primalrampage_star.src = "str.gif";
 	document.form1.pursuitofthewildhunt_star.src = "str.gif";
     }
-    if ((((RogueDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) |
-	((epic_martialarchetype) && (total_levels == 30))) {
+    if ((((RogueDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 25)) || ((epic_martialarchetype)
+				      && (total_levels == 30))) {
 	document.form1.bitingassault_star.src = "dex.gif";
 	document.form1.ghostonthewind_star.src = "dex.gif";
 	document.form1.hamstring_star.src = "dex.gif";
     }
-    if (((WarlockDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((WarlockDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.curseofthetwinprinces_star.src = "chr.gif";
 	document.form1.tartareantomb_star.src = "cn.gif";
 	document.form1.thirteenbalefulstars_star.src = "cn.gif";
@@ -9579,91 +9582,93 @@ function LightPowerStars()
 	document.form1.vestigeoflandssoul_star.src = vestigepact();
 	document.form1.vestigeofthequeenofnamhar_star.src = "cn.gif";
     }
-    if ((((WarlordDaily()) | (epic_eternalseeker)) && (total_levels >= 25))
+    if ((((WarlordDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 25))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.relentlessassault_star.src = "str.gif";
 	document.form1.stirthehornetsnest_star.src = "str.gif";
 	document.form1.whiteravenscall_star.src = "str.gif";
     }
-    if (((WizardDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((WizardDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.elementalmaw_star.src = "int.gif";
 	document.form1.maze_star.src = "int.gif";
 	document.form1.necroticweb_star.src = "int.gif";
 	document.form1.prismaticspray_star.src = "int.gif";
     }
 
-    if (((AvengerDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((AvengerDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.aspectofdeath_star.src = "wis.gif";
 	document.form1.bondofdestiny_star.src = "wis.gif";
 	document.form1.executionersjustice_star.src = "wis.gif";
 	document.form1.sigilofdamnation_star.src = "wis.gif";
     }
-    if (((BarbarianDaily()) | (epic_eternalseeker))
+    if (((BarbarianDaily()) || (epic_eternalseeker))
 	&& (total_levels >= 25)) {
 	document.form1.ashhammerrage_star.src = "str.gif";
 	document.form1.blodhungerrage_star.src = "str.gif";
 	document.form1.bluedragonrage_star.src = "str.gif";
 	document.form1.stonetempestrage_star.src = "str.gif";
     }
-    if (((BardDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((BardDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.adversarialsong_star.src = "chr.gif";
 	document.form1.fraughtwithfailure_star.src = "chr.gif";
 	document.form1.frenziedrhythm_star.src = "chr.gif";
 	document.form1.visiondistortion_star.src = "chr.gif";
     }
-    if (((DruidDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((DruidDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.ferociousmaul_star.src = "wis.gif";
 	document.form1.feylure_star.src = "wis.gif";
 	document.form1.primalstorm_star.src = "wis.gif";
 	document.form1.primaltiger_star.src = "wis.gif";
     }
-    if (((InvokerDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((InvokerDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.anthemofthefirstdawn_star.src = "wis.gif";
 	document.form1.invokethefallen_star.src = "wis.gif";
 	document.form1.rackinginvocationofpain_star.src = "wis.gif";
 	document.form1.rainofcolorlessfire_star.src = "wis.gif";
     }
-    if (((ShamanDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((ShamanDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.ironbornspirit_star.src = "wis.gif";
 	document.form1.spiritofthelaughingwanderer_star.src = "wis.gif";
 	document.form1.spiritoftheworldserpent_star.src = "wis.gif";
 	document.form1.westernwindofstorms_star.src = "wis.gif";
     }
-    if (((SorcererDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((SorcererDaily()) || (epic_eternalseeker))
+	&& (total_levels >= 25)) {
 	document.form1.draconicincarnation_star.src = dragonsoul();
 	document.form1.forcestorm_star.src = "chr.gif";
 	document.form1.wordsofchaos_star.src = wildmagic();
     }
-    if (((WardenDaily()) | (epic_eternalseeker)) && (total_levels >= 25)) {
+    if (((WardenDaily()) || (epic_eternalseeker)) && (total_levels >= 25)) {
 	document.form1.formoftheblackwolf_star.src = "str.gif";
 	document.form1.formofthedisplacerbeast_star.src = "str.gif";
 	document.form1.formofthejunglelord_star.src = "str.gif";
 	document.form1.formoftheautumnreaper_star.src = "str.gif";
     }
 
-    if (((SwordmageDaily()) | (epic_eternalseeker))
+    if (((SwordmageDaily()) || (epic_eternalseeker))
 	&& (total_levels >= 25)) {
 	document.form1.boundinglightning_star.src = "int.gif";
 	document.form1.icyshackles_star.src = "int.gif";
 	document.form1.quicksilverblade_star.src = "none.gif";
 	document.form1.thunderingheart_star.src = "strint.gif";
     }
-    if (((ClericEncounter()) | (epic_eternalseeker)) &
+    if (((ClericEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.punishingstrike_star.src = "str.gif";
 	document.form1.sacrificialhealing_star.src = "str.gif";
 	document.form1.scourgeoftheunworthy_star.src = "wis.gif";
 	document.form1.sunburst_star.src = "wis.gif";
     }
-    if ((((FighterEncounter()) | (epic_eternalseeker)) &
+    if ((((FighterEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  27)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  27)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.adamantinestrike_star.src = "str.gif";
 	document.form1.cruelreaper_star.src = "str.gif";
 	document.form1.diamondshielddefense_star.src = "str.gif";
 	document.form1.indomitablebattlestrike_star.src = "str.gif";
     }
-    if (((PaladinEncounter()) | (epic_eternalseeker)) &
+    if (((PaladinEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.blindingsmite_star.src = "str.gif";
 	document.form1.brandofjudgment_star.src = "chr.gif";
@@ -9671,9 +9676,9 @@ function LightPowerStars()
 	document.form1.restrictingsmite_star.src = "chr.gif";
 	document.form1.stunningsmite_star.src = "str.gif";
     }
-    if ((((RangerEncounter()) | (epic_eternalseeker)) &
+    if ((((RangerEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  27)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  27)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.deathrend_star.src = "str.gif";
 	document.form1.hailofarrows_star.src = "dex.gif";
 	document.form1.lightningshot_star.src = "dex.gif";
@@ -9681,14 +9686,14 @@ function LightPowerStars()
 	document.form1.beastlyvise_star.src = "str.gif";
 	document.form1.catchanddrop_star.src = "str.gif";
     }
-    if ((((RogueEncounter()) | (epic_eternalseeker)) &
+    if ((((RogueEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >= 27))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.danceofdeath_star.src = artfuldodger();
 	document.form1.hurricaneofblood_star.src = brutalscoundrel();
 	document.form1.perfectstrike_star.src = "dex.gif";
     }
-    if (((WarlockEncounter()) | (epic_eternalseeker)) &
+    if (((WarlockEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	if (warlock_star) {
 	    document.form1.banishtothevoid_star.src = "conint.gif";
@@ -9707,9 +9712,9 @@ function LightPowerStars()
 	}
 	document.form1.inevitableundercut_star.src = "chr.gif";
     }
-    if ((((WarlordEncounter()) | (epic_eternalseeker)) &
+    if ((((WarlordEncounter()) || (epic_eternalseeker)) &&
 	 (total_levels >=
-	  27)) | ((epic_martialarchetype) && (total_levels == 30))) {
+	  27)) || ((epic_martialarchetype) && (total_levels == 30))) {
 	if (warlord_tactical) {
 	    document.form1.chimerabattlestrike_star.src = "strint.gif";
 	} else {
@@ -9723,14 +9728,14 @@ function LightPowerStars()
 	}
 	document.form1.warlordsdoom_star.src = "str.gif";
     }
-    if (((WizardEncounter()) | (epic_eternalseeker)) &
+    if (((WizardEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.blackfire_star.src = "int.gif";
 	document.form1.confusion_star.src = "int.gif";
 	document.form1.forcecage_star.src = "int.gif";
     }
 
-    if (((AvengerEncounter()) | (epic_eternalseeker)) &
+    if (((AvengerEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.astralcharge_star.src = "wis.gif";
 	document.form1.deathstroke_star.src = "wis.gif";
@@ -9738,7 +9743,7 @@ function LightPowerStars()
 	document.form1.scattertotheastralwinds_star.src =
 	    censureofretribution();
     }
-    if (((BarbarianEncounter()) | (epic_eternalseeker)) &
+    if (((BarbarianEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.bloodwrath_star.src = rageblood();
 	document.form1.bonebreaker_star.src = "str.gif";
@@ -9746,40 +9751,41 @@ function LightPowerStars()
 	document.form1.hurricaneofblades_star.src = "str.gif";
 	document.form1.rampagingdragonstrike_star.src = "str.gif";
     }
-    if (((BardEncounter()) | (epic_eternalseeker)) && (total_levels >= 27)) {
+    if (((BardEncounter()) || (epic_eternalseeker))
+	&& (total_levels >= 27)) {
 	document.form1.bondofmalediction_star.src = virtueofcunning();
 	document.form1.kaleidoscopigburst_star.src = "chr.gif";
 	document.form1.surgeofvalor_star.src = virtueofvalor();
     }
-    if (((DruidEncounter()) | (epic_eternalseeker))
+    if (((DruidEncounter()) || (epic_eternalseeker))
 	&& (total_levels >= 27)) {
 	document.form1.explosivewind_star.src = "wis.gif";
 	document.form1.feralwhirlwind_star.src = "wis.gif";
 	document.form1.leapingrake_star.src = "wis.gif";
 	document.form1.polarblast_star.src = "wis.gif";
     }
-    if (((InvokerEncounter()) | (epic_eternalseeker)) &
+    if (((InvokerEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.invoketerror_star.src = covenantofwrath();
 	document.form1.offeringofpeace_star.src = covenantofpreservation();
 	document.form1.swarmofastralsteel_star.src = "wis.gif";
 	document.form1.wordofannihilation_star.src = "wis.gif";
     }
-    if (((ShamanEncounter()) | (epic_eternalseeker)) &
+    if (((ShamanEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.bloodreaperspirits_star.src = stalkerspirit();
 	document.form1.calltothecleansingfire_star.src = protectorspirit();
 	document.form1.calltothegreathunter_star.src = "wis.gif";
 	document.form1.spiritofelderwisdom_star.src = "wis.gif";
     }
-    if (((SorcererEncounter()) | (epic_eternalseeker)) &
+    if (((SorcererEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.lightningeruption_star.src = "chr.gif";
 	document.form1.poisonward_star.src = "chr.gif";
 	document.form1.thunderpulse_star.src = "chr.gif";
 	document.form1.wildfirecurse_star.src = "chr.gif";
     }
-    if (((WardenEncounter()) | (epic_eternalseeker)) &
+    if (((WardenEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.earthtomb_star.src = earthstrength();
 	document.form1.guardiansstorm_star.src = wildblood();
@@ -9787,41 +9793,43 @@ function LightPowerStars()
 	document.form1.weightofthemountain_star.src = "str.gif";
     }
 
-    if (((SwordmageEncounter()) | (epic_eternalseeker)) &
+    if (((SwordmageEncounter()) || (epic_eternalseeker)) &&
 	(total_levels >= 27)) {
 	document.form1.maelstromblade_star.src = "int.gif";
 	document.form1.circleofdevastation_star.src = "int.gif";
 	document.form1.dimensionalcharge_star.src = "int.gif";
     }
-    if (((ClericDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((ClericDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.astralstorm_star.src = "wis.gif";
 	document.form1.godstrike_star.src = "str.gif";
     }
-    if ((((FighterDaily()) | (epic_eternalseeker)) && (total_levels >= 29))
+    if ((((FighterDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 29))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.forcethebattle_star.src = "none.gif";
 	document.form1.nomercy_star.src = "str.gif";
 	document.form1.stormofdestruction_star.src = "str.gif";
     }
-    if (((PaladinDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((PaladinDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.evenhandofjustice_star.src = "chr.gif";
 	document.form1.powerfulfaith_star.src = "str.gif";
     }
-    if ((((RangerDaily()) | (epic_eternalseeker))
-	 && (total_levels >= 29)) | ((epic_martialarchetype)
-				     && (total_levels == 30))) {
+    if ((((RangerDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 29)) || ((epic_martialarchetype)
+				      && (total_levels == 30))) {
 	document.form1.followupblow_star.src = "str.gif";
 	document.form1.threeinoneshot_star.src = "dex.gif";
 	document.form1.weaveawebofsteel_star.src = "str.gif";
 	document.form1.huntmastersmauling_star.src = "str.gif";
     }
-    if ((((RogueDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) |
-	((epic_martialarchetype) && (total_levels == 30))) {
+    if ((((RogueDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 29)) || ((epic_martialarchetype)
+				      && (total_levels == 30))) {
 	document.form1.assassinspoint_star.src = "dex.gif";
 	document.form1.immobilizingstrike_star.src = "dex.gif";
 	document.form1.movingtarget_star.src = "chr.gif";
     }
-    if (((WarlockDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((WarlockDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.curseofthedarkdelirium_star.src = "chr.gif";
 	document.form1.doomofdelban_star.src = "cn.gif";
 	document.form1.hurlthroughhell_star.src = "cn.gif";
@@ -9831,78 +9839,80 @@ function LightPowerStars()
 	    "cn.gif";
 	document.form1.vestigeofzuriel_star.src = vestigepact();
     }
-    if ((((WarlordDaily()) | (epic_eternalseeker)) && (total_levels >= 29))
+    if ((((WarlordDaily()) || (epic_eternalseeker))
+	 && (total_levels >= 29))
 	| ((epic_martialarchetype) && (total_levels == 30))) {
 	document.form1.defydeath_star.src = "str.gif";
 	document.form1.standinvincible_star.src = "str.gif";
     }
-    if (((WizardDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((WizardDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.greatericestorm_star.src = "int.gif";
 	document.form1.legionshold_star.src = "int.gif";
 	document.form1.meteorswarm_star.src = "int.gif";
     }
 
-    if (((AvengerDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((AvengerDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.aspectofterror_star.src = "wis.gif";
 	document.form1.fieryvengeance_star.src = "wis.gif";
 	document.form1.finaloath_star.src = "wis.gif";
 	document.form1.templeofresolution_star.src = "wis.gif";
     }
-    if (((BarbarianDaily()) | (epic_eternalseeker))
+    if (((BarbarianDaily()) || (epic_eternalseeker))
 	&& (total_levels >= 29)) {
 	document.form1.crimsonphoenixrage_star.src = "str.gif";
 	document.form1.rageoftheprimalbeast_star.src = "str.gif";
 	document.form1.winterghostrage_star.src = "str.gif";
 	document.form1.worldserpentrage_star.src = "str.gif";
     }
-    if (((BardDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((BardDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.herosbeacon_star.src = "chr.gif";
 	document.form1.satireofleadership_star.src = "chr.gif";
 	document.form1.spellbind_star.src = "chr.gif";
     }
-    if (((DruidDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((DruidDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.blindingblizzard_star.src = "wis.gif";
 	document.form1.gazeofthebeast_star.src = "wis.gif";
 	document.form1.lifeleechthorns_star.src = "wis.gif";
 	document.form1.primalarchetype_star.src = "wis.gif";
     }
-    if (((InvokerDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((InvokerDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.firesofthesilvergate_star.src = "wis.gif";
 	document.form1.invoketheabsolutedark_star.src = "wis.gif";
 	document.form1.summonangelofvictory_star.src = "wis.gif";
 	document.form1.wordofthegods_star.src = "wis.gif";
     }
-    if (((ShamanDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((ShamanDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.deathspirit_star.src = "wis.gif";
 	document.form1.seaofserpents_star.src = "wis.gif";
 	document.form1.spiritsofmist_star.src = "wis.gif";
 	document.form1.spiritoftheunbrokenvow_star.src = "wis.gif";
     }
-    if (((SorcererDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((SorcererDaily()) || (epic_eternalseeker))
+	&& (total_levels >= 29)) {
 	document.form1.endlessacid_star.src = "chr.gif";
 	document.form1.entropicwhirlwind_star.src = "chr.gif";
 	document.form1.prismaticstorm_star.src = "chr.gif";
     }
-    if (((WardenDaily()) | (epic_eternalseeker)) && (total_levels >= 29)) {
+    if (((WardenDaily()) || (epic_eternalseeker)) && (total_levels >= 29)) {
 	document.form1.formofthechimera_star.src = "str.gif";
 	document.form1.formofspringrenewal_star.src = "str.gif";
 	document.form1.formofthestarmetalwarrior_star.src = "str.gif";
 	document.form1.formofthesoulserpent_star.src = "str.gif";
     }
 
-    if (((SwordmageDaily()) | (epic_eternalseeker))
+    if (((SwordmageDaily()) || (epic_eternalseeker))
 	&& (total_levels >= 29)) {
 	document.form1.astralthunderblade_star.src = "int.gif";
 	document.form1.obliteratingblaze_star.src = "int.gif";
 	document.form1.vorpaldoom_star.src = "int.gif";
     }
 
-    if (((SpellscarredEncounter()) && (total_levels >= 1)) |
+    if (((SpellscarredEncounter()) && (total_levels >= 1)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 10))) {
 	document.form1.horrificmawbite_star.src = "physical.gif";
 	document.form1.plaguelash_star.src = "mental.gif";
     }
-    if (((SpellscarredDaily()) && (total_levels >= 1)) |
+    if (((SpellscarredDaily()) && (total_levels >= 1)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 20))) {
 	document.form1.burningfocus_star.src = "physical.gif";
 	document.form1.spellmirror_star.src = "mental.gif";
@@ -9911,12 +9921,12 @@ function LightPowerStars()
 	document.form1.spelleater_star.src = "none.gif";
 	document.form1.plagueofrootedmajesty_star.src = "none.gif";
     }
-    if (((SpellscarredEncounter()) && (total_levels >= 3)) |
+    if (((SpellscarredEncounter()) && (total_levels >= 3)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 10))) {
 	document.form1.scarcarvingblade_star.src = "physical.gif";
 	document.form1.calloftheplague_star.src = "mental.gif";
     }
-    if (((SpellscarredDaily()) && (total_levels >= 5)) |
+    if (((SpellscarredDaily()) && (total_levels >= 5)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 20))) {
 	document.form1.blurringblade_star.src = "none.gif";
 	document.form1.terribleimposition_star.src = "mental.gif";
@@ -9925,13 +9935,13 @@ function LightPowerStars()
 	document.form1.hauntingreception_star.src = "none.gif";
 	document.form1.plaguefirebody_star.src = "none.gif";
     }
-    if (((SpellscarredEncounter()) && (total_levels >= 7)) |
+    if (((SpellscarredEncounter()) && (total_levels >= 7)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 10))) {
 	document.form1.reachofthedoomed_star.src = "physical.gif";
 	document.form1.cursedgraspingair_star.src = "mental.gif";
 	document.form1.venomousbloodfang_star.src = "physical.gif";
     }
-    if (((SpellscarredDaily()) && (total_levels >= 9)) |
+    if (((SpellscarredDaily()) && (total_levels >= 9)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 20))) {
 	document.form1.burningtheplaguedbellows_star.src = "mental.gif";
 	document.form1.submissionoftheearth_star.src = "physical.gif";
@@ -9944,7 +9954,7 @@ function LightPowerStars()
 	document.form1.linesinburningsand_star.src = "mental.gif";
 	document.form1.spellmothersembrace_star.src = "physical.gif";
     }
-    if (((SpellscarredDaily()) && (total_levels >= 15)) |
+    if (((SpellscarredDaily()) && (total_levels >= 15)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 20))) {
 	document.form1.inflictionoftheflamemist_star.src = "mental.gif";
 	document.form1.rabidchainofsteel_star.src = "physical.gif";
@@ -9957,7 +9967,7 @@ function LightPowerStars()
 	document.form1.irontoothofbloodlust_star.src = "physical.gif";
 	document.form1.maskofmidnight_star.src = "mental.gif";
     }
-    if (((SpellscarredDaily()) && (total_levels >= 19)) |
+    if (((SpellscarredDaily()) && (total_levels >= 19)) ||
 	((paragon_spellscarredsavant) && (total_levels >= 20))) {
 	document.form1.spellcurse_star.src = "physical.gif";
 	document.form1.gravityofmoment_star.src = "mental.gif";
@@ -10139,296 +10149,324 @@ function UnLightSkillStars()
 function LightSkillStars()
 {
     UnLightSkillStars();
-    if ((class_avenger) | (class_barbarian) | (class_bard) |
-	(frb_nelantherisles) | (class_barbarian) | (class_ranger) |
-	(paragon_feybeguiler) | (class_rogue) | (class_other)) {
-	if ((!eladrin_acrobatics) &
+    if ((class_avenger) || (class_barbarian) || (class_bard) ||
+	(frb_nelantherisles) || (class_barbarian) || (class_ranger) ||
+	(paragon_feybeguiler) || (class_rogue) || (class_other)) {
+	if ((!eladrin_acrobatics) &&
 	    (!document.form1.train_multiclass[0].checked)) {
 	    document.form1.main_acrobatics_star.src = "asterisk.gif";
 	}
     }
-    if ((class_druid) | (class_invoker) | (class_shaman) | (frb_netheril) |
-	(frb_greatdale) | (class_cleric) | (class_warlock) |
-	(paragon_feybeguiler) | (class_wizard) | (class_swordmage) |
-	(class_other)) {
-	if ((!eladrin_arcana) &
-	    (!document.form1.train_multiclass[1].checked)
+    if ((class_druid) || (class_invoker) || (class_shaman)
+	|| (frb_netheril) || (frb_greatdale) || (class_cleric)
+	|| (class_warlock) || (paragon_feybeguiler) || (class_wizard)
+	|| (class_swordmage) || (class_other)) {
+	if ((!eladrin_arcana)
+	    && (!document.form1.train_multiclass[1].checked)
 	    && (!multi_wizard_arcaneinitiate)
 	    && (!multi_bard_bardicritualist)) {
 	    document.form1.main_arcana_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (class_barbarian) | (class_bard) | (class_druid)
-	| (class_shaman) | (class_sorcerer) | (class_warden) |
-	(frb_nelantherisles) | (frb_elfharrow) | (class_barbarian) |
-	(class_fighter) | (class_ranger) | (paragon_feybeguiler) |
-	(class_rogue) | (class_warlord) | (class_swordmage) | (class_other)
+    if ((class_avenger) || (class_barbarian) || (class_bard)
+	|| (class_druid)
+	| (class_shaman) || (class_sorcerer)
+	|| (class_warden) || (frb_nelantherisles) || (frb_elfharrow)
+	|| (class_barbarian) || (class_fighter) || (class_ranger)
+	|| (paragon_feybeguiler) || (class_rogue) || (class_warlord)
+	|| (class_swordmage) || (class_other)
 	| (frb_tymanther)) {
-	if ((!eladrin_athletics) &
+	if ((!eladrin_athletics) &&
 	    (!document.form1.train_multiclass[2].checked)) {
 	    document.form1.main_athletics_star.src = "asterisk.gif";
 	}
     }
-    if ((class_bard) | (class_sorcerer) | (paragon_feybeguiler) |
-	(class_rogue) | (class_warlock) | (class_other)) {
-	if ((!eladrin_bluff) &
+    if ((class_bard) || (class_sorcerer) || (paragon_feybeguiler) ||
+	(class_rogue) || (class_warlock) || (class_other)) {
+	if ((!eladrin_bluff) &&
 	    (!document.form1.train_multiclass[3].checked)) {
 	    document.form1.main_bluff_star.src = "asterisk.gif";
 	}
     }
 
-    if ((class_bard) | (class_druid) | (class_invoker) | (class_sorcerer) |
-	(class_cleric) | (class_paladin) | (class_warlord) |
-	(paragon_feybeguiler) | (class_wizard) | (class_swordmage) |
-	(class_other) | (frb_waterdeep)) {
-	if ((!eladrin_diplomacy) &
-	    (!document.form1.train_multiclass[4].checked)) {
+    if ((class_bard) || (class_druid) || (class_invoker)
+	|| (class_sorcerer) || (class_cleric) || (class_paladin)
+	|| (class_warlord) || (paragon_feybeguiler) || (class_wizard)
+	|| (class_swordmage) || (class_other) || (frb_waterdeep)) {
+	if ((!eladrin_diplomacy)
+	    && (!document.form1.train_multiclass[4].checked)) {
 	    document.form1.main_diplomacy_star.src = "asterisk.gif";
 	}
     }
-    if ((class_bard) | (class_sorcerer) | (class_warden) | (class_ranger) |
-	(paragon_feybeguiler) | (class_rogue) | (class_wizard) |
-	(class_other) | (frb_eastrift)) {
-	if ((!eladrin_dungeoneering) &
-	    (!document.form1.train_multiclass[5].checked)) {
+    if ((class_bard) || (class_sorcerer) || (class_warden)
+	|| (class_ranger) || (paragon_feybeguiler) || (class_rogue)
+	|| (class_wizard) || (class_other) || (frb_eastrift)) {
+	if ((!eladrin_dungeoneering)
+	    && (!document.form1.train_multiclass[5].checked)) {
 	    document.form1.main_dungeoneering_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (class_barbarian) | (class_druid) |
-	(class_invoker) | (class_shaman) | (class_sorcerer) |
+    if ((class_avenger) || (class_barbarian) || (class_druid) ||
+	(class_invoker) || (class_shaman) || (class_sorcerer) ||
 	(class_warden)
-	| (frb_narfell) | (class_fighter) | (class_barbarian) |
-	(class_paladin) | (class_ranger) | (class_warlord) |
-	(class_swordmage) | (class_other)) {
-	if ((!eladrin_endurance) &
+	| (frb_narfell) || (class_fighter) || (class_barbarian) ||
+	(class_paladin) || (class_ranger) || (class_warlord) ||
+	(class_swordmage) || (class_other)) {
+	if ((!eladrin_endurance) &&
 	    (!document.form1.train_multiclass[6].checked)) {
 	    document.form1.main_endurance_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (class_barbarian) | (class_bard) | (class_druid)
-	| (class_shaman) | (class_warden) | (class_cleric) |
-	(class_barbarian)
-	| (class_fighter) | (class_paladin) | (class_ranger) |
-	(class_warlord) | (class_other)) {
-	if ((!eladrin_heal) &
-	    (!document.form1.train_multiclass[7].checked)) {
+    if ((class_avenger) || (class_barbarian) || (class_bard)
+	|| (class_druid)
+	| (class_shaman) || (class_warden)
+	|| (class_cleric) || (class_barbarian)
+	| (class_fighter) || (class_paladin)
+	|| (class_ranger) || (class_warlord) || (class_other)) {
+	if ((!eladrin_heal)
+	    && (!document.form1.train_multiclass[7].checked)) {
 	    document.form1.main_heal_star.src = "asterisk.gif";
 	}
     }
 
-    if ((class_bard) | (class_druid) | (class_invoker) | (frb_netheril) |
-	(class_cleric) | (class_paladin) | (class_warlock) |
-	(class_warlord)
-	| (paragon_feybeguiler) | (class_wizard) | (class_swordmage) |
-	(class_other)) {
-	if ((!eladrin_history) &
-	    (!document.form1.train_multiclass[8].checked)) {
+    if ((class_bard) || (class_druid) || (class_invoker)
+	|| (frb_netheril) || (class_cleric) || (class_paladin)
+	|| (class_warlock) || (class_warlord)
+	| (paragon_feybeguiler) || (class_wizard)
+	|| (class_swordmage) || (class_other)) {
+	if ((!eladrin_history)
+	    && (!document.form1.train_multiclass[8].checked)) {
 	    document.form1.main_history_star.src = "asterisk.gif";
 	}
     }
-    if ((class_bard) | (class_druid) | (class_sorcerer) | (class_warden) |
-	(class_cleric) | (class_paladin) | (class_invoker) |
-	(paragon_feybeguiler) | (class_rogue) | (class_warlock) |
-	(class_swordmage) | (class_wizard) | (class_other) | (frb_cormyr))
-    {
-	if ((!eladrin_insight) &
-	    (!document.form1.train_multiclass[9].checked)) {
+    if ((class_bard) || (class_druid) || (class_sorcerer)
+	|| (class_warden) || (class_cleric) || (class_paladin)
+	|| (class_invoker) || (paragon_feybeguiler) || (class_rogue)
+	|| (class_warlock) || (class_swordmage) || (class_wizard)
+	|| (class_other) || (frb_cormyr)) {
+	if ((!eladrin_insight)
+	    && (!document.form1.train_multiclass[9].checked)) {
 	    document.form1.main_insight_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (class_barbarian) | (class_invoker) |
-	(class_shaman) | (class_sorcerer) | (class_warden) |
+    if ((class_avenger) || (class_barbarian) || (class_invoker) ||
+	(class_shaman) || (class_sorcerer) || (class_warden) ||
 	(class_fighter)
-	| (class_barbarian) | (class_paladin) | (paragon_feybeguiler) |
-	(class_bard) | (class_rogue) | (class_warlock) | (class_warlord) |
-	(class_swordmage) | (class_other)) {
-	if ((!eladrin_intimidate) &
-	    (!document.form1.train_multiclass[10].checked)) {
+	| (class_barbarian) || (class_paladin) || (paragon_feybeguiler) ||
+	(class_bard) || (class_rogue) || (class_warlock)
+	|| (class_warlord) || (class_swordmage) || (class_other)) {
+	if ((!eladrin_intimidate)
+	    && (!document.form1.train_multiclass[10].checked)) {
 	    document.form1.main_intimidate_star.src = "asterisk.gif";
 	}
     }
-    if ((class_barbarian) | (class_bard) | (class_sorcerer) |
+    if ((class_barbarian) || (class_bard) || (class_sorcerer) ||
 	(class_warden)
-	| (frb_greatdale) | (frb_grayvale) | (frb_elfharrow) |
-	(class_barbarian) | (class_ranger) | (paragon_feybeguiler) |
-	(class_wizard) | (class_other)) {
-	if ((!eladrin_nature) &
+	| (frb_greatdale) || (frb_grayvale) || (frb_elfharrow) ||
+	(class_barbarian) || (class_ranger) || (paragon_feybeguiler) ||
+	(class_wizard) || (class_other)) {
+	if ((!eladrin_nature) &&
 	    (!document.form1.train_multiclass[11].checked)) {
 	    document.form1.main_nature_star.src = "asterisk.gif";
 	}
     }
 
-    if ((class_avenger) | (class_barbarian) | (class_bard) | (class_druid)
-	| (class_shaman) | (class_warden) | (class_ranger) |
-	(class_barbarian)
-	| (paragon_feybeguiler) | (class_rogue) | (class_other) |
-	(frb_aglarond)) {
-	if ((!eladrin_perception) &
-	    (!document.form1.train_multiclass[12].checked)) {
+    if ((class_avenger) || (class_barbarian) || (class_bard)
+	|| (class_druid)
+	| (class_shaman) || (class_warden)
+	|| (class_ranger) || (class_barbarian)
+	| (paragon_feybeguiler) || (class_rogue)
+	|| (class_other) || (frb_aglarond)) {
+	if ((!eladrin_perception)
+	    && (!document.form1.train_multiclass[12].checked)) {
 	    document.form1.main_perception_star.src = "asterisk.gif";
 	}
     }
-    if ((class_bard) | (class_shaman) | (class_cleric) | (class_paladin) |
-	(class_warlock) | (paragon_feybeguiler) | (class_wizard) |
-	(class_other)) {
-	if ((!eladrin_religion) &
-	    (!document.form1.train_multiclass[13].checked) &
-	    (!multi_cleric_initiateofthefaith)) {
+    if ((class_bard) || (class_shaman) || (class_cleric)
+	|| (class_paladin) || (class_warlock) || (paragon_feybeguiler)
+	|| (class_wizard) || (class_other)) {
+	if ((!eladrin_religion)
+	    && (!document.form1.train_multiclass[13].checked)
+	    && (!multi_cleric_initiateofthefaith)) {
 	    document.form1.main_religion_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (frb_luskan) | (paragon_feybeguiler) |
-	(class_ranger) | (class_rogue) | (class_other)) {
-	if ((!eladrin_stealth) &
-	    (!document.form1.train_multiclass[14].checked) &
+    if ((class_avenger) || (frb_luskan) || (paragon_feybeguiler) ||
+	(class_ranger) || (class_rogue) || (class_other)) {
+	if ((!eladrin_stealth) &&
+	    (!document.form1.train_multiclass[14].checked) &&
 	    (!multi_rogue_ruthlessefficiency)) {
 	    document.form1.main_stealth_star.src = "asterisk.gif";
 	}
     }
-    if ((class_avenger) | (class_bard) | (frb_baldursgate) | (frb_amn) |
-	(class_fighter) | (paragon_feybeguiler) | (class_rogue) |
-	(class_warlock) | (class_other) | (frb_baldursgate)) {
-	if ((!eladrin_streetwise) &
-	    (!document.form1.train_multiclass[15].checked)) {
+    if ((class_avenger) || (class_bard) || (frb_baldursgate) || (frb_amn)
+	|| (class_fighter) || (paragon_feybeguiler) || (class_rogue)
+	|| (class_warlock) || (class_other) || (frb_baldursgate)) {
+	if ((!eladrin_streetwise)
+	    && (!document.form1.train_multiclass[15].checked)) {
 	    document.form1.main_streetwise_star.src = "asterisk.gif";
 	}
     }
 
-    if ((frb_wheloon) | (frb_luskan) | (frb_amn) | (paragon_feybeguiler) |
-	(class_rogue) | (class_warlock) | (class_other)) {
-	if ((!eladrin_thievery) && (!multi_rogue_sneakofshadows) &
-	    (!document.form1.train_multiclass[16].checked)) {
+    if ((frb_wheloon) || (frb_luskan) || (frb_amn)
+	|| (paragon_feybeguiler) || (class_rogue) || (class_warlock)
+	|| (class_other)) {
+	if ((!eladrin_thievery) && (!multi_rogue_sneakofshadows)
+	    && (!document.form1.train_multiclass[16].checked)) {
 	    document.form1.main_thievery_star.src = "asterisk.gif";
 	}
     }
 
-    if ((multi_barbarian_berserkersfury) | (multi_bard_bardicdilettante) |
-	(multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior)) {
-	if ((!eladrin_acrobatics) &
-	    (!document.form1.train_acrobatics.checked)) {
+    if ((multi_barbarian_berserkersfury) || (multi_bard_bardicdilettante)
+	|| (multi_ranger_warriorofthewild)
+	|| (multi_ranger_twobladewarrior)) {
+	if ((!eladrin_acrobatics)
+	    && (!document.form1.train_acrobatics.checked)) {
 	    document.form1.multi_acrobatics_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_wizard_learnedspellcaster) |
-	(multi_warlock_pactinitiate) | (multi_wizard_arcaneinitiate) |
-	(multi_bard_bardicritualist)) {
+    if ((multi_bard_bardicdilettante)
+	|| (multi_wizard_learnedspellcaster)
+	|| (multi_warlock_pactinitiate)
+	|| (multi_wizard_arcaneinitiate) || (multi_bard_bardicritualist)) {
 	if ((!eladrin_arcana) && (!document.form1.train_arcana.checked)) {
 	    document.form1.multi_arcana_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) |
+    if ((multi_warden_defenderofthewild) ||
 	(multi_swordmage_heartoftheblade)
-	| (multi_barbarian_berserkersfury) | (multi_bard_bardicdilettante)
-	| (multi_fighter_studentofthesword) |
+	| (multi_barbarian_berserkersfury) || (multi_bard_bardicdilettante)
+	| (multi_fighter_studentofthesword) ||
 	(multi_fighter_battleawareness)
-	| (multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior)
-	| (multi_warlord_studentofbattle) | (multi_warlord_inspiringleader)
+	| (multi_ranger_warriorofthewild) || (multi_ranger_twobladewarrior)
+	| (multi_warlord_studentofbattle)
+	|| (multi_warlord_inspiringleader)
 	| (multi_warlord_tacticalleader)) {
-	if ((!eladrin_athletics) &
+	if ((!eladrin_athletics) &&
 	    (!document.form1.train_athletics.checked)) {
 	    document.form1.multi_athletics_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_warlock_pactinitiate) |
+    if ((multi_bard_bardicdilettante) || (multi_warlock_pactinitiate) ||
 	(multi_rogue_slydodge)) {
 	if ((!eladrin_bluff) && (!document.form1.train_bluff.checked)) {
 	    document.form1.multi_bluff_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_warlock_pactinitiate) |
-	(multi_warlord_studentofbattle) | (multi_warlord_inspiringleader) |
+    if ((multi_bard_bardicdilettante) || (multi_warlock_pactinitiate) ||
+	(multi_warlord_studentofbattle)
+	|| (multi_warlord_inspiringleader) ||
 	(multi_warlord_tacticalleader)) {
-	if ((!eladrin_diplomacy) &
-	    (!document.form1.train_diplomacy.checked)) {
+	if ((!eladrin_diplomacy)
+	    && (!document.form1.train_diplomacy.checked)) {
 	    document.form1.multi_diplomacy_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) | (multi_bard_bardicdilettante) |
-	(multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior)) {
-	if ((!eladrin_dungeoneering) &
-	    (!document.form1.train_dungeoneering.checked)) {
+    if ((multi_warden_defenderofthewild) || (multi_bard_bardicdilettante)
+	|| (multi_ranger_warriorofthewild)
+	|| (multi_ranger_twobladewarrior)) {
+	if ((!eladrin_dungeoneering)
+	    && (!document.form1.train_dungeoneering.checked)) {
 	    document.form1.multi_dungeoneering_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) |
+    if ((multi_warden_defenderofthewild) ||
 	(multi_swordmage_heartoftheblade)
-	| (multi_barbarian_berserkersfury) |
-	(multi_fighter_studentofthesword) | (multi_fighter_battleawareness)
-	| (multi_warlock_pactinitiate) | (multi_ranger_warriorofthewild) |
-	(multi_ranger_twobladewarrior) | (multi_warlord_studentofbattle) |
-	(multi_warlord_inspiringleader) | (multi_warlord_tacticalleader)) {
-	if ((!eladrin_endurance) &
-	    (!document.form1.train_endurance.checked)) {
+	| (multi_barbarian_berserkersfury) ||
+	(multi_fighter_studentofthesword)
+	|| (multi_fighter_battleawareness)
+	| (multi_warlock_pactinitiate)
+	|| (multi_ranger_warriorofthewild)
+	|| (multi_ranger_twobladewarrior)
+	|| (multi_warlord_studentofbattle)
+	|| (multi_warlord_inspiringleader)
+	|| (multi_warlord_tacticalleader)) {
+	if ((!eladrin_endurance)
+	    && (!document.form1.train_endurance.checked)) {
 	    document.form1.multi_endurance_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) | (multi_barbarian_berserkersfury)
-	| (multi_bard_bardicdilettante) | (multi_fighter_studentofthesword)
-	| (multi_fighter_battleawareness) | (multi_warlock_pactinitiate) |
-	(multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior) |
-	(multi_warlord_studentofbattle) | (multi_warlord_inspiringleader) |
-	(multi_warlord_tacticalleader)) {
+    if ((multi_warden_defenderofthewild)
+	|| (multi_barbarian_berserkersfury)
+	| (multi_bard_bardicdilettante)
+	|| (multi_fighter_studentofthesword)
+	| (multi_fighter_battleawareness)
+	|| (multi_warlock_pactinitiate) || (multi_ranger_warriorofthewild)
+	|| (multi_ranger_twobladewarrior)
+	|| (multi_warlord_studentofbattle)
+	|| (multi_warlord_inspiringleader)
+	|| (multi_warlord_tacticalleader)) {
 	if ((!eladrin_heal) && (!document.form1.train_heal.checked)) {
 	    document.form1.multi_heal_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_warlock_pactinitiate) |
-	(multi_warlock_pactinitiate) | (multi_warlord_studentofbattle) |
-	(multi_warlord_inspiringleader) | (multi_warlord_tacticalleader)) {
+    if ((multi_bard_bardicdilettante) || (multi_warlock_pactinitiate) ||
+	(multi_warlock_pactinitiate) || (multi_warlord_studentofbattle) ||
+	(multi_warlord_inspiringleader)
+	|| (multi_warlord_tacticalleader)) {
 	if ((!eladrin_history) && (!document.form1.train_history.checked)) {
 	    document.form1.multi_history_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_warlock_pactinitiate) |
+    if ((multi_bard_bardicdilettante) || (multi_warlock_pactinitiate) ||
 	(multi_warlock_pactinitiate)) {
 	if ((!eladrin_insight) && (!document.form1.train_insight.checked)) {
 	    document.form1.multi_insight_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) | (multi_barbarian_berserkersfury)
-	| (multi_bard_bardicdilettante) | (multi_fighter_studentofthesword)
-	| (multi_rogue_slydodge) | (multi_fighter_battleawareness) |
-	(multi_warlock_pactinitiate) | (multi_warlock_pactinitiate) |
-	(multi_warlord_studentofbattle) | (multi_warlord_inspiringleader) |
+    if ((multi_warden_defenderofthewild)
+	|| (multi_barbarian_berserkersfury)
+	| (multi_bard_bardicdilettante)
+	|| (multi_fighter_studentofthesword)
+	| (multi_rogue_slydodge)
+	|| (multi_fighter_battleawareness) || (multi_warlock_pactinitiate)
+	|| (multi_warlock_pactinitiate) || (multi_warlord_studentofbattle)
+	|| (multi_warlord_inspiringleader) ||
 	(multi_warlord_tacticalleader)) {
-	if ((!eladrin_intimidate) &
-	    (!document.form1.train_intimidate.checked)) {
+	if ((!eladrin_intimidate)
+	    && (!document.form1.train_intimidate.checked)) {
 	    document.form1.multi_intimidate_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) |
+    if ((multi_warden_defenderofthewild) ||
 	(multi_wizard_learnedspellcaster)
-	| (multi_barbarian_berserkersfury) | (multi_bard_bardicdilettante)
-	| (multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior)) {
+	| (multi_barbarian_berserkersfury) || (multi_bard_bardicdilettante)
+	| (multi_ranger_warriorofthewild)
+	|| (multi_ranger_twobladewarrior)) {
 	if ((!eladrin_nature) && (!document.form1.train_nature.checked)) {
 	    document.form1.multi_nature_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_warden_defenderofthewild) | (multi_barbarian_berserkersfury)
-	| (multi_bard_bardicdilettante) | (multi_ranger_warriorofthewild) |
+    if ((multi_warden_defenderofthewild)
+	|| (multi_barbarian_berserkersfury)
+	| (multi_bard_bardicdilettante)
+	|| (multi_ranger_warriorofthewild) ||
 	(multi_ranger_twobladewarrior)) {
-	if ((!eladrin_perception) &
-	    (!document.form1.train_perception.checked)) {
+	if ((!eladrin_perception)
+	    && (!document.form1.train_perception.checked)) {
 	    document.form1.multi_perception_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_wizard_learnedspellcaster) |
-	(multi_warlock_pactinitiate) | (multi_warlock_pactinitiate)) {
-	if (((!eladrin_religion) && (!multi_cleric_initiateofthefaith) &
-	     (!document.form1.train_religion.checked))) {
+    if ((multi_bard_bardicdilettante)
+	|| (multi_wizard_learnedspellcaster)
+	|| (multi_warlock_pactinitiate)
+	|| (multi_warlock_pactinitiate)) {
+	if (((!eladrin_religion) && (!multi_cleric_initiateofthefaith)
+	     && (!document.form1.train_religion.checked))) {
 	    document.form1.multi_religion_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_ranger_warriorofthewild) | (multi_ranger_twobladewarrior) |
-	(multi_rogue_ruthlessefficiency)) {
+    if ((multi_ranger_warriorofthewild) || (multi_ranger_twobladewarrior)
+	|| (multi_rogue_ruthlessefficiency)) {
 	if ((!eladrin_stealth) && (!document.form1.train_stealth.checked)) {
 	    document.form1.multi_stealth_star.src = "asterisk.gif";
 	}
     }
-    if ((multi_bard_bardicdilettante) | (multi_fighter_studentofthesword) |
-	(multi_fighter_battleawareness) | (multi_warlock_pactinitiate)) {
-	if ((!eladrin_streetwise) &
-	    (!document.form1.train_streetwise.checked)) {
+    if ((multi_bard_bardicdilettante)
+	|| (multi_fighter_studentofthesword) ||
+	(multi_fighter_battleawareness) || (multi_warlock_pactinitiate)) {
+	if ((!eladrin_streetwise)
+	    && (!document.form1.train_streetwise.checked)) {
 	    document.form1.multi_streetwise_star.src = "asterisk.gif";
 	}
     }
@@ -10557,8 +10595,6 @@ function LightFeatStars()
     light_masteroffireanddarkness_star();
     light_mercilesskiller_star();
     light_moongleamoath_star();
-
-
 
     light_venemousheritage_star();
     light_warwizardry_star();
@@ -11029,7 +11065,6 @@ function LightFeatStars()
     light_twoweaponflurry_star();
     light_unfetteredstride_star();
     light_multiclasspowerswap_star();
-
 
 }
 
@@ -11684,81 +11719,81 @@ function UnLightFeatStars()
 function MilitaryStars()
 {
 
-    if ((already_knows_club) | (feat_weaponproficiencyclub)) {
+    if ((already_knows_club) || (feat_weaponproficiencyclub)) {
 	document.form1.club_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.club_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_dagger) | (feat_weaponproficiencydagger)) {
+    if ((already_knows_dagger) || (feat_weaponproficiencydagger)) {
 	document.form1.dagger_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.dagger_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)) {
+    if ((already_knows_javelin) || (feat_weaponproficiencyjavelin)) {
 	document.form1.javelin_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.javelin_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_mace) | (feat_weaponproficiencymace)) {
+    if ((already_knows_mace) || (feat_weaponproficiencymace)) {
 	document.form1.mace_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.mace_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_sickle) | (feat_weaponproficiencysickle)) {
+    if ((already_knows_sickle) || (feat_weaponproficiencysickle)) {
 	document.form1.sickle_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.sickle_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_spear) | (feat_weaponproficiencyspear)) {
+    if ((already_knows_spear) || (feat_weaponproficiencyspear)) {
 	document.form1.spear_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.spear_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_othersimplemeleeweapons) |
+    if ((already_knows_othersimplemeleeweapons) ||
 	(feat_weaponproficiencyothersimplemeleeweapons)) {
 	document.form1.spikedgauntlet_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.spikedgauntlet_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_greatclub) | (feat_weaponproficiencygreatclub)) {
+    if ((already_knows_greatclub) || (feat_weaponproficiencygreatclub)) {
 	document.form1.greatclub_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.greatclub_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_morningstar) | (feat_weaponproficiencymorningstar)) {
+    if ((already_knows_morningstar) || (feat_weaponproficiencymorningstar)) {
 	document.form1.morningstar_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.morningstar_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_quarterstaff) |
+    if ((already_knows_quarterstaff) ||
 	(feat_weaponproficiencyquarterstaff)) {
 	document.form1.quarterstaff_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.quarterstaff_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_scythe) | (feat_weaponproficiencyscythe)) {
+    if ((already_knows_scythe) || (feat_weaponproficiencyscythe)) {
 	document.form1.scythe_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.scythe_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_battleaxe) | (feat_weaponproficiencybattleaxe)) {
+    if ((already_knows_battleaxe) || (feat_weaponproficiencybattleaxe)) {
 	document.form1.battleaxe_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.battleaxe_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_othermilitarymeleeweapons) |
+    if ((already_knows_othermilitarymeleeweapons) ||
 	(feat_weaponproficiencyothermilitarymeleeweapons)) {
 	document.form1.broadsword_prof_arrow.src = "asterisk.gif";
 	document.form1.khopesh_prof_arrow.src = "asterisk.gif";
@@ -11780,123 +11815,123 @@ function MilitaryStars()
 	document.form1.khopesh_prof_arrow.src = "asterisk.gif";
     }
 
-    if ((already_knows_flail) | (feat_weaponproficiencyflail)) {
+    if ((already_knows_flail) || (feat_weaponproficiencyflail)) {
 	document.form1.flail_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.flail_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe)) {
+    if ((already_knows_handaxe) || (feat_weaponproficiencyhandaxe)) {
 	document.form1.handaxe_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.handaxe_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_longsword) | (feat_weaponproficiencylongsword)) {
+    if ((already_knows_longsword) || (feat_weaponproficiencylongsword)) {
 	document.form1.longsword_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.longsword_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_scimitar) | (feat_weaponproficiencyscimitar)) {
+    if ((already_knows_scimitar) || (feat_weaponproficiencyscimitar)) {
 	document.form1.scimitar_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.scimitar_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_shortsword) | (feat_weaponproficiencyshortsword)) {
+    if ((already_knows_shortsword) || (feat_weaponproficiencyshortsword)) {
 	document.form1.shortsword_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.shortsword_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_throwinghammer) |
+    if ((already_knows_throwinghammer) ||
 	(feat_weaponproficiencythrowinghammer)) {
 	document.form1.throwinghammer_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.throwinghammer_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_warhammer) | (feat_weaponproficiencywarhammer)) {
+    if ((already_knows_warhammer) || (feat_weaponproficiencywarhammer)) {
 	document.form1.warhammer_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.warhammer_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_warpick) | (feat_weaponproficiencywarpick)) {
+    if ((already_knows_warpick) || (feat_weaponproficiencywarpick)) {
 	document.form1.warpick_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.warpick_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_falchion) | (feat_weaponproficiencyfalchion)) {
+    if ((already_knows_falchion) || (feat_weaponproficiencyfalchion)) {
 	document.form1.falchion_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.falchion_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_glaive) | (feat_weaponproficiencyglaive)) {
+    if ((already_knows_glaive) || (feat_weaponproficiencyglaive)) {
 	document.form1.glaive_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.glaive_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)) {
+    if ((already_knows_greataxe) || (feat_weaponproficiencygreataxe)) {
 	document.form1.greataxe_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.greataxe_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_greatsword) | (feat_weaponproficiencygreatsword)) {
+    if ((already_knows_greatsword) || (feat_weaponproficiencygreatsword)) {
 	document.form1.greatsword_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.greatsword_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_halberd) | (feat_weaponproficiencyhalberd)) {
+    if ((already_knows_halberd) || (feat_weaponproficiencyhalberd)) {
 	document.form1.halberd_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.halberd_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_heavyflail) | (feat_weaponproficiencyheavyflail)) {
+    if ((already_knows_heavyflail) || (feat_weaponproficiencyheavyflail)) {
 	document.form1.heavyflail_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.heavyflail_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_longspear) | (feat_weaponproficiencylongspear)) {
+    if ((already_knows_longspear) || (feat_weaponproficiencylongspear)) {
 	document.form1.longspear_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.longspear_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_maul) | (feat_weaponproficiencymaul)) {
+    if ((already_knows_maul) || (feat_weaponproficiencymaul)) {
 	document.form1.maul_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.maul_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_bastardsword) |
+    if ((already_knows_bastardsword) ||
 	(feat_weaponproficiencybastardsword)) {
 	document.form1.bastardsword_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.bastardsword_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_katar) | (feat_weaponproficiencykatar)) {
+    if ((already_knows_katar) || (feat_weaponproficiencykatar)) {
 	document.form1.katar_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.katar_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_rapier) | (feat_weaponproficiencyrapier)) {
+    if ((already_knows_rapier) || (feat_weaponproficiencyrapier)) {
 	document.form1.rapier_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.rapier_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_spikedchain) | (feat_weaponproficiencyspikedchain)) {
+    if ((already_knows_spikedchain) || (feat_weaponproficiencyspikedchain)) {
 	document.form1.spikedchain_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.spikedchain_prof_arrow.src = "no_asterisk.gif";
@@ -11949,26 +11984,26 @@ function MilitaryStars()
 	document.form1.superiorcrossbow_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_handcrossbow) |
+    if ((already_knows_handcrossbow) ||
 	(feat_weaponproficiencyhandcrossbow)) {
 	document.form1.handcrossbow_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.handcrossbow_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_sling) | (feat_weaponproficiencysling)) {
+    if ((already_knows_sling) || (feat_weaponproficiencysling)) {
 	document.form1.sling_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.sling_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_crossbow) | (feat_weaponproficiencycrossbow)) {
+    if ((already_knows_crossbow) || (feat_weaponproficiencycrossbow)) {
 	document.form1.crossbow_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.crossbow_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_othersimplerangedweapons) |
+    if ((already_knows_othersimplerangedweapons) ||
 	(feat_weaponproficiencyothersimplerangedweapons)) {
 	document.form1.repeatingcrossbow_prof_arrow.src = "asterisk.gif";
     } else {
@@ -11976,61 +12011,61 @@ function MilitaryStars()
 	    "no_asterisk.gif";
     }
 
-    if ((already_knows_longbow) | (feat_weaponproficiencylongbow)) {
+    if ((already_knows_longbow) || (feat_weaponproficiencylongbow)) {
 	document.form1.longbow_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.longbow_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_shortbow) | (feat_weaponproficiencyshortbow)) {
+    if ((already_knows_shortbow) || (feat_weaponproficiencyshortbow)) {
 	document.form1.shortbow_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.shortbow_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_shuriken) | (feat_weaponproficiencyshuriken)) {
+    if ((already_knows_shuriken) || (feat_weaponproficiencyshuriken)) {
 	document.form1.shuriken_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.shuriken_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_leather) | (feat_armorproficiencyleather)) {
+    if ((already_knows_leather) || (feat_armorproficiencyleather)) {
 	document.form1.leather_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.leather_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_hide) | (feat_armorproficiencyhide)) {
+    if ((already_knows_hide) || (feat_armorproficiencyhide)) {
 	document.form1.hide_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.hide_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_chainmail) | (feat_armorproficiencychainmail)) {
+    if ((already_knows_chainmail) || (feat_armorproficiencychainmail)) {
 	document.form1.chainmail_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.chainmail_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_scale) | (feat_armorproficiencyscale)) {
+    if ((already_knows_scale) || (feat_armorproficiencyscale)) {
 	document.form1.scale_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.scale_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_plate) | (feat_armorproficiencyplate)) {
+    if ((already_knows_plate) || (feat_armorproficiencyplate)) {
 	document.form1.plate_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.plate_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_lightshield) | (feat_shieldproficiencylight)) {
+    if ((already_knows_lightshield) || (feat_shieldproficiencylight)) {
 	document.form1.lightshield_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.lightshield_prof_arrow.src = "no_asterisk.gif";
     }
 
-    if ((already_knows_heavyshield) | (feat_shieldproficiencyheavy)) {
+    if ((already_knows_heavyshield) || (feat_shieldproficiencyheavy)) {
 	document.form1.heavyshield_prof_arrow.src = "asterisk.gif";
     } else {
 	document.form1.heavyshield_prof_arrow.src = "no_asterisk.gif";
@@ -12057,24 +12092,23 @@ function MilitaryStars()
 function ArmorProficient()
 {
     if ((document.form1.armor_radio[1].checked)
-	&& (!already_knows_leather) & (!feat_armorproficiencyleather)) {
+	&& (!already_knows_leather) && (!feat_armorproficiencyleather)) {
 	return false;
     }
-    if ((document.form1.armor_radio[2].checked) && (!already_knows_hide) &
+    if ((document.form1.armor_radio[2].checked) && (!already_knows_hide) &&
 	(!feat_armorproficiencyhide)) {
 	return false;
     }
     if ((document.form1.armor_radio[3].checked)
-	&& (!already_knows_chainmail) & (!feat_armorproficiencychainmail))
-    {
+	&& (!already_knows_chainmail) && (!feat_armorproficiencychainmail)) {
 	return false;
     }
-    if ((document.form1.armor_radio[4].checked) && (!already_knows_scale) &
-	(!feat_armorproficiencyscale)) {
+    if ((document.form1.armor_radio[4].checked) && (!already_knows_scale)
+	&& (!feat_armorproficiencyscale)) {
 	return false;
     }
-    if ((document.form1.armor_radio[5].checked) && (!already_knows_plate) &
-	(!feat_armorproficiencyplate)) {
+    if ((document.form1.armor_radio[5].checked) && (!already_knows_plate)
+	&& (!feat_armorproficiencyplate)) {
 	return false;
     }
     return true;
@@ -12419,7 +12453,7 @@ function ArrowShow()
     }
 
     if ((CharacterTypeHasBeenEstablished == false)
-	&& (RaceAssigned()) && ((gender > 0) | (race_warforged))
+	&& (RaceAssigned()) && ((gender > 0) || (race_warforged))
 	&& (alignment > 0) && (total_levels > 0)) {
 	document.form1.acceptthispersonarrow.src = "dragonarrowleft.gif";
     } else {
@@ -12547,14 +12581,7 @@ function ArrowShow()
 	document.form1.genasisoultypearrow.src = "dragonblank.gif";
     }
 
-
-
-
-
-
-
-
-    if (((class_fighter) | (multi_fighter_studentofthesword))
+    if (((class_fighter) || (multi_fighter_studentofthesword))
 	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!FighterStyleChosen()) {
@@ -12590,7 +12617,7 @@ function ArrowShow()
 	document.form1.roguestylearrow.src = "dragonblank.gif";
     }
 
-    if (((class_warlock) | (multi_warlock_with_pact()))
+    if (((class_warlock) || (multi_warlock_with_pact()))
 	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (MandatoryWarlockPact()) {
@@ -12896,7 +12923,7 @@ function ArrowShow()
 	document.form1.up28arrow.src = "dragonblank.gif";
     }
 
-    if (((epic_demigod) | (epic_chosen))
+    if (((epic_demigod) || (epic_chosen))
 	&& (ClassesHaveBeenEstablished)
 	&& (AbilityIncreasesAreLocked == false)) {
 	if (!Raise21Okay()) {
@@ -13713,7 +13740,7 @@ function RaiseOtherRaceStatsOkay()
     if (document.form1.chr_other_race_stat_box.checked) {
 	z++;
     }
-    if ((z == 1) | (z == 2)) {
+    if ((z == 1) || (z == 2)) {
 	return true;
     }
     return false;
@@ -13776,7 +13803,7 @@ function RaiseOtherRaceSkillsOkay()
     if (document.form1.thievery_other_race_box.checked) {
 	z++;
     }
-    if ((z == 1) | (z == 2)) {
+    if ((z == 1) || (z == 2)) {
 	return true;
     }
     return false;
@@ -14171,7 +14198,6 @@ function x_and_heft()
 function AdjustHeightAndWeight()
 {
 
-
     if (RaceAssigned() == false) {
 	document.form1.how_tall.selectedIndex = 0;
 	document.form1.how_heavy.selectedIndex = 0;
@@ -14418,7 +14444,7 @@ function AdjustHeightAndWeight()
 	}
     }
 
-    if ((race_githyanki) | (race_githzerai)) {
+    if ((race_githyanki) || (race_githzerai)) {
 	if (document.form1.how_tall.selectedIndex < 41 - 2) {
 	    document.form1.how_tall.selectedIndex = 41 - 2;
 	}
@@ -14553,7 +14579,7 @@ function AdjustHeightAndWeight()
 	}
     }
 
-    if ((race_shifterlongtooth) | (race_shifterrazorclaw)) {
+    if ((race_shifterlongtooth) || (race_shifterrazorclaw)) {
 	if (document.form1.how_tall.selectedIndex < 36 - 2) {
 	    document.form1.how_tall.selectedIndex = 36 - 2;
 	}
@@ -14589,10 +14615,9 @@ function RollSomeDice()
 {
     my_character_is_done = false;
 
-    if ((stat1 != 0) | (stat2 != 0) | (stat3 != 0) | (stat4 !=
-						      0) | (stat5 !=
-							    0) | (stat6 !=
-								  0)) {
+    if ((stat1 != 0) || (stat2 != 0) || (stat3 != 0) || (stat4 !=
+							 0) || (stat5 != 0)
+	|| (stat6 != 0)) {
 	if (RaceAssigned()) {
 	    startup();
 	}
@@ -14716,16 +14741,17 @@ function Languages()
     z = 0;
     document.form1.common_box.checked = true;
     extra_language_entitlement = 3 * feat_linguist;
-    if ((race_halfelf) | (race_halfling) | (race_human) | (race_goliath) |
-	(race_tiefling) | (race_shifterrazorclaw) | (race_shifterlongtooth)
+    if ((race_halfelf) || (race_halfling) || (race_human)
+	|| (race_goliath) || (race_tiefling) || (race_shifterrazorclaw)
+	|| (race_shifterlongtooth)
 	| (race_other)) {
 	extra_language_entitlement++;
     }
     if (race_deva) {
 	extra_language_entitlement += 2;
     }
-    if ((frb_baldursgate) | (frb_dragoncoast) | (frb_luruar) |
-	(frb_grayvale) | (frb_waterdeep)) {
+    if ((frb_baldursgate) || (frb_dragoncoast) || (frb_luruar) ||
+	(frb_grayvale) || (frb_waterdeep)) {
 	extra_language_entitlement++;
     }
     if (deepspeech_nativespeaker) {
@@ -14909,15 +14935,15 @@ function NegateSkillsTraining()
 function MandatoryClassSkills()
 {
 
-    if ((class_cleric) | (class_paladin) | (class_avenger) |
+    if ((class_cleric) || (class_paladin) || (class_avenger) ||
 	(class_invoker)) {
 	document.form1.train_religion.checked = true;
     }
-    if ((class_wizard) | (class_swordmage) | (class_bard) |
+    if ((class_wizard) || (class_swordmage) || (class_bard) ||
 	(class_sorcerer)) {
 	document.form1.train_arcana.checked = true;
     }
-    if ((class_druid) | (class_warden) | (class_shaman)) {
+    if ((class_druid) || (class_warden) || (class_shaman)) {
 	document.form1.train_nature.checked = true;
     }
     if ((class_rogue)) {
@@ -14927,13 +14953,13 @@ function MandatoryClassSkills()
     if ((paragon_zealousassassin)) {
 	document.form1.train_stealth.checked = true;
     }
-    if ((multi_cleric_initiateofthefaith) |
-	(multi_invoker_acolyteofdivinesecrets) |
+    if ((multi_cleric_initiateofthefaith) ||
+	(multi_invoker_acolyteofdivinesecrets) ||
 	(multi_avenger_discipleofdivinewrath)) {
 	document.form1.train_multiclass[13].checked = true;
     }
-    if ((multi_wizard_arcaneinitiate) | (multi_swordmage_bladeinitiate) |
-	(multi_sorcerer_arcaneprodigy) | (multi_bard_bardicritualist)) {
+    if ((multi_wizard_arcaneinitiate) || (multi_swordmage_bladeinitiate) ||
+	(multi_sorcerer_arcaneprodigy) || (multi_bard_bardicritualist)) {
 	document.form1.train_multiclass[1].checked = true;
     }
     if (multi_rogue_sneakofshadows) {
@@ -14942,7 +14968,7 @@ function MandatoryClassSkills()
     if (multi_rogue_ruthlessefficiency) {
 	document.form1.train_multiclass[14].checked = true;
     }
-    if ((multi_druid_initiateoftheoldfaith) | (multi_shaman_spirittalker)) {
+    if ((multi_druid_initiateoftheoldfaith) || (multi_shaman_spirittalker)) {
 	document.form1.train_multiclass[11].checked = true;
     }
 }
@@ -15074,54 +15100,54 @@ function ConsiderSkill()
     }
     MandatoryClassSkills();
 
-    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &
-	(!frb_nelantherisles) && (!class_barbarian) && (!class_ranger) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &&
+	(!frb_nelantherisles) && (!class_barbarian) && (!class_ranger) &&
 	(!paragon_feybeguiler) && (!class_rogue) && (!class_other)) {
 	document.form1.train_acrobatics.checked = false;
     }
-    if ((!class_druid) && (!class_invoker) && (!class_shaman) &
-	(!frb_netheril) && (!frb_greatdale) && (!class_cleric) &
-	(!class_warlock) && (!paragon_feybeguiler) && (!class_wizard) &
-	(!class_bard) && (!class_sorcerer) && (!class_swordmage) &
+    if ((!class_druid) && (!class_invoker) && (!class_shaman) &&
+	(!frb_netheril) && (!frb_greatdale) && (!class_cleric) &&
+	(!class_warlock) && (!paragon_feybeguiler) && (!class_wizard) &&
+	(!class_bard) && (!class_sorcerer) && (!class_swordmage) &&
 	(!class_other)) {
 	document.form1.train_arcana.checked = false;
     }
-    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &
-	(!class_druid) && (!class_shaman) && (!class_sorcerer) &
-	(!class_warden) && (!frb_nelantherisles) && (!class_barbarian) &
-	(!frb_elfharrow) && (!class_fighter) && (!class_ranger) &
-	(!paragon_feybeguiler) && (!class_rogue) && (!class_warlord) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &&
+	(!class_druid) && (!class_shaman) && (!class_sorcerer) &&
+	(!class_warden) && (!frb_nelantherisles) && (!class_barbarian) &&
+	(!frb_elfharrow) && (!class_fighter) && (!class_ranger) &&
+	(!paragon_feybeguiler) && (!class_rogue) && (!class_warlord) &&
 	(!class_swordmage) && (!class_other) && (!frb_tymanther)) {
 	document.form1.train_athletics.checked = false;
     }
-    if ((!class_bard) && (!class_sorcerer) && (!paragon_feybeguiler) &
+    if ((!class_bard) && (!class_sorcerer) && (!paragon_feybeguiler) &&
 	(!class_rogue) && (!class_warlock) && (!class_other)) {
 	document.form1.train_bluff.checked = false;
     }
 
-    if ((!class_bard) && (!class_druid) && (!class_invoker) &
-	(!class_sorcerer) && (!class_cleric) && (!class_paladin) &
-	(!class_warlord) && (!paragon_feybeguiler) && (!class_wizard) &
+    if ((!class_bard) && (!class_druid) && (!class_invoker) &&
+	(!class_sorcerer) && (!class_cleric) && (!class_paladin) &&
+	(!class_warlord) && (!paragon_feybeguiler) && (!class_wizard) &&
 	(!class_swordmage) && (!class_other) && (!frb_waterdeep)) {
 	document.form1.train_diplomacy.checked = false;
     }
-    if ((!class_bard) && (!class_sorcerer) && (!class_warden) &
-	(!class_ranger) && (!paragon_feybeguiler) && (!class_rogue) &
-	(!paragon_feybeguiler) && (!class_wizard) && (!class_other) &
+    if ((!class_bard) && (!class_sorcerer) && (!class_warden) &&
+	(!class_ranger) && (!paragon_feybeguiler) && (!class_rogue) &&
+	(!paragon_feybeguiler) && (!class_wizard) && (!class_other) &&
 	(!frb_eastrift)) {
 	document.form1.train_dungeoneering.checked = false;
     }
-    if ((!class_avenger) && (!class_barbarian) && (!class_druid) &
-	(!class_invoker) && (!class_shaman) && (!class_sorcerer) &
-	(!class_warden) && (!frb_narfell) && (!class_barbarian) &
-	(!class_fighter) && (!class_paladin) && (!class_ranger) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_druid) &&
+	(!class_invoker) && (!class_shaman) && (!class_sorcerer) &&
+	(!class_warden) && (!frb_narfell) && (!class_barbarian) &&
+	(!class_fighter) && (!class_paladin) && (!class_ranger) &&
 	(!class_warlord) && (!class_swordmage) && (!class_other)) {
 	document.form1.train_endurance.checked = false;
     }
-    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &
-	(!class_druid) && (!class_shaman) && (!class_warden) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &&
+	(!class_druid) && (!class_shaman) && (!class_warden) &&
 	(!class_cleric)
-	& (!class_barbarian) && (!class_fighter) && (!class_paladin) &
+	& (!class_barbarian) && (!class_fighter) && (!class_paladin) &&
 	(!class_ranger) && (!class_warlord) && (!class_other)) {
 	document.form1.train_heal.checked = false;
     }
@@ -15129,99 +15155,99 @@ function ConsiderSkill()
     if ((!class_bard) && (!class_druid) && (!class_invoker)
 	&& (!frb_netheril)
 	& (!class_cleric) && (!class_paladin)
-	&& (!paragon_feybeguiler) & (!class_rogue) && (!class_warlock)
-	&& (!class_warlord) & (!paragon_feybeguiler) && (!class_wizard)
-	&& (!class_swordmage) & (!class_other)) {
+	&& (!paragon_feybeguiler) && (!class_rogue) && (!class_warlock)
+	&& (!class_warlord) && (!paragon_feybeguiler) && (!class_wizard)
+	&& (!class_swordmage) && (!class_other)) {
 	document.form1.train_history.checked = false;
     }
     if ((!class_bard) && (!class_druid) && (!class_invoker)
 	&& (!class_shaman)
 	& (!class_sorcerer) && (!class_cleric)
-	&& (!class_paladin) & (!paragon_feybeguiler) && (!class_rogue)
-	&& (!class_warlock) & (!paragon_feybeguiler) && (!class_wizard)
-	&& (!class_swordmage) & (!class_other) && (!frb_cormyr)) {
+	&& (!class_paladin) && (!paragon_feybeguiler) && (!class_rogue)
+	&& (!class_warlock) && (!paragon_feybeguiler) && (!class_wizard)
+	&& (!class_swordmage) && (!class_other) && (!frb_cormyr)) {
 	document.form1.train_insight.checked = false;
     }
-    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &
-	(!class_invoker) && (!class_sorcerer) && (!class_warden) &
-	(!class_fighter) && (!class_barbarian) && (!class_paladin) &
-	(!paragon_feybeguiler) && (!class_rogue) && (!class_warlock) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &&
+	(!class_invoker) && (!class_sorcerer) && (!class_warden) &&
+	(!class_fighter) && (!class_barbarian) && (!class_paladin) &&
+	(!paragon_feybeguiler) && (!class_rogue) && (!class_warlock) &&
 	(!class_warlord) && (!class_swordmage) && (!class_other)) {
 	document.form1.train_intimidate.checked = false;
     }
-    if ((!class_barbarian) && (!class_bard) && (!class_sorcerer) &
-	(!class_warden) && (!class_shaman) && (!class_druid) &
-	(!frb_greatdale) && (!class_barbarian) && (!frb_grayvale) &
-	(!frb_elfharrow) && (!class_ranger) && (!paragon_feybeguiler) &
+    if ((!class_barbarian) && (!class_bard) && (!class_sorcerer) &&
+	(!class_warden) && (!class_shaman) && (!class_druid) &&
+	(!frb_greatdale) && (!class_barbarian) && (!frb_grayvale) &&
+	(!frb_elfharrow) && (!class_ranger) && (!paragon_feybeguiler) &&
 	(!class_wizard) && (!class_other)) {
 	document.form1.train_nature.checked = false;
     }
 
-    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &
-	(!class_druid) && (!class_shaman) && (!class_warden) &
+    if ((!class_avenger) && (!class_barbarian) && (!class_bard) &&
+	(!class_druid) && (!class_shaman) && (!class_warden) &&
 	(!class_ranger)
-	& (!class_barbarian) && (!paragon_feybeguiler) && (!class_rogue) &
+	& (!class_barbarian) && (!paragon_feybeguiler) && (!class_rogue) &&
 	(!class_other) && (!frb_aglarond)) {
 	document.form1.train_perception.checked = false;
     }
-    if ((!class_bard) && (!class_shaman) && (!class_avenger) &
-	(!class_invoker) && (!class_cleric) && (!class_paladin) &
-	(!class_warlock) && (!paragon_feybeguiler) && (!class_wizard) &
+    if ((!class_bard) && (!class_shaman) && (!class_avenger) &&
+	(!class_invoker) && (!class_cleric) && (!class_paladin) &&
+	(!class_warlock) && (!paragon_feybeguiler) && (!class_wizard) &&
 	(!class_other)) {
 	document.form1.train_religion.checked = false;
     }
-    if ((!class_avenger) && (!frb_luskan) && (!class_ranger) &
+    if ((!class_avenger) && (!frb_luskan) && (!class_ranger) &&
 	(!paragon_feybeguiler) && (!class_rogue) && (!class_other)) {
 	document.form1.train_stealth.checked = false;
     }
     if ((!class_avenger) && (!class_bard) && (!frb_baldursgate)
 	&& (!frb_amn)
 	& (!class_fighter) && (!paragon_feybeguiler)
-	&& (!class_rogue) & (!class_warlock) && (!class_other)
+	&& (!class_rogue) && (!class_warlock) && (!class_other)
 	&& (!frb_baldursgate)) {
 	document.form1.train_streetwise.checked = false;
     }
 
-    if ((!frb_wheloon) && (!frb_luskan) && (!frb_amn) &
+    if ((!frb_wheloon) && (!frb_luskan) && (!frb_amn) &&
 	(!paragon_feybeguiler)
 	& (!class_rogue) && (!class_warlock) && (!class_other)) {
 	document.form1.train_thievery.checked = false;
     }
 
     if ((!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_ranger_warriorofthewild) &
+	& (!multi_ranger_warriorofthewild) &&
 	(!multi_ranger_twobladewarrior)) {
 	document.form1.train_multiclass[0].checked = false;
     }
     if ((!multi_bard_bardicdilettante)
 	&& (!multi_wizard_learnedspellcaster)
-	& (!multi_sorcerer_arcaneprodigy) &
+	& (!multi_sorcerer_arcaneprodigy) &&
 	(!multi_cleric_initiateofthefaith) && (!multi_warlock_pactinitiate)
 	& (!multi_wizard_arcaneinitiate)
 	&& (!multi_swordmage_bladeinitiate)
 	& (!multi_bard_bardicritualist)) {
 	document.form1.train_multiclass[1].checked = false;
     }
-    if ((!multi_warden_defenderofthewild) &
-	(!multi_swordmage_heartoftheblade) &
+    if ((!multi_warden_defenderofthewild) &&
+	(!multi_swordmage_heartoftheblade) &&
 	(!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_fighter_studentofthesword) &
+	& (!multi_fighter_studentofthesword) &&
 	(!multi_fighter_battleawareness)
 	&& (!multi_ranger_warriorofthewild)
-	& (!multi_ranger_twobladewarrior) &
+	& (!multi_ranger_twobladewarrior) &&
 	(!multi_warlord_studentofbattle)
-	& (!multi_warlord_inspiringleader) &
+	& (!multi_warlord_inspiringleader) &&
 	(!multi_warlord_tacticalleader)) {
 	document.form1.train_multiclass[2].checked = false;
     }
-    if ((!multi_bard_bardicdilettante) && (!multi_rogue_slydodge) &
+    if ((!multi_bard_bardicdilettante) && (!multi_rogue_slydodge) &&
 	(!multi_warlock_pactinitiate)) {
 	document.form1.train_multiclass[3].checked = false;
     }
 
     if ((!multi_bard_bardicdilettante)
 	&& (!multi_cleric_initiateofthefaith)
-	& (!multi_paladin_soldierofthefaith) &
+	& (!multi_paladin_soldierofthefaith) &&
 	(!multi_warlord_studentofbattle)
 	&& (!multi_warlord_inspiringleader)
 	& (!multi_warlord_tacticalleader) && (!multi_wizard_arcaneinitiate)
@@ -15229,31 +15255,31 @@ function ConsiderSkill()
 	document.form1.train_multiclass[4].checked = false;
     }
     if ((!multi_warden_defenderofthewild) && (!multi_bard_bardicdilettante)
-	& (!multi_ranger_warriorofthewild) &
-	(!multi_ranger_twobladewarrior) && (!multi_wizard_arcaneinitiate) &
-	(!multi_bard_bardicritualist)) {
+	& (!multi_ranger_warriorofthewild) &&
+	(!multi_ranger_twobladewarrior) && (!multi_wizard_arcaneinitiate)
+	&& (!multi_bard_bardicritualist)) {
 	document.form1.train_multiclass[5].checked = false;
     }
-    if ((!multi_warden_defenderofthewild) &
-	(!multi_barbarian_berserkersfury) &
-	(!multi_swordmage_heartoftheblade) &
-	(!multi_fighter_studentofthesword) &
-	(!multi_fighter_battleawareness) &
-	(!multi_paladin_soldierofthefaith) &
+    if ((!multi_warden_defenderofthewild) &&
+	(!multi_barbarian_berserkersfury) &&
+	(!multi_swordmage_heartoftheblade) &&
+	(!multi_fighter_studentofthesword) &&
+	(!multi_fighter_battleawareness) &&
+	(!multi_paladin_soldierofthefaith) &&
 	(!multi_ranger_warriorofthewild) && (!multi_ranger_twobladewarrior)
-	& (!multi_warlord_studentofbattle) &
+	& (!multi_warlord_studentofbattle) &&
 	(!multi_warlord_inspiringleader)
 	& (!multi_warlord_tacticalleader)) {
 	document.form1.train_multiclass[6].checked = false;
     }
-    if ((!multi_warden_defenderofthewild) &
+    if ((!multi_warden_defenderofthewild) &&
 	(!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_cleric_initiateofthefaith) &
-	(!multi_fighter_studentofthesword) &
-	(!multi_fighter_battleawareness) &
-	(!multi_paladin_soldierofthefaith) &
+	& (!multi_cleric_initiateofthefaith) &&
+	(!multi_fighter_studentofthesword) &&
+	(!multi_fighter_battleawareness) &&
+	(!multi_paladin_soldierofthefaith) &&
 	(!multi_ranger_warriorofthewild) && (!multi_ranger_twobladewarrior)
-	& (!multi_warlord_studentofbattle) &
+	& (!multi_warlord_studentofbattle) &&
 	(!multi_warlord_inspiringleader)
 	& (!multi_warlord_tacticalleader)) {
 	document.form1.train_multiclass[7].checked = false;
@@ -15261,52 +15287,52 @@ function ConsiderSkill()
 
     if ((!multi_bard_bardicdilettante)
 	&& (!multi_cleric_initiateofthefaith)
-	& (!multi_paladin_soldierofthefaith) &
+	& (!multi_paladin_soldierofthefaith) &&
 	(!multi_warlock_pactinitiate)
-	& (!multi_warlord_studentofbattle) &
+	& (!multi_warlord_studentofbattle) &&
 	(!multi_warlord_inspiringleader) && (!multi_warlord_tacticalleader)
 	& (!multi_wizard_arcaneinitiate)) {
 	document.form1.train_multiclass[8].checked = false;
     }
     if ((!multi_bard_bardicdilettante)
 	&& (!multi_cleric_initiateofthefaith)
-	& (!multi_paladin_soldierofthefaith) &
+	& (!multi_paladin_soldierofthefaith) &&
 	(!multi_warlock_pactinitiate)
 	& (!multi_wizard_arcaneinitiate)) {
 	document.form1.train_multiclass[9].checked = false;
     }
-    if ((!multi_warden_defenderofthewild) &
+    if ((!multi_warden_defenderofthewild) &&
 	(!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_fighter_studentofthesword) &
-	(!multi_fighter_battleawareness) &
+	& (!multi_fighter_studentofthesword) &&
+	(!multi_fighter_battleawareness) &&
 	(!multi_paladin_soldierofthefaith) && (!multi_warlock_pactinitiate)
-	& (!multi_warlord_studentofbattle) &
+	& (!multi_warlord_studentofbattle) &&
 	(!multi_warlord_inspiringleader)
 	& (!multi_warlord_tacticalleader) && (!multi_rogue_slydodge)) {
 	document.form1.train_multiclass[10].checked = false;
     }
-    if ((!multi_warden_defenderofthewild) &
-	(!multi_wizard_learnedspellcaster) &
+    if ((!multi_warden_defenderofthewild) &&
+	(!multi_wizard_learnedspellcaster) &&
 	(!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_shaman_spirittalker) &
+	& (!multi_shaman_spirittalker) &&
 	(!multi_druid_initiateoftheoldfaith)
-	& (!multi_ranger_warriorofthewild) &
+	& (!multi_ranger_warriorofthewild) &&
 	(!multi_ranger_twobladewarrior)
 	& (!multi_wizard_arcaneinitiate)) {
 	document.form1.train_multiclass[11].checked = false;
     }
 
-    if ((!multi_warden_defenderofthewild) &
+    if ((!multi_warden_defenderofthewild) &&
 	(!multi_barbarian_berserkersfury) && (!multi_bard_bardicdilettante)
-	& (!multi_ranger_warriorofthewild) &
+	& (!multi_ranger_warriorofthewild) &&
 	(!multi_ranger_twobladewarrior)) {
 	document.form1.train_multiclass[12].checked = false;
     }
     if ((!multi_bard_bardicdilettante)
 	&& (!multi_wizard_learnedspellcaster)
-	& (!multi_avenger_discipleofdivinewrath) &
-	(!multi_invoker_acolyteofdivinesecrets) &
-	(!multi_cleric_initiateofthefaith) &
+	& (!multi_avenger_discipleofdivinewrath) &&
+	(!multi_invoker_acolyteofdivinesecrets) &&
+	(!multi_cleric_initiateofthefaith) &&
 	(!multi_paladin_soldierofthefaith) && (!multi_warlock_pactinitiate)
 	& (!multi_wizard_arcaneinitiate)) {
 	document.form1.train_multiclass[13].checked = false;
@@ -15393,56 +15419,56 @@ function ConsiderSkill()
 	document.form1.train_thievery.checked = false;
 	document.form1.train_multiclass[16].checked = false;
     }
-    if ((document.form1.train_acrobatics.checked) | (eladrin_acrobatics)) {
+    if ((document.form1.train_acrobatics.checked) || (eladrin_acrobatics)) {
 	document.form1.train_multiclass[0].checked = false;
     }
-    if ((document.form1.train_arcana.checked) | (eladrin_arcana)) {
+    if ((document.form1.train_arcana.checked) || (eladrin_arcana)) {
 	document.form1.train_multiclass[1].checked = false;
     }
-    if ((document.form1.train_athletics.checked) | (eladrin_athletics)) {
+    if ((document.form1.train_athletics.checked) || (eladrin_athletics)) {
 	document.form1.train_multiclass[2].checked = false;
     }
-    if ((document.form1.train_bluff.checked) | (eladrin_bluff)) {
+    if ((document.form1.train_bluff.checked) || (eladrin_bluff)) {
 	document.form1.train_multiclass[3].checked = false;
     }
-    if ((document.form1.train_diplomacy.checked) | (eladrin_diplomacy)) {
+    if ((document.form1.train_diplomacy.checked) || (eladrin_diplomacy)) {
 	document.form1.train_multiclass[4].checked = false;
     }
-    if ((document.form1.train_dungeoneering.
-	 checked) | (eladrin_dungeoneering)) {
+    if ((document.form1.train_dungeoneering.checked)
+	|| (eladrin_dungeoneering)) {
 	document.form1.train_multiclass[5].checked = false;
     }
-    if ((document.form1.train_endurance.checked) | (eladrin_endurance)) {
+    if ((document.form1.train_endurance.checked) || (eladrin_endurance)) {
 	document.form1.train_multiclass[6].checked = false;
     }
-    if ((document.form1.train_heal.checked) | (eladrin_heal)) {
+    if ((document.form1.train_heal.checked) || (eladrin_heal)) {
 	document.form1.train_multiclass[7].checked = false;
     }
-    if ((document.form1.train_history.checked) | (eladrin_history)) {
+    if ((document.form1.train_history.checked) || (eladrin_history)) {
 	document.form1.train_multiclass[8].checked = false;
     }
-    if ((document.form1.train_insight.checked) | (eladrin_insight)) {
+    if ((document.form1.train_insight.checked) || (eladrin_insight)) {
 	document.form1.train_multiclass[9].checked = false;
     }
-    if ((document.form1.train_intimidate.checked) | (eladrin_intimidate)) {
+    if ((document.form1.train_intimidate.checked) || (eladrin_intimidate)) {
 	document.form1.train_multiclass[10].checked = false;
     }
-    if ((document.form1.train_nature.checked) | (eladrin_nature)) {
+    if ((document.form1.train_nature.checked) || (eladrin_nature)) {
 	document.form1.train_multiclass[11].checked = false;
     }
-    if ((document.form1.train_perception.checked) | (eladrin_perception)) {
+    if ((document.form1.train_perception.checked) || (eladrin_perception)) {
 	document.form1.train_multiclass[12].checked = false;
     }
-    if ((document.form1.train_religion.checked) | (eladrin_religion)) {
+    if ((document.form1.train_religion.checked) || (eladrin_religion)) {
 	document.form1.train_multiclass[13].checked = false;
     }
-    if ((document.form1.train_stealth.checked) | (eladrin_stealth)) {
+    if ((document.form1.train_stealth.checked) || (eladrin_stealth)) {
 	document.form1.train_multiclass[14].checked = false;
     }
-    if ((document.form1.train_streetwise.checked) | (eladrin_streetwise)) {
+    if ((document.form1.train_streetwise.checked) || (eladrin_streetwise)) {
 	document.form1.train_multiclass[15].checked = false;
     }
-    if ((document.form1.train_thievery.checked) | (eladrin_thievery)) {
+    if ((document.form1.train_thievery.checked) || (eladrin_thievery)) {
 	document.form1.train_multiclass[16].checked = false;
     }
 
@@ -15503,17 +15529,18 @@ function ConsiderSkill()
 
 function MultiSkillOkay()
 {
-    if ((!multi_fighter_studentofthesword) &
-	(!multi_paladin_soldierofthefaith) &
-	(!multi_ranger_warriorofthewild) && (!multi_warlock_pactinitiate) &
-	(!multi_warlord_studentofbattle)
+    if ((!multi_fighter_studentofthesword) &&
+	(!multi_paladin_soldierofthefaith) &&
+	(!multi_ranger_warriorofthewild) && (!multi_warlock_pactinitiate)
+	&& (!multi_warlord_studentofbattle)
 	&& (!multi_fighter_battleawareness)
 	& (!multi_warlord_inspiringleader)
-	&& (!multi_rogue_slydodge) & (!multi_warlord_tacticalleader)
-	&& (!multi_ranger_twobladewarrior) & (!multi_bard_bardicdilettante)
+	&& (!multi_rogue_slydodge) && (!multi_warlord_tacticalleader)
+	&& (!multi_ranger_twobladewarrior)
+	&& (!multi_bard_bardicdilettante)
 	&& (!multi_barbarian_berserkersfury)
-	& (!multi_warden_defenderofthewild) &
-	(!multi_swordmage_heartoftheblade) &
+	& (!multi_warden_defenderofthewild) &&
+	(!multi_swordmage_heartoftheblade) &&
 	(!multi_wizard_learnedspellcaster)) {
 	return true;
     }
@@ -15605,9 +15632,9 @@ function SkillSetOkay()
     if ((class_paladin) && (z == 4)) {
 	return true;
     }
-    if ((class_ranger) && (z == 5) &
-	((document.form1.train_dungeoneering.checked ==
-	  true) | (document.form1.train_nature.checked))) {
+    if ((class_ranger) && (z == 5) &&
+	((document.form1.train_dungeoneering.checked)
+	 || (document.form1.train_nature.checked))) {
 	return true;
     }
     if ((class_rogue) && (z == 6)) {
@@ -15807,7 +15834,6 @@ function NegateAbilityRaisesEtcEtc()
     dilettante_surestrike = false;
     dilettante_tideofiron = false;
 
-
     dilettante_bolsteringstrike = false;
     dilettante_enfeeblingstrike = false;
     dilettante_holystrike = false;
@@ -15829,23 +15855,12 @@ function NegateAbilityRaisesEtcEtc()
     dilettante_vipersstrike = false;
     dilettante_wolfpacktactics = false;
 
-
-
-
     dilettante_cloudofdaggers = false;
     dilettante_magicmissile = false;
     dilettante_rayoffrost = false;
     dilettante_scorchingburst = false;
     dilettante_thunderwave = false;
     dilettante_other = false;
-
-
-
-
-
-
-
-
 
     fighter_onehand = false;
     fighter_twohand = false;
@@ -16587,25 +16602,31 @@ function lock_skills()
 	ArrowShow();
 
 	if (total_feat_entitlement == 1) {
-	    if ((multi_cleric()) | (multi_fighter()) | (multi_paladin()) |
-		(multi_ranger()) | (multi_rogue()) | (multi_warlock()) |
-		(multi_warlord()) | (multi_wizard()) | (multi_swordmage())
-		| (multi_spellscarred) | (multi_bard()) | (multi_invoker())
+	    if ((multi_cleric()) || (multi_fighter())
+		|| (multi_paladin()) || (multi_ranger()) || (multi_rogue())
+		|| (multi_warlock()) || (multi_warlord())
+		|| (multi_wizard()) || (multi_swordmage())
+		| (multi_spellscarred) || (multi_bard())
+		|| (multi_invoker())
 		| (multi_druid())
-		| (multi_avenger()) | (multi_sorcerer()) | (multi_warden())
-		| (multi_shaman()) | (multi_barbarian())) {
+		| (multi_avenger()) || (multi_sorcerer())
+		|| (multi_warden())
+		| (multi_shaman()) || (multi_barbarian())) {
 		document.form1.feat.value =
 		    "Your multiclass is your one feat for now. ";
 	    } else
 		document.form1.feat.value = "Choose one feat. ";
-	} else if ((multi_cleric()) | (multi_fighter()) | (multi_paladin())
-		   | (multi_ranger()) | (multi_rogue())
-		   | (multi_warlock) | (multi_warlord()) | (multi_wizard())
-		   | (multi_swordmage()) | (multi_spellscarred) |
-		   (multi_avenger()) | (multi_bard()) | (multi_barbarian())
-		   | (multi_invoker()) | (multi_shaman()) |
-		   (multi_sorcerer()) | (multi_invoker()) |
-		   (multi_warden())) {
+	} else if ((multi_cleric()) || (multi_fighter())
+		   || (multi_paladin())
+		   || (multi_ranger()) || (multi_rogue())
+		   || (multi_warlock) || (multi_warlord())
+		   || (multi_wizard())
+		   || (multi_swordmage())
+		   || (multi_spellscarred) || (multi_avenger())
+		   || (multi_bard()) || (multi_barbarian())
+		   || (multi_invoker())
+		   || (multi_shaman()) || (multi_sorcerer())
+		   || (multi_invoker()) || (multi_warden())) {
 	    if (paragon_multiclass) {
 		document.form1.feat.value =
 		    "Your multiclass paragon is your first four feats. ";
@@ -16651,7 +16672,7 @@ function MandatoryFeatsForParagons()
     if ((paragon_wizardofthespiraltower) && (!already_knows_longsword)) {
 	document.form1.weaponproficiencylongsword_box.checked = true;
     }
-    if ((paragon_drowwanderer) && (!trained_dungeoneering) &
+    if ((paragon_drowwanderer) && (!trained_dungeoneering) &&
 	(!multi_trained_dungeoneering)) {
 	document.form1.skilltrainingdungeoneering_box.checked = true;
     }
@@ -16860,9 +16881,9 @@ function produceCharacterSheet()
 
 function raise_01()
 {
-    if ((!race_human) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_human) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes01();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16870,9 +16891,9 @@ function raise_01()
 
 function choose_breathtype()
 {
-    if ((!race_dragonborn) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_dragonborn) || (ClassesHaveBeenEstablished == false)) {
 	ClearBreathTypes();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16880,9 +16901,9 @@ function choose_breathtype()
 
 function choose_genasisoultype()
 {
-    if ((!race_genasi) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_genasi) || (ClassesHaveBeenEstablished == false)) {
 	ClearGenasiSoulTypes();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16890,9 +16911,9 @@ function choose_genasisoultype()
 
 function choose_breathstat()
 {
-    if ((!race_dragonborn) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_dragonborn) || (ClassesHaveBeenEstablished == false)) {
 	ClearBreathStats();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -16900,28 +16921,28 @@ function choose_breathstat()
 
 function choose_darkfirestat()
 {
-    if ((!race_drow) | (!FeatsAreLocked)) {
+    if ((!race_drow) || (!FeatsAreLocked)) {
 	ClearDarkfireStats();
     }
 }
 
 function choose_earthshockstat()
 {
-    if ((!genasi_earthsoul) | (!FeatsAreLocked)) {
+    if ((!genasi_earthsoul) || (!FeatsAreLocked)) {
 	ClearEarthshockStats();
     }
 }
 
 function choose_firepulsestat()
 {
-    if ((!genasi_firesoul) | (!FeatsAreLocked)) {
+    if ((!genasi_firesoul) || (!FeatsAreLocked)) {
 	ClearFirepulseStats();
     }
 }
 
 function choose_razorswarmstat()
 {
-    if ((!race_bladeling) | (!FeatsAreLocked)) {
+    if ((!race_bladeling) || (!FeatsAreLocked)) {
 	ClearRazorswarmStats();
     }
 }
@@ -16929,16 +16950,16 @@ function choose_razorswarmstat()
 function choose_eladrin_education()
 {
 
-    if ((!race_eladrin) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_eladrin) || (ClassesHaveBeenEstablished == false)) {
 	ClearEladrinEducation();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
 
-    if ((class_cleric) | (class_invoker) | (class_avenger) |
-	(multi_avenger_discipleofdivinewrath) |
-	(multi_invoker_acolyteofdivinesecrets) |
-	(multi_cleric_initiateofthefaith) | (class_paladin)) {
+    if ((class_cleric) || (class_invoker) || (class_avenger) ||
+	(multi_avenger_discipleofdivinewrath) ||
+	(multi_invoker_acolyteofdivinesecrets) ||
+	(multi_cleric_initiateofthefaith) || (class_paladin)) {
 	if (document.form1.eladrin_education[13].checked) {
 	    document.form1.eladrin_education[13].checked = false;
 	    alert
@@ -16946,7 +16967,7 @@ function choose_eladrin_education()
 	    ClearEladrinEducation();
 	}
     }
-    if ((class_rogue) | (multi_rogue_ruthlessefficiency)) {
+    if ((class_rogue) || (multi_rogue_ruthlessefficiency)) {
 	if (document.form1.eladrin_education[14].checked) {
 	    document.form1.eladrin_education[14].checked = false;
 	    alert
@@ -16954,7 +16975,7 @@ function choose_eladrin_education()
 	    ClearEladrinEducation();
 	}
     }
-    if ((class_rogue) | (multi_rogue_sneakofshadows)) {
+    if ((class_rogue) || (multi_rogue_sneakofshadows)) {
 	if (document.form1.eladrin_education[16].checked) {
 	    document.form1.eladrin_education[16].checked = false;
 	    alert
@@ -16962,18 +16983,19 @@ function choose_eladrin_education()
 	    ClearEladrinEducation();
 	}
     }
-    if ((class_wizard) | (class_swordmage) | (class_bard) |
+    if ((class_wizard) || (class_swordmage) || (class_bard) ||
 	(class_sorcerer)
-	| (multi_wizard_arcaneinitiate) | (multi_sorcerer_arcaneprodigy) |
-	(multi_swordmage_bladeinitiate) | (multi_bard_bardicritualist)) {
+	| (multi_wizard_arcaneinitiate) || (multi_sorcerer_arcaneprodigy)
+	|| (multi_swordmage_bladeinitiate)
+	|| (multi_bard_bardicritualist)) {
 	if (document.form1.eladrin_education[1].checked) {
 	    document.form1.eladrin_education[16].checked = false;
 	    alert("You already have training in arcana.  Choose another.");
 	    ClearEladrinEducation();
 	}
     }
-    if ((class_druid) | (class_shaman) | (class_warden) |
-	(multi_druid_initiateoftheoldfaith) | (multi_shaman_spirittalker))
+    if ((class_druid) || (class_shaman) || (class_warden) ||
+	(multi_druid_initiateoftheoldfaith) || (multi_shaman_spirittalker))
     {
 	if (document.form1.eladrin_education[11].checked) {
 	    document.form1.eladrin_education[16].checked = false;
@@ -16986,9 +17008,9 @@ function choose_eladrin_education()
 
 function choose_dilettante()
 {
-    if ((!race_halfelf) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_halfelf) || (ClassesHaveBeenEstablished == false)) {
 	ClearDilettanteChoices();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     if (class_cleric) {
@@ -17043,26 +17065,17 @@ function choose_dilettante()
     ArrowShow();
 }
 
-
-
-
-
-
-
-
 function choose_fighterstyle()
 {
-    if (((!class_fighter) && (!multi_fighter_studentofthesword)) |
+    if (((!class_fighter) && (!multi_fighter_studentofthesword)) ||
 	(ClassesHaveBeenEstablished == false)) {
 	ClearFighterStyles();
-    } else if ((multi_fighter_studentofthesword) &
-	       ((document.form1.fighterstyle[2].checked) | (document.form1.
-							    fighterstyle
-							    [3].
-							    checked))) {
+    } else if ((multi_fighter_studentofthesword) &&
+	       ((document.form1.fighterstyle[2].checked)
+		|| (document.form1.fighterstyle[3].checked))) {
 	alert("Please choose either One-Handed or Two-Handed.");
 	ClearFighterStyles();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17070,9 +17083,9 @@ function choose_fighterstyle()
 
 function choose_rangerstyle()
 {
-    if ((!class_ranger) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_ranger) || (ClassesHaveBeenEstablished == false)) {
 	ClearRangerStyles();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryRangerStyle();
@@ -17081,9 +17094,9 @@ function choose_rangerstyle()
 
 function choose_roguestyle()
 {
-    if ((!class_rogue) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_rogue) || (ClassesHaveBeenEstablished == false)) {
 	ClearRogueStyles();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17182,10 +17195,10 @@ function MandatoryGensaiExpression()
 
 function choose_warlockpact()
 {
-    if (((!class_warlock) && (!multi_warlock_pactinitiate)) |
+    if (((!class_warlock) && (!multi_warlock_pactinitiate)) ||
 	(ClassesHaveBeenEstablished == false)) {
 	ClearWarlockPacts();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryWarlockPact();
@@ -17194,9 +17207,9 @@ function choose_warlockpact()
 
 function choose_warlordpresence()
 {
-    if ((!class_warlord) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_warlord) || (ClassesHaveBeenEstablished == false)) {
 	ClearWarlordPresences();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17204,9 +17217,9 @@ function choose_warlordpresence()
 
 function choose_otherracesight()
 {
-    if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearOtherRaceSight();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17214,9 +17227,9 @@ function choose_otherracesight()
 
 function choose_otherracesize()
 {
-    if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearOtherRaceSize();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17224,9 +17237,9 @@ function choose_otherracesize()
 
 function choose_otherclassdefense()
 {
-    if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassDefense();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17234,9 +17247,9 @@ function choose_otherclassdefense()
 
 function choose_otherclasshitpoints()
 {
-    if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassHitPoints();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17244,9 +17257,9 @@ function choose_otherclasshitpoints()
 
 function choose_otherclasssurges()
 {
-    if ((!class_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearOtherClassSurges();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17254,9 +17267,9 @@ function choose_otherclasssurges()
 
 function choose_wizardimplement()
 {
-    if ((!class_wizard) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_wizard) || (ClassesHaveBeenEstablished == false)) {
 	ClearWizardImplements();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17264,9 +17277,9 @@ function choose_wizardimplement()
 
 function choose_swordmageaegis()
 {
-    if ((!class_swordmage) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_swordmage) || (ClassesHaveBeenEstablished == false)) {
 	ClearSwordmageAegis();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatorySwordmageAegis();
@@ -17275,9 +17288,9 @@ function choose_swordmageaegis()
 
 function choose_avengercensure()
 {
-    if ((!class_avenger) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_avenger) || (ClassesHaveBeenEstablished == false)) {
 	ClearAvengerCensure();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryAvengerCensure();
@@ -17286,9 +17299,9 @@ function choose_avengercensure()
 
 function choose_barbarianferal()
 {
-    if ((!class_barbarian) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_barbarian) || (ClassesHaveBeenEstablished == false)) {
 	ClearBarbarianFeral();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryBarbarianFeral();
@@ -17297,9 +17310,9 @@ function choose_barbarianferal()
 
 function choose_bardvirtue()
 {
-    if ((!class_bard) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_bard) || (ClassesHaveBeenEstablished == false)) {
 	ClearBardVirtue();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryBardVirtue();
@@ -17308,9 +17321,9 @@ function choose_bardvirtue()
 
 function choose_druidprimal()
 {
-    if ((!class_druid) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_druid) || (ClassesHaveBeenEstablished == false)) {
 	ClearDruidPrimal();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryDruidPrimal();
@@ -17319,9 +17332,9 @@ function choose_druidprimal()
 
 function choose_invokercovenant()
 {
-    if ((!class_invoker) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_invoker) || (ClassesHaveBeenEstablished == false)) {
 	ClearInvokerCovenant();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryInvokerCovenant();
@@ -17330,9 +17343,9 @@ function choose_invokercovenant()
 
 function choose_shamanspirit()
 {
-    if ((!class_shaman) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_shaman) || (ClassesHaveBeenEstablished == false)) {
 	ClearShamanSpirit();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryShamanSpirit();
@@ -17341,9 +17354,9 @@ function choose_shamanspirit()
 
 function choose_sorcerermagic()
 {
-    if ((!class_sorcerer) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_sorcerer) || (ClassesHaveBeenEstablished == false)) {
 	ClearSorcererMagic();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatorySorcererMagic();
@@ -17352,9 +17365,9 @@ function choose_sorcerermagic()
 
 function choose_wardenmight()
 {
-    if ((!class_warden) | (ClassesHaveBeenEstablished == false)) {
+    if ((!class_warden) || (ClassesHaveBeenEstablished == false)) {
 	ClearWardenMight();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     MandatoryWardenMight();
@@ -17428,9 +17441,9 @@ function MandatoryWardenMight()
 
 function raise_04()
 {
-    if ((total_levels < 4) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 4) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes04();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17438,9 +17451,9 @@ function raise_04()
 
 function raise_08()
 {
-    if ((total_levels < 8) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 8) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes08();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17448,9 +17461,9 @@ function raise_08()
 
 function raise_14()
 {
-    if ((total_levels < 14) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 14) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes14();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17458,9 +17471,9 @@ function raise_14()
 
 function raise_18()
 {
-    if ((total_levels < 18) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 18) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes18();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17468,9 +17481,9 @@ function raise_18()
 
 function raise_24()
 {
-    if ((total_levels < 24) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 24) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes24();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17478,9 +17491,9 @@ function raise_24()
 
 function raise_28()
 {
-    if ((total_levels < 28) | (ClassesHaveBeenEstablished == false)) {
+    if ((total_levels < 28) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes28();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17488,10 +17501,10 @@ function raise_28()
 
 function raise_21()
 {
-    if (((!epic_demigod) && (!epic_chosen)) |
+    if (((!epic_demigod) && (!epic_chosen)) ||
 	(ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxes21();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17499,10 +17512,10 @@ function raise_21()
 
 function raise_other_race_stat()
 {
-    if ((!race_other) | (ClassesHaveBeenEstablished == false)) {
+    if ((!race_other) || (ClassesHaveBeenEstablished == false)) {
 	ClearAbilityBoxesOtherRace();
 	ClearSkillBoxesOtherRace();
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
     ArrowShow();
@@ -17513,7 +17526,7 @@ function fr_background()
     if ((ClassesHaveBeenEstablished == false)) {
 	NotFromForgottenRealms();
 	return;
-    } else if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen)) {
+    } else if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     }
 
@@ -17785,11 +17798,6 @@ function ClearDilettanteChoices()
     document.form1.dilettantechoice[0].checked = true;
     document.form1.dilettantechoice[0].checked = false;
 }
-
-
-
-
-
 
 function ClearFighterStyles()
 {
@@ -18364,18 +18372,6 @@ function DilettanteChoiceMade()
     }
     return false;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function FighterStyleChosen()
 {
@@ -19039,7 +19035,7 @@ function FreezeFighterFeatsEtc()
 function DoAbilityIncreasesEtcEtc()
 {
 
-    if ((AbilityIncreasesAreLocked) | (FighterFeatsEtcFrozen == true)) {
+    if ((AbilityIncreasesAreLocked) || (FighterFeatsEtcFrozen)) {
 	RememberWhichAbilitiesYouRaisedEtcEtc();
     } else {
 
@@ -19560,21 +19556,6 @@ function DoAbilityIncreasesEtcEtc()
 	    document.form1.dilettantechoice[32].checked;
 	dilettante_other = document.form1.dilettantechoice[33].checked;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	fighter_onehand = document.form1.fighterstyle[0].checked;
 	fighter_twohand = document.form1.fighterstyle[1].checked;
 	if (multi_fighter_studentofthesword) {
@@ -19638,7 +19619,6 @@ function DoAbilityIncreasesEtcEtc()
 	otherrace_darkvision = document.form1.otherracesight[2].checked;
 	otherrace_small = document.form1.otherracesize[0].checked;
 	otherrace_medium = document.form1.otherracesize[1].checked;
-
 
 	if (otherrace_small) {
 	    small = true;
@@ -19976,21 +19956,6 @@ function RememberWhichAbilitiesYouRaisedEtcEtc()
     document.form1.dilettantechoice[32].checked = dilettante_thunderwave;
     document.form1.dilettantechoice[33].checked = dilettante_other;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     document.form1.fighterstyle[0].checked = fighter_onehand;
     document.form1.fighterstyle[1].checked = fighter_twohand;
     if (multi_fighter_studentofthesword) {
@@ -20299,7 +20264,8 @@ function lock_identity()
 		document.form1.other_race_name.value + ".";
 	}
 	CharacterTypeHasBeenEstablished = true;
-	if ((race_halfling) | (race_goblin) | (race_kobold) | (race_gnome)) {
+	if ((race_halfling) || (race_goblin) || (race_kobold)
+	    || (race_gnome)) {
 	    small = true;
 	} else {
 	    small = false;
@@ -20540,7 +20506,7 @@ function lock_identity()
 	}
 	if ((charisma > wisdom) && (charisma > intelligence) && (charisma >
 								 dexterity)
-	    & (charisma > constitution) && (charisma > strength)) {
+	    && (charisma > constitution) && (charisma > strength)) {
 	    x = 6;
 	}
 	top_ability_score = x;
@@ -20563,81 +20529,75 @@ function lock_identity()
 	    charisma = 11;
 	}
 
-
-
-
-
-
-
 	if ((x ==
-	     5) | ((wisdom >=
-		    14) && ((strength >= 12) | (charisma >= 12)))) {
+	     5) || ((wisdom >=
+		     14) && ((strength >= 12) || (charisma >= 12)))) {
 	    document.form1.second_comment_box.value += " Cleric ";
 	}
 	if ((x ==
-	     1) | ((strength >
-		    14) && ((dexterity > 12) | (constitution > 12)))) {
+	     1) || ((strength >
+		     14) && ((dexterity > 12) || (constitution > 12)))) {
 	    document.form1.second_comment_box.value += " Fighter ";
 	}
-	if (((x == 1) && (charisma >= 12)) | ((x == 6)
-					      && (strength >= 12))) {
+	if (((x == 1) && (charisma >= 12)) || ((x == 6)
+					       && (strength >= 12))) {
 	    document.form1.second_comment_box.value += " Paladin ";
 	}
-	if (((x == 1) && (dexterity >= 12)) | ((x == 2)
-					       && (strength >= 10))) {
+	if (((x == 1) && (dexterity >= 12)) || ((x == 2)
+						&& (strength >= 10))) {
 	    document.form1.second_comment_box.value += " Ranger ";
 	}
 	if ((x ==
-	     2) | ((dexterity >=
-		    14) && ((strength >= 12) | (charisma >= 12)))) {
+	     2) || ((dexterity >=
+		     14) && ((strength >= 12) || (charisma >= 12)))) {
 	    document.form1.second_comment_box.value += " Rogue ";
 	}
-	if ((x == 3) | (x ==
-			6) | ((constitution >
-			       12) && ((intelligence > 12) | (charisma >
-							      12)))) {
+	if ((x == 3) || (x ==
+			 6) || ((constitution >
+				 12) && ((intelligence > 12) || (charisma >
+								 12)))) {
 	    document.form1.second_comment_box.value += " Warlock ";
 	}
-	if ((strength >= 14) && ((intelligence >= 12) | (charisma >= 12))) {
+	if ((strength >= 14) && ((intelligence >= 12) || (charisma >= 12))) {
 	    document.form1.second_comment_box.value += " Warlord ";
 	}
-	if ((x == 4) | (intelligence >= 14)) {
+	if ((x == 4) || (intelligence >= 14)) {
 	    document.form1.second_comment_box.value += " Wizard";
 	}
-	if ((x == 5) && ((dexterity >= 14) | (intelligence >= 14))) {
+	if ((x == 5) && ((dexterity >= 14) || (intelligence >= 14))) {
 	    document.form1.second_comment_box.value += " Avenger ";
 	}
-	if (((x == 1) | (strength >= 14)) && ((constitution >=
-					       14) | (charisma >= 14))) {
+	if (((x == 1) || (strength >= 14)) && ((constitution >=
+						14) || (charisma >= 14))) {
 	    document.form1.second_comment_box.value += " Barbarian ";
 	}
-	if (((x == 6) | (charisma >= 14)) && ((constitution >=
-					       14) | (intelligence >=
-						      14))) {
+	if (((x == 6) || (charisma >= 14)) && ((constitution >=
+						14) || (intelligence >=
+							14))) {
 	    document.form1.second_comment_box.value += " Bard ";
 	}
-	if (((x == 5) | (wisdom >= 14)) && ((constitution >=
-					     14) | (dexterity >= 14))) {
+	if (((x == 5) || (wisdom >= 14)) && ((constitution >=
+					      14) || (dexterity >= 14))) {
 	    document.form1.second_comment_box.value += " Druid ";
 	}
-	if (((x == 5) | (wisdom >= 14)) && ((constitution >=
-					     14) | (intelligence >= 14))) {
+	if (((x == 5) || (wisdom >= 14)) && ((constitution >= 14)
+					     || (intelligence >= 14))) {
 	    document.form1.second_comment_box.value += " Invoker ";
 	}
-	if (((x == 5) | (wisdom >= 14)) && ((constitution >=
-					     14) | (intelligence >= 14))) {
+	if (((x == 5) || (wisdom >= 14)) && ((constitution >= 14)
+					     || (intelligence >= 14))) {
 	    document.form1.second_comment_box.value += " Shaman ";
 	}
-	if (((x == 6) | (charisma >= 14)) && ((dexterity >=
-					       14) | (strength >= 14))) {
+	if (((x == 6) || (charisma >= 14)) && ((dexterity >=
+						14) || (strength >= 14))) {
 	    document.form1.second_comment_box.value += " Sorcerer ";
 	}
-	if (((x == 1) | (strength >= 14)) && ((constitution >=
-					       14) | (wisdom >= 14))) {
+	if (((x == 1) || (strength >= 14)) && ((constitution >=
+						14) || (wisdom >= 14))) {
 	    document.form1.second_comment_box.value += " Warden ";
 	}
 
-	if ((x == 4) && ((strength >= 14) | (constitution >= 14))) {
+	if ((x == 4) && ((strength >= 14) || (constitution >= 14))) {
 	    document.form1.second_comment_box.value += " Swordmage ";
 	}
 	document.form1.second_comment_box.value +=
@@ -20651,7 +20611,7 @@ function lock_identity()
 	if ((strength >= 13) && (charisma >= 13)) {
 	    document.form1.second_comment_box.value += "Paladin ";
 	}
-	if ((strength >= 13) | (dexterity >= 13)) {
+	if ((strength >= 13) || (dexterity >= 13)) {
 	    document.form1.second_comment_box.value += "Ranger ";
 	}
 	if (dexterity >= 13) {
@@ -20702,22 +20662,22 @@ function lock_identity()
 function LanguageEntitlements()
 {
 
-
-    if ((race_human) | (race_halfelf) | (race_tiefling) | (race_halfling)) {
+    if ((race_human) || (race_halfelf) || (race_tiefling)
+	|| (race_halfling)) {
 	extra_language_entitlement = 1;
     } else {
 	extra_language_entitlement = 0;
     }
-    if ((race_dragonborn) | (frb_tymanther) | (race_kobold) |
-	(fam_dragonling) | (fam_whitespawnsnowstepper) |
-	(fam_redspawnspitfire) | (fam_greenspawnbanespike) |
-	(fam_grayspawnshortfang) | (fam_blackspawndarkling) |
+    if ((race_dragonborn) || (frb_tymanther) || (race_kobold) ||
+	(fam_dragonling) || (fam_whitespawnsnowstepper) ||
+	(fam_redspawnspitfire) || (fam_greenspawnbanespike) ||
+	(fam_grayspawnshortfang) || (fam_blackspawndarkling) ||
 	(fam_bluespawnnimblespark)) {
 	draconic_nativespeaker = true;
     } else {
 	draconic_nativespeaker = false;
     }
-    if ((race_dwarf) | (frb_eastrift)) {
+    if ((race_dwarf) || (frb_eastrift)) {
 	dwarven_nativespeaker = true;
     } else {
 	dwarven_nativespeaker = false;
@@ -20727,47 +20687,47 @@ function LanguageEntitlements()
     } else {
 	abyssal_nativespeaker = false;
     }
-    if ((race_elf) | (frb_mythdrannor) | (race_halfelf) | (race_eladrin) |
-	(race_drow) | (race_gnome) | (frb_aglarond) | (frb_moonshaeisles) |
-	(frb_elfharrow)) {
+    if ((race_elf) || (frb_mythdrannor) || (race_halfelf)
+	|| (race_eladrin) || (race_drow) || (race_gnome) || (frb_aglarond)
+	|| (frb_moonshaeisles) || (frb_elfharrow)) {
 	elven_nativespeaker = true;
     } else {
 	elven_nativespeaker = false;
     }
-    if ((race_bugbear) | (race_goblin) | (race_hobgoblin)) {
+    if ((race_bugbear) || (race_goblin) || (race_hobgoblin)) {
 	goblin_nativespeaker = true;
     } else {
 	goblin_nativespeaker = false;
     }
-    if ((race_githyanki) | (frb_highimaskar) | (race_githzerai) |
-	(fam_beholderkin) | (frb_eastrift)) {
+    if ((race_githyanki) || (frb_highimaskar) || (race_githzerai) ||
+	(fam_beholderkin) || (frb_eastrift)) {
 	deepspeech_nativespeaker = true;
     } else {
 	deepspeech_nativespeaker = false;
     }
-    if ((race_orc) | (race_halforc)) {
+    if ((race_orc) || (race_halforc)) {
 	giant_nativespeaker = true;
     } else {
 	giant_nativespeaker = false;
     }
     supernal_nativespeaker = false;
-    if ((race_genasi) | (fam_earthmephit) | (fam_firemephit) |
-	(fam_icemephit) | (frb_akanul) | (frb_calimshan)) {
+    if ((race_genasi) || (fam_earthmephit) || (fam_firemephit) ||
+	(fam_icemephit) || (frb_akanul) || (frb_calimshan)) {
 	primordial_nativespeaker = true;
     } else {
 	primordial_nativespeaker = false;
     }
-    if ((frb_aglarond) | (frb_amn) | (frb_luruar) | (frb_baldursgate) |
-	(frb_moonshaeisles) | (frb_waterdeep) | (frb_cormyr) |
+    if ((frb_aglarond) || (frb_amn) || (frb_luruar) || (frb_baldursgate) ||
+	(frb_moonshaeisles) || (frb_waterdeep) || (frb_cormyr) ||
 	(frb_wheloon)
-	| (frb_dalelands) | (frb_dragoncoast) | (frb_nelantherisles) |
+	| (frb_dalelands) || (frb_dragoncoast) || (frb_nelantherisles) ||
 	(frb_waterdeep)) {
 	chondathan_nativespeaker = true;
     } else {
 	chondathan_nativespeaker = false;
     }
 
-    if ((frb_greatdale) | (frb_impiltur) | (frb_narfell)) {
+    if ((frb_greatdale) || (frb_impiltur) || (frb_narfell)) {
 	damaran_nativespeaker = true;
     } else {
 	damaran_nativespeaker = false;
@@ -20784,7 +20744,7 @@ function LanguageEntitlements()
 	thayan_nativespeaker = false;
     }
 
-    if ((frb_chessenta) | (frb_durpar)) {
+    if ((frb_chessenta) || (frb_durpar)) {
 	untheric_nativespeaker = true;
     } else {
 	untheric_nativespeaker = false;
@@ -20946,100 +20906,43 @@ function HaveISixStats()
 {
     AbilitiesAreProperlyAssigned = false;
     if ((stat1 >= 3) && (stat2 >= 3) && (stat3 >= 3) && (stat4 >=
-							 3) && (stat5 >=
-								3)
-	&& (stat6 >=
-	    3) & ((document.form1.firststat[0].checked ==
-		   true) | (document.form1.firststat[1].checked ==
-			    true) | (document.form1.firststat[2].checked ==
-				     true) | (document.form1.firststat[3].
-					      checked ==
-					      true) | (document.
-						       form1.firststat[4].
-						       checked ==
-						       true) |
-		  (document.form1.firststat[5].checked ==
-		   true)) & ((document.form1.secondstat[0].checked ==
-			      true) | (document.form1.secondstat[1].
-				       checked ==
-				       true) | (document.form1.
-						secondstat[2].checked ==
-						true) | (document.form1.
-							 secondstat[3].
-							 checked ==
-							 true) | (document.
-								  form1.
-								  secondstat
-								  [4].
-								  checked
-								  ==
-								  true) |
-			     (document.form1.secondstat[5].checked ==
-			      true))
-	&& ((document.form1.thirdstat[0].checked == true) |
-	    (document.form1.thirdstat[1].checked ==
-	     true) | (document.form1.thirdstat[2].checked ==
-		      true) | (document.form1.thirdstat[3].checked ==
-			       true) | (document.form1.thirdstat[4].
-					checked ==
-					true) | (document.form1.
-						 thirdstat[5].checked ==
-						 true)) & ((document.form1.
-							    fourthstat[0].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    fourthstat[1].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    fourthstat[2].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    fourthstat[3].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    fourthstat[4].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    fourthstat[5].
-							    checked ==
-							    true))
-	&& ((document.form1.fifthstat[0].checked == true) |
-	    (document.form1.fifthstat[1].checked ==
-	     true) | (document.form1.fifthstat[2].checked ==
-		      true) | (document.form1.fifthstat[3].checked ==
-			       true) | (document.form1.fifthstat[4].
-					checked ==
-					true) | (document.form1.
-						 fifthstat[5].checked ==
-						 true)) & ((document.form1.
-							    sixthstat[0].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    sixthstat[1].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    sixthstat[2].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    sixthstat[3].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    sixthstat[4].
-							    checked ==
-							    true) |
-							   (document.form1.
-							    sixthstat[5].
-							    checked ==
-							    true))) {
+							 3) && (stat5 >= 3)
+	&& (stat6 >= 3) && ((document.form1.firststat[0].checked)
+			    || (document.form1.firststat[1].checked)
+			    || (document.form1.firststat[2].checked)
+			    || (document.form1.firststat[3].checked)
+			    || (document.form1.firststat[4].checked)
+			    || (document.form1.firststat[5].checked))
+	&& ((document.form1.secondstat[0].checked)
+	    || (document.form1.secondstat[1].checked)
+	    || (document.form1.secondstat[2].checked)
+	    || (document.form1.secondstat[3].checked)
+	    || (document.form1.secondstat[4].checked)
+	    || (document.form1.secondstat[5].checked))
+	&& ((document.form1.thirdstat[0].checked)
+	    || (document.form1.thirdstat[1].checked)
+	    || (document.form1.thirdstat[2].checked)
+	    || (document.form1.thirdstat[3].checked)
+	    || (document.form1.thirdstat[4].checked)
+	    || (document.form1.thirdstat[5].checked))
+	&& ((document.form1.fourthstat[0].checked)
+	    || (document.form1.fourthstat[1].checked)
+	    || (document.form1.fourthstat[2].checked)
+	    || (document.form1.fourthstat[3].checked)
+	    || (document.form1.fourthstat[4].checked)
+	    || (document.form1.fourthstat[5].checked))
+	&& ((document.form1.fifthstat[0].checked)
+	    || (document.form1.fifthstat[1].checked)
+	    || (document.form1.fifthstat[2].checked)
+	    || (document.form1.fifthstat[3].checked)
+	    || (document.form1.fifthstat[4].checked)
+	    || (document.form1.fifthstat[5].checked))
+	&& ((document.form1.sixthstat[0].checked)
+	    || (document.form1.sixthstat[1].checked)
+	    || (document.form1.sixthstat[2].checked)
+	    || (document.form1.sixthstat[3].checked)
+	    || (document.form1.sixthstat[4].checked)
+	    || (document.form1.sixthstat[5].checked))) {
 	AbilitiesAreProperlyAssigned = true;
     }
 
@@ -21053,8 +20956,8 @@ function HaveISixStats()
 
     if (AbilitiesAreProperlyAssigned == false) {
 	if ((document.form1.methods_list.selectedIndex == 3 + 2)
-	    | (document.form1.methods_list.selectedIndex == 6 + 2)
-	    | (document.form1.methods_list.selectedIndex == 1)) {
+	    || (document.form1.methods_list.selectedIndex == 6 + 2)
+	    || (document.form1.methods_list.selectedIndex == 1)) {
 	    TellAboutPointBuy();
 	} else {
 	    document.form1.first_comment_box.value =
@@ -21180,8 +21083,7 @@ function assign_stat(numbur)
     PointBuyIsEightsOrBetter();
     DisplayTrueStatistics();
     if ((stat1 >= 3) && (stat2 >= 3) && (stat3 >= 3) && (stat4 >=
-							 3) && (stat5 >=
-								3)
+							 3) && (stat5 >= 3)
 	&& (stat6 >= 3)) {
 	DiceHaveBeenRolled = true;
 	HaveISixStats();
@@ -21802,8 +21704,6 @@ function GenerateClassString()
 	class_string += " / Verdant Lord";
     };
 
-
-
     if (epic_archmage) {
 	class_string += " / Archmage";
     };
@@ -21953,7 +21853,7 @@ function lock_classes()
 	    } else if ((wisdom == constitution) && (wisdom > dexterity)) {
 		document.form1.third_comment_box.value +=
 		    "You probably want to use an orb or staff.\r";
-	    } else if ((constitution > wisdom) &
+	    } else if ((constitution > wisdom) &&
 		       (constitution > dexterity)) {
 		document.form1.third_comment_box.value +=
 		    "You probably want to choose Staff of Defense.\r";
@@ -22052,7 +21952,7 @@ function lock_classes()
 		    "You probably want to choose Wildblood.\r";
 	    }
 	}
-	if ((race_human) | (total_levels >= 4)) {
+	if ((race_human) || (total_levels >= 4)) {
 	    if (class_fighter) {
 		document.form1.third_comment_box.value +=
 		    "Consider increasing your strength.  ";
@@ -22314,7 +22214,7 @@ function lock_classes()
 	    already_knows_hide = true;
 	    already_knows_chainmail = true;
 	}
-	if ((class_fighter) | (class_other)) {
+	if ((class_fighter) || (class_other)) {
 	    AlreadyKnowsSimpleMeleeWeapons();
 	    AlreadyKnowsMilitaryMeleeWeapons();
 	    AlreadyKnowsSimpleRangedWeapons();
@@ -22326,7 +22226,7 @@ function lock_classes()
 	    already_knows_lightshield = true;
 	    already_knows_heavyshield = true;
 	}
-	if ((class_paladin) | (class_other)) {
+	if ((class_paladin) || (class_other)) {
 	    AlreadyKnowsSimpleMeleeWeapons();
 	    AlreadyKnowsMilitaryMeleeWeapons();
 	    AlreadyKnowsSimpleRangedWeapons();
@@ -22646,7 +22546,7 @@ function NoMultiMatch()
 	document.form1.choose_multi[15].checked = false;
 	multi_warlord_tacticalleader = false;
     }
-    if ((class_wizard) | (class_swordmage)) {
+    if ((class_wizard) || (class_swordmage)) {
 	document.form1.choose_multi[8].checked = false;
 	multi_wizard_initiate = false;
 	document.form1.choose_multi[9].checked = false;
@@ -23524,7 +23424,6 @@ function ShowHowWeChoseClasses()
     document.form1.choose_paragon[111].checked = paragon_stormsentinel;
     document.form1.choose_paragon[112].checked = paragon_verdantlord;
 
-
     document.form1.choose_epic_destiny[0].checked = epic_archmage;
     document.form1.choose_epic_destiny[1].checked = epic_deadlytrickster;
     document.form1.choose_epic_destiny[2].checked = epic_demigod;
@@ -24062,8 +23961,6 @@ function ClearParagonButtons()
     document.form1.choose_paragon[0].checked = false;
 }
 
-
-
 function assignepicdestiny(i)
 {
 
@@ -24122,9 +24019,9 @@ function assignepicdestiny(i)
 	epic_adamantinesoldier = true;
     }
     if (i == 8) {
-	if ((!class_ranger) | (paragon_battlefieldarcher) |
-	    (paragon_highforestscout) | (paragon_beaststalker) |
-	    (paragon_pathfinder) | (paragon_stormwarden) |
+	if ((!class_ranger) || (paragon_battlefieldarcher) ||
+	    (paragon_highforestscout) || (paragon_beaststalker) ||
+	    (paragon_pathfinder) || (paragon_stormwarden) ||
 	    (paragon_impilturandemonslayer)) {
 	    alert
 		("Only rangers qualified as beastmasters can take this epic destiny.");
@@ -24171,9 +24068,9 @@ function assignepicdestiny(i)
 	epic_legendarygeneral = true;
     }
     if (i == 13) {
-	if ((!AnyMartialClass()) |
-	    ((!multi_fighter()) && (!multi_rogue()) && (!multi_ranger()) &
-	     (!multi_warlord())) | (!paragon_multiclass)) {
+	if ((!AnyMartialClass()) ||
+	    ((!multi_fighter()) && (!multi_rogue()) && (!multi_ranger()) &&
+	     (!multi_warlord())) || (!paragon_multiclass)) {
 	    alert
 		("Martial Archetypes must be martial-classed characters, multiclassing in a second martial class, and taking paragon multiclass.")
 		ClearEpicDestinyButtons();
@@ -24606,8 +24503,6 @@ function NegateParagons()
     paragon_hornedchampion = false;
     paragon_stormsentinel = false;
     paragon_verdantlord = false;
-
-
 
 }
 
@@ -25170,8 +25065,6 @@ function ParagonPathAssigned()
     if (paragon_verdantlord) {
 	return true;
     }
-
-
 
     return false;
 }
@@ -26529,7 +26422,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.skin_color[14].checked) {
 	stringy = "Bronze";
     }
-    if ((race_dragonborn) | (race_kobold)) {
+    if ((race_dragonborn) || (race_kobold)) {
 	SWD +=
 	    "<tr> <td><font face=\"Arial\">Scales:</td> <td><font face=\"Arial\">"
 	    + stringy + "</td></tr>\r";
@@ -26658,7 +26551,7 @@ function WriteTextForCharacterSheet()
     SWD += "</td></tr>\r</table>\r";
     SWD += "<p>\r";
     SWD += "\r<p>Maximum Hit Points: " + total_hit_points;
-    if ((feat_toughness) | (ranger_twoblade)) {
+    if ((feat_toughness) || (ranger_twoblade)) {
 	SWD += " [includes toughness] ";
     }
     SWD += "<p>\r<ul>";
@@ -26805,7 +26698,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.club_box.checked) {
 	SWD += "Club: ";
 	if (fighter_onehand) {
-	    if ((already_knows_club) | (feat_weaponproficiencyclub)) {
+	    if ((already_knows_club) || (feat_weaponproficiencyclub)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -26817,7 +26710,7 @@ function WriteTextForCharacterSheet()
 		    "[not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_club) | (feat_weaponproficiencyclub)) {
+	    if ((already_knows_club) || (feat_weaponproficiencyclub)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + "[+2 proficiency]; ";
@@ -26873,7 +26766,7 @@ function WriteTextForCharacterSheet()
 		    " [+3 proficient, +1 rogue]; damage 1d4" +
 		    DexterityDamage() + "; <br>\r";
 	    } else {
-		if ((already_knows_dagger) |
+		if ((already_knows_dagger) ||
 		    (feat_weaponproficiencydagger)) {
 		    SWD +=
 			PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -26887,7 +26780,7 @@ function WriteTextForCharacterSheet()
 		    "damage 1[W]=1d4" + StrengthDamage() +
 		    " 1 lb (Light blade); usable off-hand; light throwable <br>";
 		wt += 1 * document.form1.dagger_list.selectedIndex;
-		if ((already_knows_dagger) |
+		if ((already_knows_dagger) ||
 		    (feat_weaponproficiencydagger)) {
 		    SWD +=
 			"&nbsp; &nbsp; &nbsp; &nbsp; Thrown: " +
@@ -26920,7 +26813,7 @@ function WriteTextForCharacterSheet()
 	SWD += stringy;
 	if (fighter_onehand) {
 
-	    if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)) {
+	    if ((already_knows_javelin) || (feat_weaponproficiencyjavelin)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -26933,7 +26826,7 @@ function WriteTextForCharacterSheet()
 	    }
 	} else {
 
-	    if ((already_knows_javelin) | (feat_weaponproficiencyjavelin)) {
+	    if ((already_knows_javelin) || (feat_weaponproficiencyjavelin)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -26961,7 +26854,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.mace_box.checked) {
 	SWD += "Mace" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_mace) | (feat_weaponproficiencymace)) {
+	    if ((already_knows_mace) || (feat_weaponproficiencymace)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -26973,7 +26866,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_mace) | (feat_weaponproficiencymace)) {
+	    if ((already_knows_mace) || (feat_weaponproficiencymace)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -26996,7 +26889,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.sickle_box.checked) {
 	SWD += "Sickle: ";
 	if (fighter_onehand) {
-	    if ((already_knows_sickle) | (feat_weaponproficiencysickle)) {
+	    if ((already_knows_sickle) || (feat_weaponproficiencysickle)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27008,7 +26901,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_sickle) | (feat_weaponproficiencysickle)) {
+	    if ((already_knows_sickle) || (feat_weaponproficiencysickle)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27031,7 +26924,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.spear_box.checked) {
 	SWD += "Spear" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_spear) | (feat_weaponproficiencyspear)) {
+	    if ((already_knows_spear) || (feat_weaponproficiencyspear)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27043,7 +26936,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_spear) | (feat_weaponproficiencyspear)) {
+	    if ((already_knows_spear) || (feat_weaponproficiencyspear)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27069,7 +26962,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.spikedgauntlet_box.checked) {
 	SWD += "Spiked Gauntlet: ";
 	if (fighter_onehand) {
-	    if ((already_knows_othersimplemeleeweapons) |
+	    if ((already_knows_othersimplemeleeweapons) ||
 		(feat_weaponproficiencyothersimplemeleeweapons)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27082,7 +26975,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_othersimplemeleeweapons) |
+	    if ((already_knows_othersimplemeleeweapons) ||
 		(feat_weaponproficiencyothersimplemeleeweapons)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27106,7 +26999,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.greatclub_box.checked) {
 	SWD += "Greatclub: ";
 	if (fighter_twohand) {
-	    if ((already_knows_greatclub) |
+	    if ((already_knows_greatclub) ||
 		(feat_weaponproficiencygreatclub)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27119,7 +27012,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_greatclub) |
+	    if ((already_knows_greatclub) ||
 		(feat_weaponproficiencygreatclub)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27143,7 +27036,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.morningstar_box.checked) {
 	SWD += "Morningstar: ";
 	if (fighter_twohand) {
-	    if ((already_knows_morningstar) |
+	    if ((already_knows_morningstar) ||
 		(feat_weaponproficiencymorningstar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27156,7 +27049,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_morningstar) |
+	    if ((already_knows_morningstar) ||
 		(feat_weaponproficiencymorningstar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27181,7 +27074,7 @@ function WriteTextForCharacterSheet()
     if ((document.form1.quarterstaff_box.checked) && (!small)) {
 	SWD += "Quarterstaff: ";
 	if (fighter_twohand) {
-	    if ((already_knows_quarterstaff) |
+	    if ((already_knows_quarterstaff) ||
 		(feat_weaponproficiencyquarterstaff)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27194,7 +27087,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_quarterstaff) |
+	    if ((already_knows_quarterstaff) ||
 		(feat_weaponproficiencyquarterstaff)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27218,7 +27111,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.scythe_box.checked) {
 	SWD += "Scythe: ";
 	if (fighter_twohand) {
-	    if ((already_knows_scythe) | (feat_weaponproficiencyscythe)) {
+	    if ((already_knows_scythe) || (feat_weaponproficiencyscythe)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27230,7 +27123,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_scythe) | (feat_weaponproficiencyscythe)) {
+	    if ((already_knows_scythe) || (feat_weaponproficiencyscythe)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27253,8 +27146,8 @@ function WriteTextForCharacterSheet()
     if (document.form1.battleaxe_box.checked) {
 	SWD += "Battleaxe" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_battleaxe) |
-		(feat_weaponproficiencybattleaxe) |
+	    if ((already_knows_battleaxe) ||
+		(feat_weaponproficiencybattleaxe) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27267,8 +27160,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_battleaxe) |
-		(feat_weaponproficiencybattleaxe) |
+	    if ((already_knows_battleaxe) ||
+		(feat_weaponproficiencybattleaxe) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27296,7 +27189,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.flail_box.checked) {
 	SWD += "Flail" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_flail) | (feat_weaponproficiencyflail)) {
+	    if ((already_knows_flail) || (feat_weaponproficiencyflail)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27308,7 +27201,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_flail) | (feat_weaponproficiencyflail)) {
+	    if ((already_knows_flail) || (feat_weaponproficiencyflail)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27337,7 +27230,8 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += stringy;
 	if (fighter_onehand) {
-	    if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe) |
+	    if ((already_knows_handaxe)
+		|| (feat_weaponproficiencyhandaxe) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27350,7 +27244,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_handaxe) | (feat_weaponproficiencyhandaxe) |
+	    if ((already_knows_handaxe)
+		|| (feat_weaponproficiencyhandaxe) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27380,7 +27275,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.longsword_box.checked) {
 	SWD += "Longsword" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_longsword) |
+	    if ((already_knows_longsword) ||
 		(feat_weaponproficiencylongsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -27393,7 +27288,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_longsword) |
+	    if ((already_knows_longsword) ||
 		(feat_weaponproficiencylongsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -27420,7 +27315,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.scimitar_box.checked) {
 	SWD += "Scimitar: ";
 	if (fighter_onehand) {
-	    if ((already_knows_scimitar) |
+	    if ((already_knows_scimitar) ||
 		(feat_weaponproficiencyscimitar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27433,7 +27328,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_scimitar) |
+	    if ((already_knows_scimitar) ||
 		(feat_weaponproficiencyscimitar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27457,7 +27352,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.shortsword_box.checked) {
 	SWD += "Short sword: ";
 	if (fighter_onehand) {
-	    if ((already_knows_shortsword) |
+	    if ((already_knows_shortsword) ||
 		(feat_weaponproficiencyshortsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -27470,7 +27365,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_shortsword) |
+	    if ((already_knows_shortsword) ||
 		(feat_weaponproficiencyshortsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -27500,8 +27395,8 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += stringy;
 	if (fighter_onehand) {
-	    if ((already_knows_throwinghammer) |
-		(feat_weaponproficiencythrowinghammer) |
+	    if ((already_knows_throwinghammer) ||
+		(feat_weaponproficiencythrowinghammer) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27514,8 +27409,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_throwinghammer) |
-		(feat_weaponproficiencythrowinghammer) |
+	    if ((already_knows_throwinghammer) ||
+		(feat_weaponproficiencythrowinghammer) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27545,8 +27440,8 @@ function WriteTextForCharacterSheet()
     if (document.form1.warhammer_box.checked) {
 	SWD += "Warhammer" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_warhammer) |
-		(feat_weaponproficiencywarhammer) |
+	    if ((already_knows_warhammer) ||
+		(feat_weaponproficiencywarhammer) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27559,8 +27454,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_warhammer) |
-		(feat_weaponproficiencywarhammer) |
+	    if ((already_knows_warhammer) ||
+		(feat_weaponproficiencywarhammer) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27588,7 +27483,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.warpick_box.checked) {
 	SWD += "War pick" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_warpick) | (feat_weaponproficiencywarpick)) {
+	    if ((already_knows_warpick) || (feat_weaponproficiencywarpick)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27600,7 +27495,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_warpick) | (feat_weaponproficiencywarpick)) {
+	    if ((already_knows_warpick) || (feat_weaponproficiencywarpick)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27624,7 +27519,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.broadsword_box.checked) {
 	SWD += "Broadsword [AV]" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_othermilitarymeleeweapons) |
+	    if ((already_knows_othermilitarymeleeweapons) ||
 		(class_swordmage)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27637,7 +27532,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_othermilitarymeleeweapons) |
+	    if ((already_knows_othermilitarymeleeweapons) ||
 		(class_swordmage)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27661,8 +27556,8 @@ function WriteTextForCharacterSheet()
     if (document.form1.khopesh_box.checked) {
 	SWD += "Khopesh [AV]" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_othermilitarymeleeweapons) |
-		(class_swordmage) | (feat_dwarvenweapontraining)) {
+	    if ((already_knows_othermilitarymeleeweapons) ||
+		(class_swordmage) || (feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27674,8 +27569,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_othermilitarymeleeweapons) |
-		(class_swordmage) | (feat_dwarvenweapontraining)) {
+	    if ((already_knows_othermilitarymeleeweapons) ||
+		(class_swordmage) || (feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27813,7 +27708,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.falchion_box.checked) {
 	SWD += "Falchion: ";
 	if (fighter_twohand) {
-	    if ((already_knows_falchion) |
+	    if ((already_knows_falchion) ||
 		(feat_weaponproficiencyfalchion)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -27826,7 +27721,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_falchion) |
+	    if ((already_knows_falchion) ||
 		(feat_weaponproficiencyfalchion)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -27850,7 +27745,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.glaive_box.checked) {
 	SWD += "Glaive: ";
 	if (fighter_twohand) {
-	    if ((already_knows_glaive) | (feat_weaponproficiencyglaive)) {
+	    if ((already_knows_glaive) || (feat_weaponproficiencyglaive)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -27862,7 +27757,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_glaive) | (feat_weaponproficiencyglaive)) {
+	    if ((already_knows_glaive) || (feat_weaponproficiencyglaive)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -27889,7 +27784,8 @@ function WriteTextForCharacterSheet()
     if (document.form1.greataxe_box.checked) {
 	SWD += "Greataxe: ";
 	if (fighter_twohand) {
-	    if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)
+	    if ((already_knows_greataxe)
+		|| (feat_weaponproficiencygreataxe)
 		| (feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27902,7 +27798,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_greataxe) | (feat_weaponproficiencygreataxe)
+	    if ((already_knows_greataxe)
+		|| (feat_weaponproficiencygreataxe)
 		| (feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -27930,7 +27827,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.greatsword_box.checked) {
 	SWD += "Greatsword: ";
 	if (fighter_twohand) {
-	    if ((already_knows_greatsword) |
+	    if ((already_knows_greatsword) ||
 		(feat_weaponproficiencygreatsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -27943,7 +27840,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_greatsword) |
+	    if ((already_knows_greatsword) ||
 		(feat_weaponproficiencygreatsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -27967,7 +27864,8 @@ function WriteTextForCharacterSheet()
     if (document.form1.halberd_box.checked) {
 	SWD += "Halberd: ";
 	if (fighter_twohand) {
-	    if ((already_knows_halberd) | (feat_weaponproficiencyhalberd) |
+	    if ((already_knows_halberd)
+		|| (feat_weaponproficiencyhalberd) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -27980,7 +27878,8 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_halberd) | (feat_weaponproficiencyhalberd) |
+	    if ((already_knows_halberd)
+		|| (feat_weaponproficiencyhalberd) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28012,7 +27911,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.heavyflail_box.checked) {
 	SWD += "Heavy flail: ";
 	if (fighter_twohand) {
-	    if ((already_knows_heavyflail) |
+	    if ((already_knows_heavyflail) ||
 		(feat_weaponproficiencyheavyflail)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28025,7 +27924,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_heavyflail) |
+	    if ((already_knows_heavyflail) ||
 		(feat_weaponproficiencyheavyflail)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28049,7 +27948,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.longspear_box.checked) {
 	SWD += "Longspear: ";
 	if (fighter_twohand) {
-	    if ((already_knows_longspear) |
+	    if ((already_knows_longspear) ||
 		(feat_weaponproficiencylongspear)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28062,7 +27961,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_longspear) |
+	    if ((already_knows_longspear) ||
 		(feat_weaponproficiencylongspear)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28093,7 +27992,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.maul_box.checked) {
 	SWD += "Maul: ";
 	if (fighter_twohand) {
-	    if ((already_knows_maul) | (feat_weaponproficiencymaul)) {
+	    if ((already_knows_maul) || (feat_weaponproficiencymaul)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -28105,7 +28004,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_maul) | (feat_weaponproficiencymaul)) {
+	    if ((already_knows_maul) || (feat_weaponproficiencymaul)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
 		    StrengthNote() + " [+2 proficiency]; ";
@@ -28167,7 +28066,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.bastardsword_box.checked) {
 	SWD += "Bastard sword" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((already_knows_bastardsword) |
+	    if ((already_knows_bastardsword) ||
 		(feat_weaponproficiencybastardsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -28180,7 +28079,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_bastardsword) |
+	    if ((already_knows_bastardsword) ||
 		(feat_weaponproficiencybastardsword)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -28204,7 +28103,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.katar_box.checked) {
 	SWD += "Katar: ";
 	if (fighter_onehand) {
-	    if ((already_knows_katar) | (feat_weaponproficiencykatar)) {
+	    if ((already_knows_katar) || (feat_weaponproficiencykatar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -28216,7 +28115,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_katar) | (feat_weaponproficiencykatar)) {
+	    if ((already_knows_katar) || (feat_weaponproficiencykatar)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
 		    StrengthNote() + " [+3 proficiency]; ";
@@ -28239,7 +28138,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.rapier_box.checked) {
 	SWD += "Rapier: ";
 	if (fighter_onehand) {
-	    if ((already_knows_rapier) | (feat_weaponproficiencyrapier)) {
+	    if ((already_knows_rapier) || (feat_weaponproficiencyrapier)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
 		    StrengthNote() +
@@ -28251,7 +28150,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_rapier) | (feat_weaponproficiencyrapier)) {
+	    if ((already_knows_rapier) || (feat_weaponproficiencyrapier)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
 		    StrengthNote() + " [+3 proficiency]; ";
@@ -28274,7 +28173,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.craghammer_box.checked) {
 	SWD += "Craghammer [AV]" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28287,7 +28186,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28513,7 +28412,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.waraxe_box.checked) {
 	SWD += "Waraxe [AV]" + sup_v() + ": ";
 	if (fighter_onehand) {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28526,7 +28425,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28554,7 +28453,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.spikedchain_box.checked) {
 	SWD += "Spiked chain: ";
 	if (fighter_twohand) {
-	    if ((already_knows_spikedchain) |
+	    if ((already_knows_spikedchain) ||
 		(feat_weaponproficiencyspikedchain)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3 + 1) + " vs AC " +
@@ -28567,7 +28466,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_spikedchain) |
+	    if ((already_knows_spikedchain) ||
 		(feat_weaponproficiencyspikedchain)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 3) + " vs AC " +
@@ -28592,7 +28491,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.executionaxe_box.checked) {
 	SWD += "Execution Axe [AV]: ";
 	if (fighter_twohand) {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28605,7 +28504,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28707,7 +28606,7 @@ function WriteTextForCharacterSheet()
     if (document.form1.mordenkrad_box.checked) {
 	SWD += "Mordenkrad [AV]: ";
 	if (fighter_twohand) {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2 + 1) + " vs AC " +
@@ -28720,7 +28619,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	    if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 		(feat_dwarvenweapontraining)) {
 		SWD +=
 		    PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28747,7 +28646,7 @@ function WriteTextForCharacterSheet()
     }
     if (document.form1.doubleaxe_box.checked) {
 	SWD += "Double Axe [AV]: ";
-	if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 	    (feat_dwarvenweapontraining)) {
 	    SWD +=
 		PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28819,7 +28718,7 @@ function WriteTextForCharacterSheet()
     }
     if (document.form1.urgrosh_box.checked) {
 	SWD += "Urgrosh [AV]: ";
-	if ((feat_weaponproficiencyothersuperiormeleeweapons) |
+	if ((feat_weaponproficiencyothersuperiormeleeweapons) ||
 	    (feat_dwarvenweapontraining)) {
 	    SWD +=
 		PlusOrMinus(strength_attack_base + 2) + " vs AC " +
@@ -28854,7 +28753,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Hand crossbow: ";
 	if (fighter_onehand) {
-	    if ((already_knows_handcrossbow) |
+	    if ((already_knows_handcrossbow) ||
 		(feat_weaponproficiencyhandcrossbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
@@ -28867,7 +28766,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_handcrossbow) |
+	    if ((already_knows_handcrossbow) ||
 		(feat_weaponproficiencyhandcrossbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
@@ -28894,7 +28793,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Sling: ";
 	if (fighter_onehand) {
-	    if ((already_knows_sling) | (feat_weaponproficiencysling)) {
+	    if ((already_knows_sling) || (feat_weaponproficiencysling)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
 		    " vs AC " + DexterityNote() +
@@ -28906,7 +28805,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 one-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_sling) | (feat_weaponproficiencysling)) {
+	    if ((already_knows_sling) || (feat_weaponproficiencysling)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
 		    DexterityNote() + " [+2 proficiency]; ";
@@ -28932,7 +28831,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Crossbow: ";
 	if (fighter_twohand) {
-	    if ((already_knows_crossbow) |
+	    if ((already_knows_crossbow) ||
 		(feat_weaponproficiencycrossbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
@@ -28945,7 +28844,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_crossbow) |
+	    if ((already_knows_crossbow) ||
 		(feat_weaponproficiencycrossbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
@@ -28972,7 +28871,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Repeating Crossbow [with magazine]: ";
 	if (fighter_twohand) {
-	    if ((already_knows_crossbow) |
+	    if ((already_knows_crossbow) ||
 		(feat_weaponproficiencyothersimplerangedweapons)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
@@ -28985,7 +28884,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_crossbow) |
+	    if ((already_knows_crossbow) ||
 		(feat_weaponproficiencycrossbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
@@ -29012,7 +28911,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Longbow: ";
 	if (fighter_twohand) {
-	    if ((already_knows_longbow) | (feat_weaponproficiencylongbow)) {
+	    if ((already_knows_longbow) || (feat_weaponproficiencylongbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
 		    " vs AC " + DexterityNote() +
@@ -29024,7 +28923,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_longbow) | (feat_weaponproficiencylongbow)) {
+	    if ((already_knows_longbow) || (feat_weaponproficiencylongbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
 		    DexterityNote() + " [+2 proficiency]; ";
@@ -29050,7 +28949,7 @@ function WriteTextForCharacterSheet()
 	}
 	SWD += "Shortbow: ";
 	if (fighter_twohand) {
-	    if ((already_knows_shortbow) |
+	    if ((already_knows_shortbow) ||
 		(feat_weaponproficiencyshortbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2 + 1) +
@@ -29063,7 +28962,7 @@ function WriteTextForCharacterSheet()
 		    " [not proficient][+1 two-hand talent]; ";
 	    }
 	} else {
-	    if ((already_knows_shortbow) |
+	    if ((already_knows_shortbow) ||
 		(feat_weaponproficiencyshortbow)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 2) + " vs AC " +
@@ -29090,7 +28989,7 @@ function WriteTextForCharacterSheet()
 	SWD += stringy;
 	if (fighter_onehand) {
 
-	    if ((already_knows_shuriken) |
+	    if ((already_knows_shuriken) ||
 		(feat_weaponproficiencyshuriken)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 3 + 1) +
@@ -29117,7 +29016,7 @@ function WriteTextForCharacterSheet()
 	    wt += 1 * document.form1.shuriken_list.selectedIndex;
 	} else {
 
-	    if ((already_knows_shuriken) |
+	    if ((already_knows_shuriken) ||
 		(feat_weaponproficiencyshuriken)) {
 		SWD +=
 		    PlusOrMinus(dexterity_attack_base + 3) + " vs AC " +
@@ -29521,61 +29420,61 @@ function WriteTextForCharacterSheet()
     }
 
     x = wisdom_attack_base;
-    if ((document.form1.lanceoffaith_box.
-	 checked) | (dilettante_lanceoffaith)) {
+    if ((document.form1.lanceoffaith_box.checked)
+	|| (dilettante_lanceoffaith)) {
 	SWD +=
 	    "Lance of Faith " + PlusOrMinus(x) + sup_i() +
 	    " [base wisdom attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.priestsshield_box.
-	 checked) | (dilettante_priestsshield)) {
+    if ((document.form1.priestsshield_box.checked)
+	|| (dilettante_priestsshield)) {
 	SWD +=
 	    "Priest's Shield " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC ";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.righteousbrand_box.
-	 checked) | (dilettante_righteousbrand)) {
+    if ((document.form1.righteousbrand_box.checked)
+	|| (dilettante_righteousbrand)) {
 	SWD +=
 	    "Righteous Brand " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = wisdom_attack_base;
-    if ((document.form1.sacredflame_box.
-	 checked) | (dilettante_sacredflame)) {
+    if ((document.form1.sacredflame_box.checked)
+	|| (dilettante_sacredflame)) {
 	SWD +=
 	    "Sacred Flame " + PlusOrMinus(x) + sup_i() +
 	    " [base wisdom attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.cleave_box.checked) | (dilettante_cleave)) {
+    if ((document.form1.cleave_box.checked) || (dilettante_cleave)) {
 	SWD +=
 	    "Cleave " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.reapingstrike_box.
-	 checked) | (dilettante_reapingstrike)) {
+    if ((document.form1.reapingstrike_box.checked)
+	|| (dilettante_reapingstrike)) {
 	SWD +=
 	    "Reaping Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base + 2;
-    if ((document.form1.surestrike_box.checked) | (dilettante_surestrike)) {
+    if ((document.form1.surestrike_box.checked) || (dilettante_surestrike)) {
 	SWD +=
 	    "Sure Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack+2] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.tideofiron_box.checked) | (dilettante_tideofiron)) {
+    if ((document.form1.tideofiron_box.checked) || (dilettante_tideofiron)) {
 	SWD +=
 	    "Tide of Iron " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
@@ -29610,76 +29509,76 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if ((document.form1.bolsteringstrike_box.
-	 checked) | (dilettante_bolsteringstrike)) {
+    if ((document.form1.bolsteringstrike_box.checked)
+	|| (dilettante_bolsteringstrike)) {
 	SWD +=
 	    "Bolstering Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base charisma attack] vs AC";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if ((document.form1.enfeeblingstrike_box.
-	 checked) | (dilettante_enfeeblingstrike)) {
+    if ((document.form1.enfeeblingstrike_box.checked)
+	|| (dilettante_enfeeblingstrike)) {
 	SWD +=
 	    "Enfeebling Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base charisma attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.holystrike_box.checked) | (dilettante_holystrike)) {
+    if ((document.form1.holystrike_box.checked) || (dilettante_holystrike)) {
 	SWD +=
 	    "Holy Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.valiantstrike_box.
-	 checked) | (dilettante_valiantstrike)) {
+    if ((document.form1.valiantstrike_box.checked)
+	|| (dilettante_valiantstrike)) {
 	SWD +=
 	    "Valiant Strike + " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack; add # of adjacent foes] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.carefulattack_box.
-	 checked) | (dilettante_carefulattack)) {
+    if ((document.form1.carefulattack_box.checked)
+	|| (dilettante_carefulattack)) {
 	SWD +=
 	    "Careful Attack " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.carefulattack_box.
-	 checked) | (dilettante_carefulattack)) {
+    if ((document.form1.carefulattack_box.checked)
+	|| (dilettante_carefulattack)) {
 	SWD +=
 	    "Careful Attack " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.hitandrun_box.checked) | (dilettante_hitandrun)) {
+    if ((document.form1.hitandrun_box.checked) || (dilettante_hitandrun)) {
 	SWD +=
 	    "Hit and Run " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.nimblestrike_box.
-	 checked) | (dilettante_nimblestrike)) {
+    if ((document.form1.nimblestrike_box.checked)
+	|| (dilettante_nimblestrike)) {
 	SWD +=
 	    "Nimble Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.twinstrike_box.checked) | (dilettante_twinstrike)) {
+    if ((document.form1.twinstrike_box.checked) || (dilettante_twinstrike)) {
 	SWD +=
 	    "Twin Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.twinstrike_box.checked) | (dilettante_twinstrike)) {
+    if ((document.form1.twinstrike_box.checked) || (dilettante_twinstrike)) {
 	SWD +=
 	    "Twin Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
@@ -29687,31 +29586,31 @@ function WriteTextForCharacterSheet()
     }
 
     x = dexterity_attack_base;
-    if ((document.form1.deftstrike_box.checked) | (dilettante_deftstrike)) {
+    if ((document.form1.deftstrike_box.checked) || (dilettante_deftstrike)) {
 	SWD +=
 	    "Deft Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.piercingstrike_box.
-	 checked) | (dilettante_piercingstrike)) {
+    if ((document.form1.piercingstrike_box.checked)
+	|| (dilettante_piercingstrike)) {
 	SWD +=
 	    "Piercing Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.ripostestrike_box.
-	 checked) | (dilettante_ripostestrike)) {
+    if ((document.form1.ripostestrike_box.checked)
+	|| (dilettante_ripostestrike)) {
 	SWD +=
 	    "Riposte Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
 	SWD += "<br>\r";
     }
     x = dexterity_attack_base;
-    if ((document.form1.slyflourish_box.
-	 checked) | (dilettante_slyflourish)) {
+    if ((document.form1.slyflourish_box.checked)
+	|| (dilettante_slyflourish)) {
 	SWD +=
 	    "Sly Flourish " + PlusOrMinus(x) + sup_w() +
 	    " [base dexterity attack] vs AC";
@@ -29725,8 +29624,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if ((document.form1.direradiance_box.
-	 checked) | (dilettante_direradiance)) {
+    if ((document.form1.direradiance_box.checked)
+	|| (dilettante_direradiance)) {
 	SWD +=
 	    "Dire Radiance " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs fortitude";
@@ -29736,15 +29635,15 @@ function WriteTextForCharacterSheet()
     if (constitution_attack_base > x) {
 	x = constitution_attack_base;
     }
-    if ((document.form1.eldritchblast_box.
-	 checked) | (dilettante_eldritchblast)) {
+    if ((document.form1.eldritchblast_box.checked)
+	|| (dilettante_eldritchblast)) {
 	SWD +=
 	    "Eldritch Blast " + PlusOrMinus(x) + sup_i() +
 	    " (constitution / charisma) vs reflex";
 	SWD += "<br>\r";
     }
     x = charisma_attack_base;
-    if ((document.form1.eyebite_box.checked) | (dilettante_eyebite)) {
+    if ((document.form1.eyebite_box.checked) || (dilettante_eyebite)) {
 	SWD +=
 	    "Eyebite " + PlusOrMinus(x) + sup_i() +
 	    " [base charisma attack] vs will";
@@ -29758,8 +29657,8 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if ((document.form1.hellishrebuke_box.
-	 checked) | (dilettante_hellishrebuke)) {
+    if ((document.form1.hellishrebuke_box.checked)
+	|| (dilettante_hellishrebuke)) {
 	SWD +=
 	    "Hellish Rebuke " + PlusOrMinus(x) + sup_i() +
 	    " [base constitution attack] vs reflex";
@@ -29774,31 +29673,31 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
 
-    if ((document.form1.commandersstrike_box.
-	 checked) | (dilettante_commandersstrike)) {
+    if ((document.form1.commandersstrike_box.checked)
+	|| (dilettante_commandersstrike)) {
 	SWD +=
 	    "Commander's Strike (ally adds your intelligence bonus to damage)";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.furioussmash_box.
-	 checked) | (dilettante_furioussmash)) {
+    if ((document.form1.furioussmash_box.checked)
+	|| (dilettante_furioussmash)) {
 	SWD +=
 	    "Furious Smash " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.vipersstrike_box.
-	 checked) | (dilettante_vipersstrike)) {
+    if ((document.form1.vipersstrike_box.checked)
+	|| (dilettante_vipersstrike)) {
 	SWD +=
 	    "Viper's Strike " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
 	SWD += "<br>\r";
     }
     x = strength_attack_base;
-    if ((document.form1.wolfpacktactics_box.
-	 checked) | (dilettante_wolfpacktactics)) {
+    if ((document.form1.wolfpacktactics_box.checked)
+	|| (dilettante_wolfpacktactics)) {
 	SWD +=
 	    "Wolfpack Tactics " + PlusOrMinus(x) + sup_w() +
 	    " [base strength attack] vs AC";
@@ -29819,68 +29718,67 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.cloudofdaggers_box.
-	 checked) | (dilettante_cloudofdaggers) | (arcane_initiate_choice()
-						   == 1)) {
+    if ((document.form1.cloudofdaggers_box.checked)
+	|| (dilettante_cloudofdaggers) || (arcane_initiate_choice()
+					   == 1)) {
 	SWD +=
 	    "Cloud of Daggers " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.magicmissile_box.
-	 checked) | (dilettante_magicmissile) | (arcane_initiate_choice()
-						 == 2)) {
+    if ((document.form1.magicmissile_box.checked)
+	|| (dilettante_magicmissile) || (arcane_initiate_choice()
+					 == 2)) {
 	SWD +=
 	    "Magic Missile " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.rayoffrost_box.checked) | (dilettante_rayoffrost) |
-	(arcane_initiate_choice() == 3)) {
+    if ((document.form1.rayoffrost_box.checked)
+	|| (dilettante_rayoffrost) || (arcane_initiate_choice() == 3)) {
 	SWD +=
 	    "Ray of Frost " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.scorchingburst_box.
-	 checked) | (dilettante_scorchingburst) | (arcane_initiate_choice()
-						   == 4)) {
+    if ((document.form1.scorchingburst_box.checked)
+	|| (dilettante_scorchingburst) || (arcane_initiate_choice()
+					   == 4)) {
 	SWD +=
 	    "Scorching Burst " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs reflex";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.thunderwave_box.
-	 checked) | (dilettante_thunderwave) | (arcane_initiate_choice() ==
-						5)) {
+    if ((document.form1.thunderwave_box.checked)
+	|| (dilettante_thunderwave) || (arcane_initiate_choice() == 5)) {
 	SWD +=
 	    "Thunderwave " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs fortitude";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.illusoryambush_box.
-	 checked) | (arcane_initiate_choice() == 6)) {
+    if ((document.form1.illusoryambush_box.checked)
+	|| (arcane_initiate_choice() == 6)) {
 	SWD +=
 	    "Illusory Ambush [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs will";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.phantombolt_box.
-	 checked) | (arcane_initiate_choice() == 7)) {
+    if ((document.form1.phantombolt_box.checked)
+	|| (arcane_initiate_choice() == 7)) {
 	SWD +=
 	    "Phantom Bolt [AP] " + PlusOrMinus(x) + sup_i() +
 	    " [base intelligence attack] vs will";
 	SWD += "<br>\r";
     }
     x = intelligence_attack_base;
-    if ((document.form1.stormpillar_box.
-	 checked) | (arcane_initiate_choice() == 8)) {
+    if ((document.form1.stormpillar_box.checked)
+	|| (arcane_initiate_choice() == 8)) {
 	SWD += "Storm Pillar [AP] " + sup_i() + " [special]";
 	SWD += "<br>\r";
     }
@@ -33507,7 +33405,6 @@ function WriteTextForCharacterSheet()
 	    " [base strength attack] vs reflex<br>\r";
     }
 
-
     if (paragon_other) {
 	SWD +=
 	    document.form1.otherparagonpath.value + " special attacks:<p>";
@@ -36024,7 +35921,6 @@ function WriteTextForCharacterSheet()
 		" [base strength attack] vs fortitude<br>\r";
 	}
 
-
     }
 
     x = wisdom_attack_base;
@@ -37926,8 +37822,7 @@ function WriteTextForCharacterSheet()
 	SWD += "<br>\r";
     }
     x = constitution_attack_base;
-    if (document.form1.vestigeofthemasterofthehiddenflame_box.checked ==
-	true) {
+    if (document.form1.vestigeofthemasterofthehiddenflame_box.checked) {
 	SWD +=
 	    "Vestige of the Master of the Hidden Flame [AP] " +
 	    PlusOrMinus(x) + sup_i() +
@@ -38606,9 +38501,9 @@ function WriteTextForCharacterSheet()
     }
 
     SWD += "</td></tr></table><p>";
-    if ((((class_cleric) | (class_bard) | (class_invoker) | (class_druid) |
-	  (class_wizard)) && (!feat_alchemistswap)) | (feat_ritualcaster) |
-	(class_other)) {
+    if ((((class_cleric) || (class_bard) || (class_invoker)
+	  || (class_druid) || (class_wizard)) && (!feat_alchemistswap))
+	|| (feat_ritualcaster) || (class_other)) {
 	SWD += "Rituals Known:<p><ul>";
 
 	if (document.form1.animalmessenger_box.checked) {
@@ -39109,7 +39004,7 @@ function WriteTextForCharacterSheet()
 	SWD += "</ul>";
     }
 
-    if ((feat_alchemist) | (feat_alchemistswap)) {
+    if ((feat_alchemist) || (feat_alchemistswap)) {
 
 	SWD += "<p>Alchemical Formulas Known:<ul><p>";
 	if (document.form1.alchemicalsilver_box.checked) {
@@ -41973,7 +41868,7 @@ function WriteTextForCharacterSheet()
     if (swordmage_ensnarement) {
 	SWD += "Aegis of Ensnarement [Swordmage][minor action]<br>\r";
     }
-    if ((class_druid) | (multi_druid_initiateoftheoldfaith)) {
+    if ((class_druid) || (multi_druid_initiateoftheoldfaith)) {
 	SWD += "Wild Shape [Druid][minor action]<br>\r";
     }
     if (class_shaman) {
@@ -42570,8 +42465,8 @@ function WriteTextForCharacterSheet()
 	    "<img src=box.gif>Warlock's Curse [multiclass warlock student of maledition][minor action]<br>\r";
     }
 
-    if ((paragon_soulguide) | (class_cleric) | (class_paladin) |
-	(class_avenger) | (class_invoker)) {
+    if ((paragon_soulguide) || (class_cleric) || (class_paladin) ||
+	(class_avenger) || (class_invoker)) {
 	SWD += "<img src=box.gif>Channel Divinity<br>\r";
     }
     if (class_cleric) {
@@ -44391,8 +44286,6 @@ function WriteTextForCharacterSheet()
 	    "<img src=box.gif>Falling Tree Strike [Verdant Lord Level 11]<br>\r";
     }
 
-
-
     if (paragon_other) {
 	SWD +=
 	    "<img src=box.gif>" + document.form1.otherparagonpath.value +
@@ -44574,10 +44467,6 @@ function WriteTextForCharacterSheet()
 	    SWD +=
 		"<img src=box.gif>Quick Portal [Planeshifter Level 12 Utility]<br>\r";
 	}
-
-
-
-
 
     }
 
@@ -47209,8 +47098,6 @@ function WriteTextForCharacterSheet()
 		"<img src=box.gif>Awaken the Forest [Verdant Lord Level 12 Utility][standard action]<br>\r";
 	}
 
-
-
 	if (paragon_other) {
 	    SWD +=
 		"<img src=box.gif>" +
@@ -48307,8 +48194,6 @@ function WriteTextForCharacterSheet()
 		"<img src=box.gif>Form of the Verdant Lord [Verdant Lord Level 20]<br>\r";
 	}
 
-
-
 	if (paragon_other) {
 	    SWD +=
 		"<img src=box.gif>" +
@@ -49074,8 +48959,6 @@ function WriteTextForCharacterSheet()
 
     SWD += "</ul><p>";
 
-
-
     if (class_wizard) {
 	SWD +=
 	    "Reminder to Level " + total_levels +
@@ -49500,7 +49383,6 @@ function WriteTextForCharacterSheet()
 	    document.form1.other_race_name.value +
 	    ": Describe below:<p><img src=\"spellbar.gif\"><p>";
     }
-
 
     if (frb_aglarond) {
 	SWD +=
@@ -51786,20 +51668,6 @@ function WriteTextForCharacterSheet()
 	SWD += "</ul><p>";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     if (paragon_multiclass) {
 	SWD += "<p>Multiclass Paragon<p><ul>";
 	stringy = "a sideclass";
@@ -52017,16 +51885,6 @@ function WriteTextForCharacterSheet()
 	SWD += "<li>Bestow Grace [Level 30]</li>\r";
 	SWD += "</ul><p>";
     }
-
-
-
-
-
-
-
-
-
-
 
     if (epic_other) {
 	SWD +=
@@ -53243,16 +53101,18 @@ function WriteTextForCharacterSheet()
 
 	    }
 	    stringy += "Trained Skills: ";
-	    if ((feat_beasttrainingathletics) | (beast_bear) | (beast_cat)
-		| (beast_lizard) | (beast_spider)) {
+	    if ((feat_beasttrainingathletics) || (beast_bear)
+		|| (beast_cat)
+		| (beast_lizard) || (beast_spider)) {
 		x = 5 + half_total_level() + modifier_number(b_strength);
 		if (feat_beastguidance) {
 		    x += 2;
 		}
 		stringy += "Athletics +" + x + "&nbsp;&nbsp;&nbsp;";
 	    }
-	    if ((feat_beasttrainingendurance) | (beast_bear) | (beast_boar)
-		| (beast_lizard) | (beast_wolf)) {
+	    if ((feat_beasttrainingendurance) || (beast_bear)
+		|| (beast_boar)
+		| (beast_lizard) || (beast_wolf)) {
 		x = 5 + half_total_level() +
 		    modifier_number(b_constitution);
 		if (feat_beastguidance) {
@@ -53260,7 +53120,7 @@ function WriteTextForCharacterSheet()
 		}
 		stringy += "Endurance +" + x + "&nbsp;&nbsp;&nbsp;";
 	    }
-	    if ((feat_beasttrainingperception) | (beast_raptor) |
+	    if ((feat_beasttrainingperception) || (beast_raptor) ||
 		(beast_wolf)) {
 		x = 5 + half_total_level() + modifier_number(b_wisdom);
 		if (feat_beastguidance) {
@@ -53268,7 +53128,8 @@ function WriteTextForCharacterSheet()
 		}
 		stringy += "Perception +" + x + "&nbsp;&nbsp;&nbsp;";
 	    }
-	    if ((feat_beasttrainingstealth) | (beast_cat) | (beast_serpent)
+	    if ((feat_beasttrainingstealth) || (beast_cat)
+		|| (beast_serpent)
 		| (beast_spider)) {
 		x = 5 + half_total_level() + modifier_number(b_dexterity);
 		if (feat_beastguidance) {
@@ -54035,7 +53896,7 @@ function CalculateHitPoints()
     if (otherclass_hitpoints == 15) {
 	x = 15 + constitution + 6 * (total_levels - 1);
     }
-    if ((feat_toughness) | (ranger_twoblade)) {
+    if ((feat_toughness) || (ranger_twoblade)) {
 	x += 5;
 	if (total_levels > 10) {
 	    x += 5;
@@ -54145,7 +54006,7 @@ function CalculateArmorClass()
     if ((!document.form1.armor_radio[3].checked)
 	& (!document.form1.armor_radio[4].checked)
 	& (!document.form1.armor_radio[5].checked)) {
-	if ((dexterity > 11) | (intelligence > 11)) {
+	if ((dexterity > 11) || (intelligence > 11)) {
 
 	    if (dexterity > intelligence) {
 		total_armor_class += modifier_number(dexterity);
@@ -54158,7 +54019,7 @@ function CalculateArmorClass()
 		    " [intelligence]";
 	    }
 	}
-	if (((druid_guardian) | (warden_earthstrength)) &
+	if (((druid_guardian) || (warden_earthstrength)) &&
 	    (!wearing_heavy_armor()) && (constitution >
 					 dexterity) && (constitution >
 							intelligence)) {
@@ -54167,7 +54028,7 @@ function CalculateArmorClass()
 	    armor_class_string +=
 		" + " + modifier_number(constitution) + " [constitution]";
 	}
-	if (((sorcerer_dragonsoul) | (sorcerer_cosmicmagic)) &
+	if (((sorcerer_dragonsoul) || (sorcerer_cosmicmagic)) &&
 	    (!wearing_heavy_armor()) && (strength > dexterity)
 	    && (strength > intelligence)) {
 	    BaseArmorClass();
@@ -54175,7 +54036,7 @@ function CalculateArmorClass()
 	    armor_class_string +=
 		" + " + modifier_number(strength) + " [strength]";
 	}
-	if ((warden_wildblood) && (!wearing_heavy_armor()) &
+	if ((warden_wildblood) && (!wearing_heavy_armor()) &&
 	    (wisdom > dexterity) && (wisdom > intelligence)) {
 	    BaseArmorClass();
 	    total_armor_class += modifier_number(wisdom);
@@ -54211,7 +54072,7 @@ function CalculateArmorClass()
 	}
     }
 
-    if ((staffofdefense) | (feat_secondimplementstaff)) {
+    if ((staffofdefense) || (feat_secondimplementstaff)) {
 	total_armor_class += 1;
 	armor_class_string += " + 1 [wizard staff] ";
     }
@@ -54259,13 +54120,12 @@ function CalculateArmorClass()
 	    armor_class_string += " + 8 [plate] ";
 	}
     }
-    if ((document.form1.shield_radio[1].checked) | (document.form1.
-						    spikedshield_box.
-						    checked)) {
+    if ((document.form1.shield_radio[1].checked)
+	|| (document.form1.spikedshield_box.checked)) {
 	total_armor_class += 1;
 	armor_class_string += " + 1 [if carrying light shield] ";
-	if ((feat_shieldspecialization) &
-	    ((already_knows_lightshield) | (feat_shieldproficiencylight)))
+	if ((feat_shieldspecialization) &&
+	    ((already_knows_lightshield) || (feat_shieldproficiencylight)))
 	{
 	    total_armor_class++;
 	    armor_class_string += " + 1 [shield specialization] ";
@@ -54274,8 +54134,8 @@ function CalculateArmorClass()
     if (document.form1.shield_radio[2].checked) {
 	total_armor_class += 2;
 	armor_class_string += " + 2 [if carrying heavy shield] ";
-	if ((feat_shieldspecialization) &
-	    ((already_knows_heavyshield) | (feat_shieldproficiencyheavy)))
+	if ((feat_shieldspecialization) &&
+	    ((already_knows_heavyshield) || (feat_shieldproficiencyheavy)))
 	{
 	    total_armor_class++;
 	    armor_class_string += " + 1 [shield specialization] ";
@@ -54287,8 +54147,8 @@ function CalculateArmorClass()
     }
     if ((total_levels >= 11) && (paragon_warpriest)) {
 	if ((document.form1.armor_radio[3].checked)
-	    | (document.form1.armor_radio[4].checked)
-	    | (document.form1.armor_radio[5].checked)) {
+	    || (document.form1.armor_radio[4].checked)
+	    || (document.form1.armor_radio[5].checked)) {
 	    total_armor_class += 1;
 	    armor_class_string += " + 1 [warpriest's training] ";
 
@@ -54297,10 +54157,10 @@ function CalculateArmorClass()
 
     if ((total_levels >= 11) && (paragon_pitfighter)) {
 	if ((document.form1.armor_radio[1].checked)
-	    | (document.form1.armor_radio[2].checked)
-	    | (document.form1.armor_radio[3].checked)
-	    | (document.form1.armor_radio[4].checked)
-	    | (document.form1.armor_radio[5].checked)) {
+	    || (document.form1.armor_radio[2].checked)
+	    || (document.form1.armor_radio[3].checked)
+	    || (document.form1.armor_radio[4].checked)
+	    || (document.form1.armor_radio[5].checked)) {
 	    total_armor_class += 1;
 	    armor_class_string += " + 1 [armor optimization] ";
 
@@ -54309,16 +54169,16 @@ function CalculateArmorClass()
 
     speed_squares = 6;
     speed_string = "";
-    if ((race_elf) | (race_gnoll)) {
+    if ((race_elf) || (race_gnoll)) {
 	speed_squares = 7;
     }
-    if ((race_dwarf) | (race_gnome)) {
+    if ((race_dwarf) || (race_gnome)) {
 	speed_squares = 5;
     }
-    if ((document.form1.armor_radio[3].checked ==
-	 true) | ((document.form1.armor_radio[4].checked ==
-		   true) && (!feat_armorspecializationscale)) |
-	(document.form1.armor_radio[5].checked == true)) {
+    if ((document.form1.armor_radio[3].checked)
+	|| ((document.form1.armor_radio[4].checked)
+	    && (!feat_armorspecializationscale))
+	|| (document.form1.armor_radio[5].checked)) {
 	if ((!race_dwarf) && (!epic_adamantinesoldier)) {
 	    speed_squares--;
 	    speed_string = " [includes armor penalty]";
@@ -54345,11 +54205,13 @@ function CalculateArmorClass()
     }
 
     vision_string = "Normal";
-    if ((otherrace_lowlight) | (race_dwarf) | (race_eladrin) | (race_elf) |
-	(race_halfelf) | (race_tiefling) | (race_bugbear) | (race_gnoll) |
-	(race_gnome) | (race_goblin) | (race_hobgoblin) | (race_orc) |
-	(race_shadarkai) | (race_shifterlongtooth) |
-	(race_shifterrazorclaw)) {
+    if ((otherrace_lowlight) || (race_dwarf) || (race_eladrin)
+	|| (race_elf) || (race_halfelf) || (race_tiefling)
+	|| (race_bugbear)
+	|| (race_gnoll) || (race_gnome) || (race_goblin)
+	|| (race_hobgoblin)
+	|| (race_orc) || (race_shadarkai)
+	|| (race_shifterlongtooth) || (race_shifterrazorclaw)) {
 	vision_string = "Low-light";
     }
     if (feat_dragonbornsenses) {
@@ -54358,7 +54220,7 @@ function CalculateArmorClass()
     if (fam_shadowincarnate) {
 	vision_string = "Darkvision [shadow incarnate";
     }
-    if ((otherrace_darkvision) | (race_drow)) {
+    if ((otherrace_darkvision) || (race_drow)) {
 	vision_string = "Darkvision";
     }
     initiative_modifier = half_total_level() + modifier_number(dexterity);
@@ -54421,8 +54283,6 @@ function CalculateArmorClass()
     }
     initiative_string_1 += initiative_modifier;
 
-
-
     acrobatics_bonus = half_total_level() + modifier_number(dexterity);
     if (race_halfling) {
 	acrobatics_bonus += 2;
@@ -54448,8 +54308,6 @@ function CalculateArmorClass()
     if (frb_nelantherisles) {
 	acrobatics_bonus += 1;
     }
-
-
 
     if (eladrin_acrobatics) {
 	acrobatics_bonus += 5;
@@ -54510,7 +54368,6 @@ function CalculateArmorClass()
 	acrobatics_string_2 +=
 	    " + 2 [" + document.form1.other_race_name.value + "] ";
     }
-
 
     if (feat_lightstep) {
 	acrobatics_string_2 += " + 1 [light step]";
@@ -54576,8 +54433,6 @@ function CalculateArmorClass()
     if (frb_netheril) {
 	arcana_bonus += +1;
     }
-
-
 
     if (eladrin_arcana) {
 	arcana_bonus += 5;
@@ -54669,7 +54524,6 @@ function CalculateArmorClass()
 	arcana_string_2 += " + 2 [chaos shard] ";
     }
 
-
     if (eladrin_arcana) {
 	arcana_string_2 += " + 5 [eladrin education]";
     } else if (trained_arcana) {
@@ -54718,9 +54572,6 @@ function CalculateArmorClass()
     if (frb_nelantherisles) {
 	athletics_bonus += 1;
     }
-
-
-
 
     if (eladrin_athletics) {
 	athletics_bonus += 5;
@@ -54800,7 +54651,6 @@ function CalculateArmorClass()
 	athletics_string_2 += " + 1 [Nelanther Isles] ";
     }
 
-
     if (paragon_ghostpanther) {
 	athletics_string_2 +=
 	    " " + modifier_string(wisdom) + " [ghost panther]";
@@ -54863,7 +54713,6 @@ function CalculateArmorClass()
     if (otherrace_bluff) {
 	bluff_bonus += 2;
     }
-
 
     if (eladrin_bluff) {
 	bluff_bonus += 5;
@@ -54946,8 +54795,6 @@ function CalculateArmorClass()
 	    " + 2 [" + document.form1.other_race_name.value + "] ";
     }
 
-
-
     if (eladrin_bluff) {
 	bluff_string_2 += " + 5 [eladrin education]";
     } else if (trained_bluff) {
@@ -54981,9 +54828,6 @@ function CalculateArmorClass()
     if (fam_parrot) {
 	diplomacy_bonus += 2;
     }
-
-
-
 
     if (eladrin_diplomacy) {
 	diplomacy_bonus += 5;
@@ -55027,8 +54871,6 @@ function CalculateArmorClass()
 	diplomacy_string_2 += " + 2 [parrot] ";
     }
 
-
-
     if (eladrin_diplomacy) {
 	diplomacy_string_2 += " + 5 [eladrin education]";
     } else if (trained_diplomacy) {
@@ -55068,7 +54910,6 @@ function CalculateArmorClass()
     if (frb_eastrift) {
 	dungeoneering_bonus += 2;
     }
-
 
     if (eladrin_dungeoneering) {
 	dungeoneering_bonus += 5;
@@ -55118,9 +54959,6 @@ function CalculateArmorClass()
     if (frb_eastrift) {
 	dungeoneering_string_2 += " + 2 [East Rift] ";
     }
-
-
-
 
     if (eladrin_dungeoneering) {
 	dungeoneering_string_2 += " + 5 [eladrin education]";
@@ -55234,7 +55072,6 @@ function CalculateArmorClass()
     if (fam_earthmephit) {
 	endurance_string_2 += " + 2 [earth mephit] ";
     }
-
 
     if (eladrin_endurance) {
 	endurance_string_2 += " + 5 [eladrin education]";
@@ -55354,8 +55191,6 @@ function CalculateArmorClass()
 	history_bonus += 1;
     }
 
-
-
     if (eladrin_history) {
 	history_bonus += 5;
     } else if (trained_history) {
@@ -55410,8 +55245,6 @@ function CalculateArmorClass()
 	history_string_2 += " + 2 [book imp] ";
     }
 
-
-
     if (frb_netheril) {
 	history_string_2 += " + 1 [Netheril]";
     } else if (eladrin_history) {
@@ -55447,7 +55280,6 @@ function CalculateArmorClass()
     if (frb_cormyr) {
 	insight_bonus += 2;
     }
-
 
     if (eladrin_insight) {
 	insight_bonus += 5;
@@ -55489,8 +55321,6 @@ function CalculateArmorClass()
     if (frb_cormyr) {
 	insight_string_2 += " + 2 [Cormyr] ";
     }
-
-
 
     if (eladrin_insight) {
 	insight_string_2 += " + 5 [eladrin education]";
@@ -55549,8 +55379,6 @@ function CalculateArmorClass()
     if (fam_redspawnspitfire) {
 	intimidate_bonus += 2;
     }
-
-
 
     if (eladrin_intimidate) {
 	intimidate_bonus += 5;
@@ -55619,9 +55447,6 @@ function CalculateArmorClass()
 	intimidate_string_2 += " + 2 [redspawn spitfire] ";
     }
 
-
-
-
     if (eladrin_intimidate) {
 	intimidate_string_2 += " + 5 [eladrin education]";
     } else if (trained_intimidate) {
@@ -55667,8 +55492,6 @@ function CalculateArmorClass()
     if (fam_bluespawnnimblespark) {
 	nature_bonus += 2;
     }
-
-
 
     if (frb_elfharrow) {
 	nature_bonus += 1;
@@ -55741,8 +55564,6 @@ function CalculateArmorClass()
 	nature_string_2 += " + 2 [bluespawn nimblespark] ";
     }
 
-
-
     if (eladrin_nature) {
 	nature_string_2 += " + 5 [eladrin education]";
     } else if (trained_nature) {
@@ -55797,8 +55618,6 @@ function CalculateArmorClass()
     if (frb_durpar) {
 	perception_bonus += 2;
     }
-
-
 
     if (eladrin_perception) {
 	perception_bonus += 5;
@@ -56009,7 +55828,6 @@ function CalculateArmorClass()
 	stealth_bonus += 1;
     }
 
-
     if (eladrin_stealth) {
 	stealth_bonus += 5;
     } else if (trained_stealth) {
@@ -56151,8 +55969,6 @@ function CalculateArmorClass()
 	streetwise_bonus += 2;
     }
 
-
-
     if (eladrin_streetwise) {
 	streetwise_bonus += 5;
     } else if (trained_streetwise) {
@@ -56199,8 +56015,6 @@ function CalculateArmorClass()
 	streetwise_string_2 += " + 2 [Baldur's Gate] ";
     }
 
-
-
     if (eladrin_streetwise) {
 	streetwise_string_2 += " + 5 [eladrin education]";
     } else if (trained_streetwise) {
@@ -56243,7 +56057,6 @@ function CalculateArmorClass()
     if (frb_luskan) {
 	thievery_bonus += 1;
     }
-
 
     if (eladrin_thievery) {
 	thievery_bonus += 5;
@@ -56296,7 +56109,6 @@ function CalculateArmorClass()
     if (frb_luskan) {
 	thievery_string_2 += " + 1 [Luskan] ";
     }
-
 
     if (eladrin_thievery) {
 	thievery_string_2 += " + 5 [eladrin education]";
@@ -56757,13 +56569,12 @@ function CalculateArmorClass()
 	}
     }
 
-    if ((document.form1.shield_radio[1].checked) | (document.form1.
-						    spikedshield_box.
-						    checked)) {
+    if ((document.form1.shield_radio[1].checked)
+	|| (document.form1.spikedshield_box.checked)) {
 	reflex_save += 1;
 	reflex_string_2 += " + 1 [if carrying light shield] ";
-	if ((feat_shieldspecialization) &
-	    ((already_knows_lightshield) | (feat_shieldproficiencylight)))
+	if ((feat_shieldspecialization) &&
+	    ((already_knows_lightshield) || (feat_shieldproficiencylight)))
 	{
 	    reflex_save++;
 	    reflex_string_2 += " + 1 [shield specialization] ";
@@ -56772,8 +56583,8 @@ function CalculateArmorClass()
     if (document.form1.shield_radio[2].checked) {
 	reflex_save += 2;
 	reflex_string_2 += " + 2 [if carrying heavy shield] ";
-	if ((feat_shieldspecialization) &
-	    ((already_knows_heavyshield) | (feat_shieldproficiencyheavy)))
+	if ((feat_shieldspecialization) &&
+	    ((already_knows_heavyshield) || (feat_shieldproficiencyheavy)))
 	{
 	    reflex_save++;
 	    reflex_string_2 += " + 1 [shield specialization] ";
@@ -56963,7 +56774,7 @@ function ArmorCheckPenalty()
 	return -1;
     }
     if ((document.form1.armor_radio[3].checked)
-	&& (!epic_adamantinesoldier) &
+	&& (!epic_adamantinesoldier) &&
 	(!feat_armorspecializationchainmail)) {
 	return -1;
     }
@@ -57295,7 +57106,7 @@ function InitialHeightAndWeight()
 	document.form1.how_heavy.selectedIndex = x;
     }
 
-    if ((race_githyanki) | (race_githzerai)) {
+    if ((race_githyanki) || (race_githzerai)) {
 	x = 41 + Math.floor(strength / 3);;
 	if (x < 41) {
 	    x = 41;
@@ -57475,7 +57286,7 @@ function InitialHeightAndWeight()
 
     }
 
-    if ((race_shifterlongtooth) | (race_shifterrazorclaw)) {
+    if ((race_shifterlongtooth) || (race_shifterrazorclaw)) {
 	x = 36 + Math.floor(strength / 3);;
 	if (x < 36) {
 	    x = 36;
@@ -57575,7 +57386,7 @@ function lock_feats()
 	if (class_other) {
 	    stringy = "Please name your two at-will class powers.";
 	}
-	if ((race_human) | (class_druid)) {
+	if ((race_human) || (class_druid)) {
 	    stringy =
 		"You are entitled to three at-will powers from your class list.";
 	    if (class_other) {
@@ -58320,11 +58131,11 @@ function NoCurlsNoBeard()
 
 function pigmentation()
 {
-    if ((gender == 2) | (race_gnoll) | (race_minotaur)) {
+    if ((gender == 2) || (race_gnoll) || (race_minotaur)) {
 	document.form1.beard_type[0].checked = true;
 	document.form1.beard_type[0].checked = false;
     }
-    if ((race_dragonborn) | (race_kobold) | (race_warforged)) {
+    if ((race_dragonborn) || (race_kobold) || (race_warforged)) {
 	document.form1.hair_color[12].checked = true;
 	NoCurlsNoBeard();
     }
@@ -58336,7 +58147,7 @@ function pigmentation()
 	document.form1.eye_color[6].checked = true;
 	document.form1.hair_color[5].checked = true;
     }
-    if ((race_eladrin) | (race_elf) | (race_halfling)) {
+    if ((race_eladrin) || (race_elf) || (race_halfling)) {
 	if (gender == 1) {
 	    document.form1.beard_type[0].checked = true;
 	}
@@ -58480,7 +58291,7 @@ function SuggestEyesHairSkin()
 	document.form1.eyeshairskin_textarea.value =
 	    "Shadar-kais all have gray skin, black eyes, and black hair..";
     }
-    if ((race_shifterlongtooth) | (race_shifterrazorclaw)) {
+    if ((race_shifterlongtooth) || (race_shifterrazorclaw)) {
 	document.form1.eyeshairskin_textarea.value =
 	    "Shifters can have any coloration that a human can, and probably others.";
     }
@@ -62571,7 +62382,7 @@ function consider_agilehunter()
 	remember_feats();
 	return;
     }
-    if ((!rangerclass()) | (dexterity < 15)) {
+    if ((!rangerclass()) || (dexterity < 15)) {
 	document.form1.agilehunter_box.checked = false;
     }
     ArrowShow();
@@ -62579,7 +62390,7 @@ function consider_agilehunter()
 
 function light_agilehunter_star()
 {
-    if ((!rangerclass()) | (dexterity < 15)) {
+    if ((!rangerclass()) || (dexterity < 15)) {
 	document.form1.agilehunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -62643,29 +62454,26 @@ function consider_armorproficiency()
 	document.form1.armorproficiencyplate_box.checked = false;
     }
 
-    if (((!already_knows_leather) &
-	 (!document.form1.armorproficiencyleather_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+    if (((!already_knows_leather) &&
+	 (!document.form1.armorproficiencyleather_box.checked))
+	|| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencyhide_box.checked = false;
     }
-    if (((!already_knows_hide) &
+    if (((!already_knows_hide) &&
 	 (!document.form1.armorproficiencyhide_box.checked)
-	 && (!already_knows_leather) & (!document.form1.
-					armorproficiencyleather_box.
-					checked)) | (strength <
-						     13) | (constitution <
-							    13)) {
+	 && (!already_knows_leather)
+	 && (!document.form1.armorproficiencyleather_box.checked))
+	| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencychainmail_box.checked = false;
     }
-    if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+    if (((!already_knows_chainmail) &&
+	 (!document.form1.armorproficiencychainmail_box.checked))
+	|| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencyscale_box.checked = false;
     }
-    if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.checked)) | (strength <
-								 15) |
-	(constitution < 15)) {
+    if (((!already_knows_scale) &&
+	 (!document.form1.armorproficiencyscale_box.checked))
+	|| (strength < 15) || (constitution < 15)) {
 	document.form1.armorproficiencyplate_box.checked = false;
     }
 
@@ -62676,24 +62484,24 @@ function consider_armorproficiency()
 	document.form1.armorspecializationscale_box.checked = false;
     }
 
-    if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (dexterity < 15)) {
+    if (((!already_knows_chainmail) &&
+	 (!document.form1.armorproficiencychainmail_box.checked))
+	|| (dexterity < 15)) {
 	document.form1.armorspecializationchainmail_box.checked = false;
     }
-    if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked)) | (constitution < 15)) {
+    if (((!already_knows_hide) &&
+	 (!document.form1.armorproficiencyhide_box.checked))
+	|| (constitution < 15)) {
 	document.form1.armorspecializationhide_box.checked = false;
     }
-    if (((!already_knows_plate) &
-	 (!document.form1.armorproficiencyplate_box.
-	  checked)) | (constitution < 15)) {
+    if (((!already_knows_plate) &&
+	 (!document.form1.armorproficiencyplate_box.checked))
+	|| (constitution < 15)) {
 	document.form1.armorspecializationplate_box.checked = false;
     }
-    if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.
-	  checked)) | (dexterity < 15)) {
+    if (((!already_knows_scale) &&
+	 (!document.form1.armorproficiencyscale_box.checked))
+	|| (dexterity < 15)) {
 	document.form1.armorspecializationscale_box.checked = false;
     }
 
@@ -62731,30 +62539,27 @@ function light_armorproficiency_star()
 	document.form1.armorproficiencyplate_star.src = "no_asterisk.gif";
     }
 
-    if (((!already_knows_leather) &
-	 (!document.form1.armorproficiencyleather_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+    if (((!already_knows_leather) &&
+	 (!document.form1.armorproficiencyleather_box.checked))
+	|| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencyhide_star.src = "no_asterisk.gif";
     }
-    if (((!already_knows_hide) &
+    if (((!already_knows_hide) &&
 	 (!document.form1.armorproficiencyhide_box.checked)
-	 && (!already_knows_leather) & (!document.form1.
-					armorproficiencyleather_box.
-					checked)) | (strength <
-						     13) | (constitution <
-							    13)) {
+	 && (!already_knows_leather)
+	 && (!document.form1.armorproficiencyleather_box.checked))
+	| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencychainmail_star.src =
 	    "no_asterisk.gif";
     }
-    if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (strength < 13) | (constitution < 13)) {
+    if (((!already_knows_chainmail) &&
+	 (!document.form1.armorproficiencychainmail_box.checked))
+	|| (strength < 13) || (constitution < 13)) {
 	document.form1.armorproficiencyscale_star.src = "no_asterisk.gif";
     }
-    if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.checked)) | (strength <
-								 15) |
-	(constitution < 15)) {
+    if (((!already_knows_scale) &&
+	 (!document.form1.armorproficiencyscale_box.checked))
+	|| (strength < 15) || (constitution < 15)) {
 	document.form1.armorproficiencyplate_star.src = "no_asterisk.gif";
     }
 
@@ -62769,27 +62574,27 @@ function light_armorproficiency_star()
 	    "no_asterisk.gif";
     }
 
-    if (((!already_knows_chainmail) &
-	 (!document.form1.armorproficiencychainmail_box.
-	  checked)) | (dexterity < 15)) {
+    if (((!already_knows_chainmail) &&
+	 (!document.form1.armorproficiencychainmail_box.checked))
+	|| (dexterity < 15)) {
 	document.form1.armorspecializationchainmail_star.src =
 	    "no_asterisk.gif";
     }
-    if (((!already_knows_hide) &
-	 (!document.form1.armorproficiencyhide_box.
-	  checked)) | (constitution < 15)) {
+    if (((!already_knows_hide) &&
+	 (!document.form1.armorproficiencyhide_box.checked))
+	|| (constitution < 15)) {
 	document.form1.armorspecializationhide_star.src =
 	    "no_asterisk.gif";
     }
-    if (((!already_knows_plate) &
-	 (!document.form1.armorproficiencyplate_box.
-	  checked)) | (constitution < 15)) {
+    if (((!already_knows_plate) &&
+	 (!document.form1.armorproficiencyplate_box.checked))
+	|| (constitution < 15)) {
 	document.form1.armorspecializationplate_star.src =
 	    "no_asterisk.gif";
     }
-    if (((!already_knows_scale) &
-	 (!document.form1.armorproficiencyscale_box.
-	  checked)) | (dexterity < 15)) {
+    if (((!already_knows_scale) &&
+	 (!document.form1.armorproficiencyscale_box.checked))
+	|| (dexterity < 15)) {
 	document.form1.armorspecializationscale_star.src =
 	    "no_asterisk.gif";
     }
@@ -62802,7 +62607,7 @@ function consider_astralfire()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 13) | (charisma < 13)) {
+    if ((dexterity < 13) || (charisma < 13)) {
 	document.form1.astralfire_box.checked = false;
     }
     ArrowShow();
@@ -62810,7 +62615,7 @@ function consider_astralfire()
 
 function light_astralfire_star()
 {
-    if ((dexterity < 13) | (charisma < 13)) {
+    if ((dexterity < 13) || (charisma < 13)) {
 	document.form1.astralfire_star.src = "no_asterisk.gif";
 	return;
     }
@@ -62865,7 +62670,7 @@ function consider_bladeopportunist()
 	remember_feats();
 	return;
     }
-    if ((strength < 13) | (dexterity < 13)) {
+    if ((strength < 13) || (dexterity < 13)) {
 	document.form1.bladeopportunist_box.checked = false;
     }
     ArrowShow();
@@ -62873,7 +62678,7 @@ function consider_bladeopportunist()
 
 function light_bladeopportunist_star()
 {
-    if ((strength < 13) | (dexterity < 13)) {
+    if ((strength < 13) || (dexterity < 13)) {
 	document.form1.bladeopportunist_star.src = "no_asterisk.gif";
 	return;
     }
@@ -62886,7 +62691,7 @@ function consider_burningblizzard()
 	remember_feats();
 	return;
     }
-    if ((intelligence < 13) | (wisdom < 13)) {
+    if ((intelligence < 13) || (wisdom < 13)) {
 	document.form1.burningblizzard_box.checked = false;
     }
     ArrowShow();
@@ -62894,7 +62699,7 @@ function consider_burningblizzard()
 
 function light_burningblizzard_star()
 {
-    if ((intelligence < 13) | (wisdom < 13)) {
+    if ((intelligence < 13) || (wisdom < 13)) {
 	document.form1.burningblizzard_star.src = "no_asterisk.gif";
 	return;
     }
@@ -62949,7 +62754,7 @@ function consider_darkfury()
 	remember_feats();
 	return;
     }
-    if ((constitution < 13) | (wisdom < 13)) {
+    if ((constitution < 13) || (wisdom < 13)) {
 	document.form1.darkfury_box.checked = false;
     }
     ArrowShow();
@@ -62957,7 +62762,7 @@ function consider_darkfury()
 
 function light_darkfury_star()
 {
-    if ((constitution < 13) | (wisdom < 13)) {
+    if ((constitution < 13) || (wisdom < 13)) {
 	document.form1.darkfury_star.src = "no_asterisk.gif";
 	return;
     }
@@ -62984,7 +62789,7 @@ function consider_distractingshield()
 	remember_feats();
 	return;
     }
-    if (((!class_fighter)) | (wisdom < 15)) {
+    if (((!class_fighter)) || (wisdom < 15)) {
 	document.form1.distractingshield_box.checked = false;
     }
     ArrowShow();
@@ -62992,7 +62797,7 @@ function consider_distractingshield()
 
 function light_distractingshield_star()
 {
-    if (((!class_fighter)) | (wisdom < 15)) {
+    if (((!class_fighter)) || (wisdom < 15)) {
 	document.form1.distractingshield_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63187,7 +62992,7 @@ function consider_expandedspellbook()
 	remember_feats();
 	return;
     }
-    if ((wisdom < 13) | ((!class_wizard))) {
+    if ((wisdom < 13) || ((!class_wizard))) {
 	document.form1.expandedspellbook_box.checked = false;
     }
     ArrowShow();
@@ -63195,7 +63000,7 @@ function consider_expandedspellbook()
 
 function light_expandedspellbook_star()
 {
-    if ((wisdom < 13) | ((!class_wizard))) {
+    if ((wisdom < 13) || ((!class_wizard))) {
 	document.form1.expandedspellbook_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63418,7 +63223,7 @@ function consider_improveddarkonesblessing()
 	remember_feats();
 	return;
     }
-    if (((!class_warlock)) | (constitution < 15) | (!warlock_infernal)) {
+    if (((!class_warlock)) || (constitution < 15) || (!warlock_infernal)) {
 	document.form1.improveddarkonesblessing_box.checked = false;
     }
     ArrowShow();
@@ -63426,7 +63231,7 @@ function consider_improveddarkonesblessing()
 
 function light_improveddarkonesblessing_star()
 {
-    if (((!class_warlock)) | (constitution < 15) | (!warlock_infernal)) {
+    if (((!class_warlock)) || (constitution < 15) || (!warlock_infernal)) {
 	document.form1.improveddarkonesblessing_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -63440,7 +63245,7 @@ function consider_improvedfateofthevoid()
 	remember_feats();
 	return;
     }
-    if (((!class_warlock)) | ((constitution < 13) && (charisma < 13)) |
+    if (((!class_warlock)) || ((constitution < 13) && (charisma < 13)) ||
 	(!warlock_star)) {
 	document.form1.improvedfateofthevoid_box.checked = false;
     }
@@ -63449,7 +63254,7 @@ function consider_improvedfateofthevoid()
 
 function light_improvedfateofthevoid_star()
 {
-    if (((!class_warlock)) | ((constitution < 13) && (charisma < 13)) |
+    if (((!class_warlock)) || ((constitution < 13) && (charisma < 13)) ||
 	(!warlock_star)) {
 	document.form1.improvedfateofthevoid_star.src = "no_asterisk.gif";
 	return;
@@ -63477,7 +63282,7 @@ function consider_improvedmistystep()
 	remember_feats();
 	return;
     }
-    if ((intelligence < 13) | (!warlock_fey)) {
+    if ((intelligence < 13) || (!warlock_fey)) {
 	document.form1.improvedmistystep_box.checked = false;
     }
     ArrowShow();
@@ -63485,7 +63290,7 @@ function consider_improvedmistystep()
 
 function light_improvedmistystep_star()
 {
-    if ((intelligence < 13) | (!warlock_fey)) {
+    if ((intelligence < 13) || (!warlock_fey)) {
 	document.form1.improvedmistystep_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63785,7 +63590,7 @@ function consider_potentchallenge()
 	remember_feats();
 	return;
     }
-    if ((!fighterclass()) | (constitution < 15)) {
+    if ((!fighterclass()) || (constitution < 15)) {
 	document.form1.potentchallenge_box.checked = false;
     }
     ArrowShow();
@@ -63793,7 +63598,7 @@ function consider_potentchallenge()
 
 function light_potentchallenge_star()
 {
-    if (((!class_fighter)) | (constitution < 15)) {
+    if (((!class_fighter)) || (constitution < 15)) {
 	document.form1.potentchallenge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63848,7 +63653,7 @@ function consider_precisehunter()
 	remember_feats();
 	return;
     }
-    if ((!rangerclass()) | (wisdom < 15)) {
+    if ((!rangerclass()) || (wisdom < 15)) {
 	document.form1.precisehunter_box.checked = false;
     }
     ArrowShow();
@@ -63856,7 +63661,7 @@ function consider_precisehunter()
 
 function light_precisehunter_star()
 {
-    if ((!rangerclass()) | (wisdom < 15)) {
+    if ((!rangerclass()) || (wisdom < 15)) {
 	document.form1.precisehunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63869,7 +63674,7 @@ function consider_presstheadvantage()
 	remember_feats();
 	return;
     }
-    if (((!class_rogue)) | (charisma < 15)) {
+    if (((!class_rogue)) || (charisma < 15)) {
 	document.form1.presstheadvantage_box.checked = false;
     }
     ArrowShow();
@@ -63877,7 +63682,7 @@ function consider_presstheadvantage()
 
 function light_presstheadvantage_star()
 {
-    if (((!class_rogue)) | (charisma < 15)) {
+    if (((!class_rogue)) || (charisma < 15)) {
 	document.form1.presstheadvantage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63911,7 +63716,7 @@ function consider_ragingstorm()
 	remember_feats();
 	return;
     }
-    if ((constitution < 13) | (dexterity < 13)) {
+    if ((constitution < 13) || (dexterity < 13)) {
 	document.form1.ragingstorm_box.checked = false;
     }
     ArrowShow();
@@ -63919,7 +63724,7 @@ function consider_ragingstorm()
 
 function light_ragingstorm_star()
 {
-    if ((constitution < 13) | (dexterity < 13)) {
+    if ((constitution < 13) || (dexterity < 13)) {
 	document.form1.ragingstorm_star.src = "no_asterisk.gif";
 	return;
     }
@@ -63957,13 +63762,13 @@ function consider_ritualcaster()
     if (((!eladrin_arcana)
 	 && ((!trained_arcana) && (!multi_trained_arcana))
 	 && (!document.form1.skilltrainingarcana_box.checked)
-	 && (!eladrin_religion) & ((!trained_religion)
-				   && (!multi_trained_religion))
+	 && (!eladrin_religion) && ((!trained_religion)
+				    && (!multi_trained_religion))
 	 && (!document.form1.skilltrainingreligion_box.checked))
-	| (class_wizard) | (class_other) | (document.form1.
-					    alchemistswap_box.checked)
-	| (multi_bard_bardicritualist) | (class_cleric) | (class_bard) |
-	(class_druid) | (class_invoker)) {
+	| (class_wizard) || (class_other)
+	|| (document.form1.alchemistswap_box.checked)
+	| (multi_bard_bardicritualist) || (class_cleric)
+	|| (class_bard) || (class_druid) || (class_invoker)) {
 	document.form1.ritualcaster_box.checked = false;
     }
     ArrowShow();
@@ -63974,11 +63779,11 @@ function light_ritualcaster_star()
     if (((!eladrin_arcana)
 	 && ((!trained_arcana) && (!multi_trained_arcana))
 	 && (!document.form1.skilltrainingarcana_box.checked)
-	 && (!eladrin_religion) & ((!trained_religion)
-				   && (!multi_trained_religion))
+	 && (!eladrin_religion) && ((!trained_religion)
+				    && (!multi_trained_religion))
 	 && (!document.form1.skilltrainingreligion_box.checked))
-	| (class_wizard) | (class_other) | (multi_bard_bardicritualist) |
-	(class_cleric)) {
+	| (class_wizard) || (class_other) || (multi_bard_bardicritualist)
+	|| (class_cleric)) {
 	document.form1.ritualcaster_star.src = "no_asterisk.gif";
 	return;
     }
@@ -64159,7 +63964,7 @@ function consider_elementalassault()
 	remember_feats();
 	return;
     }
-    if ((!race_genasi) | (!swordmage_assault)) {
+    if ((!race_genasi) || (!swordmage_assault)) {
 	document.form1.elementalassault_box.checked = false;
     }
     ArrowShow();
@@ -64167,7 +63972,7 @@ function consider_elementalassault()
 
 function light_elementalassault_star()
 {
-    if ((!race_genasi) | (!swordmage_assault)) {
+    if ((!race_genasi) || (!swordmage_assault)) {
 	document.form1.elementalassault_star.src = "no_asterisk.gif";
 	return;
     }
@@ -64226,22 +64031,20 @@ function ConsiderDoubleGenies()
 	document.form1.extramanifestationwindsoul_box.checked = false;
     }
 
-    if ((!genasi_firesoul) &
+    if ((!genasi_firesoul) &&
 	(!document.form1.extramanifestationfiresoul_box.checked)
-	&& (!genasi_stormsoul) & (!document.form1.
-				  extramanifestationstormsoul_box.
-				  checked)) {
+	&& (!genasi_stormsoul)
+	&& (!document.form1.extramanifestationstormsoul_box.checked)) {
 	document.form1.shockingflame_box.checked = false;
     }
-    if ((!genasi_earthsoul) &
+    if ((!genasi_earthsoul) &&
 	(!document.form1.extramanifestationearthsoul_box.checked)) {
 	document.form1.stoneguard_box.checked = false;
     }
-    if ((!genasi_windsoul) &
+    if ((!genasi_windsoul) &&
 	(!document.form1.extramanifestationwindsoul_box.checked)
-	&& (!genasi_watersoul) & (!document.form1.
-				  extramanifestationwatersoul_box.
-				  checked)) {
+	&& (!genasi_watersoul)
+	&& (!document.form1.extramanifestationwatersoul_box.checked)) {
 	document.form1.stormrider_box.checked = false;
     }
 
@@ -64249,8 +64052,8 @@ function ConsiderDoubleGenies()
 	 && (!document.form1.extramanifestationfiresoul_box.checked)
 	 && (!document.form1.extramanifestationstormsoul_box.checked)
 	 && (!document.form1.extramanifestationwatersoul_box.checked)
-	 && (!document.form1.extramanifestationwindsoul_box.
-	     checked)) | (total_levels < 21)) {
+	 && (!document.form1.extramanifestationwindsoul_box.checked))
+	|| (total_levels < 21)) {
 	document.form1.doublemanifestation_box.checked = false;
     }
     DoubleGenieStars();
@@ -64312,36 +64115,34 @@ function DoubleGenieStars()
 	    "asterisk.gif";
     }
 
-    if ((genasi_firesoul) |
-	(document.form1.extramanifestationfiresoul_box.
-	 checked) | (genasi_stormsoul) | (document.form1.
-					  extramanifestationstormsoul_box.
-					  checked)) {
+    if ((genasi_firesoul) ||
+	(document.form1.extramanifestationfiresoul_box.checked)
+	|| (genasi_stormsoul)
+	|| (document.form1.extramanifestationstormsoul_box.checked)) {
 	document.form1.shockingflame_star.src = "asterisk.gif";
     } else {
 	document.form1.shockingflame_star.src = "no_asterisk.gif";
     }
-    if ((genasi_earthsoul) |
+    if ((genasi_earthsoul) ||
 	(document.form1.extramanifestationearthsoul_box.checked)) {
 	document.form1.stoneguard_star.src = "asterisk.gif";
     } else {
 	document.form1.stoneguard_star.src = "no_asterisk.gif";
     }
-    if ((genasi_windsoul) |
-	(document.form1.extramanifestationwindsoul_box.
-	 checked) | (genasi_watersoul) | (document.form1.
-					  extramanifestationwatersoul_box.
-					  checked)) {
+    if ((genasi_windsoul) ||
+	(document.form1.extramanifestationwindsoul_box.checked)
+	|| (genasi_watersoul)
+	|| (document.form1.extramanifestationwatersoul_box.checked)) {
 	document.form1.stormrider_star.src = "asterisk.gif";
     } else {
 	document.form1.stormrider_star.src = "no_asterisk.gif";
     }
 
     if (((document.form1.extramanifestationearthsoul_box.checked)
-	 | (document.form1.extramanifestationfiresoul_box.checked)
-	 | (document.form1.extramanifestationstormsoul_box.checked)
-	 | (document.form1.extramanifestationwatersoul_box.checked)
-	 | (document.form1.extramanifestationwindsoul_box.checked))
+	 || (document.form1.extramanifestationfiresoul_box.checked)
+	 || (document.form1.extramanifestationstormsoul_box.checked)
+	 || (document.form1.extramanifestationwatersoul_box.checked)
+	 || (document.form1.extramanifestationwindsoul_box.checked))
 	&& (total_levels > 20)) {
 	document.form1.doublemanifestation_star.src = "asterisk.gif";
     } else {
@@ -64523,7 +64324,7 @@ function consider_intelligentblademaster()
 	remember_feats();
 	return;
     }
-    if ((!class_swordmage) | (intelligence <= strength)) {
+    if ((!class_swordmage) || (intelligence <= strength)) {
 	document.form1.intelligentblademaster_box.checked = false;
     }
     ArrowShow();
@@ -65008,11 +64809,11 @@ function consider_alchemistswap()
 	remember_feats();
 	return;
     }
-    if ((document.form1.alchemist_box.checked) | ((!class_cleric)
-						  && (!class_wizard) &
-						  (!class_bard)
-						  && (!class_druid) &
-						  (!class_invoker))) {
+    if ((document.form1.alchemist_box.checked) || ((!class_cleric)
+						   && (!class_wizard) &&
+						   (!class_bard)
+						   && (!class_druid) &&
+						   (!class_invoker))) {
 	document.form1.alchemistswap_box.checked = false;
     }
     consider_ritualcaster();
@@ -65021,11 +64822,11 @@ function consider_alchemistswap()
 
 function light_alchemistswap_star()
 {
-    if ((document.form1.alchemist_box.checked) | ((!class_cleric)
-						  && (!class_wizard) &
-						  (!class_bard)
-						  && (!class_druid) &
-						  (!class_invoker))) {
+    if ((document.form1.alchemist_box.checked) || ((!class_cleric)
+						   && (!class_wizard) &&
+						   (!class_bard)
+						   && (!class_druid) &&
+						   (!class_invoker))) {
 	document.form1.alchemistswap_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65083,7 +64884,7 @@ function consider_demonwebspiral()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!warlock_dark)) {
+    if ((total_levels < 11) || (!warlock_dark)) {
 	document.form1.demonwebspiral_box.checked = false;
     }
     ArrowShow();
@@ -65091,7 +64892,7 @@ function consider_demonwebspiral()
 
 function light_demonwebspiral_star()
 {
-    if ((total_levels < 11) | (!warlock_dark)) {
+    if ((total_levels < 11) || (!warlock_dark)) {
 	document.form1.demonwebspiral_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65104,7 +64905,7 @@ function consider_distantswordbond()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!swordmageclass())) {
+    if ((total_levels < 11) || (!swordmageclass())) {
 	document.form1.distantswordbond_box.checked = false;
     }
     ArrowShow();
@@ -65112,7 +64913,7 @@ function consider_distantswordbond()
 
 function light_distantswordbond_star()
 {
-    if ((total_levels < 11) | (!swordmageclass())) {
+    if ((total_levels < 11) || (!swordmageclass())) {
 	document.form1.distantswordbond_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65125,7 +64926,7 @@ function consider_doubleaegis()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!swordmageclass())) {
+    if ((total_levels < 11) || (!swordmageclass())) {
 	document.form1.doubleaegis_box.checked = false;
     }
     ArrowShow();
@@ -65133,7 +64934,7 @@ function consider_doubleaegis()
 
 function light_doubleaegis_star()
 {
-    if ((total_levels < 11) | (!swordmageclass())) {
+    if ((total_levels < 11) || (!swordmageclass())) {
 	document.form1.doubleaegis_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65146,7 +64947,7 @@ function consider_improveddarkspiralaura()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!warlock_dark)) {
+    if ((total_levels < 11) || (!warlock_dark)) {
 	document.form1.improveddarkspiralaura_box.checked = false;
     }
     ArrowShow();
@@ -65154,7 +64955,7 @@ function consider_improveddarkspiralaura()
 
 function light_improveddarkspiralaura_star()
 {
-    if ((total_levels < 11) | (!warlock_dark)) {
+    if ((total_levels < 11) || (!warlock_dark)) {
 	document.form1.improveddarkspiralaura_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65167,7 +64968,7 @@ function consider_masteroffireanddarkness()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.masteroffireanddarkness_box.checked = false;
     }
     ArrowShow();
@@ -65175,7 +64976,7 @@ function consider_masteroffireanddarkness()
 
 function light_masteroffireanddarkness_star()
 {
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.masteroffireanddarkness_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -65189,7 +64990,7 @@ function consider_mercilesskiller()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.mercilesskiller_box.checked = false;
     }
     ArrowShow();
@@ -65197,7 +64998,7 @@ function consider_mercilesskiller()
 
 function light_mercilesskiller_star()
 {
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.mercilesskiller_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65231,7 +65032,7 @@ function consider_venemousheritage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.venemousheritage_box.checked = false;
     }
     ArrowShow();
@@ -65239,7 +65040,7 @@ function consider_venemousheritage()
 
 function light_venemousheritage_star()
 {
-    if ((total_levels < 11) | (!race_drow)) {
+    if ((total_levels < 11) || (!race_drow)) {
 	document.form1.venemousheritage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65253,8 +65054,8 @@ function consider_warwizardry()
 	return;
     }
     if ((total_levels <
-	 11) | ((!swordmageclass()) && (!warlockclass()) &
-		(!wizardclass()))) {
+	 11) || ((!swordmageclass()) && (!warlockclass()) &&
+		 (!wizardclass()))) {
 	document.form1.warwizardry_box.checked = false;
     }
     ArrowShow();
@@ -65263,8 +65064,8 @@ function consider_warwizardry()
 function light_warwizardry_star()
 {
     if ((total_levels <
-	 11) | ((!swordmageclass()) && (!warlockclass()) &
-		(!wizardclass()))) {
+	 11) || ((!swordmageclass()) && (!warlockclass()) &&
+		 (!wizardclass()))) {
 	document.form1.warwizardry_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65361,7 +65162,7 @@ function consider_totalaegis()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!swordmageclass())) {
+    if ((total_levels < 21) || (!swordmageclass())) {
 	document.form1.totalaegis_box.checked = false;
     }
     ArrowShow();
@@ -65369,7 +65170,7 @@ function consider_totalaegis()
 
 function light_totalaegis_star()
 {
-    if ((total_levels < 21) | (!swordmageclass())) {
+    if ((total_levels < 21) || (!swordmageclass())) {
 	document.form1.totalaegis_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65403,7 +65204,7 @@ function consider_anklecutter()
 	remember_feats();
 	return;
     }
-    if ((!race_halfling) | (!rogueclass())) {
+    if ((!race_halfling) || (!rogueclass())) {
 	document.form1.anklecutter_box.checked = false;
     }
     ArrowShow();
@@ -65411,7 +65212,7 @@ function consider_anklecutter()
 
 function light_anklecutter_star()
 {
-    if ((!race_halfling) | (!rogueclass())) {
+    if ((!race_halfling) || (!rogueclass())) {
 	document.form1.anklecutter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65466,8 +65267,8 @@ function consider_beasttrainingathletics()
 	remember_feats();
 	return;
     }
-    if ((!ranger_beastmaster) | (beast_bear) | (beast_lizard) |
-	(beast_spider) | (beast_cat)) {
+    if ((!ranger_beastmaster) || (beast_bear) || (beast_lizard) ||
+	(beast_spider) || (beast_cat)) {
 	document.form1.beasttrainingathletics_box.checked = false;
     }
     ArrowShow();
@@ -65475,8 +65276,8 @@ function consider_beasttrainingathletics()
 
 function light_beasttrainingathletics_star()
 {
-    if ((!ranger_beastmaster) | (beast_bear) | (beast_lizard) |
-	(beast_spider) | (beast_cat)) {
+    if ((!ranger_beastmaster) || (beast_bear) || (beast_lizard) ||
+	(beast_spider) || (beast_cat)) {
 	document.form1.beasttrainingathletics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65489,7 +65290,7 @@ function consider_beasttrainingendurance()
 	remember_feats();
 	return;
     }
-    if ((!ranger_beastmaster) | (beast_bear) | (beast_boar) |
+    if ((!ranger_beastmaster) || (beast_bear) || (beast_boar) ||
 	(beast_lizard)
 	| (beast_wolf)) {
 	document.form1.beasttrainingendurance_box.checked = false;
@@ -65499,7 +65300,7 @@ function consider_beasttrainingendurance()
 
 function light_beasttrainingendurance_star()
 {
-    if ((!ranger_beastmaster) | (beast_bear) | (beast_boar) |
+    if ((!ranger_beastmaster) || (beast_bear) || (beast_boar) ||
 	(beast_lizard)
 	| (beast_wolf)) {
 	document.form1.beasttrainingendurance_star.src = "no_asterisk.gif";
@@ -65514,7 +65315,7 @@ function consider_beasttrainingperception()
 	remember_feats();
 	return;
     }
-    if ((!ranger_beastmaster) | (beast_raptor) | (beast_wolf)) {
+    if ((!ranger_beastmaster) || (beast_raptor) || (beast_wolf)) {
 	document.form1.beasttrainingperception_box.checked = false;
     }
     ArrowShow();
@@ -65522,7 +65323,7 @@ function consider_beasttrainingperception()
 
 function light_beasttrainingperception_star()
 {
-    if ((!ranger_beastmaster) | (beast_raptor) | (beast_wolf)) {
+    if ((!ranger_beastmaster) || (beast_raptor) || (beast_wolf)) {
 	document.form1.beasttrainingperception_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -65536,7 +65337,7 @@ function consider_beasttrainingstealth()
 	remember_feats();
 	return;
     }
-    if ((!ranger_beastmaster) | (beast_cat) | (beast_serpent) |
+    if ((!ranger_beastmaster) || (beast_cat) || (beast_serpent) ||
 	(beast_spider)) {
 	document.form1.beasttrainingstealth_box.checked = false;
     }
@@ -65545,7 +65346,7 @@ function consider_beasttrainingstealth()
 
 function light_beasttrainingstealth_star()
 {
-    if ((!ranger_beastmaster) | (beast_cat) | (beast_serpent) |
+    if ((!ranger_beastmaster) || (beast_cat) || (beast_serpent) ||
 	(beast_spider)) {
 	document.form1.beasttrainingstealth_star.src = "no_asterisk.gif";
 	return;
@@ -65559,7 +65360,7 @@ function consider_bloodiedinvigoration()
 	remember_feats();
 	return;
     }
-    if ((constitution < 13) | (!race_dragonborn) | (!fighterclass())) {
+    if ((constitution < 13) || (!race_dragonborn) || (!fighterclass())) {
 	document.form1.bloodiedinvigoration_box.checked = false;
     }
     ArrowShow();
@@ -65567,7 +65368,7 @@ function consider_bloodiedinvigoration()
 
 function light_bloodiedinvigoration_star()
 {
-    if ((constitution < 13) | (!race_dragonborn) | (!fighterclass())) {
+    if ((constitution < 13) || (!race_dragonborn) || (!fighterclass())) {
 	document.form1.bloodiedinvigoration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65580,7 +65381,7 @@ function consider_bolsteringinspiration()
 	remember_feats();
 	return;
     }
-    if ((!race_dwarf) | (!class_warlord)) {
+    if ((!race_dwarf) || (!class_warlord)) {
 	document.form1.bolsteringinspiration_box.checked = false;
     }
     ArrowShow();
@@ -65588,7 +65389,7 @@ function consider_bolsteringinspiration()
 
 function light_bolsteringinspiration_star()
 {
-    if ((!race_dwarf) | (!class_warlord)) {
+    if ((!race_dwarf) || (!class_warlord)) {
 	document.form1.bolsteringinspiration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65601,7 +65402,7 @@ function consider_bracingbreath()
 	remember_feats();
 	return;
     }
-    if ((constitution < 13) | (!race_dragonborn) | !(class_fighter)) {
+    if ((constitution < 13) || (!race_dragonborn) || !(class_fighter)) {
 	document.form1.bracingbreath_box.checked = false;
     }
     ArrowShow();
@@ -65609,7 +65410,7 @@ function consider_bracingbreath()
 
 function light_bracingbreath_star()
 {
-    if ((constitution < 13) | (!race_dragonborn) | !(class_fighter)) {
+    if ((constitution < 13) || (!race_dragonborn) || !(class_fighter)) {
 	document.form1.bracingbreath_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65622,7 +65423,7 @@ function consider_bravuraspirit()
 	remember_feats();
 	return;
     }
-    if ((!race_dragonborn) | (!warlord_bravura)) {
+    if ((!race_dragonborn) || (!warlord_bravura)) {
 	document.form1.bravuraspirit_box.checked = false;
     }
     ArrowShow();
@@ -65630,7 +65431,7 @@ function consider_bravuraspirit()
 
 function light_bravuraspirit_star()
 {
-    if ((!race_dragonborn) | (!warlord_bravura)) {
+    if ((!race_dragonborn) || (!warlord_bravura)) {
 	document.form1.bravuraspirit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65643,7 +65444,7 @@ function consider_breathresistantbeast()
 	remember_feats();
 	return;
     }
-    if ((!race_dragonborn) | (!ranger_beastmaster)) {
+    if ((!race_dragonborn) || (!ranger_beastmaster)) {
 	document.form1.breathresistantbeast_box.checked = false;
     }
     ArrowShow();
@@ -65651,7 +65452,7 @@ function consider_breathresistantbeast()
 
 function light_breathresistantbeast_star()
 {
-    if ((!race_dragonborn) | (!ranger_beastmaster)) {
+    if ((!race_dragonborn) || (!ranger_beastmaster)) {
 	document.form1.breathresistantbeast_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65664,7 +65465,7 @@ function consider_brutalaccuracy()
 	remember_feats();
 	return;
     }
-    if (((!race_elf) && (!race_halfelf)) | (!class_ranger)) {
+    if (((!race_elf) && (!race_halfelf)) || (!class_ranger)) {
 	document.form1.brutalaccuracy_box.checked = false;
     }
     ArrowShow();
@@ -65672,7 +65473,7 @@ function consider_brutalaccuracy()
 
 function light_brutalaccuracy_star()
 {
-    if (((!race_elf) && (!race_halfelf)) | (!rangerclass())) {
+    if (((!race_elf) && (!race_halfelf)) || (!rangerclass())) {
 	document.form1.brutalaccuracy_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65685,7 +65486,7 @@ function consider_brutalteamwork()
 	remember_feats();
 	return;
     }
-    if ((strength < 15) | (!race_dragonborn) | (!rogueclass())) {
+    if ((strength < 15) || (!race_dragonborn) || (!rogueclass())) {
 	document.form1.brutalteamwork_box.checked = false;
     }
     ArrowShow();
@@ -65693,7 +65494,7 @@ function consider_brutalteamwork()
 
 function light_brutalteamwork_star()
 {
-    if ((strength < 15) | (!race_dragonborn) | (!rogueclass())) {
+    if ((strength < 15) || (!race_dragonborn) || (!rogueclass())) {
 	document.form1.brutalteamwork_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65727,7 +65528,7 @@ function consider_camouflage()
 	remember_feats();
 	return;
     }
-    if ((!rangerclass()) | (!TrainedInStealth())) {
+    if ((!rangerclass()) || (!TrainedInStealth())) {
 	document.form1.camouflage_box.checked = false;
     }
     ArrowShow();
@@ -65735,7 +65536,7 @@ function consider_camouflage()
 
 function light_camouflage_star()
 {
-    if ((!rangerclass()) | (!TrainedInStealth())) {
+    if ((!rangerclass()) || (!TrainedInStealth())) {
 	document.form1.camouflage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65748,7 +65549,7 @@ function consider_commandthedarkness()
 	remember_feats();
 	return;
     }
-    if ((!race_drow) | (!warlordclass())) {
+    if ((!race_drow) || (!warlordclass())) {
 	document.form1.commandthedarkness_box.checked = false;
     }
     ArrowShow();
@@ -65756,7 +65557,7 @@ function consider_commandthedarkness()
 
 function light_commandthedarkness_star()
 {
-    if ((!race_drow) | (!warlordclass())) {
+    if ((!race_drow) || (!warlordclass())) {
 	document.form1.commandthedarkness_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65790,7 +65591,7 @@ function consider_cunningambusher()
 	remember_feats();
 	return;
     }
-    if ((!race_tiefling) | (!rogueclass())) {
+    if ((!race_tiefling) || (!rogueclass())) {
 	document.form1.cunningambusher_box.checked = false;
     }
     ArrowShow();
@@ -65798,7 +65599,7 @@ function consider_cunningambusher()
 
 function light_cunningambusher_star()
 {
-    if ((!race_tiefling) | (!rogueclass())) {
+    if ((!race_tiefling) || (!rogueclass())) {
 	document.form1.cunningambusher_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65811,7 +65612,7 @@ function consider_darkfiretargeting()
 	remember_feats();
 	return;
     }
-    if ((!race_drow) | ((class_ranger) && (class_rogue))) {
+    if ((!race_drow) || ((class_ranger) && (class_rogue))) {
 	document.form1.darkfiretargeting_box.checked = false;
     }
     ArrowShow();
@@ -65819,7 +65620,7 @@ function consider_darkfiretargeting()
 
 function light_darkfiretargeting_star()
 {
-    if ((!race_drow) | ((class_ranger) && (class_rogue))) {
+    if ((!race_drow) || ((class_ranger) && (class_rogue))) {
 	document.form1.darkfiretargeting_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65832,7 +65633,7 @@ function consider_deepgash()
 	remember_feats();
 	return;
     }
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.deepgash_box.checked = false;
     }
     ArrowShow();
@@ -65840,7 +65641,7 @@ function consider_deepgash()
 
 function light_deepgash_star()
 {
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.deepgash_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65853,7 +65654,7 @@ function consider_defensiveresilience()
 	remember_feats();
 	return;
     }
-    if ((constitution < 13) | (wisdom < 13) | (!fighterclass())) {
+    if ((constitution < 13) || (wisdom < 13) || (!fighterclass())) {
 	document.form1.defensiveresilience_box.checked = false;
     }
     ArrowShow();
@@ -65861,7 +65662,7 @@ function consider_defensiveresilience()
 
 function light_defensiveresilience_star()
 {
-    if ((constitution < 13) | (wisdom < 13) | (!fighterclass())) {
+    if ((constitution < 13) || (wisdom < 13) || (!fighterclass())) {
 	document.form1.defensiveresilience_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65874,7 +65675,7 @@ function consider_devotedchallenge()
 	remember_feats();
 	return;
     }
-    if ((!race_dwarf) | (!class_fighter)) {
+    if ((!race_dwarf) || (!class_fighter)) {
 	document.form1.devotedchallenge_box.checked = false;
     }
     ArrowShow();
@@ -65882,7 +65683,7 @@ function consider_devotedchallenge()
 
 function light_devotedchallenge_star()
 {
-    if ((!race_dwarf) | (!class_fighter)) {
+    if ((!race_dwarf) || (!class_fighter)) {
 	document.form1.devotedchallenge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65916,7 +65717,7 @@ function consider_draggingflail()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (!fighterclass())) {
 	document.form1.draggingflail_box.checked = false;
     }
     ArrowShow();
@@ -65924,7 +65725,7 @@ function consider_draggingflail()
 
 function light_draggingflail_star()
 {
-    if ((dexterity < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (!fighterclass())) {
 	document.form1.draggingflail_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65937,7 +65738,7 @@ function consider_drowbeastmastery()
 	remember_feats();
 	return;
     }
-    if ((!race_drow) | (!ranger_beastmaster)) {
+    if ((!race_drow) || (!ranger_beastmaster)) {
 	document.form1.drowbeastmastery_box.checked = false;
     }
     ArrowShow();
@@ -65945,7 +65746,7 @@ function consider_drowbeastmastery()
 
 function light_drowbeastmastery_star()
 {
-    if ((!race_drow) | (!ranger_beastmaster)) {
+    if ((!race_drow) || (!ranger_beastmaster)) {
 	document.form1.drowbeastmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65958,7 +65759,7 @@ function consider_dwarfstoneblood()
 	remember_feats();
 	return;
     }
-    if ((!race_dwarf) | (!fighter_battlerager)) {
+    if ((!race_dwarf) || (!fighter_battlerager)) {
 	document.form1.dwarfstoneblood_box.checked = false;
     }
     ArrowShow();
@@ -65966,7 +65767,7 @@ function consider_dwarfstoneblood()
 
 function light_dwarfstoneblood_star()
 {
-    if ((!race_dwarf) | (!fighter_battlerager)) {
+    if ((!race_dwarf) || (!fighter_battlerager)) {
 	document.form1.dwarfstoneblood_star.src = "no_asterisk.gif";
 	return;
     }
@@ -65979,7 +65780,7 @@ function consider_dwarftrapsmith()
 	remember_feats();
 	return;
     }
-    if ((!race_dwarf) | (!rogueclass())) {
+    if ((!race_dwarf) || (!rogueclass())) {
 	document.form1.dwarftrapsmith_box.checked = false;
     }
     ArrowShow();
@@ -65987,7 +65788,7 @@ function consider_dwarftrapsmith()
 
 function light_dwarftrapsmith_star()
 {
-    if ((!race_dwarf) | (!rogueclass())) {
+    if ((!race_dwarf) || (!rogueclass())) {
 	document.form1.dwarftrapsmith_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66000,7 +65801,7 @@ function consider_elvenbeastmastery()
 	remember_feats();
 	return;
     }
-    if (((!race_elf) && (!race_halfelf)) | (!ranger_beastmaster)) {
+    if (((!race_elf) && (!race_halfelf)) || (!ranger_beastmaster)) {
 	document.form1.elvenbeastmastery_box.checked = false;
     }
     ArrowShow();
@@ -66008,7 +65809,7 @@ function consider_elvenbeastmastery()
 
 function light_elvenbeastmastery_star()
 {
-    if (((!race_elf) && (!race_halfelf)) | (!ranger_beastmaster)) {
+    if (((!race_elf) && (!race_halfelf)) || (!ranger_beastmaster)) {
 	document.form1.elvenbeastmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66021,7 +65822,7 @@ function consider_experttracker()
 	remember_feats();
 	return;
     }
-    if ((!rangerclass()) | (!TrainedInNature()) | (!wisdom < 13)) {
+    if ((!rangerclass()) || (!TrainedInNature()) || (!wisdom < 13)) {
 	document.form1.experttracker_box.checked = false;
     }
     ArrowShow();
@@ -66029,7 +65830,7 @@ function consider_experttracker()
 
 function light_experttracker_star()
 {
-    if ((!rangerclass()) | (!TrainedInNature()) | (!wisdom < 13)) {
+    if ((!rangerclass()) || (!TrainedInNature()) || (!wisdom < 13)) {
 	document.form1.experttracker_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66042,7 +65843,7 @@ function consider_feyblades()
 	remember_feats();
 	return;
     }
-    if ((!race_eladrin) | (!fighter_tempesttechnique)) {
+    if ((!race_eladrin) || (!fighter_tempesttechnique)) {
 	document.form1.feyblades_box.checked = false;
     }
     ArrowShow();
@@ -66050,7 +65851,7 @@ function consider_feyblades()
 
 function light_feyblades_star()
 {
-    if ((!race_eladrin) | (!fighter_tempesttechnique)) {
+    if ((!race_eladrin) || (!fighter_tempesttechnique)) {
 	document.form1.feyblades_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66063,7 +65864,7 @@ function consider_feycommand()
 	remember_feats();
 	return;
     }
-    if ((!race_eladrin) | (!warlord_tactical)) {
+    if ((!race_eladrin) || (!warlord_tactical)) {
 	document.form1.feycommand_box.checked = false;
     }
     ArrowShow();
@@ -66071,7 +65872,7 @@ function consider_feycommand()
 
 function light_feycommand_star()
 {
-    if ((!race_eladrin) | (!warlord_tactical)) {
+    if ((!race_eladrin) || (!warlord_tactical)) {
 	document.form1.feycommand_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66084,7 +65885,7 @@ function consider_feyborncompanion()
 	remember_feats();
 	return;
     }
-    if ((!race_eladrin) | (!ranger_beastmaster)) {
+    if ((!race_eladrin) || (!ranger_beastmaster)) {
 	document.form1.feyborncompanion_box.checked = false;
     }
     ArrowShow();
@@ -66092,7 +65893,7 @@ function consider_feyborncompanion()
 
 function light_feyborncompanion_star()
 {
-    if ((!race_eladrin) | (!ranger_beastmaster)) {
+    if ((!race_eladrin) || (!ranger_beastmaster)) {
 	document.form1.feyborncompanion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66105,7 +65906,7 @@ function consider_fiendishcompanion()
 	remember_feats();
 	return;
     }
-    if ((!race_tiefling) | (!ranger_beastmaster)) {
+    if ((!race_tiefling) || (!ranger_beastmaster)) {
 	document.form1.fiendishcompanion_box.checked = false;
     }
     ArrowShow();
@@ -66113,7 +65914,7 @@ function consider_fiendishcompanion()
 
 function light_fiendishcompanion_star()
 {
-    if ((!race_tiefling) | (!ranger_beastmaster)) {
+    if ((!race_tiefling) || (!ranger_beastmaster)) {
 	document.form1.fiendishcompanion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66126,7 +65927,7 @@ function consider_groupassault()
 	remember_feats();
 	return;
     }
-    if ((!race_halfelf) | (!fighterclass())) {
+    if ((!race_halfelf) || (!fighterclass())) {
 	document.form1.groupassault_box.checked = false;
     }
     ArrowShow();
@@ -66134,7 +65935,7 @@ function consider_groupassault()
 
 function light_groupassault_star()
 {
-    if ((!race_halfelf) | (!fighterclass())) {
+    if ((!race_halfelf) || (!fighterclass())) {
 	document.form1.groupassault_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66147,7 +65948,7 @@ function consider_groupquarry()
 	remember_feats();
 	return;
     }
-    if ((!race_halfelf) | (!rangerclass())) {
+    if ((!race_halfelf) || (!rangerclass())) {
 	document.form1.groupquarry_box.checked = false;
     }
     ArrowShow();
@@ -66155,7 +65956,7 @@ function consider_groupquarry()
 
 function light_groupquarry_star()
 {
-    if ((!race_halfelf) | (!rangerclass())) {
+    if ((!race_halfelf) || (!rangerclass())) {
 	document.form1.groupquarry_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66168,7 +65969,7 @@ function consider_grouprattling()
 	remember_feats();
 	return;
     }
-    if ((!race_halfelf) | (!rogueclass()) | (!TrainedInIntimidate())) {
+    if ((!race_halfelf) || (!rogueclass()) || (!TrainedInIntimidate())) {
 	document.form1.grouprattling_box.checked = false;
     }
     ArrowShow();
@@ -66176,7 +65977,7 @@ function consider_grouprattling()
 
 function light_grouprattling_star()
 {
-    if ((!race_halfelf) | (!rogueclass()) | (!TrainedInIntimidate())) {
+    if ((!race_halfelf) || (!rogueclass()) || (!TrainedInIntimidate())) {
 	document.form1.grouprattling_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66189,7 +65990,7 @@ function consider_halflingstalwart()
 	remember_feats();
 	return;
     }
-    if ((!race_halfling) | (!class_fighter)) {
+    if ((!race_halfling) || (!class_fighter)) {
 	document.form1.halflingstalwart_box.checked = false;
     }
     ArrowShow();
@@ -66197,7 +65998,7 @@ function consider_halflingstalwart()
 
 function light_halflingstalwart_star()
 {
-    if ((!race_halfling) | (!class_fighter)) {
+    if ((!race_halfling) || (!class_fighter)) {
 	document.form1.halflingstalwart_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66210,7 +66011,7 @@ function consider_humanbeastmastery()
 	remember_feats();
 	return;
     }
-    if (((!race_human) && (!race_halfelf)) | (!ranger_beastmaster)) {
+    if (((!race_human) && (!race_halfelf)) || (!ranger_beastmaster)) {
 	document.form1.humanbeastmastery_box.checked = false;
     }
     ArrowShow();
@@ -66218,7 +66019,7 @@ function consider_humanbeastmastery()
 
 function light_humanbeastmastery_star()
 {
-    if (((!race_human) && (!race_halfelf)) | (!ranger_beastmaster)) {
+    if (((!race_human) && (!race_halfelf)) || (!ranger_beastmaster)) {
 	document.form1.humanbeastmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66231,7 +66032,7 @@ function consider_hunterofwindandwave()
 	remember_feats();
 	return;
     }
-    if ((!race_genasi) | (!class_ranger)) {
+    if ((!race_genasi) || (!class_ranger)) {
 	document.form1.hunterofwindandwave_box.checked = false;
     }
     ArrowShow();
@@ -66239,7 +66040,7 @@ function consider_hunterofwindandwave()
 
 function light_hunterofwindandwave_star()
 {
-    if ((!race_genasi) | (!class_ranger)) {
+    if ((!race_genasi) || (!class_ranger)) {
 	document.form1.hunterofwindandwave_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66378,7 +66179,7 @@ function consider_improvedvigor()
 	remember_feats();
 	return;
     }
-    if ((!fighterclass()) | (!TrainedInEndurance())) {
+    if ((!fighterclass()) || (!TrainedInEndurance())) {
 	document.form1.improvedvigor_box.checked = false;
     }
     ArrowShow();
@@ -66386,7 +66187,7 @@ function consider_improvedvigor()
 
 function light_improvedvigor_star()
 {
-    if ((!fighterclass()) | (!TrainedInEndurance())) {
+    if ((!fighterclass()) || (!TrainedInEndurance())) {
 	document.form1.improvedvigor_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66399,7 +66200,7 @@ function consider_inspireddefense()
 	remember_feats();
 	return;
     }
-    if (((!race_human) && (!race_halfelf)) | (!warlordclass())) {
+    if (((!race_human) && (!race_halfelf)) || (!warlordclass())) {
 	document.form1.inspireddefense_box.checked = false;
     }
     ArrowShow();
@@ -66407,7 +66208,7 @@ function consider_inspireddefense()
 
 function light_inspireddefense_star()
 {
-    if (((!race_human) && (!race_halfelf)) | (!warlordclass())) {
+    if (((!race_human) && (!race_halfelf)) || (!warlordclass())) {
 	document.form1.inspireddefense_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66420,7 +66221,7 @@ function consider_inspiredtactics()
 	remember_feats();
 	return;
     }
-    if ((!race_halfelf) | (!warlord_inspiring)) {
+    if ((!race_halfelf) || (!warlord_inspiring)) {
 	document.form1.inspiredtactics_box.checked = false;
     }
     ArrowShow();
@@ -66428,7 +66229,7 @@ function consider_inspiredtactics()
 
 function light_inspiredtactics_star()
 {
-    if ((!race_halfelf) | (!warlord_inspiring)) {
+    if ((!race_halfelf) || (!warlord_inspiring)) {
 	document.form1.inspiredtactics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66462,7 +66263,7 @@ function consider_keeperofstorm()
 	remember_feats();
 	return;
     }
-    if ((!race_genasi) | (!class_fighter)) {
+    if ((!race_genasi) || (!class_fighter)) {
 	document.form1.keeperofstorm_box.checked = false;
     }
     ArrowShow();
@@ -66470,7 +66271,7 @@ function consider_keeperofstorm()
 
 function light_keeperofstorm_star()
 {
-    if ((!race_genasi) | (!class_fighter)) {
+    if ((!race_genasi) || (!class_fighter)) {
 	document.form1.keeperofstorm_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66483,7 +66284,7 @@ function consider_leadingfire()
 	remember_feats();
 	return;
     }
-    if (((!race_elf) && (!race_halfelf)) | (!class_warlord)) {
+    if (((!race_elf) && (!race_halfelf)) || (!class_warlord)) {
 	document.form1.leadingfire_box.checked = false;
     }
     ArrowShow();
@@ -66491,7 +66292,7 @@ function consider_leadingfire()
 
 function light_leadingfire_star()
 {
-    if (((!race_elf) && (!race_halfelf)) | (!class_warlord)) {
+    if (((!race_elf) && (!race_halfelf)) || (!class_warlord)) {
 	document.form1.leadingfire_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66525,7 +66326,7 @@ function consider_lingeringwrath()
 	remember_feats();
 	return;
     }
-    if ((!race_tiefling) | (!class_fighter)) {
+    if ((!race_tiefling) || (!class_fighter)) {
 	document.form1.lingeringwrath_box.checked = false;
     }
     ArrowShow();
@@ -66533,7 +66334,7 @@ function consider_lingeringwrath()
 
 function light_lingeringwrath_star()
 {
-    if ((!race_tiefling) | (!class_fighter)) {
+    if ((!race_tiefling) || (!class_fighter)) {
 	document.form1.lingeringwrath_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66546,7 +66347,7 @@ function consider_longswordfinesse()
 	remember_feats();
 	return;
     }
-    if ((!race_eladrin) | (!rogueclass())) {
+    if ((!race_eladrin) || (!rogueclass())) {
 	document.form1.longswordfinesse_box.checked = false;
     }
     ArrowShow();
@@ -66554,7 +66355,7 @@ function consider_longswordfinesse()
 
 function light_longswordfinesse_star()
 {
-    if ((!race_eladrin) | (!rogueclass())) {
+    if ((!race_eladrin) || (!rogueclass())) {
 	document.form1.longswordfinesse_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66567,7 +66368,7 @@ function consider_luckyskirmisher()
 	remember_feats();
 	return;
     }
-    if ((!race_halfling) | ((!rangerclass()) && (!rogueclass()))) {
+    if ((!race_halfling) || ((!rangerclass()) && (!rogueclass()))) {
 	document.form1.luckyskirmisher_box.checked = false;
     }
     ArrowShow();
@@ -66575,7 +66376,7 @@ function consider_luckyskirmisher()
 
 function light_luckyskirmisher_star()
 {
-    if ((!race_halfling) | ((!rangerclass()) && (!rogueclass()))) {
+    if ((!race_halfling) || ((!rangerclass()) && (!rogueclass()))) {
 	document.form1.luckyskirmisher_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66589,8 +66390,8 @@ function consider_martialalacrity()
 	return;
     }
     if ((dexterity <
-	 15) | ((!fighterclass()) && (!rogueclass()) && (!rangerclass()) &
-		(!warlordclass()))) {
+	 15) || ((!fighterclass()) && (!rogueclass()) && (!rangerclass())
+		 && (!warlordclass()))) {
 	document.form1.martialalacrity_box.checked = false;
     }
     ArrowShow();
@@ -66599,8 +66400,8 @@ function consider_martialalacrity()
 function light_martialalacrity_star()
 {
     if ((dexterity <
-	 15) | ((!fighterclass()) && (!rogueclass()) && (!rangerclass()) &
-		(!warlordclass()))) {
+	 15) || ((!fighterclass()) && (!rogueclass()) && (!rangerclass())
+		 && (!warlordclass()))) {
 	document.form1.martialalacrity_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66613,7 +66414,7 @@ function consider_martialfreedom()
 	remember_feats();
 	return;
     }
-    if ((wisdom < 13) | (!AnyMartialClass()) | (!TrainedInEndurance())) {
+    if ((wisdom < 13) || (!AnyMartialClass()) || (!TrainedInEndurance())) {
 	document.form1.martialfreedom_box.checked = false;
     }
     ArrowShow();
@@ -66621,7 +66422,7 @@ function consider_martialfreedom()
 
 function light_martialfreedom_star()
 {
-    if ((wisdom < 13) | (!AnyMartialClass()) | (!TrainedInEndurance())) {
+    if ((wisdom < 13) || (!AnyMartialClass()) || (!TrainedInEndurance())) {
 	document.form1.martialfreedom_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66634,7 +66435,7 @@ function consider_masterofrumblingearth()
 	remember_feats();
 	return;
     }
-    if ((!race_genasi) | (!fighterclass())) {
+    if ((!race_genasi) || (!fighterclass())) {
 	document.form1.masterofrumblingearth_box.checked = false;
     }
     ArrowShow();
@@ -66642,7 +66443,7 @@ function consider_masterofrumblingearth()
 
 function light_masterofrumblingearth_star()
 {
-    if ((!race_genasi) | (!fighterclass())) {
+    if ((!race_genasi) || (!fighterclass())) {
 	document.form1.masterofrumblingearth_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66655,7 +66456,7 @@ function consider_nimblecompanion()
 	remember_feats();
 	return;
     }
-    if ((!race_halfling) | (!ranger_beastmaster)) {
+    if ((!race_halfling) || (!ranger_beastmaster)) {
 	document.form1.nimblecompanion_box.checked = false;
     }
     ArrowShow();
@@ -66663,7 +66464,7 @@ function consider_nimblecompanion()
 
 function light_nimblecompanion_star()
 {
-    if ((!race_halfling) | (!ranger_beastmaster)) {
+    if ((!race_halfling) || (!ranger_beastmaster)) {
 	document.form1.nimblecompanion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66676,7 +66477,7 @@ function consider_offensiveresilience()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 13) | (wisdom < 13) | (!fighterclass())) {
+    if ((dexterity < 13) || (wisdom < 13) || (!fighterclass())) {
 	document.form1.offensiveresilience_box.checked = false;
     }
     ArrowShow();
@@ -66684,7 +66485,7 @@ function consider_offensiveresilience()
 
 function light_offensiveresilience_star()
 {
-    if ((dexterity < 13) | (wisdom < 13) | (!fighterclass())) {
+    if ((dexterity < 13) || (wisdom < 13) || (!fighterclass())) {
 	document.form1.offensiveresilience_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66698,7 +66499,7 @@ function consider_opportunisticaccuracy()
 	return;
     }
     if ((wisdom <
-	 13) | ((!race_elf) && (!race_halfelf)) | (!fighterclass())) {
+	 13) || ((!race_elf) && (!race_halfelf)) || (!fighterclass())) {
 	document.form1.opportunisticaccuracy_box.checked = false;
     }
     ArrowShow();
@@ -66707,7 +66508,7 @@ function consider_opportunisticaccuracy()
 function light_opportunisticaccuracy_star()
 {
     if ((wisdom <
-	 13) | ((!race_elf) && (!race_halfelf)) | (!fighterclass())) {
+	 13) || ((!race_elf) && (!race_halfelf)) || (!fighterclass())) {
 	document.form1.opportunisticaccuracy_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66720,7 +66521,7 @@ function consider_polearmmomentum()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 15) | (wisdom < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (wisdom < 15) || (!fighterclass())) {
 	document.form1.polearmmomentum_box.checked = false;
     }
     ArrowShow();
@@ -66728,7 +66529,7 @@ function consider_polearmmomentum()
 
 function light_polearmmomentum_star()
 {
-    if ((dexterity < 15) | (wisdom < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (wisdom < 15) || (!fighterclass())) {
 	document.form1.polearmmomentum_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66783,7 +66584,7 @@ function consider_rashsneakattack()
 	remember_feats();
 	return;
     }
-    if (((!race_human) && (!race_halfelf)) | (!class_rogue)) {
+    if (((!race_human) && (!race_halfelf)) || (!class_rogue)) {
 	document.form1.rashsneakattack_box.checked = false;
     }
     ArrowShow();
@@ -66791,7 +66592,7 @@ function consider_rashsneakattack()
 
 function light_rashsneakattack_star()
 {
-    if (((!race_human) && (!race_halfelf)) | (!class_rogue)) {
+    if (((!race_human) && (!race_halfelf)) || (!class_rogue)) {
 	document.form1.rashsneakattack_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66804,7 +66605,7 @@ function consider_rattlingwrath()
 	remember_feats();
 	return;
     }
-    if ((charisma < 15) | (!race_tiefling) | (!rogueclass())) {
+    if ((charisma < 15) || (!race_tiefling) || (!rogueclass())) {
 	document.form1.rattlingwrath_box.checked = false;
     }
     ArrowShow();
@@ -66812,7 +66613,7 @@ function consider_rattlingwrath()
 
 function light_rattlingwrath_star()
 {
-    if ((charisma < 15) | (!race_tiefling) | (!rogueclass())) {
+    if ((charisma < 15) || (!race_tiefling) || (!rogueclass())) {
 	document.form1.rattlingwrath_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66825,7 +66626,7 @@ function consider_reapingblade()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (!fighterclass())) {
 	document.form1.reapingblade_box.checked = false;
     }
     ArrowShow();
@@ -66833,7 +66634,7 @@ function consider_reapingblade()
 
 function light_reapingblade_star()
 {
-    if ((dexterity < 15) | (!fighterclass())) {
+    if ((dexterity < 15) || (!fighterclass())) {
 	document.form1.reapingblade_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66910,8 +66711,8 @@ function consider_secureencampment()
 	return;
     }
     if ((wisdom <
-	 13) | (!rangerclass()) | (!TrainedInNature()) |
-	(!TrainedInPerception()) | (!TrainedInStealth())) {
+	 13) || (!rangerclass()) || (!TrainedInNature()) ||
+	(!TrainedInPerception()) || (!TrainedInStealth())) {
 	document.form1.secureencampment_box.checked = false;
     }
     ArrowShow();
@@ -66920,8 +66721,8 @@ function consider_secureencampment()
 function light_secureencampment_star()
 {
     if ((wisdom <
-	 13) | (!rangerclass()) | (!TrainedInNature()) |
-	(!TrainedInPerception()) | (!TrainedInStealth())) {
+	 13) || (!rangerclass()) || (!TrainedInNature()) ||
+	(!TrainedInPerception()) || (!TrainedInStealth())) {
 	document.form1.secureencampment_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66934,7 +66735,7 @@ function consider_shielddefense()
 	remember_feats();
 	return;
     }
-    if ((wisdom < 13) | (!fighterclass())) {
+    if ((wisdom < 13) || (!fighterclass())) {
 	document.form1.shielddefense_box.checked = false;
     }
     ArrowShow();
@@ -66942,7 +66743,7 @@ function consider_shielddefense()
 
 function light_shielddefense_star()
 {
-    if ((wisdom < 13) | (!fighterclass())) {
+    if ((wisdom < 13) || (!fighterclass())) {
 	document.form1.shielddefense_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66955,7 +66756,7 @@ function consider_sidewaysdefense()
 	remember_feats();
 	return;
     }
-    if (((!race_human) && (!race_halfelf)) | (!class_fighter)) {
+    if (((!race_human) && (!race_halfelf)) || (!class_fighter)) {
 	document.form1.sidewaysdefense_box.checked = false;
     }
     ArrowShow();
@@ -66963,7 +66764,7 @@ function consider_sidewaysdefense()
 
 function light_sidewaysdefense_star()
 {
-    if (((!race_human) && (!race_halfelf)) | (!class_fighter)) {
+    if (((!race_human) && (!race_halfelf)) || (!class_fighter)) {
 	document.form1.sidewaysdefense_star.src = "no_asterisk.gif";
 	return;
     }
@@ -66997,7 +66798,7 @@ function consider_sneakyaccuracy()
 	remember_feats();
 	return;
     }
-    if (((!race_elf) && (!race_halfelf)) | (!class_rogue)) {
+    if (((!race_elf) && (!race_halfelf)) || (!class_rogue)) {
 	document.form1.sneakyaccuracy_box.checked = false;
     }
     ArrowShow();
@@ -67005,7 +66806,7 @@ function consider_sneakyaccuracy()
 
 function light_sneakyaccuracy_star()
 {
-    if (((!race_elf) && (!race_halfelf)) | (!class_rogue)) {
+    if (((!race_elf) && (!race_halfelf)) || (!class_rogue)) {
 	document.form1.sneakyaccuracy_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67018,7 +66819,7 @@ function consider_speedyresponse()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 15) | (!rogueclass())) {
+    if ((dexterity < 15) || (!rogueclass())) {
 	document.form1.speedyresponse_box.checked = false;
     }
     ArrowShow();
@@ -67026,7 +66827,7 @@ function consider_speedyresponse()
 
 function light_speedyresponse_star()
 {
-    if ((dexterity < 15) | (!rogueclass())) {
+    if ((dexterity < 15) || (!rogueclass())) {
 	document.form1.speedyresponse_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67039,7 +66840,7 @@ function consider_streetthug()
 	remember_feats();
 	return;
     }
-    if ((strength < 13) | (constitution < 13) | (!rogueclass())) {
+    if ((strength < 13) || (constitution < 13) || (!rogueclass())) {
 	document.form1.streetthug_box.checked = false;
     }
     ArrowShow();
@@ -67047,7 +66848,7 @@ function consider_streetthug()
 
 function light_streetthug_star()
 {
-    if ((strength < 13) | (constitution < 13) | (!rogueclass())) {
+    if ((strength < 13) || (constitution < 13) || (!rogueclass())) {
 	document.form1.streetthug_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67060,7 +66861,7 @@ function consider_surprisingcharge()
 	remember_feats();
 	return;
     }
-    if ((dexterity < 17) | ((!rogueclass()) && (!fighterclass()))) {
+    if ((dexterity < 17) || ((!rogueclass()) && (!fighterclass()))) {
 	document.form1.surprisingcharge_box.checked = false;
     }
     ArrowShow();
@@ -67068,7 +66869,7 @@ function consider_surprisingcharge()
 
 function light_surprisingcharge_star()
 {
-    if ((dexterity < 17) | ((!rogueclass()) && (!fighterclass()))) {
+    if ((dexterity < 17) || ((!rogueclass()) && (!fighterclass()))) {
 	document.form1.surprisingcharge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67081,7 +66882,7 @@ function consider_tacticalinspiration()
 	remember_feats();
 	return;
     }
-    if ((!race_eladrin) | (!class_warlord)) {
+    if ((!race_eladrin) || (!class_warlord)) {
 	document.form1.tacticalinspiration_box.checked = false;
     }
     ArrowShow();
@@ -67089,7 +66890,7 @@ function consider_tacticalinspiration()
 
 function light_tacticalinspiration_star()
 {
-    if ((!race_eladrin) | (!class_warlord)) {
+    if ((!race_eladrin) || (!class_warlord)) {
 	document.form1.tacticalinspiration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67102,7 +66903,7 @@ function consider_takemeasure()
 	remember_feats();
 	return;
     }
-    if ((wisdom < 15) | (!fighterclass())) {
+    if ((wisdom < 15) || (!fighterclass())) {
 	document.form1.takemeasure_box.checked = false;
     }
     ArrowShow();
@@ -67110,7 +66911,7 @@ function consider_takemeasure()
 
 function light_takemeasure_star()
 {
-    if ((wisdom < 15) | (!fighterclass())) {
+    if ((wisdom < 15) || (!fighterclass())) {
 	document.form1.takemeasure_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67123,7 +66924,7 @@ function consider_thunderhammer()
 	remember_feats();
 	return;
     }
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.thunderhammer_box.checked = false;
     }
     ArrowShow();
@@ -67131,7 +66932,7 @@ function consider_thunderhammer()
 
 function light_thunderhammer_star()
 {
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.thunderhammer_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67144,7 +66945,7 @@ function consider_thundertuskcompanion()
 	remember_feats();
 	return;
     }
-    if ((!race_dwarf) | (!ranger_beastmaster)) {
+    if ((!race_dwarf) || (!ranger_beastmaster)) {
 	document.form1.thundertuskcompanion_box.checked = false;
     }
     ArrowShow();
@@ -67152,7 +66953,7 @@ function consider_thundertuskcompanion()
 
 function light_thundertuskcompanion_star()
 {
-    if ((!race_dwarf) | (!ranger_beastmaster)) {
+    if ((!race_dwarf) || (!ranger_beastmaster)) {
 	document.form1.thundertuskcompanion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67165,7 +66966,7 @@ function consider_trapsense()
 	remember_feats();
 	return;
     }
-    if ((wisdom < 13) | (!rogueclass())) {
+    if ((wisdom < 13) || (!rogueclass())) {
 	document.form1.trapsense_box.checked = false;
     }
     ArrowShow();
@@ -67173,7 +66974,7 @@ function consider_trapsense()
 
 function light_trapsense_star()
 {
-    if ((wisdom < 13) | (!rogueclass())) {
+    if ((wisdom < 13) || (!rogueclass())) {
 	document.form1.trapsense_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67186,8 +66987,8 @@ function consider_tunnelstalker()
 	remember_feats();
 	return;
     }
-    if ((strength < 13) | (constitution <
-			   13) | (!race_dwarf) | (!rogueclass())) {
+    if ((strength < 13) || (constitution <
+			    13) || (!race_dwarf) || (!rogueclass())) {
 	document.form1.tunnelstalker_box.checked = false;
     }
     ArrowShow();
@@ -67195,8 +66996,8 @@ function consider_tunnelstalker()
 
 function light_tunnelstalker_star()
 {
-    if ((strength < 13) | (constitution <
-			   13) | (!race_dwarf) | (!rogueclass())) {
+    if ((strength < 13) || (constitution <
+			    13) || (!race_dwarf) || (!rogueclass())) {
 	document.form1.tunnelstalker_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67230,7 +67031,7 @@ function consider_unbalancingwrath()
 	remember_feats();
 	return;
     }
-    if ((!race_tiefling) | (warlordclass())) {
+    if ((!race_tiefling) || (warlordclass())) {
 	document.form1.unbalancingwrath_box.checked = false;
     }
     ArrowShow();
@@ -67238,7 +67039,7 @@ function consider_unbalancingwrath()
 
 function light_unbalancingwrath_star()
 {
-    if ((!race_tiefling) | (warlordclass())) {
+    if ((!race_tiefling) || (warlordclass())) {
 	document.form1.unbalancingwrath_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67272,7 +67073,7 @@ function consider_victorsconfidence()
 	remember_feats();
 	return;
     }
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.victorsconfidence_box.checked = false;
     }
     ArrowShow();
@@ -67280,7 +67081,7 @@ function consider_victorsconfidence()
 
 function light_victorsconfidence_star()
 {
-    if ((constitution < 15) | (!fighterclass())) {
+    if ((constitution < 15) || (!fighterclass())) {
 	document.form1.victorsconfidence_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67293,7 +67094,7 @@ function consider_wielderofpiercingflame()
 	remember_feats();
 	return;
     }
-    if ((!race_genasi) | (!rogueclass())) {
+    if ((!race_genasi) || (!rogueclass())) {
 	document.form1.wielderofpiercingflame_box.checked = false;
     }
     ArrowShow();
@@ -67301,7 +67102,7 @@ function consider_wielderofpiercingflame()
 
 function light_wielderofpiercingflame_star()
 {
-    if ((!race_genasi) | (!rogueclass())) {
+    if ((!race_genasi) || (!rogueclass())) {
 	document.form1.wielderofpiercingflame_star.src = "no_asterisk.gif";
 	return;
     }
@@ -67943,7 +67744,7 @@ function consider_improvedbullrush()
 	remember_feats();
 	return;
     }
-    if ((strength < 13) | (constitution < 13)) {
+    if ((strength < 13) || (constitution < 13)) {
 	document.form1.improvedbullrush_box.checked = false;
     }
     ArrowShow();
@@ -67951,7 +67752,7 @@ function consider_improvedbullrush()
 
 function light_improvedbullrush_star()
 {
-    if ((strength < 13) | (constitution < 13)) {
+    if ((strength < 13) || (constitution < 13)) {
 	document.form1.improvedbullrush_star.src = "no_asterisk.gif";
 	return;
     }
@@ -68686,7 +68487,7 @@ function consider_versatilemaster()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfelf)) {
+    if ((total_levels < 11) || (!race_halfelf)) {
 	document.form1.versatilemaster_box.checked = false;
     }
     ArrowShow();
@@ -68694,7 +68495,7 @@ function consider_versatilemaster()
 
 function light_versatilemaster_star()
 {
-    if ((total_levels < 11) | (!race_halfelf)) {
+    if ((total_levels < 11) || (!race_halfelf)) {
 	document.form1.versatilemaster_star.src = "no_asterisk.gif";
 	return;
     }
@@ -68945,7 +68746,7 @@ function consider_arcaneimplementproficiencydagger()
 	remember_feats();
 	return;
     }
-    if ((daggeruser()) | (!arcaneclass())) {
+    if ((daggeruser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencydagger_box.checked =
 	    false;
     }
@@ -68954,7 +68755,7 @@ function consider_arcaneimplementproficiencydagger()
 
 function light_arcaneimplementproficiencydagger_star()
 {
-    if ((daggeruser()) | (!arcaneclass())) {
+    if ((daggeruser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencydagger_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -68969,7 +68770,7 @@ function consider_arcaneimplementproficiencymusic()
 	remember_feats();
 	return;
     }
-    if ((musicuser() | (!arcaneclass()))) {
+    if ((musicuser() || (!arcaneclass()))) {
 	document.form1.arcaneimplementproficiencymusic_box.checked = false;
     }
     ArrowShow();
@@ -68977,7 +68778,7 @@ function consider_arcaneimplementproficiencymusic()
 
 function light_arcaneimplementproficiencymusic_star()
 {
-    if ((musicuser()) | (!arcaneclass())) {
+    if ((musicuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencymusic_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -68992,7 +68793,7 @@ function consider_arcaneimplementproficiencyorb()
 	remember_feats();
 	return;
     }
-    if ((orbuser()) | (!arcaneclass())) {
+    if ((orbuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencyorb_box.checked = false;
     }
     ArrowShow();
@@ -69000,7 +68801,7 @@ function consider_arcaneimplementproficiencyorb()
 
 function light_arcaneimplementproficiencyorb_star()
 {
-    if ((orbuser()) | (!arcaneclass())) {
+    if ((orbuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencyorb_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69014,7 +68815,7 @@ function consider_arcaneimplementproficiencyrod()
 	remember_feats();
 	return;
     }
-    if ((roduser()) | (!arcaneclass())) {
+    if ((roduser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencyrod_box.checked = false;
     }
     ArrowShow();
@@ -69022,7 +68823,7 @@ function consider_arcaneimplementproficiencyrod()
 
 function light_arcaneimplementproficiencyrod_star()
 {
-    if ((roduser()) | (!arcaneclass())) {
+    if ((roduser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencyrod_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69036,7 +68837,7 @@ function consider_arcaneimplementproficiencystaff()
 	remember_feats();
 	return;
     }
-    if ((staffuser()) | (!arcaneclass())) {
+    if ((staffuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencystaff_box.checked = false;
     }
     ArrowShow();
@@ -69044,7 +68845,7 @@ function consider_arcaneimplementproficiencystaff()
 
 function light_arcaneimplementproficiencystaff_star()
 {
-    if ((staffuser()) | (!arcaneclass())) {
+    if ((staffuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencystaff_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69059,7 +68860,7 @@ function consider_arcaneimplementproficiencytome()
 	remember_feats();
 	return;
     }
-    if ((tomeuser()) | (!arcaneclass())) {
+    if ((tomeuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencytome_box.checked = false;
     }
     ArrowShow();
@@ -69067,7 +68868,7 @@ function consider_arcaneimplementproficiencytome()
 
 function light_arcaneimplementproficiencytome_star()
 {
-    if ((tomeuser()) | (!arcaneclass())) {
+    if ((tomeuser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencytome_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69082,7 +68883,7 @@ function consider_arcaneimplementproficiencywand()
 	remember_feats();
 	return;
     }
-    if ((wanduser()) | (!arcaneclass())) {
+    if ((wanduser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencywand_box.checked = false;
     }
     ArrowShow();
@@ -69090,7 +68891,7 @@ function consider_arcaneimplementproficiencywand()
 
 function light_arcaneimplementproficiencywand_star()
 {
-    if ((wanduser()) | (!arcaneclass())) {
+    if ((wanduser()) || (!arcaneclass())) {
 	document.form1.arcaneimplementproficiencywand_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69105,7 +68906,7 @@ function consider_dualimplementspellcaster()
 	remember_feats();
 	return;
     }
-    if ((!arcaneclass()) | (dexterity < 13)) {
+    if ((!arcaneclass()) || (dexterity < 13)) {
 	document.form1.dualimplementspellcaster_box.checked = false;
     }
     ArrowShow();
@@ -69113,7 +68914,7 @@ function consider_dualimplementspellcaster()
 
 function light_dualimplementspellcaster_star()
 {
-    if ((!arcaneclass()) | (dexterity < 13)) {
+    if ((!arcaneclass()) || (dexterity < 13)) {
 	document.form1.dualimplementspellcaster_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69127,8 +68928,8 @@ function consider_agiletempest()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity <
-			       15) | (!fighter_tempesttechnique)) {
+    if ((total_levels < 11) || (dexterity <
+				15) || (!fighter_tempesttechnique)) {
 	document.form1.agiletempest_box.checked = false;
     }
     ArrowShow();
@@ -69136,8 +68937,8 @@ function consider_agiletempest()
 
 function light_agiletempest_star()
 {
-    if ((total_levels < 11) | (dexterity <
-			       15) | (!fighter_tempesttechnique)) {
+    if ((total_levels < 11) || (dexterity <
+				15) || (!fighter_tempesttechnique)) {
 	document.form1.agiletempest_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69150,7 +68951,7 @@ function consider_avandrasgift()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfling) | (rogueclass())) {
+    if ((total_levels < 11) || (!race_halfling) || (rogueclass())) {
 	document.form1.avandrasgift_box.checked = false;
     }
     ArrowShow();
@@ -69158,7 +68959,7 @@ function consider_avandrasgift()
 
 function light_avandrasgift_star()
 {
-    if ((total_levels < 11) | (!race_halfling) | (rogueclass())) {
+    if ((total_levels < 11) || (!race_halfling) || (rogueclass())) {
 	document.form1.avandrasgift_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69172,8 +68973,9 @@ function consider_avengingspirit()
 	return;
     }
     if ((total_levels <
-	 11) | ((!race_human) && (!race_halfelf)) | ((!fighterclass()) &
-						     (!warlordclass()))) {
+	 11) || ((!race_human) && (!race_halfelf)) || ((!fighterclass()) &&
+						       (!warlordclass())))
+    {
 	document.form1.avengingspirit_box.checked = false;
     }
     ArrowShow();
@@ -69182,8 +68984,9 @@ function consider_avengingspirit()
 function light_avengingspirit_star()
 {
     if ((total_levels <
-	 11) | ((!race_human) && (!race_halfelf)) | ((!fighterclass()) &
-						     (!warlordclass()))) {
+	 11) || ((!race_human) && (!race_halfelf)) || ((!fighterclass()) &&
+						       (!warlordclass())))
+    {
 	document.form1.avengingspirit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69196,7 +68999,7 @@ function consider_bleedingbackstab()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.bleedingbackstab_box.checked = false;
     }
     ArrowShow();
@@ -69204,7 +69007,7 @@ function consider_bleedingbackstab()
 
 function light_bleedingbackstab_star()
 {
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.bleedingbackstab_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69218,7 +69021,7 @@ function consider_bleedingprecision()
 	return;
     }
     if ((total_levels <
-	 11) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 11) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.bleedingprecision_box.checked = false;
     }
     ArrowShow();
@@ -69227,7 +69030,7 @@ function consider_bleedingprecision()
 function light_bleedingprecision_star()
 {
     if ((total_levels <
-	 11) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 11) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.bleedingprecision_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69240,7 +69043,7 @@ function consider_bloodyinspiration()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dragonborn) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!warlordclass())) {
 	document.form1.bloodyinspiration_box.checked = false;
     }
     ArrowShow();
@@ -69248,7 +69051,7 @@ function consider_bloodyinspiration()
 
 function light_bloodyinspiration_star()
 {
-    if ((total_levels < 11) | (!race_dragonborn) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!warlordclass())) {
 	document.form1.bloodyinspiration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69262,10 +69065,10 @@ function consider_bloodytenacity()
 	return;
     }
     if ((total_levels <
-	 11) | ((!race_human) && (!race_halfelf)) | ((!fighterclass()) &
-						     (!rangerclass()) &
-						     (!warlordclass()) &
-						     (!rogueclass()))) {
+	 11) || ((!race_human) && (!race_halfelf)) || ((!fighterclass()) &&
+						       (!rangerclass()) &&
+						       (!warlordclass()) &&
+						       (!rogueclass()))) {
 	document.form1.bloodytenacity_box.checked = false;
     }
     ArrowShow();
@@ -69274,10 +69077,10 @@ function consider_bloodytenacity()
 function light_bloodytenacity_star()
 {
     if ((total_levels <
-	 11) | ((!race_human) && (!race_halfelf)) | ((!fighterclass()) &
-						     (!rangerclass()) &
-						     (!warlordclass()) &
-						     (!rogueclass()))) {
+	 11) || ((!race_human) && (!race_halfelf)) || ((!fighterclass()) &&
+						       (!rangerclass()) &&
+						       (!warlordclass()) &&
+						       (!rogueclass()))) {
 	document.form1.bloodytenacity_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69290,7 +69093,7 @@ function consider_chainmailagility()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 15) | (!fighterclass())) {
+    if ((total_levels < 11) || (dexterity < 15) || (!fighterclass())) {
 	document.form1.chainmailagility_box.checked = false;
     }
     ArrowShow();
@@ -69298,7 +69101,7 @@ function consider_chainmailagility()
 
 function light_chainmailagility_star()
 {
-    if ((total_levels < 11) | (dexterity < 15) | (!fighterclass())) {
+    if ((total_levels < 11) || (dexterity < 15) || (!fighterclass())) {
 	document.form1.chainmailagility_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69311,7 +69114,7 @@ function consider_combatopening()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfelf) | (!class_fighter)) {
+    if ((total_levels < 11) || (!race_halfelf) || (!class_fighter)) {
 	document.form1.combatopening_box.checked = false;
     }
     ArrowShow();
@@ -69319,7 +69122,7 @@ function consider_combatopening()
 
 function light_combatopening_star()
 {
-    if ((total_levels < 11) | (!race_halfelf) | (!class_fighter)) {
+    if ((total_levels < 11) || (!race_halfelf) || (!class_fighter)) {
 	document.form1.combatopening_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69332,7 +69135,7 @@ function consider_culltheweak()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (charisma < 15) | (!rogueclass())) {
+    if ((total_levels < 11) || (charisma < 15) || (!rogueclass())) {
 	document.form1.culltheweak_box.checked = false;
     }
     ArrowShow();
@@ -69340,7 +69143,7 @@ function consider_culltheweak()
 
 function light_culltheweak_star()
 {
-    if ((total_levels < 11) | (charisma < 15) | (rogueclass())) {
+    if ((total_levels < 11) || (charisma < 15) || (rogueclass())) {
 	document.form1.culltheweak_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69354,8 +69157,8 @@ function consider_darkhunter()
 	return;
     }
     if ((total_levels <
-	 11) | (!race_drow) | ((!class_ranger) &
-			       (!multi_ranger_warriorofthewild))) {
+	 11) || (!race_drow) || ((!class_ranger) &&
+				 (!multi_ranger_warriorofthewild))) {
 	document.form1.darkhunter_box.checked = false;
     }
     ArrowShow();
@@ -69364,8 +69167,8 @@ function consider_darkhunter()
 function light_darkhunter_star()
 {
     if ((total_levels <
-	 11) | (!race_drow) | ((!class_ranger) &
-			       (!multi_ranger_warriorofthewild))) {
+	 11) || (!race_drow) || ((!class_ranger) &&
+				 (!multi_ranger_warriorofthewild))) {
 	document.form1.darkhunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69378,7 +69181,7 @@ function consider_darkjumper()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_drow) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_drow) || (!rogueclass())) {
 	document.form1.darkjumper_box.checked = false;
     }
     ArrowShow();
@@ -69386,7 +69189,7 @@ function consider_darkjumper()
 
 function light_darkjumper_star()
 {
-    if ((total_levels < 11) | (!race_drow) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_drow) || (!rogueclass())) {
 	document.form1.darkjumper_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69399,7 +69202,7 @@ function consider_dauntingchallenge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_fighter)) {
+    if ((total_levels < 11) || (!class_fighter)) {
 	document.form1.dauntingchallenge_box.checked = false;
     }
     ArrowShow();
@@ -69407,7 +69210,7 @@ function consider_dauntingchallenge()
 
 function light_dauntingchallenge_star()
 {
-    if ((total_levels < 11) | (!class_fighter)) {
+    if ((total_levels < 11) || (!class_fighter)) {
 	document.form1.dauntingchallenge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69420,7 +69223,7 @@ function consider_defensivesurge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (constitution < 15) | (!warlordclass())) {
+    if ((total_levels < 11) || (constitution < 15) || (!warlordclass())) {
 	document.form1.defensivesurge_box.checked = false;
     }
     ArrowShow();
@@ -69428,7 +69231,7 @@ function consider_defensivesurge()
 
 function light_defensivesurge_star()
 {
-    if ((total_levels < 11) | (constitution < 15) | (!warlordclass())) {
+    if ((total_levels < 11) || (constitution < 15) || (!warlordclass())) {
 	document.form1.defensivesurge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69441,7 +69244,7 @@ function consider_distractingcompanion()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.distractingcompanion_box.checked = false;
     }
     ArrowShow();
@@ -69449,7 +69252,7 @@ function consider_distractingcompanion()
 
 function light_distractingcompanion_star()
 {
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.distractingcompanion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69462,7 +69265,7 @@ function consider_draconicarrogance()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dragonborn) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!fighterclass())) {
 	document.form1.draconicarrogance_box.checked = false;
     }
     ArrowShow();
@@ -69470,7 +69273,7 @@ function consider_draconicarrogance()
 
 function light_draconicarrogance_star()
 {
-    if ((total_levels < 11) | (!race_dragonborn) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!fighterclass())) {
 	document.form1.draconicarrogance_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69483,7 +69286,7 @@ function consider_dragonbreathwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dragonborn) | (!AnyMartialClass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!AnyMartialClass())) {
 	document.form1.dragonbreathwarrior_box.checked = false;
     }
     ArrowShow();
@@ -69491,7 +69294,7 @@ function consider_dragonbreathwarrior()
 
 function light_dragonbreathwarrior_star()
 {
-    if ((total_levels < 11) | (!race_dragonborn) | (!AnyMartialClass())) {
+    if ((total_levels < 11) || (!race_dragonborn) || (!AnyMartialClass())) {
 	document.form1.dragonbreathwarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69504,7 +69307,7 @@ function consider_elementalcompanions()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_genasi) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_genasi) || (!warlordclass())) {
 	document.form1.elementalcompanions_box.checked = false;
     }
     ArrowShow();
@@ -69512,7 +69315,7 @@ function consider_elementalcompanions()
 
 function light_elementalcompanions_star()
 {
-    if ((total_levels < 11) | (!race_genasi) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_genasi) || (!warlordclass())) {
 	document.form1.elementalcompanions_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69525,8 +69328,8 @@ function consider_elementalguardian()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (constitution <
-			       15) | (!race_genasi) | (!fighterclass())) {
+    if ((total_levels < 11) || (constitution < 15) || (!race_genasi)
+	|| (!fighterclass())) {
 	document.form1.elementalguardian_box.checked = false;
     }
     ArrowShow();
@@ -69534,8 +69337,8 @@ function consider_elementalguardian()
 
 function light_elementalguardian_star()
 {
-    if ((total_levels < 11) | (constitution <
-			       15) | (!race_genasi) | (!fighterclass())) {
+    if ((total_levels < 11) || (constitution < 15) || (!race_genasi)
+	|| (!fighterclass())) {
 	document.form1.elementalguardian_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69548,7 +69351,7 @@ function consider_enduringwallop()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dwarf) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dwarf) || (!fighterclass())) {
 	document.form1.enduringwallop_box.checked = false;
     }
     ArrowShow();
@@ -69556,7 +69359,7 @@ function consider_enduringwallop()
 
 function light_enduringwallop_star()
 {
-    if ((total_levels < 11) | (!race_dwarf) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dwarf) || (!fighterclass())) {
 	document.form1.enduringwallop_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69569,8 +69372,8 @@ function consider_evasivefootwork()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 17) | (charisma <
-						  15) | (!rogueclass())) {
+    if ((total_levels < 11) || (dexterity < 17) || (charisma < 15)
+	|| (!rogueclass())) {
 	document.form1.evasivefootwork_box.checked = false;
     }
     ArrowShow();
@@ -69578,8 +69381,8 @@ function consider_evasivefootwork()
 
 function light_evasivefootwork_star()
 {
-    if ((total_levels < 11) | (dexterity < 17) | (charisma <
-						  15) | (!rogueclass())) {
+    if ((total_levels < 11) || (dexterity < 17) || (charisma < 15)
+	|| (!rogueclass())) {
 	document.form1.evasivefootwork_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69592,7 +69395,7 @@ function consider_feycharge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_eladrin) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!fighterclass())) {
 	document.form1.feycharge_box.checked = false;
     }
     ArrowShow();
@@ -69600,7 +69403,7 @@ function consider_feycharge()
 
 function light_feycharge_star()
 {
-    if ((total_levels < 11) | (!race_eladrin) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!fighterclass())) {
 	document.form1.feycharge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69613,7 +69416,7 @@ function consider_feygambit()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_eladrin) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!rogueclass())) {
 	document.form1.feygambit_box.checked = false;
     }
     ArrowShow();
@@ -69621,7 +69424,7 @@ function consider_feygambit()
 
 function light_feygambit_star()
 {
-    if ((total_levels < 11) | (!race_eladrin) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!rogueclass())) {
 	document.form1.feygambit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69634,7 +69437,7 @@ function consider_feytactics()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_eladrin) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!warlordclass())) {
 	document.form1.feytactics_box.checked = false;
     }
     ArrowShow();
@@ -69642,7 +69445,7 @@ function consider_feytactics()
 
 function light_feytactics_star()
 {
-    if ((total_levels < 11) | (!race_eladrin) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_eladrin) || (!warlordclass())) {
 	document.form1.feytactics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69655,7 +69458,7 @@ function consider_fiendishdefender()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_tiefling) | (!class_fighter)) {
+    if ((total_levels < 11) || (!race_tiefling) || (!class_fighter)) {
 	document.form1.fiendishdefender_box.checked = false;
     }
     ArrowShow();
@@ -69663,7 +69466,7 @@ function consider_fiendishdefender()
 
 function light_fiendishdefender_star()
 {
-    if ((total_levels < 11) | (!race_tiefling) | (!class_fighter)) {
+    if ((total_levels < 11) || (!race_tiefling) || (!class_fighter)) {
 	document.form1.fiendishdefender_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69676,7 +69479,7 @@ function consider_grit()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (constitution < 17) | (!fighterclass())) {
+    if ((total_levels < 11) || (constitution < 17) || (!fighterclass())) {
 	document.form1.grit_box.checked = false;
     }
     ArrowShow();
@@ -69684,7 +69487,7 @@ function consider_grit()
 
 function light_grit_star()
 {
-    if ((total_levels < 11) | (constitution < 17) | (!fighterclass())) {
+    if ((total_levels < 11) || (constitution < 17) || (!fighterclass())) {
 	document.form1.grit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69697,7 +69500,7 @@ function consider_groupflanking()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfelf) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_halfelf) || (!rogueclass())) {
 	document.form1.groupflanking_box.checked = false;
     }
     ArrowShow();
@@ -69705,7 +69508,7 @@ function consider_groupflanking()
 
 function light_groupflanking_star()
 {
-    if ((total_levels < 11) | (!race_halfelf) | (!rogueclass())) {
+    if ((total_levels < 11) || (!race_halfelf) || (!rogueclass())) {
 	document.form1.groupflanking_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69718,7 +69521,7 @@ function consider_halflingbeastmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfling) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!race_halfling) || (!ranger_beastmaster)) {
 	document.form1.halflingbeastmastery_box.checked = false;
     }
     ArrowShow();
@@ -69726,7 +69529,7 @@ function consider_halflingbeastmastery()
 
 function light_halflingbeastmastery_star()
 {
-    if ((total_levels < 11) | (!race_halfling) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!race_halfling) || (!ranger_beastmaster)) {
 	document.form1.halflingbeastmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69740,8 +69543,8 @@ function consider_huntersadvantage()
 	return;
     }
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | ((!class_ranger) &
-						   (!multi_ranger_warriorofthewild)))
+	 11) || ((!race_elf) && (!race_halfelf)) || ((!class_ranger) &&
+						     (!multi_ranger_warriorofthewild)))
     {
 	document.form1.huntersadvantage_box.checked = false;
     }
@@ -69751,8 +69554,8 @@ function consider_huntersadvantage()
 function light_huntersadvantage_star()
 {
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | ((!class_ranger) &
-						   (!multi_ranger_warriorofthewild)))
+	 11) || ((!race_elf) && (!race_halfelf)) || ((!class_ranger) &&
+						     (!multi_ranger_warriorofthewild)))
     {
 	document.form1.huntersadvantage_star.src = "no_asterisk.gif";
 	return;
@@ -69767,7 +69570,7 @@ function consider_huntersresurgence()
 	return;
     }
     if ((total_levels <
-	 11) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 11) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.huntersresurgence_box.checked = false;
     }
     ArrowShow();
@@ -69776,7 +69579,7 @@ function consider_huntersresurgence()
 function light_huntersresurgence_star()
 {
     if ((total_levels <
-	 11) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 11) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.huntersresurgence_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69789,7 +69592,7 @@ function consider_impetuouscharger()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (charisma < 15) | (!warlordclass())) {
+    if ((total_levels < 11) || (charisma < 15) || (!warlordclass())) {
 	document.form1.impetuouscharger_box.checked = false;
     }
     ArrowShow();
@@ -69797,7 +69600,7 @@ function consider_impetuouscharger()
 
 function light_impetuouscharger_star()
 {
-    if ((total_levels < 11) | (charisma < 15) | (!warlordclass())) {
+    if ((total_levels < 11) || (charisma < 15) || (!warlordclass())) {
 	document.form1.impetuouscharger_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69810,7 +69613,7 @@ function consider_infernalsneakattack()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_tiefling) | (!class_rogue)) {
+    if ((total_levels < 11) || (!race_tiefling) || (!class_rogue)) {
 	document.form1.infernalsneakattack_box.checked = false;
     }
     ArrowShow();
@@ -69818,7 +69621,7 @@ function consider_infernalsneakattack()
 
 function light_infernalsneakattack_star()
 {
-    if ((total_levels < 11) | (!race_tiefling) | (!class_rogue)) {
+    if ((total_levels < 11) || (!race_tiefling) || (!class_rogue)) {
 	document.form1.infernalsneakattack_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69831,7 +69634,7 @@ function consider_markedscourge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_fighter)) {
+    if ((total_levels < 11) || (!class_fighter)) {
 	document.form1.markedscourge_box.checked = false;
     }
     ArrowShow();
@@ -69839,7 +69642,7 @@ function consider_markedscourge()
 
 function light_markedscourge_star()
 {
-    if ((total_levels < 11) | (!class_fighter)) {
+    if ((total_levels < 11) || (!class_fighter)) {
 	document.form1.markedscourge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69852,7 +69655,7 @@ function consider_mightybattlerage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!fighter_battlerager)) {
+    if ((total_levels < 11) || (!fighter_battlerager)) {
 	document.form1.mightybattlerage_box.checked = false;
     }
     ArrowShow();
@@ -69860,7 +69663,7 @@ function consider_mightybattlerage()
 
 function light_mightybattlerage_star()
 {
-    if ((total_levels < 11) | (!fighter_battlerager)) {
+    if ((total_levels < 11) || (!fighter_battlerager)) {
 	document.form1.mightybattlerage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69874,7 +69677,7 @@ function consider_opportunisticarcher()
 	return;
     }
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | (!class_fighter)) {
+	 11) || ((!race_elf) && (!race_halfelf)) || (!class_fighter)) {
 	document.form1.opportunisticarcher_box.checked = false;
     }
     ArrowShow();
@@ -69883,7 +69686,7 @@ function consider_opportunisticarcher()
 function light_opportunisticarcher_star()
 {
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | (!class_fighter)) {
+	 11) || ((!race_elf) && (!race_halfelf)) || (!class_fighter)) {
 	document.form1.opportunisticarcher_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69896,7 +69699,7 @@ function consider_opportunisticsneakattack()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.opportunisticsneakattack_box.checked = false;
     }
     ArrowShow();
@@ -69904,7 +69707,7 @@ function consider_opportunisticsneakattack()
 
 function light_opportunisticsneakattack_star()
 {
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.opportunisticsneakattack_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -69918,7 +69721,7 @@ function consider_phalanxwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!fighterclass()) && (!warlordclass()))) {
+    if ((total_levels < 11) || ((!fighterclass()) && (!warlordclass()))) {
 	document.form1.phalanxwarrior_box.checked = false;
     }
     ArrowShow();
@@ -69926,7 +69729,7 @@ function consider_phalanxwarrior()
 
 function light_phalanxwarrior_star()
 {
-    if ((total_levels < 11) | ((!fighterclass()) && (!warlordclass()))) {
+    if ((total_levels < 11) || ((!fighterclass()) && (!warlordclass()))) {
 	document.form1.phalanxwarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69939,8 +69742,8 @@ function consider_preternaturalsenses()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (wisdom <
-			       15) | (!rangerclass()) |
+    if ((total_levels < 11) || (wisdom <
+				15) || (!rangerclass()) ||
 	(!TrainedInPerception())) {
 	document.form1.preternaturalsenses_box.checked = false;
     }
@@ -69949,8 +69752,8 @@ function consider_preternaturalsenses()
 
 function light_preternaturalsenses_star()
 {
-    if ((total_levels < 11) | (wisdom <
-			       15) | (!rangerclass()) |
+    if ((total_levels < 11) || (wisdom <
+				15) || (!rangerclass()) ||
 	(!TrainedInPerception())) {
 	document.form1.preternaturalsenses_star.src = "no_asterisk.gif";
 	return;
@@ -69964,7 +69767,7 @@ function consider_primequarry()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_ranger) | (ranger_beastmaster)) {
+    if ((total_levels < 11) || (!class_ranger) || (ranger_beastmaster)) {
 	document.form1.primequarry_box.checked = false;
     }
     ArrowShow();
@@ -69972,7 +69775,7 @@ function consider_primequarry()
 
 function light_primequarry_star()
 {
-    if ((total_levels < 11) | (!class_ranger) | (ranger_beastmaster)) {
+    if ((total_levels < 11) || (!class_ranger) || (ranger_beastmaster)) {
 	document.form1.primequarry_star.src = "no_asterisk.gif";
 	return;
     }
@@ -69986,7 +69789,7 @@ function consider_primeslayer()
 	return;
     }
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | (!rogueclass())) {
+	 11) || ((!race_elf) && (!race_halfelf)) || (!rogueclass())) {
 	document.form1.primeslayer_box.checked = false;
     }
     ArrowShow();
@@ -69995,7 +69798,7 @@ function consider_primeslayer()
 function light_primeslayer_star()
 {
     if ((total_levels <
-	 11) | ((!race_elf) && (!race_halfelf)) | (!rogueclass())) {
+	 11) || ((!race_elf) && (!race_halfelf)) || (!rogueclass())) {
 	document.form1.primeslayer_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70008,7 +69811,7 @@ function consider_protectivebeast()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.protectivebeast_box.checked = false;
     }
     ArrowShow();
@@ -70016,7 +69819,7 @@ function consider_protectivebeast()
 
 function light_protectivebeast_star()
 {
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.protectivebeast_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70029,7 +69832,7 @@ function consider_recklessattacker()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!fighterclass())) {
+    if ((total_levels < 11) || (!fighterclass())) {
 	document.form1.recklessattacker_box.checked = false;
     }
     ArrowShow();
@@ -70037,7 +69840,7 @@ function consider_recklessattacker()
 
 function light_recklessattacker_star()
 {
-    if ((total_levels < 11) | (!fighterclass())) {
+    if ((total_levels < 11) || (!fighterclass())) {
 	document.form1.recklessattacker_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70050,7 +69853,7 @@ function consider_reliableresources()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!warlord_resourceful)) {
+    if ((total_levels < 11) || (!warlord_resourceful)) {
 	document.form1.reliableresources_box.checked = false;
     }
     ArrowShow();
@@ -70058,7 +69861,7 @@ function consider_reliableresources()
 
 function light_reliableresources_star()
 {
-    if ((total_levels < 11) | (!warlord_resourceful)) {
+    if ((total_levels < 11) || (!warlord_resourceful)) {
 	document.form1.reliableresources_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70071,7 +69874,7 @@ function consider_rogueweaponmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.rogueweaponmastery_box.checked = false;
     }
     ArrowShow();
@@ -70079,7 +69882,7 @@ function consider_rogueweaponmastery()
 
 function light_rogueweaponmastery_star()
 {
-    if ((total_levels < 11) | (!class_rogue)) {
+    if ((total_levels < 11) || (!class_rogue)) {
 	document.form1.rogueweaponmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70092,7 +69895,7 @@ function consider_roundaboutcharge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!class_rogue) | (!TrainedInAcrobatics())) {
+    if ((total_levels < 11) || (!class_rogue) || (!TrainedInAcrobatics())) {
 	document.form1.roundaboutcharge_box.checked = false;
     }
     ArrowShow();
@@ -70100,7 +69903,7 @@ function consider_roundaboutcharge()
 
 function light_roundaboutcharge_star()
 {
-    if ((total_levels < 11) | (!class_rogue) | (!TrainedInAcrobatics())) {
+    if ((total_levels < 11) || (!class_rogue) || (!TrainedInAcrobatics())) {
 	document.form1.roundaboutcharge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70113,7 +69916,7 @@ function consider_steadfasttacatics()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dwarf) | (!class_warlord)) {
+    if ((total_levels < 11) || (!race_dwarf) || (!class_warlord)) {
 	document.form1.steadfasttacatics_box.checked = false;
     }
     ArrowShow();
@@ -70121,7 +69924,7 @@ function consider_steadfasttacatics()
 
 function light_steadfasttacatics_star()
 {
-    if ((total_levels < 11) | (!race_dwarf) | (!class_warlord)) {
+    if ((total_levels < 11) || (!race_dwarf) || (!class_warlord)) {
 	document.form1.steadfasttacatics_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70134,7 +69937,7 @@ function consider_stonefootreprisal()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dwarf) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dwarf) || (!fighterclass())) {
 	document.form1.stonefootreprisal_box.checked = false;
     }
     ArrowShow();
@@ -70142,7 +69945,7 @@ function consider_stonefootreprisal()
 
 function light_stonefootreprisal_star()
 {
-    if ((total_levels < 11) | (!race_dwarf) | (!fighterclass())) {
+    if ((total_levels < 11) || (!race_dwarf) || (!fighterclass())) {
 	document.form1.stonefootreprisal_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70155,7 +69958,7 @@ function consider_sturdybeast()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.sturdybeast_box.checked = false;
     }
     ArrowShow();
@@ -70163,7 +69966,7 @@ function consider_sturdybeast()
 
 function light_sturdybeast_star()
 {
-    if ((total_levels < 11) | (!ranger_beastmaster)) {
+    if ((total_levels < 11) || (!ranger_beastmaster)) {
 	document.form1.sturdybeast_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70176,7 +69979,7 @@ function consider_vitalinspiration()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfelf) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_halfelf) || (!warlordclass())) {
 	document.form1.vitalinspiration_box.checked = false;
     }
     ArrowShow();
@@ -70184,7 +69987,7 @@ function consider_vitalinspiration()
 
 function light_vitalinspiration_star()
 {
-    if ((total_levels < 11) | (!race_halfelf) | (!warlordclass())) {
+    if ((total_levels < 11) || (!race_halfelf) || (!warlordclass())) {
 	document.form1.vitalinspiration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70197,7 +70000,7 @@ function consider_warlordsformation()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (intelligence < 17) | (!warlordclass())) {
+    if ((total_levels < 11) || (intelligence < 17) || (!warlordclass())) {
 	document.form1.warlordsformation_box.checked = false;
     }
     ArrowShow();
@@ -70205,7 +70008,7 @@ function consider_warlordsformation()
 
 function light_warlordsformation_star()
 {
-    if ((total_levels < 11) | (intelligence < 17) | (!warlordclass())) {
+    if ((total_levels < 11) || (intelligence < 17) || (!warlordclass())) {
 	document.form1.warlordsformation_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70219,8 +70022,8 @@ function consider_wrathfulhunter()
 	return;
     }
     if ((total_levels <
-	 11) | (!race_tiefling) | ((!class_ranger) &
-				   (multi_ranger_warriorofthewild))) {
+	 11) || (!race_tiefling) || ((!class_ranger) &&
+				     (multi_ranger_warriorofthewild))) {
 	document.form1.wrathfulhunter_box.checked = false;
     }
     ArrowShow();
@@ -70229,8 +70032,8 @@ function consider_wrathfulhunter()
 function light_wrathfulhunter_star()
 {
     if ((total_levels <
-	 11) | (!race_tiefling) | ((!class_ranger) &
-				   (multi_ranger_warriorofthewild))) {
+	 11) || (!race_tiefling) || ((!class_ranger) &&
+				     (multi_ranger_warriorofthewild))) {
 	document.form1.wrathfulhunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70243,8 +70046,8 @@ function consider_actiongrant()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (intelligence < 15) | (charisma <
-						     15) |
+    if ((total_levels < 21) || (intelligence < 15) || (charisma <
+						       15) ||
 	(!warlord_resourceful)) {
 	document.form1.actiongrant_box.checked = false;
     }
@@ -70253,8 +70056,8 @@ function consider_actiongrant()
 
 function light_actiongrant_star()
 {
-    if ((total_levels < 21) | (intelligence < 15) | (charisma <
-						     15) |
+    if ((total_levels < 21) || (intelligence < 15) || (charisma <
+						       15) ||
 	(!warlord_resourceful)) {
 	document.form1.actiongrant_star.src = "no_asterisk.gif";
 	return;
@@ -70268,7 +70071,7 @@ function consider_aggressiveleadership()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!charisma < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (!charisma < 19) || (!warlordclass())) {
 	document.form1.aggressiveleadership_box.checked = false;
     }
     ArrowShow();
@@ -70276,7 +70079,7 @@ function consider_aggressiveleadership()
 
 function light_aggressiveleadership_star()
 {
-    if ((total_levels < 21) | (!charisma < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (!charisma < 19) || (!warlordclass())) {
 	document.form1.aggressiveleadership_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70289,7 +70092,7 @@ function consider_artfulprovocation()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (charisma < 17) | (!rogue_artfuldodger)) {
+    if ((total_levels < 21) || (charisma < 17) || (!rogue_artfuldodger)) {
 	document.form1.artfulprovocation_box.checked = false;
     }
     ArrowShow();
@@ -70297,7 +70100,7 @@ function consider_artfulprovocation()
 
 function light_artfulprovocation_star()
 {
-    if ((total_levels < 21) | (charisma < 17) | (!rogue_artfuldodger)) {
+    if ((total_levels < 21) || (charisma < 17) || (!rogue_artfuldodger)) {
 	document.form1.artfulprovocation_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70310,7 +70113,7 @@ function consider_boldspirit()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!warlord_bravura)) {
+    if ((total_levels < 21) || (!warlord_bravura)) {
 	document.form1.boldspirit_box.checked = false;
     }
     ArrowShow();
@@ -70318,7 +70121,7 @@ function consider_boldspirit()
 
 function light_boldspirit_star()
 {
-    if ((total_levels < 21) | (!warlord_bravura)) {
+    if ((total_levels < 21) || (!warlord_bravura)) {
 	document.form1.boldspirit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70331,7 +70134,7 @@ function consider_brutaladvantage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (strength < 17) | (!rogue_brutalscoundrel)) {
+    if ((total_levels < 21) || (strength < 17) || (!rogue_brutalscoundrel)) {
 	document.form1.brutaladvantage_box.checked = false;
     }
     ArrowShow();
@@ -70339,7 +70142,7 @@ function consider_brutaladvantage()
 
 function light_brutaladvantage_star()
 {
-    if ((total_levels < 21) | (strength < 17) | (!rogue_brutalscoundrel)) {
+    if ((total_levels < 21) || (strength < 17) || (!rogue_brutalscoundrel)) {
 	document.form1.brutaladvantage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70352,7 +70155,7 @@ function consider_calltoglory()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (charisma < 17) | (!warlordclass())) {
+    if ((total_levels < 21) || (charisma < 17) || (!warlordclass())) {
 	document.form1.calltoglory_box.checked = false;
     }
     ArrowShow();
@@ -70360,7 +70163,7 @@ function consider_calltoglory()
 
 function light_calltoglory_star()
 {
-    if ((total_levels < 21) | (charisma < 17) | (!warlordclass())) {
+    if ((total_levels < 21) || (charisma < 17) || (!warlordclass())) {
 	document.form1.calltoglory_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70373,7 +70176,8 @@ function consider_channeledbattlerage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (constitution < 17) | (!fighter_battlerager)) {
+    if ((total_levels < 21) || (constitution < 17)
+	|| (!fighter_battlerager)) {
 	document.form1.channeledbattlerage_box.checked = false;
     }
     ArrowShow();
@@ -70381,7 +70185,8 @@ function consider_channeledbattlerage()
 
 function light_channeledbattlerage_star()
 {
-    if ((total_levels < 21) | (constitution < 17) | (!fighter_battlerager)) {
+    if ((total_levels < 21) || (constitution < 17)
+	|| (!fighter_battlerager)) {
 	document.form1.channeledbattlerage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70395,7 +70200,7 @@ function consider_correctingaim()
 	return;
     }
     if ((total_levels <
-	 21) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 21) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.correctingaim_box.checked = false;
     }
     ArrowShow();
@@ -70404,7 +70209,7 @@ function consider_correctingaim()
 function light_correctingaim_star()
 {
     if ((total_levels <
-	 21) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 21) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.correctingaim_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70417,7 +70222,7 @@ function consider_darkfirewarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!race_drow) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_drow) || (!AnyMartialClass())) {
 	document.form1.darkfirewarrior_box.checked = false;
     }
     ArrowShow();
@@ -70425,7 +70230,7 @@ function consider_darkfirewarrior()
 
 function light_darkfirewarrior_star()
 {
-    if ((total_levels < 21) | (!race_drow) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_drow) || (!AnyMartialClass())) {
 	document.form1.darkfirewarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70438,8 +70243,8 @@ function consider_dragonwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (constitution <
-			       17) | (!race_dragonborn) |
+    if ((total_levels < 21) || (constitution <
+				17) || (!race_dragonborn) ||
 	(!AnyMartialClass())) {
 	document.form1.dragonwarrior_box.checked = false;
     }
@@ -70448,8 +70253,8 @@ function consider_dragonwarrior()
 
 function light_dragonwarrior_star()
 {
-    if ((total_levels < 21) | (constitution <
-			       17) | (!race_dragonborn) |
+    if ((total_levels < 21) || (constitution <
+				17) || (!race_dragonborn) ||
 	(!AnyMartialClass())) {
 	document.form1.dragonwarrior_star.src = "no_asterisk.gif";
 	return;
@@ -70463,7 +70268,7 @@ function consider_elementalwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!race_genasi) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_genasi) || (!AnyMartialClass())) {
 	document.form1.elementalwarrior_box.checked = false;
     }
     ArrowShow();
@@ -70471,7 +70276,7 @@ function consider_elementalwarrior()
 
 function light_elementalwarrior_star()
 {
-    if ((total_levels < 21) | (!race_genasi) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_genasi) || (!AnyMartialClass())) {
 	document.form1.elementalwarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70484,7 +70289,7 @@ function consider_epicrecovery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (constitution < 19) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (constitution < 19) || (!AnyMartialClass())) {
 	document.form1.epicrecovery_box.checked = false;
     }
     ArrowShow();
@@ -70492,7 +70297,7 @@ function consider_epicrecovery()
 
 function light_epicrecovery_star()
 {
-    if ((total_levels < 21) | (constitution < 19) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (constitution < 19) || (!AnyMartialClass())) {
 	document.form1.epicrecovery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70505,7 +70310,7 @@ function consider_feywildwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!race_eladrin) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_eladrin) || (!AnyMartialClass())) {
 	document.form1.feywildwarrior_box.checked = false;
     }
     ArrowShow();
@@ -70513,7 +70318,7 @@ function consider_feywildwarrior()
 
 function light_feywildwarrior_star()
 {
-    if ((total_levels < 21) | (!race_eladrin) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!race_eladrin) || (!AnyMartialClass())) {
 	document.form1.feywildwarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70526,8 +70331,8 @@ function consider_fortuneswarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (dexterity <
-			       17) | (!race_halfling) |
+    if ((total_levels < 21) || (dexterity <
+				17) || (!race_halfling) ||
 	(!AnyMartialClass())) {
 	document.form1.fortuneswarrior_box.checked = false;
     }
@@ -70536,8 +70341,8 @@ function consider_fortuneswarrior()
 
 function light_fortuneswarrior_star()
 {
-    if ((total_levels < 21) | (dexterity <
-			       17) | (!race_halfling) |
+    if ((total_levels < 21) || (dexterity <
+				17) || (!race_halfling) ||
 	(!AnyMartialClass())) {
 	document.form1.fortuneswarrior_star.src = "no_asterisk.gif";
 	return;
@@ -70551,8 +70356,8 @@ function consider_hawkeyewarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom <
-			       17) | ((!race_elf) && (!race_halfelf)) |
+    if ((total_levels < 21) || (wisdom <
+				17) || ((!race_elf) && (!race_halfelf)) ||
 	(!AnyMartialClass())) {
 	document.form1.hawkeyewarrior_box.checked = false;
     }
@@ -70561,8 +70366,8 @@ function consider_hawkeyewarrior()
 
 function light_hawkeyewarrior_star()
 {
-    if ((total_levels < 21) | (wisdom <
-			       17) | ((!race_elf) && (!race_halfelf)) |
+    if ((total_levels < 21) || (wisdom <
+				17) || ((!race_elf) && (!race_halfelf)) ||
 	(!AnyMartialClass())) {
 	document.form1.hawkeyewarrior_star.src = "no_asterisk.gif";
 	return;
@@ -70576,8 +70381,8 @@ function consider_improvedprimeshot()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom <
-			       17) | (!class_ranger) |
+    if ((total_levels < 21) || (wisdom <
+				17) || (!class_ranger) ||
 	(ranger_beastmaster)) {
 	document.form1.improvedprimeshot_box.checked = false;
     }
@@ -70586,8 +70391,8 @@ function consider_improvedprimeshot()
 
 function light_improvedprimeshot_star()
 {
-    if ((total_levels < 21) | (wisdom <
-			       17) | (!class_ranger) |
+    if ((total_levels < 21) || (wisdom <
+				17) || (!class_ranger) ||
 	(ranger_beastmaster)) {
 	document.form1.improvedprimeshot_star.src = "no_asterisk.gif";
 	return;
@@ -70601,8 +70406,8 @@ function consider_infernalwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (charisma <
-			       17) | (race_tiefling) |
+    if ((total_levels < 21) || (charisma <
+				17) || (race_tiefling) ||
 	(!AnyMartialClass())) {
 	document.form1.infernalwarrior_box.checked = false;
     }
@@ -70611,8 +70416,8 @@ function consider_infernalwarrior()
 
 function light_infernalwarrior_star()
 {
-    if ((total_levels < 21) | (charisma <
-			       17) | (race_tiefling) |
+    if ((total_levels < 21) || (charisma <
+				17) || (race_tiefling) ||
 	(!AnyMartialClass())) {
 	document.form1.infernalwarrior_star.src = "no_asterisk.gif";
 	return;
@@ -70626,7 +70431,7 @@ function consider_invigoratingexploit()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.invigoratingexploit_box.checked = false;
     }
     ArrowShow();
@@ -70634,7 +70439,7 @@ function consider_invigoratingexploit()
 
 function light_invigoratingexploit_star()
 {
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.invigoratingexploit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70647,7 +70452,7 @@ function consider_knockbackswing()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (constitution < 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (constitution < 17) || (!fighterclass())) {
 	document.form1.knockbackswing_box.checked = false;
     }
     ArrowShow();
@@ -70655,7 +70460,7 @@ function consider_knockbackswing()
 
 function light_knockbackswing_star()
 {
-    if ((total_levels < 21) | (constitution < 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (constitution < 17) || (!fighterclass())) {
 	document.form1.knockbackswing_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70668,7 +70473,7 @@ function consider_lastingadvantage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!rogueclass())) {
+    if ((total_levels < 21) || (!rogueclass())) {
 	document.form1.lastingadvantage_box.checked = false;
     }
     ArrowShow();
@@ -70676,7 +70481,7 @@ function consider_lastingadvantage()
 
 function light_lastingadvantage_star()
 {
-    if ((total_levels < 21) | (!rogueclass())) {
+    if ((total_levels < 21) || (!rogueclass())) {
 	document.form1.lastingadvantage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70689,7 +70494,7 @@ function consider_martialmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.martialmastery_box.checked = false;
     }
     ArrowShow();
@@ -70697,7 +70502,7 @@ function consider_martialmastery()
 
 function light_martialmastery_star()
 {
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.martialmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70710,8 +70515,8 @@ function consider_martialresolve()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom <
-			       15) | (!AnyMartialClass()) |
+    if ((total_levels < 21) || (wisdom <
+				15) || (!AnyMartialClass()) ||
 	(!TrainedInEndurance())) {
 	document.form1.martialresolve_box.checked = false;
     }
@@ -70720,8 +70525,8 @@ function consider_martialresolve()
 
 function light_martialresolve_star()
 {
-    if ((total_levels < 21) | (wisdom <
-			       15) | (!AnyMartialClass()) |
+    if ((total_levels < 21) || (wisdom <
+				15) || (!AnyMartialClass()) ||
 	(!TrainedInEndurance())) {
 	document.form1.martialresolve_star.src = "no_asterisk.gif";
 	return;
@@ -70735,7 +70540,7 @@ function consider_mobilewarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (dexterity < 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (dexterity < 17) || (!fighterclass())) {
 	document.form1.mobilewarrior_box.checked = false;
     }
     ArrowShow();
@@ -70743,7 +70548,7 @@ function consider_mobilewarrior()
 
 function light_mobilewarrior_star()
 {
-    if ((total_levels < 21) | (dexterity < 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (dexterity < 17) || (!fighterclass())) {
 	document.form1.mobilewarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70756,7 +70561,7 @@ function consider_onewithshadow()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!rogueclass())) {
+    if ((total_levels < 21) || (!rogueclass())) {
 	document.form1.onewithshadow_box.checked = false;
     }
     ArrowShow();
@@ -70764,7 +70569,7 @@ function consider_onewithshadow()
 
 function light_onewithshadow_star()
 {
-    if ((total_levels < 21) | (!rogueclass())) {
+    if ((total_levels < 21) || (!rogueclass())) {
 	document.form1.onewithshadow_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70777,9 +70582,10 @@ function consider_peerlesshunter()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom <
-			       17) | ((!class_ranger) &
-				      (!multi_ranger_warriorofthewild))) {
+    if ((total_levels < 21) || (wisdom <
+				17) || ((!class_ranger) &&
+					(!multi_ranger_warriorofthewild)))
+    {
 	document.form1.peerlesshunter_box.checked = false;
     }
     ArrowShow();
@@ -70787,9 +70593,10 @@ function consider_peerlesshunter()
 
 function light_peerlesshunter_star()
 {
-    if ((total_levels < 21) | (wisdom <
-			       17) | ((!class_ranger) &
-				      (!multi_ranger_warriorofthewild))) {
+    if ((total_levels < 21) || (wisdom <
+				17) || ((!class_ranger) &&
+					(!multi_ranger_warriorofthewild)))
+    {
 	document.form1.peerlesshunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70802,7 +70609,7 @@ function consider_practicedreliability()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!fighterclass())) {
+    if ((total_levels < 21) || (!fighterclass())) {
 	document.form1.practicedreliability_box.checked = false;
     }
     ArrowShow();
@@ -70810,7 +70617,7 @@ function consider_practicedreliability()
 
 function light_practicedreliability_star()
 {
-    if ((total_levels < 21) | (!fighterclass())) {
+    if ((total_levels < 21) || (!fighterclass())) {
 	document.form1.practicedreliability_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70823,7 +70630,7 @@ function consider_primehunter()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!rangerclass())) {
+    if ((total_levels < 21) || (!rangerclass())) {
 	document.form1.primehunter_box.checked = false;
     }
     ArrowShow();
@@ -70831,7 +70638,7 @@ function consider_primehunter()
 
 function light_primehunter_star()
 {
-    if ((total_levels < 21) | (!rangerclass())) {
+    if ((total_levels < 21) || (!rangerclass())) {
 	document.form1.primehunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70844,7 +70651,7 @@ function consider_protectiveleadership()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (intelligence < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (intelligence < 19) || (!warlordclass())) {
 	document.form1.protectiveleadership_box.checked = false;
     }
     ArrowShow();
@@ -70852,7 +70659,7 @@ function consider_protectiveleadership()
 
 function light_protectiveleadership_star()
 {
-    if ((total_levels < 21) | (intelligence < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (intelligence < 19) || (!warlordclass())) {
 	document.form1.protectiveleadership_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70865,7 +70672,7 @@ function consider_quickbeastcommand()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom < 17) | (!ranger_beastmaster)) {
+    if ((total_levels < 21) || (wisdom < 17) || (!ranger_beastmaster)) {
 	document.form1.quickbeastcommand_box.checked = false;
     }
     ArrowShow();
@@ -70873,7 +70680,7 @@ function consider_quickbeastcommand()
 
 function light_quickbeastcommand_star()
 {
-    if ((total_levels < 21) | (wisdom < 17) | (!ranger_beastmaster)) {
+    if ((total_levels < 21) || (wisdom < 17) || (!ranger_beastmaster)) {
 	document.form1.quickbeastcommand_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70886,7 +70693,7 @@ function consider_rattlingexploit()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.rattlingexploit_box.checked = false;
     }
     ArrowShow();
@@ -70894,7 +70701,7 @@ function consider_rattlingexploit()
 
 function light_rattlingexploit_star()
 {
-    if ((total_levels < 21) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || (!AnyMartialClass())) {
 	document.form1.rattlingexploit_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70907,9 +70714,8 @@ function consider_reachingwhirlwind()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (dexterity < 15) | (wisdom <
-						  15) | (!fighterclass()))
-    {
+    if ((total_levels < 21) || (dexterity < 15) || (wisdom < 15)
+	|| (!fighterclass())) {
 	document.form1.reachingwhirlwind_box.checked = false;
     }
     ArrowShow();
@@ -70917,9 +70723,8 @@ function consider_reachingwhirlwind()
 
 function light_reachingwhirlwind_star()
 {
-    if ((total_levels < 21) | (dexterity < 15) | (wisdom <
-						  15) | (!fighterclass()))
-    {
+    if ((total_levels < 21) || (dexterity < 15) || (wisdom < 15)
+	|| (!fighterclass())) {
 	document.form1.reachingwhirlwind_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70932,9 +70737,9 @@ function consider_rendingtempest()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (dexterity <
-			       17) | ((!fighterclass()) &
-				      (!rangerclass()))) {
+    if ((total_levels < 21) || (dexterity <
+				17) || ((!fighterclass()) &&
+					(!rangerclass()))) {
 	document.form1.rendingtempest_box.checked = false;
     }
     ArrowShow();
@@ -70942,9 +70747,9 @@ function consider_rendingtempest()
 
 function light_rendingtempest_star()
 {
-    if ((total_levels < 21) | (dexterity <
-			       17) | ((!fighterclass()) &
-				      (!rangerclass()))) {
+    if ((total_levels < 21) || (dexterity <
+				17) || ((!fighterclass()) &&
+					(!rangerclass()))) {
 	document.form1.rendingtempest_star.src = "no_asterisk.gif";
 	return;
     }
@@ -70957,8 +70762,8 @@ function consider_ruthlessterror()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (strength <
-			       17) | (!rogueclass()) |
+    if ((total_levels < 21) || (strength <
+				17) || (!rogueclass()) ||
 	(!TrainedInIntimidate())) {
 	document.form1.ruthlessterror_box.checked = false;
     }
@@ -70967,8 +70772,8 @@ function consider_ruthlessterror()
 
 function light_ruthlessterror_star()
 {
-    if ((total_levels < 21) | (strength <
-			       17) | (!rogueclass()) |
+    if ((total_levels < 21) || (strength <
+				17) || (!rogueclass()) ||
 	(!TrainedInIntimidate())) {
 	document.form1.ruthlessterror_star.src = "no_asterisk.gif";
 	return;
@@ -70983,7 +70788,7 @@ function consider_staggeringshot()
 	return;
     }
     if ((total_levels <
-	 21) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 21) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.staggeringshot_box.checked = false;
     }
     ArrowShow();
@@ -70992,7 +70797,7 @@ function consider_staggeringshot()
 function light_staggeringshot_star()
 {
     if ((total_levels <
-	 21) | ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
+	 21) || ((!class_ranger) && (!multi_ranger_warriorofthewild))) {
 	document.form1.staggeringshot_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71005,9 +70810,8 @@ function consider_stoneheartwarrior()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (constitution <
-			       17) | (!race_dwarf) | (!AnyMartialClass()))
-    {
+    if ((total_levels < 21) || (constitution < 17) || (!race_dwarf)
+	|| (!AnyMartialClass())) {
 	document.form1.stoneheartwarrior_box.checked = false;
     }
     ArrowShow();
@@ -71015,9 +70819,8 @@ function consider_stoneheartwarrior()
 
 function light_stoneheartwarrior_star()
 {
-    if ((total_levels < 21) | (constitution <
-			       17) | (!race_dwarf) | (!AnyMartialClass()))
-    {
+    if ((total_levels < 21) || (constitution < 17) || (!race_dwarf)
+	|| (!AnyMartialClass())) {
 	document.form1.stoneheartwarrior_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71030,7 +70833,7 @@ function consider_supremeinspiration()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (charisma < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (charisma < 19) || (!warlordclass())) {
 	document.form1.supremeinspiration_box.checked = false;
     }
     ArrowShow();
@@ -71038,7 +70841,7 @@ function consider_supremeinspiration()
 
 function light_supremeinspiration_star()
 {
-    if ((total_levels < 21) | (charisma < 19) | (!warlordclass())) {
+    if ((total_levels < 21) || (charisma < 19) || (!warlordclass())) {
 	document.form1.supremeinspiration_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71051,7 +70854,7 @@ function consider_surpriseaction()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (wisdom < 17) | (!rangerclass())) {
+    if ((total_levels < 21) || (wisdom < 17) || (!rangerclass())) {
 	document.form1.surpriseaction_box.checked = false;
     }
     ArrowShow();
@@ -71059,7 +70862,7 @@ function consider_surpriseaction()
 
 function light_surpriseaction_star()
 {
-    if ((total_levels < 21) | (wisdom < 17) | (!rangerclass())) {
+    if ((total_levels < 21) || (wisdom < 17) || (!rangerclass())) {
 	document.form1.surpriseaction_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71072,7 +70875,7 @@ function consider_tacticalcunning()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (intelligence < 17) | (!class_warlord)) {
+    if ((total_levels < 21) || (intelligence < 17) || (!class_warlord)) {
 	document.form1.tacticalcunning_box.checked = false;
     }
     ArrowShow();
@@ -71080,7 +70883,7 @@ function consider_tacticalcunning()
 
 function light_tacticalcunning_star()
 {
-    if ((total_levels < 21) | (intelligence < 17) | (!class_warlord)) {
+    if ((total_levels < 21) || (intelligence < 17) || (!class_warlord)) {
 	document.form1.tacticalcunning_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71093,7 +70896,7 @@ function consider_tacticalinsight()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!race_halfelf) | (!fighterclass())) {
+    if ((total_levels < 21) || (!race_halfelf) || (!fighterclass())) {
 	document.form1.tacticalinsight_box.checked = false;
     }
     ArrowShow();
@@ -71101,7 +70904,7 @@ function consider_tacticalinsight()
 
 function light_tacticalinsight_star()
 {
-    if ((total_levels < 21) | (!race_halfelf) | (!fighterclass())) {
+    if ((total_levels < 21) || (!race_halfelf) || (!fighterclass())) {
 	document.form1.tacticalinsight_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71114,8 +70917,8 @@ function consider_timelyrevival()
 	remember_feats();
 	return;
     }
-    if ((total_levels <
-	 21) | ((!race_human) && (!race_halfelf)) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || ((!race_human) && (!race_halfelf))
+	|| (!AnyMartialClass())) {
 	document.form1.timelyrevival_box.checked = false;
     }
     ArrowShow();
@@ -71123,8 +70926,8 @@ function consider_timelyrevival()
 
 function light_timelyrevival_star()
 {
-    if ((total_levels <
-	 21) | ((!race_human) && (!race_halfelf)) | (!AnyMartialClass())) {
+    if ((total_levels < 21) || ((!race_human) && (!race_halfelf))
+	|| (!AnyMartialClass())) {
 	document.form1.timelyrevival_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71137,8 +70940,8 @@ function consider_unstoppablecharge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (strength < 21) | (constitution <
-						 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (strength < 21) || (constitution < 17)
+	|| (!fighterclass())) {
 	document.form1.unstoppablecharge_box.checked = false;
     }
     ArrowShow();
@@ -71146,8 +70949,8 @@ function consider_unstoppablecharge()
 
 function light_unstoppablecharge_star()
 {
-    if ((total_levels < 21) | (strength < 21) | (constitution <
-						 17) | (!fighterclass())) {
+    if ((total_levels < 21) || (strength < 21) || (constitution < 17)
+	|| (!fighterclass())) {
 	document.form1.unstoppablecharge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71160,7 +70963,7 @@ function consider_whirlwindsneakattack()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (!class_rogue)) {
+    if ((total_levels < 21) || (!class_rogue)) {
 	document.form1.whirlwindsneakattack_box.checked = false;
     }
     ArrowShow();
@@ -71168,7 +70971,7 @@ function consider_whirlwindsneakattack()
 
 function light_whirlwindsneakattack_star()
 {
-    if ((total_levels < 21) | (!class_rogue)) {
+    if ((total_levels < 21) || (!class_rogue)) {
 	document.form1.whirlwindsneakattack_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71230,7 +71033,7 @@ function consider_battleacumen()
 	remember_feats();
 	return;
     }
-    if ((!paragon_multiclass) | (!multi_fighter())) {
+    if ((!paragon_multiclass) || (!multi_fighter())) {
 	document.form1.battleacumen_box.checked = false;
     }
     ArrowShow();
@@ -71238,7 +71041,7 @@ function consider_battleacumen()
 
 function light_battleacumen_star()
 {
-    if ((!paragon_multiclass) | (!multi_fighter())) {
+    if ((!paragon_multiclass) || (!multi_fighter())) {
 	document.form1.battleacumen_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71270,7 +71073,7 @@ function consider_alertfamiliar()
 	remember_feats();
 	return;
     }
-    if ((!has_arcane_familiar()) | (total_levels < 11)) {
+    if ((!has_arcane_familiar()) || (total_levels < 11)) {
 	document.form1.alertfamiliar_box.checked = false;
 	return;
     }
@@ -71292,7 +71095,7 @@ function consider_aggressivefamiliar()
 	remember_feats();
 	return;
     }
-    if ((!has_arcane_familiar()) | (total_levels < 16)) {
+    if ((!has_arcane_familiar()) || (total_levels < 16)) {
 	document.form1.aggressivefamiliar_box.checked = false;
 	return;
     }
@@ -71314,7 +71117,7 @@ function consider_shieldingfamiliar()
 	remember_feats();
 	return;
     }
-    if ((!has_arcane_familiar()) | (total_levels < 6)) {
+    if ((!has_arcane_familiar()) || (total_levels < 6)) {
 	document.form1.shieldingfamiliar_box.checked = false;
 	return;
     }
@@ -71336,7 +71139,7 @@ function consider_spellseerfamiliar()
 	remember_feats();
 	return;
     }
-    if ((!has_arcane_familiar()) | (total_levels < 6)) {
+    if ((!has_arcane_familiar()) || (total_levels < 6)) {
 	document.form1.spellseerfamiliar_box.checked = false;
 	return;
     }
@@ -71401,7 +71204,7 @@ function consider_sharedspeed()
 	remember_feats();
 	return;
     }
-    if ((!has_arcane_familiar()) | (dexterity < 15)) {
+    if ((!has_arcane_familiar()) || (dexterity < 15)) {
 	document.form1.quickfamiliar_box.checked = false;
     }
     ArrowShow();
@@ -71422,7 +71225,7 @@ function consider_battleinstructor()
 	remember_feats();
 	return;
     }
-    if ((!paragon_multiclass) | (!multi_warlord())) {
+    if ((!paragon_multiclass) || (!multi_warlord())) {
 	document.form1.battleinstructor_box.checked = false;
     }
     ArrowShow();
@@ -71430,7 +71233,7 @@ function consider_battleinstructor()
 
 function light_battleinstructor_star()
 {
-    if ((!paragon_multiclass) | (!multi_warlord())) {
+    if ((!paragon_multiclass) || (!multi_warlord())) {
 	document.form1.battleinstructor_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71443,7 +71246,7 @@ function consider_courageousshooter()
 	remember_feats();
 	return;
     }
-    if ((!paragon_multiclass) | (!multi_ranger())) {
+    if ((!paragon_multiclass) || (!multi_ranger())) {
 	document.form1.courageousshooter_box.checked = false;
     }
     ArrowShow();
@@ -71451,7 +71254,7 @@ function consider_courageousshooter()
 
 function light_courageousshooter_star()
 {
-    if ((!paragon_multiclass) | (!multi_ranger())) {
+    if ((!paragon_multiclass) || (!multi_ranger())) {
 	document.form1.courageousshooter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71464,7 +71267,7 @@ function consider_firstin()
 	remember_feats();
 	return;
     }
-    if ((!paragon_multiclass) | (!multi_rogue())) {
+    if ((!paragon_multiclass) || (!multi_rogue())) {
 	document.form1.firstin_box.checked = false;
     }
     ArrowShow();
@@ -71472,7 +71275,7 @@ function consider_firstin()
 
 function light_firstin_star()
 {
-    if ((!paragon_multiclass) | (!multi_rogue())) {
+    if ((!paragon_multiclass) || (!multi_rogue())) {
 	document.form1.firstin_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71506,20 +71309,20 @@ function consider_shieldproficiency()
 	remember_feats();
 	return;
     }
-    if ((already_knows_lightshield) | (strength < 13)) {
+    if ((already_knows_lightshield) || (strength < 13)) {
 	document.form1.shieldproficiencylight_box.checked = false;
     }
-    if ((already_knows_heavyshield) | (strength < 15)) {
+    if ((already_knows_heavyshield) || (strength < 15)) {
 	document.form1.shieldproficiencyheavy_box.checked = false;
     }
-    if ((!already_knows_lightshield) &
+    if ((!already_knows_lightshield) &&
 	(!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldproficiencyheavy_box.checked = false;
     }
     if (total_levels < 11) {
 	document.form1.shieldspecialization_box.checked = false;
     }
-    if ((!already_knows_lightshield) && (!already_knows_heavyshield) &
+    if ((!already_knows_lightshield) && (!already_knows_heavyshield) &&
 	(!document.form1.shieldproficiencylight_box.checked)
 	&& (!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldspecialization_box.checked = false;
@@ -71533,20 +71336,20 @@ function light_shieldproficiency_star()
     document.form1.shieldproficiencylight_star.src = "asterisk.gif";
     document.form1.shieldproficiencyheavy_star.src = "asterisk.gif";
     document.form1.shieldspecialization_star.src = "asterisk.gif";
-    if ((already_knows_lightshield) | (strength < 13)) {
+    if ((already_knows_lightshield) || (strength < 13)) {
 	document.form1.shieldproficiencylight_star.src = "no_asterisk.gif";
     }
-    if ((already_knows_heavyshield) | (strength < 15)) {
+    if ((already_knows_heavyshield) || (strength < 15)) {
 	document.form1.shieldproficiencyheavy_star.src = "no_asterisk.gif";
     }
-    if ((!already_knows_lightshield) &
+    if ((!already_knows_lightshield) &&
 	(!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldproficiencyheavy_star.src = "no_asterisk.gif";
     }
     if (total_levels < 11) {
 	document.form1.shieldspecialization_star.src = "no_asterisk.gif";
     }
-    if ((!already_knows_lightshield) && (!already_knows_heavyshield) &
+    if ((!already_knows_lightshield) && (!already_knows_heavyshield) &&
 	(!document.form1.shieldproficiencylight_box.checked)
 	&& (!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shieldspecialization_star.src = "no_asterisk.gif";
@@ -71580,8 +71383,8 @@ function consider_skillfocusacrobatics()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.skillfocusacrobatics_box.checked = false;
     }
@@ -71590,8 +71393,8 @@ function consider_skillfocusacrobatics()
 
 function light_skillfocusacrobatics_star()
 {
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.skillfocusacrobatics_star.src = "no_asterisk.gif";
 	return;
@@ -71607,9 +71410,8 @@ function consider_skillfocusarcana()
     }
     if ((!eladrin_arcana)
 	&& ((!trained_arcana)
-	    && (!multi_trained_arcana)) & (!document.form1.
-					   skilltrainingarcana_box.
-					   checked)) {
+	    && (!multi_trained_arcana))
+	&& (!document.form1.skilltrainingarcana_box.checked)) {
 	document.form1.skillfocusarcana_box.checked = false;
     }
     ArrowShow();
@@ -71619,9 +71421,8 @@ function light_skillfocusarcana_star()
 {
     if ((!eladrin_arcana)
 	&& ((!trained_arcana)
-	    && (!multi_trained_arcana)) & (!document.form1.
-					   skilltrainingarcana_box.
-					   checked)) {
+	    && (!multi_trained_arcana))
+	&& (!document.form1.skilltrainingarcana_box.checked)) {
 	document.form1.skillfocusarcana_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71634,8 +71435,8 @@ function consider_skillfocusathletics()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_athletics) &
-	((!trained_athletics) && (!multi_trained_athletics)) &
+    if ((!eladrin_athletics) &&
+	((!trained_athletics) && (!multi_trained_athletics)) &&
 	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.skillfocusathletics_box.checked = false;
     }
@@ -71644,8 +71445,8 @@ function consider_skillfocusathletics()
 
 function light_skillfocusathletics_star()
 {
-    if ((!eladrin_athletics) &
-	((!trained_athletics) && (!multi_trained_athletics)) &
+    if ((!eladrin_athletics) &&
+	((!trained_athletics) && (!multi_trained_athletics)) &&
 	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.skillfocusathletics_star.src = "no_asterisk.gif";
 	return;
@@ -71659,7 +71460,7 @@ function consider_skillfocusbluff()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_bluff) && ((!trained_bluff) && (!multi_trained_bluff)) &
+    if ((!eladrin_bluff) && ((!trained_bluff) && (!multi_trained_bluff)) &&
 	(!document.form1.skilltrainingbluff_box.checked)) {
 	document.form1.skillfocusbluff_box.checked = false;
     }
@@ -71668,7 +71469,7 @@ function consider_skillfocusbluff()
 
 function light_skillfocusbluff_star()
 {
-    if ((!eladrin_bluff) && ((!trained_bluff) && (!multi_trained_bluff)) &
+    if ((!eladrin_bluff) && ((!trained_bluff) && (!multi_trained_bluff)) &&
 	(!document.form1.skilltrainingbluff_box.checked)) {
 	document.form1.skillfocusbluff_star.src = "no_asterisk.gif";
 	return;;
@@ -71682,8 +71483,8 @@ function consider_skillfocusdiplomacy()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_diplomacy) &
-	((!trained_diplomacy) && (!multi_trained_diplomacy)) &
+    if ((!eladrin_diplomacy) &&
+	((!trained_diplomacy) && (!multi_trained_diplomacy)) &&
 	(!document.form1.skilltrainingdiplomacy_box.checked)) {
 	document.form1.skillfocusdiplomacy_box.checked = false;
     }
@@ -71692,8 +71493,8 @@ function consider_skillfocusdiplomacy()
 
 function light_skillfocusdiplomacy_star()
 {
-    if ((!eladrin_diplomacy) &
-	((!trained_diplomacy) && (!multi_trained_diplomacy)) &
+    if ((!eladrin_diplomacy) &&
+	((!trained_diplomacy) && (!multi_trained_diplomacy)) &&
 	(!document.form1.skilltrainingdiplomacy_box.checked)) {
 	document.form1.skillfocusdiplomacy_star.src = "no_asterisk.gif";
 	return;
@@ -71707,7 +71508,7 @@ function consider_skillfocusdungeoneering()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_dungeoneering) && (!trained_dungeoneering) &
+    if ((!eladrin_dungeoneering) && (!trained_dungeoneering) &&
 	(!document.form1.skilltrainingdungeoneering_box.checked)) {
 	document.form1.skillfocusdungeoneering_box.checked = false;
     }
@@ -71716,7 +71517,7 @@ function consider_skillfocusdungeoneering()
 
 function light_skillfocusdungeoneering_star()
 {
-    if ((!eladrin_dungeoneering) && (!trained_dungeoneering) &
+    if ((!eladrin_dungeoneering) && (!trained_dungeoneering) &&
 	(!document.form1.skilltrainingdungeoneering_box.checked)) {
 	document.form1.skillfocusdungeoneering_star.src =
 	    "no_asterisk.gif";
@@ -71731,8 +71532,8 @@ function consider_skillfocusendurance()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_endurance) &
-	((!trained_endurance) && (!multi_trained_endurance)) &
+    if ((!eladrin_endurance) &&
+	((!trained_endurance) && (!multi_trained_endurance)) &&
 	(!document.form1.skilltrainingendurance_box.checked)) {
 	document.form1.skillfocusendurance_box.checked = false;
     }
@@ -71741,8 +71542,8 @@ function consider_skillfocusendurance()
 
 function light_skillfocusendurance_star()
 {
-    if ((!eladrin_endurance) &
-	((!trained_endurance) && (!multi_trained_endurance)) &
+    if ((!eladrin_endurance) &&
+	((!trained_endurance) && (!multi_trained_endurance)) &&
 	(!document.form1.skilltrainingendurance_box.checked)) {
 	document.form1.skillfocusendurance_star.src = "no_asterisk.gif";
 	return;;
@@ -71756,7 +71557,7 @@ function consider_skillfocusheal()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_heal) && ((!trained_heal) && (!multi_trained_heal)) &
+    if ((!eladrin_heal) && ((!trained_heal) && (!multi_trained_heal)) &&
 	(!document.form1.skilltrainingheal_box.checked)) {
 	document.form1.skillfocusheal_box.checked = false;
     }
@@ -71765,7 +71566,7 @@ function consider_skillfocusheal()
 
 function light_skillfocusheal_star()
 {
-    if ((!eladrin_heal) && ((!trained_heal) && (!multi_trained_heal)) &
+    if ((!eladrin_heal) && ((!trained_heal) && (!multi_trained_heal)) &&
 	(!document.form1.skilltrainingheal_box.checked)) {
 	document.form1.skillfocusheal_star.src = "no_asterisk.gif";
 	return;;
@@ -71779,7 +71580,7 @@ function consider_skillfocushistory()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_history) &
+    if ((!eladrin_history) &&
 	((!trained_history) && (!multi_trained_history))
 	& (!document.form1.skilltraininghistory_box.checked)) {
 	document.form1.skillfocushistory_box.checked = false;
@@ -71789,7 +71590,7 @@ function consider_skillfocushistory()
 
 function light_skillfocushistory_star()
 {
-    if ((!eladrin_history) &
+    if ((!eladrin_history) &&
 	((!trained_history) && (!multi_trained_history))
 	& (!document.form1.skilltraininghistory_box.checked)) {
 	document.form1.skillfocushistory_star.src = "no_asterisk.gif";
@@ -71804,7 +71605,7 @@ function consider_skillfocusinsight()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_insight) &
+    if ((!eladrin_insight) &&
 	((!trained_insight) && (!multi_trained_insight))
 	& (!document.form1.skilltraininginsight_box.checked)) {
 	document.form1.skillfocusinsight_box.checked = false;
@@ -71814,7 +71615,7 @@ function consider_skillfocusinsight()
 
 function light_skillfocusinsight_star()
 {
-    if ((!eladrin_insight) &
+    if ((!eladrin_insight) &&
 	((!trained_insight) && (!multi_trained_insight))
 	& (!document.form1.skilltraininginsight_box.checked)) {
 	document.form1.skillfocusinsight_star.src = "no_asterisk.gif";
@@ -71829,8 +71630,8 @@ function consider_skillfocusintimidate()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_intimidate) &
-	((!trained_intimidate) && (!multi_trained_intimidate)) &
+    if ((!eladrin_intimidate) &&
+	((!trained_intimidate) && (!multi_trained_intimidate)) &&
 	(!document.form1.skilltrainingintimidate_box.checked)) {
 	document.form1.skillfocusintimidate_box.checked = false;
     }
@@ -71839,8 +71640,8 @@ function consider_skillfocusintimidate()
 
 function light_skillfocusintimidate_star()
 {
-    if ((!eladrin_intimidate) &
-	((!trained_intimidate) && (!multi_trained_intimidate)) &
+    if ((!eladrin_intimidate) &&
+	((!trained_intimidate) && (!multi_trained_intimidate)) &&
 	(!document.form1.skilltrainingintimidate_box.checked)) {
 	document.form1.skillfocusintimidate_star.src = "no_asterisk.gif";
 	return;
@@ -71856,9 +71657,8 @@ function consider_skillfocusnature()
     }
     if ((!eladrin_nature)
 	&& ((!trained_nature)
-	    && (!multi_trained_nature)) & (!document.form1.
-					   skilltrainingnature_box.
-					   checked)) {
+	    && (!multi_trained_nature))
+	&& (!document.form1.skilltrainingnature_box.checked)) {
 	document.form1.skillfocusnature_box.checked = false;
     }
     ArrowShow();
@@ -71868,9 +71668,8 @@ function light_skillfocusnature_star()
 {
     if ((!eladrin_nature)
 	&& ((!trained_nature)
-	    && (!multi_trained_nature)) & (!document.form1.
-					   skilltrainingnature_box.
-					   checked)) {
+	    && (!multi_trained_nature))
+	&& (!document.form1.skilltrainingnature_box.checked)) {
 	document.form1.skillfocusnature_star.src = "no_asterisk.gif";
 	return;
     }
@@ -71883,8 +71682,8 @@ function consider_skillfocusperception()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_perception) &
-	((!trained_perception) && (!multi_trained_perception)) &
+    if ((!eladrin_perception) &&
+	((!trained_perception) && (!multi_trained_perception)) &&
 	(!document.form1.skilltrainingperception_box.checked)) {
 	document.form1.skillfocusperception_box.checked = false;
     }
@@ -71893,8 +71692,8 @@ function consider_skillfocusperception()
 
 function light_skillfocusperception_star()
 {
-    if ((!eladrin_perception) &
-	((!trained_perception) && (!multi_trained_perception)) &
+    if ((!eladrin_perception) &&
+	((!trained_perception) && (!multi_trained_perception)) &&
 	(!document.form1.skilltrainingperception_box.checked)) {
 	document.form1.skillfocusperception_star.src = "no_asterisk.gif";
 	return;
@@ -71908,8 +71707,8 @@ function consider_skillfocusreligion()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_religion) &
-	((!trained_religion) && (!multi_trained_religion)) &
+    if ((!eladrin_religion) &&
+	((!trained_religion) && (!multi_trained_religion)) &&
 	(!document.form1.skilltrainingreligion_box.checked)) {
 	document.form1.skillfocusreligion_box.checked = false;
     }
@@ -71918,8 +71717,8 @@ function consider_skillfocusreligion()
 
 function light_skillfocusreligion_star()
 {
-    if ((!eladrin_religion) &
-	((!trained_religion) && (!multi_trained_religion)) &
+    if ((!eladrin_religion) &&
+	((!trained_religion) && (!multi_trained_religion)) &&
 	(!document.form1.skilltrainingreligion_box.checked)) {
 	document.form1.skillfocusreligion_star.src = "no_asterisk.gif";
 	return;
@@ -71933,7 +71732,7 @@ function consider_skillfocusstealth()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_stealth) &
+    if ((!eladrin_stealth) &&
 	((!trained_stealth) && (!multi_trained_stealth))
 	& (!document.form1.skilltrainingstealth_box.checked)) {
 	document.form1.skillfocusstealth_box.checked = false;
@@ -71943,7 +71742,7 @@ function consider_skillfocusstealth()
 
 function light_skillfocusstealth_star()
 {
-    if ((!eladrin_stealth) &
+    if ((!eladrin_stealth) &&
 	((!trained_stealth) && (!multi_trained_stealth))
 	& (!document.form1.skilltrainingstealth_box.checked)) {
 	document.form1.skillfocusstealth_star.src = "no_asterisk.gif";
@@ -71958,8 +71757,8 @@ function consider_skillfocusstreetwise()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_streetwise) &
-	((!trained_streetwise) && (!multi_trained_streetwise)) &
+    if ((!eladrin_streetwise) &&
+	((!trained_streetwise) && (!multi_trained_streetwise)) &&
 	(!document.form1.skilltrainingstreetwise_box.checked)) {
 	document.form1.skillfocusstreetwise_box.checked = false;
     }
@@ -71968,8 +71767,8 @@ function consider_skillfocusstreetwise()
 
 function light_skillfocusstreetwise_star()
 {
-    if ((!eladrin_streetwise) &
-	((!trained_streetwise) && (!multi_trained_streetwise)) &
+    if ((!eladrin_streetwise) &&
+	((!trained_streetwise) && (!multi_trained_streetwise)) &&
 	(!document.form1.skilltrainingstreetwise_box.checked)) {
 	document.form1.skillfocusstreetwise_star.src = "no_asterisk.gif";
 	return;;
@@ -71983,8 +71782,8 @@ function consider_skillfocusthievery()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_thievery) &
-	((!trained_thievery) && (!multi_trained_thievery)) &
+    if ((!eladrin_thievery) &&
+	((!trained_thievery) && (!multi_trained_thievery)) &&
 	(!document.form1.skilltrainingthievery_box.checked)) {
 	document.form1.skillfocusthievery_box.checked = false;
     }
@@ -71993,8 +71792,8 @@ function consider_skillfocusthievery()
 
 function light_skillfocusthievery_star()
 {
-    if ((!eladrin_thievery) &
-	((!trained_thievery) && (!multi_trained_thievery)) &
+    if ((!eladrin_thievery) &&
+	((!trained_thievery) && (!multi_trained_thievery)) &&
 	(!document.form1.skilltrainingthievery_box.checked)) {
 	document.form1.skillfocusthievery_star.src = "no_asterisk.gif";
 	return;;
@@ -72017,7 +71816,7 @@ function consider_skilltrainingacrobatics()
 
 function light_skilltrainingacrobatics_star()
 {
-    if ((trained_acrobatics) | (multi_trained_acrobatics) |
+    if ((trained_acrobatics) || (multi_trained_acrobatics) ||
 	(eladrin_acrobatics)) {
 	document.form1.skilltrainingarcana_star.src = "no_asterisk.gif";
 	return;
@@ -72031,7 +71830,7 @@ function consider_skilltrainingarcana()
 	remember_feats();
 	return;
     }
-    if ((trained_arcana) | (multi_trained_arcana) | (eladrin_arcana)) {
+    if ((trained_arcana) || (multi_trained_arcana) || (eladrin_arcana)) {
 	document.form1.skilltrainingarcana_box.checked = false;
     }
     GatecrasherArcaneTraining();
@@ -72041,7 +71840,7 @@ function consider_skilltrainingarcana()
 
 function light_skilltrainingarcana_star()
 {
-    if ((trained_arcana) | (multi_trained_arcana) | (eladrin_arcana)) {
+    if ((trained_arcana) || (multi_trained_arcana) || (eladrin_arcana)) {
 	document.form1.skilltrainingarcana_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72055,7 +71854,7 @@ function consider_skilltrainingathletics()
 	remember_feats();
 	return;
     }
-    if ((trained_athletics) | (multi_trained_athletics) |
+    if ((trained_athletics) || (multi_trained_athletics) ||
 	(eladrin_athletics)) {
 	document.form1.skilltrainingathletics_box.checked = false;
     }
@@ -72065,7 +71864,7 @@ function consider_skilltrainingathletics()
 
 function light_skilltrainingathletics_star()
 {
-    if ((trained_athletics) | (multi_trained_athletics) |
+    if ((trained_athletics) || (multi_trained_athletics) ||
 	(eladrin_athletics)) {
 	document.form1.skilltrainingathletics_star.src = "no_asterisk.gif";
 	return;
@@ -72079,7 +71878,7 @@ function consider_skilltrainingbluff()
 	remember_feats();
 	return;
     }
-    if ((trained_bluff) | (multi_trained_bluff) | (eladrin_bluff)) {
+    if ((trained_bluff) || (multi_trained_bluff) || (eladrin_bluff)) {
 	document.form1.skilltrainingbluff_box.checked = false;
     }
     ReviewBluffFeats();
@@ -72088,7 +71887,7 @@ function consider_skilltrainingbluff()
 
 function light_skilltrainingbluff_star()
 {
-    if ((trained_bluff) | (multi_trained_bluff) | (eladrin_bluff)) {
+    if ((trained_bluff) || (multi_trained_bluff) || (eladrin_bluff)) {
 	document.form1.skilltrainingbluff_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72101,7 +71900,7 @@ function consider_skilltrainingdiplomacy()
 	remember_feats();
 	return;
     }
-    if ((trained_diplomacy) | (multi_trained_diplomacy) |
+    if ((trained_diplomacy) || (multi_trained_diplomacy) ||
 	(eladrin_diplomacy)) {
 	document.form1.skilltrainingdiplomacy_box.checked = false;
     }
@@ -72111,7 +71910,7 @@ function consider_skilltrainingdiplomacy()
 
 function light_skilltrainingdiplomacy_star()
 {
-    if ((trained_diplomacy) | (multi_trained_diplomacy) |
+    if ((trained_diplomacy) || (multi_trained_diplomacy) ||
 	(eladrin_diplomacy)) {
 	document.form1.skilltrainingdiplomacy_star.src = "no_asterisk.gif";
 	return;
@@ -72125,7 +71924,7 @@ function consider_skilltrainingdungeoneering()
 	remember_feats();
 	return;
     }
-    if ((trained_dungeoneering) | (eladrin_dungeoneering) |
+    if ((trained_dungeoneering) || (eladrin_dungeoneering) ||
 	(multi_trained_dungeoneering)) {
 	document.form1.skilltrainingdungeoneering_box.checked = false;
     } else if (paragon_drowwanderer) {
@@ -72137,7 +71936,7 @@ function consider_skilltrainingdungeoneering()
 
 function light_skilltrainingdungeoneering_star()
 {
-    if ((trained_dungeoneering) | (eladrin_dungeoneering) |
+    if ((trained_dungeoneering) || (eladrin_dungeoneering) ||
 	(multi_trained_dungeoneering)) {
 	document.form1.skilltrainingdungeoneering_star.src =
 	    "no_asterisk.gif";
@@ -72152,7 +71951,7 @@ function consider_skilltrainingendurance()
 	remember_feats();
 	return;
     }
-    if ((trained_endurance) | (eladrin_endurance) |
+    if ((trained_endurance) || (eladrin_endurance) ||
 	(multi_trained_endurance)) {
 	document.form1.skilltrainingendurance_box.checked = false;
     }
@@ -72162,7 +71961,7 @@ function consider_skilltrainingendurance()
 
 function light_skilltrainingendurance_star()
 {
-    if ((trained_endurance) | (eladrin_endurance) |
+    if ((trained_endurance) || (eladrin_endurance) ||
 	(multi_trained_endurance)) {
 	document.form1.skilltrainingendurance_star.src = "no_asterisk.gif";
 	return;
@@ -72176,7 +71975,7 @@ function consider_skilltrainingheal()
 	remember_feats();
 	return;
     }
-    if ((trained_heal) | (eladrin_heal) | (multi_trained_heal)) {
+    if ((trained_heal) || (eladrin_heal) || (multi_trained_heal)) {
 	document.form1.skilltrainingheal_box.checked = false;
     }
     ReviewHealFeats();
@@ -72185,7 +71984,7 @@ function consider_skilltrainingheal()
 
 function light_skilltrainingheal_star()
 {
-    if ((trained_heal) | (eladrin_heal) | (multi_trained_heal)) {
+    if ((trained_heal) || (eladrin_heal) || (multi_trained_heal)) {
 	document.form1.skilltrainingheal_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72198,7 +71997,7 @@ function consider_skilltraininghistory()
 	remember_feats();
 	return;
     }
-    if ((trained_history) | (eladrin_history) | (multi_trained_history)) {
+    if ((trained_history) || (eladrin_history) || (multi_trained_history)) {
 	document.form1.skilltraininghistory_box.checked = false;
     }
     ReviewHistoryFeats();
@@ -72207,7 +72006,7 @@ function consider_skilltraininghistory()
 
 function light_skilltraininghistory_star()
 {
-    if ((trained_history) | (eladrin_history) | (multi_trained_history)) {
+    if ((trained_history) || (eladrin_history) || (multi_trained_history)) {
 	document.form1.skilltraininghistory_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72220,7 +72019,7 @@ function consider_skilltraininginsight()
 	remember_feats();
 	return;
     }
-    if ((trained_insight) | (eladrin_insight) | (multi_trained_insight)) {
+    if ((trained_insight) || (eladrin_insight) || (multi_trained_insight)) {
 	document.form1.skilltraininginsight_box.checked = false;
     }
     ReviewInsightFeats();
@@ -72229,7 +72028,7 @@ function consider_skilltraininginsight()
 
 function light_skilltraininginsight_star()
 {
-    if ((trained_insight) | (eladrin_insight) | (multi_trained_insight)) {
+    if ((trained_insight) || (eladrin_insight) || (multi_trained_insight)) {
 	document.form1.skilltraininginsight_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72242,7 +72041,7 @@ function consider_skilltrainingintimidate()
 	remember_feats();
 	return;
     }
-    if ((trained_intimidate) | (eladrin_intimidate) |
+    if ((trained_intimidate) || (eladrin_intimidate) ||
 	(multi_trained_intimidate)) {
 	document.form1.skilltrainingintimidate_box.checked = false;
     }
@@ -72252,7 +72051,7 @@ function consider_skilltrainingintimidate()
 
 function light_skilltrainingintimidate_star()
 {
-    if ((trained_intimidate) | (eladrin_intimidate) |
+    if ((trained_intimidate) || (eladrin_intimidate) ||
 	(multi_trained_intimidate)) {
 	document.form1.skilltrainingintimidate_star.src =
 	    "no_asterisk.gif";
@@ -72267,7 +72066,7 @@ function consider_skilltrainingnature()
 	remember_feats();
 	return;
     }
-    if ((trained_nature) | (eladrin_nature) | (multi_trained_nature)) {
+    if ((trained_nature) || (eladrin_nature) || (multi_trained_nature)) {
 	document.form1.skilltrainingnature_box.checked = false;
     }
     ReviewNatureFeats();
@@ -72276,7 +72075,7 @@ function consider_skilltrainingnature()
 
 function light_skilltrainingnature_star()
 {
-    if ((trained_nature) | (eladrin_nature) | (multi_trained_nature)) {
+    if ((trained_nature) || (eladrin_nature) || (multi_trained_nature)) {
 	document.form1.skilltrainingnature_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72289,7 +72088,7 @@ function consider_skilltrainingperception()
 	remember_feats();
 	return;
     }
-    if ((trained_perception) | (eladrin_perception) |
+    if ((trained_perception) || (eladrin_perception) ||
 	(multi_trained_perception)) {
 	document.form1.skilltrainingperception_box.checked = false;
     }
@@ -72299,7 +72098,7 @@ function consider_skilltrainingperception()
 
 function light_skilltrainingperception_star()
 {
-    if ((trained_perception) | (eladrin_perception) |
+    if ((trained_perception) || (eladrin_perception) ||
 	(multi_trained_perception)) {
 	document.form1.skilltrainingperception_star.src =
 	    "no_asterisk.gif";
@@ -72314,7 +72113,8 @@ function consider_skilltrainingreligion()
 	remember_feats();
 	return;
     }
-    if ((trained_religion) | (eladrin_religion) | (multi_trained_religion)) {
+    if ((trained_religion) || (eladrin_religion)
+	|| (multi_trained_religion)) {
 	document.form1.skilltrainingreligion_box.checked = false;
     }
     ReviewReligionFeats();
@@ -72323,7 +72123,8 @@ function consider_skilltrainingreligion()
 
 function light_skilltrainingreligion_star()
 {
-    if ((trained_religion) | (eladrin_religion) | (multi_trained_religion)) {
+    if ((trained_religion) || (eladrin_religion)
+	|| (multi_trained_religion)) {
 	document.form1.skilltrainingreligion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72336,7 +72137,7 @@ function consider_skilltrainingstealth()
 	remember_feats();
 	return;
     }
-    if ((trained_stealth) | (eladrin_stealth) | (multi_trained_stealth)) {
+    if ((trained_stealth) || (eladrin_stealth) || (multi_trained_stealth)) {
 	document.form1.skilltrainingstealth_box.checked = false;
     }
     ReviewStealthFeats();
@@ -72345,7 +72146,7 @@ function consider_skilltrainingstealth()
 
 function light_skilltrainingstealth_star()
 {
-    if ((trained_stealth) | (eladrin_stealth) | (multi_trained_stealth)) {
+    if ((trained_stealth) || (eladrin_stealth) || (multi_trained_stealth)) {
 	document.form1.skilltrainingstealth_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72358,7 +72159,7 @@ function consider_skilltrainingstreetwise()
 	remember_feats();
 	return;
     }
-    if ((trained_streetwise) | (eladrin_streetwise) |
+    if ((trained_streetwise) || (eladrin_streetwise) ||
 	(multi_trained_streetwise)) {
 	document.form1.skilltrainingstreetwise_box.checked = false;
     }
@@ -72368,7 +72169,7 @@ function consider_skilltrainingstreetwise()
 
 function light_skilltrainingstreetwise_star()
 {
-    if ((trained_streetwise) | (eladrin_streetwise) |
+    if ((trained_streetwise) || (eladrin_streetwise) ||
 	(multi_trained_streetwise)) {
 	document.form1.skilltrainingstreetwise_star.src =
 	    "no_asterisk.gif";
@@ -72383,7 +72184,8 @@ function consider_skilltrainingthievery()
 	remember_feats();
 	return;
     }
-    if ((trained_thievery) | (eladrin_thievery) | (multi_trained_thievery)) {
+    if ((trained_thievery) || (eladrin_thievery)
+	|| (multi_trained_thievery)) {
 	document.form1.skilltrainingthievery_box.checked = false;
     }
     ReviewThieveryFeats();
@@ -72392,7 +72194,8 @@ function consider_skilltrainingthievery()
 
 function light_skilltrainingthievery_star()
 {
-    if ((trained_thievery) | (eladrin_thievery) | (multi_trained_thievery)) {
+    if ((trained_thievery) || (eladrin_thievery)
+	|| (multi_trained_thievery)) {
 	document.form1.skilltrainingthievery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72405,8 +72208,8 @@ function consider_sureclimber()
 	remember_feats();
 	return;
     }
-    if ((!eladrin_athletics) &
-	((!trained_athletics) && (!multi_trained_athletics)) &
+    if ((!eladrin_athletics) &&
+	((!trained_athletics) && (!multi_trained_athletics)) &&
 	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.sureclimber_box.checked = false;
     }
@@ -72415,8 +72218,8 @@ function consider_sureclimber()
 
 function light_sureclimber_star()
 {
-    if ((!eladrin_athletics) &
-	((!trained_athletics) && (!multi_trained_athletics)) &
+    if ((!eladrin_athletics) &&
+	((!trained_athletics) && (!multi_trained_athletics)) &&
 	(!document.form1.skilltrainingathletics_box.checked)) {
 	document.form1.sureclimber_star.src = "no_asterisk.gif";
 	return;
@@ -72430,7 +72233,7 @@ function consider_surpriseknockdown()
 	remember_feats();
 	return;
     }
-    if ((strength < 15) | (!rogueclass())) {
+    if ((strength < 15) || (!rogueclass())) {
 	document.form1.surpriseknockdown_box.checked = false;
     }
     ArrowShow();
@@ -72438,7 +72241,7 @@ function consider_surpriseknockdown()
 
 function light_surpriseknockdown_star()
 {
-    if ((strength < 15) | (!rogueclass())) {
+    if ((strength < 15) || (!rogueclass())) {
 	document.form1.surpriseknockdown_star.src = "no_asterisk.gif";
 	return;
     }
@@ -72977,7 +72780,7 @@ function consider_weaponproficiencygreatclub()
 	remember_feats();
 	return;
     }
-    if ((already_knows_greatclub) | (small)) {
+    if ((already_knows_greatclub) || (small)) {
 	document.form1.weaponproficiencygreatclub_box.checked = false;
     }
     ArrowShow();
@@ -72985,7 +72788,7 @@ function consider_weaponproficiencygreatclub()
 
 function light_weaponproficiencygreatclub_star()
 {
-    if ((already_knows_greatclub) | (small)) {
+    if ((already_knows_greatclub) || (small)) {
 	document.form1.weaponproficiencygreatclub_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -72999,7 +72802,7 @@ function consider_weaponproficiencymorningstar()
 	remember_feats();
 	return;
     }
-    if ((already_knows_morningstar) | (small)) {
+    if ((already_knows_morningstar) || (small)) {
 	document.form1.weaponproficiencymorningstar_box.checked = false;
     }
     ArrowShow();
@@ -73007,7 +72810,7 @@ function consider_weaponproficiencymorningstar()
 
 function light_weaponproficiencymorningstar_star()
 {
-    if ((already_knows_morningstar) | (small)) {
+    if ((already_knows_morningstar) || (small)) {
 	document.form1.weaponproficiencymorningstar_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73021,7 +72824,7 @@ function consider_weaponproficiencyquarterstaff()
 	remember_feats();
 	return;
     }
-    if ((already_knows_quarterstaff) | (small)) {
+    if ((already_knows_quarterstaff) || (small)) {
 	document.form1.weaponproficiencyquarterstaff_box.checked = false;
     }
     ArrowShow();
@@ -73029,7 +72832,7 @@ function consider_weaponproficiencyquarterstaff()
 
 function light_weaponproficiencyquarterstaff_star()
 {
-    if ((already_knows_quarterstaff) | (small)) {
+    if ((already_knows_quarterstaff) || (small)) {
 	document.form1.weaponproficiencyquarterstaff_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73043,7 +72846,7 @@ function consider_weaponproficiencyscythe()
 	remember_feats();
 	return;
     }
-    if ((already_knows_scythe) | (small)) {
+    if ((already_knows_scythe) || (small)) {
 	document.form1.weaponproficiencyscythe_box.checked = false;
     }
     ArrowShow();
@@ -73051,7 +72854,7 @@ function consider_weaponproficiencyscythe()
 
 function light_weaponproficiencyscythe_star()
 {
-    if ((already_knows_scythe) | (small)) {
+    if ((already_knows_scythe) || (small)) {
 	document.form1.weaponproficiencyscythe_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73266,7 +73069,7 @@ function consider_weaponproficiencyfalchion()
 	remember_feats();
 	return;
     }
-    if ((already_knows_falchion) | (small)) {
+    if ((already_knows_falchion) || (small)) {
 	document.form1.weaponproficiencyfalchion_box.checked = false;
     }
     ArrowShow();
@@ -73274,7 +73077,7 @@ function consider_weaponproficiencyfalchion()
 
 function light_weaponproficiencyfalchion_star()
 {
-    if ((already_knows_falchion) | (small)) {
+    if ((already_knows_falchion) || (small)) {
 	document.form1.weaponproficiencyfalchion_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73288,7 +73091,7 @@ function consider_weaponproficiencyglaive()
 	remember_feats();
 	return;
     }
-    if ((already_knows_glaive) | (small)) {
+    if ((already_knows_glaive) || (small)) {
 	document.form1.weaponproficiencyglaive_box.checked = false;
     }
     ArrowShow();
@@ -73296,7 +73099,7 @@ function consider_weaponproficiencyglaive()
 
 function light_weaponproficiencyglaive_star()
 {
-    if ((already_knows_glaive) | (small)) {
+    if ((already_knows_glaive) || (small)) {
 	document.form1.weaponproficiencyglaive_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73310,7 +73113,7 @@ function consider_weaponproficiencygreataxe()
 	remember_feats();
 	return;
     }
-    if ((already_knows_greataxe) | (small)) {
+    if ((already_knows_greataxe) || (small)) {
 	document.form1.weaponproficiencygreataxe_box.checked = false;
     }
     ArrowShow();
@@ -73318,7 +73121,7 @@ function consider_weaponproficiencygreataxe()
 
 function light_weaponproficiencygreataxe_star()
 {
-    if ((already_knows_greataxe) | (small)) {
+    if ((already_knows_greataxe) || (small)) {
 	document.form1.weaponproficiencygreataxe_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73332,7 +73135,7 @@ function consider_weaponproficiencygreatsword()
 	remember_feats();
 	return;
     }
-    if ((already_knows_greatsword) | (small)) {
+    if ((already_knows_greatsword) || (small)) {
 	document.form1.weaponproficiencygreatsword_box.checked = false;
     }
     ArrowShow();
@@ -73340,7 +73143,7 @@ function consider_weaponproficiencygreatsword()
 
 function light_weaponproficiencygreatsword_star()
 {
-    if ((already_knows_greatsword) | (small)) {
+    if ((already_knows_greatsword) || (small)) {
 	document.form1.weaponproficiencygreatsword_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73354,7 +73157,7 @@ function consider_weaponproficiencyhalberd()
 	remember_feats();
 	return;
     }
-    if ((already_knows_halberd) | (small)) {
+    if ((already_knows_halberd) || (small)) {
 	document.form1.weaponproficiencyhalberd_box.checked = false;
     }
     ArrowShow();
@@ -73362,7 +73165,7 @@ function consider_weaponproficiencyhalberd()
 
 function light_weaponproficiencyhalberd_star()
 {
-    if ((already_knows_halberd) | (small)) {
+    if ((already_knows_halberd) || (small)) {
 	document.form1.weaponproficiencyhalberd_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73376,7 +73179,7 @@ function consider_weaponproficiencyheavyflail()
 	remember_feats();
 	return;
     }
-    if ((already_knows_flail) | (small)) {
+    if ((already_knows_flail) || (small)) {
 	document.form1.weaponproficiencyheavyflail_box.checked = false;
     }
     ArrowShow();
@@ -73384,7 +73187,7 @@ function consider_weaponproficiencyheavyflail()
 
 function light_weaponproficiencyheavyflail_star()
 {
-    if ((already_knows_flail) | (small)) {
+    if ((already_knows_flail) || (small)) {
 	document.form1.weaponproficiencyheavyflail_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73398,7 +73201,7 @@ function consider_weaponproficiencylongspear()
 	remember_feats();
 	return;
     }
-    if ((already_knows_spear) | (small)) {
+    if ((already_knows_spear) || (small)) {
 	document.form1.weaponproficiencylongspear_box.checked = false;
     }
     ArrowShow();
@@ -73406,7 +73209,7 @@ function consider_weaponproficiencylongspear()
 
 function light_weaponproficiencylongspear_star()
 {
-    if ((already_knows_spear) | (small)) {
+    if ((already_knows_spear) || (small)) {
 	document.form1.weaponproficiencylongspear_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73420,7 +73223,7 @@ function consider_weaponproficiencymaul()
 	remember_feats();
 	return;
     }
-    if ((already_knows_maul) | (small)) {
+    if ((already_knows_maul) || (small)) {
 	document.form1.weaponproficiencymaul_box.checked = false;
     }
     ArrowShow();
@@ -73428,7 +73231,7 @@ function consider_weaponproficiencymaul()
 
 function light_weaponproficiencymaul_star()
 {
-    if ((already_knows_maul) | (small)) {
+    if ((already_knows_maul) || (small)) {
 	document.form1.weaponproficiencymaul_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73511,7 +73314,7 @@ function consider_weaponproficiencyspikedchain()
 	remember_feats();
 	return;
     }
-    if ((already_knows_spikedchain) | (small)) {
+    if ((already_knows_spikedchain) || (small)) {
 	document.form1.weaponproficiencyspikedchain_box.checked = false;
     }
     ArrowShow();
@@ -73520,7 +73323,7 @@ function consider_weaponproficiencyspikedchain()
 function light_weaponproficiencyspikedchain_star()
 {
 
-    if ((already_knows_spikedchain) | (small)) {
+    if ((already_knows_spikedchain) || (small)) {
 	document.form1.weaponproficiencyspikedchain_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73582,7 +73385,7 @@ function consider_weaponproficiencycrossbow()
 	remember_feats();
 	return;
     }
-    if ((already_knows_crossbow) | (small)) {
+    if ((already_knows_crossbow) || (small)) {
 	document.form1.weaponproficiencycrossbow_box.checked = false;
     }
     ArrowShow();
@@ -73591,7 +73394,7 @@ function consider_weaponproficiencycrossbow()
 function light_weaponproficiencycrossbow_star()
 {
 
-    if ((already_knows_crossbow) | (small)) {
+    if ((already_knows_crossbow) || (small)) {
 	document.form1.weaponproficiencycrossbow_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73606,7 +73409,7 @@ function consider_weaponproficiencylongbow()
 	remember_feats();
 	return;
     }
-    if ((already_knows_longbow) | (small)) {
+    if ((already_knows_longbow) || (small)) {
 	document.form1.weaponproficiencylongbow_box.checked = false;
     }
     ArrowShow();
@@ -73615,7 +73418,7 @@ function consider_weaponproficiencylongbow()
 function light_weaponproficiencylongbow_star()
 {
 
-    if ((already_knows_longbow) | (small)) {
+    if ((already_knows_longbow) || (small)) {
 	document.form1.weaponproficiencylongbow_star.src =
 	    "no_asterisk.gif";
 	return;
@@ -73694,7 +73497,7 @@ function consider_actionrecovery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!race_human) && (!race_halfelf))) {
+    if ((total_levels < 11) || ((!race_human) && (!race_halfelf))) {
 	document.form1.actionrecovery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73704,7 +73507,7 @@ function consider_actionrecovery()
 function light_actionrecovery_star()
 {
 
-    if ((total_levels < 11) | ((!race_human) && (!race_halfelf))) {
+    if ((total_levels < 11) || ((!race_human) && (!race_halfelf))) {
 	document.form1.actionrecovery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73741,7 +73544,7 @@ function consider_arcanereach()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 15)) {
+    if ((total_levels < 11) || (dexterity < 15)) {
 	document.form1.arcanereach_box.checked = false;
     }
     ArrowShow();
@@ -73750,7 +73553,7 @@ function consider_arcanereach()
 function light_arcanereach_star()
 {
 
-    if ((total_levels < 11) | (dexterity < 15)) {
+    if ((total_levels < 11) || (dexterity < 15)) {
 	document.form1.arcanereach_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73833,7 +73636,7 @@ function consider_combatcommander()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!warlordclass())) {
+    if ((total_levels < 11) || (!warlordclass())) {
 	document.form1.combatcommander_box.checked = false;
     }
     ArrowShow();
@@ -73842,7 +73645,7 @@ function consider_combatcommander()
 function light_combatcommander_star()
 {
 
-    if ((total_levels < 11) | (!warlordclass())) {
+    if ((total_levels < 11) || (!warlordclass())) {
 	document.form1.combatcommander_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73879,7 +73682,7 @@ function consider_deadlyaxe()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (strength < 17) | (constitution < 13)) {
+    if ((total_levels < 11) || (strength < 17) || (constitution < 13)) {
 	document.form1.deadlyaxe_box.checked = false;
     }
     ArrowShow();
@@ -73888,7 +73691,7 @@ function consider_deadlyaxe()
 function light_deadlyaxe_star()
 {
 
-    if ((total_levels < 11) | (strength < 17) | (constitution < 13)) {
+    if ((total_levels < 11) || (strength < 17) || (constitution < 13)) {
 	document.form1.deadlyaxe_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73902,7 +73705,7 @@ function consider_defensiveadvantage()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 17)) {
+    if ((total_levels < 11) || (dexterity < 17)) {
 	document.form1.defensiveadvantage_box.checked = false;
     }
     ArrowShow();
@@ -73911,7 +73714,7 @@ function consider_defensiveadvantage()
 function light_defensiveadvantage_star()
 {
 
-    if ((total_levels < 11) | (dexterity < 17)) {
+    if ((total_levels < 11) || (dexterity < 17)) {
 	document.form1.defensiveadvantage_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73971,7 +73774,7 @@ function consider_dwarvendurability()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dwarf)) {
+    if ((total_levels < 11) || (!race_dwarf)) {
 	document.form1.dwarvendurability_box.checked = false;
     }
     ArrowShow();
@@ -73980,7 +73783,7 @@ function consider_dwarvendurability()
 function light_dwarvendurability_star()
 {
 
-    if ((total_levels < 11) | (!race_dwarf)) {
+    if ((total_levels < 11) || (!race_dwarf)) {
 	document.form1.dwarvendurability_star.src = "no_asterisk.gif";
 	return;
     }
@@ -73994,7 +73797,7 @@ function consider_empowereddragonbreath()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_dragonborn)) {
+    if ((total_levels < 11) || (!race_dragonborn)) {
 	document.form1.empowereddragonbreath_box.checked = false;
     }
     ArrowShow();
@@ -74003,7 +73806,7 @@ function consider_empowereddragonbreath()
 function light_empowereddragonbreath_star()
 {
 
-    if ((total_levels < 11) | (!race_dragonborn)) {
+    if ((total_levels < 11) || (!race_dragonborn)) {
 	document.form1.empowereddragonbreath_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74017,7 +73820,7 @@ function consider_evasion()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 15)) {
+    if ((total_levels < 11) || (dexterity < 15)) {
 	document.form1.evasion_box.checked = false;
     }
     ArrowShow();
@@ -74026,7 +73829,7 @@ function consider_evasion()
 function light_evasion_star()
 {
 
-    if ((total_levels < 11) | (dexterity < 15)) {
+    if ((total_levels < 11) || (dexterity < 15)) {
 	document.form1.evasion_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74040,7 +73843,7 @@ function consider_feywildprotection()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_eladrin)) {
+    if ((total_levels < 11) || (!race_eladrin)) {
 	document.form1.feywildprotection_box.checked = false;
     }
     ArrowShow();
@@ -74049,7 +73852,7 @@ function consider_feywildprotection()
 function light_feywildprotection_star()
 {
 
-    if ((total_levels < 11) | (!race_eladrin)) {
+    if ((total_levels < 11) || (!race_eladrin)) {
 	document.form1.feywildprotection_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74063,7 +73866,7 @@ function consider_fieryrebuke()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_tiefling)) {
+    if ((total_levels < 11) || (!race_tiefling)) {
 	document.form1.fieryrebuke_box.checked = false;
     }
     ArrowShow();
@@ -74072,7 +73875,7 @@ function consider_fieryrebuke()
 function light_fieryrebuke_star()
 {
 
-    if ((total_levels < 11) | (!race_tiefling)) {
+    if ((total_levels < 11) || (!race_tiefling)) {
 	document.form1.fieryrebuke_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74132,7 +73935,7 @@ function consider_hammerrhythm()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (constitution < 17))) {
+    if ((total_levels < 11) || ((strength < 15) || (constitution < 17))) {
 	document.form1.hammerrhythm_box.checked = false;
     }
     ArrowShow();
@@ -74141,7 +73944,7 @@ function consider_hammerrhythm()
 function light_hammerrhythm_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (constitution < 17))) {
+    if ((total_levels < 11) || ((strength < 15) || (constitution < 17))) {
 	document.form1.hammerrhythm_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74155,7 +73958,7 @@ function consider_heavybladeopportunity()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 15))) {
 	document.form1.heavybladeopportunity_box.checked = false;
     }
     ArrowShow();
@@ -74164,7 +73967,7 @@ function consider_heavybladeopportunity()
 function light_heavybladeopportunity_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 15))) {
 	document.form1.heavybladeopportunity_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74385,7 +74188,7 @@ function consider_polearmgamble()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (wisdom < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (wisdom < 15))) {
 	document.form1.polearmgamble_box.checked = false;
     }
     ArrowShow();
@@ -74394,7 +74197,7 @@ function consider_polearmgamble()
 function light_polearmgamble_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (wisdom < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (wisdom < 15))) {
 	document.form1.polearmgamble_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74454,7 +74257,7 @@ function consider_runningshot()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!race_elf) && (!race_halfelf))) {
+    if ((total_levels < 11) || ((!race_elf) && (!race_halfelf))) {
 	document.form1.runningshot_box.checked = false;
     }
     ArrowShow();
@@ -74463,7 +74266,7 @@ function consider_runningshot()
 function light_runningshot_star()
 {
 
-    if ((total_levels < 11) | ((!race_elf) && (!race_halfelf))) {
+    if ((total_levels < 11) || ((!race_elf) && (!race_halfelf))) {
 	document.form1.runningshot_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74477,7 +74280,7 @@ function consider_scimitardance()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 17))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 17))) {
 	document.form1.scimitardance_box.checked = false;
     }
     ArrowShow();
@@ -74486,7 +74289,7 @@ function consider_scimitardance()
 function light_scimitardance_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 17))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 17))) {
 	document.form1.scimitardance_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74500,7 +74303,7 @@ function consider_secondimplementorb()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!wizardclass())) | (orbofimposition)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (orbofimposition)) {
 	document.form1.secondimplementorb_box.checked = false;
     }
     ArrowShow();
@@ -74509,7 +74312,7 @@ function consider_secondimplementorb()
 function light_secondimplementorb_star()
 {
 
-    if ((total_levels < 11) | ((!wizardclass())) | (orbofimposition)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (orbofimposition)) {
 	document.form1.secondimplementorb_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74523,7 +74326,7 @@ function consider_secondimplementstaff()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!wizardclass())) | (staffofdefense)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (staffofdefense)) {
 	document.form1.secondimplementstaff_box.checked = false;
     }
     ArrowShow();
@@ -74532,7 +74335,7 @@ function consider_secondimplementstaff()
 function light_secondimplementstaff_star()
 {
 
-    if ((total_levels < 11) | ((!wizardclass())) | (staffofdefense)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (staffofdefense)) {
 	document.form1.secondimplementstaff_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74546,7 +74349,7 @@ function consider_secondimplementwand()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!wizardclass())) | (wandofaccuracy)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (wandofaccuracy)) {
 	document.form1.secondimplementwand_box.checked = false;
     }
     ArrowShow();
@@ -74555,7 +74358,7 @@ function consider_secondimplementwand()
 function light_secondimplementwand_star()
 {
 
-    if ((total_levels < 11) | ((!wizardclass())) | (wandofaccuracy)) {
+    if ((total_levels < 11) || ((!wizardclass())) || (wandofaccuracy)) {
 	document.form1.secondimplementwand_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74570,9 +74373,9 @@ function consider_secretstride()
 	return;
     }
     if ((total_levels <
-	 11) | ((!eladrin_stealth) && ((!trained_stealth) &
-				       (!multi_trained_stealth)) &
-		(!document.form1.skilltrainingstealth_box.checked))) {
+	 11) || ((!eladrin_stealth) && ((!trained_stealth) &&
+					(!multi_trained_stealth)) &&
+		 (!document.form1.skilltrainingstealth_box.checked))) {
 	document.form1.secretstride_box.checked = false;
     }
     ArrowShow();
@@ -74582,9 +74385,9 @@ function light_secretstride_star()
 {
 
     if ((total_levels <
-	 11) | ((!eladrin_stealth) && ((!trained_stealth) &
-				       (!multi_trained_stealth)) &
-		(!document.form1.skilltrainingstealth_box.checked))) {
+	 11) || ((!eladrin_stealth) && ((!trained_stealth) &&
+					(!multi_trained_stealth)) &&
+		 (!document.form1.skilltrainingstealth_box.checked))) {
 	document.form1.secretstride_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74598,7 +74401,7 @@ function consider_seizethemoment()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (dexterity < 17)) {
+    if ((total_levels < 11) || (dexterity < 17)) {
 	document.form1.seizethemoment_box.checked = false;
     }
     ArrowShow();
@@ -74607,7 +74410,7 @@ function consider_seizethemoment()
 function light_seizethemoment_star()
 {
 
-    if ((total_levels < 11) | (dexterity < 17)) {
+    if ((total_levels < 11) || (dexterity < 17)) {
 	document.form1.seizethemoment_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74621,7 +74424,7 @@ function consider_slyhunter()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (wisdom < 13)) {
+    if ((total_levels < 11) || (wisdom < 13)) {
 	document.form1.slyhunter_box.checked = false;
     }
     ArrowShow();
@@ -74630,7 +74433,7 @@ function consider_slyhunter()
 function light_slyhunter_star()
 {
 
-    if ((total_levels < 11) | (wisdom < 13)) {
+    if ((total_levels < 11) || (wisdom < 13)) {
 	document.form1.slyhunter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74644,7 +74447,7 @@ function consider_solidsound()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (constitution < 13)) {
+    if ((total_levels < 11) || (constitution < 13)) {
 	document.form1.solidsound_box.checked = false;
     }
     ArrowShow();
@@ -74653,7 +74456,7 @@ function consider_solidsound()
 function light_solidsound_star()
 {
 
-    if ((total_levels < 11) | (constitution < 13)) {
+    if ((total_levels < 11) || (constitution < 13)) {
 	document.form1.solidsound_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74667,7 +74470,7 @@ function consider_spearpush()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 13))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 13))) {
 	document.form1.spearpush_box.checked = false;
     }
     ArrowShow();
@@ -74676,7 +74479,7 @@ function consider_spearpush()
 function light_spearpush_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 13))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 13))) {
 	document.form1.spearpush_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74690,7 +74493,7 @@ function consider_spellfocus()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!wizardclass()))) {
+    if ((total_levels < 11) || ((!wizardclass()))) {
 	document.form1.spellfocus_box.checked = false;
     }
     ArrowShow();
@@ -74699,7 +74502,7 @@ function consider_spellfocus()
 function light_spellfocus_star()
 {
 
-    if ((total_levels < 11) | ((!wizardclass()))) {
+    if ((total_levels < 11) || ((!wizardclass()))) {
 	document.form1.spellfocus_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74713,7 +74516,7 @@ function consider_steadyshooter()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (constitution < 15)) {
+    if ((total_levels < 11) || (constitution < 15)) {
 	document.form1.steadyshooter_box.checked = false;
     }
     ArrowShow();
@@ -74722,7 +74525,7 @@ function consider_steadyshooter()
 function light_steadyshooter_star()
 {
 
-    if ((total_levels < 11) | (constitution < 15)) {
+    if ((total_levels < 11) || (constitution < 15)) {
 	document.form1.steadyshooter_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74736,7 +74539,7 @@ function consider_sweepingflail()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 15))) {
 	document.form1.sweepingflail_box.checked = false;
     }
     ArrowShow();
@@ -74745,7 +74548,7 @@ function consider_sweepingflail()
 function light_sweepingflail_star()
 {
 
-    if ((total_levels < 11) | ((strength < 15) | (dexterity < 15))) {
+    if ((total_levels < 11) || ((strength < 15) || (dexterity < 15))) {
 	document.form1.sweepingflail_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74759,7 +74562,7 @@ function consider_twofoldcurse()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | ((!class_warlock))) {
+    if ((total_levels < 11) || ((!class_warlock))) {
 	document.form1.twofoldcurse_box.checked = false;
     }
     ArrowShow();
@@ -74768,7 +74571,7 @@ function consider_twofoldcurse()
 function light_twofoldcurse_star()
 {
 
-    if ((total_levels < 11) | ((!class_warlock))) {
+    if ((total_levels < 11) || ((!class_warlock))) {
 	document.form1.twofoldcurse_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74782,7 +74585,7 @@ function consider_uncannydodge()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (wisdom < 15)) {
+    if ((total_levels < 11) || (wisdom < 15)) {
 	document.form1.uncannydodge_box.checked = false;
     }
     ArrowShow();
@@ -74791,7 +74594,7 @@ function consider_uncannydodge()
 function light_uncannydodge_star()
 {
 
-    if ((total_levels < 11) | (wisdom < 15)) {
+    if ((total_levels < 11) || (wisdom < 15)) {
 	document.form1.uncannydodge_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74805,11 +74608,11 @@ function consider_underfoot()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 11) | (!race_halfling)) {
+    if ((total_levels < 11) || (!race_halfling)) {
 	document.form1.underfoot_box.checked = false;
     }
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.underfoot_box.checked = false;
     }
@@ -74820,12 +74623,12 @@ function consider_underfoot()
 function light_underfoot_star()
 {
 
-    if ((total_levels < 11) | (!race_halfling)) {
+    if ((total_levels < 11) || (!race_halfling)) {
 	document.form1.underfoot_star.src = "no_asterisk.gif";
 	return;
     }
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.underfoot_box.checked = false;
     }
@@ -74840,7 +74643,7 @@ function consider_arcanemastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((!wizardclass()))) {
+    if ((total_levels < 21) || ((!wizardclass()))) {
 	document.form1.arcanemastery_box.checked = false;
     }
     ArrowShow();
@@ -74849,7 +74652,7 @@ function consider_arcanemastery()
 function light_arcanemastery_star()
 {
 
-    if ((total_levels < 21) | ((!wizardclass()))) {
+    if ((total_levels < 21) || ((!wizardclass()))) {
 	document.form1.arcanemastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74863,7 +74666,7 @@ function consider_axemastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 21) | (constitution < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (constitution < 17))) {
 	document.form1.axemastery_box.checked = false;
     }
     ArrowShow();
@@ -74872,7 +74675,7 @@ function consider_axemastery()
 function light_axemastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 21) | (constitution < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (constitution < 17))) {
 	document.form1.axemastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74889,8 +74692,8 @@ function consider_blindfight()
     if (total_levels < 21) {
 	document.form1.blindfight_box.checked = false;
     }
-    if ((!eladrin_perception) &
-	((!trained_perception) && (!multi_trained_perception)) &
+    if ((!eladrin_perception) &&
+	((!trained_perception) && (!multi_trained_perception)) &&
 	(!document.form1.skilltrainingperception_box.checked)) {
 	if (wisdom < 13) {
 	    document.form1.blindfight_box.checked = false;
@@ -74905,8 +74708,8 @@ function light_blindfight_star()
 	document.form1.blindfight_star.src = "no_asterisk.gif";
 	return;
     }
-    if ((!eladrin_perception) &
-	((!trained_perception) && (!multi_trained_perception)) &
+    if ((!eladrin_perception) &&
+	((!trained_perception) && (!multi_trained_perception)) &&
 	(!document.form1.skilltrainingperception_box.checked)) {
 	if (wisdom < 13) {
 	    document.form1.blindfight_star.src = "no_asterisk.gif";
@@ -74923,7 +74726,7 @@ function consider_bludgeonmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 19) | (constitution < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (constitution < 19))) {
 	document.form1.bludgeonmastery_box.checked = false;
     }
     ArrowShow();
@@ -74932,7 +74735,7 @@ function consider_bludgeonmastery()
 function light_bludgeonmastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 19) | (constitution < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (constitution < 19))) {
 	document.form1.bludgeonmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74969,7 +74772,7 @@ function consider_flailmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 19) | (dexterity < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (dexterity < 19))) {
 	document.form1.flailmastery_box.checked = false;
     }
     ArrowShow();
@@ -74978,7 +74781,7 @@ function consider_flailmastery()
 function light_flailmastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 19) | (dexterity < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (dexterity < 19))) {
 	document.form1.flailmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -74992,11 +74795,11 @@ function consider_flankingmaneuver()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | (dexterity < 17)) {
+    if ((total_levels < 21) || (dexterity < 17)) {
 	document.form1.flankingmaneuver_box.checked = false;
     }
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.flankingmaneuver_box.checked = false;
     }
@@ -75005,12 +74808,12 @@ function consider_flankingmaneuver()
 
 function light_flankingmaneuver_star()
 {
-    if ((total_levels < 21) | (dexterity < 17)) {
+    if ((total_levels < 21) || (dexterity < 17)) {
 	document.form1.flankingmaneuver_star.src = "no_asterisk.gif";
 	return;
     }
-    if ((!eladrin_acrobatics) &
-	((!trained_acrobatics) && (!multi_trained_acrobatics)) &
+    if ((!eladrin_acrobatics) &&
+	((!trained_acrobatics) && (!multi_trained_acrobatics)) &&
 	(!document.form1.skilltrainingacrobatics_box.checked)) {
 	document.form1.flankingmaneuver_star.src = "no_asterisk.gif";
 	return;
@@ -75047,7 +74850,7 @@ function consider_heavyblademastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 21) | (dexterity < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (dexterity < 17))) {
 	document.form1.heavyblademastery_box.checked = false;
     }
     ArrowShow();
@@ -75056,7 +74859,7 @@ function consider_heavyblademastery()
 function light_heavyblademastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 21) | (dexterity < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (dexterity < 17))) {
 	document.form1.heavyblademastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75093,7 +74896,7 @@ function consider_lightblademastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 17) | (dexterity < 21))) {
+    if ((total_levels < 21) || ((strength < 17) || (dexterity < 21))) {
 	document.form1.lightblademastery_box.checked = false;
     }
     ArrowShow();
@@ -75102,7 +74905,7 @@ function consider_lightblademastery()
 function light_lightblademastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 17) | (dexterity < 21))) {
+    if ((total_levels < 21) || ((strength < 17) || (dexterity < 21))) {
 	document.form1.lightblademastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75116,7 +74919,7 @@ function consider_pickmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 21) | (constitution < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (constitution < 17))) {
 	document.form1.pickmastery_box.checked = false;
     }
     ArrowShow();
@@ -75125,7 +74928,7 @@ function consider_pickmastery()
 function light_pickmastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 21) | (constitution < 17))) {
+    if ((total_levels < 21) || ((strength < 21) || (constitution < 17))) {
 	document.form1.pickmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75139,7 +74942,7 @@ function consider_spearmastery()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((strength < 19) | (dexterity < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (dexterity < 19))) {
 	document.form1.spearmastery_box.checked = false;
     }
     ArrowShow();
@@ -75148,7 +74951,7 @@ function consider_spearmastery()
 function light_spearmastery_star()
 {
 
-    if ((total_levels < 21) | ((strength < 19) | (dexterity < 19))) {
+    if ((total_levels < 21) || ((strength < 19) || (dexterity < 19))) {
 	document.form1.spearmastery_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75162,7 +74965,7 @@ function consider_spellaccuracy()
 	remember_feats();
 	return;
     }
-    if ((total_levels < 21) | ((!wizardclass()))) {
+    if ((total_levels < 21) || ((!wizardclass()))) {
 	document.form1.spellaccuracy_box.checked = false;
     }
     ArrowShow();
@@ -75171,7 +74974,7 @@ function consider_spellaccuracy()
 function light_spellaccuracy_star()
 {
 
-    if ((total_levels < 21) | ((!wizardclass()))) {
+    if ((total_levels < 21) || ((!wizardclass()))) {
 	document.form1.spellaccuracy_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75208,9 +75011,9 @@ function consider_twoweaponflurry()
 	remember_feats();
 	return;
     }
-    if ((total_levels <
-	 21) | ((dexterity <
-		 19) | (!document.form1.twoweaponfighting_box.checked))) {
+    if ((total_levels < 21) || ((dexterity < 19)
+				|| (!document.form1.
+				    twoweaponfighting_box.checked))) {
 	document.form1.twoweaponflurry_box.checked = false;
     }
     ArrowShow();
@@ -75219,9 +75022,9 @@ function consider_twoweaponflurry()
 function light_twoweaponflurry_star()
 {
 
-    if ((total_levels <
-	 21) | ((dexterity <
-		 19) | (!document.form1.twoweaponfighting_box.checked))) {
+    if ((total_levels < 21) || ((dexterity < 19)
+				|| (!document.form1.
+				    twoweaponfighting_box.checked))) {
 	document.form1.twoweaponflurry_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75236,9 +75039,9 @@ function consider_unfetteredstride()
 	return;
     }
     if ((total_levels <
-	 21) | ((!eladrin_acrobatics) && ((!trained_acrobatics) &
-					  (!multi_trained_acrobatics)) &
-		(!document.form1.skilltrainingacrobatics_box.checked))) {
+	 21) || ((!eladrin_acrobatics) && ((!trained_acrobatics) &&
+					   (!multi_trained_acrobatics)) &&
+		 (!document.form1.skilltrainingacrobatics_box.checked))) {
 	document.form1.unfetteredstride_box.checked = false;
     }
     ArrowShow();
@@ -75247,11 +75050,10 @@ function consider_unfetteredstride()
 function light_unfetteredstride_star()
 {
 
-
     if ((total_levels <
-	 21) | ((!eladrin_acrobatics) && ((!trained_acrobatics) &
-					  (!multi_trained_acrobatics)) &
-		(!document.form1.skilltrainingacrobatics_box.checked))) {
+	 21) || ((!eladrin_acrobatics) && ((!trained_acrobatics) &&
+					   (!multi_trained_acrobatics)) &&
+		 (!document.form1.skilltrainingacrobatics_box.checked))) {
 	document.form1.unfetteredstride_star.src = "no_asterisk.gif";
 	return;
     }
@@ -75265,11 +75067,11 @@ function consider_multiclasspowerswap()
 	remember_feats();
 	return;
     }
-    if ((!multi_cleric()) && (!multi_fighter()) && (!multi_paladin()) &
-	(!multi_ranger()) && (!multi_rogue()) && (!multi_warlock()) &
-	(!multi_warlord()) && (!multi_wizard()) && (!multi_swordmage()) &
-	(!multi_barbarian()) && (!multi_bard()) && (!multi_avenger()) &
-	(!multi_druid()) && (!multi_invoker()) && (!multi_sorcerer()) &
+    if ((!multi_cleric()) && (!multi_fighter()) && (!multi_paladin()) &&
+	(!multi_ranger()) && (!multi_rogue()) && (!multi_warlock()) &&
+	(!multi_warlord()) && (!multi_wizard()) && (!multi_swordmage()) &&
+	(!multi_barbarian()) && (!multi_bard()) && (!multi_avenger()) &&
+	(!multi_druid()) && (!multi_invoker()) && (!multi_sorcerer()) &&
 	(!multi_shaman()) && (!multi_warlock()) && (!multi_spellscarred)) {
 	document.form1.multiclasspowerswapencounter_box.checked = false;
 	document.form1.multiclasspowerswaputility_box.checked = false;
@@ -75289,11 +75091,11 @@ function consider_multiclasspowerswap()
 
 function light_multiclasspowerswap_star()
 {
-    if ((!multi_cleric()) && (!multi_fighter()) && (!multi_paladin()) &
-	(!multi_ranger()) && (!multi_rogue()) && (!multi_warlock()) &
-	(!multi_warlord()) && (!multi_wizard()) && (!multi_swordmage()) &
-	(!multi_barbarian()) && (!multi_avenger()) && (!multi_bard()) &
-	(!multi_invoker()) && (!multi_druid()) && (!multi_shaman()) &
+    if ((!multi_cleric()) && (!multi_fighter()) && (!multi_paladin()) &&
+	(!multi_ranger()) && (!multi_rogue()) && (!multi_warlock()) &&
+	(!multi_warlord()) && (!multi_wizard()) && (!multi_swordmage()) &&
+	(!multi_barbarian()) && (!multi_avenger()) && (!multi_bard()) &&
+	(!multi_invoker()) && (!multi_druid()) && (!multi_shaman()) &&
 	(!multi_sorcerer()) && (!multi_warden())
 	&& (!multi_spellscarred)) {
 	document.form1.multiclasspowerswapencounter_star.src =
@@ -75355,13 +75157,13 @@ function consider_twohandedweapon()
 	document.form1.greatbow_box.checked = false;
 	document.form1.superiorcrossbow_box.checked = false;
     }
-    if ((staffofdefense) | (feat_secondimplementstaff)) {
+    if ((staffofdefense) || (feat_secondimplementstaff)) {
 	document.form1.quarterstaff_box.checked = true;
     }
-    if ((orbofimposition) | (orbofdeception) | (feat_secondimplementorb)) {
+    if ((orbofimposition) || (orbofdeception) || (feat_secondimplementorb)) {
 	document.form1.orb_box.checked = true;
     }
-    if ((wandofaccuracy) | (feat_secondimplementwand)) {
+    if ((wandofaccuracy) || (feat_secondimplementwand)) {
 	document.form1.wand_box.checked = true;
     }
 }
@@ -75371,7 +75173,7 @@ function c_cl_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ClericAtWill())) {
+    if ((!FeatsAreLocked) || (!ClericAtWill())) {
 	document.form1.lanceoffaith_box.checked = false;
 	document.form1.priestsshield_box.checked = false;
 	document.form1.righteousbrand_box.checked = false;
@@ -75384,7 +75186,7 @@ function c_cl_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ClericDaily())) {
+    if ((!FeatsAreLocked) || (!ClericDaily())) {
 
 	document.form1.guardianoffaith_box.checked = false;
 	document.form1.weaponofthegods_box.checked = false;
@@ -75406,7 +75208,7 @@ function c_cl_d()
 	document.form1.runeofpeace_box.checked = false;
 	document.form1.bladebarrier_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!ClericDaily() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked) || ((!ClericDaily() && (!epic_eternalseeker)))) {
 	document.form1.nimbusofdoom_box.checked = false;
 	document.form1.astralstorm_box.checked = false;
 	document.form1.sealofprotection_box.checked = false;
@@ -75421,7 +75223,7 @@ function c_cl_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ClericEncounter())) {
+    if ((!FeatsAreLocked) || (!ClericEncounter())) {
 
 	document.form1.dauntinglight_box.checked = false;
 	document.form1.enthrall_box.checked = false;
@@ -75444,7 +75246,7 @@ function c_cl_e()
 	document.form1.splitthesky_box.checked = false;
 	document.form1.breakthespirit_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!ClericEncounter() && (!epic_eternalseeker)))) {
 	document.form1.hauntingstrike_box.checked = false;
 	document.form1.divinecensure_box.checked = false;
@@ -75462,7 +75264,7 @@ function c_cl_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ClericUtility())) {
+    if ((!FeatsAreLocked) || (!ClericUtility())) {
 
 	document.form1.spiritofhealth_box.checked = false;
 	document.form1.astralshield_box.checked = false;
@@ -75494,7 +75296,7 @@ function c_fi_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!FighterAtWill())) {
+    if ((!FeatsAreLocked) || (!FighterAtWill())) {
 
 	document.form1.surestrike_box.checked = false;
 	document.form1.cleave_box.checked = false;
@@ -75512,7 +75314,7 @@ function c_fi_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!FighterDaily())) {
+    if ((!FeatsAreLocked) || (!FighterDaily())) {
 
 	document.form1.cracktheshell_box.checked = false;
 	document.form1.unyieldingavalanche_box.checked = false;
@@ -75530,9 +75332,9 @@ function c_fi_d()
 	document.form1.rainofsteel_box.checked = false;
 	document.form1.reavingstrike_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!FighterDaily() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!FighterDaily() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.forcethebattle_box.checked = false;
 	document.form1.supremacyofsteel_box.checked = false;
 	document.form1.reignofterror_box.checked = false;
@@ -75547,7 +75349,7 @@ function c_fi_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!FighterEncounter())) {
+    if ((!FeatsAreLocked) || (!FighterEncounter())) {
 	if (!epic_martialarchetype) {
 	    document.form1.exactingstrike_box.checked = false;
 	    document.form1.exorcismofsteel_box.checked = false;
@@ -75556,8 +75358,6 @@ function c_fi_e()
 	    document.form1.vorpaltornado_box.checked = false;
 	    document.form1.warriorschallenge_box.checked = false;
 	}
-
-
 
 	document.form1.passingattack_box.checked = false;
 	document.form1.spinningsweep_box.checked = false;
@@ -75581,9 +75381,9 @@ function c_fi_e()
 	document.form1.talonoftheroc_box.checked = false;
 	document.form1.ironbulwark_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!FighterEncounter() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!FighterEncounter() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.skullcrusher_box.checked = false;
 	document.form1.diamondshielddefense_box.checked = false;
 	document.form1.adamantinestrike_box.checked = false;
@@ -75602,9 +75402,9 @@ function c_fi_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!FighterUtility())) {
+    if ((!FeatsAreLocked) || (!FighterUtility())) {
 
-	if ((!epic_martialarchetype) | (total_levels < 26)) {
+	if ((!epic_martialarchetype) || (total_levels < 26)) {
 	    document.form1.actofdesperation_box.checked = false;
 	    document.form1.nosurrender_box.checked = false;
 	}
@@ -75629,7 +75429,7 @@ function c_pa_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!PaladinAtWill())) {
+    if ((!FeatsAreLocked) || (!PaladinAtWill())) {
 
 	document.form1.enfeeblingstrike_box.checked = false;
 	document.form1.bolsteringstrike_box.checked = false;
@@ -75643,7 +75443,7 @@ function c_pa_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!PaladinDaily())) {
+    if ((!FeatsAreLocked) || (!PaladinDaily())) {
 
 	document.form1.martyrsretribution_box.checked = false;
 	document.form1.righteousinferno_box.checked = false;
@@ -75661,7 +75461,7 @@ function c_pa_d()
 	document.form1.onestandsalone_box.checked = false;
 	document.form1.crownofglory_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!PaladinDaily() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked) || ((!PaladinDaily() && (!epic_eternalseeker)))) {
 	document.form1.powerfulfaith_box.checked = false;
 	document.form1.totheninehellswithyou_box.checked = false;
 	document.form1.evenhandofjustice_box.checked = false;
@@ -75674,7 +75474,7 @@ function c_pa_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!PaladinEncounter())) {
+    if ((!FeatsAreLocked) || (!PaladinEncounter())) {
 
 	document.form1.beckonfoe_box.checked = false;
 	document.form1.whirlwindsmite_box.checked = false;
@@ -75697,7 +75497,7 @@ function c_pa_e()
 	document.form1.entanglingsmite_box.checked = false;
 	document.form1.thundersmite_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!PaladinEncounter() && (!epic_eternalseeker)))) {
 	document.form1.sublimetranspostion_box.checked = false;
 	document.form1.stunningsmite_box.checked = false;
@@ -75716,7 +75516,7 @@ function c_pa_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!PaladinUtility())) {
+    if ((!FeatsAreLocked) || (!PaladinUtility())) {
 
 	document.form1.turnthetide_box.checked = false;
 	document.form1.unitedinfaith_box.checked = false;
@@ -75741,7 +75541,7 @@ function c_ra_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RangerAtWill())) {
+    if ((!FeatsAreLocked) || (!RangerAtWill())) {
 
 	document.form1.twinstrike_box.checked = false;
 	document.form1.carefulattack_box.checked = false;
@@ -75760,10 +75560,7 @@ function c_ra_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RangerDaily())) {
-
-
-
+    if ((!FeatsAreLocked) || (!RangerDaily())) {
 
 	document.form1.cruelcageofsteel_box.checked = false;
 	document.form1.splitthetree_box.checked = false;
@@ -75796,9 +75593,9 @@ function c_ra_d()
 	document.form1.pursuitofthewildhunt_box.checked = false;
 	document.form1.huntmastersmauling_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!RangerDaily() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!RangerDaily() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.weaveawebofsteel_box.checked = false;
 	document.form1.threeinoneshot_box.checked = false;
 	document.form1.followupblow_box.checked = false;
@@ -75816,7 +75613,7 @@ function c_ra_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RangerEncounter())) {
+    if ((!FeatsAreLocked) || (!RangerEncounter())) {
 	if (!epic_martialarchetype) {
 	    document.form1.arrowofvengeance_box.checked = false;
 	    document.form1.cheetahsrake_box.checked = false;
@@ -75825,8 +75622,6 @@ function c_ra_e()
 	    document.form1.bladeandfang_box.checked = false;
 	    document.form1.houndingbeast_box.checked = false;
 	}
-
-
 
 	document.form1.thundertuskboarstrike_box.checked = false;
 	document.form1.knockdownshot_box.checked = false;
@@ -75859,9 +75654,9 @@ function c_ra_e()
 	document.form1.primalrampage_box.checked = false;
 	document.form1.pursuitofthewildhunt_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!RangerEncounter() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!RangerEncounter() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.lightningshot_box.checked = false;
 	document.form1.manticoresvolley_box.checked = false;
 	document.form1.cloakofthorns_box.checked = false;
@@ -75883,9 +75678,9 @@ function c_ra_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RangerUtility())) {
+    if ((!FeatsAreLocked) || (!RangerUtility())) {
 
-	if ((!epic_martialarchetype) | (total_levels < 26)) {
+	if ((!epic_martialarchetype) || (total_levels < 26)) {
 	    document.form1.forestghost_box.checked = false;
 	    document.form1.hitthedirt_box.checked = false;
 	    document.form1.masterofthehunt_box.checked = false;
@@ -75924,7 +75719,7 @@ function c_ro_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RogueAtWill())) {
+    if ((!FeatsAreLocked) || (!RogueAtWill())) {
 
 	document.form1.ripostestrike_box.checked = false;
 	document.form1.piercingstrike_box.checked = false;
@@ -75939,10 +75734,7 @@ function c_ro_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RogueDaily())) {
-
-
-
+    if ((!FeatsAreLocked) || (!RogueDaily())) {
 
 	document.form1.easytarget_box.checked = false;
 	document.form1.snakesretreat_box.checked = false;
@@ -75960,9 +75752,9 @@ function c_ro_d()
 	document.form1.crimsonedge_box.checked = false;
 	document.form1.blindingbarrage_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!RogueDaily() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!RogueDaily() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.movingtarget_box.checked = false;
 	document.form1.immobilizingstrike_box.checked = false;
 	document.form1.assassinspoint_box.checked = false;
@@ -75977,15 +75769,12 @@ function c_ro_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RogueEncounter())) {
+    if ((!FeatsAreLocked) || (!RogueEncounter())) {
 	if (!epic_martialarchetype) {
 	    document.form1.dragontailstrike_box.checked = false;
 	    document.form1.houndingstrike_box.checked = false;
 	    document.form1.stabandgrab_box.checked = false;
 	}
-
-
-
 
 	document.form1.foolsopportunity_box.checked = false;
 	document.form1.setupstrike_box.checked = false;
@@ -76004,9 +75793,9 @@ function c_ro_e()
 	document.form1.unbalancingattack_box.checked = false;
 	document.form1.cloudofsteel_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!RogueEncounter() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!RogueEncounter() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.perfectstrike_box.checked = false;
 	document.form1.hurricaneofblood_box.checked = false;
 	document.form1.danceofdeath_box.checked = false;
@@ -76021,9 +75810,9 @@ function c_ro_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!RogueUtility())) {
+    if ((!FeatsAreLocked) || (!RogueUtility())) {
 
-	if ((!epic_martialarchetype) | (total_levels < 26)) {
+	if ((!epic_martialarchetype) || (total_levels < 26)) {
 	    document.form1.cloudjump_box.checked = false;
 	    document.form1.dazzlingacrobatics_box.checked = false;
 	    document.form1.hidefromthelight_box.checked = false;
@@ -76117,7 +75906,7 @@ function c_spellscarred_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SpellscarredDaily())) {
+    if ((!FeatsAreLocked) || (!SpellscarredDaily())) {
 
 	document.form1.terribleimposition_box.checked = false;
 	document.form1.blurringblade_box.checked = false;
@@ -76141,7 +75930,7 @@ function c_spellscarred_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SpellscarredEncounter())) {
+    if ((!FeatsAreLocked) || (!SpellscarredEncounter())) {
 
 	document.form1.reachofthedoomed_box.checked = false;
 	document.form1.spellmothersembrace_box.checked = false;
@@ -76166,7 +75955,7 @@ function c_spellscarred_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SpellscarredUtility())) {
+    if ((!FeatsAreLocked) || (!SpellscarredUtility())) {
 
 	document.form1.spellplagueguardians_box.checked = false;
 	document.form1.donningthemudflesh_box.checked = false;
@@ -76186,7 +75975,7 @@ function c_sw_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SwordmageAtWill())) {
+    if ((!FeatsAreLocked) || (!SwordmageAtWill())) {
 
 	document.form1.luringstrike_box.checked = false;
 	document.form1.swordburst_box.checked = false;
@@ -76201,7 +75990,7 @@ function c_sw_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SwordmageDaily())) {
+    if ((!FeatsAreLocked) || (!SwordmageDaily())) {
 
 	document.form1.whirlingblade_box.checked = false;
 	document.form1.glamorblade_box.checked = false;
@@ -76219,7 +76008,8 @@ function c_sw_d()
 	document.form1.deepfreeze_box.checked = false;
 	document.form1.hellsownblade_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!SwordmageDaily() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked)
+	|| ((!SwordmageDaily() && (!epic_eternalseeker)))) {
 	document.form1.quicksilverblade_box.checked = false;
 	document.form1.obliteratingblaze_box.checked = false;
 	document.form1.vorpaldoom_box.checked = false;
@@ -76235,7 +76025,7 @@ function c_sw_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SwordmageEncounter())) {
+    if ((!FeatsAreLocked) || (!SwordmageEncounter())) {
 
 	document.form1.corrosiveruin_box.checked = false;
 	document.form1.acidburstblade_box.checked = false;
@@ -76256,7 +76046,7 @@ function c_sw_e()
 	document.form1.flamecyclone_box.checked = false;
 	document.form1.chillingblow_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!SwordmageEncounter() && (!epic_eternalseeker)))) {
 	document.form1.dimensionalcharge_box.checked = false;
 	document.form1.circleofdevastation_box.checked = false;
@@ -76272,7 +76062,7 @@ function c_sw_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SwordmageUtility())) {
+    if ((!FeatsAreLocked) || (!SwordmageUtility())) {
 
 	document.form1.giantsmight_box.checked = false;
 	document.form1.eyesofthemage_box.checked = false;
@@ -76300,7 +76090,7 @@ function c_wk_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlockAtWill())) {
+    if ((!FeatsAreLocked) || (!WarlockAtWill())) {
 	document.form1.spitefulglamor_box.checked = false;
 	document.form1.hellishrebuke_box.checked = false;
 	document.form1.eyebite_box.checked = false;
@@ -76334,7 +76124,7 @@ function c_wk_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlockDaily())) {
+    if ((!FeatsAreLocked) || (!WarlockDaily())) {
 
 	document.form1.wrathofacamar_box.checked = false;
 	document.form1.minionsofmalbolge_box.checked = false;
@@ -76376,7 +76166,7 @@ function c_wk_d()
 	document.form1.vestigeofxandor_box.checked = false;
 	document.form1.deathsfondcaress_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!WarlockDaily() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked) || ((!WarlockDaily() && (!epic_eternalseeker)))) {
 	document.form1.spreadthecorrosion_box.checked = false;
 	document.form1.vestigeofthemasterofthehiddenflame_box.checked =
 	    false;
@@ -76400,7 +76190,7 @@ function c_wk_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlockEncounter())) {
+    if ((!FeatsAreLocked) || (!WarlockEncounter())) {
 
 	document.form1.witchfire_box.checked = false;
 	document.form1.vampiricembrace_box.checked = false;
@@ -76432,7 +76222,7 @@ function c_wk_e()
 	document.form1.infernalmooncurse_box.checked = false;
 	document.form1.howlofdoom_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!WarlockEncounter() && (!epic_eternalseeker)))) {
 	document.form1.inevitableundercut_box.checked = false;
 	document.form1.bladesofvanquishedarmies_box.checked = false;
@@ -76452,7 +76242,7 @@ function c_wk_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlockUtility())) {
+    if ((!FeatsAreLocked) || (!WarlockUtility())) {
 
 	document.form1.wingsofthefiend_box.checked = false;
 	document.form1.ravensglamor_box.checked = false;
@@ -76485,7 +76275,7 @@ function c_wd_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlordAtWill())) {
+    if ((!FeatsAreLocked) || (!WarlordAtWill())) {
 
 	document.form1.wolfpacktactics_box.checked = false;
 	document.form1.brashassault_box.checked = false;
@@ -76501,10 +76291,7 @@ function c_wd_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlordDaily())) {
-
-
-
+    if ((!FeatsAreLocked) || (!WarlordDaily())) {
 
 	document.form1.whiteravenonslaught_box.checked = false;
 	document.form1.pinthefoe_box.checked = false;
@@ -76523,9 +76310,9 @@ function c_wd_d()
 	document.form1.knockthemdown_box.checked = false;
 	document.form1.irondragoncharge_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!WarlordDaily() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!WarlordDaily() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.standinvincible_box.checked = false;
 	document.form1.defydeath_box.checked = false;
 	document.form1.whiteravenscall_box.checked = false;
@@ -76539,15 +76326,13 @@ function c_wd_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlordEncounter())) {
+    if ((!FeatsAreLocked) || (!WarlordEncounter())) {
 	if (!epic_martialarchetype) {
 	    document.form1.battleon_box.checked = false;
 	    document.form1.hailofsteel_box.checked = false;
 	    document.form1.thundrousfury_box.checked = false;
 	    document.form1.warlordsrush_box.checked = false;
 	}
-
-
 
 	document.form1.furyofthesirocco_box.checked = false;
 	document.form1.denyingsmite_box.checked = false;
@@ -76566,9 +76351,9 @@ function c_wd_e()
 	document.form1.hammerandanvil_box.checked = false;
 	document.form1.guardingattack_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
-	((!WarlordEncounter() && (!epic_eternalseeker) &
-	  ((!epic_martialarchetype) | (total_levels < 30))))) {
+    if ((!FeatsAreLocked) ||
+	((!WarlordEncounter() && (!epic_eternalseeker) &&
+	  ((!epic_martialarchetype) || (total_levels < 30))))) {
 	document.form1.warlordsdoom_box.checked = false;
 	document.form1.inciteheroism_box.checked = false;
 	document.form1.devastatingcharge_box.checked = false;
@@ -76585,8 +76370,8 @@ function c_wd_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WarlordUtility())) {
-	if ((!epic_martialarchetype) | (total_levels < 26)) {
+    if ((!FeatsAreLocked) || (!WarlordUtility())) {
+	if ((!epic_martialarchetype) || (total_levels < 26)) {
 	    document.form1.ownthebattlefield_box.checked = false;
 	    document.form1.heroicsurge_box.checked = false;
 	    document.form1.heartofthetitan_box.checked = false;
@@ -76614,7 +76399,7 @@ function c_wz_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WizardAtWill())) {
+    if ((!FeatsAreLocked) || (!WizardAtWill())) {
 
 	document.form1.cloudofdaggers_box.checked = false;
 	document.form1.thunderwave_box.checked = false;
@@ -76632,7 +76417,7 @@ function c_wz_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WizardDaily())) {
+    if ((!FeatsAreLocked) || (!WizardDaily())) {
 
 	document.form1.evardsblacktentacles_box.checked = false;
 	document.form1.disintegrate_box.checked = false;
@@ -76656,7 +76441,7 @@ function c_wz_d()
 	document.form1.lightningserpent_box.checked = false;
 	document.form1.icestorm_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!WizardDaily() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked) || ((!WizardDaily() && (!epic_eternalseeker)))) {
 	document.form1.meteorswarm_box.checked = false;
 	document.form1.legionshold_box.checked = false;
 	document.form1.greatericestorm_box.checked = false;
@@ -76672,7 +76457,7 @@ function c_av_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!AvengerAtWill())) {
+    if ((!FeatsAreLocked) || (!AvengerAtWill())) {
 	document.form1.bondofpursuit_box.checked = false;
 	document.form1.bondofretribution_box.checked = false;
 	document.form1.overwhelmingstrike_box.checked = false;
@@ -76685,7 +76470,7 @@ function c_bn_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BarbarianAtWill())) {
+    if ((!FeatsAreLocked) || (!BarbarianAtWill())) {
 	document.form1.devastatingstrike_box.checked = false;
 	document.form1.howlingstrike_box.checked = false;
 	document.form1.pressingstrike_box.checked = false;
@@ -76698,7 +76483,7 @@ function c_bd_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BardAtWill())) {
+    if ((!FeatsAreLocked) || (!BardAtWill())) {
 	document.form1.guidingstrike_box.checked = false;
 	document.form1.misdirectedmark_box.checked = false;
 	document.form1.viciousmockery_box.checked = false;
@@ -76712,7 +76497,7 @@ function c_dr_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!DruidAtWill())) {
+    if ((!FeatsAreLocked) || (!DruidAtWill())) {
 
 	document.form1.callofthebeast_box.checked = false;
 	document.form1.chillwind_box.checked = false;
@@ -76730,7 +76515,7 @@ function c_in_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!InvokerAtWill())) {
+    if ((!FeatsAreLocked) || (!InvokerAtWill())) {
 	document.form1.avenginglight_box.checked = false;
 	document.form1.divinebolts_box.checked = false;
 	document.form1.graspingshards_box.checked = false;
@@ -76744,7 +76529,7 @@ function c_sh_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ShamanAtWill())) {
+    if ((!FeatsAreLocked) || (!ShamanAtWill())) {
 	document.form1.defendingstrike_box.checked = false;
 	document.form1.hauntingspirits_box.checked = false;
 	document.form1.protectingstrike_box.checked = false;
@@ -76759,7 +76544,7 @@ function c_so_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SorcererAtWill())) {
+    if ((!FeatsAreLocked) || (!SorcererAtWill())) {
 	document.form1.acidorb_box.checked = false;
 	document.form1.burningspray_box.checked = false;
 	document.form1.chaosbolt_box.checked = false;
@@ -76775,7 +76560,7 @@ function c_wn_aw()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WardenAtWill())) {
+    if ((!FeatsAreLocked) || (!WardenAtWill())) {
 	document.form1.earthshieldstrike_box.checked = false;
 	document.form1.strengthofstone_box.checked = false;
 	document.form1.thornstrike_box.checked = false;
@@ -76788,7 +76573,7 @@ function c_wz_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WizardEncounter())) {
+    if ((!FeatsAreLocked) || (!WizardEncounter())) {
 
 	document.form1.icetomb_box.checked = false;
 	document.form1.forcevolley_box.checked = false;
@@ -76812,7 +76597,7 @@ function c_wz_e()
 	document.form1.fireburst_box.checked = false;
 	document.form1.burninghands_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!WizardEncounter() && (!epic_eternalseeker)))) {
 	document.form1.forcecage_box.checked = false;
 	document.form1.confusion_box.checked = false;
@@ -76828,7 +76613,7 @@ function c_wz_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WizardUtility())) {
+    if ((!FeatsAreLocked) || (!WizardUtility())) {
 
 	document.form1.walloffog_box.checked = false;
 	document.form1.levitate_box.checked = false;
@@ -76859,7 +76644,7 @@ function c_av_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!AvengerEncounter())) {
+    if ((!FeatsAreLocked) || (!AvengerEncounter())) {
 	document.form1.angelicalacrity_box.checked = false;
 	document.form1.avengingecho_box.checked = false;
 	document.form1.sharedmadness_box.checked = false;
@@ -76881,7 +76666,7 @@ function c_av_e()
 	document.form1.spectralcharge_box.checked = false;
 	document.form1.wardingblade_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!AvengerEncounter() && (!epic_eternalseeker)))) {
 	document.form1.avengersshield_box.checked = false;
 	document.form1.bondofjustice_box.checked = false;
@@ -76898,7 +76683,7 @@ function c_bn_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BarbarianEncounter())) {
+    if ((!FeatsAreLocked) || (!BarbarianEncounter())) {
 	document.form1.avalanchestrike_box.checked = false;
 	document.form1.bloodletting_box.checked = false;
 	document.form1.greatcleave_box.checked = false;
@@ -76923,7 +76708,7 @@ function c_bn_e()
 	document.form1.threateningfry_box.checked = false;
 	document.form1.vigorousstrike_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!BarbarianEncounter() && (!epic_eternalseeker)))) {
 	document.form1.arcingthrow_box.checked = false;
 	document.form1.berserkersshout_box.checked = false;
@@ -76944,7 +76729,7 @@ function c_bd_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BardEncounter())) {
+    if ((!FeatsAreLocked) || (!BardEncounter())) {
 	document.form1.blunder_box.checked = false;
 	document.form1.fastfriends_box.checked = false;
 	document.form1.inspiringrefrain_box.checked = false;
@@ -76966,7 +76751,7 @@ function c_bd_e()
 	document.form1.songofsummons_box.checked = false;
 	document.form1.wordofvulnerability_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!BardEncounter() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked) || ((!BardEncounter() && (!epic_eternalseeker)))) {
 	document.form1.echoesintime_box.checked = false;
 	document.form1.rhythmofdisorientation_box.checked = false;
 	document.form1.songofliberation_box.checked = false;
@@ -76982,7 +76767,7 @@ function c_dr_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!DruidEncounter())) {
+    if ((!FeatsAreLocked) || (!DruidEncounter())) {
 	document.form1.culltheherd_box.checked = false;
 	document.form1.dartingbite_box.checked = false;
 	document.form1.frostflash_box.checked = false;
@@ -77004,7 +76789,8 @@ function c_dr_e()
 	document.form1.shiftingrake_box.checked = false;
 	document.form1.windstorm_box.checked = false;
     }
-    if ((!FeatsAreLocked) | ((!DruidEncounter() && (!epic_eternalseeker)))) {
+    if ((!FeatsAreLocked)
+	|| ((!DruidEncounter() && (!epic_eternalseeker)))) {
 	document.form1.graspingearth_box.checked = false;
 	document.form1.primalroar_box.checked = false;
 	document.form1.stormburst_box.checked = false;
@@ -77021,7 +76807,7 @@ function c_in_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!InvokerEncounter())) {
+    if ((!FeatsAreLocked) || (!InvokerEncounter())) {
 	document.form1.astralterror_box.checked = false;
 	document.form1.bladesofastralfire_box.checked = false;
 	document.form1.spearoftheinquisitor_box.checked = false;
@@ -77043,7 +76829,7 @@ function c_in_e()
 	document.form1.glyphofradiance_box.checked = false;
 	document.form1.glyphofthreeblades_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!InvokerEncounter() && (!epic_eternalseeker)))) {
 	document.form1.cascadeoffivesuns_box.checked = false;
 	document.form1.stormofcelestia_box.checked = false;
@@ -77061,7 +76847,7 @@ function c_sh_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ShamanEncounter())) {
+    if ((!FeatsAreLocked) || (!ShamanEncounter())) {
 	document.form1.calltotheancestralwarrior_box.checked = false;
 	document.form1.calltotheancientdefender_box.checked = false;
 	document.form1.thunderbearswarding_box.checked = false;
@@ -77083,7 +76869,7 @@ function c_sh_e()
 	document.form1.spiritbondofvengeance_box.checked = false;
 	document.form1.spiritofspringsrenewal_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!ShamanEncounter() && (!epic_eternalseeker)))) {
 	document.form1.calltotheprimalprotector_box.checked = false;
 	document.form1.calltotherelentlesshunter_box.checked = false;
@@ -77101,7 +76887,7 @@ function c_so_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SorcererEncounter())) {
+    if ((!FeatsAreLocked) || (!SorcererEncounter())) {
 	document.form1.bedevilingburst_box.checked = false;
 	document.form1.explosivepyre_box.checked = false;
 	document.form1.frostbind_box.checked = false;
@@ -77125,7 +76911,7 @@ function c_so_e()
 	document.form1.poisonousevasion_box.checked = false;
 	document.form1.thundersummons_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!SorcererEncounter() && (!epic_eternalseeker)))) {
 	document.form1.blackbreath_box.checked = false;
 	document.form1.chaosorbs_box.checked = false;
@@ -77143,7 +76929,7 @@ function c_wn_e()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WardenEncounter())) {
+    if ((!FeatsAreLocked) || (!WardenEncounter())) {
 	document.form1.earthspikes_box.checked = false;
 	document.form1.hungryearth_box.checked = false;
 	document.form1.thunderramassault_box.checked = false;
@@ -77165,7 +76951,7 @@ function c_wn_e()
 	document.form1.earthholdsrebuke_box.checked = false;
 	document.form1.razorleafcut_box.checked = false;
     }
-    if ((!FeatsAreLocked) |
+    if ((!FeatsAreLocked) ||
 	((!WardenEncounter() && (!epic_eternalseeker)))) {
 	document.form1.guardianswrath_box.checked = false;
 	document.form1.naturesally_box.checked = false;
@@ -77183,7 +76969,7 @@ function c_av_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!AvengerUtility())) {
+    if ((!FeatsAreLocked) || (!AvengerUtility())) {
 	document.form1.blessingofvengeance_box.checked = false;
 	document.form1.distractingflare_box.checked = false;
 	document.form1.refocusenmity_box.checked = false;
@@ -77212,7 +76998,7 @@ function c_bn_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BarbarianUtility())) {
+    if ((!FeatsAreLocked) || (!BarbarianUtility())) {
 	document.form1.combatspirit_box.checked = false;
 	document.form1.primalvitality_box.checked = false;
 	document.form1.stonebreaker_box.checked = false;
@@ -77241,7 +77027,7 @@ function c_bd_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BardUtility())) {
+    if ((!FeatsAreLocked) || (!BardUtility())) {
 	document.form1.hunterstune_box.checked = false;
 	document.form1.inspirecompetence_box.checked = false;
 	document.form1.songofcourage_box.checked = false;
@@ -77270,7 +77056,7 @@ function c_dr_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!DruidUtility())) {
+    if ((!FeatsAreLocked) || (!DruidUtility())) {
 	document.form1.barkskin_box.checked = false;
 	document.form1.fleetpursuit_box.checked = false;
 	document.form1.obscuringmist_box.checked = false;
@@ -77299,7 +77085,7 @@ function c_in_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!InvokerUtility())) {
+    if ((!FeatsAreLocked) || (!InvokerUtility())) {
 	document.form1.divinecall_box.checked = false;
 	document.form1.emissaryofthegods_box.checked = false;
 	document.form1.shroudofawe_box.checked = false;
@@ -77330,7 +77116,7 @@ function c_sh_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ShamanUtility())) {
+    if ((!FeatsAreLocked) || (!ShamanUtility())) {
 	document.form1.bondsoftheclan_box.checked = false;
 	document.form1.spiritcall_box.checked = false;
 	document.form1.spiritoflife_box.checked = false;
@@ -77359,7 +77145,7 @@ function c_so_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SorcererUtility())) {
+    if ((!FeatsAreLocked) || (!SorcererUtility())) {
 	document.form1.dragonflamemantle_box.checked = false;
 	document.form1.elementalshift_box.checked = false;
 	document.form1.stretchspell_box.checked = false;
@@ -77389,7 +77175,7 @@ function c_wn_u()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WardenUtility())) {
+    if ((!FeatsAreLocked) || (!WardenUtility())) {
 	document.form1.eyesofthehawk_box.checked = false;
 	document.form1.mountainlionstep_box.checked = false;
 	document.form1.naturesabundance_box.checked = false;
@@ -77418,7 +77204,7 @@ function c_av_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!AvengerDaily())) {
+    if ((!FeatsAreLocked) || (!AvengerDaily())) {
 	document.form1.aspectofmight_box.checked = false;
 	document.form1.oathofthefinaldual_box.checked = false;
 	document.form1.renewingstrike_box.checked = false;
@@ -77439,7 +77225,7 @@ function c_av_d()
 	document.form1.oathoftheinevitableblade_box.checked = false;
 	document.form1.templeofrespite_box.checked = false;
 	document.form1.vengefulrecovery_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!AvengerDaily() && (!epic_eternalseeker)))) {
 	    document.form1.aspectofdeath_box.checked = false;
 	    document.form1.bondofdestiny_box.checked = false;
@@ -77458,7 +77244,7 @@ function c_bn_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BarbarianDaily())) {
+    if ((!FeatsAreLocked) || (!BarbarianDaily())) {
 	document.form1.bloodhuntrage_box.checked = false;
 	document.form1.macetailsrage_box.checked = false;
 	document.form1.ragedrakesfrenzy_box.checked = false;
@@ -77479,7 +77265,7 @@ function c_bn_d()
 	document.form1.hydrarage_box.checked = false;
 	document.form1.stormdrakerage_box.checked = false;
 	document.form1.winterphoenixrage_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!BarbarianDaily() && (!epic_eternalseeker)))) {
 	    document.form1.ashhammerrage_box.checked = false;
 	    document.form1.blodhungerrage_box.checked = false;
@@ -77498,7 +77284,7 @@ function c_bd_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!BardDaily())) {
+    if ((!FeatsAreLocked) || (!BardDaily())) {
 	document.form1.echoesoftheguardian_box.checked = false;
 	document.form1.slayerssong_box.checked = false;
 	document.form1.stirringshout_box.checked = false;
@@ -77519,7 +77305,7 @@ function c_bd_d()
 	document.form1.increasingthetempo_box.checked = false;
 	document.form1.irresistibledance_box.checked = false;
 	document.form1.satireofprowess_box.checked = false;
-	if ((!FeatsAreLocked) | ((!BardDaily() && (!epic_eternalseeker)))) {
+	if ((!FeatsAreLocked) || ((!BardDaily() && (!epic_eternalseeker)))) {
 	    document.form1.adversarialsong_box.checked = false;
 	    document.form1.fraughtwithfailure_box.checked = false;
 	    document.form1.frenziedrhythm_box.checked = false;
@@ -77536,7 +77322,7 @@ function c_dr_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!DruidDaily())) {
+    if ((!FeatsAreLocked) || (!DruidDaily())) {
 	document.form1.faeriefire_box.checked = false;
 	document.form1.firesoflife_box.checked = false;
 	document.form1.savagefrenzy_box.checked = false;
@@ -77558,7 +77344,8 @@ function c_dr_d()
 	document.form1.lungeandvanish_box.checked = false;
 	document.form1.primalbear_box.checked = false;
 	document.form1.winterhailstorm_box.checked = false;
-	if ((!FeatsAreLocked) | ((!DruidDaily() && (!epic_eternalseeker)))) {
+	if ((!FeatsAreLocked)
+	    || ((!DruidDaily() && (!epic_eternalseeker)))) {
 	    document.form1.ferociousmaul_box.checked = false;
 	    document.form1.feylure_box.checked = false;
 	    document.form1.primalstorm_box.checked = false;
@@ -77576,7 +77363,7 @@ function c_in_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!InvokerDaily())) {
+    if ((!FeatsAreLocked) || (!InvokerDaily())) {
 	document.form1.angelicechelon_box.checked = false;
 	document.form1.bindinginvocationofchains_box.checked = false;
 	document.form1.purgingfire_box.checked = false;
@@ -77597,7 +77384,7 @@ function c_in_d()
 	document.form1.maledictionofgartak_box.checked = false;
 	document.form1.summonangeloflight_box.checked = false;
 	document.form1.tombofmagrym_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!InvokerDaily() && (!epic_eternalseeker)))) {
 	    document.form1.anthemofthefirstdawn_box.checked = false;
 	    document.form1.invokethefallen_box.checked = false;
@@ -77616,7 +77403,7 @@ function c_sh_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!ShamanDaily())) {
+    if ((!FeatsAreLocked) || (!ShamanDaily())) {
 	document.form1.earthragespirit_box.checked = false;
 	document.form1.spiritofthehawkswind_box.checked = false;
 	document.form1.spiritoftheshieldingfire_box.checked = false;
@@ -77637,7 +77424,7 @@ function c_sh_d()
 	document.form1.hornsoftheundefeatedkhan_box.checked = false;
 	document.form1.spiritoftheshieldbreaker_box.checked = false;
 	document.form1.tendrilsofthefateweaver_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!ShamanDaily() && (!epic_eternalseeker)))) {
 	    document.form1.ironbornspirit_box.checked = false;
 	    document.form1.spiritofthelaughingwanderer_box.checked = false;
@@ -77656,7 +77443,7 @@ function c_so_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!SorcererDaily())) {
+    if ((!FeatsAreLocked) || (!SorcererDaily())) {
 	document.form1.chromaticorb_box.checked = false;
 	document.form1.dazzlingray_box.checked = false;
 	document.form1.dragonfangbolt_box.checked = false;
@@ -77678,7 +77465,7 @@ function c_so_d()
 	document.form1.blackfireserpent_box.checked = false;
 	document.form1.prismaticexplsion_box.checked = false;
 	document.form1.splitstrike_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!SorcererDaily() && (!epic_eternalseeker)))) {
 	    document.form1.draconicincarnation_box.checked = false;
 	    document.form1.forcestorm_box.checked = false;
@@ -77695,7 +77482,7 @@ function c_wn_d()
     if (test_mode) {
 	return;
     }
-    if ((!FeatsAreLocked) | (!WardenDaily())) {
+    if ((!FeatsAreLocked) || (!WardenDaily())) {
 	document.form1.formofthefearsomeram_box.checked = false;
 	document.form1.formoftherelentlesspanther_box.checked = false;
 	document.form1.formofthewillowsentinel_box.checked = false;
@@ -77716,7 +77503,7 @@ function c_wn_d()
 	document.form1.direbeastassault_box.checked = false;
 	document.form1.lightningbarrage_box.checked = false;
 	document.form1.thunderingbolts_box.checked = false;
-	if ((!FeatsAreLocked) |
+	if ((!FeatsAreLocked) ||
 	    ((!WardenDaily() && (!epic_eternalseeker)))) {
 	    document.form1.formoftheblackwolf_box.checked = false;
 	    document.form1.formofthedisplacerbeast_box.checked = false;
@@ -77732,11 +77519,11 @@ function c_wn_d()
 
 function consider_carrying_shield()
 {
-    if ((!already_knows_lightshield) &
+    if ((!already_knows_lightshield) &&
 	(!document.form1.shieldproficiencylight_box.checked)) {
 	document.form1.shield_radio[1].checked = false;
     }
-    if ((!already_knows_heavyshield) &
+    if ((!already_knows_heavyshield) &&
 	(!document.form1.shieldproficiencyheavy_box.checked)) {
 	document.form1.shield_radio[2].checked = false;
     }
@@ -77749,7 +77536,7 @@ function Alchemy()
 	VoidAlchemyBoxes();
 	return;
     }
-    if ((!TrainedInNature()) && (!TrainedInReligion()) &
+    if ((!TrainedInNature()) && (!TrainedInReligion()) &&
 	(!TrainedInThievery())) {
 	document.form1.alchemicalsilver_box.checked = false;
 	document.form1.ghoststrikeoil_box.checked = false;
@@ -77779,14 +77566,14 @@ function Alchemy()
 	document.form1.salveofslipperiness_box.checked = false;
 	document.form1.trackingdust_box.checked = false;
     }
-    if ((!TrainedInArcana()) && (!TrainedInNature()) &
+    if ((!TrainedInArcana()) && (!TrainedInNature()) &&
 	(!TrainedInReligion())) {
 	document.form1.clearwatersolution_box.checked = false;
     }
     if (!TrainedInNature()) {
 	document.form1.herbalpoultice_box.checked = false;
     }
-    if ((!TrainedInArcana()) && (!TrainedInNature()) &
+    if ((!TrainedInArcana()) && (!TrainedInNature()) &&
 	(!TrainedInThievery())) {
 	document.form1.slowstepoil_box.checked = false;
 	document.form1.thunderstone_box.checked = false;
@@ -77795,9 +77582,9 @@ function Alchemy()
 
 function Rituals()
 {
-    if ((!class_cleric) && (!class_wizard) && (!class_bard) &
+    if ((!class_cleric) && (!class_wizard) && (!class_bard) &&
 	(!class_invoker)
-	& (!class_druid) && (!class_other) && (!feat_ritualcaster) &
+	& (!class_druid) && (!class_other) && (!feat_ritualcaster) &&
 	(!multi_bard_bardicritualist)
 	&& (!multi_wizard_learnedspellcaster)) {
 	VoidRitualBoxes();
