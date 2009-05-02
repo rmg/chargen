@@ -2145,22 +2145,6 @@ function cosmicmagic()
     return "chr.gif";
 }
 
-function stormmagic()
-{
-    if (sorcerer_stormmagic) {
-	return "dexchr.gif";
-    }
-    return "chr.gif";
-}
-
-function cosmicmagic()
-{
-    if (sorcerer_cosmicmagic) {
-	return "strchr.gif";
-    }
-    return "chr.gif";
-}
-
 function wildblood()
 {
     if (rogue_artfuldodger) {
