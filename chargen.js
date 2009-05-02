@@ -15575,10 +15575,6 @@ function SkillSetOkay()
 function startup()
 {
     npcother_class_name = "NPC-Other Class";
-
-    document.form1.want_another_character.src =
-	"not_another_character.jpg";
-
     my_character_is_done = false;
     document.form1.stat1_list.selectedIndex = 0;
     document.form1.stat2_list.selectedIndex = 0;
